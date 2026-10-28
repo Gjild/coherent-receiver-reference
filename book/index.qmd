@@ -1,0 +1,7 @@
+# Preface {.unnumbered}
+
+**This is a publishing scaffold, not a published or accepted engineering textbook.**
+
+The intended book develops first-principles coherent receiver theory and practical design methods for experienced RF engineers. Its detailed chapter organization will be derived from the reader competence inventory and representative engineering designs.
+
+The short document following this preface tests mathematical authoring and bibliography wiring; it is explicitly illustrative, not technical evidence for a receiver.

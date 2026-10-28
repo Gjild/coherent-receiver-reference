@@ -1,0 +1,22 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Coherent Receiver Theory and Design"
+  subtitle: "Advanced Engineering Textbook and Reference — Provisional Scaffold"
+  chapters:
+    - index.qmd
+    - publishing-pilot.qmd
+    - references.qmd
+
+bibliography: ../references/references.bib
+number-sections: true
+
+format:
+  html:
+    toc: true
+    number-depth: 3
+  pdf:
+    documentclass: scrreprt
+    toc: true

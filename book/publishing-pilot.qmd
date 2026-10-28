@@ -1,0 +1,31 @@
+# Mathematical Publishing Proof of Concept
+
+**Status: typography and workflow demonstration only. No physical system is modeled or validated.**
+
+Consider an abstract algebraic identity:
+
+$$
+(a-b)^2=a^2+b^2-2ab.
+$$ {#eq-algebra-demo}
+
+A multi-line derivation tests aligned mathematics:
+
+$$
+\begin{aligned}
+(a-b)^2
+ &= (a-b)(a-b) \\
+ &= a^2-ab-ba+b^2 \\
+ &= a^2+b^2-2ab.
+\end{aligned}
+$$
+
+Equation @eq-algebra-demo is a deliberately trivial mathematical test; it does not establish any receiver performance. A source citation will be added only once an actual relevant source has been examined and recorded.
+
+| Symbol | Meaning | Units |
+|:--|:--|:--|
+| $a$ | Arbitrary real variable | Dimensionless |
+| $b$ | Arbitrary real variable | Dimensionless |
+
+: Table layout demonstration. {#tbl-layout-demo}
+
+The table @tbl-layout-demo checks a cross-reference and does not constitute engineering data.

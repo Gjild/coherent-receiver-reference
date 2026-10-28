@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coherent-receiver-reference"
+version = "0.0.1"
+description = "Supporting calculations for an advanced coherent receiver textbook"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2", "scipy>=1.14", "sympy>=1.13", "matplotlib>=3.9"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "PyYAML>=6"]
+
+[tool.setuptools.packages.find]
+where = ["engineering/src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["engineering/src"]
+addopts = "-ra"
+markers = ["mathematics: mathematical properties, not physical validation", "slow: computationally expensive tests"]

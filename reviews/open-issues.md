@@ -85,3 +85,13 @@ Separate AI reviews and correction reassessments completed; no unresolved critic
 finding remains within the bounded teaching units. Evidence and owner decisions:
 [current batch report](../project/current-work.md). AI review does not close
 ISSUE-001/002/005, specialist/reader obligations or U-01–U-10. No next unit is authorized.
+
+## K05–K07 batch boundary — 2026-10-29
+
+Three bounded teaching drafts and connected Chapters 1–7 AI assessment completed;
+[batch report](../project/current-work.md). No unresolved consequential review
+finding remains in this bounded use. Reproducible baseline and unit checkpoints
+are recorded there. K06's first review was replaced after historical-author-summary
+exposure; final review evidence is explicitly AI-assisted. ISSUE-001/002/005,
+U-01–U-10, qualified specialist/reader and physical-evidence obligations remain open.
+No K08 or hardware campaign follows without owner authorization.

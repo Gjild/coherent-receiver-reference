@@ -1,3 +1,85 @@
+# Current Work: K05–K07 batch complete; stop before K08
+
+**2026-10-29:** Owner authorized the next three bounded canonical foundations and
+connected integration review. K05, K06 and K07 are now checked provisional teaching
+drafts following separate-context AI review and correction. This does not complete
+their canonical treatments or chapters, and confers no human technical acceptance.
+All prior architecture, convention and evidence qualifications remain in force.
+
+## Reproducibility and checkpoints
+
+All 15 pending staged files were inspected before authoring; there were no unstaged
+changes or unrelated/uncertain files in that set. Their exact bytes and prior Git
+history were preserved in baseline `3b669a7`, including Chapter 1/ADR-0006 and
+K02–K04 integration/workflow records. ADR-0006 manuscript hash matched. A clean
+Git archive rendered the baseline successfully. No destructive Git operations,
+dependency installation, push or external publication occurred.
+
+| Bounded unit / canonical teaching home | Significant findings and corrections | Local checkpoint |
+|---|---|---|
+| [K05 / Chapter 5](../book/phase-delay-inference.qmd) | Explicit conversion orientation before delay inference; curvature bias depends on third centered moment; whitening bridge | `080faa1` |
+| [K06 / Chapter 7](../book/tracking-signal-retention.qmd) | Delayed-feedback derivation; negative-frequency magnitude; frequency-ramp assessment and drift holdover; wanted/nuisance transfer retained | `f507859` |
+| [K07 / Chapter 6](../book/model-adequacy-uncertainty.qmd) | Taylor regularity; reciprocal tails/support; acquisition timing/correlation; Chapter 3 prerequisite bridge | `94b434a` |
+
+Each checkpoint followed its unit review/corrections before the next manuscript
+began. The book places K07/Chapter 6 before K06/Chapter 7 as the accepted contents
+require. Source and review records:
+
+- [K05 source examination](../references/source-notes/phase-delay-inference.md),
+  [review](../reviews/phase-delay-inference.md): MIT likelihood/information-bound
+  text and NIST weighted regression; original phase/delay derivations and examples.
+- [K06 source examination](../references/source-notes/tracking-signal-retention.md),
+  [review](../reviews/tracking-signal-retention.md): Tausworthe's nonlinear versus
+  locked analysis; original normalized transfer, finite-band, latency and holdover.
+- [K07 source examination](../references/source-notes/model-adequacy-uncertainty.md),
+  [review and connected progression](../reviews/model-adequacy-uncertainty.md):
+  fresh NIST TN1297 A.1–A.3 examination; original nonlinear/numerical countercases.
+
+## Achieved checks and review limits
+
+A clean Git archive of `94b434a` passed 24 foundation unittest checks (13 prior,
+11 new-batch) and 19 existing pilot checks: 43 total. Scaffold integrity passed.
+Eleven-page HTML rendering passed with temporary XDG cache; 247 local HTML links
+and fragments resolve, with no duplicate IDs or unresolved-reference markers.
+Python 3.12.3, Quarto 1.10.18 and codex-cli 0.165.0 were observed. pytest is absent;
+full pytest was not run. No lockfile or package installation was introduced.
+
+Reviewer requests explicitly used GPT-6.1 Sol / high and read-only shells; exact
+runtime routing was not independently introspected. K06's first context read
+historical author summaries and was replaced by a fresh context excluding status,
+prior reviews and author history. The replacement examined primary-source text;
+image access failed. A serialization typo was corrected during focused K06
+reassessment and its final bytes reread; that turn was not perfectly frozen.
+Review records preserve actual exposure, input hashes and correction provenance.
+No AI review is presented as independent specialist validation.
+
+The connected Chapters 1–7 review found consistent reference/sign definitions,
+no circular prerequisite or competing canonical derivation, and meaningful
+observable-to-decision connections. K07 corrections strengthen timing/covariance
+and local-versus-global reasoning. This is AI technical/editorial assessment,
+not actual reader testing. Sixty-three pre-existing artifacts outside the explicit
+integration/workflow update set are byte-preserved, including accepted architecture,
+Chapter 1, pilot, K02–K04 and prior decisions/reviews.
+
+## Remaining decisions and stopping boundary
+
+No unresolved consequential defect was identified within these bounded reviews.
+Independent human specialist review, reader trials, physical applicability and
+experimental evidence remain outstanding. Browser pixel inspection, PDF and
+offline-math verification were not performed. Local conventions were not promoted
+book-wide. Complete inference catalogues, higher-order/sampled/remote tracking,
+physical covariance generation, system recovery and metrology/evidence policy
+retain their later homes.
+
+The owner still decides technical acceptance, book-wide conventions, empirical
+or reader-review priorities and authorization of any subsequent batch. No new
+blocking owner decision was required for this batch. Stop here: no K08, hardware
+experiment or further autonomous queue execution is authorized.
+
+---
+
+## Earlier batch record (historical authorization boundaries)
+
 # Current Work: authorized K05–K07 foundational batch
 
 Owner authorized sequential bounded K05, K06 and K07 teaching units, each with

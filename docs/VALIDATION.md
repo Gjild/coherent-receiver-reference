@@ -1,3 +1,31 @@
+# K05–K07 reproducibility and checks — 2026-10-29
+
+- Reconciled inspected 15-file staged set unchanged into `3b669a7`; no unstaged
+  or unrelated files were present. ADR-0006 manuscript hash matches. Clean Git
+  archive baseline rendered successfully. History preserved; no destructive Git.
+- Clean Git archive of `94b434a`: Python 3.12.3; Quarto 1.10.18;
+  codex-cli 0.165.0 observed. No installation or dependency-lock claim.
+- `PYTHONPATH=engineering/src python3 -m unittest discover -s tests -p '*stdlib.py' -q`:
+  24 passed (13 prior foundations + 11 new-batch).
+- `PYTHONPATH=engineering/src python3 -m unittest discover -s tests -p test_relative_phase.py -q`:
+  19 passed. These are mathematical/software checks, not physical validation.
+- `python3 scripts/check_repo.py`: passed (13 required paths).
+- Clean archive Quarto HTML render with XDG_CACHE_HOME in /tmp: passed, 11 pages.
+  Parsed HTML: 247 local links/fragments resolve; no duplicate IDs or ?? markers.
+- `python3 -m pytest --version`: failed; pytest absent. Full suite unperformed.
+- Separate read-only AI reviews/corrections and connected progression assessment
+  completed. Records disclose replaced K06 history-exposed context, source/image
+  access limits, and serialization correction during final reread.
+- Sixty-three pre-existing artifacts outside explicitly updated integration/workflow
+  files retain starting hashes. No manuscript change to Chapter 1, pilot or K02–K04;
+  no acceptance, convention or intellectual-architecture promotion.
+- Markdown links and whitespace checked at closeout. Browser pixel inspection,
+  PDF/offline mathematics, reader/specialist review and physical experiments absent.
+
+Earlier records below retain their historical dates, evidence and boundaries.
+
+---
+
 # K02–K04 batch checks — 2026-10-29
 
 - `python3 -m unittest discover -s tests -p test_foundation_units_stdlib.py -v`:

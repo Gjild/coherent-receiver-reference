@@ -83,5 +83,57 @@ class CoherenceCorrectionChecks(unittest.TestCase):
         self.assertGreater(abs(cmath.phase(.75+.25j)-math.pi/8), .07)
 
 
+class CovarianceChecks(unittest.TestCase):
+    def test_source_ensemble_and_quadratic_forms(self):
+        import itertools
+        records = [(u+e1, 2*u+e2) for u, e1, e2 in
+                   itertools.product([-.02,.02],[-.01,.01],[-.03,.03])]
+        c = [[sum(r[i]*r[j] for r in records)/8 for j in range(2)] for i in range(2)]
+        expected = [[.0005,.0008],[.0008,.0025]]
+        for i in range(2):
+            for j in range(2): self.assertAlmostEqual(c[i][j], expected[i][j])
+        for w, variance in [((-1,1),.0014),((-2,1),.0013)]:
+            direct = sum((w[0]*x+w[1]*y)**2 for x,y in records)/8
+            matrix = sum(w[i]*c[i][j]*w[j] for i in range(2) for j in range(2))
+            self.assertAlmostEqual(direct, variance)
+            self.assertAlmostEqual(matrix, direct)
+        # Preserve the same physical combination after a coordinate change.
+        self.assertTrue(all(abs(2*x+3*y-(5*(x+y)/2+.5*(y-x)))<1e-15 for x,y in records))
+        determinant = c[0][0]*c[1][1]-c[0][1]*c[1][0]
+        self.assertAlmostEqual(determinant, .00000061)
+
+    def test_complex_conjugation(self):
+        values = [1,1j,-1,-1j]
+        records = [(u,(1+2j)*u) for u in values]
+        c12 = sum(x*y.conjugate() for x,y in records)/4
+        self.assertEqual(c12, 1-2j)
+        w = [1+1j, .3-.7j]
+        direct = sum(abs(w[0].conjugate()*x+w[1].conjugate()*y)**2 for x,y in records)/4
+        c = [[1,c12],[c12.conjugate(),5]]
+        matrix = sum(w[i].conjugate()*c[i][j]*w[j] for i in range(2) for j in range(2))
+        self.assertAlmostEqual(matrix.real, direct)
+        self.assertAlmostEqual(matrix.imag, 0)
+
+    def test_nonphysical_covariance_and_inverse_amplification(self):
+        self.assertLess(1+1-2*1.2, 0)
+        import itertools
+        for epsilon in [.01,.001]:
+            errors = [(n2-n1)/epsilon for n1,n2 in itertools.product([-.001,.001],repeat=2)]
+            rms = math.sqrt(sum(e*e for e in errors)/4)
+            self.assertAlmostEqual(rms, math.sqrt(2)*.001/epsilon)
+
+
+class InversionBiasChecks(unittest.TestCase):
+    def test_nonzero_mean_counterexample_and_bias(self):
+        import itertools
+        for first, second in [([.0009,.0011],[.0009,.0011]),
+                              ([.0009,.0011],[.0019,.0021])]:
+            mse = sum(((b-a)/.01)**2 for a,b in itertools.product(first,second))/4
+            mu1, mu2 = sum(first)/2, sum(second)/2
+            v1 = sum((a-mu1)**2 for a in first)/2
+            v2 = sum((b-mu2)**2 for b in second)/2
+            self.assertAlmostEqual(mse, (v1+v2+(mu2-mu1)**2)/.01**2)
+
+
 if __name__ == '__main__':
     unittest.main()

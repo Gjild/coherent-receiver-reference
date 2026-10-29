@@ -12,3 +12,28 @@ Write primarily for an experienced human RF engineer learning coherent receivers
 - Prefer a canonical result with sensible local exposition/cross-reference over copying conflicting derivations.
 - Never invent numerical component data or use arbitrary design parameters without labeling them illustrative.
 - A chapter's editorial completeness does not imply technical acceptance.
+
+## Pilot-tested minimum obligations (2026-10-29; human acceptance pending)
+
+For each consequential result supply the observable, reference planes, observation
+operator, state, calibration history, physical model and stochastic assumptions.
+Define symbols and units before use. Develop indispensable steps internally;
+identify exact identities, modeling choices and approximations separately. Check
+dimensions, limiting cases and error scales. A covariance is constructed from
+physical sources and paths, not chosen merely to obtain a favorable budget.
+
+Keep instantaneous phase variance, increments, calibrated residuals, restart
+statistics and application performance distinct. Averaging phase and taking the
+phase of an averaged complex product are different operations. Every integral
+needs its spectral domain and convergence conditions. Preserve endpoint transfer
+functions until a justified reduction is made.
+
+A numerical example exposes inputs and their provenance, intermediate results,
+uncertainty, decision and rejected alternative without requiring code execution.
+Include a diagnostic counterexample and a transfer question that changes the
+model. A design recommendation includes interface, implementation, calibration
+access and evidence consequences. Introduce specialist mathematics in the reading
+path from the RF baseline; a source citation cannot replace the bridge.
+
+Keep general derivations in one home. The relative-phase pilot temporarily owns
+its general results; its brief records their eventual chapter destinations.

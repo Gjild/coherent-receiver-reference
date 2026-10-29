@@ -29,3 +29,12 @@ Equation @eq-algebra-demo is a deliberately trivial mathematical test; it does n
 : Table layout demonstration. {#tbl-layout-demo}
 
 The table @tbl-layout-demo checks a cross-reference and does not constitute engineering data.
+
+## Figure, source and navigation check {#sec-publishing-check}
+
+![Pilot reference-plane diagram. This publishing check does not establish physical validity.](figures/relative-phase-reference-planes.svg){#fig-publishing-check}
+
+Figure @fig-publishing-check tests SVG inclusion. The measurement model should
+include significant uncertainty contributors [@taylor1994uncertainty, app. A.1].
+The substantive development begins at @sec-relative-phase; its observation
+operator is defined in @eq-observe. The bibliography follows the pilot.

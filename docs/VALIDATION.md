@@ -1,3 +1,59 @@
+# Pilot closeout validation — 2026-10-29
+
+Owner acceptance is recorded in
+[ADR-0005](../project/decisions/ADR-0005-provisional-relative-phase-pilot-acceptance.md)
+for analytical teaching and technical-authoring workflow development only.
+Closeout reran the 19 pilot unittest checks, reproducible example, scaffold
+integrity and four-page HTML render successfully. Full pytest was attempted but
+could not start (pytest absent); NumPy import failed too. No tools were installed.
+Browser pixel inspection and PDF rendering were not performed at closeout; prior
+visual-inspection limitations remain. No new source examination, specialist
+review, reader trial or physical measurement is asserted.
+
+The final audit passed: six accepted SHA-256 values match the unchanged artifacts;
+52 local Markdown links and 27 table rows were checked across seven closeout
+files; four HTML pages have 32 resolving internal fragment links, no duplicate
+IDs and no unresolved cross-references. Both SVGs parse. Eleven protected
+planning/decision files are unchanged, as is the Git index. Whitespace checks pass.
+The owner's removals of changes.patch/changes.zip are preserved; this task edits
+only six existing administrative files and creates ADR-0005.
+
+Accepted artifact hashes and scope are recorded in ADR-0005 and current work. Correction-stage results below remain evidence for the same
+unchanged manuscript/computational bytes; they are not new physical proof.
+
+---
+
+# Current validation: relative-phase pilot (2026-10-29)
+
+See [the executed check/review record](../reviews/relative-phase-pilot.md),
+including finding-by-finding disposition of the focused correction pass.
+The corrected example recalculates asymmetric regression, absolute vs band
+uncertainty and snapshot precision/age. pytest was retried and remains unavailable.
+No new specialist/reader/measurement evidence is asserted.
+Nineteen dependency-free pilot unittest checks pass; the supporting example executes.
+Quarto 1.10.18 renders four HTML pages with
+`XDG_CACHE_HOME=/tmp/relative-phase-quarto-cache quarto render book --to html`.
+Scaffold integrity, protected-file preservation, internal fragment references,
+SVG parsing and whitespace checks pass. The final correction audit resolves
+32 internal fragment links on four pages, finds no duplicate IDs or unresolved
+cross-references, and confirms 11 protected planning documents and pre-existing
+archives unchanged from the correction-start snapshot. Exactly ten existing
+pilot/support/record files were modified; their inventory is in the review.
+HTML output is in `book/_book/index.html`.
+
+The first render failed on a read-only cache. pytest/NumPy are absent, preventing
+the complete pre-existing suite; no dependencies were installed. Browser pixel
+inspection failed under local display/resource constraints, so visual math and
+layout inspection remains pending. Existing MathJax CDN access is required for
+browser typesetting. No PDF render, laboratory measurement, independent human
+technical review or learner trial is claimed.
+
+The bibliography is populated; two existing entries were re-examined for the
+pilot's narrow claims. Historical “empty bibliography/not installed” notes below
+are retained as earlier observations, not current statements.
+
+---
+
 # Validation Status for Initial Scaffold
 
 This file must be updated with **actual** executed checks before delivery or use. It is not an engineering acceptance record.

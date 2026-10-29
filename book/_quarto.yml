@@ -8,6 +8,7 @@ book:
   chapters:
     - index.qmd
     - publishing-pilot.qmd
+    - relative-phase-stability.qmd
     - references.qmd
 
 bibliography: ../references/references.bib

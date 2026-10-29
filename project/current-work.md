@@ -1,3 +1,64 @@
+# Current Work: First Technical Pilot Provisionally Accepted and Closed
+
+**2026-10-29:** The project owner provisionally accepts the corrected dual-channel
+relative-phase-stability pilot for **analytical teaching and technical-authoring
+workflow development** under [ADR-0005](decisions/ADR-0005-provisional-relative-phase-pilot-acceptance.md).
+This is the owner's stated decision, following focused AI-assisted review,
+corrections and numerical checks; no independent specialist approval is asserted.
+
+The [pilot brief](pilots/relative-phase-stability.md) records completed scope,
+outcomes and canonical destinations. The [review record](../reviews/relative-phase-pilot.md)
+retains correction dispositions and evidence limitations. ADR-0005 identifies
+the unchanged accepted working-tree artifacts by SHA-256; the contextual HEAD
+does not contain the staged additions.
+
+Acceptance excludes physical-model validation for particular hardware,
+experimental confirmation, educational effectiveness, general receiver-design
+applicability and product compliance. Hardware parameter/fixture/acquisition/
+settling evidence, specialist examination, reader trials and browser visual
+inspection remain outstanding. Full pytest is unavailable because dependencies
+are absent. Local conventions are not adopted book-wide.
+
+## Closeout checks and repository observations
+
+- Reran 19 standard-library pilot tests: passed; reproducible example completed.
+- Scaffold integrity passed (13 required paths); Quarto 1.10.18 HTML render passed
+  on four pages using a writable temporary cache. Python version: 3.12.3.
+- Full pytest command attempted: pytest absent. NumPy import also failed; original
+  NumPy-based tests remain unexecuted. PDF and browser pixel inspection were not
+  performed in this closeout; the prior browser limitation remains open.
+- Final audit passed: 52 local Markdown links resolve across the seven closeout
+  files; 27 Markdown table rows have consistent column counts; four rendered
+  HTML pages have 32 resolving internal fragment links with no duplicate IDs
+  or unresolved references. Both SVG assets parse. Whitespace checks passed.
+- All six accepted artifact hashes match the unchanged start-of-closeout bytes.
+  Eleven protected charter/inventory/architecture/ADR files and all standards,
+  source notes, publishing configuration and computational files are unchanged.
+  The Git index is unchanged. Six existing administrative/status files and
+  ADR-0005 are the only task edits; no new checker was added to the repository.
+- Starting state contained staged pilot/standards work and staged archives with
+  additional unstaged changes. The corrected six-artifact set matched its staged
+  bytes. The owner subsequently removed changes.patch and changes.zip, confirmed in the
+  working tree; their staged entries remain because the index was preserved;
+  this task does not restore those files or alter the index.
+- README's obsolete “pilot not started” statement is corrected. No technical
+  manuscript, calculation, test, standard or accepted architecture is rewritten.
+  No new source passage, human specialist review, learner trial or measurement is
+  claimed. No commit, tag, dependency installation or publishing deployment occurs.
+
+## Next activity and stopping boundary
+
+**Post-pilot development-method assessment and sustained authoring preparation —
+not yet started.** The pilot development stage is closed for its limited accepted
+use. Stop after this administrative closeout; do not start assessment, subsequent
+chapters, reference designs or a bench campaign. ADR-0002–0004 and outstanding
+U-01–U-10 qualifications remain in force.
+
+The record below is historical architecture-stage closeout; its “not yet started”
+statements describe that earlier stage, not current pilot status.
+
+---
+
 # Current Work: Provisional Book Architecture Stage Closed
 
 **Closed stage:** provisional book architecture, annotated table of contents and intellectual organization. **State:** provisionally accepted by the project owner on 2026-10-29 as suitable for guiding textbook development under [ADR-0004](decisions/ADR-0004-provisional-book-architecture-acceptance.md), following external AI-assisted review. This is planning acceptance only.

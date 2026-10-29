@@ -1,6 +1,11 @@
 # Coherent Receiver Theory and Design
 
-**Status: provisional book-architecture stage closed with planning acceptance for guiding textbook development. Subsequent authoring standards, publishing validation and initial technical pilot work have not started. No textbook chapter or engineering capability has been technically accepted.**
+**Status: the corrected first technical pilot is provisionally accepted by the
+project owner for analytical teaching and technical-authoring workflow development
+under [ADR-0005](project/decisions/ADR-0005-provisional-relative-phase-pilot-acceptance.md).
+The pilot development stage is closed. Physical/hardware validation, experimental
+confirmation, educational effectiveness, general design applicability and product
+compliance are not established.**
 
 This repository develops a mathematically rigorous, physically defensible and practically useful advanced textbook/reference for experienced RF engineers learning coherent receiver engineering. The book, not an autonomous design agent, is the primary deliverable.
 
@@ -8,30 +13,40 @@ This repository develops a mathematically rigorous, physically defensible and pr
 
 1. Read [`project/charter.md`](project/charter.md) for the mission and binding objectives.
 2. Read [`AGENTS.md`](AGENTS.md) before using Codex.
-3. Read [`project/current-work.md`](project/current-work.md) for stage status: the competence inventory is provisionally accepted for planning; the [technical coverage and knowledge-dependency architecture](project/architecture.md) is provisionally accepted for planning under [ADR-0003](project/decisions/ADR-0003-provisional-architecture-acceptance.md), subject to its review qualifications. The [book-architecture package](project/book-architecture.md) is provisionally accepted for guiding textbook development under [ADR-0004](project/decisions/ADR-0004-provisional-book-architecture-acceptance.md), subject to its review qualifications. Technical authoring standards, publishing validation and the initial technical pilot are subsequent work, not yet started. These acceptances do not establish technical or educational adequacy.
+3. Read [`project/current-work.md`](project/current-work.md) for stage status: the competence inventory is provisionally accepted for planning; the [technical coverage and knowledge-dependency architecture](project/architecture.md) is provisionally accepted for planning under [ADR-0003](project/decisions/ADR-0003-provisional-architecture-acceptance.md), subject to its review qualifications. The [book-architecture package](project/book-architecture.md) is provisionally accepted for guiding textbook development under [ADR-0004](project/decisions/ADR-0004-provisional-book-architecture-acceptance.md), subject to its review qualifications. The [corrected pilot](book/relative-phase-stability.qmd) is now accepted for
+   ADR-0005's limited use; its [review record](reviews/relative-phase-pilot.md)
+   preserves evidence and unresolved limits. Next is post-pilot development-method
+   assessment and sustained authoring preparation, **not yet started**.
 4. Read [`docs/SETUP.md`](docs/SETUP.md) for installation and local checks.
 5. Read [`docs/REPOSITORY-MAP.md`](docs/REPOSITORY-MAP.md) before adding files.
 
 ## Ready-to-run checks
 
 ```bash
-python -m pytest
-python scripts/check_repo.py
+PYTHONPATH=engineering/src python3 -m unittest discover -s tests -p test_relative_phase.py -v
+PYTHONPATH=engineering/src python3 engineering/examples/relative_phase_pilot.py
+python3 scripts/check_repo.py
+python3 -m pytest
 ```
 
-The current computational example is **illustrative, not a validated receiver model**. Tests establish mathematical and implementation properties only.
+The pilot's 19 standard-library tests and example run without extra packages.
+The full pytest suite additionally needs declared dependencies; pytest and NumPy
+were absent at closeout. Calculations are illustrative; passing tests establish
+selected mathematical/software properties, not receiver validation.
 
 ## Publication
 
-A *provisional* Quarto book skeleton is included for future proof-of-concept testing. With Quarto and a suitable LaTeX installation, run:
+The Quarto HTML book includes the publishing demonstration and corrected pilot.
+HTML rendering passed; visual browser math/layout inspection remains pending.
+With Quarto available, render from the repository root:
 
 ```bash
-cd book
-quarto render --to html
-quarto render --to pdf
+XDG_CACHE_HOME=/tmp/relative-phase-quarto-cache quarto render book --to html
 ```
 
-Neither render was executed in the environment that packaged this scaffold; see `docs/VALIDATION.md`.
+The temporary cache path handles this environment's read-only default cache.
+Output is in book/_book/index.html. PDF rendering requires a suitable LaTeX
+installation and was not run. See [validation status](docs/VALIDATION.md).
 
 ## Authoring policy
 

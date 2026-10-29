@@ -2,6 +2,6 @@
 
 **This is a publishing scaffold, not a published or accepted engineering textbook.**
 
-The intended book develops first-principles coherent receiver theory and practical design methods for experienced RF engineers. Its detailed chapter organization will be derived from the reader competence inventory and representative engineering designs.
+The intended book develops first-principles coherent receiver theory and practical design methods for experienced RF engineers. Its provisional chapter organization is recorded in the accepted planning package under ADR-0004; technical development remains subject to review.
 
-The short document following this preface tests mathematical authoring and bibliography wiring; it is explicitly illustrative, not technical evidence for a receiver.
+The publishing demonstration tests mathematics, references, SVG figures and bibliography wiring. The following dual-channel relative-phase pilot develops a bounded illustrative engineering argument and supporting calculations. It has no hardware measurements, specialist acceptance or actual reader-trial evidence.

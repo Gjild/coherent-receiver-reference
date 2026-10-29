@@ -15,3 +15,8 @@
 - Status: draft
 
 Adapt the structure to the subject; do not use this as a rigid chapter template.
+- Each consequential statistic: exact observable/operator, reference conditions,
+  stochastic assumptions, units, calibration and state.
+- Numerical input provenance, independently formulated checks and tolerances:
+- Changed-assumption transfer assessment and actual participant evidence:
+- Canonical destination and proposed architecture correction (if any):

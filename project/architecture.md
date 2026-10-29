@@ -1,6 +1,6 @@
 # Technical Coverage and Knowledge-Dependency Architecture
 
-**Status:** draft architecture developed on 2026-10-28 under the project owner's instruction to implement the architecture plan. Pending human review and acceptance for planning use. Neither ADR-0002 nor authorization to produce this document approves its technical contents or authorizes a table of contents.
+**Status:** provisionally accepted by the project owner on 2026-10-29 as a planning specification for provisional book architecture, annotated table-of-contents and intellectual-organization development under [ADR-0003](decisions/ADR-0003-provisional-architecture-acceptance.md). Developed on 2026-10-28. Acceptance is subject to the ADR's four review qualifications and does not independently validate technical contents. The architecture stage is closed; the next stage is not yet started.
 
 ## 1. Purpose, authority and deliverable ownership
 
@@ -141,7 +141,7 @@ No change to the 45 capability definitions is proposed by this pass. Concrete ad
 
 ### 5.2 Completion criteria for subsequent use
 
-Before recommending use to construct a provisional table of contents, require:
+The development pass defined the following readiness criteria. The owner has since provisionally accepted planning use under ADR-0003; remaining boundary and adequacy questions carry forward under explicit qualifications rather than a claim that all technical review is complete:
 
 1. Every capability dimension and evaluated output has a named treatment route, prerequisites, input boundary and assessment; no heading-only substitution remains.
 2. Essential dependencies admit a learning progression, including refinements; conditional branches do not impose digital, multichannel or distributed knowledge universally.
@@ -151,6 +151,6 @@ Before recommending use to construct a provisional table of contents, require:
 6. All inventory U-01–U-10 issues and new gaps have bounded dispositions; a decision changing essential treatment scope or prerequisites blocks the affected recommendation.
 7. The project owner reviews the reader contract, provisional anchors and coverage boundaries. Relevant engineering reviewers assess consequential disputed boundaries and identify counterexamples or needed changes. Actual acceptance records identify revision and intended use under the existing standard.
 
-**Current recommendation:** this is a completed draft package for review, not an accepted architecture or an unqualified recommendation to begin a table of contents. Mapping and paper-route checks are present. Human decisions in technical coverage §6 remain pending, particularly U-03/U-04/U-05/U-09 where insufficient depth could change treatment boundaries. Numerical case requirements and particular parts may remain deferred if that does not conceal a coverage gap. No final technical acceptance is granted by Codex.
+**Current disposition:** the project owner has provisionally accepted this package for planning use under [ADR-0003](decisions/ADR-0003-provisional-architecture-acceptance.md), following review with external AI assistance. This is not final technical acceptance. Technical coverage §6 uncertainties remain open, particularly interferometry, vector antenna/polarization models, application processing and mathematical bridge adequacy. Motivating examples may precede full quantitative methods; K02–K07 must bridge from the declared RF baseline without hidden specialist prerequisites. Essential coherent-receiver reasoning stays internal. Actual textbook development, including the later dual-channel relative-phase-stability pilot, must test educational and engineering adequacy.
 
-After those decisions, an authorized table-of-contents task may organize the treatments into parts and chapters, testing both learning and reference navigation. Stop here until separately instructed; publishing evaluation, the relative-phase pilot and manuscript development remain outside this stage.
+The next stage is provisional book architecture and annotated table-of-contents development, **not yet started**. Stop at this closeout; publishing evaluation, the relative-phase pilot and manuscript development remain outside this stage. [Current work](current-work.md) records the stopping boundary and checks.

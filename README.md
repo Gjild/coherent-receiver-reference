@@ -1,6 +1,6 @@
 # Coherent Receiver Theory and Design
 
-**Status: project scaffold; no textbook chapter or engineering capability has been technically accepted.**
+**Status: architecture stage closed with provisional acceptance for book planning; next stage not yet started. No textbook chapter or engineering capability has been technically accepted.**
 
 This repository develops a mathematically rigorous, physically defensible and practically useful advanced textbook/reference for experienced RF engineers learning coherent receiver engineering. The book, not an autonomous design agent, is the primary deliverable.
 
@@ -8,7 +8,7 @@ This repository develops a mathematically rigorous, physically defensible and pr
 
 1. Read [`project/charter.md`](project/charter.md) for the mission and binding objectives.
 2. Read [`AGENTS.md`](AGENTS.md) before using Codex.
-3. Read [`project/current-work.md`](project/current-work.md) for stage status: the competence inventory is provisionally accepted for planning; the [technical coverage and knowledge-dependency architecture](project/architecture.md) is drafted and awaiting human review. No table of contents or technical treatment is approved.
+3. Read [`project/current-work.md`](project/current-work.md) for stage status: the competence inventory is provisionally accepted for planning; the [technical coverage and knowledge-dependency architecture](project/architecture.md) is provisionally accepted for planning under [ADR-0003](project/decisions/ADR-0003-provisional-architecture-acceptance.md), subject to its review qualifications. Provisional book architecture and annotated table-of-contents development is the next stage, not yet started. This acceptance does not independently validate technical results.
 4. Read [`docs/SETUP.md`](docs/SETUP.md) for installation and local checks.
 5. Read [`docs/REPOSITORY-MAP.md`](docs/REPOSITORY-MAP.md) before adding files.
 

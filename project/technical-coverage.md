@@ -1,6 +1,6 @@
 # Technical Coverage, Canonical Treatments and Capability Support
 
-**Status:** draft development specification, 2026-10-28; human review pending. The [architecture](architecture.md) owns the learning/reference organization. The [inventory](competence-inventory.md) owns capability definitions and their required competence dimensions. The [design briefs and stress tests](reference-design-plan.md) challenge this specification. No technical treatment specified here has thereby been derived, implemented, physically validated or accepted.
+**Status:** development specification produced on 2026-10-28; provisionally accepted by the project owner on 2026-10-29 for book architecture, annotated table-of-contents and intellectual-organization planning under [ADR-0003](decisions/ADR-0003-provisional-architecture-acceptance.md), subject to its four review qualifications. Technical adequacy and boundary review remain open. The [architecture](architecture.md) owns the learning/reference organization. The [inventory](competence-inventory.md) owns capability definitions and their required competence dimensions. The [design briefs and stress tests](reference-design-plan.md) challenge this specification. No technical treatment specified here has thereby been derived, implemented, physically validated or accepted.
 
 ## 1. Reading the coverage specification
 
@@ -298,7 +298,7 @@ The stress-test findings require these distinctions; they are not new claims of 
 
 ### 6.1 Carry-forward decisions
 
-“Boundary review” means a decision could alter essential treatment content or learning dependencies and must be resolved or explicitly bounded before recommending the affected architecture for a table of contents. “Later input” means a particular engineering conclusion cannot yet be calculated, while a sufficiently bounded treatment specification may still be organized. None of the following is marked accepted by this pass.
+“Boundary review” means a decision could alter essential treatment content or learning dependencies and must be resolved or explicitly bounded before recommending the affected architecture for a table of contents. “Later input” means a particular engineering conclusion cannot yet be calculated, while a sufficiently bounded treatment specification may still be organized. ADR-0003 accepts planning use subject to qualifications; it does not resolve or technically accept the individual issues below.
 
 | Inventory issue | Architecture disposition and affected treatments | Review / consequence |
 |---|---|---|
@@ -355,4 +355,4 @@ For each future consequential calculation, distinguish algebraic consistency, nu
 
 Maintain these plain Markdown tables as treatments change. Compare each capability's dimensions and work product with its support row, trace essential prerequisites to the reader baseline, inspect conditional branches, and reverse-check every treatment for purpose. Then walk all seven P audits and cross-case probes, recording a concrete unexplained calculation or missing decision rather than a coverage score. Recheck canonical ownership whenever shared results move.
 
-Present authorial result: every CAP-001–045 has a support/assessment row; every shared treatment has a capability consumer; all charter responsibilities and inventory U-01–U-10 have dispositions. Paper probes have routes and rejection conditions. This establishes traceability of intended development only. Human adequacy decisions above remain pending; no technical completeness, learner success, validated physics or system compliance is established. Architecture §5 owns the gate for subsequent use.
+Present authorial result: every CAP-001–045 has a support/assessment row; every shared treatment has a capability consumer; all charter responsibilities and inventory U-01–U-10 have dispositions. Paper probes have routes and rejection conditions. This establishes traceability of intended development only. Planning use is provisionally accepted under ADR-0003; technical adequacy decisions above remain pending; no technical completeness, learner success, validated physics or system compliance is established. Architecture §5 owns the gate for subsequent use.

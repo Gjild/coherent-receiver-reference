@@ -1,35 +1,43 @@
-# Current Work: Technical Architecture Draft Ready for Review
+# Current Work: Architecture Stage Closed; Book Planning Not Yet Started
 
-**Current bounded stage:** technical coverage and knowledge-dependency architecture. **State:** draft package developed on 2026-10-28 following the project owner's instruction to implement the approved implementation plan. Human review and acceptance for planning use are pending. Authorization to implement the plan is not technical acceptance of its output.
+**Closed stage:** technical coverage and knowledge-dependency architecture. **State:** provisionally accepted by the project owner on 2026-10-29 for planning use under [ADR-0003](decisions/ADR-0003-provisional-architecture-acceptance.md), following owner review with assistance from an external AI reviewer. The decision accepts suitability as a planning specification; it does not independently validate technical results.
 
-## Baseline and authority
+**Next bounded stage:** provisional book architecture, annotated table-of-contents and intellectual-organization development — **not yet started**. This closeout does not begin that work.
 
-The [competence inventory](competence-inventory.md) remains the provisional 45-capability planning baseline accepted under [ADR-0002](decisions/ADR-0002-provisional-competence-baseline.md). Its stage was closed on 2026-10-28 for that limited use. Its capability definitions and unresolved questions have not been changed by architecture development.
+## Baseline and accepted package
 
-The inventory and ADR retain historical statements that the next stage had not started at inventory closeout. This current-work record gives the subsequent stage status; it does not retroactively expand ADR-0002's acceptance scope. The founding [charter](charter.md) continues to govern mission and audience.
+The [charter](charter.md) governs mission and audience. The [competence inventory](competence-inventory.md) remains the provisional 45-capability baseline governed by [ADR-0002](decisions/ADR-0002-provisional-competence-baseline.md). Historical next-stage statements in that ADR and the inventory describe their earlier closeout; this record gives subsequent status without expanding their acceptance scope.
 
-## Output developed
+The accepted planning package consists of:
 
-- [Technical architecture](architecture.md): reader entry/bridges, knowledge clusters, cross-domain relationships, learning progression, cycle resolutions, engineering-reference routes and readiness gate.
-- [Technical coverage](technical-coverage.md): 26 shared treatments and seven application mappings; canonical result-development obligations; essential/conditional dependencies and engineering interfaces; all 45 capability outcomes/dimensions; reverse coverage, charter audit and gap/review dispositions.
-- [Reference-design planning](reference-design-plan.md): four provisional substantial design briefs, staged worked-example roles, seven independent application paper audits and five cross-case failure probes.
+- [Technical architecture](architecture.md): reader bridges, progression, relationships, reference routes and readiness gate.
+- [Technical coverage](technical-coverage.md): canonical treatment specifications, dependencies, capability traceability and gap dispositions.
+- [Reference-design plan](reference-design-plan.md): provisional design briefs, example progression and paper stress tests.
 
-The README points to the current draft, and [open issues](../reviews/open-issues.md) records pending architecture review. No separate graph, metadata framework, repository infrastructure, manuscript chapter, table of contents, computational model or solved reference design was created. Existing source examinations were routed to their narrow potential uses without re-examining or expanding their evidence claims.
+ADR-0003 records the accepted Git revision and each document's SHA-256 before administrative closeout edits. Capability definitions, canonical treatment specifications and reference-design briefs are unchanged.
 
-## Checks actually performed
+## Acceptance qualifications and outstanding work
 
-- `python scripts/check_repo.py`: passed; 13 required scaffold files present. This is an integrity check, not scientific validation.
-- One-off in-memory structural audit of the three substantive documents: 45 unique capability rows; competence dimensions match the inventory exactly; 26 shared treatment definitions and seven application entries; referenced treatment/probe identifiers, relative file links and Markdown table column counts resolve. The matrix references 12 paper-audit records.
-- One-off in-memory ordering check of a manually transcribed essential-dependency table: 35 entries/refinements admit an ordering. This checks the transcription, not the completeness of dependencies; conditional extensions and engineering interactions require the stated revisit interpretation. No graph artifact or checker was added.
-- Authorial paper review: capability-to-treatment and reverse coverage; charter/lifecycle coverage; analog single-channel, analog array, sampled and distributed routes; seven application audits and cross-case failure probes; dispositions for every inventory U-01–U-10 issue. These are editorial/dependency checks, not executed calculations, independent technical review or learner assessment.
-- `git diff --check`: passed during document review. Final local-link/table/identifier checks cover the completed package and administrative links.
+1. Learning prerequisites and application treatment requirements must allow motivating examples before full quantitative methods are taught.
+2. K02–K07 mathematical bridges must be developed for the declared RF-engineer baseline without hidden specialist prerequisites.
+3. Interferometry, vector antenna/polarization models and application-processing scope require further boundary review; essential coherent-receiver reasoning must remain internal.
+4. Educational and engineering adequacy must be tested through actual textbook development, including the later dual-channel relative-phase-stability pilot.
 
-No software implementation changed, so software tests and book renders were not used as evidence for this documentation task. No new source-passage examination, substantive mathematical derivation, model validation, measurement, system-compliance result or independent specialist review is claimed.
+Inventory U-01–U-10, technical coverage §6 dispositions, unresolved mathematical conventions, claim-level source work and specialist review obligations remain open. Planning acceptance does not independently validate any derivation, physical model, engineering method, simulation, measurement or hardware-performance claim, nor establish system compliance. No independent specialist approval or unprovided external AI review findings are asserted.
 
-## Review decisions and stopping boundary
+## Checks and evidence boundaries
 
-The draft is available for human review; the architecture is not accepted and the stage is not closed by Codex. Technical coverage §6 distinguishes deferred numerical/device inputs from boundary decisions that could change essential content or prerequisites. Priority review remains reader mathematical depth, application/propagation scope, vector/coupled-noise model sufficiency, correction and retained-signal limits, distributed-reference depth, implementation/production adequacy and anchor suitability.
+The 2026-10-28 architecture pass recorded scaffold integrity, in-memory capability/dimension/treatment/link/table audits, an ordering check on a manually transcribed dependency table, authorial paper-route review and `git diff --check`. Those historical checks support planning traceability only; they were not independent technical review, calculations, physical validation or learner assessment.
 
-Mathematical conventions remain unresolved in the existing standard; no default PSD/envelope/phase-noise/cross-spectrum normalization was silently chosen. Numerical operational, waveform, environmental, production and verification limits remain supplied inputs rather than invented requirements. Future treatments still need derivation, claim-level research, meaningful checks and engineering review appropriate to their use.
+Closeout checks actually performed on 2026-10-29:
 
-The package specifies the gate for recommending a provisional table of contents; pending human boundary decisions prevent an unqualified readiness recommendation. Owner acceptance must be recorded for a stated use and revision. Stop at this draft architecture package. Do not automatically proceed to a table of contents, publishing evaluation, the relative-phase pilot, reference-design execution or manuscript authoring.
+- `python3 scripts/check_repo.py`: passed; 13 required scaffold files present. The initial `python` invocation could not run because that command is unavailable; the installed `python3` was used.
+- One-off in-memory audit: all three accepted-package SHA-256 values match their bytes at the recorded Git revision; architecture §§1–4, technical coverage §§1–5 and reference-design plan §§1–4 are byte-for-byte unchanged; the competence inventory and ADR-0002 are unchanged in full.
+- One-off in-memory audit: all 43 local Markdown links resolve and Markdown table column counts are consistent across the seven closeout files. No checker or metadata framework was added.
+- `git diff --check`: passed. Diff review confirms changes are limited to acceptance/status, qualifications, issue disposition and closeout records.
+
+These are repository consistency checks, not technical validation. Software tests and book renders were not run because no implementation or manuscript changed. No source passages are newly examined and no technical results are independently validated by this closeout.
+
+## Stopping boundary
+
+The architecture stage is closed for the stated provisional use. Stop here. Do not yet develop the table of contents, textbook chapters, mathematical derivations, engineering models, solved reference designs or publishing infrastructure. The next stage remains not yet started; the later publishing evaluation and relative-phase-stability pilot are not executed by this closeout.

@@ -11,3 +11,14 @@
 - Blocking issues:
 - Reviewer and review date (record only actual review):
 - Decision: pending / accepted for defined use / restricted / rejected
+
+## Separate AI review, when performed
+
+- AI-assisted; model / effort / session / date:
+- Frozen inputs and SHA-256 (including requirements and examined source notes):
+- Initial findings before author dispositions:
+- Finding category / location / consequence / supporting reasoning:
+- Author disposition and correction propagation:
+- Reassessment and remaining disagreements:
+- Unperformed checks and missing evidence:
+- Completion classification: checked provisional draft / incomplete; human review pending.

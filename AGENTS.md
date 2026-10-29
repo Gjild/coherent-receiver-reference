@@ -34,9 +34,27 @@ Read the files relevant to the task; do not assume that draft specifications are
 - Report files changed, checks actually run, limitations, unresolved issues and review decisions still needed.
 
 ## Quick commands
-- `python -m pytest`
-- `python scripts/check_repo.py`
+- `python3 -m pytest`
+- `python3 scripts/check_repo.py`
 - `cd book && quarto render --to html` (if installed)
 
-## First authorized task
-Follow `project/current-work.md`: develop the foundational competence inventory, **not** manuscript chapters or a formal knowledge graph.
+## Authorized development and separate AI review
+Follow the active entry in `project/current-work.md`. Develop one bounded unit
+at a time; read the accepted architecture and applicable standards first.
+The managing author owns sources, continuous exposition, verification, corrections,
+integration and records. Use a fresh `codex exec` reviewer with GPT-6.1 Sol / high
+and an explicit read-only sandbox; never fork the author conversation for review.
+Freeze and hash inputs. Supply manuscript, requirements and sources without author
+self-assessment. Reviewer findings and author dispositions remain distinct.
+Reviewers may not edit, delegate or invoke side-effectful connectors. Native
+subagents inherit permissions and are not a substitute for enforced read-only review.
+Correct consequential defects and reassess affected conclusions before continuing.
+AI review never grants human Reviewed or Accepted status.
+
+Routine authorized drafting, checks, review, corrections, local rendering and
+provisional-draft closeout proceed automatically. Escalate architecture conflicts,
+material book-wide conventions, unresolved consequential disagreements or critical
+errors, unavailable evidence required by a conclusion, batch overrun and tool
+permissions beyond the sandbox. A failed review invocation is not completed review.
+Preserve pre-existing changes and acceptance limitations. Commit only expressly
+authorized changes, preserving unrelated staged entries; never push automatically.

@@ -38,19 +38,19 @@ reader, browser or specialist evidence was produced.
 
 All four original findings are resolved. I found no remaining consequential defect in the revised passages.
 
-1. **Stationarity qualification — resolved.** [Lines 86 onward](/home/anon/coherent-receiver-reference/book/observation-weighted-coherence.qmd:86) retain epoch dependence in \(\Gamma(t,\tau)\) and correctly distinguish WSS from assumptions sufficient for stationary increment distributions.
+1. **Stationarity qualification — resolved.** [Lines 86 onward](../book/observation-weighted-coherence.qmd) retain epoch dependence in \(\Gamma(t,\tau)\) and correctly distinguish WSS from assumptions sufficient for stationary increment distributions.
 
-2. **Filter applicability — resolved.** [Line 47](/home/anon/coherent-receiver-reference/book/observation-weighted-coherence.qmd:47) now restricts \(|H|^2S\) weighting to phase-domain LTI filtering or a justified linearized phase response. I independently confirmed the phasor-versus-angle example: \(0.321751\) versus \(0.392699\) rad.
+2. **Filter applicability — resolved.** [Line 47](../book/observation-weighted-coherence.qmd) now restricts \(|H|^2S\) weighting to phase-domain LTI filtering or a justified linearized phase response. I independently confirmed the phasor-versus-angle example: \(0.321751\) versus \(0.392699\) rad.
 
-3. **Gaussian derivations — resolved.** The integration-by-parts argument at [line 91](/home/anon/coherent-receiver-reference/book/observation-weighted-coherence.qmd:91) correctly gives \(F'(a)=-DaF(a)\), including restoration of the mean and the deterministic limit. Independent density quadrature confirmed examples with nonzero means and unequal variances.
+3. **Gaussian derivations — resolved.** The integration-by-parts argument at [line 91](../book/observation-weighted-coherence.qmd) correctly gives \(F'(a)=-DaF(a)\), including restoration of the mean and the deterministic limit. Independent density quadrature confirmed examples with nonzero means and unequal variances.
 
-   The fourth-moment derivation at [line 172](/home/anon/coherent-receiver-reference/book/observation-weighted-coherence.qmd:172) is also correct: comparing coefficients gives
+   The fourth-moment derivation at [line 172](../book/observation-weighted-coherence.qmd) is also correct: comparing coefficients gives
    \[
    6E[X^2Y^2]=6\sigma_X^2\sigma_Y^2+12R^2.
    \]
    The warning that Gaussian marginals alone are insufficient is appropriate.
 
-4. **Worked coherent-power calculation — resolved.** The pair-separation weighting and Gaussian specialization at [line 112](/home/anon/coherent-receiver-reference/book/observation-weighted-coherence.qmd:112) are correct. Independent quadrature, with resolution doubling, and a separate exponential-series evaluation both give
+4. **Worked coherent-power calculation — resolved.** The pair-separation weighting and Gaussian specialization at [line 112](../book/observation-weighted-coherence.qmd) are correct. Independent quadrature, with resolution doubling, and a separate exponential-series evaluation both give
    \[
    E|C|^2=0.456410127844383.
    \]

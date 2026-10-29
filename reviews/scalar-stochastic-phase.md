@@ -41,16 +41,16 @@ it corrected that reviewer error. No author test code was supplied before reason
 The four original findings are resolved. I found **no consequential new defect** in the corrected unit.
 
 1. **Signal/noise dependence — resolved.**  
-   [Lines 132–154](/home/anon/coherent-receiver-reference/book/scalar-stochastic-phase.qmd:132) declare fixed signal phase, exclude \(z=0\), and distinguish conditional assumptions from marginal circularity. Independently, \(n=r e^{j\Theta}\), \(\phi=\Theta\) gives \(ne^{-j\phi}=r\), confirming the counterexample and the need for that qualification.
+   [Lines 132–154](../book/scalar-stochastic-phase.qmd) declare fixed signal phase, exclude \(z=0\), and distinguish conditional assumptions from marginal circularity. Independently, \(n=r e^{j\Theta}\), \(\phi=\Theta\) gives \(ne^{-j\phi}=r\), confirming the counterexample and the need for that qualification.
 
 2. **Joint-Gaussian teaching bridge — resolved.**  
-   [Lines 110–119](/home/anon/coherent-receiver-reference/book/scalar-stochastic-phase.qmd:110) define joint Gaussianity and explain the chain from \(P=0\) to equal variances, independence and rotational invariance. One minor precision correction remains: explicitly make \(X\) **zero-mean, nondegenerate Gaussian** in the new counterexample. For general \(E[X]=\mu\), its centered pseudo-covariance is \(-\mu^2\), rather than zero.
+   [Lines 110–119](../book/scalar-stochastic-phase.qmd) define joint Gaussianity and explain the chain from \(P=0\) to equal variances, independence and rotational invariance. One minor precision correction remains: explicitly make \(X\) **zero-mean, nondegenerate Gaussian** in the new counterexample. For general \(E[X]=\mu\), its centered pseudo-covariance is \(-\mu^2\), rather than zero.
 
 3. **Underspecified transfer exercise — resolved.**  
-   [Lines 166–172](/home/anon/coherent-receiver-reference/book/scalar-stochastic-phase.qmd:166) supply explicit models and distinguish changing the model from changing the observable. Independently summing the alternating coefficients confirms zero average variance for even \(N\), and \(\sigma^2/N^2\) for odd \(N\). Minor sign correction: with indexing \(k=1,\ldots,N\), the odd-\(N\) coefficient sum is **−1**, not +1; the variance is unaffected. The 90° quadrature interchange and factor-four variance change are correct for fixed amplitude.
+   [Lines 166–172](../book/scalar-stochastic-phase.qmd) supply explicit models and distinguish changing the model from changing the observable. Independently summing the alternating coefficients confirms zero average variance for even \(N\), and \(\sigma^2/N^2\) for odd \(N\). Minor sign correction: with indexing \(k=1,\ldots,N\), the odd-\(N\) coefficient sum is **−1**, not +1; the variance is unaffected. The 90° quadrature interchange and factor-four variance change are correct for fixed amplitude.
 
 4. **Numerical approximation conditions — resolved.**  
-   [Lines 156–160](/home/anon/coherent-receiver-reference/book/scalar-stochastic-phase.qmd:156) specify both quadratures, small excursions and fixed amplitude. The local \(0.01\) rad RMS prediction and stated breakdown at \(A=0.01\) V follow.
+   [Lines 156–160](../book/scalar-stochastic-phase.qmd) specify both quadratures, small excursions and fixed amplitude. The local \(0.01\) rad RMS prediction and stated breakdown at \(A=0.01\) V follow.
 
 Source re-examination was unnecessary: the cited Gaussian result and its use remain consistent with the passage examined previously. This reassessment used manuscript reasoning; no code, rendering, physical tests or reader trials were performed. No files were edited, and no delegation or connectors were used.
 

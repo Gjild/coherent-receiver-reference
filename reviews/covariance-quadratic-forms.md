@@ -37,9 +37,9 @@ and repair the local mathematical bridge; example covariance numbers are unchang
 
 All three findings are resolved in the corrected unit. **No consequential new defects found in the revised passages. AI review only; this does not establish human acceptance.**
 
-1. **Singular-value scaling—resolved.** [Lines 167–173](/home/anon/coherent-receiver-reference/book/covariance-quadratic-forms.qmd:167) correctly distinguish \(s_i=\sqrt{\lambda_i(A^HA)}\), forward gain \(s_i\), and inverse gain \(1/s_i\) for a nonzero mode. Direct norm calculations confirm the diagonal example’s gains \(4,1\).
+1. **Singular-value scaling—resolved.** [Lines 167–173](../book/covariance-quadratic-forms.qmd) correctly distinguish \(s_i=\sqrt{\lambda_i(A^HA)}\), forward gain \(s_i\), and inverse gain \(1/s_i\) for a nonzero mode. Direct norm calculations confirm the diagonal example’s gains \(4,1\).
 
-2. **Noise centering and bias—resolved.** [Lines 157–163](/home/anon/coherent-receiver-reference/book/covariance-quadratic-forms.qmd:157) explicitly require centered independent noises for the original RMS result. The added formula is correct under the retained independence assumption:
+2. **Noise centering and bias—resolved.** [Lines 157–163](../book/covariance-quadratic-forms.qmd) explicitly require centered independent noises for the original RMS result. The added formula is correct under the retained independence assumption:
    \[
    \mathrm{MSE}(\widehat b)
    =\operatorname{var}(\widehat b-b)+[E(\widehat b-b)]^2
@@ -47,7 +47,7 @@ All three findings are resolved in the corrected unit. **No consequential new de
    \]
    Equal common biases cancel; differential bias is amplified. Independent finite-ensemble checks passed for zero, equal and unequal means, with positive and negative \(\epsilon\).
 
-3. **Rank and coordinate bridge—resolved for this selected unit.** [Lines 133–144](/home/anon/coherent-receiver-reference/book/covariance-quadratic-forms.qmd:133) now define rank, state the correct input-dimension/nullity relationship, and explain \(T^{-H}\). Independent calculations confirmed rank/nullity for the source mapping and covariance examples, and verified the inverse-transpose weight transformation using exact arithmetic.
+3. **Rank and coordinate bridge—resolved for this selected unit.** [Lines 133–144](../book/covariance-quadratic-forms.qmd) now define rank, state the correct input-dimension/nullity relationship, and explain \(T^{-H}\). Independent calculations confirmed rank/nullity for the source mapping and covariance examples, and verified the inverse-transpose weight transformation using exact arithmetic.
 
 Checks used newly written, standard-library Python calculations; all assertions passed. No repository check code was inspected. No edits, delegation or connectors were used. These checks address mathematical consistency, not physical validation or demonstrated teaching effectiveness.
 

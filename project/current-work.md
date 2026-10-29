@@ -25,7 +25,9 @@ Bounded outcomes, from accepted technical coverage and annotated contents:
 
 K05 completed as a checked provisional draft after separate AI review and
 reassessment; [review](../reviews/phase-delay-inference.md). Three new checks and
-nine-page HTML render passed. K06 and K07 not started.
+nine-page HTML render passed. K05 checkpoint: `080faa1`. K06: completed checked provisional draft after a replacement clean review and
+focused reassessment; [review](../reviews/tracking-signal-retention.md). Seven
+new-batch checks passed and ten-page HTML rendered. K07 not started.
 
 Maintain existing local conventions, not book-wide authority. K02–K04 remain
 checked provisional drafts. Human specialist, reader and physical evidence pending.

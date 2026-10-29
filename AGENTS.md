@@ -46,6 +46,9 @@ integration and records. Use a fresh `codex exec` reviewer with GPT-6.1 Sol / hi
 and an explicit read-only sandbox; never fork the author conversation for review.
 Freeze and hash inputs. Supply manuscript, requirements and sources without author
 self-assessment. Reviewer findings and author dispositions remain distinct.
+The managing author reads active project state; reviewers instead use the supplied
+accepted requirement files. Reviewers must not open current-work, status summaries,
+prior review dispositions or author conversation. Report inadvertent exposure.
 Reviewers may not edit, delegate or invoke side-effectful connectors. Native
 subagents inherit permissions and are not a substitute for enforced read-only review.
 Correct consequential defects and reassess affected conclusions before continuing.

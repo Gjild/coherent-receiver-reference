@@ -1,0 +1,214 @@
+# Adequate calculations, models and uncertainty {#sec-model-adequacy}
+
+An engineer can calculate a delay to many digits and still make the wrong receiver
+decision. Numerical precision does not identify the physical delay, and a correct
+uncertainty formula does not establish its input assumptions. We need a method
+for deciding which approximation is adequate, which uncertainty matters, and what
+evidence is missing before a result can support a design choice.
+
+[Chapter 5](phase-delay-inference.qmd) supplies the inference example;
+[Chapter 2](scalar-stochastic-phase.qmd) supplies scalar stochastic reasoning,
+[Chapter 3](observation-weighted-coherence.qmd) supplies the Gaussian moments
+and exponential-covariance average used below, and
+[Chapter 4](covariance-quadratic-forms.qmd) supplies the covariance bridge. Here we assess a calculation built from those results rather than
+create another competing phase or covariance convention. Positive physical delay
+still gives negative input-oriented phase slope. Local envelope, phase and
+spectral conventions remain local. The examples are synthetic teaching models,
+not measurement uncertainty certificates or experimentally validated receivers.
+
+## Start with a decision and its scales
+
+Suppose two input-oriented phase observations at known physical frequencies
+f1 and f2 are intended to estimate a total differential delay. Define
+Delta_f=f2-f1>0 and dphi=phi2-phi1 on a justified unwrapped branch. A pure-delay
+model with constant phase intercept gives
+
+$$
+ \tau=-{d\phi\over2\pi\Delta f}.
+$$
+
+The phase observations must already be translated through receiver conversion
+orientation as explained in Chapter 5. Unknown receiver-path delay remains part
+of the total; it does not vanish through this formula. We ask whether the model
+can support an illustrative 0.15 ns standard-deviation target. That target is a
+precision criterion, not a total-error or accuracy requirement.
+
+Dimensional analysis checks the interface: radians divided by Hz yields seconds,
+with the numerical 2 pi converting phase to cycles. Useful dimensionless scales
+include phase error relative to one radian, frequency uncertainty relative to
+Delta_f, and unmodeled phase curvature relative to fitted phase change. A small
+parameter must control the neglected term, not merely be numerically small in
+arbitrary units. For delay inference, even tiny voltage noise near an amplitude
+null can give large phase error; voltage scale alone is the wrong criterion.
+
+## Derive sensitivity and retain covariance
+
+Let p be a vector of input quantities, p0 its nominal value and delta p a centered
+small perturbation with covariance C_p. For the following quadratic-order
+remainder, assume h is twice continuously differentiable with bounded second
+derivatives throughout the relevant scaled input region. Taylor expansion gives
+
+$$
+ h(p_0+\delta p)=h(p_0)+g\,\delta p+O(\|\delta p\|^2),\qquad
+ g_i={\partial h\over\partial p_i}\bigg|_{p_0}.
+$$
+
+The row g contains sensitivity coefficients. After declaring compatible coordinate
+scales, its entries carry output units per input unit. Expanding the variance
+of the first-order term yields
+
+$$
+ \operatorname{var}h\simeq g C_p g^T
+ =\sum_i g_i^2 C_{ii}+2\sum_{i<j}g_i g_j C_{ij}.
+$$
+
+This is Chapter 4's quadratic form applied to the linearized output. It is exact
+for an affine h, otherwise approximate. The first neglected mean correction is
+one half the sum of Hessian entries H_ij=partial²h/(partial p_i partial p_j)
+times C_ij, provided the second-order expansion has an integrable remainder
+small relative to retained terms over the input distribution. For example, bounded
+third derivatives throughout its support and a sufficiently small third absolute
+perturbation moment control that remainder. Differentiability alone does not
+justify a quadratic remainder: h(x)=|x|^(3/2) at zero has zero derivative but a
+remainder larger than order x².
+This warns that h(E[p]) need not equal E[h(p)]. Covariance-aware first-order
+uncertainty propagation and inclusion of significant measurement-process inputs
+are also specified in [NIST TN 1297, Appendix A.1–A.3](https://www.nist.gov/pml/nist-technical-note-1297/nist-tn-1297-appendix-law-propagation-uncertainty).
+The theorem does not supply a missing physical input model.
+
+A covariance may describe repeated receiver variability, uncertainty about a
+fixed path parameter, or uncertainty of an estimator. These are different
+ensembles or states of knowledge. Identify which is intended before combining
+them. A confidence or coverage claim also requires distributional assumptions;
+standard deviation alone does not specify a tail probability. A full measurement
+uncertainty procedure and calibration evidence belong to later metrology work.
+
+## Follow the delay budget through a changed assumption
+
+Assume Delta_f=10 MHz and true total delay 5 ns. Then nominal dphi=-0.314159265 rad.
+Let the centered phase errors be delta_phi1=u+e1 and delta_phi2=u+e2. The common
+source u here is a frequency-independent phase-offset component common to
+simultaneous multitone comparisons with identical normalized time weighting in
+one fixed acquisition state. It is the same random draw in both observations,
+not a universal oscillator timing-error model. Its variance is 0.00036 rad²; independent local terms e1,e2 each have variance
+0.00004 rad² and are independent of u. Thus individual phase variances are
+0.0004 rad², covariance is 0.00036 rad², and difference variance is 0.00008 rad².
+This is a declared source/path construction, not a chosen correlation coefficient.
+
+The phase sensitivities of tau are +1/(2 pi Delta_f) and -1/(2 pi Delta_f), so
+the predicted delay standard deviation is
+
+$$
+ u_\tau={\sqrt{0.00008}\over2\pi\,10^7}\ {\rm s}
+ =0.142353\ {\rm ns}.
+$$
+
+The illustrative precision target is met under the stated model. Incorrectly
+treating the two phase errors as independent gives 0.450158 ns and would reject
+the same design for the wrong reason. Conversely, deleting local noise because
+the source is shared would be unjustified. Shared contributions cancel only
+because their phase sensitivities and observation timing match in this model.
+For sequential or differently filtered observations, replace u by distinct shared
+source draws with equal variance V=0.00036 and correlation rho. Difference variance
+then becomes 0.00008+2V(1-rho). The 0.15 ns target requires rho at least about
+0.987741. This rho describes the shared-source draws, not the total phase errors.
+Chapter 3 supplies the observation-dependent covariance calculation needed before
+reusing that cancellation assumption.
+
+For a concrete local input model, let Delta_f uncertainty be uniform on
+[-sqrt(3)1000,+sqrt(3)1000] Hz about its 10 MHz nominal value, independent of
+the phase inputs. Its standard uncertainty is 1000 Hz and its support stays far
+from zero. Then its sensitivity is -tau/Delta_f. Its first-order contribution is
+0.0005 ns standard uncertainty at the nominal point, negligible beside the phase
+term here. That is a model-specific comparison. A frequency-scale bias or a
+correlated phase/frequency error needs its own term and cannot be hidden inside
+an independent variance. The reciprocal-frequency Taylor expansion is local. A small relative standard
+uncertainty alone does not control rare near-zero gaps, where reciprocal moments
+can become enormous or fail to exist. Justify support away from zero or adequate
+tail/remainder control before treating the linearized variance as an adequate
+output-uncertainty model; the bounded uniform model supplies that condition here.
+
+Now change only the shared-source path: give channel 2 sensitivity 0.5 to u.
+Difference variance becomes 0.25(0.00036)+0.00008=0.00017 rad², giving about
+0.20751 ns standard deviation. The precision decision reverses. Neither more
+digits in the solver nor a positive covariance matrix can rescue the original
+conclusion after this physical assumption changes.
+
+## A zero derivative does not mean zero uncertainty
+
+Consider a normalized quadrature observation y=sin(phi) near phi=pi/2. Write
+phi=pi/2+delta with delta centered Gaussian of variance sigma²; then y=cos(delta).
+The derivative with respect to delta at zero vanishes, so first-order propagation
+predicts zero variance. The prediction is inadequate, not evidence of a noiseless
+observation. The expansion y≈1-delta²/2 instead gives a mean shift -sigma²/2
+and variance sigma^4/2, using the Gaussian fourth moment developed in Chapter 3.
+
+There is an independent exact check. Chapter 3's Gaussian characteristic function
+gives E[cos(delta)]=exp(-sigma²/2). The identity cos²(delta)=(1+cos(2delta))/2
+then gives
+
+$$
+ E[y]=e^{-\sigma^2/2},\qquad
+ \operatorname{var}y={1\over2}(1-e^{-\sigma^2})^2.
+$$
+
+At sigma=0.2 rad, the exact mean is 0.980199 and standard deviation is 0.0277261;
+the second-order approximation gives 0.0282843. An illustrative y-standard-deviation
+limit of 0.01 fails despite the first-order zero. Moreover y cannot distinguish
++delta from -delta. Inverting near this maximum introduces branch ambiguity and
+large sensitivity; a small output change cannot be interpreted as a unique phase
+change. Nonlinear propagation, a distribution or interval calculation, and the
+actual identifiable observable must replace an invalid first-order result.
+
+## Numerical agreement must be about distinct formulations
+
+The finite-average variance for exponential phase covariance in Chapter 3 contains
+the dimensionless factor
+
+$$
+ g(x)={2(x-1+e^{-x})\over x^2},\qquad x=T/t_c>0.
+$$
+
+This is a numerical evaluation example of that existing result, not a new canonical
+derivation. Its physical limit as x tends to zero is one: the phase is nearly
+constant within a short observation. Direct floating-point subtraction at x=1e-8
+can produce g≈2.220446 on the tested Python environment. It subtracts nearly equal
+numbers and then divides the rounding error by x². More printed digits do not help.
+
+Expand exp(-x) before subtracting: g=1-x/3+x²/12-x³/60+..., giving approximately
+0.999999996667 at that x. A distinct time-domain check is
+2 integral_0^1 (1-v)exp(-xv) dv. It avoids the cancellation and can be quadratured
+with resolution refinement. A converged integral and a stable series test numerical
+consistency; they do not prove that an actual receiver has exponential covariance.
+
+Specify numerical error relative to the decision margin. Refine integration step
+or spectral cutoff, inspect changes and bound a neglected tail where possible.
+Step refinement alone can miss oscillatory structure if both grids undersample it;
+a shared formula in two programs can preserve the same sign error. Compare a
+different formulation, asymmetry, units and limits before interpreting agreement.
+For the inference and tracking examples, use source sums versus covariance, time
+integration versus transfer response, and known ambiguity cases as separate checks.
+
+## Choose the smallest model that preserves the decision
+
+Separate four questions in the report: encoded mathematical correctness, numerical
+error, input uncertainty and model discrepancy. Model discrepancy is the difference
+between the chosen physical representation and the relevant actual behavior at
+specified inputs and states. It is not automatically an independent random noise
+term. Without physical evidence its magnitude may remain unknown.
+
+A pure-delay model may be enough for an introductory local fit. Frequency-dependent
+path response, asynchronous sampling or drift during a sweep may require a richer
+model. An unmodeled 0.5 ns receiver path would bias a DUT-referred result by 0.5 ns
+while preserving a perfectly linear phase slope. Passing the 0.15 ns precision
+target does not bound that bias. Calibration or independent path evidence is needed
+before claiming DUT accuracy. Computational refinement cannot provide it.
+
+For a transfer assessment, halve Delta_f without changing the declared phase
+covariance: delay standard deviation doubles, reversing the nominal precision
+decision. Then retain Delta_f but change the common-source coupling as above;
+reconstruct C_p before propagating it. Finally compare a desired slow phase
+variation in a tracking residual with the same variation in the correction output
+in [Chapter 7](tracking-signal-retention.qmd). A quieter output can represent
+signal suppression rather than a more accurate physical model. Adequacy is judged
+against the observable and decision, with unsupported extrapolations left explicit.

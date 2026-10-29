@@ -27,7 +27,10 @@ K05 completed as a checked provisional draft after separate AI review and
 reassessment; [review](../reviews/phase-delay-inference.md). Three new checks and
 nine-page HTML render passed. K05 checkpoint: `080faa1`. K06: completed checked provisional draft after a replacement clean review and
 focused reassessment; [review](../reviews/tracking-signal-retention.md). Seven
-new-batch checks passed and ten-page HTML rendered. K07 not started.
+new-batch checks passed and ten-page HTML rendered. K06 checkpoint: `f507859`. K07 completed checked provisional draft following
+separate review and connected foundations reassessment;
+[review](../reviews/model-adequacy-uncertainty.md). Eleven new-batch checks passed.
+The batch is complete; final integration and checkpoint closeout are in progress.
 
 Maintain existing local conventions, not book-wide authority. K02–K04 remain
 checked provisional drafts. Human specialist, reader and physical evidence pending.

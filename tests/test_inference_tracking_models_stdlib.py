@@ -100,5 +100,63 @@ class DynamicStressChecks(unittest.TestCase):
         self.assertAlmostEqual(e,expected,places=12)
 
 
+class ModelAdequacyChecks(unittest.TestCase):
+    def test_covariance_source_path_decision(self):
+        u=math.sqrt(.00036);local=math.sqrt(.00004)
+        for gain,target in [(1,.00008),(.5,.00017)]:
+            diffs=[gain*a+c-(a+b) for a,b,c in itertools.product([-u,u],[-local,local],[-local,local])]
+            variance=sum(x*x for x in diffs)/8
+            self.assertAlmostEqual(variance,target)
+            delay_sd=math.sqrt(variance)/(2*math.pi*1e7)
+            self.assertEqual(delay_sd<.15e-9,gain==1)
+
+    def test_nonlinear_variance_against_density_quadrature(self):
+        sigma=.2;n=24000;dz=18/n
+        density=lambda z: math.exp(-z*z/2)/math.sqrt(2*math.pi)
+        mean=sum(math.cos(sigma*(-9+(i+.5)*dz))*density(-9+(i+.5)*dz)*dz for i in range(n))
+        second=sum(math.cos(sigma*(-9+(i+.5)*dz))**2*density(-9+(i+.5)*dz)*dz for i in range(n))
+        self.assertAlmostEqual(mean,math.exp(-sigma*sigma/2),places=12)
+        exact=.5*(1-math.exp(-sigma*sigma))**2
+        self.assertAlmostEqual(second-mean*mean,exact,places=12)
+        self.assertGreater(math.sqrt(exact),.01)
+
+    def test_cancellation_against_high_precision_and_integral(self):
+        from decimal import Decimal,localcontext
+        with localcontext() as context:
+            context.prec=70
+            d=Decimal('1e-8')
+            reference=float(2*(d-1+(-d).exp())/(d*d))
+        x=1e-8
+        stable=1-x/3+x*x/12-x**3/60
+        self.assertAlmostEqual(stable,reference,places=15)
+        n=10000;dv=1/n
+        integral=2*sum((1-(i+.5)*dv)*math.exp(-x*(i+.5)*dv)*dv for i in range(n))
+        self.assertAlmostEqual(integral,reference,places=12)
+        # Do not require a particular platform's naive rounded value.
+        self.assertGreater(abs(2*(x-1+math.exp(-x))/x**2-reference),.1)
+
+
+class PropagationConditionChecks(unittest.TestCase):
+    def test_timing_correlation_and_reciprocal_tails(self):
+        V=.00036
+        for rho in [.98,.99]:
+            diffs=[b-a+math.sqrt(V)*(rho*u+math.sqrt(1-rho*rho)*v-u)
+                   for a,b,u,v in itertools.product([-math.sqrt(.00004),math.sqrt(.00004)],
+                       [-math.sqrt(.00004),math.sqrt(.00004)],[-1,1],[-1,1])]
+            var=sum(x*x for x in diffs)/len(diffs)
+            self.assertAlmostEqual(var,.00008+2*V*(1-rho))
+            self.assertEqual(math.sqrt(var)/(2*math.pi*1e7)<.15e-9,rho==.99)
+        mean,sd,low=1e7,1000.,1.
+        probability=sd**2/(sd**2+(mean-low)**2)
+        high=mean+sd**2/(mean-low)
+        exact_sd=math.sqrt(probability*(1-probability))*(.05/low-.05/high)
+        self.assertGreater(exact_sd/1e-9,4900)
+        width=math.sqrt(3)*sd;n=20000
+        errors=[5e-9*(mean/(mean-width+(i+.5)*2*width/n)-1) for i in range(n)]
+        em=sum(errors)/n
+        bounded_sd=math.sqrt(sum((e-em)**2 for e in errors)/n)
+        self.assertAlmostEqual(bounded_sd/(5e-9*sd/mean),1,places=6)
+
+
 if __name__=='__main__':
     unittest.main()

@@ -11,7 +11,9 @@ not the complete planned Chapter 1.
 The next bounded teaching units develop scalar stochastic phase reasoning,
 observation-weighted coherence, and covariance/quadratic forms. They connect
 dependence and circular quantities to finite observation and coupled error models.
-These developing foundations retain provisional status and do not complete their
-planned chapters.
+Phase/delay inference then separates local precision from ambiguity; model
+adequacy tests sensitivity and numerical reasoning before acquisition/tracking
+examines wanted-signal retention. These developing foundations retain provisional
+status and do not complete their planned chapters.
 
 The publishing demonstration tests mathematics, references, SVG figures and bibliography wiring. The following dual-channel relative-phase pilot develops a bounded illustrative engineering argument and supporting calculations. It has no hardware measurements, specialist acceptance or actual reader-trial evidence.

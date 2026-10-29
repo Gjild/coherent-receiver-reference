@@ -1,3 +1,8 @@
+**Current authorization:** owner approved the next sequential bounded K05–K07
+batch and its connected integration review, including safe reconciliation and local
+Git checkpoints. This supersedes earlier next-unit stopping instructions only for
+this batch. Chapter 6 owns K07; Chapter 7 owns K06. Stop after batch integration.
+
 **2026-10-29 authorization update:** Owner approved the consolidation plan and
 sequential bounded K02–K04 batch, with fresh read-only CLI AI review, local
 convention reuse and selective local unit commits. This supersedes the earlier

@@ -11,6 +11,7 @@ book:
     - scalar-stochastic-phase.qmd
     - observation-weighted-coherence.qmd
     - covariance-quadratic-forms.qmd
+    - phase-delay-inference.qmd
     - publishing-pilot.qmd
     - relative-phase-stability.qmd
     - references.qmd

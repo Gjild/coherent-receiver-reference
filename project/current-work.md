@@ -1,3 +1,37 @@
+# Current Work: authorized K05–K07 foundational batch
+
+Owner authorized sequential bounded K05, K06 and K07 teaching units, each with
+source examination, mathematical checks, fresh read-only AI review, corrections,
+canonical integration and a local checkpoint. Stop after connected integration
+review; no K08, experiments or human acceptance follows automatically.
+
+Repository reconciliation: inspected all 15 staged files; no unstaged or unrelated
+changes found. Preserved their exact bytes and history in baseline `3b669a7`.
+ADR-0006 manuscript hash matches; 13 foundation and 19 pilot checks passed.
+A clean Git archive rendered successfully (8 HTML pages). Python 3.12.3,
+Quarto 1.10.18, codex-cli 0.165.0; pytest remains absent.
+
+Bounded outcomes, from accepted technical coverage and annotated contents:
+
+- K05 / Chapter 5: infer phase intercept and delay from finite frequency samples;
+  derive likelihood/least squares, local precision and nuisance identifiability,
+  then expose wrapping and model mismatch. No full estimator catalogue.
+- K06 / Chapter 7: first-order continuous phase tracking, wanted/nuisance transfer,
+  noise/dynamic tradeoff and bounded acquisition/holdover/recovery reasoning.
+  Nonlinear capture guarantees and complete sampled/remote implementations excluded.
+- K07 / Chapter 6: covariance-aware propagation, nonlinear failure, numerical
+  convergence and model discrepancy for a receiver decision. No full uncertainty
+  accreditation, system allocations or evidence-policy treatment.
+
+K05 completed as a checked provisional draft after separate AI review and
+reassessment; [review](../reviews/phase-delay-inference.md). Three new checks and
+nine-page HTML render passed. K06 and K07 not started.
+
+Maintain existing local conventions, not book-wide authority. K02–K04 remain
+checked provisional drafts. Human specialist, reader and physical evidence pending.
+
+---
+
 # Current Work: K02–K04 demonstration batch complete
 
 **2026-10-29:** Owner authorized the consolidation implementation and sequential

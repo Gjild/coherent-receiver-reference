@@ -4,4 +4,14 @@
 
 The intended book develops first-principles coherent receiver theory and practical design methods for experienced RF engineers. Its provisional chapter organization is recorded in the accepted planning package under ADR-0004; technical development remains subject to review.
 
+The opening technical unit develops physical representations and conversion signs
+through a continuous two-channel phase comparison. It is a provisional draft,
+not the complete planned Chapter 1.
+
+The next bounded teaching units develop scalar stochastic phase reasoning,
+observation-weighted coherence, and covariance/quadratic forms. They connect
+dependence and circular quantities to finite observation and coupled error models.
+These developing foundations retain provisional status and do not complete their
+planned chapters.
+
 The publishing demonstration tests mathematics, references, SVG figures and bibliography wiring. The following dual-channel relative-phase pilot develops a bounded illustrative engineering argument and supporting calculations. It has no hardware measurements, specialist acceptance or actual reader-trial evidence.

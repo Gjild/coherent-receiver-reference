@@ -1,3 +1,96 @@
+# Current Work: K02–K04 demonstration batch complete
+
+**2026-10-29:** Owner authorized the consolidation implementation and sequential
+bounded K02–K04 teaching units. All three are now checked provisional drafts,
+with separate-context AI review, corrections and reassessment. No human technical
+acceptance, specialist validation, reader effectiveness or physical validation is
+claimed. Existing ADR-0002–0006 and U-01–U-10 qualifications remain in force.
+
+| Unit / canonical teaching home | Review and corrections | Local checkpoint |
+|---|---|---|
+| [K02 / Chapter 2](../book/scalar-stochastic-phase.qmd) | [Review](../reviews/scalar-stochastic-phase.md): dependent signal-frame noise, joint-Gaussian bridge, defined transfer problem and small-noise conditions | `a154d83` |
+| [K03 / Chapter 3](../book/observation-weighted-coherence.qmd) | [Review](../reviews/observation-weighted-coherence.md): coherence stationarity, filter domain, Gaussian derivations and worked coherent-power calculation | `b564ead` |
+| [K04 / Chapter 4](../book/covariance-quadratic-forms.qmd) | [Review](../reviews/covariance-quadratic-forms.md): singular-value scaling, centered-noise/bias assumptions and rank bridge | `151f9db` |
+
+Thirteen foundation unittest checks and nineteen existing pilot checks passed.
+Scaffold/whitespace and eight-page HTML rendering passed; 152 local HTML links
+and fragments, 52 Markdown links, IDs and math presence were checked mechanically.
+All 16 protected baseline artifacts are unchanged. pytest is absent. Browser pixel review,
+PDF, reader trials, qualified specialist review and hardware tests were not performed.
+No dependency installation, push or external publication occurred.
+
+## Operational result and checkpoint boundaries
+
+codex-cli 0.165.0 supports the chosen fresh `codex exec` reviewer arrangement.
+Configured target and explicit reviewer requests: gpt-6.1-sol / high; exact runtime
+routing is not independently introspectable. Review sessions received frozen inputs,
+accepted requirements and sources without author history or correctness assertions.
+Each returned findings and was resumed by explicit ID for reassessment before the
+next unit began. Native agents were unnecessary; no runner or platform was added.
+
+Initial runtime startup failed in the parent read-only filesystem environment.
+Approved execution outside that parent sandbox succeeded while the nested reviewer
+retained its own read-only shell: exclusive-create probe returned EROFS. Runtime
+permission remains environment-dependent. Quarto needed XDG_CACHE_HOME in /tmp.
+The CLI sequence worked but review latency and same-model correlated errors remain
+limitations; no throughput or independent physical-validation claim follows.
+
+The three commits checkpoint new unit/source/review files and tests; K02 also
+checkpoints clean workflow files. Shared book configuration, bibliography, standards,
+strategy, current-work and validation updates remain in the working tree because
+they already carried owner changes. Existing staged entries are preserved. The
+Review-link portability closeout: `00eb2c1`. These
+commits alone are not a clean checkout of the pre-existing accepted working-tree
+baseline. No unrelated changes were swept into a checkpoint.
+
+## Owner decisions and stopping boundary
+
+The owner authorized explicit local convention reuse; no book-wide convention was
+adopted. Canonical pilot and phase-comparison bytes and accepted architecture are
+preserved. The new units do not complete K02–K04 or their chapters; detailed matrix
+inference, physical noise networks and application mappings retain their homes.
+
+No unresolved critical finding remains from these bounded AI reviews. Human
+technical acceptance, specialist/reader evaluation, book-wide conventions and any
+next development batch remain owner decisions. Do not begin K05 automatically.
+The repeatable arrangement and exact CLI invocation are in the existing strategy;
+AGENTS.md defines autonomous responsibilities and escalation rules.
+
+---
+
+## Historical closeouts (prior stopping instructions superseded for this batch)
+
+# Current Work: First Chapter 1 Unit Provisionally Accepted and Closed
+
+**2026-10-29:** The owner provisionally accepts the unchanged
+[phase-comparison manuscript](../book/phase-comparison.qmd) as a mathematically
+checked, bounded textbook teaching draft for continued development under
+[ADR-0006](decisions/ADR-0006-provisional-phase-comparison-acceptance.md).
+Acceptance is limited to its declared idealized signal/receiver model, stated
+local conventions, checked derivations and illustrative example. It does not
+complete Chapter 1/K01 or establish independent specialist validation, actual
+reader effectiveness, physical receiver performance or publication readiness.
+
+The [review record](../reviews/phase-comparison.md) retains executed checks and
+limitations. ADR-0006 records three nonblocking editorial obligations: later
+sampled-observation linkage, consideration of reference/orientation diagrams,
+and reuse of the canonical introductory derivation without unnecessary duplication.
+No speculative rewriting, book-wide convention adoption or new technical review
+occurs. The [strategy](sustained-authoring-strategy.md) remains the approved method.
+
+Closeout changes administrative records only. Manuscript/architecture/pilot byte
+preservation, index preservation, scaffold integrity and link/table/whitespace
+checks are recorded in [validation](../docs/VALIDATION.md). Earlier mathematical
+checks and five-page rendering are historical evidence, not rerun here.
+
+**Next task: scalar stochastic phase reasoning — selected K02 / Chapter 2
+material — not yet started.** Stop after this administrative closeout. No next
+manuscript, bench campaign, installation, commit or publication begins.
+
+Historical stage records below retain their evidence and stopping context.
+
+---
+
 # Current Work: First Technical Pilot Provisionally Accepted and Closed
 
 **2026-10-29:** The project owner provisionally accepts the corrected dual-channel

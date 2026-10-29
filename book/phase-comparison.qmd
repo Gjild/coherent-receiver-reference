@@ -1,0 +1,291 @@
+# Defining and tracking a two-channel phase comparison {#sec-phase-comparison}
+
+Two receiver channels observe a split sinusoidal stimulus. The instrument reports
+40 degrees between their outputs. Is that the phase difference at its input
+connectors, an error introduced by its receivers, or a property of its reference
+paths? Before improving the instrument, we must determine what its number means.
+
+We will follow one illustrative phase-sensitive transfer instrument from its RF
+connectors through frequency conversion to a reported comparison. The purpose is
+to calculate that comparison and learn what would justify referring it back to
+the input. All numerical values are teaching inputs. No particular hardware,
+accuracy specification or measured performance is implied.
+
+## Begin at the physical ports {#sec-comparison-ports}
+
+Call the input connectors P1 and P2, the LO inputs at the mixers L1 and L2, and
+the real IF outputs Q1 and Q2. O1 and O2 denote the complex results extracted
+from those IF outputs. Any response between Q and O belongs to the measurement
+unless explicitly removed. For the calculation below extraction is ideal and
+simultaneous; both channels use the same time origin and IF reference.
+
+| Plane | Quantity in this example | What must be specified |
+|---|---|---|
+| P1, P2 | RF voltage | Frequency, amplitude, phase and port resistance |
+| L1, L2 | LO waveform phase | Frequency, endpoint phase and operating state |
+| Q1, Q2 | Real IF voltage | Conversion orientation, gain and path phase |
+| O1, O2 | Extracted complex voltage | IF reference, epoch and observation interval |
+
+Assume a fixed, settled gain and tuning state, a single desired input tone,
+negligible additive noise, no compression or significant images, and negligible
+unmodeled channel variation during the observation. The real voltages at P are
+
+$$v_i(t)=A_i\cos(2\pi f_Rt+\phi_i),\qquad i=1,2,$$
+
+where $A_i>0$ is peak voltage in volts, $f_R>0$ is RF frequency in hertz,
+and $\phi_i$ is phase in radians at the common epoch $t=0$. The subscript i
+identifies the channel. We seek channel 2 relative to channel 1:
+$\Delta\phi=\phi_2-\phi_1$, understood modulo $2\pi$ for a single observation.
+A splitter does not make this difference zero: its cables and the object under
+test can introduce phase before P.
+
+A positive physical delay $\tau$ replaces t by $t-\tau$. Direct substitution gives
+
+$$A\cos[2\pi f_R(t-\tau)+\phi]
+ =A\cos[2\pi f_Rt+\phi-2\pi f_R\tau].$$
+
+Thus added delay in channel 2 reduces its input phase by $2\pi f_R\tau$.
+The product $f_R\tau$ is dimensionless. At 1 GHz, 25 ps corresponds to
+$360(10^9)(25\times10^{-12})=9$ degrees. The sign comes from the delayed
+waveform, rather than from a remembered phase-delay rule.
+
+## Give the voltage a complex representation {#sec-comparison-representation}
+
+Euler's identity writes a cosine as the sum of two counter-rotating terms:
+
+$$A\cos(2\pi ft+\phi)=\frac{A}{2}e^{j\phi}e^{j2\pi ft}
+ +\frac{A}{2}e^{-j\phi}e^{-j2\pi ft},\qquad j^2=-1.$$
+
+For this positive-frequency tone, retain the positive-frequency term and double
+it. The resulting analytic signal is $v_a(t)=Ae^{j(2\pi ft+\phi)}$; its real
+part is the original voltage. For sums of tones away from DC, the same operation
+applies term by term. More general real bandpass signals use the corresponding
+positive-frequency construction; DC, if present, is retained without doubling.
+This is the analytic-signal convention also described in the SciPy signal
+processing reference [@scipyHilbert, Notes]. We need no Hilbert-transform
+calculation to reconstruct the tones used here.
+
+Choose a carrier frequency $f_c$ and define the complex envelope
+$z(t)=v_a(t)e^{-j2\pi f_ct}$. Then
+
+$$v(t)=\operatorname{Re}\{z(t)e^{j2\pi f_ct}\}.
+$$ {#eq-comparison-reconstruct}
+
+When $f=f_c$, $z=Ae^{j\phi}$ is constant: the familiar phasor now has an explicit
+carrier and epoch. When $f\ne f_c$, it rotates at $f-f_c$ and is an envelope
+rather than a constant phasor. A common change of carrier changes that rotation
+in both channels; it does not create a differential phase.
+
+Writing $z=I+jQ$ gives the physical reconstruction
+
+$$v(t)=I\cos(2\pi f_ct)-Q\sin(2\pi f_ct).$$
+
+This minus sign fixes what positive Q means. Reversing the sign of Q conjugates
+z and changes its phase sign. A label such as “I/Q output” is therefore
+insufficient to establish the orientation of a comparison.
+
+Here z has **peak-voltage scaling**. For a constant sinusoid across a real
+resistance R, averaging $v^2/R$ over whole carrier cycles gives
+$P=A^2/(2R)=|z|^2/(2R)$, because the average of $\cos^2$ is $1/2$.
+The analytic signal is a representation, not a second physical voltage whose
+power is to be added. RMS-scaled phasors would instead have magnitude
+$A/\sqrt{2}$ and power $|z_{\rm RMS}|^2/R$.
+
+These normalization and orientation choices apply locally throughout this
+unit. They do not settle every possible complex-envelope convention.
+
+## Derive the conversion sign {#sec-comparison-conversion}
+
+Let the LO at Li have phase $\lambda_i$ and frequency $f_L$. Model ideal mixing
+as multiplication of $v_i$ by $2\cos(2\pi f_Lt+\lambda_i)$, followed by rejection
+of the sum-frequency term. The factor 2 normalizes the ideal difference-tone
+amplitude to $A_i$; it is not a claim about LO voltage or a physical mixer's
+conversion gain. The identity $2\cos a\cos b=\cos(a-b)+\cos(a+b)$ gives
+
+$$A_i\cos[2\pi(f_R-f_L)t+\phi_i-\lambda_i]$$
+
+for the retained real difference tone. Represent additional narrowband conversion
+and IF response by a positive voltage gain $G_i$ and a phase $\beta_i$ at the
+**positive** IF frequency. A negative gain can be represented by adding $\pi$
+to $\beta_i$. Response variation across a modulated signal would need a fuller
+model; here there is only one tone.
+
+First put the LO below the RF, so $f_I=f_R-f_L>0$. The output at Qi is
+
+$$q_i(t)=G_iA_i\cos(2\pi f_It+\phi_i-\lambda_i+\beta_i).$$
+
+Extracting its envelope relative to $e^{j2\pi f_It}$ gives
+
+$$z_i=G_iA_i e^{j(\phi_i-\lambda_i+\beta_i)}.$$
+
+Define the reported comparison by
+
+$$\theta=\arg(z_2z_1^*)
+ =\operatorname{wrap}(\Delta\phi-\Delta\lambda+\Delta\beta),
+$$ {#eq-comparison-lower}
+
+where star denotes complex conjugation, $\Delta\lambda=\lambda_2-\lambda_1$,
+and $\Delta\beta=\beta_2-\beta_1$. We use wrap to select a principal angle in
+$(-\pi,\pi]$. Multiplication by $z_1^*$ subtracts channel 1's phase; positive
+amplitudes affect the product magnitude but not its angle. Common LO phase
+cancels only if the phases actually arriving at L1 and L2 are equal.
+
+Now put the LO above the RF and still describe the output with a positive IF,
+$f_I=f_L-f_R$. The retained mixer tone before the additional response is
+
+$$A_i\cos[-2\pi f_It+\phi_i-\lambda_i]
+ =A_i\cos[2\pi f_It-\phi_i+\lambda_i].$$
+
+The equality uses the evenness of cosine. Its positive-frequency phase is now
+$-\phi_i+\lambda_i$. Consequently,
+
+$$q_i(t)=G_iA_i\cos(2\pi f_It-\phi_i+\lambda_i+\beta_i),\qquad
+\theta=\operatorname{wrap}(-\Delta\phi+\Delta\lambda+\Delta\beta).
+$$ {#eq-comparison-upper}
+
+Changing conversion side reverses the input-phase and LO-phase contributions.
+It does not reverse an IF path phase subsequently added at positive frequency.
+The real waveform shows why. Complex mixing can retain a signed negative IF,
+but that is a different representation; it must be translated before comparing
+its reported phase with this positive-IF instrument.
+
+## Follow one complete measurement {#sec-comparison-worked}
+
+Return to our split-stimulus instrument. Use a 1 GHz RF tone and a 990 MHz LO,
+giving a 10 MHz IF in both channels. Suppose the port and path values are:
+
+| Quantity | Channel 1 | Channel 2 |
+|---|---:|---:|
+| RF peak amplitude $A_i$ | 0.20 V | 0.10 V |
+| RF phase $\phi_i$ at P | 20 degrees | 65 degrees |
+| LO phase $\lambda_i$ at L | 5 degrees | 17 degrees |
+| Voltage gain $G_i$ | 0.5 | 1.0 |
+| Added positive-IF phase $\beta_i$ | −3 degrees | 4 degrees |
+
+Both IF peak amplitudes are 0.10 V. Their phases are
+$20-5-3=12$ degrees and $65-17+4=52$ degrees, respectively. Thus
+
+$$q_1(t)=0.10\cos(2\pi\,10^7t+12^\circ)\ {\rm V},\qquad
+q_2(t)=0.10\cos(2\pi\,10^7t+52^\circ)\ {\rm V}.$$
+
+To make the observation explicit, take simultaneous records from t=0 to
+$T=1\ \mu$s, exactly ten IF cycles, with coefficients and phases fixed.
+For these ideal tones define the extracted result as
+
+$$z_i=\frac{2}{T}\int_0^T q_i(t)e^{-j2\pi f_It}\,dt.$$
+
+Expanding the cosine into its two exponentials leaves a constant desired term
+and a term rotating at $-2f_I$. The latter integrates to zero over ten cycles,
+so this extraction gives exactly the peak-scaled envelope derived above.
+The factor $2/T$ has units s$^{-1}$, leaving z in volts. A noninteger record,
+frequency mismatch or varying phase need not give this result; the extraction
+window then becomes part of the observation model.
+
+Using $e^{j\alpha}=\cos\alpha+j\sin\alpha$, we obtain
+
+$$z_1\simeq0.097815+j0.020791\ {\rm V},\qquad
+z_2\simeq0.061566+j0.078801\ {\rm V}.$$
+
+The product is
+
+$$z_2z_1^*=0.010e^{j40^\circ}\ {\rm V}^2
+ \simeq(0.007660+j0.006428)\ {\rm V}^2.$$
+
+Its angle is 40 degrees. Across an illustrative 50-ohm resistive load, each IF
+has average power $0.10^2/(2\times50)=10^{-4}$ W, or 0.10 mW.
+Using $|z|^2/R$ here would incorrectly double the physical power.
+
+The input difference is 45 degrees, while the LO difference is 12 degrees and
+the added IF difference is 7 degrees. The instrument therefore reports
+$45-12+7=40$ degrees. If the latter two differences are independently known,
+referring the observation to P gives $40+12-7=45$ degrees modulo 360 degrees.
+Without that knowledge, reporting 40 degrees as the input difference hides
+an unknown receiver/reference contribution. For example, increasing both
+$\Delta\phi$ and $\Delta\lambda$ by 5 degrees leaves the lower-side observation
+unchanged. The output alone cannot distinguish those alternatives.
+
+As a diagnostic counterexample, replace the LO by 1010 MHz, keep the illustrative
+endpoint phases and positive-IF responses unchanged, and extract the same
+positive 10 MHz IF. This is a mathematical comparison, not a promise that real
+hardware retains its gain or phase after retuning. The output phases become
+$-20+5-3=-18$ degrees and $-65+17+4=-44$ degrees. The reported difference is
+now **−26 degrees**. Recovering the input difference requires
+$\Delta\phi=\Delta\lambda+\Delta\beta-\theta=12+7-(-26)=45$ degrees.
+Applying the lower-side rule would instead give $-26+12-7=-21$ degrees.
+Nor is the new report simply −40 degrees: the IF path difference still adds
+7 degrees. This counterexample separates spectral orientation from path phase.
+
+## Change the reference before interpreting a change {#sec-comparison-reference}
+
+Suppose we leave the lower-side instrument fixed and describe both extracted
+channels relative to a new common IF reference with phase $\chi$.
+Then $z_i'=z_i e^{-j\chi}$ and $z_2'z_1'^*=z_2z_1^*$: the comparison is
+invariant. If the references instead differ by $\chi_2-\chi_1$, the reported
+angle shifts by its negative. Changing output channel order similarly
+conjugates the product and changes 40 degrees to −40 degrees.
+
+A change of epoch has a related condition. For physical tones
+$q_i=B_i\cos(2\pi f_i t+\gamma_i)$, setting $t=t'+t_0$ changes their phase
+intercepts to $\gamma_i+2\pi f_i t_0$. The intercept difference changes by
+$2\pi(f_2-f_1)t_0$. It is invariant for equal frequencies, but a frequency
+mismatch makes the phase comparison evolve with time. Comparing records without
+their epochs can then confuse drift with a reference change.
+
+Moving a physical input reference plane is different from relabeling the common
+IF reference. Insert 25 ps additional delay between P2 and its mixer in our
+lower-side example, leaving everything else unchanged. That receiver path
+contributes −9 degrees, so its output comparison changes from 40 to 31 degrees,
+although the phase difference at the original P connectors is still 45 degrees.
+If P2 is instead redefined downstream of that delay, its input phase is 56 degrees
+and the difference at the newly named P planes is 36 degrees. The report can be
+consistent in both descriptions; the quoted input result must name its planes.
+At the upper-side LO, the same added RF delay changes the report from −26 to
+−17 degrees. This is a useful independent sign check on the conversion model.
+
+## What the comparison can establish {#sec-comparison-limits}
+
+A single wrapped phase cannot establish a unique delay. Even if the entire
+45-degree input difference were attributed to a pure channel-2 delay at 1 GHz,
+$\Delta\phi=-360f_R\tau$ degrees gives
+$\tau=-125$ ps modulo 1 ns. A positive 875 ps delay gives the same angle.
+Unknown input phase and receiver offsets add further ambiguity. Delay inference
+requires additional assumptions or observations across frequency; a quiet tone
+comparison does not supply them.
+
+Tracking also needs care with angle wrapping. A channel phase that goes from
+179 to −179 degrees may have advanced by 2 degrees, rather than retreated by
+358 degrees. Choosing that continuation requires an assumption that the true
+change between valid samples has magnitude below 180 degrees, adequate signal
+quality and no missing transition. Faster motion can produce the same wrapped
+samples. At zero amplitude, the phase of a channel—and hence of the product—is
+undefined. Near a fade, noise can dominate it. Do not join records across such
+gaps or resets merely because an unwrapping routine produces a smooth curve.
+
+For a varying signal, averaging extracted unwrapped phase and taking the angle
+of an averaged complex product are different operations. The present example
+avoids that distinction only because both envelopes are constant during its
+specified record. A number obtained with another window, filter, epoch or
+reference cannot be substituted without examining the changed observable.
+
+The instrument can now state a precise result: in its declared settled state,
+its ideal simultaneous ten-cycle extraction reports channel 2 relative to
+channel 1 at O as 40 degrees with the lower LO. That calculation establishes
+neither input accuracy nor temporal stability. Accuracy needs evidence about
+input/reference/path errors; stability needs repeated, defined observations;
+restart repeatability needs separately classified restart observations. A shared
+frequency reference alone does not constrain the differential phase intercept.
+Neither actual settling nor any of those performance properties has been
+measured in this example.
+
+Before proceeding, change the model yourself. Conjugate both extracted outputs
+of the lower-side instrument, then predict the report and the input-referred
+result. Next remove the LO and IF differential phases and repeat the comparison
+with the upper LO. Finally decide whether a second 40-degree report after a
+restart proves that the input phase is unchanged.
+
+Conjugating both outputs produces −40 degrees; conjugating them back before
+using the lower-side input relation recovers 45 degrees. With zero differential
+LO and IF phase, the upper-side report is −45 degrees. Identical restart reports
+can conceal compensating changes in input and receiver/reference phase. Each
+answer follows from tracing the physical contribution, which is the reasoning
+needed before stochastic stability and calibration can be developed.

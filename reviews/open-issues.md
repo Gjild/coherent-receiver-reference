@@ -2,7 +2,10 @@
 
 - ISSUE-001: Pilot-local conventions remain explicit; book-wide convention adoption and specialist mathematical review remain open. Limited pilot acceptance under ADR-0005 does not settle them.
 - ISSUE-002: Quarto HTML rendering is verified for the pilot. Browser visual mathematics/layout inspection, offline MathJax availability and PDF rendering remain unverified; earlier scaffold observations are historical.
-- ISSUE-003: Confirm local Codex version, config trust and approval behavior.
+- ISSUE-003: Locally verified codex-cli 0.165.0, configured GPT-6.1 Sol / high,
+  trusted project and fresh read-only CLI review with continuation. Runtime startup
+  required approved execution outside the parent sandbox; reviewer shell probe
+  returned EROFS. Exact runtime model routing is not independently introspectable.
 - ISSUE-004: Inventory development closed for planning use following [project-owner provisional acceptance](../project/decisions/ADR-0002-provisional-competence-baseline.md). Specialist technical review and all inventory §8 uncertainties remain open; this decision is not independent validation.
 - ISSUE-005: Select tested dependency versions and generate reproducible lock/environment record.
 - ISSUE-006: Architecture planning review closed with [project-owner provisional acceptance](../project/decisions/ADR-0003-provisional-architecture-acceptance.md) on 2026-10-29 following review with external AI assistance. Acceptance covers book architecture, annotated table-of-contents and intellectual-organization planning only; it does not independently validate technical results. Inventory U-01–U-10 and their [coverage §6 dispositions](../project/technical-coverage.md) remain open. Preserve the four qualifications: allow motivating examples before full quantitative prerequisites; develop K02–K07 from the declared RF-engineer baseline without hidden specialist prerequisites; further review interferometry, vector antenna/polarization models and application-processing boundaries while retaining essential coherent-receiver reasoning internally; test educational and engineering adequacy through actual textbook development, including the later dual-channel relative-phase-stability pilot. Anchor suitability, implementation/production depth, source evidence and specialist technical review remain development obligations. The subsequent book-planning stage has since closed for provisional use under [ADR-0004](../project/decisions/ADR-0004-provisional-book-architecture-acceptance.md).
@@ -54,5 +57,31 @@ closeout. Full pytest remains unexecuted because pytest/NumPy are absent.
 No physical experiment or new source examination occurred. Earlier candidate/
 not-started statements above describe their recorded stages.
 
-Next: **post-pilot development-method assessment and sustained authoring
-preparation — not yet started**. No subsequent chapter or reference design begins.
+Historical next-stage boundary: post-pilot assessment had not started at pilot
+closeout. The subsequently authorized activity is recorded below.
+
+
+## First sustained-authoring unit — accepted and closed, 2026-10-29
+
+[ADR-0006](../project/decisions/ADR-0006-provisional-phase-comparison-acceptance.md)
+records owner acceptance of the unchanged Chapter 1 unit as a mathematically
+checked, bounded teaching draft for continued development, within its idealized
+model, conventions, checked derivations and illustrative example. The
+[review](phase-comparison.md) retains evidence limits. ISSUE-001 remains open for
+book-wide convention adoption and specialist examination; ISSUE-002 for visual
+publication inspection; ISSUE-005 for the dependency environment/full test suite.
+Independent specialist validation, actual reader effectiveness and physical
+performance remain unestablished. Inventory/application adequacy issues remain.
+
+Nonblocking editorial obligations are recorded canonically in ADR-0006: later
+sampled-observation linkage, consideration of reference/orientation diagrams and
+prevention of unnecessary derivation duplication. They do not reopen the unit.
+Next: **scalar stochastic phase reasoning — selected K02 / Chapter 2 material —
+not yet started**. Stop after administrative closeout.
+
+## K02–K04 batch disposition — 2026-10-29
+
+Separate AI reviews and correction reassessments completed; no unresolved critical
+finding remains within the bounded teaching units. Evidence and owner decisions:
+[current batch report](../project/current-work.md). AI review does not close
+ISSUE-001/002/005, specialist/reader obligations or U-01–U-10. No next unit is authorized.

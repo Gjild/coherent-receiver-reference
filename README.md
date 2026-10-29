@@ -15,8 +15,15 @@ This repository develops a mathematically rigorous, physically defensible and pr
 2. Read [`AGENTS.md`](AGENTS.md) before using Codex.
 3. Read [`project/current-work.md`](project/current-work.md) for stage status: the competence inventory is provisionally accepted for planning; the [technical coverage and knowledge-dependency architecture](project/architecture.md) is provisionally accepted for planning under [ADR-0003](project/decisions/ADR-0003-provisional-architecture-acceptance.md), subject to its review qualifications. The [book-architecture package](project/book-architecture.md) is provisionally accepted for guiding textbook development under [ADR-0004](project/decisions/ADR-0004-provisional-book-architecture-acceptance.md), subject to its review qualifications. The [corrected pilot](book/relative-phase-stability.qmd) is now accepted for
    ADR-0005's limited use; its [review record](reviews/relative-phase-pilot.md)
-   preserves evidence and unresolved limits. Next is post-pilot development-method
-   assessment and sustained authoring preparation, **not yet started**.
+   preserves evidence and unresolved limits. The owner has since approved the
+   [sustained authoring method](project/sustained-authoring-strategy.md). Its first
+   [Chapter 1 unit](book/phase-comparison.qmd) is provisionally accepted as a
+   mathematically checked, bounded teaching draft under
+   [ADR-0006](project/decisions/ADR-0006-provisional-phase-comparison-acceptance.md),
+   within its idealized model and stated conventions. Independent specialist
+   validation, reader effectiveness, physical performance and publication readiness
+   remain unestablished. Next: scalar stochastic phase reasoning — selected K02 /
+   Chapter 2 material — **not yet started**.
 4. Read [`docs/SETUP.md`](docs/SETUP.md) for installation and local checks.
 5. Read [`docs/REPOSITORY-MAP.md`](docs/REPOSITORY-MAP.md) before adding files.
 
@@ -36,8 +43,9 @@ selected mathematical/software properties, not receiver validation.
 
 ## Publication
 
-The Quarto HTML book includes the publishing demonstration and corrected pilot.
-HTML rendering passed; visual browser math/layout inspection remains pending.
+The Quarto HTML book includes the first bounded Chapter 1 draft, publishing
+demonstration and corrected pilot. Five-page HTML rendering passed; visual browser
+math/layout inspection remains pending. See the current unit review for evidence.
 With Quarto available, render from the repository root:
 
 ```bash

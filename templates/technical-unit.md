@@ -20,3 +20,7 @@ Adapt the structure to the subject; do not use this as a rigid chapter template.
 - Numerical input provenance, independently formulated checks and tolerances:
 - Changed-assumption transfer assessment and actual participant evidence:
 - Canonical destination and proposed architecture correction (if any):
+- Intended completion claim and pending acceptance decisions:
+- Engineering interfaces, supplied inputs and affected dependent results:
+- Integration: canonical home, local bridge and surrounding reading continuity:
+- Correction propagation and checks repeated:

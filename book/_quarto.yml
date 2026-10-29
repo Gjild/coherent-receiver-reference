@@ -7,6 +7,10 @@ book:
   subtitle: "Advanced Engineering Textbook and Reference — Provisional Scaffold"
   chapters:
     - index.qmd
+    - phase-comparison.qmd
+    - scalar-stochastic-phase.qmd
+    - observation-weighted-coherence.qmd
+    - covariance-quadratic-forms.qmd
     - publishing-pilot.qmd
     - relative-phase-stability.qmd
     - references.qmd

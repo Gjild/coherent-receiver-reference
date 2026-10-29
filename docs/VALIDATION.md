@@ -1,3 +1,75 @@
+# K02–K04 batch checks — 2026-10-29
+
+- `python3 -m unittest discover -s tests -p test_foundation_units_stdlib.py -v`:
+  13 passed. Analytical/numerical consistency only, not physical validation.
+- `PYTHONPATH=engineering/src python3 -m unittest discover -s tests -p test_relative_phase.py -v`:
+  19 passed; preserved pilot regression checks.
+- `python3 scripts/check_repo.py`: passed, 13 required scaffold paths.
+- `XDG_CACHE_HOME=/tmp/coherent-batch-audit/cache quarto render book --to html`:
+  passed, eight HTML pages. Initial default-cache and QUARTO_CACHE_DIR attempts
+  failed on the read-only home cache; XDG_CACHE_HOME resolved that failure.
+- `python3 -m pytest --version`: failed, pytest absent. No installation.
+- Separate reviewer smoke: first runtime initialization failed EROFS; approved
+  retry succeeded. Exclusive-create probe inside reviewer shell returned EROFS;
+  no probe file was created. Requested model/effort gpt-6.1-sol / high; runtime
+  model identity was not independently exposed.
+- K02–K04 review records preserve input hashes, findings, source access,
+  correction propagation, reassessments and unavailable checks. Initial K02 test
+  expected-value transcription was corrected after failure. Reviewer NumPy/SciPy
+  attempts failed; reviewers used standard-library alternatives and recorded limits.
+- Mechanical Markdown link, HTML ID/fragment, whitespace and baseline-preservation
+  checks passed: 8 HTML pages / 152 local links and fragments, 52 Markdown
+  links, 16 protected baseline artifacts unchanged, unrelated index entries
+  preserved. The first Markdown audit exposed absolute reviewer line-links;
+  these were normalized to portable relative manuscript links and the audit rerun. No pixel-level browser inspection,
+  PDF render, reader trial, qualified specialist review or physical test occurred.
+
+Earlier records below retain their dates and qualifications.
+
+---
+
+# Administrative closeout: first Chapter 1 unit — 2026-10-29
+
+Owner acceptance is recorded in
+[ADR-0006](../project/decisions/ADR-0006-provisional-phase-comparison-acceptance.md)
+for the unchanged mathematically checked, bounded teaching draft, within its
+idealized model, stated conventions, checked derivations and illustrative example.
+Independent specialist validation, actual reader effectiveness, physical receiver
+performance and publication readiness are not established.
+
+Closeout checks are repository consistency checks only; earlier mathematics,
+rendering, source examination and failed browser/full-suite attempts below retain
+their original dates and limitations. No new numerical tests, render, browser
+inspection, source examination, human specialist review, reader trial or physical
+measurement was performed. No dependencies were installed. Next: scalar stochastic
+phase reasoning — selected K02 / Chapter 2 material — not yet started.
+
+Checks actually executed at closeout:
+
+- `python3 scripts/check_repo.py`: passed, 13 required scaffold paths.
+- One-off read-only audit: accepted manuscript hash matches ADR-0006; manuscript,
+  accepted architecture/previous decisions, pilot and all other snapshotted files
+  outside the five administrative updates are byte-for-byte preserved. Git index
+  unchanged. Only ADR-0006 is newly added by this task.
+- All 55 local Markdown links resolve across the six closeout files; nine table
+  rows have consistent column counts. Final newline and whitespace checks pass.
+- `git diff --check`: passed. No manuscript, source, standard, computational,
+  publishing-configuration or dependency changes were needed.
+
+---
+
+# Current validation: first Chapter 1 unit — 2026-10-29
+
+[The unit review](../reviews/phase-comparison.md) owns actual mathematical checks,
+numerical results, manuscript hash and publishing limitations. Direct real-waveform
+checks and five-page Quarto HTML generation/structure checks passed. Full pytest
+could not start (pytest absent). Firefox screenshot failed on display/runtime
+access; no browser visual, PDF, offline typesetting, specialist, learner or physical
+validation is asserted. No dependency installation or software changes occurred.
+Earlier records below describe their historical artifacts and environments.
+
+---
+
 # Pilot closeout validation — 2026-10-29
 
 Owner acceptance is recorded in

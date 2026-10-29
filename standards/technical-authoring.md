@@ -37,3 +37,13 @@ path from the RF baseline; a source citation cannot replace the bridge.
 
 Keep general derivations in one home. The relative-phase pilot temporarily owns
 its general results; its brief records their eventual chapter destinations.
+
+## Integration of bounded units
+
+Write a continuous learning argument rather than exposing the task template in
+the manuscript. Keep project codes and review metadata in supporting records.
+Name a canonical destination; supply local prerequisite and applicability bridges,
+and review the surrounding chapter progression when integrating a unit. Transfer
+pilot results only in a bounded migration that updates references and assesses
+the affected acceptance scope. Until then, introductory restatements identify
+their scope and do not supersede the pilot's general derivations.

@@ -38,5 +38,50 @@ class ScalarPhaseChecks(unittest.TestCase):
             self.assertAlmostEqual(mean**2, 0 if n % 2 == 0 else 1/n**2)
 
 
+class ObservationChecks(unittest.TestCase):
+    def test_time_spectral_box_average(self):
+        # Independent quadratures: triangular covariance integral vs spectrum.
+        sigma2, tc, duration = .0004, 1., 10.
+        n = 40000
+        dt = duration/n
+        time = 2/duration**2 * sum((duration-(k+.5)*dt)*sigma2*
+                                  math.exp(-(k+.5)*dt/tc)*dt for k in range(n))
+        df = 100/n
+        spectral = 0.
+        for k in range(n):
+            f = (k+.5)*df
+            window = math.sin(math.pi*f*duration)/(math.pi*f*duration)
+            spectral += 2*(2*sigma2*tc/(1+(2*math.pi*f*tc)**2))*window**2*df
+        exact = 2*sigma2/duration**2*(duration*tc-tc**2*(1-math.exp(-duration/tc)))
+        self.assertAlmostEqual(time/exact, 1, places=7)
+        self.assertAlmostEqual(spectral/exact, 1, places=6)
+
+    def test_delay_and_non_gaussian_coherence(self):
+        f, delay = 1000., .0001
+        direct = abs(cmath.exp(-2j*math.pi*f*delay)-1)**2
+        self.assertAlmostEqual(direct, .3819660112501051)
+        self.assertAlmostEqual(direct, 4*math.sin(math.pi*f*delay)**2)
+        a = 1.
+        discrete = (cmath.exp(1j*a)+cmath.exp(-1j*a))/2
+        self.assertGreater(abs(discrete-math.exp(-a*a/2)), .06)
+
+    def test_sample_variance_bias_exact_discrete_ensemble(self):
+        import itertools
+        records = list(itertools.product([-1., 1.], repeat=4))
+        estimates = [sum((x-sum(r)/4)**2 for x in r)/4 for r in records]
+        self.assertAlmostEqual(sum(estimates)/len(estimates), 1-1/4)
+
+
+class CoherenceCorrectionChecks(unittest.TestCase):
+    def test_gaussian_integration_power_and_phase_filter_counterexample(self):
+        n, duration = 20000, 10.
+        du = duration/n
+        power = 2/duration**2*sum((duration-(k+.5)*du)*
+            math.exp(-(1-math.exp(-(k+.5)*du)))*du for k in range(n))
+        self.assertAlmostEqual(power, .4564101278443839, places=7)
+        self.assertGreater(abs(power-math.exp(-.18000090799859525)), .37)
+        self.assertGreater(abs(cmath.phase(.75+.25j)-math.pi/8), .07)
+
+
 if __name__ == '__main__':
     unittest.main()

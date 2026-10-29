@@ -1,0 +1,194 @@
+# Observation, spectra and coherence {#sec-observation-coherence}
+
+A phase-stability number becomes useful only after naming the observation. An
+instrument can average a phase record, compare two instants, or integrate a complex
+comparison before extracting its angle. These operations reject different disturbances.
+We retain the two output planes and channel-2-relative-to-1 orientation of
+[the phase-comparison unit](phase-comparison.qmd), and use the scalar stochastic
+assumptions developed in [the preceding unit](scalar-stochastic-phase.qmd).
+All examples below are illustrative models. The general calibrated residual and
+state-history analysis remains in the [relative-phase pilot](relative-phase-stability.qmd);
+this unit supplies a bounded scalar introduction without replacing that analysis.
+
+## Define the operator before integrating noise
+
+Let phi(t) be a real, centered residual phase in radians, after explicitly separating
+deterministic mean phase, drift and spurs. Assume wide-sense stationarity and finite
+variance where a stationary spectrum is used. Write R(tau)=E[phi(t+tau)phi(t)].
+Our local Fourier convention is
+
+$$
+ S(f)=\int_{-\infty}^{\infty} R(\tau)e^{-j2\pi f\tau}\,d\tau,
+ \qquad R(\tau)=\int_{-\infty}^{\infty}S(f)e^{j2\pi f\tau}\,df.
+$$
+
+Here f is offset frequency in Hz and S is a two-sided phase density in rad²/Hz.
+We restrict ordinary integrals to models for which the transforms and weighted
+integrals exist; spectral lines and nonstationary models need separate treatment.
+These are explicit local pilot-compatible definitions, not book-wide adoption.
+The relationship between correlation, spectral density and LTI weighting is also
+developed in Oppenheim and Verghese, Chapter 10, equations (10.1)–(10.3)
+([MIT text](https://ocw.mit.edu/courses/6-011-introduction-to-communication-control-and-signal-processing-spring-2010/8075041184d566103ce7c3f69afc5e75_MIT6_011S10_chap10.pdf)).
+Their angular-frequency and uncentered real correlation convention must be translated.
+
+For a real finite observation weight w(t), define q=integral w(t)phi(t) dt and
+W(f)=integral w(t)exp(-j2 pi f t) dt. Expanding E[q²] gives
+
+$$
+ \operatorname{var}q=\iint w(t)w(s)R(t-s)\,dt\,ds
+ =\int_{-\infty}^{\infty} S(f)|W(f)|^2\,df.
+$$
+
+The second equality follows by inserting the inverse transform and collecting
+the t and s integrals; exchanging integrals requires convergence. A normalized
+average has w=1/T on [0,T] and zero elsewhere, so
+W=exp(-j pi f T) sinc(fT), where sinc(x)=sin(pi x)/(pi x). The variance is
+therefore weighted by sinc²(fT), not by a sharp frequency cutoff at 1/T.
+For an LTI filter acting on phase, or a justified linearized phase response
+H(f), replace S with |H|²S. This is not valid for arbitrary filtering of RF/IQ
+followed by angle extraction: a weighted sum of phasors and a weighted sum of
+angles generally differ. For phases 0 and pi/2, weights 3/4 and 1/4 give
+arg(3/4+j/4)=0.321751 rad versus the weighted angle pi/8=0.392699 rad. Sampled data also
+require anti-alias conditions; this continuous-time formula alone does not certify
+a sampled implementation.
+
+A useful exactly soluble model has R(tau)=sigma² exp(-|tau|/tc), tc>0, giving
+S(f)=2 sigma² tc/[1+(2 pi f tc)²]. Direct time integration for the box average gives
+
+$$
+ \operatorname{var}\bar\phi_T
+ ={2\sigma^2\over T^2}\left[Tt_c-t_c^2(1-e^{-T/t_c})\right].
+$$
+
+This tends to sigma² for short observations and 2 sigma² tc/T for long ones.
+For sigma=0.02 rad, tc=1 s and T=10 s it is 0.00007200036 rad², or about
+0.0084853 rad RMS. An illustrative 0.005 rad target fails even though a naive
+100-independent-sample claim would pass. At T=40 s the result is approximately
+0.0000195 rad², or 0.004416 rad RMS. That change is defensible only while the
+stationary model and acquisition state remain applicable. It is not a prescription
+to average real hardware indefinitely.
+
+## Increments and complex coherence answer different questions
+
+Subtracting two observations separated by tau gives the phase increment. Expanding
+the square and using stationarity gives its structure function
+
+$$
+ D_\phi(\tau)=E[(\phi(t+\tau)-\phi(t))^2]
+ =2[R(0)-R(\tau)]
+ =\int S(f)4\sin^2(\pi f\tau)\,df.
+$$
+
+The integration is over all real f and must converge. A constant unknown offset
+cancels in an increment but remains in a phase average. A small increment variance
+therefore does not establish absolute alignment.
+
+For constant-amplitude phasors define the normalized complex coherence
+Gamma(t,tau)=E[exp(j[phi(t+tau)-phi(t)])].
+Stationary increment distributions permit writing Gamma(tau). Jointly
+Gaussian WSS phase is sufficient; WSS alone constrains only second moments. It is the characteristic function of the
+increment evaluated at one, not generally a function of its variance alone. For
+a Gaussian increment with mean m and variance D, its density is
+exp(-(x-m)²/(2D))/sqrt(2 pi D), for D>0. To evaluate its characteristic function,
+first center the increment and write F(a)=integral g(x)exp(jax) dx. Since
+g'(x)=-xg(x)/D, differentiation and integration by parts give
+F'(a)=-DaF(a); the Gaussian tails make the boundary term zero. With F(0)=1,
+F(a)=exp(-Da²/2). Restoring the mean and setting a=1 yields
+Gamma=exp(jm-D/2). D=0 is the deterministic limiting case. For a symmetric two-point increment
+±a, the same definition gives cos(a), whereas a Gaussian with the same variance
+a² gives exp(-a²/2). Equal RMS phase need not imply equal coherence. The Gaussian
+characteristic-function calculation is exact; applying Gaussianity to a receiver
+is a separate assumption.
+
+For a nonnegative normalized integration weight, the complex average
+C=integral w(t)exp(j phi(t)) dt obeys
+
+$$
+ E[|C|^2]=\iint w(t)w(s)
+ E[e^{j(\phi(t)-\phi(s))}]\,dt\,ds.
+$$
+
+This identity follows by multiplying C by its conjugate before taking expectation.
+For stationary Gaussian phase with the exponential covariance above and box
+weighting, pairs at separation u occupy area 2(T-u)du. Therefore
+
+$$
+ E[|C|^2]={2\over T^2}\int_0^T (T-u)
+ \exp[-\sigma^2(1-e^{-u/t_c})] \,du.
+$$
+
+For illustrative sigma=1 rad, tc=1 s, T=10 s, direct numerical quadrature gives
+0.456410 of the unit ideal coherent power. The phase-average variance is
+0.180000908 rad², so exp(-var(bar_phi))=0.835269 is a materially different answer.
+This uses an exact Gaussian phase model, not a small-angle approximation. It
+shows why a phase-average error budget cannot stand in for coherent-integration
+power. Holding sigma fixed and increasing tc changes both quantities in different
+ways.
+It exposes the actual coherent-integration loss. It is neither exp(-var(q)) in
+general nor the variance of the angle arg C. For a random constant phase B,
+|C|²=1 for every record, even though E[C] may be small. A fade or zero C makes
+its angle invalid. Amplitude-varying signals need amplitude-weighted joint moments;
+a phase-only coherence model cannot silently replace them.
+
+## Shared sources and unequal paths
+
+A shared oscillator phase p reaching two comparison planes through linearized
+phase responses H1 and H2 contributes d=(h2-h1)*p. Hence Sd=|H2-H1|² Sp for a
+stationary scalar source. The sign follows the stated comparison orientation.
+For unit-gain delays tau1 and tau2, the multiplier is
+4 sin²(pi f(tau2-tau1)). At zero path difference it vanishes; at small f times
+path difference it approaches (2 pi f Delta_tau)². A common source cancels only
+when the endpoint phase responses match over the relevant band and state.
+These elementary specializations do not supersede the pilot's general endpoint
+and calibrated-observation treatments.
+
+In a radar contrast, a transmitter reference is compared with its delayed echo.
+Even an ideal shared source appears at two different epochs. At 1 kHz offset and
+100 microseconds differential delay the multiplier is about 0.381966. A metrology
+comparison with matched epochs gives zero shared-source contribution in this
+ideal model. This is a phase-transfer illustration, not a radar detection budget:
+waveform, range/Doppler processing and other disturbances require their own mapping.
+
+## What a finite record can establish
+
+For N zero-mean stationary samples with variance sigma² and normalized lag
+covariance rho_m, expand the scalar averaging result to obtain
+
+$$
+ \operatorname{var}\bar\phi={\sigma^2\over N}
+ \left[1+2\sum_{m=1}^{N-1}(1-m/N)\rho_m\right].
+$$
+
+An effective sample count can be defined by equating this to sigma²/N_eff when
+the variance is positive. It is specific to this mean estimator and may exceed N
+for negative correlations. It is not a universal count for spectral or variance
+estimators. With known zero mean, the estimator Vhat=sum phi_k²/N has
+
+$$
+ \operatorname{var}\widehat V={1\over N^2}\sum_{k,l}
+ \left(E[\phi_k^2\phi_l^2]-\sigma^4\right).
+$$
+
+Fourth moments must exist. For jointly Gaussian zero-mean samples the bracket is
+2 R_kl²; independent Gaussian samples give 2 sigma^4/N. To derive the Gaussian step, a centered Gaussian scalar of variance v has fourth
+moment 3v², obtained by integrating its density by parts twice. For jointly
+Gaussian X,Y, the combination sX+tY is Gaussian with variance
+s² sigma_X²+2stR+t² sigma_Y². Expand E[(sX+tY)^4]=3(var(sX+tY))² and compare the
+s²t² coefficients: E[X²Y²]=sigma_X² sigma_Y²+2R². Gaussian marginal histograms
+alone are insufficient. Second-order stationarity alone cannot establish that uncertainty. Subtracting the fitted sample mean changes
+both bias and variance: E[sum(phi_k-bar_phi)²/N]=sigma²-var(bar_phi). Record which
+mean and trend were removed, the window, bandwidth, gaps and calibration state.
+
+If unwrapped phase represents time error x=phi/(2 pi fc), fc is the declared
+carrier in Hz and x here means an advance. Fractional frequency is y=dx/dt only
+when the derivative exists in the model; formally its spectrum multiplies Sphi by
+(f/fc)², with filtering and convergence checked. A robust alternative observation
+is a finite difference, whose transfer is explicit. Choosing a named long-term
+stability statistic requires its own definition and noise-regime analysis; this
+bounded unit does not claim a metrology estimator catalogue.
+
+As a transfer exercise, hold the single-reading variance fixed and increase tc.
+The average variance and integration loss must be recomputed from the new operator
+and joint model. Then change only the shared path delay: the marginal source PSD
+is unchanged, while its differential effect changes. These distinctions determine
+what needs to be characterized before a stability number can support a design.

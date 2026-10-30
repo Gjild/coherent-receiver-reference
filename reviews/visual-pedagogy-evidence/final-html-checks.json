@@ -1,0 +1,199 @@
+{
+  "html_pages": 11,
+  "local_html_links_and_fragments": 285,
+  "figure_uses": 38,
+  "unique_figure_assets": 37,
+  "errors": [],
+  "figure_alt_text": [
+    {
+      "page": "relative-phase-stability.html",
+      "src": "figures/relative-phase-reference-planes.svg",
+      "alt": "A common RF tone reaches two receivers through separate fixtures at P. LO inputs enter at L; analog IF outputs at Q pass through acquisition and channelization to O, where channel 2 is compared with channel 1."
+    },
+    {
+      "page": "relative-phase-stability.html",
+      "src": "figures/endpoint-architecture-budget.svg",
+      "alt": "A shared source splits through endpoint delays, or through delayed local reference responses, with additive output noise on each path. Varying shared-LO branch noise moves the selected-band phase standard deviation through the 1.5-degree criterion and reverses the conditional preference."
+    },
+    {
+      "page": "relative-phase-stability.html",
+      "src": "figures/calibration-fixed-lo.svg",
+      "alt": "Known RF comb tones pass through two fixtures and receivers with fixed 990 MHz LO inputs. Analog IF outputs are acquired at 32 Msample/s, then separated into 100 ksample/s complex streams per tone; the 1000.5 MHz tone is held out."
+    },
+    {
+      "page": "relative-phase-stability.html",
+      "src": "figures/calibration-delay-fit.svg",
+      "alt": "A 2 ns phase slope through three training frequencies predicts a withheld fourth tone. Its mean intercept differs from the 1 GHz intercept. Correct carrier subtraction leaves a sloping residual; subtracting the mean phase also leaves a carrier bias."
+    },
+    {
+      "page": "relative-phase-stability.html",
+      "src": "figures/calibration-maintenance.svg",
+      "alt": "The calibration snapshot is centered before its coefficient is applied. Wanted data is gated through settling, collection and after-end processing. The previous coefficient ages until replacement; bounded drift remains below 0.5 degree for the two illustrative cases, separately from snapshot uncertainty."
+    },
+    {
+      "page": "relative-phase-stability.html",
+      "src": "figures/correction-updates.svg",
+      "alt": "A held correction changes at update times while a frozen correction stays constant. Under independent errors and randomized grid origin, covariance falls linearly to zero at one update period and the two-sided PSD has sinc-squared sidelobes away from DC."
+    },
+    {
+      "page": "relative-phase-stability.html",
+      "src": "figures/relative-phase-state-sequence.svg",
+      "alt": "A sequence from reset through acquisition, resolved branch and applicable calibration, held-out model checking and independent validity evidence reaches valid use. Failure or invalidation gates data and returns to acquisition."
+    },
+    {
+      "page": "relative-phase-stability.html",
+      "src": "figures/measurement-swaps.svg",
+      "alt": "The source and fixtures feed a receiver pair ending at Q1 and Q2. Main and separate acquisition chains observe the same IF phase through different readout errors. Subtracting readings cancels their shared receiver phase; controlled fixture and acquisition swaps reverse different terms."
+    },
+    {
+      "page": "relative-phase-stability.html",
+      "src": "figures/guarded-decisions.svg",
+      "alt": "Five bounded scalar intervals lie below, touch, overlap or lie above an upper limit. Acceptance permits the upper endpoint at the limit; rejection requires the lower endpoint strictly above it, leaving overlap and lower-endpoint equality inconclusive."
+    },
+    {
+      "page": "publishing-pilot.html",
+      "src": "figures/relative-phase-reference-planes.svg",
+      "alt": "A common RF tone feeds two receivers through fixtures; analog IF and acquired complex output planes are distinguished before comparing channel 2 with channel 1."
+    },
+    {
+      "page": "tracking-signal-retention.html",
+      "src": "figures/tracking-loop.svg",
+      "alt": "Incoming phase and detector noise drive an oscillator correction through negative feedback. The estimate contains positive filtered noise; the true residual contains its negative, while detector output adds the original noise."
+    },
+    {
+      "page": "tracking-signal-retention.html",
+      "src": "figures/tracking-transfer-budget.svg",
+      "alt": "The estimate retains slow input phase while the residual suppresses it. Increasing corner frequency lowers rate bias but admits more detector noise, leaving a bounded range meeting the illustrative residual RMS criterion."
+    },
+    {
+      "page": "tracking-signal-retention.html",
+      "src": "figures/tracking-nonlinear-holdover.svg",
+      "alt": "Below unit normalized rate there are stable and unstable phase equilibria; at equality attraction is only one-sided and above it phase slips. Holdover reaches the 0.1 rad bound at 0.127324 seconds, and marginal latency decreases as one over loop corner."
+    },
+    {
+      "page": "model-adequacy-uncertainty.html",
+      "src": "figures/uncertainty-sensitivity.svg",
+      "alt": "Delay uncertainty increases when shared-source draws decorrelate or their path sensitivities differ; common cancellation meets the target only under closely matched observation conditions."
+    },
+    {
+      "page": "model-adequacy-uncertainty.html",
+      "src": "figures/nonlinear-uncertainty.svg",
+      "alt": "A flat first-order tangent predicts zero uncertainty while the exact and second-order calculations give nonzero output scatter and preserve the symmetry between positive and negative phase deviations."
+    },
+    {
+      "page": "model-adequacy-uncertainty.html",
+      "src": "figures/numerical-cancellation.svg",
+      "alt": "Direct subtraction loses accuracy at short observation ratios, while the local series remains close to a high-precision reference."
+    },
+    {
+      "page": "phase-delay-inference.html",
+      "src": "figures/delay-fit-precision.svg",
+      "alt": "A negative phase-frequency slope gives 5 ns total delay; halving the observation span doubles delay standard deviation and crosses the illustrative 2 ns target."
+    },
+    {
+      "page": "phase-delay-inference.html",
+      "src": "figures/delay-ambiguity.svg",
+      "alt": "Two different unwrapped slopes have identical wrapped samples at integer MHz offsets, while conditional off-grid predictions distinguish the branches."
+    },
+    {
+      "page": "covariance-quadratic-forms.html",
+      "src": "figures/source-covariance.svg",
+      "alt": "A shared phase source branches with sensitivities one and two into two channels, while independent local errors enter their own channels."
+    },
+    {
+      "page": "covariance-quadratic-forms.html",
+      "src": "figures/covariance-projections.svg",
+      "alt": "A full covariance ellipse and rank-one line share equal radian axes; a marked support point maps to the channel-difference projection, whose half-width is the square root of its quadratic-form variance."
+    },
+    {
+      "page": "covariance-quadratic-forms.html",
+      "src": "figures/inverse-conditioning.svg",
+      "alt": "Two nearly parallel response vectors become indistinguishable as sensitivity separation vanishes; inverse estimate RMS grows as one over the separation."
+    },
+    {
+      "page": "observation-weighted-coherence.html",
+      "src": "figures/complex-filter-order.svg",
+      "alt": "A complex filter followed by angle extraction differs from extracting phase first; an AM-only input yields a nonzero output angle only in the first chain."
+    },
+    {
+      "page": "observation-weighted-coherence.html",
+      "src": "figures/observation-weights.svg",
+      "alt": "A positive one-second box average and two oppositely signed one-second boxes show constant rejection by differencing."
+    },
+    {
+      "page": "observation-weighted-coherence.html",
+      "src": "figures/observation-gains.svg",
+      "alt": "Box averaging has sidelobes, increments reject DC and their product weights separated phase averages."
+    },
+    {
+      "page": "observation-weighted-coherence.html",
+      "src": "figures/coherence-observables.svg",
+      "alt": "Phase averaging improves with time while expected coherent power falls; squared mean amplitude differs from both, and equal-variance increment laws give distinct signed coherence."
+    },
+    {
+      "page": "observation-weighted-coherence.html",
+      "src": "figures/covariance-increments.svg",
+      "alt": "Stationary increment variance saturates at two radian squared, random-walk increment variance grows with lag and only the stationary model has the displayed absolute phase PSD."
+    },
+    {
+      "page": "observation-weighted-coherence.html",
+      "src": "figures/shared-delay.svg",
+      "alt": "One source reaches two delayed endpoints; exact differential gain oscillates from zero to four while the small-offset approximation eventually diverges."
+    },
+    {
+      "page": "observation-weighted-coherence.html",
+      "src": "figures/finite-record-uncertainty.svg",
+      "alt": "Negative correlation reduces mean scatter but plus and minus correlations produce identical variance-estimator uncertainty."
+    },
+    {
+      "page": "scalar-stochastic-phase.html",
+      "src": "figures/ensemble-records.svg",
+      "alt": "Conditional Gaussian phase densities form a wider mixture; independent record means fluctuate while each random-constant record keeps its offset."
+    },
+    {
+      "page": "scalar-stochastic-phase.html",
+      "src": "figures/averaging-floor.svg",
+      "alt": "Independent noise decreases as one over square root N, record-constant noise stays fixed and mixed noise approaches 0.016 rad."
+    },
+    {
+      "page": "scalar-stochastic-phase.html",
+      "src": "figures/complex-distributions.svg",
+      "alt": "Four discrete points, circular Gaussian contours and two diagonal supports all have zero pseudo-covariance but different distributions."
+    },
+    {
+      "page": "scalar-stochastic-phase.html",
+      "src": "figures/circular-mean.svg",
+      "alt": "Two nearly overlapping left-pointing unit vectors have a left-pointing vector mean although the arithmetic angle mean is zero."
+    },
+    {
+      "page": "scalar-stochastic-phase.html",
+      "src": "figures/noise-phase.svg",
+      "alt": "Signal plus additive noise gives an atan2 phase; for zero parallel noise, arctangent approaches a finite angle while the linear prediction grows."
+    },
+    {
+      "page": "phase-comparison.html",
+      "src": "figures/comparison-planes.svg",
+      "alt": "Two RF paths feed mixers with separate LO endpoints, then real IF outputs Q and common-reference complex extraction O."
+    },
+    {
+      "page": "phase-comparison.html",
+      "src": "figures/relative-phasors.svg",
+      "alt": "Two equal-magnitude phasor pairs before and after common reference rotation retain a positive 40 degree separation."
+    },
+    {
+      "page": "phase-comparison.html",
+      "src": "figures/conversion-orientation.svg",
+      "alt": "Lower and upper LO paths give signed plus and minus 10 MHz difference tones and reports of 40 and minus 26 degrees."
+    },
+    {
+      "page": "phase-comparison.html",
+      "src": "figures/phase-wrapping.svg",
+      "alt": "Phase can advance two degrees or retreat 358 degrees between the same observations; positive waveform delay moves a sinusoid right."
+    },
+    {
+      "page": "phase-comparison.html",
+      "src": "figures/phase-validity.svg",
+      "alt": "Phase traces stop on either side of an amplitude-invalid interval, with no interpolating connection."
+    }
+  ]
+}

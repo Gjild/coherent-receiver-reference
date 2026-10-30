@@ -1,6 +1,15 @@
 # Visual-needs audit — existing manuscript, 2026-10-30
 
-Status: author audit/specification; illustration development not started. This is not visual acceptance. Baseline HEAD eb4be1141cded238090adcba957b167a4009ae64; working tree initially clean. No commits authorized.
+**Current status (2026-10-30):** approved visual remediation is complete as checked
+provisional drafts. All V01–V28 and mandatory state amendments are delivered and
+separately reviewed. See [final dispositions](#final-execution-dispositions) and
+[execution/acceptance assessment](visual-pedagogy-review.md). Human acceptance
+remains pending; stop before K08–K10.
+
+The specifications and “missing/specified/pending” statements below preserve the
+original audit boundary, not current production status. Original baseline HEAD
+was eb4be1141cded238090adcba957b167a4009ae64 with a clean tree and no commit
+authorization. The owner's later resume expressly authorized isolated checkpoints.
 
 ## Requirements and method
 
@@ -380,3 +389,62 @@ inspected actual standalone and integrated pixels; command/axis clarifications
 passed fresh focused reassessment. [Execution/evidence](visual-pedagogy-review.md).
 The pilot state integration is checked; its remaining V23–V28 work is next.
 No completed Chapter 1–3 review was repeated. Human acceptance remains pending.
+
+
+## Final execution dispositions
+
+The original section ledger is closed by the following delivered mappings and
+interpretive cross-links. Existing completed Chapters 1–3 reviews were preserved,
+not repeated. Chapters 4–6 now have completed fresh review/correction/reassessment;
+Chapter 7/state and pilot/connections have completed fresh image/mathematical review.
+Earlier pending-review and usage-limit records remain historical evidence.
+
+| Need | Delivered SVG asset(s), in book/figures | Final disposition |
+|---|---|---|
+| V01 | comparison-planes | Delivered/reviewed in Chapter 1; pilot connects and clarifies its own P/L/Q/O chain. |
+| V02 | relative-phasors | Delivered/reviewed; geometry and reference rotation retained. |
+| V03 | conversion-orientation | Delivered/reviewed; both conversion signs explicit. |
+| V04 | phase-wrapping, phase-validity | Delivered/reviewed; ambiguity and amplitude-invalid gap separated. |
+| V05 | ensemble-records | Delivered/reviewed with required mixture and paired repetition/record bridge. |
+| V06 | averaging-floor | Delivered/reviewed; covariance-dependent improvement and persistent floor. |
+| V07 | complex-distributions, circular-mean | Delivered/reviewed; propriety/circularity/joint Gaussianity and circular mean distinguished. |
+| V08 | noise-phase | Delivered/reviewed; signal-frame quadratures, exact atan2 and local limit. |
+| V09 | complex-filter-order, observation-weights, observation-gains | Delivered/reviewed with AM-to-PM counterexample and finite-remainder corrections/reassessment. |
+| V10 | coherence-observables, covariance-increments | Delivered/reviewed with all three coherent quantities, Lorentzian correspondence and stationary/random-walk distinction. |
+| V11 | shared-delay | Delivered/reviewed; common-source paths, exact gain and approximation failure. |
+| V12 | finite-record-uncertainty | Delivered/reviewed with both AR(1) correlation signs and different mean/variance estimators. |
+| V13 | source-covariance, covariance-projections | Delivered/reviewed; support versus radial intersection, coefficient norms and singular mapped-ball case derived and reassessed. |
+| V14 | inverse-conditioning | Delivered/reviewed; response rank versus reliable inference. |
+| V15 | delay-fit-precision | Delivered/reviewed; local precision, negative slope and frequency lever arm. |
+| V16 | delay-ambiguity | Delivered/reviewed; wrapped branches; prose retains nuisance-delay confounding and transfer links. |
+| V17 | uncertainty-sensitivity | Delivered/reviewed; observation correlation and endpoint coupling varied separately. |
+| V18 | nonlinear-uncertainty | Delivered/reviewed; zero slope, finite uncertainty and opposite branches. |
+| V19 (strongly beneficial) | numerical-cancellation | Delivered/reviewed; arithmetic versus model error and independent integral. |
+| V20 | tracking-loop | Delivered/reviewed; actuator relation and command units clarified/reassessed. |
+| V21 | tracking-transfer-budget | Delivered/reviewed; wanted transfer versus true-residual RMS criterion; no invented retention requirement. |
+| V22 | tracking-nonlinear-holdover | Delivered/reviewed; equilibria, holdover and marginal latency distinct. |
+| V23 | endpoint-architecture-budget | Delivered/reviewed; per-endpoint density, two-sided accounting, conditional preference and branch allocation. |
+| V24 | calibration-fixed-lo, calibration-delay-fit | Delivered/reviewed with mandatory asymmetric training/held-out fit, carrier/mean intercept and residual-delay distinction. |
+| V25 | calibration-maintenance | Delivered/reviewed; gate, snapshot/application epochs, held age and deterministic bound separate from SD. |
+| V26 | correction-updates | Delivered/reviewed; constant rejection, changing coefficients, two-time covariance and restricted randomized-origin spectrum. |
+| V27 | measurement-swaps | Delivered/reviewed; physical independent Q acquisition, conditional signs and shared-error ambiguity. |
+| V28 (strongly beneficial) | guarded-decisions | Delivered/reviewed; bound versus SD, equality rules and inconclusive overlap. |
+| Mandatory existing state remediation | relative-phase-state-sequence | Remediated/reviewed/reassessed; explicit invalidation bus and requalification before wanted-data use. Reused by cross-reference from Chapter 7. |
+| Existing reference-plane clarification | relative-phase-reference-planes | Remediated/reviewed; Q and acquisition drawn, labels repaired. Publishing demonstration intentionally reuses the same asset. |
+
+All 26 indispensable and two strongly beneficial specifications are satisfied in
+the existing manuscript scope. Thirty-seven distinct assets support this ledger;
+asset count is not the adequacy criterion. Definitions, derivations, likelihood
+steps, assumptions and source provenance continue to use prose/equations/tables;
+no separate decorative or algebra-per-step figure is needed. Pilot cross-links
+apply the foundation figures and retain pilot-specific architecture, calibration
+and measurement interfaces. Preface, references and publishing demonstration retain
+their assessed roles. No reader-facing appendix has been added.
+
+No unresolved indispensable visual gap or consequential scientific/graphical
+finding remains. Optional log/tick/notation polish, narrow-view label enlargement,
+richer standalone descriptions and publishing reference-word cleanup are recorded
+in the execution record. PDF, offline math, full responsive/assistive-technology
+behavior, specialist/reader evidence and hardware validation remain separate
+limitations. The author recommends bounded HTML visual acceptance; the owner
+retains the decision. K08–K10 remain outside the completed milestone.

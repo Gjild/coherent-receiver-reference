@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720" role="img" aria-labelledby="title desc"><title id="title">A justified error bound permits a guarded scalar decision</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">A justified error bound permits a guarded scalar decision</text>
+<text x="40" y="85" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Dimensionless example: upper limit L = 1; guaranteed error bound U = 0.2.</text>
+<path d="M570.000,115.000 L570.000,545.000" fill="none" stroke="#b34719" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="582.0" y="125" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">limit L</text>
+<text x="30" y="181" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">accept under bound</text>
+<path d="M307.500,175.000 L457.500,175.000" fill="none" stroke="#125b86" stroke-width="4" stroke-dasharray=""/>
+<circle cx="382.5" cy="175" r="6" fill="#125b86"/>
+<path d="M307.500,166.000 L307.500,184.000" fill="none" stroke="#125b86" stroke-width="2" stroke-dasharray=""/>
+<path d="M457.500,166.000 L457.500,184.000" fill="none" stroke="#125b86" stroke-width="2" stroke-dasharray=""/>
+<text x="30" y="261" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">accept: upper edge = L</text>
+<path d="M420.000,255.000 L570.000,255.000" fill="none" stroke="#125b86" stroke-width="4" stroke-dasharray=""/>
+<circle cx="495.0" cy="255" r="6" fill="#125b86"/>
+<path d="M420.000,246.000 L420.000,264.000" fill="none" stroke="#125b86" stroke-width="2" stroke-dasharray=""/>
+<path d="M570.000,246.000 L570.000,264.000" fill="none" stroke="#125b86" stroke-width="2" stroke-dasharray=""/>
+<text x="30" y="341" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">inconclusive overlap</text>
+<path d="M495.000,335.000 L645.000,335.000" fill="none" stroke="#125b86" stroke-width="4" stroke-dasharray=""/>
+<circle cx="570.0" cy="335" r="6" fill="#125b86"/>
+<path d="M495.000,326.000 L495.000,344.000" fill="none" stroke="#125b86" stroke-width="2" stroke-dasharray=""/>
+<path d="M645.000,326.000 L645.000,344.000" fill="none" stroke="#125b86" stroke-width="2" stroke-dasharray=""/>
+<text x="30" y="421" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">inconclusive: lower = L</text>
+<path d="M570.000,415.000 L720.000,415.000" fill="none" stroke="#125b86" stroke-width="4" stroke-dasharray=""/>
+<circle cx="645.0" cy="415" r="6" fill="#125b86"/>
+<path d="M570.000,406.000 L570.000,424.000" fill="none" stroke="#125b86" stroke-width="2" stroke-dasharray=""/>
+<path d="M720.000,406.000 L720.000,424.000" fill="none" stroke="#125b86" stroke-width="2" stroke-dasharray=""/>
+<text x="30" y="501" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">reject: lower edge &gt; L</text>
+<path d="M682.500,495.000 L832.500,495.000" fill="none" stroke="#125b86" stroke-width="4" stroke-dasharray=""/>
+<circle cx="757.5" cy="495" r="6" fill="#125b86"/>
+<path d="M682.500,486.000 L682.500,504.000" fill="none" stroke="#125b86" stroke-width="2" stroke-dasharray=""/>
+<path d="M832.500,486.000 L832.500,504.000" fill="none" stroke="#125b86" stroke-width="2" stroke-dasharray=""/>
+<path d="M270.000,570.000 L870.000,570.000" fill="none" stroke="#263c49" stroke-width="1" stroke-dasharray=""/>
+<text x="270.0" y="600" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">0.2</text>
+<text x="420.0" y="600" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">0.6</text>
+<text x="570.0" y="600" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">1</text>
+<text x="720.0" y="600" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">1.4</text>
+<text x="870.0" y="600" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">1.8</text>
+<text x="570" y="645" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Scalar result ŷ (dimensionless)</text>
+<text x="40" y="685" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Interval = ŷ ± U; U is not a standard deviation or an automatic 95% interval.</text>
+<text x="32" y="706" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

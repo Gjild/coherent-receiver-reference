@@ -1,3 +1,41 @@
+# Current boundary — visual-pedagogy milestone complete (2026-10-30)
+
+The approved existing-manuscript remediation is complete as checked provisional
+visual drafts: Chapters 1–3 preserved; Chapters 4–6 fresh independent review,
+corrections and reassessment completed; Chapter 7/state gates and integrated
+pilot/connections produced, pixel-inspected and separately reviewed. All V01–V28
+and mandatory state amendments are delivered. Thirty-seven distinct SVGs (35 new,
+two remediated originals) are integrated across Chapters 1–7/pilot; the publishing
+page intentionally reuses one. No consequential visual finding remains open.
+
+[Final audit dispositions](../reviews/visual-pedagogy-audit.md#final-execution-dispositions)
+and [execution, findings and acceptance limits](../reviews/visual-pedagogy-review.md)
+retain frozen inputs, actual images, provenance and author dispositions separately.
+The former usage-limit invocation remains incomplete historical review; completed
+fresh reviews supply the subsequent evidence. Chapters 1–3 manuscript/17 SVG bytes
+match resume baseline `2d2e4df`; their completed reviews were not repeated.
+
+All 57 available selected unittests pass; all 37 SVGs reproduce byte for byte;
+repository check and eleven-page Quarto HTML render pass; all 285 local HTML
+links/fragments resolve and all 38 figure uses have alt text. Actual standalone
+and complete rendered-page/crop pixels passed author and separate-context review.
+Full pytest could not start because pytest is absent. Minor presentation/accessibility
+polish and PDF/offline/full responsive/assistive-technology checks remain disclosed.
+
+The unchanged private-pipe procedure works on this computer with `/usr/bin/node`
+v26.12.1 and explicit `/usr/bin/brave` 156.1.98.62 through scoped host execution,
+browser sandbox retained. No helper redesign, host-policy change or installation
+was needed. Durable evidence archives avoid reliance on temporary paths.
+
+**Stop here.** Recommend visual acceptance for the declared synthetic-model HTML
+teaching drafts and inspected widths; owner visual-quality acceptance remains
+pending. No human Reviewed/Accepted status, specialist approval, reader effectiveness,
+physical validation or publication readiness is granted. Do not begin K08–K10.
+Safe isolated local checkpoints are authorized; no push/rebase/reset/amend.
+Earlier entries below preserve their historical boundaries and permissions.
+
+---
+
 # Current bounded task — Chapter 7/state visuals closed; pilot next (2026-10-30)
 
 Chapters 1–3 remain completed checked provisional visual drafts. Chapters 4–6

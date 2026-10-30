@@ -40,7 +40,7 @@ class SVG:
     def box(self,x,y,w,h,lines):
         self.s.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="5" fill="#edf4f8" stroke="#263c49"/>')
         for i,t in enumerate(lines): self.text(x+w/2,y+25+25*i,t,18,anchor='middle')
-    def plot(self,y,title,xlim,ylim,xlabel,ylabel,curves,logx=False,logy=False,points=()):
+    def plot(self,y,title,xlim,ylim,xlabel,ylabel,curves,logx=False,logy=False,points=(),xfmt=None,yfmt=None):
         self.text(100,y,title,20)
         left,top,w,h=100,y+92,780,195
         fx=lambda v:log10(v) if logx else v
@@ -53,8 +53,8 @@ class SVG:
             yv=10**(fy(ylim[0])+a*(fy(ylim[1])-fy(ylim[0]))) if logy else ylim[0]+a*(ylim[1]-ylim[0])
             self.path([(px(xv),top),(px(xv),top+h)],'#dae2e7',width=1)
             self.path([(left,py(yv)),(left+w,py(yv))],'#dae2e7',width=1)
-            self.text(px(xv),top+h+25,f'{xv:.3g}',17,anchor='middle')
-            self.text(left-12,py(yv)+6,f'{yv:.3g}',17,anchor='end')
+            self.text(px(xv),top+h+25,xfmt(xv) if xfmt else f'{xv:.3g}',17,anchor='middle')
+            self.text(left-12,py(yv)+6,yfmt(yv) if yfmt else f'{yv:.3g}',17,anchor='end')
         self.path([(left,top),(left,top+h),(left+w,top+h)],'#263c49',width=1.5)
         self.text(left,top-12,ylabel,18)
         self.text(left+w/2,top+h+55,xlabel,18,anchor='middle')
@@ -335,9 +335,166 @@ def group3():
     s.save()
 
 
+
+def endpoint_common_variance(delay,corner=None):
+    """Two-sided 1–10000 Hz band, common source 1e-6 rad²/Hz."""
+    return 2*quad(lambda f:4*sin(pi*f*delay)**2*1e-6/(1+(f/corner)**2 if corner else 1),1,10000,8192)
+
+def group4():
+    s=SVG('relative-phase-reference-planes','Trace RF, LO, analog IF and acquired complex output planes',660)
+    s.box(30,200,155,80,['Common RF tone','1 GHz; known use'])
+    s.path([(185,240),(220,240),(220,132),(255,132)],arrow=True)
+    s.path([(220,240),(220,332),(255,332)],arrow=True)
+    for i,y in [(1,100),(2,300)]:
+        s.box(255,y,150,65,[f'Fixture {i}','phase unknown'])
+        s.box(470,y,130,65,[f'Receiver {i}','RF / mixer / IF'])
+        s.box(700,y,220,65,['Acquisition + DDC',f'complex output z{i}'])
+        s.path([(405,y+32),(470,y+32)],arrow=True);s.text(425,y+17,f'P{i}',18)
+        s.path([(600,y+32),(700,y+32)],arrow=True);s.text(640,y+17,f'Q{i}',18)
+        s.path([(535,y+130),(535,y+65)],COLORS[1],arrow=True);s.text(560,y+110,f'L{i}: LO input',18)
+        x=950 if i==1 else 940
+        s.path([(920,y+32),(x,y+32),(x,520+25*(i-1)),(925,520+25*(i-1))],arrow=True)
+        s.text(925,y+17,f'O{i}',17)
+    s.box(625,490,300,90,['Compare p = z₂ z₁*','O₂ relative to O₁','before scalar correction'])
+    s.text(35,495,'L₁/L₂: shared LO with branches, or local LOs',18)
+    s.text(35,525,'locked to one frequency reference.',18)
+    s.text(35,570,'Equal frequency alone does not fix phase.',18)
+    s.text(35,610,'P: RF connectors; Q: analog IF; O: acquired/channelized outputs at a common epoch.',17)
+    s.save()
+    s=SVG('endpoint-architecture-budget','Endpoint disturbances can reverse an architecture preference',960)
+    for x,local in [(40,False),(520,True)]:
+        s.box(x,95,370,65,['Common output-equivalent phase r','local locked synthesizers' if local else 'shared LO distribution'])
+        s.path([(x+185,160),(x+185,195),(x+85,195),(x+85,230)],arrow=True)
+        s.path([(x+185,195),(x+285,195),(x+285,230)],arrow=True)
+        for i,xx in [(1,x),(2,x+200)]:
+            s.box(xx,230,170,80,[f'delay τ{i}' + (' then LP' if local else ''),'corner 100 Hz' if local else 'unit magnitude',f'+ output v{i} → L{i}'])
+        s.text(x,350,'ℓ₂ − ℓ₁ = (G₂ − G₁)r + v₂ − v₁',18)
+    s.text(40,395,'Shared Gᵢ = exp(−j2πfτᵢ); local Gᵢ = exp(−j2πfτᵢ)/(1+j f/(100 Hz)).',18)
+    s.text(40,430,'vᵢ is additive output phase, independent here; do not filter its density by Gᵢ again.',17)
+    xx=log(1e-10,2e-7);v10=endpoint_common_variance(1e-8);v100=endpoint_common_variance(1e-7);vl=endpoint_common_variance(1e-7,100)+39996*1e-8
+    sd=lambda v:degrees(sqrt(v))
+    px,py=s.plot(490,'Two-sided Sᵣ = 10⁻⁶ rad²/Hz; 1 ≤ |f| ≤ 10000 Hz',(1e-10,2e-7),(0,5.3),'Shared-LO branch density b per endpoint (rad²/Hz, logarithmic)','Selected-band phase SD (degrees)',[
+      ('shared LO: mismatch 10 ns',xx,[sd(v10+39996*b) for b in xx]),('shared LO: mismatch 100 ns',xx,[sd(v100+39996*b) for b in xx]),
+      ('local: 100 ns, fixed b = 10⁻⁸',xx,[sd(vl)]*len(xx)),('illustrative SD limit 1.5°',xx,[1.5]*len(xx))],True)
+    for b,val,label in [(1e-9,sd(v10+39996e-9),'compact'),(1e-7,sd(v100+39996e-7),'exposed')]:
+        s.dot(px(b),py(val),5);s.text(px(b)-45,py(val)-15,label,17)
+    s.text(60,865,'Shared curves nearly coincide: independent branch disturbances dominate these examples.',17)
+    s.text(60,900,'V = Vcommon + 39996b; compact shared-LO branch limit ≈ 1.71 × 10⁻⁸ rad²/Hz.',17)
+    s.save()
+    s=SVG('calibration-fixed-lo','Keep the LO fixed while known comb tones identify a local slope',660)
+    s.text(35,85,'Training RF: 999, 1000, 1001.5 MHz; held-out RF: 1000.5 MHz (excluded from fit).',18)
+    s.box(30,240,170,80,['Coherent RF comb','known calibration'])
+    s.path([(200,280),(230,280),(230,182),(260,182)],arrow=True)
+    s.path([(230,280),(230,382),(260,382)],arrow=True)
+    for i,y in [(1,150),(2,350)]:
+        s.box(260,y,140,65,['Fixture',f'branch {i}'])
+        s.box(460,y,150,65,[f'Receiver {i}','RF / IF response'])
+        s.box(690,y,230,90,['32 Msample/s I/Q','DDC → 100 ksample/s',f'per tone at O{i}'])
+        s.path([(400,y+32),(460,y+32)],arrow=True);s.text(425,y+17,f'P{i}',18)
+        s.path([(610,y+32),(690,y+32)],arrow=True);s.text(640,y+17,f'Q{i}',18)
+        s.path([(535,y-35),(535,y)],COLORS[1],arrow=True);s.text(560,y-20,f'L{i}: fixed 990 MHz',18)
+    s.text(35,505,'Training IF: 9, 10, 11.5 MHz; held-out IF: 10.5 MHz, with phase sidebands.',18)
+    s.text(35,545,'Q-to-O acquisition/channelizer phase is included unless independently de-embedded.',17)
+    s.text(35,585,'No retune, NCO reset or gain-state change during training; fixture slope remains a nuisance.',17)
+    s.save()
+    s=SVG('calibration-delay-fit','Reference-frequency phase and delay are distinct calibration quantities',990)
+    xx=lin(999,1001.5);phase=lambda f:.3-2*pi*2e-3*(f-1000)
+    px,py=s.plot(70,'Noiseless synthetic line: b₀ = 0.3 rad at 1000 MHz; delay = 2 ns',(999,1001.5),(.275,.32),'RF frequency (MHz)','Input-oriented phase (rad)',[
+      ('line prediction; blue dots train the fit',xx,[phase(f) for f in xx])],points=[(f,phase(f)) for f in [999,1000,1001.5]],xfmt=lambda f:f'{f:.3f}'.rstrip('0').rstrip('.'))
+    f=1000.5;s.s.append(f'<rect x="{px(f)-6}" y="{py(phase(f))-6}" width="12" height="12" fill="white" stroke="{COLORS[1]}" stroke-width="2"/>')
+    s.text(70,435,'Open square: held-out 1000.5 MHz; it checks prediction, not independent acquisition.',17)
+    s.text(70,470,'Mean frequency 1000.166667 MHz: bmean = 0.297905605 rad ≠ b₀ at 1000 MHz.',17)
+    bm=phase(1000+1/6)
+    s.plot(525,'Scalar phase correction at the carrier leaves the 2 ns slope',(999,1001.5),(-.022,.017),'RF frequency (MHz)','Phase after scalar correction (rad)',[
+      ('subtract b₀ at 1000 MHz',xx,[phase(f)-.3 for f in xx]),('subtract bmean: carrier bias remains',xx,[phase(f)-bm for f in xx])],xfmt=lambda f:f'{f:.3f}'.rstrip('0').rstrip('.'))
+    s.text(70,915,'Correct carrier subtraction: +0.0125664 rad at 999 MHz; −0.0188496 rad at 1001.5 MHz.',17)
+    s.text(70,950,'The fit estimates combined receiver + fixture delay unless fixture slope is separately known.',17)
+    s.save()
+    s=SVG('calibration-maintenance','Snapshot center, application time and correction age are different epochs',1370)
+    px=lambda t:190+650*(t+.06)/.24
+    s.text(40,80,'P = 2 s; time below is relative to snapshot center tₙ; all durations illustrative.',18)
+    for y,T in [(145,.01),(280,.05)]:
+        begin=-T/2-.02;end=T/2+.1
+        s.text(40,y-25,f'T = {1000*T:g} ms',18)
+        for a,b,c in [(begin,-T/2,COLORS[1]),(-T/2,T/2,COLORS[0]),(T/2,end,COLORS[2])]:s.path([(px(a),y),(px(b),y)],c,width=14)
+        s.dot(px(end),y,6,COLORS[2]);s.text(px(end)+10,y+6,'apply',17)
+        s.text(40,y+40,f'Gate [{begin:+.3f}, {end:+.3f}] s; invalid fraction {100*(.02+T+.1)/2:.1f}%.',17)
+    s.path([(px(0),120),(px(0),165)],'#263c49','5 4',1.5);s.path([(px(0),255),(px(0),300)],'#263c49','5 4',1.5);s.text(px(0),335,'center tₙ',17,anchor='middle')
+    s.text(40,380,'Left to right: 20 ms settling, snapshot T, then 100 ms after snapshot end.',17)
+    def path_for_age(T):
+        a=T/2+.1; times=[0.]; ages=[2.]
+        for n in range(3):
+            t=2*n+a
+            times.extend([t,t]);ages.extend([2+a,a])
+        times.append(4.2);ages.append(.2)
+        return times,ages
+    t10,a10=path_for_age(.01);t50,a50=path_for_age(.05)
+    s.plot(430,'Age of the held correction, including the gated interval before replacement',(0,4.2),(0,2.3),'Time relative to center t₀ (s)','Age since coefficient snapshot center (s)',[
+      ('T = 10 ms',t10,a10),('T = 50 ms',t50,a50)])
+    s.text(65,800,'Oldest age P + T/2 + 0.100; coefficient replacement causes the downward step.',17)
+    s.plot(855,'Bounded RF-delay drift rate 0.216°/s; add snapshot-center bias bound 0.216T/4',(0,4.2),(0,.52),'Time relative to center t₀ (s)','Deterministic phase-error bound (degrees)',[
+      ('T = 10 ms: max 0.45522°',t10,[.216*(a+.01/4) for a in a10]),
+      ('T = 50 ms: max 0.46170°',t50,[.216*(a+.05/4) for a in a50]),('separate drift limit 0.5°',[0,4.2],[.5,.5])])
+    s.text(55,1235,'These are deterministic bounds under a rate limit and no abrupt state changes.',17)
+    s.text(55,1270,'Snapshot SD is separate: 0.039278° / 0.045628° for the two declared examples.',17)
+    s.text(55,1310,'Standard deviation is not added to a guaranteed drift bound.',18)
+    s.save()
+    s=SVG('correction-updates','Updated corrections need an observation and covariance model',1340)
+    vals=[-.03,.02,-.01,.04,.01];tt=[0,1,1,2,2,3,3,4,4,5];held=[val for val in vals for _ in range(2)]
+    px,py=s.plot(70,'Illustrative held coefficients; shaded strips are an invalid-data mask',(0,5),(-.05,.05),'Time / update period P (dimensionless)','Correction phase (degrees)',[
+      ('held sequence (illustrative values)',tt,held),('frozen C = 0.02°',tt,[.02]*len(tt))])
+    for n in range(1,5):s.s.append(f'<rect x="{px(n-.08)}" y="162" width="{px(n)-px(n-.08)}" height="195" fill="#b34719" opacity="0.12"/>')
+    s.text(60,440,'Zero-sum weights remove frozen C; changing c(t) needs its own propagation.',17)
+    xx=lin(-2,2)
+    s.plot(495,'Independent centered update errors; stationary only after randomizing grid origin',(-2,2),(0,1.05),'Lag / P (dimensionless)','Normalized covariance Rc(τ) / vc',[
+      ('triangle max(1−|τ|/P, 0)',xx,[max(1-abs(x),0) for x in xx])])
+    xx=lin(0,3,601)
+    s.plot(920,'Two-sided PSD; even in frequency, positive half shown',(0,3),(0,1.05),'Offset frequency fP (dimensionless)','Normalized PSD Sc(f) / (vc P)',[
+      ('sinc²(fP)',xx,[sinc(x)**2 for x in xx])])
+    s.text(50,1290,'The stochastic panels require independent errors and a uniformly randomized grid origin.',17)
+    s.save()
+    s=SVG('measurement-swaps','Independent readout and controlled swaps test different error combinations',1080)
+    s.box(35,105,175,85,['Common source s','at RF tone F'])
+    s.box(290,105,260,85,['Fixture pair → P₁/P₂','D_F*s + cfix'])
+    s.box(640,105,270,85,['Receiver / LO / IF pair','wanted + bR − Δℓ'])
+    s.path([(210,147),(290,147)],arrow=True);s.path([(550,147),(640,147)],arrow=True)
+    s.text(570,130,'P',18)
+    s.box(640,265,270,65,['Q₁/Q₂: physical IF planes','relative phase δQ'])
+    s.path([(775,190),(775,265)],arrow=True)
+    s.path([(775,330),(775,385),(255,385),(255,440)],arrow=True)
+    s.path([(710,385),(710,440)],COLORS[1],arrow=True);s.dot(710,385,4,'#263c49')
+    s.box(70,440,370,95,['Q-to-O acquisition / instrument','m = δQ + ε','ε = a + i + ηpost'])
+    s.box(525,440,365,95,['Separate acquisition / instrument','m′ = δQ + ε′','Own errors and cross-covariance'])
+    s.path([(255,535),(255,605),(490,605),(490,635)],arrow=True)
+    s.path([(710,535),(710,605),(490,605)],COLORS[1])
+    s.box(205,635,570,85,['m − m′ removes δQ, leaving ε − ε′','A differential diagnosis, not absolute truth'])
+    s.text(40,770,'Grouping: δQ includes all pre-Q fluctuations; ηpost is only the post-Q small-error term.',17)
+    s.text(40,810,'Fixed output labels, known stimulus and stable conditions during each controlled swap:',17)
+    s.text(40,850,'Fixture swap: reversible D_F*s + cfix changes sign; receiver / LO / readout stay fixed.',17)
+    s.text(40,890,'Q-input swap: δQ changes sign; fixed readout asymmetry ε need not change sign.',17)
+    s.text(40,930,'Whole receiver exchange: recompute assignments; no universal sign rule isolates a receiver.',17)
+    s.text(40,985,'Shared source, receiver and instrument paths can leave common bias in agreeing readouts.',17)
+    s.text(40,1020,'Reconnection, loading or drift can break the swap assumptions; retain their uncertainty.',17)
+    s.text(40,1045,'Phase variables are radians; all readouts use the same declared epoch.',17)
+    s.save()
+    s=SVG('guarded-decisions','A justified error bound permits a guarded scalar decision',720)
+    s.text(40,85,'Dimensionless example: upper limit L = 1; guaranteed error bound U = 0.2.',18)
+    px=lambda x:270+600*(x-.2)/1.6
+    s.path([(px(1),115),(px(1),545)],COLORS[1],'7 5',2);s.text(px(1)+12,125,'limit L',17)
+    for i,(value,label) in enumerate([(.5,'accept under bound'),(.8,'accept: upper edge = L'),(1.,'inconclusive overlap'),(1.2,'inconclusive: lower = L'),(1.5,'reject: lower edge > L')]):
+        y=175+80*i;s.text(30,y+6,label,17);s.path([(px(value-.2),y),(px(value+.2),y)],COLORS[0],width=4);s.dot(px(value),y,6)
+        for x in [value-.2,value+.2]:s.path([(px(x),y-9),(px(x),y+9)],COLORS[0],width=2)
+    s.path([(px(.2),570),(px(1.8),570)],'#263c49',width=1)
+    for x in [.2,.6,1.,1.4,1.8]:s.text(px(x),600,f'{x:g}',17,anchor='middle')
+    s.text(570,645,'Scalar result ŷ (dimensionless)',18,anchor='middle')
+    s.text(40,685,'Interval = ŷ ± U; U is not a standard deviation or an automatic 95% interval.',18)
+    s.save()
+
+
 if __name__=='__main__':
-    if len(sys.argv)!=2 or sys.argv[1] not in ('1','2','3'):raise SystemExit('Choose implemented group: 1, 2 or 3')
+    if len(sys.argv)!=2 or sys.argv[1] not in ('1','2','3','4'):raise SystemExit('Choose implemented group: 1, 2, 3 or 4')
     if sys.argv[1]=='1':
         group1();group1_details()
     elif sys.argv[1]=='2':group2()
-    else:group3()
+    elif sys.argv[1]=='3':group3()
+    else:group4()

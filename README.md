@@ -23,7 +23,8 @@ This repository develops a mathematically rigorous, physically defensible and pr
    within its idealized model and stated conventions. Independent specialist
    validation, reader effectiveness, physical performance and publication readiness
    remain unestablished. K02–K04 are checked provisional teaching drafts; the
-   currently authorized K05–K07 batch is tracked in current-work.md.
+   K05–K07 batch and completed visual-pedagogy milestone are tracked in
+   current-work.md. Visual acceptance remains an owner decision; K08–K10 are suspended.
 4. Read [`docs/SETUP.md`](docs/SETUP.md) for installation and local checks.
 5. Read [`docs/REPOSITORY-MAP.md`](docs/REPOSITORY-MAP.md) before adding files.
 
@@ -38,15 +39,18 @@ python3 -m pytest
 
 The pilot's 19 standard-library tests and example run without extra packages.
 The full pytest suite additionally needs declared dependencies; pytest and NumPy
-were absent at closeout. Calculations are illustrative; passing tests establish
+were absent at the earlier pilot closeout; pytest remains absent on the current computer. Calculations are illustrative; passing tests establish
 selected mathematical/software properties, not receiver validation.
 
 ## Publication
 
 The Quarto HTML book includes the first bounded Chapter 1 draft, publishing
 demonstration, corrected pilot and developing foundational units. HTML rendering
-passes under the recorded environment; visual browser
-math/layout inspection remains pending. See the current unit review for evidence.
+passes under the recorded environment. The approved visual-pedagogy milestone
+has completed actual browser math/layout inspection and separate-context review
+for Chapters 1–7 and the pilot, within the declared models and inspected widths.
+See the [visual review and acceptance limits](reviews/visual-pedagogy-review.md);
+human visual acceptance remains pending.
 With Quarto available, render from the repository root:
 
 ```bash

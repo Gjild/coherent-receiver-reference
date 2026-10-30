@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1080" role="img" aria-labelledby="title desc"><title id="title">Independent readout and controlled swaps test different error combinations</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Independent readout and controlled swaps test different error combinations</text>
+<rect x="35" y="105" width="175" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="122.5" y="130" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Common source s</text>
+<text x="122.5" y="155" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">at RF tone F</text>
+<rect x="290" y="105" width="260" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="420.0" y="130" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Fixture pair → P₁/P₂</text>
+<text x="420.0" y="155" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">D_F*s + cfix</text>
+<rect x="640" y="105" width="270" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="775.0" y="130" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Receiver / LO / IF pair</text>
+<text x="775.0" y="155" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">wanted + bR − Δℓ</text>
+<path d="M210.000,147.000 L290.000,147.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M550.000,147.000 L640.000,147.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="570" y="130" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">P</text>
+<rect x="640" y="265" width="270" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="775.0" y="290" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Q₁/Q₂: physical IF planes</text>
+<text x="775.0" y="315" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">relative phase δQ</text>
+<path d="M775.000,190.000 L775.000,265.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M775.000,330.000 L775.000,385.000 L255.000,385.000 L255.000,440.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M710.000,385.000 L710.000,440.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<circle cx="710" cy="385" r="4" fill="#263c49"/>
+<rect x="70" y="440" width="370" height="95" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="255.0" y="465" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Q-to-O acquisition / instrument</text>
+<text x="255.0" y="490" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">m = δQ + ε</text>
+<text x="255.0" y="515" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">ε = a + i + ηpost</text>
+<rect x="525" y="440" width="365" height="95" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="707.5" y="465" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Separate acquisition / instrument</text>
+<text x="707.5" y="490" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">m′ = δQ + ε′</text>
+<text x="707.5" y="515" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Own errors and cross-covariance</text>
+<path d="M255.000,535.000 L255.000,605.000 L490.000,605.000 L490.000,635.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M710.000,535.000 L710.000,605.000 L490.000,605.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray=""/>
+<rect x="205" y="635" width="570" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="490.0" y="660" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">m − m′ removes δQ, leaving ε − ε′</text>
+<text x="490.0" y="685" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">A differential diagnosis, not absolute truth</text>
+<text x="40" y="770" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Grouping: δQ includes all pre-Q fluctuations; ηpost is only the post-Q small-error term.</text>
+<text x="40" y="810" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Fixed output labels, known stimulus and stable conditions during each controlled swap:</text>
+<text x="40" y="850" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Fixture swap: reversible D_F*s + cfix changes sign; receiver / LO / readout stay fixed.</text>
+<text x="40" y="890" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Q-input swap: δQ changes sign; fixed readout asymmetry ε need not change sign.</text>
+<text x="40" y="930" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Whole receiver exchange: recompute assignments; no universal sign rule isolates a receiver.</text>
+<text x="40" y="985" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Shared source, receiver and instrument paths can leave common bias in agreeing readouts.</text>
+<text x="40" y="1020" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Reconnection, loading or drift can break the swap assumptions; retain their uncertainty.</text>
+<text x="40" y="1045" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Phase variables are radians; all readouts use the same declared epoch.</text>
+<text x="32" y="1066" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

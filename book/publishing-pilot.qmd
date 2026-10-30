@@ -32,7 +32,7 @@ The table @tbl-layout-demo checks a cross-reference and does not constitute engi
 
 ## Figure, source and navigation check {#sec-publishing-check}
 
-![Pilot reference-plane diagram. This publishing check does not establish physical validity.](figures/relative-phase-reference-planes.svg){#fig-publishing-check}
+![Pilot reference-plane diagram. This publishing check does not establish physical validity.](figures/relative-phase-reference-planes.svg){#fig-publishing-check fig-alt="A common RF tone feeds two receivers through fixtures; analog IF and acquired complex output planes are distinguished before comparing channel 2 with channel 1."}
 
 Figure @fig-publishing-check tests SVG inclusion. The measurement model should
 include significant uncertainty contributors [@taylor1994uncertainty, app. A.1].

@@ -1,0 +1,90 @@
+[
+  {
+    "chapter": 4,
+    "capture_result": {
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 2.068,
+      "source": "/tmp/vp-g4-render/book/_book/covariance-quadratic-forms.html",
+      "source_sha256": "77dcbed99fef12344340aaeaa566f561d5bdaa08cc2536615504889474151bb9",
+      "backend": "pipe",
+      "viewport": [
+        960,
+        2200
+      ],
+      "image_exists": true,
+      "image_dimensions": [
+        945,
+        7970
+      ],
+      "image_sha256": "c76231d039033c51e460e0a56abf097fbf11c7deefa4f3999972ab4d85a5fef3"
+    },
+    "author_inspection": "All overlapping full-width crops through bottom navigation viewed; figures, labels, caption and typeset math visible. Some broad equations extend into the empty margin, without clipping in these captures."
+  },
+  {
+    "chapter": 5,
+    "capture_result": {
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 1.666,
+      "source": "/tmp/vp-g4-render/book/_book/phase-delay-inference.html",
+      "source_sha256": "ba0bcc7ad5799fcaf8840af8e0dda3ec420098b9c19f923287a1820933b84cff",
+      "backend": "pipe",
+      "viewport": [
+        960,
+        2200
+      ],
+      "image_exists": true,
+      "image_dimensions": [
+        945,
+        6456
+      ],
+      "image_sha256": "039ca41e2b6c28cb7ac2beb93614639134817cffd0565139f4601389ee4511e5"
+    },
+    "author_inspection": "All overlapping full-width crops through bottom navigation viewed; figures, labels, caption and typeset math visible. Some broad equations extend into the empty margin, without clipping in these captures."
+  },
+  {
+    "chapter": 6,
+    "capture_result": {
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 1.767,
+      "source": "/tmp/vp-g4-render/book/_book/model-adequacy-uncertainty.html",
+      "source_sha256": "72f834736e7665fa41ce7e6c0ffa25480d38ba6092356a1866e615d147495e9c",
+      "backend": "pipe",
+      "viewport": [
+        960,
+        2200
+      ],
+      "image_exists": true,
+      "image_dimensions": [
+        945,
+        8344
+      ],
+      "image_sha256": "0b9c8c8b19b817bb68be96e6017bcbdf10d32aff2602fad3ff2cecddfe710a69"
+    },
+    "author_inspection": "All overlapping full-width crops through bottom navigation viewed; figures, labels, caption and typeset math visible. Some broad equations extend into the empty margin, without clipping in these captures."
+  },
+  {
+    "chapter": 7,
+    "capture_result": {
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 1.967,
+      "source": "/tmp/vp-g4-render/book/_book/tracking-signal-retention.html",
+      "source_sha256": "a8f7e6d15c61d8f05ea3c8fef9ea48a9baf6a055a456c9477d19ed0d184b2bfe",
+      "backend": "pipe",
+      "viewport": [
+        960,
+        2200
+      ],
+      "image_exists": true,
+      "image_dimensions": [
+        945,
+        8348
+      ],
+      "image_sha256": "5c93fc06e675c1ec7036bb88d15670e5125337737581282fd7bd9df2abe7c921"
+    },
+    "author_inspection": "All overlapping full-width crops through bottom navigation viewed; figures, labels, caption and typeset math visible. Some broad equations extend into the empty margin, without clipping in these captures."
+  }
+]

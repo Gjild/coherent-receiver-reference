@@ -1,5 +1,10 @@
 # Visual-pedagogy execution record — 2026-10-30
 
+**Current outcome:** all four approved visual groups are checked provisional
+drafts. Final assessment and acceptance limits are at the end of this record.
+Earlier boundary statements below describe their dated execution stages.
+Human visual-quality acceptance remains pending; stop before K08–K10.
+
 ## Boundary and baseline
 
 Owner approved the complete initiative; K08–K10 and new canonical authoring remain suspended. Initial working tree clean; baseline HEAD `eb4be1141cded238090adcba957b167a4009ae64`. No commit authorization was given, so no new Git checkpoint was created. Manuscript and original assets remain unchanged.
@@ -456,3 +461,149 @@ evidence. No failed image access was reported. Backend routing is not independen
 verified. These are checked provisional visual drafts, not human acceptance,
 hardware capture/stability validation or reader-trial evidence. Pilot intervention
 V23–V28 and connected/final assessment remain outstanding.
+
+
+## Integrated pilot and connections complete (2026-10-30)
+
+V23–V28 are implemented in seven new SVGs: endpoint-architecture-budget,
+calibration-fixed-lo, calibration-delay-fit, calibration-maintenance,
+correction-updates, measurement-swaps and guarded-decisions. The existing
+relative-phase-reference-planes now explicitly includes Q analog IF and Q-to-O
+acquisition/DDC, with P/L/O and comparison orientation retained. Its intentional
+publishing-page reuse has meaningful alt text. The separately reviewed state
+diagram remains the single recovery/gating home. Pilot prose interprets each
+figure and links to the existing phasor/noise, operator/filter/coherence,
+source-covariance, ambiguity, adequacy and tracking figures. These are connections
+to their canonical teaching homes, not new competing general derivations.
+
+The pilot additionally states filtered carrier-relative smallness and links to
+Chapter 3's finite-remainder conditions. Seventeen of its eighteen original
+display blocks are byte-preserved; the measurement equation is reflowed into
+three aligned lines with all terms/signs unchanged. This removes horizontal
+page overflow at viewport 960: the capture width falls from 1109 to 945 pixels.
+Before freezing, actual-pixel checks also corrected repeated RF tick labels,
+a fixture label overflow, timeline-guide placement, pure-delay magnitude wording,
+update-observation wording, axis clearance and the measurement split-node mark.
+No previous completed chapter/illustration batch was regenerated without cause.
+
+Two focused tests independently integrate the endpoint cosine series and
+complex-exponential local response, and transform the update covariance triangle
+with a separate spectral-area tail bound. All 38 foundation/visual tests and
+19 pilot tests pass. These checks address mathematics/software only.
+
+### Independent findings and author disposition
+
+Fresh ephemeral GPT-6.1 Sol/high request, enforced `-s read-only`, returned exit 0.
+Reviewer thread: `01a18d92-e3c4-7d23-ac09-4ed63ed446cf`. It verified all 161 frozen
+input hashes, source-to-capture links and embedded SVG copies, read requirements
+and manuscript/model before code, and independently reproduced endpoint budgets,
+allocation thresholds, fixed/retuned LO slopes, calibration intercepts, snapshot
+uncertainties, gate/age/drift bounds, triangle/sinc-squared normalization, covariance
+and swap signs, and guarded-decision equalities. Independent curve vertices agree
+within 0.0005 SVG unit. It assessed the connected Chapters 1–7/pilot progression
+without repeating their completed mathematics/illustration batch reviews.
+
+[Unedited findings](visual-pedagogy-evidence/g4-findings.md),
+[prompt](visual-pedagogy-evidence/g4-prompt.txt),
+[inputs](visual-pedagogy-evidence/g4-inputs.sha256),
+[invocation](visual-pedagogy-evidence/g4-invocation.json),
+[events](visual-pedagogy-evidence/g4-events.jsonl),
+[exit](visual-pedagogy-evidence/g4-exit.json),
+[archived packet](visual-pedagogy-evidence/g4-packet.tar.gz).
+
+Reviewer found no consequential mathematical, graphical, physical-interpretation
+or pedagogical defect, no clipped figure content, missing scientific symbol or
+misleading connection across discontinuities. Its positive assessment is bounded
+to the supplied synthetic models and captured HTML. Author accepts that scoped
+assessment. No consequential correction remains to trigger another reassessment.
+Earlier consequential findings and their separate correction reassessments remain
+recorded above; the old usage-limit invocation is never counted as completed review.
+
+Optional findings retained: some long equations extend beyond the narrow text
+column but remain visible within the 945-pixel page; dense secondary figure labels
+shrink to about 10.5–12 pixels there; purposeful 1000 MHz/zero/threshold ticks could
+improve emphasis; standalone SVG descriptions could be more specific; the publishing
+demonstration repeats generated words (e.g. “Figure Figure 8.1”). These are minor
+presentation/accessibility improvements, not unresolved indispensable explanations.
+No exhaustive mobile or assistive-technology pass is inferred from readable crops.
+
+Reviewer inspected eight standalone PNGs, three complete pages and every one of
+37 readable full-width overlapping crops: 48 PNGs total. Normal pilot is
+1425×25846 at viewport 1440×2200; narrow pilot is 945×27670 at 960×2200;
+publishing is 1440×2200. Author independently viewed all standalones and all those
+crops through bottom navigation. An oversized tool response was truncated;
+affected images were reopened in small batches before recording inspection.
+[Author image record](visual-pedagogy-evidence/g4-author-inspection.json),
+[final byte links](visual-pedagogy-evidence/g4-final-integrity.json).
+
+Incidental reviewer exposure: capture metadata names original/staging paths and
+supplied requirements/manuscript contain historical status wording. Those outside
+paths were not accessed and assertions were excluded from correctness evidence.
+No author conversation, previous findings/dispositions, current-work, connectors,
+delegation or edits were used. Requested backend routing was not independently
+introspected. SciPy was unavailable in the review; NumPy quadrature, independent
+analytic alternatives and refinement sufficed. External citation passages were
+not freshly revalidated by this packet-only review; earlier claim-level source
+records retain their original scope. No new empirical/source claim is introduced.
+
+## Final visual-adequacy assessment and milestone boundary
+
+All existing Chapters 1–7 and the integrated pilot now have the visual support
+specified by V01–V28 and the mandatory state amendment. The final
+[audit disposition ledger](visual-pedagogy-audit.md#final-execution-dispositions)
+maps needs to delivered assets. All 26 indispensable and both strongly beneficial
+specifications are delivered; no figure quota substitutes for section coverage.
+There are 37 distinct SVGs: 35 new initiative figures and two remediated originals,
+used 38 times because the publishing demonstration intentionally reuses one.
+This continuation added ten of those figures and remediated the two originals;
+the eight Chapter 4–6 figures were already produced at the recorded boundary.
+Chapters 1–3 retain their completed status and exact manuscript/17-figure bytes
+against the clean resume baseline `2d2e4df`.
+
+| Assessment dimension | Evidence and disposition |
+|---|---|
+| Indispensable teaching coverage | Physical planes/signs, complex geometry, ensembles/records, noise/fades, operators/coherence, shared paths, covariance/support, inference/ambiguity, model adequacy, tracking/recovery and pilot architecture/calibration/measurement decisions all have integrated explanations. The audit amendments are delivered, including calibration fit and explicit invalid-data routes. |
+| Mathematics and physical interpretation | Fresh group reviews and targeted reassessments check signs, two-sided factors, units, normalization, limits, covariance, filtered-output validity and inference/state boundaries. Synthetic assumptions remain explicit; no hardware applicability or compliance is asserted. |
+| Graphical conventions | Channel 2 relative to channel 1, declared planes/epochs, radian mathematics versus explicitly labeled degree displays, offset/carrier frequency distinctions, equal-scale geometry, differentiated line styles and units are consistent within their local models. Covariance geometry is not a coverage region. |
+| Readability/accessibility | Actual standalone and full rendered-page pixels plus readable crops were inspected by author and separate reviewers. Alt text/captions carry the teaching relationship; line styles and labels supplement color. Minor narrow-label and standalone-description improvements remain; keyboard/screen-reader and full responsive behavior are untested. |
+| Learning progression and redundancy | Physical comparison → random observations → weighting/coherence → coupled sources → inference → adequacy → tracking connects into pilot decisions. Pilot cross-links reuse general figures; additional diagrams explain pilot-specific interfaces. No duplicate state sequence or new canonical treatment is introduced. |
+| Simplifications and omissions | Ideal mixing, linearization, Gaussian/AR(1), finite bands, continuous first-order loops, bounded drift and randomized-origin updates are qualified. Hardware realization, full digital/alias/blocker budgets, stochastic acquisition/reliability and reader effectiveness retain their stated later/evidence boundaries. No indispensable visual gap remains within the existing manuscript scope. |
+| Reproducibility and rendering | All 37 SVGs reproduce byte for byte in scratch storage. Eleven Quarto HTML pages render; all 285 local HTML links/fragments resolve, with no duplicate IDs/unresolved markers; all 38 figure uses have alt text. Current capture source hashes match rendered bytes. |
+
+Final available checks: 38 foundation/visual unittests plus 19 pilot unittests
+pass (57 selected tests); repository scaffold check passes; whitespace check
+passes. `python3 -m pytest` could not start because pytest is not installed.
+The existing NumPy/pytest phase-transfer suite was consequently not run through
+pytest; no package installation was attempted. [Check record](visual-pedagogy-evidence/final-checks.json),
+[SVG/preservation check](visual-pedagogy-evidence/final-regeneration.json),
+[HTML/alt-text checks](visual-pedagogy-evidence/final-html-checks.json),
+[successful eleven-page render log](visual-pedagogy-evidence/final-quarto-render.txt).
+Current code-native figures and models have the separately checked alternatives
+recorded above; unavailable pytest is a disclosed regression limit.
+
+Supplementary author narrow-view checks cover the complete current Chapters 4–7
+at viewport 960×2200: respective PNGs 945×7970, 945×6456, 945×8344 and 945×8348,
+with 22 overlapping strips through bottom navigation (including trailing blank
+strips). Figures, captions and typeset mathematics remain visible; broad equations
+sometimes use the empty margin. These supplement their completed normal-width
+independent reviews; no additional narrow-page AI review is claimed.
+[Inspection record](visual-pedagogy-evidence/final-narrow-inspection.json),
+[PNG/metadata/crop archive](visual-pedagogy-evidence/final-narrow-evidence.tar.gz).
+Chapters 1–3 use their preserved completed inspection/review evidence; no repeated
+batch review or exhaustive new narrow/mobile assessment was performed.
+
+The already introduced technical-authoring/verification gates and unit/review
+checklists remain appropriate: model before illustration, interpreted reuse,
+independent alternatives, actual full-page pixels and frozen read-only reassessment
+found concrete defects that generation/source parsing missed. No new capture
+framework, dependencies or host-policy change was needed. Different-computer Node
+and browser qualification is recorded above and in the canonical inspection guide.
+
+**Recommendation:** visual acceptance may be granted by the owner for the existing
+Chapters 1–7/pilot HTML teaching drafts within these declared models and inspected
+widths. All defined indispensable remediation/review gates are satisfied; no
+unresolved consequential visual-acceptance blocker was identified. This is a
+recommendation only. Human specialist acceptance, reader trials, physical/system
+validation, PDF/offline MathJax and publication readiness remain unestablished.
+Optional improvements and the unavailable full pytest run remain disclosed.
+Stop at this visual-pedagogy milestone; K08–K10 do not begin automatically.

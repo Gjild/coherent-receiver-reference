@@ -1,8 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 400" role="img" aria-labelledby="title desc">
-<title id="title">Two-channel reference planes</title><desc id="desc">A common RF tone passes through uncertain fixture branches to P1 and P2. Each channel mixes with an endpoint LO at L1 or L2 and produces O1 or O2. Compare O2 times conjugate O1.</desc>
-<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="#24506a"/></marker></defs>
-<rect width="920" height="400" fill="white"/>
-<g fill="#edf4f8" stroke="#24506a" stroke-width="2"><rect x="20" y="90" width="140" height="130"/><rect x="390" y="70" width="160" height="60"/><rect x="390" y="190" width="160" height="60"/><rect x="610" y="110" width="280" height="110"/><rect x="230" y="290" width="400" height="70"/></g>
-<g fill="#183446" font-family="sans-serif" font-size="17"><text x="35" y="140">Common tone</text><text x="35" y="170">1 GHz</text><text x="410" y="106">Receiver 1</text><text x="410" y="226">Receiver 2</text><text x="630" y="150">Compare p = z₂ z₁*</text><text x="630" y="183">simultaneous observation</text><text x="245" y="317">Shared LO + branches OR two local</text><text x="245" y="344">synthesizers locked to one reference</text><text x="190" y="75">Fixture 1</text><text x="190" y="185">Fixture 2</text><text x="330" y="95">P1</text><text x="330" y="215">P2</text><text x="565" y="88">O1</text><text x="565" y="238">O2</text><text x="365" y="150">L1</text><text x="465" y="275">L2</text></g>
-<g fill="none" stroke="#24506a" stroke-width="2" marker-end="url(#arrow)"><path d="M160 110 H390"/><path d="M160 200 H390"/><path d="M550 100 H600 V135 H610"/><path d="M550 220 H600 V195 H610"/><path d="M350 290 V150 H430 V130"/><path d="M480 290 V250"/></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660" role="img" aria-labelledby="title desc"><title id="title">Trace RF, LO, analog IF and acquired complex output planes</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Trace RF, LO, analog IF and acquired complex output planes</text>
+<rect x="30" y="200" width="155" height="80" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="107.5" y="225" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Common RF tone</text>
+<text x="107.5" y="250" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">1 GHz; known use</text>
+<path d="M185.000,240.000 L220.000,240.000 L220.000,132.000 L255.000,132.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M220.000,240.000 L220.000,332.000 L255.000,332.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="255" y="100" width="150" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="330.0" y="125" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Fixture 1</text>
+<text x="330.0" y="150" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">phase unknown</text>
+<rect x="470" y="100" width="130" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="535.0" y="125" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Receiver 1</text>
+<text x="535.0" y="150" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">RF / mixer / IF</text>
+<rect x="700" y="100" width="220" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="810.0" y="125" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Acquisition + DDC</text>
+<text x="810.0" y="150" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">complex output z1</text>
+<path d="M405.000,132.000 L470.000,132.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="425" y="117" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">P1</text>
+<path d="M600.000,132.000 L700.000,132.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="640" y="117" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Q1</text>
+<path d="M535.000,230.000 L535.000,165.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="560" y="210" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">L1: LO input</text>
+<path d="M920.000,132.000 L950.000,132.000 L950.000,520.000 L925.000,520.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="925" y="117" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">O1</text>
+<rect x="255" y="300" width="150" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="330.0" y="325" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Fixture 2</text>
+<text x="330.0" y="350" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">phase unknown</text>
+<rect x="470" y="300" width="130" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="535.0" y="325" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Receiver 2</text>
+<text x="535.0" y="350" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">RF / mixer / IF</text>
+<rect x="700" y="300" width="220" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="810.0" y="325" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Acquisition + DDC</text>
+<text x="810.0" y="350" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">complex output z2</text>
+<path d="M405.000,332.000 L470.000,332.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="425" y="317" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">P2</text>
+<path d="M600.000,332.000 L700.000,332.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="640" y="317" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Q2</text>
+<path d="M535.000,430.000 L535.000,365.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="560" y="410" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">L2: LO input</text>
+<path d="M920.000,332.000 L940.000,332.000 L940.000,545.000 L925.000,545.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="925" y="317" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">O2</text>
+<rect x="625" y="490" width="300" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="775.0" y="515" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Compare p = z₂ z₁*</text>
+<text x="775.0" y="540" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">O₂ relative to O₁</text>
+<text x="775.0" y="565" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">before scalar correction</text>
+<text x="35" y="495" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">L₁/L₂: shared LO with branches, or local LOs</text>
+<text x="35" y="525" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">locked to one frequency reference.</text>
+<text x="35" y="570" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Equal frequency alone does not fix phase.</text>
+<text x="35" y="610" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">P: RF connectors; Q: analog IF; O: acquired/channelized outputs at a common epoch.</text>
+<text x="32" y="646" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
 </svg>

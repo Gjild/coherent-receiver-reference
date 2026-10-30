@@ -1,0 +1,19 @@
+{
+  "packet_entries": 161,
+  "packet_mismatch": [],
+  "page_links": [
+    {
+      "page": "pilot",
+      "source_hash_matches_current_render": true
+    },
+    {
+      "page": "pilot-narrow",
+      "source_hash_matches_current_render": true
+    },
+    {
+      "page": "publishing",
+      "source_hash_matches_current_render": true
+    }
+  ],
+  "manuscript_mismatch": []
+}

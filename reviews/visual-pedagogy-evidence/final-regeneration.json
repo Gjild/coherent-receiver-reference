@@ -1,0 +1,13 @@
+{
+  "generated": 37,
+  "repository_svgs": 37,
+  "mismatches": [],
+  "chapters_1_3_svg_count": 17,
+  "chapters_1_3_svg_changes": [],
+  "chapters_1_3_manuscripts_unchanged": {
+    "phase-comparison": true,
+    "scalar-stochastic-phase": true,
+    "observation-weighted-coherence": true
+  },
+  "scratch": "/tmp/vp-final-svg-sg2p4yt4"
+}

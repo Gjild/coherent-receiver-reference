@@ -1,0 +1,34 @@
+{
+  "archived_packets": [
+    {
+      "packet": "g2-correction-packet.tar.gz",
+      "archive_sha256": "c5f12e312ba3d6557203641afc588dab1bcb1fca5a55761f8560f8fdbc098e6d",
+      "entries_verified": 111,
+      "mismatch": []
+    },
+    {
+      "packet": "g2-resume-packet.tar.gz",
+      "archive_sha256": "fabae97664711a2a5c7c0703edf188d3d31d9f62bee93440022fbbf75cc1b0c5",
+      "entries_verified": 108,
+      "mismatch": []
+    },
+    {
+      "packet": "g3-correction-packet.tar.gz",
+      "archive_sha256": "9b31d476942c66ee8d922a9c36ff31bd74d7ad055ccb67702c182c1632b186ad",
+      "entries_verified": 98,
+      "mismatch": []
+    },
+    {
+      "packet": "g3-packet.tar.gz",
+      "archive_sha256": "54112cbec37836af7df87a1bac679323907abf0a734ff67c8f3accf07e49c9c3",
+      "entries_verified": 98,
+      "mismatch": []
+    },
+    {
+      "packet": "g4-packet.tar.gz",
+      "archive_sha256": "0d14ddfb24754027b404afa55fca086e4e979793f29063e0b493a2a948ad3545",
+      "entries_verified": 161,
+      "mismatch": []
+    }
+  ]
+}

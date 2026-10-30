@@ -1,0 +1,30 @@
+{
+  "observed_results": [
+    {
+      "command": "python3 -m unittest discover -s tests -p '*stdlib.py'",
+      "exit_code": 0,
+      "tests_passed": 38
+    },
+    {
+      "command": "PYTHONPATH=engineering/src python3 -m unittest discover -s tests -p 'test_relative_phase.py'",
+      "exit_code": 0,
+      "tests_passed": 19
+    },
+    {
+      "command": "python3 -m pytest",
+      "exit_code": 1,
+      "error": "/usr/bin/python3: No module named pytest"
+    },
+    {
+      "command": "python3 scripts/check_repo.py",
+      "exit_code": 0,
+      "result": "13 required scaffold files present"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "limits": "Available selected tests only. Existing test_phase_transfer.py requires NumPy and pytest; not run via pytest. No packages installed.",
+  "closeout_note": "The staged whitespace check initially found an extra blank EOF line in the copied Quarto log. Only that trailing blank line was removed; the original render output remains in the scratch render directory. The staged check is repeated before commit."
+}

@@ -105,4 +105,24 @@ class TrackingFigureModels(unittest.TestCase):
             k=2*math.pi*fc;latency=1/(4*fc)
             self.assertLess(abs(1j*k+k*cmath.exp(-1j*k*latency)),1e-11)
 
+
+class PilotFigureModels(unittest.TestCase):
+    def test_shared_endpoint_integral_against_cosine_series(self):
+        # Integrate 2(1-cos(2*pi*f*delay)) term by term; this avoids both
+        # author sin-squared evaluation and numerical integration.
+        for delay in (1e-8,1e-7):
+            value=4e-6*sum((-1)**(n+1)*(2*math.pi*delay)**(2*n)*(10000**(2*n+1)-1)/(math.factorial(2*n)*(2*n+1)) for n in range(1,6))
+            self.assertAlmostEqual(v.endpoint_common_variance(delay),value,delta=1e-20)
+        local=2*v.quad(lambda f:1e-6*abs((cmath.exp(-2j*math.pi*f*1e-7)-1)/(1+1j*f/100))**2,1,10000,32768)
+        self.assertAlmostEqual(v.endpoint_common_variance(1e-7,100),local,delta=1e-18)
+    def test_held_update_covariance_transform_and_area(self):
+        for f in (0.,.25,.37,1.,1.5,3.):
+            transformed=v.quad(lambda t:(1-abs(t))*math.cos(2*math.pi*f*t),-1,1,8192)
+            self.assertAlmostEqual(transformed,v.sinc(f)**2,delta=1e-12)
+        cutoff=40.
+        area=v.quad(lambda f:v.sinc(f)**2,-cutoff,cutoff,160000)
+        # Independent tail bound from sinc²(f) <= 1/(pi*f)².
+        self.assertGreater(area,1-2/(math.pi**2*cutoff))
+        self.assertLess(area,1.)
+
 if __name__=='__main__':unittest.main()

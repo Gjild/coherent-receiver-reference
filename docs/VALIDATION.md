@@ -1,3 +1,38 @@
+# Visual-pedagogy milestone checks — 2026-10-30
+
+The [execution/final assessment](../reviews/visual-pedagogy-review.md) records
+completed independent review/corrections, actual PNG/page inspection and limits.
+Chapters 1–3 completed evidence and bytes are preserved. Chapters 4–6, Chapter 7
+and pilot groups now have successful fresh read-only reviews; the historical
+usage-limit invocation is not counted as completed review.
+
+- Node `/usr/bin/node` v26.12.1 and Brave `/usr/bin/brave` 156.1.98.62 verified.
+  The documented private-pipe smoke and figure/full-page capture work with scoped
+  host execution and browser sandbox retained. No host-policy/helper changes.
+- `python3 -m unittest discover -s tests -p '*stdlib.py'`: 38 pass.
+- `PYTHONPATH=engineering/src python3 -m unittest discover -s tests -p 'test_relative_phase.py'`:
+  19 pass. Total available selected regressions: 57.
+- `python3 -m pytest`: cannot start, pytest absent. Full suite unperformed;
+  no installation. Mathematical alternatives do not establish physical validation.
+- `python3 scripts/check_repo.py`: 13 required paths present; whitespace passes.
+- Scratch SVG regeneration: all 37 byte-identical. Chapters 1–3 manuscripts and
+  17 illustrations match clean resume baseline `2d2e4df`.
+- Quarto 1.10.19/Python 3.14.7: all 11 HTML pages render. All 285 local HTML
+  links/fragments resolve; no duplicate IDs/unresolved markers; 38 figure uses
+  have alt text. Capture hashes match the reviewed/rendered inputs.
+- Actual standalone and full-page pixels/readable crops inspected by author
+  and separate reviewers. Pilot current captures are 1425×25846 and 945×27670;
+  supplementary narrow Chapters 4–7 checks are recorded. Meaningful captions,
+  alt text and line styles supplement colors. Minor narrow-layout/label polish
+  and generic standalone descriptions remain documented.
+
+Recommend bounded HTML visual acceptance; the owner decides. No human acceptance,
+qualified specialist validation, reader trials, hardware evidence, PDF/offline math,
+exhaustive responsive/assistive-technology testing or publication readiness follows.
+Stop before K08–K10. Earlier records retain their historical dates and limitations.
+
+---
+
 # K05–K07 reproducibility and checks — 2026-10-29
 
 - Reconciled inspected 15-file staged set unchanged into `3b669a7`; no unstaged

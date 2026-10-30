@@ -1,0 +1,301 @@
+{
+  "figures": [
+    {
+      "figure": "calibration-delay-fit",
+      "capture": {
+        "exit_status": 0,
+        "timed_out": false,
+        "seconds": 0.414,
+        "source": "/home/miba/Projects/coherent-receiver-reference/book/figures/calibration-delay-fit.svg",
+        "source_sha256": "eb8cd0c64fd4ad44035fde3053f627480651b2f9b8395a1f3aea644e85389bda",
+        "backend": "pipe",
+        "viewport": [
+          960,
+          990
+        ],
+        "image_exists": true,
+        "image_dimensions": [
+          960,
+          990
+        ],
+        "image_sha256": "6f231383ed7f13c3c458f30a704a363ccd208d0268c5f8d03b046758d8b373bf"
+      },
+      "author_pixels": "Standalone and in-page labels, arrows, units and caption viewed. No clipped content in current captures."
+    },
+    {
+      "figure": "calibration-fixed-lo",
+      "capture": {
+        "exit_status": 0,
+        "timed_out": false,
+        "seconds": 0.364,
+        "source": "/home/miba/Projects/coherent-receiver-reference/book/figures/calibration-fixed-lo.svg",
+        "source_sha256": "aeac33423887d45f6cb5d91d3826ce298c09f12f93eb5d427c0be7db868a98e2",
+        "backend": "pipe",
+        "viewport": [
+          960,
+          660
+        ],
+        "image_exists": true,
+        "image_dimensions": [
+          960,
+          660
+        ],
+        "image_sha256": "aa976f207090dc96a0d5b4e489157ddd0c8fbb5151c9139739325b64512daec3"
+      },
+      "author_pixels": "Standalone and in-page labels, arrows, units and caption viewed. No clipped content in current captures."
+    },
+    {
+      "figure": "calibration-maintenance",
+      "capture": {
+        "exit_status": 0,
+        "timed_out": false,
+        "seconds": 0.414,
+        "source": "/home/miba/Projects/coherent-receiver-reference/book/figures/calibration-maintenance.svg",
+        "source_sha256": "82b3c748fd65810937fa338650655edd44702349392c04e04935122aaf023d78",
+        "backend": "pipe",
+        "viewport": [
+          960,
+          1370
+        ],
+        "image_exists": true,
+        "image_dimensions": [
+          960,
+          1370
+        ],
+        "image_sha256": "4cd24e209c147ac52c46b2a9ac2340397c485567ae3ea742e8f45a2420d7a60c"
+      },
+      "author_pixels": "Standalone and in-page labels, arrows, units and caption viewed. No clipped content in current captures."
+    },
+    {
+      "figure": "correction-updates",
+      "capture": {
+        "exit_status": 0,
+        "timed_out": false,
+        "seconds": 0.414,
+        "source": "/home/miba/Projects/coherent-receiver-reference/book/figures/correction-updates.svg",
+        "source_sha256": "78b331416f438ef2f13e7a1b4c7ece86745e433a6ac39c132aa4d22bbd3108da",
+        "backend": "pipe",
+        "viewport": [
+          960,
+          1340
+        ],
+        "image_exists": true,
+        "image_dimensions": [
+          960,
+          1340
+        ],
+        "image_sha256": "e8415fdc068151e7f9cf20a550d80fc63ba0ec68cc1f3483accb438f4a1ff8ca"
+      },
+      "author_pixels": "Standalone and in-page labels, arrows, units and caption viewed. No clipped content in current captures."
+    },
+    {
+      "figure": "endpoint-architecture-budget",
+      "capture": {
+        "exit_status": 0,
+        "timed_out": false,
+        "seconds": 0.414,
+        "source": "/home/miba/Projects/coherent-receiver-reference/book/figures/endpoint-architecture-budget.svg",
+        "source_sha256": "cb2d474438e4d44833080b2e4477306d4a09edf81bf4b7ed77c6a2c38dd33e14",
+        "backend": "pipe",
+        "viewport": [
+          960,
+          960
+        ],
+        "image_exists": true,
+        "image_dimensions": [
+          960,
+          960
+        ],
+        "image_sha256": "f2359951c82471f9906c1d57a1b5a177bfd654889c15dfb785578d38e13def3b"
+      },
+      "author_pixels": "Standalone and in-page labels, arrows, units and caption viewed. No clipped content in current captures."
+    },
+    {
+      "figure": "guarded-decisions",
+      "capture": {
+        "exit_status": 0,
+        "timed_out": false,
+        "seconds": 0.415,
+        "source": "/home/miba/Projects/coherent-receiver-reference/book/figures/guarded-decisions.svg",
+        "source_sha256": "4f0ee3996cbb716db7dc795463b688f2e5ac15aa2edcbfd5cd41f1734cb22cac",
+        "backend": "pipe",
+        "viewport": [
+          960,
+          720
+        ],
+        "image_exists": true,
+        "image_dimensions": [
+          960,
+          720
+        ],
+        "image_sha256": "c60cb917a47b880c09dcebe1490e0eeadfa3f44921ff52debf2cf9a98d115a90"
+      },
+      "author_pixels": "Standalone and in-page labels, arrows, units and caption viewed. No clipped content in current captures."
+    },
+    {
+      "figure": "measurement-swaps",
+      "capture": {
+        "exit_status": 0,
+        "timed_out": false,
+        "seconds": 0.414,
+        "source": "/home/miba/Projects/coherent-receiver-reference/book/figures/measurement-swaps.svg",
+        "source_sha256": "4a29e7e7c33b1bb1c37b232957f47bf2ffee3cafb10901ee8ca0849986004f68",
+        "backend": "pipe",
+        "viewport": [
+          960,
+          1080
+        ],
+        "image_exists": true,
+        "image_dimensions": [
+          960,
+          1080
+        ],
+        "image_sha256": "8acd2a2db4710d080c6a9ded173567ee5b0c2e33ab77dbb073180c0e6051a5d2"
+      },
+      "author_pixels": "Standalone and in-page labels, arrows, units and caption viewed. No clipped content in current captures."
+    },
+    {
+      "figure": "relative-phase-reference-planes",
+      "capture": {
+        "exit_status": 0,
+        "timed_out": false,
+        "seconds": 0.414,
+        "source": "/home/miba/Projects/coherent-receiver-reference/book/figures/relative-phase-reference-planes.svg",
+        "source_sha256": "276bd83540cfd06d68c60094e30f840c3a3456d0503e619f01e6021405795e5b",
+        "backend": "pipe",
+        "viewport": [
+          960,
+          660
+        ],
+        "image_exists": true,
+        "image_dimensions": [
+          960,
+          660
+        ],
+        "image_sha256": "484d3421afd57d01aa0926386ead1d0187a168903c1a157ae36c24664e83ccb1"
+      },
+      "author_pixels": "Standalone and in-page labels, arrows, units and caption viewed. No clipped content in current captures."
+    }
+  ],
+  "pages": [
+    {
+      "name": "pilot",
+      "capture": {
+        "exit_status": 0,
+        "timed_out": false,
+        "seconds": 4.922,
+        "source": "/tmp/vp-g4-render/book/_book/relative-phase-stability.html",
+        "source_sha256": "8aef00c93cde1b63380453c5f00f7861aa4f8545bbe90b8c78faac856c086606",
+        "backend": "pipe",
+        "viewport": [
+          1440,
+          2200
+        ],
+        "image_exists": true,
+        "image_dimensions": [
+          1425,
+          25846
+        ],
+        "image_sha256": "623c47cf8c0b3cadf2a42ada26f2cec00225dd55533649805a95cce90f8a666b"
+      },
+      "author_crops_viewed": [
+        "crop-00.png",
+        "crop-01.png",
+        "crop-02.png",
+        "crop-03.png",
+        "crop-04.png",
+        "crop-05.png",
+        "crop-06.png",
+        "crop-07.png",
+        "crop-08.png",
+        "crop-09.png",
+        "crop-10.png",
+        "crop-11.png",
+        "crop-12.png",
+        "crop-13.png",
+        "crop-14.png",
+        "crop-15.png",
+        "crop-16.png"
+      ],
+      "raster_sha256": "623c47cf8c0b3cadf2a42ada26f2cec00225dd55533649805a95cce90f8a666b"
+    },
+    {
+      "name": "pilot-narrow",
+      "capture": {
+        "exit_status": 0,
+        "timed_out": false,
+        "seconds": 4.871,
+        "source": "/tmp/vp-g4-render/book/_book/relative-phase-stability.html",
+        "source_sha256": "8aef00c93cde1b63380453c5f00f7861aa4f8545bbe90b8c78faac856c086606",
+        "backend": "pipe",
+        "viewport": [
+          960,
+          2200
+        ],
+        "image_exists": true,
+        "image_dimensions": [
+          945,
+          27670
+        ],
+        "image_sha256": "36dcfd5bfd523663d63a1f4e4145f6eea494270dd91089876127de25a4537ce1"
+      },
+      "author_crops_viewed": [
+        "crop-00.png",
+        "crop-01.png",
+        "crop-02.png",
+        "crop-03.png",
+        "crop-04.png",
+        "crop-05.png",
+        "crop-06.png",
+        "crop-07.png",
+        "crop-08.png",
+        "crop-09.png",
+        "crop-10.png",
+        "crop-11.png",
+        "crop-12.png",
+        "crop-13.png",
+        "crop-14.png",
+        "crop-15.png",
+        "crop-16.png",
+        "crop-17.png"
+      ],
+      "raster_sha256": "36dcfd5bfd523663d63a1f4e4145f6eea494270dd91089876127de25a4537ce1"
+    },
+    {
+      "name": "publishing",
+      "capture": {
+        "exit_status": 0,
+        "timed_out": false,
+        "seconds": 0.965,
+        "source": "/tmp/vp-g4-render/book/_book/publishing-pilot.html",
+        "source_sha256": "c5fbd5715d98dbcc5a73ad47d4054b4a22f195150c232a06bc1249ecd9091df3",
+        "backend": "pipe",
+        "viewport": [
+          1440,
+          2200
+        ],
+        "image_exists": true,
+        "image_dimensions": [
+          1440,
+          2200
+        ],
+        "image_sha256": "cad0351cb8f651c159ad6948a8157b1f0f3663eb34977fdd4cb18a834a50cd3b"
+      },
+      "author_crops_viewed": [
+        "crop-00.png",
+        "crop-01.png"
+      ],
+      "raster_sha256": "cad0351cb8f651c159ad6948a8157b1f0f3663eb34977fdd4cb18a834a50cd3b"
+    }
+  ],
+  "author_observations": [
+    "Normal pilot: all crops 00\u201316 viewed through bottom navigation; timeline, correction updates, state diagram, measurement and guarded-decision captions are intact.",
+    "Narrow pilot: all crops 00\u201317 viewed; after measurement-equation reflow full image width is 945 rather than 1109 at viewport 960. A few other long equations extend into the empty margin but remain fully visible in these captures. Dense secondary labels are smaller than body prose; standalone SVG enlargement remains available.",
+    "Publishing: crops 00\u201301 viewed; all equation, derivation, table, reference-plane labels, caption and bottom navigation visible. Existing repeated generated-reference words are cosmetic.",
+    "An earlier oversized multi-image tool response was truncated; affected normal pilot 09\u201316 and publishing crops were subsequently reopened in small batches before recording inspection."
+  ],
+  "limitations": [
+    "960-pixel captures are a bounded narrow-view check, not exhaustive mobile/responsive or assistive-technology testing.",
+    "This author record is separate from independent reviewer findings."
+  ]
+}

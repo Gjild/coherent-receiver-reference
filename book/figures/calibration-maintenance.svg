@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1370" role="img" aria-labelledby="title desc"><title id="title">Snapshot center, application time and correction age are different epochs</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Snapshot center, application time and correction age are different epochs</text>
+<text x="40" y="80" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">P = 2 s; time below is relative to snapshot center tₙ; all durations illustrative.</text>
+<text x="40" y="120" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">T = 10 ms</text>
+<path d="M284.792,145.000 L338.958,145.000" fill="none" stroke="#b34719" stroke-width="14" stroke-dasharray=""/>
+<path d="M338.958,145.000 L366.042,145.000" fill="none" stroke="#125b86" stroke-width="14" stroke-dasharray=""/>
+<path d="M366.042,145.000 L636.875,145.000" fill="none" stroke="#237550" stroke-width="14" stroke-dasharray=""/>
+<circle cx="636.875" cy="145" r="6" fill="#237550"/>
+<text x="646.875" y="151" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">apply</text>
+<text x="40" y="185" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Gate [-0.025, +0.105] s; invalid fraction 6.5%.</text>
+<text x="40" y="255" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">T = 50 ms</text>
+<path d="M230.625,280.000 L284.792,280.000" fill="none" stroke="#b34719" stroke-width="14" stroke-dasharray=""/>
+<path d="M284.792,280.000 L420.208,280.000" fill="none" stroke="#125b86" stroke-width="14" stroke-dasharray=""/>
+<path d="M420.208,280.000 L691.042,280.000" fill="none" stroke="#237550" stroke-width="14" stroke-dasharray=""/>
+<circle cx="691.0416666666667" cy="280" r="6" fill="#237550"/>
+<text x="701.0416666666667" y="286" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">apply</text>
+<text x="40" y="320" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Gate [-0.045, +0.125] s; invalid fraction 8.5%.</text>
+<path d="M352.500,120.000 L352.500,165.000" fill="none" stroke="#263c49" stroke-width="1.5" stroke-dasharray="5 4"/>
+<path d="M352.500,255.000 L352.500,300.000" fill="none" stroke="#263c49" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="352.5" y="335" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">center tₙ</text>
+<text x="40" y="380" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Left to right: 20 ms settling, snapshot T, then 100 ms after snapshot end.</text>
+<text x="100" y="430" font-family="sans-serif" font-size="20" fill="#182f3e" text-anchor="start">Age of the held correction, including the gated interval before replacement</text>
+<path d="M100.000,522.000 L100.000,717.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,717.000 L880.000,717.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="100.0" y="742" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">0</text>
+<text x="88" y="723.0" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">0</text>
+<path d="M295.000,522.000 L295.000,717.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,668.250 L880.000,668.250" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="295.0" y="742" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">1.05</text>
+<text x="88" y="674.25" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">0.575</text>
+<path d="M490.000,522.000 L490.000,717.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,619.500 L880.000,619.500" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="490.0" y="742" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">2.1</text>
+<text x="88" y="625.5" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">1.15</text>
+<path d="M685.000,522.000 L685.000,717.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,570.750 L880.000,570.750" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="685.0000000000001" y="742" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">3.15</text>
+<text x="88" y="576.75" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">1.72</text>
+<path d="M880.000,522.000 L880.000,717.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,522.000 L880.000,522.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="880.0" y="742" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">4.2</text>
+<text x="88" y="528.0" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">2.3</text>
+<path d="M100.000,522.000 L100.000,717.000 L880.000,717.000" fill="none" stroke="#263c49" stroke-width="1.5" stroke-dasharray=""/>
+<text x="100" y="510" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Age since coefficient snapshot center (s)</text>
+<text x="490.0" y="772" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Time relative to center t₀ (s)</text>
+<path d="M100.000,450.000 L125.000,450.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray=""/>
+<text x="133" y="455" font-family="sans-serif" font-size="16" fill="#125b86" text-anchor="start">T = 10 ms</text>
+<path d="M100.000,547.435 L119.500,538.533 L119.500,708.098 L490.929,538.533 L490.929,708.098 L862.357,538.533 L862.357,708.098 L880.000,700.043" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray=""/>
+<path d="M500.000,450.000 L525.000,450.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="8 4"/>
+<text x="533" y="455" font-family="sans-serif" font-size="16" fill="#b34719" text-anchor="start">T = 50 ms</text>
+<path d="M100.000,547.435 L123.214,536.837 L123.214,706.402 L494.643,536.837 L494.643,706.402 L866.071,536.837 L866.071,706.402 L880.000,700.043" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="8 4"/>
+<text x="65" y="800" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Oldest age P + T/2 + 0.100; coefficient replacement causes the downward step.</text>
+<text x="100" y="855" font-family="sans-serif" font-size="20" fill="#182f3e" text-anchor="start">Bounded RF-delay drift rate 0.216°/s; add snapshot-center bias bound 0.216T/4</text>
+<path d="M100.000,947.000 L100.000,1142.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,1142.000 L880.000,1142.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="100.0" y="1167" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">0</text>
+<text x="88" y="1148.0" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">0</text>
+<path d="M295.000,947.000 L295.000,1142.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,1093.250 L880.000,1093.250" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="295.0" y="1167" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">1.05</text>
+<text x="88" y="1099.25" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">0.13</text>
+<path d="M490.000,947.000 L490.000,1142.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,1044.500 L880.000,1044.500" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="490.0" y="1167" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">2.1</text>
+<text x="88" y="1050.5" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">0.26</text>
+<path d="M685.000,947.000 L685.000,1142.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,995.750 L880.000,995.750" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="685.0000000000001" y="1167" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">3.15</text>
+<text x="88" y="1001.75" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">0.39</text>
+<path d="M880.000,947.000 L880.000,1142.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,947.000 L880.000,947.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="880.0" y="1167" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">4.2</text>
+<text x="88" y="953.0" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">0.52</text>
+<path d="M100.000,947.000 L100.000,1142.000 L880.000,1142.000" fill="none" stroke="#263c49" stroke-width="1.5" stroke-dasharray=""/>
+<text x="100" y="935" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Deterministic phase-error bound (degrees)</text>
+<text x="490.0" y="1197" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Time relative to center t₀ (s)</text>
+<path d="M100.000,875.000 L125.000,875.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray=""/>
+<text x="133" y="880" font-family="sans-serif" font-size="16" fill="#125b86" text-anchor="start">T = 10 ms: max 0.45522°</text>
+<path d="M100.000,979.798 L119.500,971.293 L119.500,1133.293 L490.929,971.293 L490.929,1133.293 L862.357,971.293 L862.357,1133.293 L880.000,1125.598" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray=""/>
+<path d="M500.000,875.000 L525.000,875.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="8 4"/>
+<text x="533" y="880" font-family="sans-serif" font-size="16" fill="#b34719" text-anchor="start">T = 50 ms: max 0.46170°</text>
+<path d="M100.000,978.987 L123.214,968.862 L123.214,1130.862 L494.643,968.862 L494.643,1130.862 L866.071,968.862 L866.071,1130.862 L880.000,1124.787" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="8 4"/>
+<path d="M100.000,897.000 L125.000,897.000" fill="none" stroke="#237550" stroke-width="2.8" stroke-dasharray="3 4"/>
+<text x="133" y="902" font-family="sans-serif" font-size="16" fill="#237550" text-anchor="start">separate drift limit 0.5°</text>
+<path d="M100.000,954.500 L880.000,954.500" fill="none" stroke="#237550" stroke-width="2.8" stroke-dasharray="3 4"/>
+<text x="55" y="1235" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">These are deterministic bounds under a rate limit and no abrupt state changes.</text>
+<text x="55" y="1270" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Snapshot SD is separate: 0.039278° / 0.045628° for the two declared examples.</text>
+<text x="55" y="1310" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Standard deviation is not added to a guaranteed drift bound.</text>
+<text x="32" y="1356" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

@@ -33,16 +33,23 @@ subtracts LO phase. At an amplitude null phase is undefined. Reject such records
 do not manufacture a phase by unwrapping noise. No antenna, propagation inference,
 wideband equalizer, converter selection or full PLL design is included.
 
-![Reference planes and two possible endpoint reference paths. RF fixture paths remain nuisance terms until characterized.](figures/relative-phase-reference-planes.svg){#fig-phase-planes}
+![Physical comparison planes, including analog IF Q and acquired/channelized O. RF fixtures remain nuisance paths, and either LO architecture must be characterized at its endpoints.](figures/relative-phase-reference-planes.svg){#fig-phase-planes fig-alt="A common RF tone reaches two receivers through separate fixtures at P. LO inputs enter at L; analog IF outputs at Q pass through acquisition and channelization to O, where channel 2 is compared with channel 1."}
 
 The input planes P1/P2 are the RF connectors; L1/L2 are the LO mixer inputs;
 O1/O2 are complex receiver outputs before correction, after acquisition and
 per-tone channelization. Also define Q1/Q2 as the analog IF outputs immediately
-before acquisition (not separately drawn in @fig-phase-planes). Acquisition
+before acquisition, explicitly drawn in @fig-phase-planes. Acquisition
 response from Q to O is included unless explicitly de-embedded. Report phase at O2 relative
 to O1, referred to a specified stimulus relationship at P1/P2. The acquisition
 system must compare simultaneous samples or explicitly correct their epoch.
 Transport latency is not the analog sample epoch.
+
+This pilot applies the earlier visual reasoning rather than supplying a second
+set of general illustrations. Use [the physical comparison and phasor geometry](phase-comparison.qmd#fig-relative-phasors)
+for orientation, [source-built covariance](covariance-quadratic-forms.qmd#fig-source-covariance)
+for coupled errors, and [local precision versus delay ambiguity](phase-delay-inference.qmd#fig-delay-ambiguity)
+when interpreting a fitted slope. The new figures below focus on endpoint
+architecture, calibration access and measurement decisions.
 
 ## Representations and the first physical model {#sec-phase-model}
 
@@ -82,6 +89,7 @@ $\arg(A+n')=\operatorname{atan2}(\operatorname{Im}n',A+\operatorname{Re}n')$
 for $A+n'\ne0$; phase is undefined at zero amplitude.
 Expanding at $n'=0$ gives phase error $\eta\simeq\operatorname{Im}n'/A$.
 Thus differential phase noise includes $\eta_2-\eta_1$, with covariance retained.
+The [signal-frame noise geometry](scalar-stochastic-phase.qmd#fig-noise-phase) shows the relevant quadrature and fade limit.
 This approximation fails for fades, low SNR, appreciable AM/PM conversion and slips;
 it does not imply Gaussian, white or independent noise.
 
@@ -149,6 +157,11 @@ replaced by $(2\pi f\Delta\tau)^2$; the relative leading error is approximately
 $(\pi f\Delta\tau)^2/3$. Equal delays cancel that common source, not additive
 branch noise. Equal cable lengths do not establish equal endpoint responses.
 
+The [unequal-path gain plot](observation-weighted-coherence.qmd#fig-shared-delay)
+shows the exact delay response and where its small-offset approximation fails.
+The [covariance projection geometry](covariance-quadratic-forms.qmd#fig-covariance-projections)
+explains why correlated endpoint terms must remain in the selected observable.
+
 Phase deviation, frequency deviation and positive time advance satisfy
 $\delta\nu=\dot\phi/(2\pi)$ and $a=\phi/(2\pi f_c)$. Where differentiable
 stationary spectra are meaningful, $S_{\delta\nu}=f^2S_\phi$ and
@@ -184,6 +197,13 @@ $$\phi_{\rm out}\simeq
  \operatorname{Re}(h/H_0)*\phi+
  \operatorname{Im}\{(h/H_0)*n/A\}.$$
 
+Require the filtered carrier-relative perturbation to remain small:
+$|h*\delta z|\ll|AH_0|$. Small input phase alone does not guarantee this for a
+complex filter with a small carrier gain or large perturbation gain. The
+[filter-before-angle bridge](observation-weighted-coherence.qmd#fig-complex-filter-order)
+supplies the input-remainder and angle-remainder conditions for finite use of
+this approximation.
+
 The real and imaginary parts here are of the *impulse response*. Only if its
 normalized imaginary part vanishes does pure phase transfer reduce to that real
 impulse response without AM-to-PM coupling. Both sidebands, additive-noise
@@ -194,6 +214,11 @@ phase filtering, not an analog or complex channel filter. Acquisition antialias
 and digital channel filters precede extraction and need their own noise/image/
 alias model. Quantitative alias, quantization and blocker/AM-to-PM budgets are
 omitted; predictions assume them negligible or separately allocated.
+
+The [observation weights and gains](observation-weighted-coherence.qmd#fig-observation-weights)
+make these operator choices visible. The [coherent-accumulation comparison](observation-weighted-coherence.qmd#fig-coherence-observables)
+separates phase-average uncertainty from coherent power; equal phase RMS does
+not determine both.
 
 These are observation predictions; a finite sample variance is an estimator with
 its own uncertainty.
@@ -357,6 +382,15 @@ spurs, thermal response, reset behavior, cost and calibration downtime evidence.
 No universal superiority follows from this table. It is a conditional selection
 between supplied envelopes, not a component selection or compliance claim.
 
+The endpoint paths in @fig-endpoint-architecture-budget retain the common source
+until its unequal transfers have been differenced. The lower panel varies only
+shared-LO branch density; the local-synthesizer curve keeps its own output
+branch density fixed. The nearly coincident shared-LO curves show that branch
+disturbances dominate the supplied envelopes, rather than establishing a general
+architecture ranking.
+
+![Endpoint phase models and selected-band standard deviation. The local alternative has fixed per-endpoint output density 10⁻⁸ rad²/Hz and a 100 Hz reference corner; shared-LO branch density varies. All spectra and independent branch assumptions are illustrative.](figures/endpoint-architecture-budget.svg){#fig-endpoint-architecture-budget fig-alt="A shared source splits through endpoint delays, or through delayed local reference responses, with additive output noise on each path. Varying shared-LO branch noise moves the selected-band phase standard deviation through the 1.5-degree criterion and reverses the conditional preference."}
+
 ## Calibration, drift and implementation {#sec-phase-calibration}
 
 Use a **fixed 990 MHz LO** throughout each calibration cycle. Inject a simultaneous
@@ -369,6 +403,13 @@ the 10 kHz phase sidebands. The total comb level must remain linear. These
 100 ksample/s streams carry narrowband envelopes, not unchannelized MHz-spaced
 tones. No LO retuning, NCO reset or gain-state change occurs between training
 frequencies. Hardware meeting this interface is assumed, not verified.
+
+The physical arrangement in @fig-calibration-fixed-lo preserves one LO and
+acquisition state while separating training tones from a withheld frequency.
+The MHz IF content is acquired before per-tone decimation; the narrowband
+100 ksample/s streams do not carry an unchannelized MHz-wide comb.
+
+![Fixed-LO calibration at declared P/L/Q/O planes. Training tones and held-out tone are simultaneous; the held-out point is excluded from the fit. Fixture slope and acquisition response remain in the model unless independently characterized.](figures/calibration-fixed-lo.svg){#fig-calibration-fixed-lo fig-alt="Known RF comb tones pass through two fixtures and receivers with fixed 990 MHz LO inputs. Analog IF outputs are acquired at 32 Msample/s, then separated into 100 ksample/s complex streams per tone; the 1000.5 MHz tone is held out."}
 
 The measured phase is referred from Pi to the selected Oi channelizer output,
 including IF/acquisition response unless de-embedded. At fixed LO an RF sweep
@@ -420,6 +461,17 @@ Hold out time, frequency and state data and inspect curvature before using the f
 Apply scalar unit-magnitude correction at the carrier. It does not repair
 wideband delay, additive noise, lost samples or clipping. A coefficient step q
 rad creates at most q/2 static error, not automatically white q²/12 noise.
+
+In @fig-calibration-delay-fit, the phase at the mean frequency differs from the
+phase at the stated 1 GHz reference. The held-out square tests the same fitted
+line at a new frequency. Subtracting the correct carrier intercept leaves the
+2 ns delay slope; subtracting the mean intercept also leaves a carrier bias.
+The [general frequency-span example](phase-delay-inference.qmd#fig-delay-fit-precision)
+and [ambiguity branches](phase-delay-inference.qmd#fig-delay-ambiguity) explain
+why prediction precision alone supplies neither a global branch nor a
+receiver/fixture separation.
+
+![Noiseless asymmetric calibration example. Training dots and an excluded held-out square have different roles; neither is measured data. Scalar carrier correction leaves frequency-dependent delay error, and the mean-frequency intercept is not the carrier intercept.](figures/calibration-delay-fit.svg){#fig-calibration-delay-fit fig-alt="A 2 ns phase slope through three training frequencies predicts a withheld fourth tone. Its mean intercept differs from the 1 GHz intercept. Correct carrier subtraction leaves a sloping residual; subtracting the mean phase also leaves a carrier bias."}
 
 ### Thermal reference and maintenance allocation
 
@@ -476,6 +528,15 @@ but latency and snapshot bias still apply. These bounds concern drift, not total
 absolute error: standard uncertainty is not a deterministic bound. A random-walk
 drift instead needs increment covariance and a probabilistic criterion.
 
+The timeline in @fig-calibration-maintenance distinguishes snapshot center from
+application and shows the full wanted-data gate. The age and drift panels retain
+the old coefficient until its replacement applies. Their drift bound includes
+snapshot-center bias and is separate from the stochastic snapshot allocation.
+The [model-adequacy sensitivity example](model-adequacy-uncertainty.qmd#fig-uncertainty-sensitivity)
+explains why changed timing or source paths require a new covariance calculation.
+
+![Maintenance timing for 10 and 50 ms snapshots, 20 ms settling, 100 ms after-end processing and 2 s center separation. Drift bounds and snapshot standard uncertainties are different quantities. Ideal coefficient applications create the plotted age steps.](figures/calibration-maintenance.svg){#fig-calibration-maintenance fig-alt="The calibration snapshot is centered before its coefficient is applied. Wanted data is gated through settling, collection and after-end processing. The previous coefficient ages until replacement; bounded drift remains below 0.5 degree for the two illustrative cases, separately from snapshot uncertainty."}
+
 ### Constant uncertainty and time-varying updates
 
 For frozen correction C in one valid segment, define local absolute residual
@@ -515,11 +576,21 @@ This has nonzero power away from DC. Correlated updates/use require cross terms
 where stationary spectra apply, or the two-time formulation otherwise. This
 special update-error example does not model all receiver drift as stationary.
 
+The held sequence in @fig-correction-updates illustrates why an update cannot
+be discarded as a constant. Its stochastic panels describe the separately
+specified randomized-origin model, not the deterministic sample sequence in
+the first panel. Use the actual mask and two-time covariance when its
+stationarity assumptions are absent.
+
+![Frozen versus updated correction and an illustrative invalid-data mask. The triangular covariance and sinc-squared two-sided PSD require independent centered update errors and a uniformly randomized update-grid origin; they do not make general periodic calibration stationary.](figures/correction-updates.svg){#fig-correction-updates fig-alt="A held correction changes at update times while a frozen correction stays constant. Under independent errors and randomized grid origin, covariance falls linearly to zero at one update period and the two-sided PSD has sinc-squared sidelobes away from DC."}
+
 A blind correction that subtracts the measured current phase can remove the
 wanted differential input phase too. Verify with an independently imposed known
 phase step at P2. A calibration interval must contain a known stimulus, or an
 extra observable separating wanted phase from drift. Lower displayed residual
-is not sufficient evidence of improved sensing.
+is not sufficient evidence of improved sensing. The [wanted-signal transfer
+comparison](tracking-signal-retention.qmd#fig-tracking-transfer-budget) shows
+the same failure mode for continuous tracking.
 
 Translate the allocation into hardware obligations: characterize electrical
 rather than geometrical matching at L1/L2, isolate LO branch loads, control return
@@ -549,9 +620,11 @@ deterministic phase. No restart trials have occurred here.
 
 For each source/fixture/receiver assignment, a small-error equation at tone F is
 
-$$m(F,t)=D_F*s+\delta_{\rm wanted}(F,t)+c_{\rm fix}(F,t)
- +b_R(F,t,q)-\Delta\ell(F,t,q)+a_{\rm acq}(F,t)
- +i_{\rm inst}(F,t)+\eta(F,t).$$ {#eq-measurement}
+$$\begin{aligned}
+m(F,t)={}&D_F*s+\delta_{\rm wanted}(F,t)+c_{\rm fix}(F,t)\\
+ &+b_R(F,t,q)-\Delta\ell(F,t,q)\\
+ &+a_{\rm acq}(F,t)+i_{\rm inst}(F,t)+\eta(F,t).
+\end{aligned}$$ {#eq-measurement}
 
 Here $D_F=K_2-K_1$ is the unequal fixture transfer of source phase s,
 $c_{\rm fix}$ is deterministic/uncertain splitter and cable phase, $b_R$ is
@@ -570,6 +643,16 @@ without propagating their unequal paths.
 | Exchange whole receiver channels | Receiver/LO terms move with their hardware; recompute all assignments | No generic sign flip isolates receiver if fixtures/clock/state also move |
 | Change one LO delay, heat a branch, vary level | Test predicted sign/dependence of LO, thermal or noise/AM-to-PM terms | Other sensitive paths can respond too |
 | Independently acquired comparison at Q1/Q2 | $m'=\delta_Q+a'+i'+\eta'$ observes the same receiver IF-output relationship | $m-m'$ cancels $\delta_Q$, testing acquisition/instrument difference, not absolute truth; shared paths retain common bias |
+
+The grouped measurement paths in @fig-measurement-swaps place the second
+acquisition at Q, rather than recomputing the same O samples. Here $\delta_Q$
+includes all pre-Q fluctuations; $\eta_{\rm post}$ denotes only post-Q small
+errors within each readout's aggregate $\epsilon$. The two readouts share
+$\delta_Q$, so subtracting them diagnoses their difference while allowing common
+bias to survive agreement. Swap predictions require stable, characterized
+assignments; reconnection or loading changes require additional terms.
+
+![Paired measurement paths and conditional swap signs with fixed output labels. Each acquisition/instrument chain has its own uncertainty and cross-covariance. Input-fixture and Q-input swaps change different grouped contributions; shared-error agreement is not an absolute reference.](figures/measurement-swaps.svg){#fig-measurement-swaps fig-alt="The source and fixtures feed a receiver pair ending at Q1 and Q2. Main and separate acquisition chains observe the same IF phase through different readout errors. Subtracting readings cancels their shared receiver phase; controlled fixture and acquisition swaps reverse different terms."}
 
 1. Use fixed LO and simultaneous-comb acquisition as above. Record physical P/L/O
    planes, channelizer/NCO response, state, temperatures, levels and coefficient
@@ -623,6 +706,14 @@ acceptance under that bound; $\hat y-U>L$ supports rejection; the overlap is
 inconclusive. A standard uncertainty is not a guaranteed bound, and the rule for
 phase variance requires uncertainty in that estimated statistic, not the phase
 intercept budget above. No real compliance decision is made here.
+
+The interval cases in @fig-guarded-decisions make the equality conditions
+explicit: an upper edge at the limit supports acceptance under the stated
+bound, while a lower edge at the limit remains inconclusive. Rejection requires
+the entire allowed interval to exceed the limit. This conditional rule is
+neither a coverage assumption nor an executed compliance test.
+
+![Guarded decisions for a dimensionless scalar with upper limit 1 and justified absolute error bound 0.2. The interval is a guaranteed bound under its assumptions, not a standard deviation. Boundary equality is treated differently for acceptance and rejection.](figures/guarded-decisions.svg){#fig-guarded-decisions fig-alt="Five bounded scalar intervals lie below, touch, overlap or lie above an upper limit. Acceptance permits the upper endpoint at the limit; rejection requires the lower endpoint strictly above it, leaving overlap and lower-endpoint equality inconclusive."}
 
 ## Check your reasoning and use this as a reference {#sec-phase-transfer}
 

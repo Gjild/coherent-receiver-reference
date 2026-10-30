@@ -1,0 +1,1 @@
+/usr/bin/node /home/miba/Projects/coherent-receiver-reference/scripts/visual_capture.mjs /usr/bin/brave file:///tmp/k0810/render8b/book/_book/fields-geometry-transduction.html /tmp/k8bp 1440 2200 10000

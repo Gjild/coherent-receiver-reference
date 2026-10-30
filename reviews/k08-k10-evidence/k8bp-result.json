@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 2.368,
+  "source": "/tmp/k0810/render8b/book/_book/fields-geometry-transduction.html",
+  "source_sha256": "1513cc5496dbd0abd81b8cba633abad5ceb124d68407f7294d92857aef404b54",
+  "backend": "pipe",
+  "viewport": [
+    1440,
+    2200
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    1425,
+    8038
+  ],
+  "image_sha256": "40eaab6d0dc94dbb245ff510bced45a082ae5756a6c5d23cdebf12a6d4cb20cf"
+}

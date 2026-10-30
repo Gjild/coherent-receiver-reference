@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 0.364,
+  "source": "/home/miba/Projects/coherent-receiver-reference/book/figures/field-port-paths.svg",
+  "source_sha256": "8907bc978cf45fa12ed84c0fe50621e6d89befc978abc438e9159c589a53a68d",
+  "backend": "pipe",
+  "viewport": [
+    1200,
+    850
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    1200,
+    850
+  ],
+  "image_sha256": "2d4a648900c756477803b257b219dc7ac8bfdfd4c95728a686ef7154fbbd66cb"
+}

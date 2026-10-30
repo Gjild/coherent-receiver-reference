@@ -1,0 +1,1 @@
+/usr/bin/node /home/miba/Projects/coherent-receiver-reference/scripts/visual_capture.mjs /usr/bin/brave file:///home/miba/Projects/coherent-receiver-reference/book/figures/field-port-paths.svg /tmp/k8bf1 1200 850 3000

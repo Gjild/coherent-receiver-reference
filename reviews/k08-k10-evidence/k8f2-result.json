@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 0.414,
+  "source": "/home/miba/Projects/coherent-receiver-reference/book/figures/polarization-error.svg",
+  "source_sha256": "c2d6d0e45df806a60aee61b8f6bb3cf36012f51964eb0a0187cf2cde7f79317d",
+  "backend": "pipe",
+  "viewport": [
+    1200,
+    1140
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    1200,
+    1140
+  ],
+  "image_sha256": "d4c525a94fb2d9c85b034bf48d073a15f5c7d3e489876e3adc5bddbc478e5a5c"
+}

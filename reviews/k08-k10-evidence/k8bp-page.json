@@ -1,0 +1,93 @@
+{
+  "version": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/156.0.8078.74",
+    "revision": "@44a84b1f89d9a35287289d6a3d493e362f5a512",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "jsVersion": "15.6.75.25"
+  },
+  "document": {
+    "url": "file:///tmp/k0810/render8b/book/_book/fields-geometry-transduction.html",
+    "title": "8  Fields, geometry and physical transduction – Coherent Receiver Theory and Design",
+    "readyState": "complete",
+    "viewport": [
+      1440,
+      2200
+    ],
+    "mathElements": 124,
+    "mathjaxContainers": 124,
+    "images": [
+      {
+        "src": "figures/field-port-paths.svg",
+        "complete": true,
+        "width": 213,
+        "height": 150
+      },
+      {
+        "src": "figures/polarization-error.svg",
+        "complete": true,
+        "width": 158,
+        "height": 150
+      },
+      {
+        "src": "figures/transduction-blind-path.svg",
+        "complete": true,
+        "width": 262,
+        "height": 150
+      }
+    ]
+  },
+  "metrics": {
+    "layoutViewport": {
+      "pageX": 0,
+      "pageY": 0,
+      "clientWidth": 1425,
+      "clientHeight": 2200
+    },
+    "visualViewport": {
+      "offsetX": 0,
+      "offsetY": 0,
+      "pageX": 0,
+      "pageY": 0,
+      "clientWidth": 1425,
+      "clientHeight": 2200,
+      "scale": 1,
+      "zoom": 1
+    },
+    "contentSize": {
+      "x": 0,
+      "y": 0,
+      "width": 1425,
+      "height": 8038
+    },
+    "cssLayoutViewport": {
+      "pageX": 0,
+      "pageY": 0,
+      "clientWidth": 1425,
+      "clientHeight": 2200
+    },
+    "cssVisualViewport": {
+      "offsetX": 0,
+      "offsetY": 0,
+      "pageX": 0,
+      "pageY": 0,
+      "clientWidth": 1425,
+      "clientHeight": 2200,
+      "scale": 1,
+      "zoom": 1
+    },
+    "cssContentSize": {
+      "x": 0,
+      "y": 0,
+      "width": 1425,
+      "height": 8038
+    }
+  },
+  "clip": {
+    "x": 0,
+    "y": 0,
+    "width": 1425,
+    "height": 8038,
+    "scale": 1
+  }
+}

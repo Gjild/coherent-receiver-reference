@@ -1,0 +1,1 @@
+/usr/bin/node /home/miba/Projects/coherent-receiver-reference/scripts/visual_capture.mjs /usr/bin/brave file:///home/miba/Projects/coherent-receiver-reference/book/figures/transduction-blind-path.svg /tmp/k8bf3 1200 700 3000

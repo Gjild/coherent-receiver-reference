@@ -14,6 +14,7 @@ book:
     - phase-delay-inference.qmd
     - model-adequacy-uncertainty.qmd
     - tracking-signal-retention.qmd
+    - fields-geometry-transduction.qmd
     - publishing-pilot.qmd
     - relative-phase-stability.qmd
     - references.qmd

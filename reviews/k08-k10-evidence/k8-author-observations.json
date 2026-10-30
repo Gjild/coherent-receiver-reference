@@ -1,0 +1,166 @@
+{
+  "scope": "K08 bounded Chapter 8 treatment; synthetic models, no empirical validation",
+  "smoke_observation": "1000x700 actual pixels: black heading/text, blue circle, radius 60 px label; no clipping.",
+  "standalone_observations": {
+    "field-port-paths": "Travel arrow opposite sourceward vector; baseline points from r1 to r2; H then L then G; injection enters Q. All boxes/labels visible.",
+    "polarization-error": "Signed odd phase curve crosses \u00b12-degree dashed/dotted criteria; even dB curve smaller; angle axes and excluded null labeled; no clipped curves.",
+    "transduction-blind-path": "R and n feed nR; beta joins phase independently; minus round-trip sensitivity and synthetic equivalence visible."
+  },
+  "page_observation": "Inspected actual complete 1425x7690 PNG and five overlapping 1000px-wide crops, y=0,1700,3400,5100,6800. Typeset equations, three figures, captions, final exercise and bottom navigation visible. No raw TeX/blank assets. Full-width original retains sidebars outside detail crops.",
+  "viewport": [
+    1440,
+    2200
+  ],
+  "png": {
+    "exit_status": 0,
+    "timed_out": false,
+    "seconds": 2.318,
+    "source": "/tmp/k0810/render8/book/_book/fields-geometry-transduction.html",
+    "source_sha256": "5ea4b844111379f04a3067701c8455c8f322589a9ffa35cca0c66252c0020f3e",
+    "backend": "pipe",
+    "viewport": [
+      1440,
+      2200
+    ],
+    "image_exists": true,
+    "image_dimensions": [
+      1425,
+      7690
+    ],
+    "image_sha256": "02d5078d3c5108268373495cb04ed63dd45f495cd9f6fbf69ac076b83bdaaef6"
+  },
+  "page": {
+    "version": {
+      "protocolVersion": "1.3",
+      "product": "Chrome/156.0.8078.74",
+      "revision": "@44a84b1f89d9a35287289d6a3d493e362f5a512",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+      "jsVersion": "15.6.75.25"
+    },
+    "document": {
+      "url": "file:///tmp/k0810/render8/book/_book/fields-geometry-transduction.html",
+      "title": "8\u00a0 Fields, geometry and physical transduction \u2013 Coherent Receiver Theory and Design",
+      "readyState": "complete",
+      "viewport": [
+        1440,
+        2200
+      ],
+      "mathElements": 114,
+      "mathjaxContainers": 114,
+      "images": [
+        {
+          "src": "figures/field-port-paths.svg",
+          "complete": true,
+          "width": 213,
+          "height": 150
+        },
+        {
+          "src": "figures/polarization-error.svg",
+          "complete": true,
+          "width": 158,
+          "height": 150
+        },
+        {
+          "src": "figures/transduction-blind-path.svg",
+          "complete": true,
+          "width": 262,
+          "height": 150
+        }
+      ]
+    },
+    "metrics": {
+      "layoutViewport": {
+        "pageX": 0,
+        "pageY": 0,
+        "clientWidth": 1425,
+        "clientHeight": 2200
+      },
+      "visualViewport": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "pageX": 0,
+        "pageY": 0,
+        "clientWidth": 1425,
+        "clientHeight": 2200,
+        "scale": 1,
+        "zoom": 1
+      },
+      "contentSize": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 7690
+      },
+      "cssLayoutViewport": {
+        "pageX": 0,
+        "pageY": 0,
+        "clientWidth": 1425,
+        "clientHeight": 2200
+      },
+      "cssVisualViewport": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "pageX": 0,
+        "pageY": 0,
+        "clientWidth": 1425,
+        "clientHeight": 2200,
+        "scale": 1,
+        "zoom": 1
+      },
+      "cssContentSize": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 7690
+      }
+    },
+    "clip": {
+      "x": 0,
+      "y": 0,
+      "width": 1425,
+      "height": 7690,
+      "scale": 1
+    }
+  },
+  "regressions": {
+    "stdlib": 42,
+    "pilot": 19,
+    "pytest": "absent; command failed before collection"
+  },
+  "html": {
+    "pages": 12,
+    "local_links": 333,
+    "images": 41,
+    "errors": []
+  },
+  "reproducibility": "3/3 regenerated SVGs byte-identical",
+  "baseline_changes": [
+    "book/_quarto.yml",
+    "project/current-work.md"
+  ],
+  "correction_observation": "Initial review found c speed ambiguity, missing electronics orientation, wrong unit prose and missing scalar proof. Author corrected these and future-navigation wording. Intermediate corrected-page pixels exposed a space-delimited raw-TeX scalar equation; final page shows typeset (m2-rho m1)E=0. Inspected both changed standalone diagrams and complete final 1425x8064 page plus all five overlapping crops. Units, c0, normalized G, scalar proof, captions and final navigation readable. No remaining raw TeX seen.",
+  "final_page": {
+    "exit_status": 0,
+    "timed_out": false,
+    "seconds": 2.368,
+    "source": "/tmp/k0810/render8c/book/_book/fields-geometry-transduction.html",
+    "source_sha256": "60a55ceb55b44524a0bc4df86cf91f1f90e9fda9e91963f3bcb070bde80e9786",
+    "backend": "pipe",
+    "viewport": [
+      1440,
+      2200
+    ],
+    "image_exists": true,
+    "image_dimensions": [
+      1425,
+      8064
+    ],
+    "image_sha256": "3cf0d31a43fa071a865b1857ecda95833fddcdf82d4db785801a8ff22b54931d"
+  },
+  "final_html": {
+    "pages": 12,
+    "local_links": 333,
+    "images": 41,
+    "errors": []
+  }
+}

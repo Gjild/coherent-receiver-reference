@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 0.364,
+  "source": "/home/miba/Projects/coherent-receiver-reference/book/figures/transduction-blind-path.svg",
+  "source_sha256": "cdb4b23ecf638c1e009c63c267c09a9dced6da47abba98d1f450feb948869bf6",
+  "backend": "pipe",
+  "viewport": [
+    1200,
+    700
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    1200,
+    700
+  ],
+  "image_sha256": "a21bc88e3da0672c0a849c0017feac1076e41a545b9208bf3a3f7a659b03aadb"
+}

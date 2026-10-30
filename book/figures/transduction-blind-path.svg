@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 550" role="img" aria-labelledby="title desc"><title id="title">Phase observes path length; separate causes need separate evidence</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Phase observes path length; separate causes need separate evidence</text>
+<rect x="30" y="100" width="170" height="70" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="115.0" y="125" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Range R (m)</text>
+<rect x="30" y="250" width="170" height="70" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="115.0" y="275" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Index n</text>
+<rect x="300" y="170" width="190" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="395.0" y="195" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Path nR (m)</text>
+<text x="395.0" y="220" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">one-way length</text>
+<rect x="620" y="170" width="290" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="765.0" y="195" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">φ = β − 4πfc nR/c₀</text>
+<text x="765.0" y="220" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">round-trip phase (rad)</text>
+<path d="M200.000,135.000 L250.000,135.000 L250.000,195.000 L300.000,195.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M200.000,285.000 L250.000,285.000 L250.000,230.000 L300.000,230.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M490.000,212.000 L620.000,212.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M765.000,110.000 L765.000,170.000" fill="none" stroke="#237550" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="545" y="85" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Electronic reference β (rad)</text>
+<text x="45" y="390" font-family="sans-serif" font-size="20" fill="#182f3e" text-anchor="start">10 GHz, R = 1 m, n = 1: +0.10 mm OR dn = 10⁻⁴ gives −2.40°.</text>
+<text x="45" y="440" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Injection constrains β; an independent physical reference must constrain R or n.</text>
+<text x="32" y="536" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

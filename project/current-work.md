@@ -1,3 +1,25 @@
+# Active batch — K08–K10 autonomous development (2026-10-30)
+
+The owner explicitly authorized sequential bounded K08 (Chapter 8), K09
+(Chapter 9), K10 (Chapter 10), their connected integration assessment and safe
+local Git checkpoints. This supersedes historical administrative-only stopping
+statements below for this batch. Stop after K10/integration; no K11, push,
+publication or human acceptance. Preserve accepted coverage and local conventions.
+
+Fresh smoke: sandbox preflight blocked SO_PASSCRED; first host output path
+exceeded Chromium socket length; short `/tmp/k0810-smoke` succeeded with unchanged
+private-pipe helper, Node v26.12.1 / Brave 156.1.98.62 and retained browser sandbox.
+Author opened the actual 1000×700 PNG: heading, text, blue circle and radius label
+visible. Durable smoke evidence is in `reviews/k08-k10-evidence/`.
+
+K08 closes as a checked provisional bounded Chapter 8 treatment after fresh
+read-only technical/visual review, consequential corrections and final targeted
+reassessment. Evidence/dispositions: `reviews/k08-k10-development.md`.
+Next: K09 physical disturbance generation/paths, then K10, then connected
+integration assessment. No complete-chapter or human technical acceptance claimed.
+
+---
+
 # Current boundary — HTML visual milestone accepted; K08–K10 next (2026-10-30)
 
 The project owner provisionally accepts the completed Chapters 1–7 and

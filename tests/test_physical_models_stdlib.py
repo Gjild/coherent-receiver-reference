@@ -58,5 +58,78 @@ class FieldModels(unittest.TestCase):
         self.assertAlmostEqual(cmath.exp(-1j*k*.015),1)
 
 
+class NoiseModels(unittest.TestCase):
+    def test_thermal_power_real_and_envelope_domains(self):
+        k=1.380649e-23;T=290;R=50;B=1e5
+        real_s=2*k*T*R*(.5**2)
+        real_power=2*B*real_s/R
+        envelope_power=B*(4*real_s)/(2*R)
+        self.assertAlmostEqual(real_power/envelope_power,1)
+        self.assertAlmostEqual(10*math.log10(real_power/.001),-123.9751871942,places=8)
+        self.assertAlmostEqual((2*k*T*R*(.8**2)/(4*R))/(real_s/R),.64)
+
+    def test_coupled_resistor_circuit_by_source_ensemble(self):
+        import itertools
+        # Solve three-node KCL directly for each independent unit-variance
+        # resistor source. Scale source variance by 2kBT afterwards.
+        values=[]
+        for signs in itertools.product([-1,1],repeat=3):
+            e0,e1,e2=[math.sqrt(10)*v for v in signs]
+            # Equations at the common node and loaded port nodes:
+            # port: v_i=(v_common+e_i)/(1+10/50)
+            # common: (vc-e0)/10+(vc-v1+e1)/10+(vc-v2+e2)/10=0
+            vc=(6*e0-e1-e2)/8
+            v1=(vc+e1)/1.2;v2=(vc+e2)/1.2
+            values.append((v1,v2))
+        C=[[sum(v[i]*v[j] for v in values)/8 for j in range(2)] for i in range(2)]
+        self.assertAlmostEqual(C[0][0],9.33159722222222)
+        self.assertAlmostEqual(C[0][1],2.38715277777778)
+        diff=sum((v[1]-v[0])**2 for v in values)/8
+        self.assertAlmostEqual(diff,2*10*(5/6)**2)
+        self.assertAlmostEqual((C[0][0]+C[1][1])/diff-1,.34375)
+        # A valid source matrix remains PSD; a reverse sign without sources
+        # cannot be introduced merely to improve the differential budget.
+        self.assertGreater(C[0][0]*C[1][1]-C[0][1]**2,0)
+        cold=[]
+        for signs in itertools.product([-1,1],repeat=3):
+            e0=signs[0];e1=math.sqrt(10)*signs[1];e2=math.sqrt(10)*signs[2]
+            vc=(6*e0-e1-e2)/8
+            cold.append(((vc+e1)/1.2,(vc+e2)/1.2))
+        self.assertAlmostEqual(sum(a*b for a,b in cold)/8,-1.12847222222)
+
+
+    def test_reciprocal_integral_by_overlap_and_quadrature(self):
+        # Independent midpoint integration of the finite blocker. Use kHz
+        # coordinates; uniform source normalization cancels the kHz unit.
+        n=8000;delta=1000;halfwidth=200
+        for f in (-50,-13,0,27,50):
+            integrated=sum(1 if abs(f-(-halfwidth+(i+.5)*400/n))<=100 else 4
+                           for i in range(n))/n
+            self.assertAlmostEqual(integrated,2.5,delta=.001)
+        pb=1e-7;s0=1e-12;B=1e5
+        self.assertAlmostEqual(10*math.log10(pb*s0*B/.001),-110)
+        self.assertAlmostEqual(10*math.log10(2.5),3.97940008672)
+        self.assertAlmostEqual(10**((-115-30)/10)/(pb*B),3.16227766017e-13)
+
+    def test_timing_error_from_direct_sampled_waveform(self):
+        # Exact perturbed samples, not the generator's slope-RMS formula.
+        fs=500e6;n=5000;sd=1e-12;err=[];lower=[]
+        x=lambda t:.01*math.cos(2*math.pi*1e7*t+.31)+math.cos(2*math.pi*1e8*t+.7)
+        for i in range(n):
+            t=i/fs;dt=math.sqrt(2)*sd*math.cos(2*math.pi*90e6*t+.29)
+            err.append(x(t+dt)-x(t))
+        rms=math.sqrt(sum(e*e for e in err)/n)
+        expected=sd/math.sqrt(2)*math.sqrt((2*math.pi*1e7*.01)**2+(2*math.pi*1e8)**2)
+        self.assertAlmostEqual(rms,expected,delta=1e-10)
+        amplitude=2*abs(sum(e*cmath.exp(-2j*math.pi*1e7*i/fs) for i,e in enumerate(err)))/n
+        expected_peak=2*math.pi*1e8*sd/math.sqrt(2)
+        self.assertAlmostEqual(amplitude,expected_peak,delta=3e-10)
+        snr=20*math.log10((.01/math.sqrt(2))/(expected_peak/math.sqrt(2)))
+        self.assertAlmostEqual(snr,27.0467025895,places=8)
+        required_dt=math.sqrt(2)*.01/(2*math.pi*1e8*100)
+        self.assertAlmostEqual(required_dt*1e12,.225079079039,places=10)
+
+
+
 if __name__=='__main__':
     unittest.main()

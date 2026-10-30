@@ -1,0 +1,52 @@
+The worked examples are mathematically consistent under their intended assumptions. I found no consequential sign, normalization, or numerical error in them. The main findings concern explicit applicability conditions, the bridge between spectral representations, and a few teaching and presentation details.
+
+1. **Priority: normalization bridge — §9.2 leaves the field-spectrum convention implicit.**  
+   The thermal discussion carefully distinguishes real two-sided spectra from peak-envelope spectra, but the external-field equation specifies only \(\mathbf F_\alpha\)’s units, \((\mathrm{V/m})^2/\mathrm{Hz}\). Those units do not distinguish the two representations. State whether its frequency variable is signed physical frequency or envelope offset, and identify the representation and output plane of \(\mathbf S_{\rm field}\). Otherwise a reader combining this result with the real two-sided resistor matrix can introduce exactly the factor-of-four error warned against in §9.1. This is an omitted declaration, not a demonstrated erroneous calculation. See [the field-spectrum passage](/tmp/k0810/k9-input/book/physical-disturbance-paths.qmd:148).
+
+2. **Applicability: make the timing covariance’s centering and regularity conditions explicit.**  
+   The displayed product and convolution are correct for the first-order disturbance, centered clock errors, independence of the entire clock and waveform vectors, and inputs with a finite mean-square derivative. “Centered errors” is ambiguous between \(e_i\) and \(\epsilon_i\); explicitly require \(E[\epsilon_i]=0\), or separate calibrated timing bias. With centered-correlation conventions, nonzero clock means add a term \(\mu_{\epsilon_i}\mu_{\epsilon_j}R_{\dot x_i\dot x_j}\). Also state the finite-slope condition, such as \(\int f^2S_{x_ix_i}(f)\,df<\infty\). Stationarity alone does not supply it. Mark the covariance identity as applying to the first-order model. The subsequent warnings about correlated generation, deterministic inputs, aliasing, and different channel slopes are sound. See [the timing covariance](/tmp/k0810/k9-input/book/physical-disturbance-paths.qmd:286).
+
+3. **Applicability: attach the independence condition directly to the internal-LO floor conclusion.**  
+   The conclusion that a \(5\times10^{-13}\ \mathrm{rad}^2/\mathrm{Hz}\) internal contribution prevents meeting the stated allocation is correct under the preceding independent-source model. Repeat that qualification in the worked decision. An individual branch PSD is not a universal lower bound on the total when cross spectra can contribute negatively. The chapter already acknowledges correlated branches; the recommendation should preserve that condition locally. This does not change the supplied independent-source numerical example. See [the internal-branch decision](/tmp/k0810/k9-input/book/physical-disturbance-paths.qmd:237).
+
+4. **Educational/visual: strengthen the signs and reference-plane cues.**  
+   Figure 9.1 correctly connects both series arms to the same return node, with separate grounded loads and the shared resistor returning to ground. However, resistor labels \(e_0,e_1,e_2\) have no source polarities, and port voltages have no positive reference marks. The drawing therefore cannot independently establish the signs in the source vector. It also shows connected loads beside an “open-circuit source vector.” Add polarity/reference marks and say that the vector describes the network with those loads disconnected.
+
+   Figure 9.2 would benefit from explicitly identifying the post-selector envelope \(b\) and stating \(S_b=|F|^2S_{b_{\rm RF}}\) under the declared power normalization. That connects the drawn selector to the convolution and distinguishes amplitude transfer from power attenuation.
+
+   Figure 9.3’s lower numerical example assumes \(A_b=1\) V peak, while the upper panel sweeps \(A_b\). Put that amplitude in the lower blocker box so “each sideband: 0.3142 mV RMS” cannot be mistaken for a result throughout the sweep.
+
+5. **Demonstrated navigation/reading-path mismatch.**  
+   The closing sentence points toward an extraction treatment, but the visible next-page navigation says “10 Mathematical Publishing Proof of Concept.” Clarify the intended continuation or correct the navigation label. The opening prerequisite links, four subsection entries, figure references, and previous-page navigation are present; all same-page HTML targets resolve. Earlier chapters and destination-page contents were not re-audited.
+
+6. **Optional graphical polish.**  
+   The timing plot’s logarithmic ticks—0.3, 2.28, 17.3, 132, 1000—are valid but unnecessarily difficult to interpret. Conventional decade ticks and an explicit “log scale” label would help. All stored timing-curve vertices agree with the independent formula within coordinate rounding. Straight interpolation between the first two vertices understates the value at \(A_b=2\) mV by about 10%; this occupies roughly two horizontal pixels in the standalone PNG, so it is minor. Denser sampling near the approximately 1 mV crossover would remove it. In Figure 9.2, ticks at the actual levels 1 and 4 would make the overlap calculation easier to read.
+
+The independent checks supporting these findings were:
+
+- **Thermal and envelope normalization:** \(2k_BTR\) is correct for the stated real two-sided convention. Integrating both matched RF bands gives \(k_BTB=4.0038821\times10^{-16}\) W at 290 K and 100 kHz, or \(-123.9752\) dBm. The \(R_L=4R\) delivered-power ratio is 0.64. Doubling positive-frequency analytic amplitude gives four times the spectral density; dividing peak-envelope voltage density by \(2R\) recovers the same power. No extra factor of two is needed.
+
+- **Active-noise cross sign:** expanding \(E|E_n+Z_sI_n|^2\), with \(S_{ei}=E[E_nI_n^*]\), gives \(+2\operatorname{Re}\{Z_s^*S_{ei}\}\). An asymmetric complex check distinguished this from the incorrect conjugation. The shot-noise \(qI\) two-sided convention, compensated-bias caution, and flicker cutoffs are appropriately qualified.
+
+- **Circuit sources, coupling, loading, and cooling:** a direct three-node KCL solution gives loaded source columns, ordered \(e_0,e_1,e_2\),
+  \[
+  \begin{pmatrix}
+  0.625&0.729167&-0.104167\\
+  0.625&-0.104167&0.729167
+  \end{pmatrix}.
+  \]
+  These reproduce the impedance matrix, loaded diagonal \(9.331597\), cross term \(2.387153\), difference coefficient \(13.888889\), and 34.375% independence overestimate. With only the common resistor cooled to 29 K, the normalized open-circuit matrix becomes \(\bigl(\begin{smallmatrix}11&1\\1&11\end{smallmatrix}\bigr)\ \Omega\), and the loaded matrix becomes \(\bigl(\begin{smallmatrix}5.815972&-1.128472\\-1.128472&5.815972\end{smallmatrix}\bigr)\ \Omega\). The negative cross term follows from the local sources’ opposite-sign paths. The loading matrix remains unchanged under the stated fixed-resistance assumption.
+
+- **Coherent fields:** summing coherent paths before forming the outer product is correct. Equal and opposite paths provide a decisive counterexample: the coherent result vanishes while separate path powers remain positive. The reverse-current coupling and passive-loss double-counting warnings are useful.
+
+- **Reciprocal mixing:** the convolution argument \(f-\nu\), tone limit, units, observation weighting, and finite-support construction agree. Across \(|f|\leq50\) kHz, the footprint retains 200 kHz of low density and 200 kHz of high density, yielding \(2.5S_0\), \(-106.0206\) dBm, and an 8.9794 dB shortfall. The symmetric phase feature and truncation are compatible with a real phase process. Doubling blocker width at fixed total power gives \(3.25S_0\), confirming that the transfer exercise changes the result.
+
+- **Timing:** the derivative cross-spectrum factor is positive \([2\pi(f-\alpha)]^2\). Independent calculations reproduce 0.4443 µV wanted-only error, 0.4443 mV complete-waveform error, 10/190 MHz blocker sidebands, 0.3142 mV RMS per sideband, the 27.0467 dB retained-band ratio, and the 0.225079 ps clock bound. The small-error parameter is \(8.886\times10^{-4}\). Pre-sampling blocker attenuation improves the ratio by the stated 20 dB; moving the clock component to 1 MHz moves blocker error outside the ideal observation.
+
+The figures make distinct teaching contributions: physical covariance construction, spectral overlap and filter placement, and waveform-slope versus observation-band error. Blue/orange mappings, arrows, PSD units, frequency labels, captions, and substantive alt text are consistent. In the supplied 1425 px page and overlapping crops, equations—including conjugates, matrix signs, exponents, and bounds—are readable. I found no chapter-column clipping or caption collisions. Sidebar truncation in the detail crops reflects their crop boundaries. Mobile layout, live interactions, external destinations, and assistive-technology behavior were not tested.
+
+I visually examined **all ten PNGs**: `figure1.png`, `figure2.png`, `figure3.png`, `page-full.png` (1425×9999), and `k9b-crop00.png` through `k9b-crop05.png`. Text/code examined comprised the requirements, four supplied standards, Chapter 9 manuscript and rendered HTML, three source/rendered SVG pairs, source-passage summaries and claim note, shared generator/test files, and checksum manifest. Independent checks preceded author-code inspection; the four Chapter 9 `NoiseModels` tests subsequently passed. Source/rendered SVG bytes match, and all manifest checks passed. The SVG helper was unnecessary.
+
+Source support was assessed **through the supplied summaries and examination note**, not fresh primary-document access. Their limits are properly stated: selective manufacturer support, unexamined mixer equation images, original local derivations, synthetic parameters, and no device-performance evidence. Physical validation and reader effectiveness remain unestablished; no batch smoke-test PNG was supplied.
+
+**Excluded-state exposure:** full-file reads inadvertently displayed Chapter 8 generator and test sections; those sections were not assessed or used. Earlier chapter manuscript contents, author current-work/status, prior reviews, and conversations were not opened. No edits, delegation, connectors, or human-acceptance claim were made.

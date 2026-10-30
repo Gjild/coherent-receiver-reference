@@ -184,7 +184,8 @@ $z_1\ne0$. This is a rank condition on the orientation-normalized response,
 not an electronics matching condition. Near a response null, even a small absolute discrepancy can
 make the ratio and its phase unusable.
 
-Consider a synthetic receiving pair at 1 GHz, baseline $b=0.15$ m on the x-axis,
+Consider a synthetic receiving pair in vacuum with rounded speed
+$v=c_0=3.00\times10^8$ m/s, at 1 GHz, baseline $b=0.15$ m on the x-axis,
 and a source direction with $\ell_x=\sin30^\circ=1/2$. Geometry gives
 $\Delta\tau_g=-0.250$ ns and $\Delta\phi_g=+90^\circ$. Assume uncoupled 50-ohm
 antennas, 50-ohm loads and electronic gains already equalized to unity. Let the
@@ -265,7 +266,8 @@ $$
 $$
 
 The observable is optical/electrical path length $nR$, not geometric distance
-alone. In the synthetic vacuum limit $n=1$, at 10 GHz a $+0.10$ mm displacement
+alone. Using the same rounded $c_0=3.00\times10^8$ m/s, in the synthetic vacuum limit
+$n=1$, at 10 GHz a $+0.10$ mm displacement
 gives $-0.04189$ rad, or $-2.40$ degrees. At $R=1$ m an index change $dn=10^{-4}$
 gives exactly the same first-order phase change. The latter is an illustrative
 perturbation, not an asserted material coefficient. One phase cannot distinguish

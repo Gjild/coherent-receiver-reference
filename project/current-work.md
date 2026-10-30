@@ -15,8 +15,9 @@ visible. Durable smoke evidence is in `reviews/k08-k10-evidence/`.
 K08 closes as a checked provisional bounded Chapter 8 treatment after fresh
 read-only technical/visual review, consequential corrections and final targeted
 reassessment. Evidence/dispositions: `reviews/k08-k10-development.md`.
-Next: K09 physical disturbance generation/paths, then K10, then connected
-integration assessment. No complete-chapter or human technical acceptance claimed.
+K09 now also closes after physical/source-path derivations, separate read-only
+review and fresh targeted mathematical/visual reassessment. Next: K10 extraction,
+integration and signal-preserving rejection, then connected batch assessment. No complete-chapter or human technical acceptance claimed.
 
 ---
 

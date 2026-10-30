@@ -389,3 +389,70 @@ HTML pages render with Quarto 1.10.19/Python 3.14.7. Fresh render success alone
 was not used to clear the image gate. Chapters 4–6 close as checked provisional
 visual drafts. Proceed only to the approved Chapter 7/state group, then pilot
 and connections; K08–K10 remain suspended.
+
+
+## Chapter 7 and state gates complete (2026-10-30)
+
+After Chapters 4–6 closed at `603c4dc`, V20–V22 were implemented as three new
+SVGs: tracking-loop, tracking-transfer-budget and tracking-nonlinear-holdover.
+The existing relative-phase-state-sequence was regenerated with explicit failed
+stage/invalidation routes and a return through acquisition, resolved branch,
+applicable calibration and independent validity evidence. Held-out fit checking
+is explicitly distinct from acquisition/instrument validation. Chapter 7 now
+interprets each illustration and links to this single state-sequence home in
+the pilot. Its original seven display blocks are byte-preserved; inline math is
+typeset. The pilot state caption gains meaningful alt text and gate qualifications.
+
+The existing generator owns the new figures and state diagram (group 3). Three
+focused numerical checks compare finite-band complex-response integration with
+the RMS curve, equilibrium slopes and integrated holdover, plus transfer identities
+and the delayed-feedback root. All 36 foundation/visual checks pass; the unchanged
+19 pilot checks previously passed (55 selected available checks). Independent
+criterion roots are 28.27159454 and 134.33399559 Hz; holdover equality is
+0.1273239545 s. No joint wanted-signal retention criterion is invented.
+[Author checks](visual-pedagogy-evidence/g3-checks.json).
+
+Author inspected four standalone PNGs, Chapter 7 complete-page pixels (1425×8026)
+and six full-width strips, plus the pilot complete page (1425×17884) and twelve
+full-width strips. The last Chapter 7 strip is 26 blank trailing pixels; bottom
+navigation is visible in the preceding strip. A feedback label/wire overlap was
+corrected before freezing inputs. Quarto HTML rendering succeeds on all eleven
+pages. Capture uses the unchanged private-pipe procedure at 1440×2200 for pages
+and native 960-pixel SVG widths. No source-only visual pass is inferred.
+
+Fresh GPT-6.1 Sol/high/read-only review returned exit 0, matched all 98 input
+hashes, examined all 24 raster files and independently derived the transfer,
+finite-band budget, nonlinear phase-line, holdover and latency results. All
+required state invalidations reach gating and return through requalification.
+[Findings](visual-pedagogy-evidence/g3-findings.md),
+[prompt](visual-pedagogy-evidence/g3-prompt.txt),
+[hashes](visual-pedagogy-evidence/g3-inputs.sha256),
+[invocation](visual-pedagogy-evidence/g3-invocation.json),
+[events](visual-pedagogy-evidence/g3-events.jsonl),
+[packet](visual-pedagogy-evidence/g3-packet.tar.gz).
+No consequential mathematical/graphical/validity or readability defect was found.
+Reviewer classified log-axis disclosure and command placement as optional. Author
+accepted these improvements and additionally made the actuator's open-loop k/s
+relation explicit inside its block, retaining solved closed-loop relations in
+the separate output summaries. Other optional example-point/transition labels,
+specific standalone SVG descriptions and a narrower pilot measurement-equation
+layout remain recorded, not acceptance blockers.
+
+Fresh focused reassessment (same requested model/effort; read-only; exit 0) matched
+all 98 corrected inputs, examined the two changed standalone PNGs and current
+Chapter 7 complete-page/crops 00 and 02, independently derived actuator units and
+loop algebra, and checked all six curve coordinates against independent values.
+No consequential error or overlap remained. Author inspected the corrected
+figure/page regions. Current page dimensions are unchanged.
+[Reassessment](visual-pedagogy-evidence/g3-correction-findings.md),
+[prompt](visual-pedagogy-evidence/g3-correction-prompt.txt),
+[hashes](visual-pedagogy-evidence/g3-correction-inputs.sha256),
+[events](visual-pedagogy-evidence/g3-correction-events.jsonl),
+[invocation](visual-pedagogy-evidence/g3-correction-invocation.json),
+[packet](visual-pedagogy-evidence/g3-correction-packet.tar.gz).
+Input-path strings and historical assertions in existing source notes were
+incidentally exposed; paths were not followed and assertions were not correctness
+evidence. No failed image access was reported. Backend routing is not independently
+verified. These are checked provisional visual drafts, not human acceptance,
+hardware capture/stability validation or reader-trial evidence. Pilot intervention
+V23–V28 and connected/final assessment remain outstanding.

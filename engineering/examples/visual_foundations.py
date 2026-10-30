@@ -259,8 +259,85 @@ def group2():
     s.plot(70,'g(x)=2(x−1+exp(−x))/x², x=T/tc; Python binary64', (1e-10,.01),(1e-18,100),'Observation ratio x (dimensionless)','Relative evaluation error',[('direct subtraction',xs,direct),('series below 0.001; direct otherwise',xs,stable)],True,True)
     s.text(90,455,'Reference: 65-digit Decimal; independent time integral tends to 1 as x → 0.',17);s.save()
 
+
+def tracking_rms(fc):
+    """Locked-state true residual: finite two-sided noise band plus squared bias."""
+    k=2*pi*fc
+    return sqrt(1e-6*k/pi*atan(2*pi*1000/k)+(pi/k)**2)
+
+def group3():
+    s=SVG('tracking-loop','Separate the true phase residual from the noisy detector output',650)
+    s.text(40,85,'All phases at the same comparison plane, orientation and epoch; units rad.',18)
+    s.box(30,150,215,85,['Incoming phase θ','wanted θs + nuisance θd'])
+    s.box(335,150,220,85,['Phase detector','θ + n − θ̂ = e + n'])
+    s.box(665,150,245,85,['k then oscillator 1/s','θ̂ = (k/s)(e+n)'])
+    s.path([(245,192),(335,192)],arrow=True);s.path([(555,192),(665,192)],arrow=True)
+    s.path([(445,105),(445,150)],COLORS[1],arrow=True);s.text(475,125,'+ n',18)
+    s.path([(790,235),(790,330),(300,330),(300,215),(335,215)],COLORS[1],arrow=True)
+    s.text(465,310,'Subtract correction phase θ̂',18)
+    s.text(590,120,'Internal command: k(e+n), rad/s',17)
+    s.box(40,390,400,105,['Correction / estimate output','θ̂ = Tθ + Tn','T(s) = k/(s+k)'])
+    s.box(510,390,400,105,['True residual output','e = Eθ − Tn','E(s) = s/(s+k)'])
+    s.text(45,550,'Detector output e+n = Eθ + En; it is not the true residual e.',20)
+    s.text(45,590,'Locked, amplitude-valid linearization; k > 0 in s⁻¹; zero initial conditions.',18)
+    s.save()
+    s=SVG('tracking-transfer-budget','A residual-noise choice must also retain the wanted signal',940)
+    xx=log(.001,1000)
+    s.plot(70,'Wanted and nuisance phase at the same input have the same transfer',(.001,1000),(0,1.05),'|f| / fc (dimensionless, logarithmic)','Phase amplitude transfer',[('estimate |T|',xx,[1/sqrt(1+x*x) for x in xx]),('true residual |E|',xx,[x/sqrt(1+x*x) for x in xx])],True)
+    s.text(90,440,'At fc = 100 Hz, a wanted 1 Hz phase has residual amplitude gain 0.0099995.',17)
+    xx=log(3,500)
+    px,py=s.plot(490,'S₀ = 10⁻⁶ rad²/Hz on |f| ≤ 1000 Hz; Ω = π rad/s',(3,500),(.001,.2),'Loop corner fc (Hz, logarithmic)','True residual (rad RMS, logarithmic)',[
+      ('centered detector-noise RMS',xx,[sqrt(1e-6*2*x*atan(1000/x)) for x in xx]),
+      ('constant-rate phase bias |Ω/k|',xx,[.5/x for x in xx]),
+      ('combined RMS',xx,[tracking_rms(x) for x in xx]),
+      ('illustrative RMS criterion 0.02 rad',xx,[.02]*len(xx))],True,True)
+    for x in [10,100]:s.dot(px(x),py(tracking_rms(x)),5,COLORS[2])
+    s.text(70,865,'RMS criterion met for fc ≈ 28.27–134.33 Hz; no joint wanted-signal limit was set.',17)
+    s.text(70,900,'Centered noise and deterministic bias are combined as √(variance + bias²).',17)
+    s.save()
+    s=SVG('tracking-nonlinear-holdover','Capture, holdover and latency need separate limits',1330)
+    xx=lin(-pi,pi,801)
+    px,py=s.plot(70,'Noiseless sinusoidal detector: ė/k = Ω/k − sin e',(-pi,pi),(-.6,2.6),'Unwrapped phase error e (rad)','Normalized phase rate ė/k',[
+      ('Ω/k = 0.5',xx,[.5-sin(x) for x in xx]),('Ω/k = 1 (marginal)',xx,[1-sin(x) for x in xx]),
+      ('Ω/k = 1.5 (slips)',xx,[1.5-sin(x) for x in xx]),('zero phase rate',xx,[0]*len(xx))])
+    s.dot(px(asin(.5)),py(0),6)
+    s.s.append(f'<circle cx="{px(pi-asin(.5))}" cy="{py(0)}" r="6" fill="white" stroke="{COLORS[0]}" stroke-width="2"/>')
+    s.text(75,440,'For Ω/k = 0.5: filled = stable, hollow = unstable; slope is −cos e.',17)
+    s.text(75,470,'At Ω/k = 1 the tangent equilibrium attracts from only one side.',17)
+    tt=lin(0,.2)
+    s.plot(525,'Holdover: fixed bounded frequency error, continuous phase; no restart', (0,.2),(0,.16),'Time since reference loss (s)','Guaranteed phase-error bound (rad)',[
+      ('0.02 + 2π · 0.1t',tt,[.02+2*pi*.1*t for t in tt]),('illustrative limit 0.1 rad',tt,[.1]*len(tt))])
+    s.text(75,895,'Equality at 0.127324 s; beyond it, this bound cannot support the 0.1 rad limit.',17)
+    xx=lin(10,200)
+    s.plot(950,'Delayed feedback: kL = π/2 is a marginal crossing, not a practical margin',(10,200),(0,27),'Loop corner fc (Hz)','Marginal latency Lcrit (ms)',[
+      ('Lcrit = 1/(4fc)',xx,[250/x for x in xx])],points=[(10,25),(100,2.5)])
+    s.save()
+    s=SVG('relative-phase-state-sequence','Keep wanted data gated until state and phase validity are established',880)
+    labels=[['Reset / retune / changed state','Record identity, epoch and configuration'],
+      ['Settle and perform coarse acquisition','Time elapsed alone does not prove validity'],
+      ['Resolve branch; apply applicable calibration','Known stimulus and declared uncertainty'],
+      ['Held-out frequency / time model check','Checks the fit, not independent acquisition'],
+      ['Independent validity evidence','Amplitude, continuity, innovation, headroom'],
+      ['Valid wanted-data use','Monitor state, reference and calibration age']]
+    for i,lines in enumerate(labels):
+        y=80+95*i;s.box(45,y,510,65,lines)
+        if i<5:s.path([(300,y+65),(300,y+95)],arrow=True)
+        if i>0:s.path([(555,y+32),(610,y+32)],COLORS[1],arrow=True)
+    s.box(665,645,260,105,['INVALID: gate data','Any failed check, stale','calibration or lost reference'])
+    s.path([(610,207),(610,697),(665,697)],COLORS[1],arrow=True)
+    s.text(650,180,'Failure / invalidation bus',17)
+    s.text(650,245,'Changed state',18);s.text(650,285,'Amplitude/reference loss',18)
+    s.text(650,325,'Unresolved phase branch',18);s.text(650,365,'Failed settling or checks',18)
+    s.text(45,695,'Held-out fit data cannot independently test',18)
+    s.text(45,725,'the acquisition / instrument chain.',18)
+    s.path([(795,750),(795,800),(20,800),(20,110),(45,110)],COLORS[1],arrow=True)
+    s.text(50,835,'Return through acquisition, branch, calibration and evidence gates before renewed use.',17)
+    s.save()
+
+
 if __name__=='__main__':
-    if len(sys.argv)!=2 or sys.argv[1] not in ('1','2'):raise SystemExit('Choose implemented group: 1 or 2')
+    if len(sys.argv)!=2 or sys.argv[1] not in ('1','2','3'):raise SystemExit('Choose implemented group: 1, 2 or 3')
     if sys.argv[1]=='1':
         group1();group1_details()
-    else:group2()
+    elif sys.argv[1]=='2':group2()
+    else:group3()

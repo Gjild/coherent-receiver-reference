@@ -530,7 +530,7 @@ an assumed 0.1 rad/V differential supply sensitivity and 10 mV change produce
 aggressor spectrum and return path. The sensitivity is unverified. A uniform
 chamber temperature does not establish gradient immunity.
 
-![State sequence: settling, calibration and independent validity gates precede use. Any changed state can invalidate calibration.](figures/relative-phase-state-sequence.svg){#fig-phase-states}
+![State sequence with an explicit invalid-data gate. Failed acquisition or checks, changed state, stale calibration and lost amplitude or reference require reacquisition and renewed evidence before wanted-data use. A held-out fit check does not independently test acquisition or instrument errors.](figures/relative-phase-state-sequence.svg){#fig-phase-states fig-alt="A sequence from reset through acquisition, resolved branch and applicable calibration, held-out model checking and independent validity evidence reaches valid use. Failure or invalidation gates data and returns to acquisition."}
 
 Define separate cold power-up, warm reset, partial-channel reset and retune
 procedures. Record divider/PLL state where accessible, mixer/gain setting,

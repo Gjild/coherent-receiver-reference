@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 650" role="img" aria-labelledby="title desc"><title id="title">Separate the true phase residual from the noisy detector output</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Separate the true phase residual from the noisy detector output</text>
+<text x="40" y="85" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">All phases at the same comparison plane, orientation and epoch; units rad.</text>
+<rect x="30" y="150" width="215" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="137.5" y="175" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Incoming phase θ</text>
+<text x="137.5" y="200" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">wanted θs + nuisance θd</text>
+<rect x="335" y="150" width="220" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="445.0" y="175" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Phase detector</text>
+<text x="445.0" y="200" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">θ + n − θ̂ = e + n</text>
+<rect x="665" y="150" width="245" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="787.5" y="175" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">k then oscillator 1/s</text>
+<text x="787.5" y="200" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">θ̂ = (k/s)(e+n)</text>
+<path d="M245.000,192.000 L335.000,192.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M555.000,192.000 L665.000,192.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M445.000,105.000 L445.000,150.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="475" y="125" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">+ n</text>
+<path d="M790.000,235.000 L790.000,330.000 L300.000,330.000 L300.000,215.000 L335.000,215.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="465" y="310" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Subtract correction phase θ̂</text>
+<text x="590" y="120" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Internal command: k(e+n), rad/s</text>
+<rect x="40" y="390" width="400" height="105" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="240.0" y="415" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Correction / estimate output</text>
+<text x="240.0" y="440" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">θ̂ = Tθ + Tn</text>
+<text x="240.0" y="465" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">T(s) = k/(s+k)</text>
+<rect x="510" y="390" width="400" height="105" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="710.0" y="415" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">True residual output</text>
+<text x="710.0" y="440" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">e = Eθ − Tn</text>
+<text x="710.0" y="465" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">E(s) = s/(s+k)</text>
+<text x="45" y="550" font-family="sans-serif" font-size="20" fill="#182f3e" text-anchor="start">Detector output e+n = Eθ + En; it is not the true residual e.</text>
+<text x="45" y="590" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Locked, amplitude-valid linearization; k &gt; 0 in s⁻¹; zero initial conditions.</text>
+<text x="32" y="636" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

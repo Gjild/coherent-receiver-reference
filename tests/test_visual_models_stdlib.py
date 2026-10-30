@@ -76,4 +76,33 @@ class CoupledFigureModels(unittest.TestCase):
             self.assertAlmostEqual(mean,math.exp(-sigma*sigma/2),places=12)
             self.assertAlmostEqual(variance,.5*(1-math.exp(-sigma*sigma))**2,places=12)
 
+
+class TrackingFigureModels(unittest.TestCase):
+    def test_residual_budget_against_frequency_integral(self):
+        for fc in (10.,28.27,100.,134.33):
+            k=2*math.pi*fc
+            # Integrate both sides of the declared detector-noise spectrum.
+            variance=v.quad(lambda f:1e-6*abs(k/(k+2j*math.pi*f))**2,-1000,1000,32768)
+            self.assertAlmostEqual(v.tracking_rms(fc)**2,variance+(.5/fc)**2,places=13)
+        self.assertGreater(v.tracking_rms(28),.02)
+        self.assertLess(v.tracking_rms(29),.02)
+        self.assertLess(v.tracking_rms(134),.02)
+        self.assertGreater(v.tracking_rms(135),.02)
+    def test_phase_line_and_holdover_bound(self):
+        stable=math.asin(.5);unstable=math.pi-stable
+        for e in (stable,unstable):self.assertAlmostEqual(.5-math.sin(e),0.)
+        self.assertLess(-math.cos(stable),0.);self.assertGreater(-math.cos(unstable),0.)
+        for d in (-.01,.01):self.assertGreater(1-math.sin(math.pi/2+d),0.)
+        expiry=(.1-.02)/(2*math.pi*.1)
+        self.assertAlmostEqual(expiry,.1273239544735163)
+        # Independently integrate the bounded constant frequency error.
+        self.assertAlmostEqual(.02+v.quad(lambda t:2*math.pi*.1,0,expiry),.1)
+    def test_complex_transfers_and_delay_crossing(self):
+        for x in (-100.,-1.,0.,.1,1.,100.):
+            t=1/(1+1j*x);e=1-t
+            self.assertAlmostEqual(abs(t)**2+abs(e)**2,1.)
+        for fc in (10.,100.):
+            k=2*math.pi*fc;latency=1/(4*fc)
+            self.assertLess(abs(1j*k+k*cmath.exp(-1j*k*latency)),1e-11)
+
 if __name__=='__main__':unittest.main()

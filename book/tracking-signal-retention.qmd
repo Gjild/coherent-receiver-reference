@@ -17,25 +17,32 @@ hardware performance or book-wide convention authority.
 
 ## Build the loop from its physical actions
 
-Let theta(t) be incoming phase relative to a declared ideal carrier at a receiver
-comparison plane, and let theta_hat(t) be the local oscillator's correction phase
+Let $\theta(t)$ be incoming phase relative to a declared ideal carrier at a receiver
+comparison plane, and let $\widehat\theta(t)$ be the local oscillator's correction phase
 referred to the same orientation and epoch. Its instantaneous frequency correction
-is dot(theta_hat)/(2 pi) in Hz. A phase detector sees their difference plus a
-small equivalent input phase error n(t). In a locked, amplitude-valid interval,
+is $\dot{\widehat\theta}/(2\pi)$ in Hz. A phase detector sees their difference plus a
+small equivalent input phase error $n(t)$. In a locked, amplitude-valid interval,
 normalize the detector's slope to unity and model the correction law as
 
 $$
  \dot{\widehat\theta}=k(\theta+n-\widehat\theta),\qquad k>0.
 $$
 
-The gain k has units s^-1: oscillator integration converts a frequency command
+The gain $k$ has units $\mathrm{s}^{-1}$: oscillator integration converts a frequency command
 to phase. This is proportional feedback through an ideal oscillator. Actual detector
-and actuator gains must multiply to this k after unit conversion. Saturation,
+and actuator gains must multiply to this $k$ after unit conversion. Saturation,
 processing delay, oscillator tuning limits, fades and wrapped detector behavior
-are omitted for this locked-state model. Define true residual e=theta-theta_hat;
-the measured detector quantity is e+n, which has different noise statistics.
+are omitted for this locked-state model. Define true residual $e=\theta-\widehat\theta$;
+the measured detector quantity is $e+n$, which has different noise statistics.
 
-With zero initial conditions, replacing differentiation by the Laplace variable s
+The two output paths in @fig-tracking-loop answer different engineering questions.
+The true residual subtracts the oscillator phase; detector noise also enters the
+correction and therefore contributes with a negative sign to that residual.
+The noisy detector reading includes its own direct noise term.
+
+![Locked-state feedback at one comparison plane. The incoming wanted and nuisance phase share a transfer; the detector reading and true residual differ. All phase variables are radians.](figures/tracking-loop.svg){#fig-tracking-loop fig-alt="Incoming phase and detector noise drive an oscillator correction through negative feedback. The estimate contains positive filtered noise; the true residual contains its negative, while detector output adds the original noise."}
+
+With zero initial conditions, replacing differentiation by the Laplace variable $s$
 turns the differential equation into an algebraic equation. Solving gives
 
 $$
@@ -44,10 +51,10 @@ $$
 $$
 
 Capital symbols denote transforms; the final relation also denotes the corresponding
-linear filtering. A perturbation decays as exp(-kt), so this ideal closed loop is
-stable. It has one pole at -k and time constant 1/k. A phase step Delta gives
-residual Delta exp(-kt); a constant phase rate Omega gives steady residual Omega/k.
-These results follow by solving dot(e)+ke=dot(theta) with n=0. They describe
+linear filtering. A perturbation decays as $\exp(-kt)$, so this ideal closed loop is
+stable. It has one pole at $-k$ and time constant $1/k$. A phase step $\Delta$ gives
+residual $\Delta\exp(-kt)$; a constant phase rate $\Omega$ gives steady residual $\Omega/k$.
+These results follow by solving $\dot e+ke=\dot\theta$ with $n=0$. They describe
 linear tracking after initialization, not general capture of an unknown carrier.
 The small-error replacement of a sinusoidal detector and the separation of input
 phase distortion from detector noise are developed in Tausworthe's
@@ -57,28 +64,28 @@ its bandwidth or power conventions.
 
 ## Trace the wanted signal before selecting bandwidth
 
-Write theta=theta_s+theta_d, where theta_s is a wanted physical phase variation and
-theta_d is nuisance reference phase. If they enter the same detector input, both
+Write $\theta=\theta_s+\theta_d$, where $\theta_s$ is a wanted physical phase variation and
+$\theta_d$ is nuisance reference phase. If they enter the same detector input, both
 receive the same transfer. In the local oscillator phase estimate they pass through
-T; in the residual they pass through E. A loop cannot infer which part is wanted
+$T$; in the residual they pass through $E$. A loop cannot infer which part is wanted
 from that input alone.
 
-For a sinusoidal phase component at offset frequency f, substitute s=j2 pi f.
-Writing fc=k/(2 pi), the magnitudes are
+For a sinusoidal phase component at offset frequency $f$, substitute $s=j2\pi f$.
+Writing $f_c=k/(2\pi)$, the magnitudes are
 
 $$
  |T|={1\over\sqrt{1+(f/f_c)^2}},\qquad
  |E|={|f|/f_c\over\sqrt{1+(f/f_c)^2}}.
 $$
 
-Here fc is a loop corner frequency, not the RF carrier. As f tends to zero, the
+Here $f_c$ is a loop corner frequency, not the RF carrier. As $f$ tends to zero, the
 estimate tracks and the residual suppresses the incoming variation. For a sensing
-phase variation at 1 Hz and fc=100 Hz, residual amplitude is only 0.0099995 of
+phase variation at 1 Hz and $f_c=100$ Hz, residual amplitude is only 0.0099995 of
 its input value. Calling that quiet residual a faithful measurement would remove
 about 99 percent of the desired amplitude. The estimate output retains almost all
 of it, but also retains low-frequency nuisance phase at that input. Reconstruction
 by adding the estimate and true residual is an identity; the available detector
-residual includes n and must be interpreted accordingly.
+residual includes $n$ and must be interpreted accordingly.
 
 This is an interface decision. A communications receiver may use tracked carrier
 phase to derotate a known pilot while retaining information through a separate
@@ -88,25 +95,25 @@ substitute for identifying where the wanted signal enters and is read out.
 
 ## Noise bandwidth and a worked tradeoff
 
-Let n be a centered stationary phase error with two-sided density S0 rad²/Hz on
-|f|<=B, zero outside. Assume stable amplitude, linear phase detection and that no
+Let $n$ be a centered stationary phase error with two-sided density $S_0$ rad²/Hz on
+$|f|\leq B$, zero outside. Assume stable amplitude, linear phase detection and that no
 other loop noise is present. The true residual's detector-noise contribution is
--Tn, and its variance is
+$-Tn$, and its variance is
 
 $$
  v_n=\int_{-B}^{B} S_0 {k^2\over k^2+(2\pi f)^2}\,df
  ={S_0k\over\pi}\tan^{-1}\left({2\pi B\over k}\right).
 $$
 
-The integral is evaluated by substituting u=2 pi f/k. For B much larger than fc,
-v_n approaches S0 k/2. A locally defined one-sided equivalent noise bandwidth is
-integral_0^infinity |T(j2 pi f)|² df=k/4; the two-sided integral is k/2. These
+The integral is evaluated by substituting $u=2\pi f/k$. For $B$ much larger than $f_c$,
+$v_n$ approaches $S_0k/2$. A locally defined one-sided equivalent noise bandwidth is
+$\int_0^\infty|T(j2\pi f)|^2df=k/4$; the two-sided integral is $k/2$. These
 are explicit definitions in Hz, not a universal imported PLL bandwidth convention.
 White phase noise over an infinite band is an idealized limiting model; the finite
-B formulation keeps the observation bandwidth explicit.
+$B$ formulation keeps the observation bandwidth explicit.
 
 Suppose a residual frequency offset of 0.5 Hz remains after coarse acquisition,
-so Omega=pi rad/s. Let S0=1e-6 rad²/Hz and B=1000 Hz. The following long-time,
+so $\Omega=\pi$ rad/s. Let $S_0=10^{-6}$ rad²/Hz and $B=1000$ Hz. The following long-time,
 locked-state values exclude initial transients:
 
 | Loop corner | Noise RMS | Steady phase bias | Root mean-square true residual |
@@ -114,7 +121,7 @@ locked-state values exclude initial transients:
 | 10 Hz | 0.00558712 rad | 0.050000 rad | 0.0503112 rad |
 | 100 Hz | 0.0171530 rad | 0.005000 rad | 0.0178669 rad |
 
-The last column is sqrt(v_n+(Omega/k)²), since centered noise adds variance to
+The last column is $\sqrt{v_n+(\Omega/k)^2}$, since centered noise adds variance to
 the deterministic squared bias. An illustrative 0.02 rad total-RMS target rejects
 the narrower loop and admits the wider one under this model. However, the wider
 loop strongly suppresses a 1 Hz wanted variation at the residual output. The
@@ -122,26 +129,34 @@ receiver decision must consider both error and wanted transfer. Hardware delay,
 oscillator noise and saturation could change the feasible choice; none is
 validated by this calculation.
 
+The upper panel of @fig-tracking-transfer-budget shows why a small residual may
+mean that the wanted phase was suppressed. The lower panel separates stochastic
+scatter from constant-rate bias. Only the combined true-residual RMS is compared
+with the supplied criterion; the interval does not establish wanted-signal
+feasibility without a separate retention requirement.
+
+![First-order phase transfer and finite-band true-residual RMS under the stated locked model. The illustrative 0.02 rad criterion is met for approximately 28.27–134.33 Hz; no wanted-signal retention limit is specified.](figures/tracking-transfer-budget.svg){#fig-tracking-transfer-budget fig-alt="The estimate retains slow input phase while the residual suppresses it. Increasing corner frequency lowers rate bias but admits more detector noise, leaving a bounded range meeting the illustrative residual RMS criterion."}
+
 ## Acquisition and nonlinear failure are separate calculations
 
 A useful nonlinear noiseless contrast keeps the sinusoidal detector rather than
-replacing it by its slope. For a constant residual frequency Omega,
+replacing it by its slope. For a constant residual frequency $\Omega$,
 
 $$
  \dot e=\Omega-k\sin e.
 $$
 
-A stable equilibrium in the principal interval exists for |Omega|<k at
-asin(Omega/k). Its local slope is -k cos(e_eq)<0; a companion equilibrium is
-unstable. At |Omega|>k no equilibrium exists and unwrapped error keeps moving,
+A stable equilibrium in the principal interval exists for $|\Omega|<k$ at
+$\arcsin(\Omega/k)$. Its local slope is $-k\cos(e_{\rm eq})<0$; a companion equilibrium is
+unstable. At $|\Omega|>k$ no equilibrium exists and unwrapped error keeps moving,
 producing slips. At equality the equilibrium attracts only from one side and gives no robust
-operating margin: for Omega=k and e=pi/2+delta, dot(delta) is approximately
-k delta²/2, so positive perturbations depart rather than decay. These facts are derived from this specific ideal differential
+operating margin: for $\Omega=k$ and $e=\pi/2+\delta$, $\dot\delta$ is approximately
+$k\delta^2/2$, so positive perturbations depart rather than decay. These facts are derived from this specific ideal differential
 equation; they are not general capture-range specifications for real PLLs.
 Noise, additional poles, delays, limits or detector ambiguities can invalidate a
 capture conclusion even when the small-error transfer looks satisfactory.
 
-For our 100 Hz candidate, Omega/k=0.005 and asin(0.005) is close to 0.005 rad.
+For our 100 Hz candidate, $\Omega/k=0.005$ and $\arcsin(0.005)$ is close to 0.005 rad.
 That consistency supports the small-error approximation for the declared steady
 input. It says nothing about starting with an unknown branch or near a fade.
 A finite-burst phase/frequency estimate may initialize the oscillator feedforward;
@@ -152,13 +167,13 @@ method universally dominates.
 A bounded recovery procedure must expose what is known. For this teaching case,
 require an amplitude-valid record, an externally resolved phase branch, and a
 coarse frequency estimate before enabling linear tracking. Choose illustrative
-initial residual |e0|<=0.1 rad and |Omega|/k<=0.1. In the noiseless linear model
+initial residual $|e_0|\leq0.1$ rad and $|\Omega|/k\leq0.1$. In the noiseless linear model
 
 $$
  e(t)=e_0 e^{-kt}+{\Omega\over k}(1-e^{-kt}).
 $$
 
-Waiting 5/k reduces the initial-condition contribution to at most 0.000674 rad;
+Waiting $5/k$ reduces the initial-condition contribution to at most 0.000674 rad;
 the dynamic bias remains and stochastic excursions are not bounded by that time.
 Do not infer a false-lock probability or data-valid flag from this settling
 calculation alone. Real validity evidence must include amplitude, innovation,
@@ -167,21 +182,21 @@ to the application.
 
 If the reference fades, freeze the last valid frequency command rather than
 integrating an invalid detector output. In an illustrative holdover model with
-initial phase-error bound e_max and frequency-error bound Delta_f_max, the
-unwrapped phase-error bound grows as e_max+2 pi Delta_f_max t. For e_max=0.02 rad,
-Delta_f_max=0.1 Hz and a 0.1 rad phase limit, holdover is at most 0.127324 s under
+initial phase-error bound $e_{\max}$ and frequency-error bound $\Delta f_{\max}$, the
+unwrapped phase-error bound grows as $e_{\max}+2\pi\Delta f_{\max}t$. For $e_{\max}=0.02$ rad,
+$\Delta f_{\max}=0.1$ Hz and a 0.1 rad phase limit, holdover is at most 0.127324 $s$ under
 constant bounded frequency error. Frequency drift requires another term; unknown
 restart phase defeats this continuity argument. After validity returns, repeat
 coarse acquisition and ambiguity checks before reenabling the tracker. This is a
 bounded interface procedure, not a tested operational acquisition policy.
 
-As a transfer check, place latency L>0 in the entire detector-to-oscillator
-feedback path. For a perturbation x about a constant-phase equilibrium, the
-homogeneous equation is dot(x(t))=-k x(t-L). Trying an exponential mode
-x(t)=exp(st) gives s+k exp(-sL)=0. For an oscillatory mode s=j omega, real and
-imaginary parts require k cos(omega L)=0 and omega-k sin(omega L)=0. The first
-positive-frequency crossing is omega=k and kL=pi/2. This is a marginal boundary Lcrit=1/(4fc): 25 ms for 10 Hz and 2.5 ms for
-100 Hz. Practical margin needs further analysis. The no-delay pole at -k therefore supplies no stability
+As a transfer check, place latency $L>0$ in the entire detector-to-oscillator
+feedback path. For a perturbation $x$ about a constant-phase equilibrium, the
+homogeneous equation is $\dot x(t)=-kx(t-L)$. Trying an exponential mode
+$x(t)=\exp(st)$ gives $s+k\exp(-sL)=0$. For an oscillatory mode $s=j\omega$, real and
+imaginary parts require $k\cos(\omega L)=0$ and $\omega-k\sin(\omega L)=0$. The first
+positive-frequency crossing is $\omega=k$ and $kL=\pi/2$. This is a marginal boundary $L_{\rm crit}=1/(4f_c)$: 25 ms for 10 Hz and 2.5 ms for
+100 Hz. Practical margin needs further analysis. The no-delay pole at $-k$ therefore supplies no stability
 guarantee for arbitrary latency. Sampled realization, higher-order tracking,
 noise-driven slip probabilities and complete system recovery sequences remain
 later developments. Preserve the distinction between a locally quiet detector,
@@ -189,7 +204,7 @@ a retained physical signal and demonstrated acquisition reliability.
 
 
 For a reader transfer assessment, replace the constant input phase rate with
-Omega(t)=Omega0+alpha t, where alpha has units rad/s². Retain the same linear
+$\Omega(t)=\Omega_0+\alpha t$, where $\alpha$ has units rad/s². Retain the same linear
 tracker and derive its residual rather than substituting the instantaneous rate
 into the constant-offset result. A particular solution is
 
@@ -198,12 +213,21 @@ $$
  \qquad e(t)=e_p(t)+[e_0-e_p(0)]e^{-kt}.
 $$
 
-Substitution into dot(e)+ke=Omega0+alpha t verifies both terms. After the transient,
-nonzero alpha makes error grow without bound in the linear model: eventually it
+Substitution into $\dot e+ke=\Omega_0+\alpha t$ verifies both terms. After the transient,
+nonzero $\alpha$ makes error grow without bound in the linear model: eventually it
 leaves the detector's small-error domain. Waiting longer does not repair dynamic
 stress. Identify when a declared small-error limit would be crossed, then revise
 the acquisition or tracking model before promising continued lock. During holdover,
-a nonnegative bound dot_f_max on the magnitude of the relative frequency-error
-derivative, in Hz/s, adds pi dot_f_max t² to the phase-error
-bound. This follows by integrating 2 pi times the bounded frequency error. A
+a nonnegative bound $\dot f_{\max}$ on the magnitude of the relative frequency-error
+derivative, in Hz/$s$, adds $\pi\dot f_{\max}t^2$ to the phase-error
+bound. This follows by integrating $2\pi$ times the bounded frequency error. A
 constant-offset holdover time cannot be reused unchanged under that new model.
+
+The three panels in @fig-tracking-nonlinear-holdover keep separate the local
+equilibrium test, a deterministic holdover bound and a delayed-feedback stability
+boundary. None supplies a measured acquisition probability. The
+[state and validity sequence](relative-phase-stability.qmd#fig-phase-states)
+turns these limits into explicit invalid-data and reacquisition gates; its held-out
+fit check and independent validity evidence perform different jobs.
+
+![Sinusoidal-detector equilibria, bounded holdover and the first delayed-feedback marginal crossing. Models are noiseless or deterministically bounded as labeled; hardware capture and practical stability margin remain unverified.](figures/tracking-nonlinear-holdover.svg){#fig-tracking-nonlinear-holdover fig-alt="Below unit normalized rate there are stable and unstable phase equilibria; at equality attraction is only one-sided and above it phase slips. Holdover reaches the 0.1 rad bound at 0.127324 seconds, and marginal latency decreases as one over loop corner."}

@@ -1,3 +1,25 @@
+# Current bounded task — Chapter 7/state visuals closed; pilot next (2026-10-30)
+
+Chapters 1–3 remain completed checked provisional visual drafts. Chapters 4–6
+closed at `603c4dc`; Chapter 7 V20–V22 and mandatory state-gate remediation now
+close after fresh read-only image/mathematical review and focused reassessment.
+Three new figures, one remediated existing state diagram; all seven original
+Chapter 7 display blocks preserved. Human acceptance remains pending.
+[Execution and frozen evidence](../reviews/visual-pedagogy-review.md).
+
+Next bounded group: integrated relative-phase pilot V23–V28 and cross-chapter
+connections. Preserve completed groups; do not re-audit/re-review Chapters 1–3.
+Then final visual-adequacy assessment, available regressions, repository checks,
+SVG regeneration and HTML/pixel verification. Private-pipe capture works on this
+computer with explicit `/usr/bin/brave` and `/usr/bin/node` v26.12.1; retained
+browser sandbox, scoped host execution, no helper or host-policy changes.
+
+Safe isolated local Git checkpoints are expressly authorized. Preserve unrelated
+changes; no push/rebase/reset/amend. Stop after the visual-pedagogy milestone.
+K08–K10, human acceptance and physical validation remain outside this task.
+
+---
+
 # Current bounded task — visual remediation, Chapters 4–6 review closed (2026-10-30)
 
 Owner authorized resumption of the existing visual milestone and safe selective

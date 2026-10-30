@@ -1,5 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" role="img" aria-labelledby="title desc">
-<title id="title">State and calibration validity</title><desc id="desc">Reset or retune, settle, calibrate, independently verify, then valid use. State changes invalidate the earlier calibration.</desc>
-<rect width="920" height="220" fill="white"/>
-<g fill="#edf4f8" stroke="#24506a" stroke-width="2"><rect x="15" y="45" width="160" height="65"/><rect x="200" y="45" width="130" height="65"/><rect x="355" y="45" width="150" height="65"/><rect x="530" y="45" width="170" height="65"/><rect x="725" y="45" width="175" height="65"/></g>
-<g fill="#183446" font-family="sans-serif" font-size="17"><text x="30" y="85">Reset / retune</text><text x="225" y="85">Settle</text><text x="375" y="85">Calibrate</text><text x="548" y="85">Held-out check</text><text x="750" y="85">Valid use</text><text x="177" y="85">→</text><text x="332" y="85">→</text><text x="507" y="85">→</text><text x="702" y="85">→</text><text x="40" y="155">Store state, epoch, temperature, levels and calibration version at every stage.</text><text x="40" y="187">New state, stale calibration, loss of reference or invalid amplitude → gate data and reassess.</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 880" role="img" aria-labelledby="title desc"><title id="title">Keep wanted data gated until state and phase validity are established</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Keep wanted data gated until state and phase validity are established</text>
+<rect x="45" y="80" width="510" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="300.0" y="105" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Reset / retune / changed state</text>
+<text x="300.0" y="130" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Record identity, epoch and configuration</text>
+<path d="M300.000,145.000 L300.000,175.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="45" y="175" width="510" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="300.0" y="200" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Settle and perform coarse acquisition</text>
+<text x="300.0" y="225" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Time elapsed alone does not prove validity</text>
+<path d="M300.000,240.000 L300.000,270.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M555.000,207.000 L610.000,207.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="45" y="270" width="510" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="300.0" y="295" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Resolve branch; apply applicable calibration</text>
+<text x="300.0" y="320" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Known stimulus and declared uncertainty</text>
+<path d="M300.000,335.000 L300.000,365.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M555.000,302.000 L610.000,302.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="45" y="365" width="510" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="300.0" y="390" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Held-out frequency / time model check</text>
+<text x="300.0" y="415" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Checks the fit, not independent acquisition</text>
+<path d="M300.000,430.000 L300.000,460.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M555.000,397.000 L610.000,397.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="45" y="460" width="510" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="300.0" y="485" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Independent validity evidence</text>
+<text x="300.0" y="510" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Amplitude, continuity, innovation, headroom</text>
+<path d="M300.000,525.000 L300.000,555.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M555.000,492.000 L610.000,492.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="45" y="555" width="510" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="300.0" y="580" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Valid wanted-data use</text>
+<text x="300.0" y="605" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Monitor state, reference and calibration age</text>
+<path d="M555.000,587.000 L610.000,587.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="665" y="645" width="260" height="105" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="795.0" y="670" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">INVALID: gate data</text>
+<text x="795.0" y="695" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Any failed check, stale</text>
+<text x="795.0" y="720" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">calibration or lost reference</text>
+<path d="M610.000,207.000 L610.000,697.000 L665.000,697.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="650" y="180" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Failure / invalidation bus</text>
+<text x="650" y="245" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Changed state</text>
+<text x="650" y="285" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Amplitude/reference loss</text>
+<text x="650" y="325" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Unresolved phase branch</text>
+<text x="650" y="365" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Failed settling or checks</text>
+<text x="45" y="695" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Held-out fit data cannot independently test</text>
+<text x="45" y="725" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">the acquisition / instrument chain.</text>
+<path d="M795.000,750.000 L795.000,800.000 L20.000,800.000 L20.000,110.000 L45.000,110.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="50" y="835" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Return through acquisition, branch, calibration and evidence gates before renewed use.</text>
+<text x="32" y="866" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

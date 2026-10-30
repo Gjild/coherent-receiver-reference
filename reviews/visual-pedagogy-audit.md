@@ -370,3 +370,13 @@ page/figure pixels, hashes and findings are recorded in
 [the execution record](visual-pedagogy-review.md). These chapters are checked
 provisional visual drafts with optional polish and human acceptance pending.
 V20–V28 and state-diagram remediation remain to be completed.
+
+
+## Execution disposition — Chapter 7 and state gates, 2026-10-30
+
+V20–V22 and mandatory existing-state-diagram remediation are implemented and
+separately reviewed as checked provisional visual drafts. Author and reviewer
+inspected actual standalone and integrated pixels; command/axis clarifications
+passed fresh focused reassessment. [Execution/evidence](visual-pedagogy-review.md).
+The pilot state integration is checked; its remaining V23–V28 work is next.
+No completed Chapter 1–3 review was repeated. Human acceptance remains pending.

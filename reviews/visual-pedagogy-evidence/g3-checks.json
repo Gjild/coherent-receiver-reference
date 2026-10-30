@@ -1,0 +1,19 @@
+{
+  "original_display_blocks_byte_preserved": 7,
+  "residual_RMS_crossings_Hz": [
+    28.271594541716624,
+    134.33399559369605
+  ],
+  "holdover_limit_s": 0.12732395447351627,
+  "page_capture_dimensions": {
+    "7": [
+      1425,
+      8026
+    ],
+    "pilot-state": [
+      1425,
+      17884
+    ]
+  },
+  "author_pixel_coverage": "Four standalone figures; Chapter 7 full page and six full-width strips; pilot full page and twelve full-width strips, all through bottom navigation. Feedback label corrected before freeze."
+}

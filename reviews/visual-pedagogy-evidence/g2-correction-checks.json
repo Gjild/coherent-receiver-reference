@@ -1,0 +1,22 @@
+{
+  "covariance-quadratic-forms": {
+    "original_display_blocks_preserved": 6,
+    "new_display_blocks": 1,
+    "inline_math_expressions": 114
+  },
+  "phase-delay-inference": {
+    "original_display_blocks_preserved": 5,
+    "new_display_blocks": 0,
+    "inline_math_expressions": 60
+  },
+  "model-adequacy-uncertainty": {
+    "original_display_blocks_preserved": 6,
+    "new_display_blocks": 0,
+    "inline_math_expressions": 69
+  },
+  "projection_spot_values": {
+    "observable_half_width_rad": 0.03741657386773942,
+    "unit_direction_half_width_rad": 0.026457513110645908,
+    "radial_distance_rad": 0.016285496348111345
+  }
+}

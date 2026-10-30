@@ -18,39 +18,39 @@ choices remain local. The calculation below is synthetic, not a measured receive
 ## Specify the observations and unknowns
 
 At fixed input/output reference planes, measure a complex channel comparison at
-N known swept physical RF frequencies f_i during one settled acquisition state.
-The y_i below are comparisons translated to the physical input-phase orientation,
+$N$ known swept physical RF frequencies $f_i$ during one settled acquisition state.
+The $y_i$ below are comparisons translated to the physical input-phase orientation,
 not arbitrary raw positive-IF angles. For the lower-side model in Chapter 1,
-y=theta+Delta_lambda-Delta_beta; for its upper-side model,
-y=-theta+Delta_lambda+Delta_beta. Known path terms are removed in that translation;
+$y=\theta+\Delta\lambda-\Delta\beta$; for its upper-side model,
+$y=-\theta+\Delta\lambda+\Delta\beta$. Known path terms are removed in that translation;
 unknown receiver delay remains a nuisance contribution to the fitted total.
 This step must follow the actual conversion topology before interpreting a slope. Assume the underlying
 transfer has constant amplitude above a declared validity threshold and phase
-linear in frequency over this band. Let f0 be the arithmetic mean of the frequencies
-and x_i=f_i-f0, in Hz. On a justified unwrapped branch the observations are
+linear in frequency over this band. Let $f_0$ be the arithmetic mean of the frequencies
+and $x_i=f_i-f_0$, in Hz. On a justified unwrapped branch the observations are
 
 $$
  y_i=a+b x_i+\epsilon_i,\qquad b=-2\pi\tau.
 $$
 
-Here a is phase at f0, b has units rad/Hz, and tau is the total differential
-physical delay between the declared planes. The phase at f0 is an unknown nuisance
+Here $a$ is phase at $f_0$, $b$ has units rad/Hz, and $\tau$ is the total differential
+physical delay between the declared planes. The phase at $f_0$ is an unknown nuisance
 parameter: it is needed to describe the data even when delay is the desired result.
-Let errors be independent centered Gaussian with known variance sigma² in rad²,
+Let errors be independent centered Gaussian with known variance $\sigma^2$ in rad²,
 constant across these finite observations. Gaussian phase errors are a model,
 justified only within the amplitude/SNR and unwrapping conditions discussed earlier.
 A finite observation window, drift between frequency steps or correlated reference
 errors can invalidate independence or the static response assumption.
 
-An estimator is a rule taking data to a parameter estimate. Its bias is E[tauhat]-tau;
+An estimator is a rule taking data to a parameter estimate. Its bias is $E[\widehat\tau]-\tau$;
 its variance measures scatter about its own mean; mean-square error equals variance
 plus squared bias. These expectations refer to repetitions under the declared
 model, not the scatter of one fitted residual sequence.
 
 ## Derive the fit from a likelihood
 
-The likelihood treats the observed y as fixed and asks how its probability density
-varies with the proposed a and b. For our Gaussian model its log, apart from a
+The likelihood treats the observed $y$ as fixed and asks how its probability density
+varies with the proposed $a$ and $b$. For our Gaussian model its log, apart from a
 parameter-independent constant, is
 
 $$
@@ -58,8 +58,8 @@ $$
 $$
 
 Maximizing this expression is equivalent to minimizing the residual sum of squares.
-Differentiate with respect to a and b and set both derivatives to zero. Because
-sum x_i=0, the two equations separate:
+Differentiate with respect to $a$ and $b$ and set both derivatives to zero. Because
+$\sum_i x_i=0$, the two equations separate:
 
 $$
  \widehat a=\bar y,\qquad
@@ -68,7 +68,7 @@ $$
  \widehat\tau=-{\widehat b\over2\pi}.
 $$
 
-At least two distinct frequencies are necessary: Sxx=0 leaves slope unidentified.
+At least two distinct frequencies are necessary: $S_{xx}=0$ leaves slope unidentified.
 These closed forms minimize the quadratic exactly. A zero derivative need not
 identify a global maximum for an arbitrary nonlinear likelihood; here the positive
 quadratic curvature supplies that conclusion. For known unequal variances, the
@@ -76,8 +76,8 @@ Gaussian log likelihood instead weights each squared residual by its inverse
 variance. The mean frequency must then be weighted too. This precision weighting
 and the hazards of estimated weights are discussed in the
 [NIST regression handbook](https://itl.nist.gov/div898/handbook/pmd/section1/pmd143.htm).
-For correlated data the quadratic is r^T C^{-1}r, with positive-definite known C;
-whitening means applying a fixed transform W with WCW^T=I so transformed
+For correlated data the quadratic is $r^TC^{-1}r$, with positive-definite known $C$;
+whitening means applying a fixed transform $W$ with $WCW^T=I$ so transformed
 errors have unit covariance. Its stable construction and coupled fitting are
 extensions beyond this bounded scalar derivation. We do not assume that
 relabeling samples makes their covariance diagonal.
@@ -91,7 +91,7 @@ $$
 $$
 
 Both estimates are unbiased in this unwrapped linear model and their covariance
-is zero because sum x_i=0. Changing the intercept reference to another frequency
+is zero because $\sum_i x_i=0$. Changing the intercept reference to another frequency
 changes its covariance with slope; it does not change the physical delay estimate.
 The equations reveal the design lever: spread in observation frequency, not merely
 sample count, controls local delay precision.
@@ -99,16 +99,16 @@ sample count, controls local delay precision.
 ## What an information bound actually bounds
 
 The score is the derivative of log likelihood. At the true parameters the slope
-score is U_b=sum x_i epsilon_i/sigma². Its mean is zero and its second moment,
-the Fisher information I_bb, is Sxx/sigma². The intercept score is
-U_a=sum epsilon_i/sigma²; its cross moment with U_b vanishes. Centering frequencies
+score is $U_b=\sum_i x_i\epsilon_i/\sigma^2$. Its mean is zero and its second moment,
+the Fisher information $I_{bb}$, is $S_{xx}/\sigma^2$. The intercept score is
+$U_a=\sum_i\epsilon_i/\sigma^2$; its cross moment with $U_b$ vanishes. Centering frequencies
 therefore separates nuisance intercept from slope information in this model.
 
-Why does inverse information enter a bound? For an unbiased estimator of b,
-differentiate its expectation with respect to b. If differentiation may pass
-through the density integral, whose support does not depend on b, normalization
-gives E[U_b]=0 and E[(bhat-b)U_b]=1. Cauchy–Schwarz then gives
-var(bhat) E[U_b²] >= 1. Consequently
+Why does inverse information enter a bound? For an unbiased estimator of $b$,
+differentiate its expectation with respect to $b$. If differentiation may pass
+through the density integral, whose support does not depend on $b$, normalization
+gives $E[U_b]=0$ and $E[(\widehat b-b)U_b]=1$. Cauchy–Schwarz then gives
+$\operatorname{var}(\widehat b)E[U_b^2]\geq1$. Consequently
 
 $$
  \operatorname{var}\widehat\tau\geq{\sigma^2\over4\pi^2 S_{xx}}.
@@ -125,16 +125,16 @@ the correct solution. Its relevance must survive the ambiguity test below.
 
 ## Follow a consequential calculation
 
-Use five synthetic offsets x_i=(-2,-1,0,1,2) MHz. Choose a=0.3 rad and tau=5 ns,
-so b=-3.14159265e-8 rad/Hz. The noiseless phases are approximately
-(0.362832, 0.331416, 0.300000, 0.268584, 0.237168) rad. They recover a and tau
-by the formulas above. For assumed per-observation sigma=0.02 rad,
-Sxx=1e13 Hz² and the predicted delay standard deviation is 1.00658 ns.
+Use five synthetic offsets $x_i=(-2,-1,0,1,2)$ MHz. Choose $a=0.3$ rad and $\tau=5$ ns,
+so $b=-3.14159265\times10^{-8}$ rad/Hz. The noiseless phases are approximately
+(0.362832, 0.331416, 0.300000, 0.268584, 0.237168) rad. They recover $a$ and $\tau$
+by the formulas above. For assumed per-observation $\sigma=0.02$ rad,
+$S_{xx}=10^{13}$ Hz² and the predicted delay standard deviation is 1.00658 ns.
 Intercept standard deviation is 0.00894427 rad. An illustrative requirement of
 2 ns standard deviation is met locally. This is not a 2 ns total-error or accuracy
 claim; it excludes unknown bias and global ambiguity.
 
-If all offsets are halved, Sxx falls by four and delay standard deviation doubles
+If all offsets are halved, $S_{xx}$ falls by four and delay standard deviation doubles
 to 2.01317 ns, failing that illustrative local target. Repeating measurements at
 the center frequency improves intercept estimation but contributes no centered
 slope lever arm when the symmetric existing grid is retained. The receiver needs
@@ -148,15 +148,15 @@ In @fig-delay-fit-precision the slope is negative for positive physical delay, a
 ## A precise local fit can be globally wrong
 
 The actual complex observations are unchanged when each unwrapped phase changes
-by an integer multiple of 2 pi. On a grid with spacing Delta_f, delays separated
-by m/Delta_f give identical phasors after an appropriate intercept change. On our
-centered integer grid, tau and tau+1 microsecond give exactly the same phasors
-with the same a. Inferring 5 ns uniquely therefore needs prior range narrower
+by an integer multiple of $2\pi$. On a grid with spacing $\Delta f$, delays separated
+by $m/\Delta f$ give identical phasors after an appropriate intercept change. On our
+centered integer grid, $\tau$ and $\tau+1\ \mu\mathrm{s}$ give exactly the same phasors
+with the same $a$. Inferring 5 ns uniquely therefore needs prior range narrower
 than an ambiguity interval with suitable boundary handling, or additional
 noncommensurate frequencies or other observations. Additional frequencies only
 help when their actual grid and precision distinguish the candidate delays.
 
-Blindly unwrapping adjacent phases assumes that their true change is below pi
+Blindly unwrapping adjacent phases assumes that their true change is below $\pi$
 with enough noise margin; fades, gaps and low SNR can cause integer-cycle errors.
 A small residual after selecting a branch does not prove that branch is right.
 The Gaussian unwrapped likelihood above is not the exact likelihood of wrapped
@@ -165,8 +165,8 @@ branches and report ambiguity, rather than publish the local bound as total erro
 A single tone cannot separate an arbitrary phase intercept from delay at all.
 
 There is also a continuous identifiability failure. If an unknown receiver-path
-delay d adds to the DUT delay, the phase slope is -2 pi(tau_DUT+d). Changing
-(tau_DUT,d) to (tau_DUT+c,d-c) leaves every observation unchanged. No increase
+delay $d$ adds to the DUT delay, the phase slope is $-2\pi(\tau_{\rm DUT}+d)$. Changing
+$(\tau_{\rm DUT},d)$ to $(\tau_{\rm DUT}+c,d-c)$ leaves every observation unchanged. No increase
 in SNR or frequency span resolves that freedom. In our example an unmodeled
 3 ns path would shift the fitted total from 5 ns to 8 ns without increasing the
 linear residual. Referring the answer to DUT ports requires independent path
@@ -174,8 +174,8 @@ information and uncertainty; the calibration-specific procedure belongs later.
 
 As a transfer problem, replace frequency offsets by centered observation times.
 The same straight-line reasoning estimates a frequency offset from phase slope,
-with slope +2 pi Delta_f rather than the physical-delay sign. Then add a quadratic
-phase term q x_i²: its slope projection is Delta_b=q sum(x_i³)/Sxx, which can
+with slope $+2\pi\Delta f$ rather than the physical-delay sign. Then add a quadratic
+phase term $qx_i^2$: its slope projection is $\Delta b=q\sum_i x_i^3/S_{xx}$, which can
 vanish even on an asymmetric grid. The centered offsets (-8,-7,1,5,9) MHz
 provide that counterexample. For a nonzero-bias example, center frequencies
 (0,1,3) MHz: their third centered moment is nonzero. Calculate the projection

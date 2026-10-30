@@ -358,3 +358,15 @@ These amendments supersede narrower specifications above. They are specified cor
 9. **Localized manuscript correction:** Pilot unrestricted arctangent replaced with atan2, with zero amplitude excluded. Independent check n′=−2A gives π rather than zero; nearby small-noise linearization remains unchanged. Correction awaits independent reassessment.
 
 Revised priorities: 26 indispensable specifications and two strongly beneficial (V19, V28), plus mandatory remediation of the existing state diagram. These are needs/specifications, not a required figure count; panels and cross-references may consolidate them. Optional: improper-noise ellipse tied to signal orientation and explicit output-noise injection nodes in the endpoint architecture drawing. No new canonical treatment is authorized.
+
+
+## Execution disposition — Chapters 4–6, 2026-10-30
+
+The specifications above are the historical baseline, not a current production
+status. V13–V19 are implemented in eight integrated figures. Fresh independent
+scientific/graphical/pedagogical review and correction reassessment are complete;
+inline mathematics and the projection derivation were corrected. Current full
+page/figure pixels, hashes and findings are recorded in
+[the execution record](visual-pedagogy-review.md). These chapters are checked
+provisional visual drafts with optional polish and human acceptance pending.
+V20–V28 and state-diagram remediation remain to be completed.

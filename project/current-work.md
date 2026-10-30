@@ -1,3 +1,27 @@
+# Current bounded task — visual remediation, Chapters 4–6 review closed (2026-10-30)
+
+Owner authorized resumption of the existing visual milestone and safe selective
+local checkpoints. Clean resume baseline: `2d2e4df`. Chapters 1–3 retain their
+completed checked-provisional status. Chapters 4–6 now also close as checked
+provisional visual drafts after fresh independent review, two pedagogical
+corrections and positive fresh pixel/mathematical reassessment. Human acceptance
+remains pending. [Execution/evidence](../reviews/visual-pedagogy-review.md).
+
+On this different computer the unchanged private-pipe capture works with Node
+`/usr/bin/node` v26.12.1 and Brave `/usr/bin/brave` 156.1.98.62 through scoped host
+execution with browser sandbox retained. No host setting/helper change was needed.
+Frozen input packets are now archived in the repository rather than relying only
+on temporary directories. Earlier quota exit remains incomplete historical review.
+
+Next bounded group: Chapter 7 V20–V22 and mandatory state/invalid-data gates.
+Then pilot V23–V28, cross-chapter connections and final visual assessment.
+Use actual pixels, frozen inputs and fresh GPT-6.1 Sol/high read-only review;
+resolve consequential findings before advancing. Safe isolated local commits are
+authorized by the latest owner instruction; do not push/rebase/reset/amend.
+Stop after this visual milestone. No K08–K10 or owner-level acceptance.
+
+---
+
 # Current bounded task — approved visual remediation resumed (2026-10-30)
 
 Owner accepted the amended visual audit as implementation baseline and explicitly

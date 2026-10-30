@@ -1,0 +1,775 @@
+{
+  "original_entries": 110,
+  "reconstruction": [
+    {
+      "path": "AGENTS.md",
+      "current_hash": "7d2fcb501b4fdfd6976fc348a7863baf59a80118cc739898d5ebe45354593cc4",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "sources/phase-delay-inference.md",
+      "current_hash": "9fd3569261c9dd1ecdf1dcbcc8074f08dc480ed3329bfb297f7d978a5531ec79",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "sources/covariance-quadratic-forms.md",
+      "current_hash": "41892da6e023bacff4936fe79e42a2972df1ea22c900272eadf613af99482f3e",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "sources/model-adequacy-uncertainty.md",
+      "current_hash": "6b4cb64c2d20052d950dfc840aaf7786126944ab9e1b514286f726e293d1a072",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "book/phase-delay-inference.qmd",
+      "current_hash": "daa2726bcaa8b886f878affcfa3614f7a42969722469128368a15c09ebd8c0b4",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "book/model-adequacy-uncertainty.qmd",
+      "current_hash": "539fa232ab2c3fc92ccbcf3ac2d0b360ad6d1f07e93a05322ff7ed9641ee9559",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "book/covariance-quadratic-forms.qmd",
+      "current_hash": "a77be0dc35a63eca487ee01739d934b2bc307307739e1d1d9264aa7923d64325",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "requirements/audience.txt",
+      "current_hash": "9a2cba6d95b4277d2849aac503cf8a85420de03793a893ab4437669d8116defc",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "requirements/verification-and-acceptance.md",
+      "current_hash": "d8fbfe5cf1f345141cc1b5126b6ca848a198255537a2820d2e3026cf59fe9956",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "requirements/technical-authoring.md",
+      "current_hash": "2ea14a0a1af3c4b7ea315fa2408f9e59723bbb5e390a03f48464ce902aff6b42",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "requirements/sources-and-evidence.md",
+      "current_hash": "7bd1f76293f2d8a04d37151b31af410ddd3304617d483c19035bcbb67cce3918",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "requirements/notation-and-conventions.md",
+      "current_hash": "4f5ee34533463abc134682a7535c3bd5bf1b80a2260d57a1f87b7db07d886200",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/covariance-quadratic-forms.html",
+      "current_hash": "42ac88669bb738993bb48f26dbfae84ae300c1b23c9667731b8746d584b2c9af",
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "replacement"
+    },
+    {
+      "path": "pages/phase-delay-inference.html",
+      "current_hash": "17468afe915908be6b9b9ab146ad89f652a27d704f88fdbd35e98647078db50f",
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "replacement"
+    },
+    {
+      "path": "pages/model-adequacy-uncertainty.html",
+      "current_hash": "eee2c24cf6ba6aa3d117b585f687101699eea0afcb43721eb2e7634828b1d299",
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "replacement"
+    },
+    {
+      "path": "figures/numerical-cancellation.svg",
+      "current_hash": "78db8da11f82c1766314843dc8e450a5af8a415aa744000bd8265c0d347ff936",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "figures/uncertainty-sensitivity.svg",
+      "current_hash": "e89c8f257c8782ceb26522a0bd79edbe10eeebeec5bfcf683f9de611916ca270",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "figures/inverse-conditioning.svg",
+      "current_hash": "e3ecd3cd9721d65f28def0e63c656775dbfea591f6d0e37f9aef2a03ae00c375",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "figures/delay-ambiguity.svg",
+      "current_hash": "35c9c648d94a1ff9a7a03b471f6770448a3e686ac8848b9918fe39d83d6025a2",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "figures/covariance-projections.svg",
+      "current_hash": "d8e89177937a0d04356a4dd115221d9c5c929b1d483af9ad414ed57436a2f98d",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "figures/delay-fit-precision.svg",
+      "current_hash": "61bd7431b0330045efbbf17cd3a23dc829c8fb77e7ff4cfc5d93f66bbc3e995b",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "figures/source-covariance.svg",
+      "current_hash": "1b295c2c3cddf9ad161be9de28683585476dc98de748900a4c1ad802b36c1670",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "figures/nonlinear-uncertainty.svg",
+      "current_hash": "9ed3bc262b9f613ae434d44b0a647fc69e1a4dd5edac978ed36a516e958f890f",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "code/visual_foundations.py",
+      "current_hash": "0b5fb01276d69cbe6e5cd8499d450ce69628c716399ce421689f60d063696810",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "images/nonlinear-uncertainty-capture.json",
+      "current_hash": "6b4089f401103e3766972f2a6b5b2d878e1755601a2e68d105cb11f7c8abb76a",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "images/uncertainty-sensitivity-capture.json",
+      "current_hash": "6121db1a72b2de463e46494684385028ee666a6b4631056aefeb648dedcfb3ff",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "images/uncertainty-sensitivity.png",
+      "current_hash": "55e082defffb4e059eeaf5a17f7c2dddc142b421a7f328be9ca602600ae6597a",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "images/inverse-conditioning-capture.json",
+      "current_hash": "e119cc7ef48a519025229248f2cbe246a107164755c7950ede57e4dbdeb9ffcd",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "images/source-covariance-capture.json",
+      "current_hash": "a10af695d2fdcd6ac161df47743d147a7ad034831b4e90f1793683fc2b67663e",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "images/delay-ambiguity-capture.json",
+      "current_hash": "16e53a678a54c2c9ae770caa9a9c8879565a7f67bc898e73d0179d09ad811e26",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "images/delay-ambiguity.png",
+      "current_hash": "f7927bbf68ec1215ccf342d9ed2a7035f78a00eb986a2de80ae5c3f987b012f8",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "images/delay-fit-precision-capture.json",
+      "current_hash": "0cac9e635284e5d3d59bbf5dd79f33083878f259eb4cc6e2d54518ebaad7a743",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "images/source-covariance.png",
+      "current_hash": "7eefa7e736fd129b4016797a757f37c5e834dc2382618158b9aa46db76707d39",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "images/covariance-projections-capture.json",
+      "current_hash": "b5390d0b98e7ff38526f62b6c428c0fbd20a6f6dfd1f07c7e953c84cdfec916d",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "images/numerical-cancellation.png",
+      "current_hash": "a8e5804044164470fa9f75eef2b142d6464b075d0159ffeb3201ff0d7cbda5d7",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "images/nonlinear-uncertainty.png",
+      "current_hash": "56dc051154b2dc88c04ee7cc90320fca33dceac5be61fa5170cef1b5e5d0931b",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "images/numerical-cancellation-capture.json",
+      "current_hash": "4fa39506f6eaf37551612b9d312553c4935b58a804fa84e817542ef57e0e31b7",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "images/inverse-conditioning.png",
+      "current_hash": "3f34f8c08124f7f666a36e9ba1e740bf177f80a4cea14ca3199b8ac2c7b1168c",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "images/delay-fit-precision.png",
+      "current_hash": "ac86d9c279292234d4e563a42f2cc2c5f43b687bd90ec3726cd1e518721dc6b1",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "images/covariance-projections.png",
+      "current_hash": "ec83e3b876544dc1952e330061c87580ad3a06edef251c74a90a6ccf3b8c5b8b",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/p5/crop-00.png",
+      "current_hash": "15e95d104b399705190d8157304e8e5750106bee767792fd2c5a5e0b677daa48",
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "replacement"
+    },
+    {
+      "path": "pages/p5/crop-02.png",
+      "current_hash": "6b46c059bd085f19616f2221f72992e5cba439a0c3b5456c01c06b9d2e111eda",
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "replacement"
+    },
+    {
+      "path": "pages/p5/page.json",
+      "current_hash": "cdfa427816990e34ef30bf924894c2985a3c15eea9cdf78669a7b779cdf70f6d",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/p5/crop-03.png",
+      "current_hash": "6298ed6945cf72b07d3f795e056d2e1b7cd80a0630d3790ec18040c6178119fa",
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "replacement"
+    },
+    {
+      "path": "pages/p5/image.png",
+      "current_hash": "7371a7e50905cb31519d2ab7ed8996e4e6e026d3c55f106786f39005aa4ed309",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/p5/crop-01.png",
+      "current_hash": "ab0c116488ef3e4319b486b8dac863eb6e887fd579e74e078d12608f83c77cac",
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "replacement"
+    },
+    {
+      "path": "pages/p5/result.json",
+      "current_hash": "1ec34c3edd5d587f7424db291b233e27f22ce4046fb32229db5dbc3f16e93cb4",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/p5/command.txt",
+      "current_hash": null,
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "unrecovered"
+    },
+    {
+      "path": "pages/figures/numerical-cancellation.svg",
+      "current_hash": "78db8da11f82c1766314843dc8e450a5af8a415aa744000bd8265c0d347ff936",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/relative-phasors.svg",
+      "current_hash": "f95f483ebc1a0a2c1c189228bb1ef420e934b0dd3cc9559b93ece47ac80a985e",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/uncertainty-sensitivity.svg",
+      "current_hash": "e89c8f257c8782ceb26522a0bd79edbe10eeebeec5bfcf683f9de611916ca270",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/observation-weights.svg",
+      "current_hash": "c92f3b0694a9d0aed11d9dacc03c6a999640ecff9a9f6217a77c2ae291b8c68a",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/complex-distributions.svg",
+      "current_hash": "833baa6431f20851772d87a0df1bb605a5ad61256af57f67fc8aae8506944f09",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/noise-phase.svg",
+      "current_hash": "dea8bab6724c2ce2591499b8794209de9b10f7beaba2b5f7491a39d2d362d214",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/finite-record-uncertainty.svg",
+      "current_hash": "8076548212bf20bc598ff8015063c7756a31d2955c3ee99dfd6322d415faeb9f",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/relative-phase-state-sequence.svg",
+      "current_hash": "4f57255a213cc7dd7be97948c4b44c27e11193d080da20cca3ce9209239e2f28",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/observation-gains.svg",
+      "current_hash": "5b30142bd19989ccd3a7839462c0372d8717cd2db218b4426a15399f22a2dd92",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/phase-validity.svg",
+      "current_hash": "6d3ee0d394745f1357baa4ffd52704c6252f6c39e528d34dbac9950e965feb0f",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/covariance-increments.svg",
+      "current_hash": "26efed0fe9368d423ee31dd804b512fa584e70507f47723bc0a10561f3eb267b",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/relative-phase-reference-planes.svg",
+      "current_hash": "cb78b44d7b15669d739e944faa711f29a5dcc2371f377adffaf297e7852178a8",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/phase-wrapping.svg",
+      "current_hash": "0a938230b4af529faab44e5d4776303f2f19923c261957a7ba9e200baf4580c0",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/circular-mean.svg",
+      "current_hash": "40cb3103dfec04b8c6008ebd57cfd8aacf5a1d3deb255b455675ace23f908c47",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/inverse-conditioning.svg",
+      "current_hash": "e3ecd3cd9721d65f28def0e63c656775dbfea591f6d0e37f9aef2a03ae00c375",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/coherence-observables.svg",
+      "current_hash": "40047af9787846f3bc7ba0b149aa42926cccba99a8c56fc14e0482a0c5e8ab21",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/ensemble-records.svg",
+      "current_hash": "9999304fe6f5d3259172773199a09777d0dbf816a113c952910140530137c110",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/delay-ambiguity.svg",
+      "current_hash": "35c9c648d94a1ff9a7a03b471f6770448a3e686ac8848b9918fe39d83d6025a2",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/conversion-orientation.svg",
+      "current_hash": "ca7cebc35ef0738fca9998535a4298fbab3984525308be5a40d12f7a3f074845",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/shared-delay.svg",
+      "current_hash": "193ba19879350c2ba3f106d85c68bc9f3fd5dce63036d3a479424ea1fc3ece31",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/comparison-planes.svg",
+      "current_hash": "f409d0a4368ea08e7be0e367e0db870ee5e44adf2fbfd9f678fe6422480e4675",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/complex-filter-order.svg",
+      "current_hash": "710d59391b20dd12c649038f264926a2a7ad2e307645658b176249724e67e7fa",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/covariance-projections.svg",
+      "current_hash": "d8e89177937a0d04356a4dd115221d9c5c929b1d483af9ad414ed57436a2f98d",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/delay-fit-precision.svg",
+      "current_hash": "61bd7431b0330045efbbf17cd3a23dc829c8fb77e7ff4cfc5d93f66bbc3e995b",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/source-covariance.svg",
+      "current_hash": "1b295c2c3cddf9ad161be9de28683585476dc98de748900a4c1ad802b36c1670",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/averaging-floor.svg",
+      "current_hash": "110b4bb744c63a7790b33e2209e89565852c8ab9d5ed0a1b15ac6f3633800642",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/figures/nonlinear-uncertainty.svg",
+      "current_hash": "9ed3bc262b9f613ae434d44b0a647fc69e1a4dd5edac978ed36a516e958f890f",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/p6/crop-00.png",
+      "current_hash": "0c41cca258157e676728632103c56e3258609706a519fc641ce20b4af3996998",
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "replacement"
+    },
+    {
+      "path": "pages/p6/crop-02.png",
+      "current_hash": "2f7a36f58389d052e930f86877cdfd5ec0476b60d04d4f77b9bd8745d1c216b2",
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "replacement"
+    },
+    {
+      "path": "pages/p6/page.json",
+      "current_hash": "0ea5503b5d2d495959ecec8610ebbd3cf38f6b5c6bf42e2b5326fa67148cb578",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/p6/crop-03.png",
+      "current_hash": "a5d57b90b1b16cf58b752ff31b30abb316b229405a19b68d3bbb60747b4bb183",
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "replacement"
+    },
+    {
+      "path": "pages/p6/image.png",
+      "current_hash": "ba835da5d67ddd57089cbe1d52fdeea0082aa7ab5df29f0121c3dc0854c123e8",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/p6/crop-01.png",
+      "current_hash": "95971730f854bd95139c4bc67cd60687e65a2eb20d4e2549086c9c2bd9a2a886",
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "replacement"
+    },
+    {
+      "path": "pages/p6/crop-04.png",
+      "current_hash": "b6bb9b6e3b7b6b4373bceb2542607e17acd34f306b1f34d8f85bd720599116bb",
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "replacement"
+    },
+    {
+      "path": "pages/p6/result.json",
+      "current_hash": "788c6439b659f2465e8b7cace5c3ab4c64dd7c535ac892f15321d981a106be86",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/p6/command.txt",
+      "current_hash": null,
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "unrecovered"
+    },
+    {
+      "path": "pages/p4/crop-00.png",
+      "current_hash": "50dd105714e0632b7e696a0d9fefb52733a1029287bcf07ba46dc70b499fd575",
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "replacement"
+    },
+    {
+      "path": "pages/p4/crop-02.png",
+      "current_hash": "8ab5d2892d24ef4e2863eca5115c57721f7ae14ecaeeac3dc9b11429ea35a0dc",
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "replacement"
+    },
+    {
+      "path": "pages/p4/page.json",
+      "current_hash": "76f6c792060c30b62575351ac47b133c6c9f3a514047172fd914ad0fb399b626",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/p4/crop-03.png",
+      "current_hash": "0b0979819d48ae73bb930c29cbc996345e3de57a3e24864e27cd048faa5533f4",
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "replacement"
+    },
+    {
+      "path": "pages/p4/image.png",
+      "current_hash": "19f24328ed40b8c0464408b672f7c37d45bcc12ad585d2e471e2f90145585be5",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/p4/crop-01.png",
+      "current_hash": "109c5ee7f222dd9de2c19ca14475ebe38560618b95f13979b10725fd91bd58c4",
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "replacement"
+    },
+    {
+      "path": "pages/p4/crop-04.png",
+      "current_hash": "ce6f8a16c9925bf3d9a54f31d7c815d358f62b3c46395483dfa2c220b42edfb3",
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "replacement"
+    },
+    {
+      "path": "pages/p4/result.json",
+      "current_hash": "60c7b3ec9534054cc41b8d4d26c4219159905ac0db223f5ff91de3e3ad43c723",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/p4/command.txt",
+      "current_hash": null,
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "unrecovered"
+    },
+    {
+      "path": "pages/site_libs/quarto-html/tippy.umd.min.js",
+      "current_hash": "41181eeec6d7ba64cb9165f0e95563e34e026bde79e7c13aeec83270429b6fae",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/site_libs/quarto-html/quarto.js",
+      "current_hash": "4ecb60f215d96b2af0fe9d985c71e32863b1c993a64725a416ac18b5991c59c6",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css",
+      "current_hash": null,
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "unrecovered"
+    },
+    {
+      "path": "pages/site_libs/quarto-html/anchor.min.js",
+      "current_hash": "69098e105d990f834cff1b7886d873444228ff63c590e5ff834d568f1115ed8b",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/site_libs/quarto-html/tippy.css",
+      "current_hash": "5969f497d9158d7682f8219c6f13fa67269cdf5bf50a3931d95327151dee5678",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/site_libs/quarto-html/popper.min.js",
+      "current_hash": "4d50586b184724d39ddfe0f6582861664eddd5e806e5a79e0dbaa832361414d0",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/site_libs/quarto-nav/headroom.min.js",
+      "current_hash": "5b80cc4165a661a3f2060d6bdb5ccff591f04c4f8e39a06c12d3c2544587cb17",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/site_libs/quarto-nav/quarto-nav.js",
+      "current_hash": "a209dafb198d7c8e77cb398912b7225806e7b998211afa1fb269a4ef54ff56f6",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/site_libs/clipboard/clipboard.min.js",
+      "current_hash": "e17a1d816e13c0826e0ed7febfabc3277f45571234bde0bf9120829a7169edc9",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/site_libs/quarto-search/quarto-search.js",
+      "current_hash": "1a23221f499b3993dc66ca5c8913e4e6602dfa4652337e9fbf75139ded5ece68",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/site_libs/quarto-search/autocomplete.umd.js",
+      "current_hash": "cd9db3b7d812139a4679a2566ea8f01b2a80159490a60b9e9e813e81b5e00a05",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/site_libs/quarto-search/fuse.min.js",
+      "current_hash": "c57339c3fa16b1d69d9a6b46749a8139ef8d4fc9bbfe48144ff897aa7d4222ec",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/site_libs/bootstrap/bootstrap-icons.css",
+      "current_hash": "01253947f506e030589e4f33fc7ec7ccdfb9505e2e596dedf16445f12e243c0a",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/site_libs/bootstrap/bootstrap.min.js",
+      "current_hash": "d2ea6c1e0cabca20d18e924b25a1cd0187c38ba7c33f60ab06e1b0402b9bcdb5",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/site_libs/bootstrap/bootstrap-72b96afd302e5297e410191bd4d7b820.min.css",
+      "current_hash": null,
+      "current_matches_original": false,
+      "initial_reconstruction_status": "unrecovered",
+      "status": "unrecovered"
+    },
+    {
+      "path": "pages/site_libs/bootstrap/bootstrap-icons.woff",
+      "current_hash": "f55513b7b591cb84a3b87ff0e34ea24d4831d6fedc22e54b911ca64b5b544a15",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    },
+    {
+      "path": "pages/site_libs/quarto-html/tabsets/tabsets.js",
+      "current_hash": "a9c226bf70e82eaf5476f619cecfb70b4446b87ce4d1634d6404b0b2ba006d15",
+      "current_matches_original": true,
+      "initial_reconstruction_status": "original-hash-matched",
+      "status": "original-hash-matched"
+    }
+  ]
+}

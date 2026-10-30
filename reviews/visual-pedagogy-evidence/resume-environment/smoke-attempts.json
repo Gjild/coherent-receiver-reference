@@ -1,0 +1,14 @@
+[
+  {
+    "command": "python3 scripts/visual_inspection.py --output /tmp/vp-resume-smoke",
+    "exit_code": 2,
+    "capture_attempted": false,
+    "blocker": "Default browser candidates omit the installed /usr/bin/brave."
+  },
+  {
+    "command": "python3 scripts/visual_inspection.py --browser /usr/bin/brave --output /tmp/vp-resume-smoke-explicit",
+    "exit_code": 2,
+    "capture_attempted": false,
+    "blocker": "pipe capture requires installed Node; no node binary found. Argparse exits before result.json."
+  }
+]

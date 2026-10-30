@@ -316,3 +316,76 @@ No staging, commit, push, installation, publishing or host-policy/resource chang
 was performed. Baseline HEAD remains `eb4be1141cded238090adcba957b167a4009ae64`.
 Provisional visual-authoring and verification guidance/template additions are
 implemented, but whole-initiative lessons/acceptance remain pending completion.
+
+
+## Chapters 4–6 review completed on the replacement computer (2026-10-30)
+
+Resume baseline was clean HEAD `2d2e4df`; the owner's prior checkpoint already
+contains the visual production and historical records. Chapters 1–3 remain closed
+as checked provisional visual drafts. The original `/tmp/v2-review` packet was
+absent. Reconstruction matched 88/110 original entries, including all three
+manuscripts, eight SVGs, eight figure PNGs, three full-page PNGs, code, source
+notes and requirement files. Original crops were recreated from preserved PNGs;
+fresh HTML/CSS was explicitly distinguished from old screenshot bytes. Seventeen
+entries differ and five original files remain absent (three old command.txt and
+two CSS paths). The original manifest and historical incomplete invocation were
+not altered. [Reconciliation](visual-pedagogy-evidence/g2-resume-reconciliation.json),
+[reconstructed input hashes](visual-pedagogy-evidence/g2-resume-inputs.sha256),
+[archived packet](visual-pedagogy-evidence/g2-resume-packet.tar.gz).
+
+Fresh GPT-6.1 Sol/high/read-only review returned final findings with exit 0:
+[findings](visual-pedagogy-evidence/g2-resume-findings.md),
+[prompt](visual-pedagogy-evidence/g2-resume-prompt.txt),
+[invocation](visual-pedagogy-evidence/g2-resume-invocation.json),
+[event provenance](visual-pedagogy-evidence/g2-resume-events.jsonl).
+All 108 current inputs matched. Reviewer inspected all eight figures, three full
+pages and fourteen readable crops and independently reproduced their consequential
+values and limits. No consequential scientific/graphical defect was found. It
+required inline-math typesetting and a derivation connecting covariance geometry
+to projected observable width. Source-note history was incidentally visible and
+was not adopted as correctness evidence. One truncated image transfer was
+recovered by actual direct PNG viewing. No coverage is inferred from that failure.
+
+Author accepted both findings. All seventeen original display-math blocks are
+byte-preserved. Inline expressions in Chapters 4–6 now use mathematical markup.
+Chapter 4 derives mapped-unit-ball support using Cauchy–Schwarz, the maximizing
+point, coefficient-norm scaling, the distinct radial distance, and singular/null
+limits. No SVG required modification or regeneration for these corrections.
+[Focused checks](visual-pedagogy-evidence/g2-correction-checks.json).
+
+The replacement computer initially lacked Node and uses a different Brave path.
+After the owner made Node available, executable `/usr/bin/node` v26.12.1 and
+`/usr/bin/brave` 156.1.98.62 were observed. Ordinary sandbox SO_PASSCRED fails;
+scoped host capture succeeds using the unchanged private-pipe helper and retained
+browser sandbox. Inotify allocation succeeds at the already configured limit
+1024; no host settings were changed. Smoke author pixels show the heading,
+text, blue circle and radius label at 1000×700. [Environment/check records](visual-pedagogy-evidence/resume-environment/).
+No package was installed by the author. Initial failure evidence is retained.
+
+Corrected full-page captures are Chapter 4 1425×7458, Chapter 5 1425×6045 and
+Chapter 6 1425×7721 at viewport 1440×2200. Author inspected actual complete-page
+PNGs and all fourteen overlapping full-width strips through bottom navigation;
+all mathematical content is typeset and figures/captions are visible. Fresh
+separate correction review also inspected these pixels, unchanged figure PNGs
+and smoke PNG, verified all 111 hashes and independently rederived/checked the
+geometry and dependent examples. [Reassessment](visual-pedagogy-evidence/g2-correction-findings.md),
+[prompt](visual-pedagogy-evidence/g2-correction-prompt.txt),
+[hashes](visual-pedagogy-evidence/g2-correction-inputs.sha256),
+[invocation](visual-pedagogy-evidence/g2-correction-invocation.json),
+[events](visual-pedagogy-evidence/g2-correction-events.jsonl),
+[archived current packet](visual-pedagogy-evidence/g2-correction-packet.tar.gz).
+No consequential error or unreadable content remained. Optional inline line-break
+polish, broad matrix display, log-axis annotation and radial-direction overlay
+remain documented. Author accepts the bounded reassessment; no human acceptance,
+hardware applicability, reader effectiveness, PDF or exhaustive responsive check
+is claimed. Requested model/effort are recorded; backend routing is not separately
+introspected. Reviewer IDs: {"g2-resume": "01a18d63-95f3-7df1-a7c5-7b78e9c0c734", "g2-correction": "01a18d6b-8f64-72f1-8d86-5bc21ddfe6a5"}.
+
+All 52 available selected tests pass; scaffold integrity passes; pytest is absent.
+An initial pilot unittest import needed the documented engineering/src path and
+passed after correction. Both generator groups reproduce all 25 generated SVG
+bytes in scratch storage; the two other existing SVGs remain unchanged. Eleven
+HTML pages render with Quarto 1.10.19/Python 3.14.7. Fresh render success alone
+was not used to clear the image gate. Chapters 4–6 close as checked provisional
+visual drafts. Proceed only to the approved Chapter 7/state group, then pilot
+and connections; K08–K10 remain suspended.

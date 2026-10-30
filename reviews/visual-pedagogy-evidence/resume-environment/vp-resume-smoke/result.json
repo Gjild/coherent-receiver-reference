@@ -1,0 +1,18 @@
+{
+  "exit_status": 2,
+  "capture_attempted": false,
+  "image_exists": false,
+  "blockers": {
+    "DISPLAY": ":0",
+    "WAYLAND_DISPLAY": "wayland-0",
+    "XDG_RUNTIME_DIR": "/run/user/1000",
+    "XDG_CACHE_HOME": null,
+    "TMPDIR": null,
+    "inotify_instance_limit": "1024",
+    "inotify_watch_limit": "524288",
+    "unix_passcred": "OK",
+    "inotify_init": "OK",
+    "browser": null,
+    "output": "/tmp/vp-resume-smoke"
+  }
+}

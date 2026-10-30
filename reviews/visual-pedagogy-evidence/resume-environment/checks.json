@@ -1,0 +1,35 @@
+{
+  "python": "3.14.7",
+  "quarto": "1.10.19",
+  "codex_cli": "0.166.0",
+  "checks": [
+    {
+      "command": "python3 -m pytest",
+      "result": "unavailable: No module named pytest"
+    },
+    {
+      "command": "python3 scripts/check_repo.py",
+      "result": "pass: 13 required files"
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p '*stdlib.py'",
+      "result": "pass: 33 tests"
+    },
+    {
+      "command": "python3 -m unittest discover -s tests -p 'test_relative_phase.py'",
+      "result": "initial import failed: engineering/src not on import path"
+    },
+    {
+      "command": "PYTHONPATH=engineering/src python3 -m unittest discover -s tests -p 'test_relative_phase.py'",
+      "result": "pass: 19 tests"
+    },
+    {
+      "command": "XDG_CACHE_HOME=/tmp/vp-resume-cache quarto render /tmp/vp-resume-render/book --to html",
+      "result": "pass: eleven pages; scratch copy; fresh pixels not captured"
+    },
+    {
+      "command": "Import existing visual_foundations.py, set OUT=/tmp/vp-regenerated, invoke group1(), group1_details(), group2()",
+      "result": "pass: 25 SVG files byte-identical; no repository figures rewritten"
+    }
+  ]
+}

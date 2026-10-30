@@ -3,6 +3,16 @@
 Canonical route for manuscript figures and rendered pages. Capture is distinct
 from inspecting pixels; neither establishes physical validity or human acceptance.
 
+**Different-computer retest (2026-10-30):** the existing pipe helper captures the
+smoke image with `/usr/bin/node` v26.12.1 and `/usr/bin/brave` 156.1.98.62.
+Select this browser with `--browser /usr/bin/brave`; the default discovery list
+does not include that executable name. Ordinary sandbox preflight denies
+`SO_PASSCRED`; the scoped host invocation succeeds with browser sandboxing retained.
+The observed inotify instance limit is already 1024 and allocation succeeds;
+no limit adjustment is indicated. Earlier machine paths and resource findings
+below are historical, not setup instructions for this computer. Author inspected
+the actual smoke PNG; group correction review receives that PNG separately.
+
 **Post-adjustment status (2026-10-30):** live inotify limit 512; allocation succeeds.
 The installed Brave CLI `--screenshot` route still times out. Private DevTools-pipe
 capture through the same browser now produces inspectable SVG and complete-page

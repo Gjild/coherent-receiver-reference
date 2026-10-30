@@ -33,6 +33,9 @@ Read the files relevant to the task; do not assume that draft specifications are
 - Preserve provisional status when checks or human acceptance are incomplete.
 - Report files changed, checks actually run, limitations, unresolved issues and review decisions still needed.
 
+## Mandatory visual inspection
+For all manuscript and figure work, follow [docs/VISUAL-INSPECTION.md](docs/VISUAL-INSPECTION.md). Run its environment smoke test and inspect actual figure and complete rendered-page pixels, including separate-context image review. Capture/source parsing alone never clears the visual gate; preserve blocking status when this route fails.
+
 ## Quick commands
 - `python3 -m pytest`
 - `python3 scripts/check_repo.py`

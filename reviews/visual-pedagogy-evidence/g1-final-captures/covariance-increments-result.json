@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.368,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/covariance-increments.svg",
+  "source_sha256": "26efed0fe9368d423ee31dd804b512fa584e70507f47723bc0a10561f3eb267b",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    830
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    830
+  ],
+  "image_sha256": "fb5ef29a7b4a5665cf6b0ea46e97fc1e6c719159e21d530d7a12b57bf93610b8"
+}

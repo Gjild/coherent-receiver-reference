@@ -1,3 +1,75 @@
+# Current bounded task — approved visual remediation resumed (2026-10-30)
+
+Owner accepted the amended visual audit as implementation baseline and explicitly
+resumed the full existing-manuscript initiative. Preserve the environment-repair
+work below. Smoke capture and actual author pixels succeeded in this session;
+fresh read-only reviewer received and examined the attached smoke PNG. Its
+manifest-discovery check was unavailable, so no reviewer hash-verification claim
+is made for this capability test. All implementation reviews use explicit manifests.
+
+Current boundary: Chapters 1–3 have completed separate image review, corrections
+and focused reassessment as checked provisional visual drafts (human acceptance
+pending). Chapters 4–6 have eight integrated/generated figures and author image
+and numerical checks, but the fresh reviewer exited on the provider's account
+usage limit before delivering final findings. This is incomplete review.
+[Execution/evidence record](../reviews/visual-pedagogy-review.md) preserves inputs
+and the partial invocation. Restore reviewer capacity and start a fresh read-only
+review of the frozen current group; resolve findings before moving forward.
+Chapter 7/state-diagram work, pilot remediation and connected/final review have
+not started. Browser capture remains working; no general environment diagnosis
+is needed. All 52 selected standard-library tests pass; no new commits/staging.
+
+Implement and review groups in order: Chapters 1–3, Chapters 4–6, Chapter 7/state
+gates, then integrated pilot/connections. No new canonical treatment, K08–K10,
+commit, push or publication is authorized. Human acceptance remains pending.
+
+---
+
+# Current bounded task — visual-inspection retest complete (2026-10-30)
+
+Owner temporarily raised host inotify max_user_instances to 512; live value and
+successful allocation verified. [Retest evidence](../reviews/visual-inspection-retest.md)
+records successful author SVG/image and complete Quarto-page pixel inspection,
+fresh read-only reviewer examination of attached raster inputs, and a successful
+fresh repository-only smoke/capture/inspection test. No human acceptance follows.
+
+The original Brave CLI screenshot route still times out; inotify exhaustion was
+not its sole failure. The [canonical procedure](../docs/VISUAL-INSPECTION.md) now uses
+a small Node-built-ins-only private DevTools-pipe helper through the existing
+Python smoke command. Scoped approved execution as the ordinary host user retains
+browser sandboxing; the Codex sandbox's socket denial remains. No security setting,
+software installation, accepted content, figure or convention was changed.
+
+The tested inspection capability is available while host resource headroom is
+maintained. One sysctl.d entry retaining 512 is proposed for owner-controlled
+persistence; reboot/sustained-load behavior is unverified. Existing L1 crossing,
+L2 overlap, small labels and repeated generated references were observed and
+recorded, not remediated. Prior audit/findings and atan2 reassessment remain intact.
+
+Stop after this verification as requested. No illustration interventions, K08–K10,
+new authoring, commit, push or publication starts automatically.
+
+---
+
+# Current work — visual-pedagogy initiative (2026-10-30)
+
+Owner authorized comprehensive audit and remediation of existing Chapters 1–7,
+pilot and reader-facing supporting material. K08–K10 and all new canonical
+authoring remain suspended pending owner visual-quality acceptance.
+
+[Visual audit](../reviews/visual-pedagogy-audit.md) records section-level needs.
+Audit/specification is distinct from completed remediation. Actual-image inspection
+is currently blocked: installed-browser screenshot attempts, including permitted
+parent-sandbox retries and blank-page tests, failed without producing images.
+See [execution record](../reviews/visual-pedagogy-review.md). Illustration production
+has not started. Separate-context audit review identified nine corrections; audit
+specifications were amended and one demonstrated pilot quadrant error corrected
+with atan2. Correction reassessment and visual remediation remain incomplete. Restore browser/image inspection before continuing; preserve
+accepted derivations unless a demonstrated inconsistency requires correction. No commit, dependency installation,
+push, publication or hardware campaign is authorized.
+
+---
+
 # Current Work: K05–K07 batch complete; stop before K08
 
 **2026-10-29:** Owner authorized the next three bounded canonical foundations and

@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 6.691,
+  "source": "/home/anon/coherent-receiver-reference/book/_book/phase-comparison.html",
+  "source_sha256": "003b7321c92d834b22e04c8f722c0f7ea6a4791ca5e68e78bbd24a47a606e57c",
+  "backend": "pipe",
+  "viewport": [
+    1440,
+    2200
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    1425,
+    10254
+  ],
+  "image_sha256": "e1311f87a1f316852b9b907ff8c26b96d660989a149755bd689389f2fc833ce2"
+}

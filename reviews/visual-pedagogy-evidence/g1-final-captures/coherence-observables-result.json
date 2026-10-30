@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.32,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/coherence-observables.svg",
+  "source_sha256": "40047af9787846f3bc7ba0b149aa42926cccba99a8c56fc14e0482a0c5e8ab21",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    1240
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    1240
+  ],
+  "image_sha256": "d960915d5ad6f3c27d259b03e29d77a308f574ff3be8c3f036b41164195bcb0e"
+}

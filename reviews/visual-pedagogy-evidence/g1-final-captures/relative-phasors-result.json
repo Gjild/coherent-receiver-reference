@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.37,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/relative-phasors.svg",
+  "source_sha256": "f95f483ebc1a0a2c1c189228bb1ef420e934b0dd3cc9559b93ece47ac80a985e",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    710
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    710
+  ],
+  "image_sha256": "6410557ba559eede1a6ec357194ef09644be53169716f95ff7eeae72e609590d"
+}

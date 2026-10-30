@@ -1,0 +1,38 @@
+{
+  "pixel-review": [
+    {
+      "type": "thread.started",
+      "thread_id": "01a18bee-7561-77d2-a913-a008e4e36528"
+    },
+    {
+      "type": "turn.completed",
+      "usage": {
+        "input_tokens": 201157,
+        "cached_input_tokens": 166528,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4405,
+        "reasoning_output_tokens": 2172
+      }
+    }
+  ],
+  "fresh-session": [
+    {
+      "type": "thread.started",
+      "thread_id": "01a18bef-d3b4-7003-8121-6c13cf312264"
+    },
+    {
+      "type": "turn.completed",
+      "usage": {
+        "input_tokens": 223984,
+        "cached_input_tokens": 203136,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1220,
+        "reasoning_output_tokens": 149
+      }
+    }
+  ],
+  "cli_exit_statuses": {
+    "pixel-review": 0,
+    "fresh-session": 0
+  }
+}

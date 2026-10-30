@@ -1,0 +1,14 @@
+[ 1/11] index.qmd
+[ 2/11] phase-comparison.qmd
+[ 3/11] scalar-stochastic-phase.qmd
+[ 4/11] observation-weighted-coherence.qmd
+[ 5/11] covariance-quadratic-forms.qmd
+[ 6/11] phase-delay-inference.qmd
+[ 7/11] model-adequacy-uncertainty.qmd
+[ 8/11] tracking-signal-retention.qmd
+[ 9/11] publishing-pilot.qmd
+[10/11] relative-phase-stability.qmd
+[11/11] references.qmd
+
+Output created: _book/index.html
+

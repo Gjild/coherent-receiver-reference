@@ -1,0 +1,13 @@
+{
+  "DISPLAY": ":0",
+  "WAYLAND_DISPLAY": null,
+  "XDG_RUNTIME_DIR": "/run/user/1000",
+  "XDG_CACHE_HOME": null,
+  "TMPDIR": null,
+  "inotify_instance_limit": "128",
+  "inotify_watch_limit": "65536",
+  "unix_passcred": "[Errno 1] Operation not permitted",
+  "inotify_init": "Too many open files",
+  "browser": "/opt/brave.com/brave/brave",
+  "output": "/tmp/coherent-visual-gu17ov0n"
+}

@@ -1,0 +1,117 @@
+{
+  "version": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/149.0.7827.155",
+    "revision": "@1117c8f4dc05f82c85341bf5cbd912d1391a36a",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.0.0 Safari/537.36",
+    "jsVersion": "14.9.207.29"
+  },
+  "document": {
+    "url": "file:///home/anon/coherent-receiver-reference/book/_book/observation-weighted-coherence.html",
+    "title": "3  Observation, spectra and coherence – Coherent Receiver Theory and Design",
+    "readyState": "complete",
+    "viewport": [
+      1440,
+      2200
+    ],
+    "mathElements": 21,
+    "mathjaxContainers": 21,
+    "images": [
+      {
+        "src": "figures/complex-filter-order.svg",
+        "complete": true,
+        "width": 225,
+        "height": 150
+      },
+      {
+        "src": "figures/observation-weights.svg",
+        "complete": true,
+        "width": 282,
+        "height": 150
+      },
+      {
+        "src": "figures/observation-gains.svg",
+        "complete": true,
+        "width": 282,
+        "height": 150
+      },
+      {
+        "src": "figures/coherence-observables.svg",
+        "complete": true,
+        "width": 116,
+        "height": 150
+      },
+      {
+        "src": "figures/covariance-increments.svg",
+        "complete": true,
+        "width": 173,
+        "height": 150
+      },
+      {
+        "src": "figures/shared-delay.svg",
+        "complete": true,
+        "width": 222,
+        "height": 150
+      },
+      {
+        "src": "figures/finite-record-uncertainty.svg",
+        "complete": true,
+        "width": 173,
+        "height": 150
+      }
+    ]
+  },
+  "metrics": {
+    "layoutViewport": {
+      "pageX": 0,
+      "pageY": 0,
+      "clientWidth": 1425,
+      "clientHeight": 2200
+    },
+    "visualViewport": {
+      "offsetX": 0,
+      "offsetY": 0,
+      "pageX": 0,
+      "pageY": 0,
+      "clientWidth": 1425,
+      "clientHeight": 2200,
+      "scale": 1,
+      "zoom": 1
+    },
+    "contentSize": {
+      "x": 0,
+      "y": 0,
+      "width": 1425,
+      "height": 9845
+    },
+    "cssLayoutViewport": {
+      "pageX": 0,
+      "pageY": 0,
+      "clientWidth": 1425,
+      "clientHeight": 2200
+    },
+    "cssVisualViewport": {
+      "offsetX": 0,
+      "offsetY": 0,
+      "pageX": 0,
+      "pageY": 0,
+      "clientWidth": 1425,
+      "clientHeight": 2200,
+      "scale": 1,
+      "zoom": 1
+    },
+    "cssContentSize": {
+      "x": 0,
+      "y": 0,
+      "width": 1425,
+      "height": 9845
+    }
+  },
+  "clip": {
+    "x": 0,
+    "y": 0,
+    "width": 1425,
+    "height": 9845,
+    "scale": 1
+  }
+}

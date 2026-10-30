@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.269,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/observation-weights.svg",
+  "source_sha256": "c92f3b0694a9d0aed11d9dacc03c6a999640ecff9a9f6217a77c2ae291b8c68a",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    510
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    510
+  ],
+  "image_sha256": "428095ab1922768232e2b37015c41b7cce17d39be3f4671dd2fabdffc3b61414"
+}

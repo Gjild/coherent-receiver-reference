@@ -1,0 +1,1 @@
+/opt/brave.com/brave/brave --headless --user-data-dir=/tmp/coherent-inspection-retest/host-smoke/profile --window-size=1000,700 --virtual-time-budget=3000 --screenshot=/tmp/coherent-inspection-retest/host-smoke/image.png file:///tmp/coherent-inspection-retest/host-smoke/smoke.html

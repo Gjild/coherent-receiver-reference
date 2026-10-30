@@ -108,6 +108,10 @@ wanted response is w^H a(theta); a noise-null direction can also null the wanted
 field. This is a motivating interface, not an array sensitivity or DF ambiguity
 solution. Those require the application's physical manifold and evidence.
 
+The paths in @fig-source-covariance generate the off-diagonal covariance: both channels contain the same draw of u. Their difference retains u because its path sensitivities differ. A shared source is therefore neither two independent sources nor an automatically cancelled term.
+
+![Source construction for the worked phase example. The three centered source processes are mutually independent; their endpoint contributions are not.](figures/source-covariance.svg){#fig-source-covariance fig-alt="A shared phase source branches with sensitivities one and two into two channels, while independent local errors enter their own channels."}
+
 ## Null directions, coordinates and what rank means
 
 If only u is present, C=0.0004 aa^T with a=(1,2)^T. The vector (-2,1)^T is a
@@ -142,6 +146,10 @@ units changes eigenvalues and numerical conditioning. Comparing eigenvalues acro
 mixed-unit coordinates without declaring a scale has no invariant engineering
 meaning. Subtracting a reference is a measurement mapping; if it discards a common
 mode, T is singular and information has been removed.
+
+The equal-scale geometry in @fig-covariance-projections distinguishes a covariance ellipse from a probability region. For w=(-1,1), the marked support point maximizes w-transpose-x on the unit ellipse; its mapped value is the projected half-width, not the radius where a line in direction w intersects the ellipse. The shared-only limit degenerates to a line, so an inverse-ellipse equation cannot describe it. The two scalar projections use different coefficient norms and retain different wanted signals.
+
+![Unit covariance geometry for the supplied C and its shared-only limit. No Gaussian coverage interpretation is assigned.](figures/covariance-projections.svg){#fig-covariance-projections fig-alt="A full covariance ellipse and rank-one line share equal radian axes; a marked support point maps to the channel-difference projection, whose half-width is the square root of its quadratic-form variance."}
 
 ## Invertibility is not reliable inference
 
@@ -181,3 +189,7 @@ now rejects u, while x2-2x1 does not. Rebuild A before calculating C or choosing
 weights. Then change the wanted-signal manifold while holding C fixed: the quietest
 combination may cease to be useful. A receiver budget needs both the physical
 response and its evidence, not merely a positive covariance matrix.
+
+As the response directions merge in @fig-inverse-conditioning, the inverse must amplify their small difference. The lower panel quantifies that penalty under the centered independent-noise model. Numerical invertibility cannot supply the missing physical sensitivity.
+
+![Response geometry uses epsilon 0.1 for visibility; the error curve includes the worked 0.01 and 0.001 cases. The zero-separation model has no inverse.](figures/inverse-conditioning.svg){#fig-inverse-conditioning fig-alt="Two nearly parallel response vectors become indistinguishable as sensitivity separation vanishes; inverse estimate RMS grows as one over the separation."}

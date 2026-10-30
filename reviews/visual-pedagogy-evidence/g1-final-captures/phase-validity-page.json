@@ -1,0 +1,74 @@
+{
+  "version": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/149.0.7827.155",
+    "revision": "@1117c8f4dc05f82c85341bf5cbd912d1391a36a",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.0.0 Safari/537.36",
+    "jsVersion": "14.9.207.29"
+  },
+  "document": {
+    "url": "file:///home/anon/coherent-receiver-reference/book/figures/phase-validity.svg",
+    "title": "An invalid interval does not acquire a phase by interpolation",
+    "readyState": "complete",
+    "viewport": [
+      960,
+      900
+    ],
+    "mathElements": 0,
+    "mathjaxContainers": 0,
+    "images": []
+  },
+  "metrics": {
+    "layoutViewport": {
+      "pageX": 0,
+      "pageY": 0,
+      "clientWidth": 960,
+      "clientHeight": 900
+    },
+    "visualViewport": {
+      "offsetX": 0,
+      "offsetY": 0,
+      "pageX": 0,
+      "pageY": 0,
+      "clientWidth": 960,
+      "clientHeight": 900,
+      "scale": 1,
+      "zoom": 1
+    },
+    "contentSize": {
+      "x": 0,
+      "y": 0,
+      "width": 960,
+      "height": 900
+    },
+    "cssLayoutViewport": {
+      "pageX": 0,
+      "pageY": 0,
+      "clientWidth": 960,
+      "clientHeight": 900
+    },
+    "cssVisualViewport": {
+      "offsetX": 0,
+      "offsetY": 0,
+      "pageX": 0,
+      "pageY": 0,
+      "clientWidth": 960,
+      "clientHeight": 900,
+      "scale": 1,
+      "zoom": 1
+    },
+    "cssContentSize": {
+      "x": 0,
+      "y": 0,
+      "width": 960,
+      "height": 900
+    }
+  },
+  "clip": {
+    "x": 0,
+    "y": 0,
+    "width": 960,
+    "height": 900,
+    "scale": 1
+  }
+}

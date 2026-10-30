@@ -1,0 +1,1 @@
+{"capture":"OK","code":0,"signal":null,"clip":{"x":0,"y":0,"width":1400,"height":600,"scale":1}}

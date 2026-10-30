@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.218,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/complex-distributions.svg",
+  "source_sha256": "833baa6431f20851772d87a0df1bb605a5ad61256af57f67fc8aae8506944f09",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    650
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    650
+  ],
+  "image_sha256": "e0802c6896b4770ddf8017e4471dc868c97eed2f6bf3679788f36c16227c693e"
+}

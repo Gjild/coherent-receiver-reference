@@ -16,3 +16,13 @@ specialization to check independently; not attributed to the examined chapter.
 Elementary delay specialization is a scoped introductory restatement; general
 pilot results remain owned by book/relative-phase-stability.qmd. All numbers are
 synthetic. No radar performance or experimental validation is claimed.
+
+## Visual bridge additions (2026-10-30)
+
+Complex-filter order figure uses the pilot's local AM/PM model. The finite-input
+remainder bound is an original mathematical specialization: split
+`r=(exp(j phi)-1-j phi)+alpha(exp(j phi)-1)` and apply the exponential integral
+remainders for real alpha/phi. Convolution norm bounds require absolutely
+integrable normalized response (finite sums for taps). No new external source
+passage or empirical support is attributed to this addition. Figure inputs and
+other numerical visual models are synthetic and preserved in the figure generator.

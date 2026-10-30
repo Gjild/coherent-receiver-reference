@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.37,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/delay-fit-precision.svg",
+  "source_sha256": "61bd7431b0330045efbbf17cd3a23dc829c8fb77e7ff4cfc5d93f66bbc3e995b",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    890
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    890
+  ],
+  "image_sha256": "ac86d9c279292234d4e563a42f2cc2c5f43b687bd90ec3726cd1e518721dc6b1"
+}

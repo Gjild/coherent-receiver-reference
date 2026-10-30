@@ -68,6 +68,20 @@ For sigma=0.02 rad, tc=1 s and T=10 s it is 0.00007200036 rad², or about
 stationary model and acquisition state remain applicable. It is not a prescription
 to average real hardware indefinitely.
 
+The two processing chains in @fig-complex-filter-order explain why the order of filtering and angle extraction matters. For a constant $A>0$, write $z=A(1+\alpha)e^{j\phi}=A+\delta z$, where $\alpha=\delta A/A$ is real fractional AM and $\phi$ is real phase perturbation. The first-order input model is $\delta z/A\simeq\alpha+j\phi$. For $H_0=\int h\ne0$, an angle expansion about $AH_0$ requires $|h*\delta z|\ll|AH_0|$, giving the displayed first-order output perturbation $\operatorname{Im}\{(h/H_0)*(\alpha+j\phi)\}$.
+
+For finite accuracy, also bound the filtered remainder of the input approximation. With $r=(1+\alpha)e^{j\phi}-1-\alpha-j\phi$, the elementary exponential remainder bounds give $|r|\le\phi^2/2+|\alpha\phi|$. For an absolutely integrable normalized response $g=h/H_0$, $|g*r|\le\|g\|_1\sup|r|$ (the sum version applies to finite taps). Compare this remainder and the quadratic angle-expansion error with the intended phase accuracy. Large normalized gains can amplify terms neglected before filtering even when the exact output perturbation is small. The displayed relation is asymptotic for a fixed filter; small inputs alone are not a finite-error guarantee.
+
+The AM-only counterexample produces phase after complex filtering even though both input angles are zero. This is a local illustration of the pilot's small-perturbation bridge, not a general RF-filter noise budget.
+
+![Complex filtering before angle extraction can convert amplitude perturbations to phase; phase-domain filtering alone cannot reproduce this example.](figures/complex-filter-order.svg){#fig-complex-filter-order fig-alt="A complex filter followed by angle extraction differs from extracting phase first; an AM-only input yields a nonzero output angle only in the first chain."}
+
+The time weights in @fig-observation-weights reveal rejection of constant phase. @fig-observation-gains shows the corresponding family of spectral gains: the example spectral panel uses L=T, whereas the time-weight panel separates the averages by 2T for clarity. Neither box averaging nor differencing is a brick-wall filter.
+
+![Normalized phase weights, with positive later-minus-earlier orientation.](figures/observation-weights.svg){#fig-observation-weights fig-alt="A positive one-second box average and two oppositely signed one-second boxes show constant rejection by differencing."}
+
+![Squared gains for extracted-phase statistics with T=L=1 s. Integrate the gain times the two-sided process PSD over all real frequencies.](figures/observation-gains.svg){#fig-observation-gains fig-alt="Box averaging has sidelobes, increments reject DC and their product weights separated phase averages."}
+
 ## Increments and complex coherence answer different questions
 
 Subtracting two observations separated by tau gives the phase increment. Expanding
@@ -130,6 +144,12 @@ general nor the variance of the angle arg C. For a random constant phase B,
 its angle invalid. Amplitude-varying signals need amplitude-weighted joint moments;
 a phase-only coherence model cannot silently replace them.
 
+The panels of @fig-coherence-observables keep phase-average RMS separate from dimensionless coherent power. At T/tc=10 the coherent power is about 0.4564, while the rejected substitution is about 0.8353. A phase frozen within a record instead gives unit coherent power despite uncertain mean direction. @fig-covariance-increments also exposes the stationary-model boundary: exponential covariance produces saturation, while random-walk phase has unbounded increment growth.
+
+![Exact Gaussian-model accumulation and an equal-increment-variance counterexample. The last panel plots signed coherence, not its magnitude.](figures/coherence-observables.svg){#fig-coherence-observables fig-alt="Phase averaging improves with time while expected coherent power falls; squared mean amplitude differs from both, and equal-variance increment laws give distinct signed coherence."}
+
+![Exponential-covariance and random-walk increments with matched initial slopes. The Lorentzian PSD belongs only to the stationary example.](figures/covariance-increments.svg){#fig-covariance-increments fig-alt="Stationary increment variance saturates at two radian squared, random-walk increment variance grows with lag and only the stationary model has the displayed absolute phase PSD."}
+
 ## Shared sources and unequal paths
 
 A shared oscillator phase p reaching two comparison planes through linearized
@@ -148,6 +168,10 @@ Even an ideal shared source appears at two different epochs. At 1 kHz offset and
 comparison with matched epochs gives zero shared-source contribution in this
 ideal model. This is a phase-transfer illustration, not a radar detection budget:
 waveform, range/Doppler processing and other disturbances require their own mapping.
+
+In @fig-shared-delay both endpoint contributions come from the same process; the subtraction must occur before calculating its power. The small-offset curve leaves the plotted gain range because the approximation is unbounded, whereas the exact response remains between zero and four.
+
+![Pure-delay differential transfer. At normalized offset 0.1 the exact squared gain is 0.381966.](figures/shared-delay.svg){#fig-shared-delay fig-alt="One source reaches two delayed endpoints; exact differential gain oscillates from zero to four while the small-offset approximation eventually diverges."}
 
 ## What a finite record can establish
 
@@ -192,3 +216,7 @@ The average variance and integration loss must be recomputed from the new operat
 and joint model. Then change only the shared path delay: the marginal source PSD
 is unchanged, while its differential effect changes. These distinctions determine
 what needs to be characterized before a stability number can support a design.
+
+Negative lag correlation improves the mean estimate in @fig-finite-record-uncertainty, but it does not give the same benefit to the known-mean variance estimator: its Gaussian uncertainty depends on squared correlations. A single effective sample count cannot describe both.
+
+![Exact finite-sum uncertainty for stationary Gaussian AR(1) models with rho minus 0.7, zero and plus 0.7.](figures/finite-record-uncertainty.svg){#fig-finite-record-uncertainty fig-alt="Negative correlation reduces mean scatter but plus and minus correlations produce identical variance-estimator uncertainty."}

@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.319,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/phase-wrapping.svg",
+  "source_sha256": "0a938230b4af529faab44e5d4776303f2f19923c261957a7ba9e200baf4580c0",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    820
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    820
+  ],
+  "image_sha256": "f34d5063d1115d11264a7e436a2f6e574203925208093d33b3c9dca4bea08af8"
+}

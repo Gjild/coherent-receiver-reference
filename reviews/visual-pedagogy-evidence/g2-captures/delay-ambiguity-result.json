@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.269,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/delay-ambiguity.svg",
+  "source_sha256": "35c9c648d94a1ff9a7a03b471f6770448a3e686ac8848b9918fe39d83d6025a2",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    850
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    850
+  ],
+  "image_sha256": "f7927bbf68ec1215ccf342d9ed2a7035f78a00eb986a2de80ae5c3f987b012f8"
+}

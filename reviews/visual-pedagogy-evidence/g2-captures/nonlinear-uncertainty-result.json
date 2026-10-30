@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.269,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/nonlinear-uncertainty.svg",
+  "source_sha256": "9ed3bc262b9f613ae434d44b0a647fc69e1a4dd5edac978ed36a516e958f890f",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    850
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    850
+  ],
+  "image_sha256": "56dc051154b2dc88c04ee7cc90320fca33dceac5be61fa5170cef1b5e5d0931b"
+}

@@ -1,0 +1,1 @@
+/usr/bin/firefox --headless --no-remote --profile /tmp/coherent-inspection-diagnosis/host-firefox/profile --window-size 1000,700 --screenshot /tmp/coherent-inspection-diagnosis/host-firefox/image.png file:///tmp/coherent-inspection-diagnosis/minimal.html

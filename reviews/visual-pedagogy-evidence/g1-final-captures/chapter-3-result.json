@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 4.128,
+  "source": "/home/anon/coherent-receiver-reference/book/_book/observation-weighted-coherence.html",
+  "source_sha256": "c7521130ebd229100340f148950386054990752c2a604afadb553e5a4bb39b70",
+  "backend": "pipe",
+  "viewport": [
+    1440,
+    2200
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    1425,
+    9845
+  ],
+  "image_sha256": "1208c7f89032c5e161f80a2261eb82bfba377a2c7816a18abc6c5648f445d7cc"
+}

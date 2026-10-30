@@ -71,3 +71,20 @@ evidence, author disposition, correction propagation and reassessment. Identify 
 model/effort/session, sources actually examined, checks run and unperformed checks.
 A separate context using the same model retains correlated failure risks. Review
 failure blocks progression; unavailable evidence restricts dependent claims.
+
+## Visual-adequacy gate for bounded teaching units
+
+Assess scientific correctness and pedagogical communication separately. Check
+quantitative curves through independent formulations, limits and spot values;
+check schematic paths, signs, planes and correlation against the model. Follow
+[the actual-image procedure](../docs/VISUAL-INSPECTION.md): inspect standalone pixels
+and the complete rendered page with readable detail crops, equations and captions.
+Fresh read-only AI review receives actual raster attachments and frozen models;
+record image access, readability limits, findings and correction reassessment.
+Source parsing, successful capture and render success alone never clear this gate.
+
+A missing indispensable explanation, consequential model/graphical error, unreadable
+figure, failed image inspection or unresolved consequential review finding blocks
+a positive visual-adequacy recommendation. Optional polish can remain documented.
+AI visual review does not grant human acceptance, reader-trial evidence or physical
+validation, and does not authorize subsequent canonical authoring.

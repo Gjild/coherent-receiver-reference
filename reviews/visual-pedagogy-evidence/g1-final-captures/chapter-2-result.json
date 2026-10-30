@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 3.678,
+  "source": "/home/anon/coherent-receiver-reference/book/_book/scalar-stochastic-phase.html",
+  "source_sha256": "1377ec62ab6636e1f95808a8f38f8f03d709f5ad2d12b2bd34c88ba4260bf6c9",
+  "backend": "pipe",
+  "viewport": [
+    1440,
+    2200
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    1425,
+    7680
+  ],
+  "image_sha256": "07cb8a2134c1c9455c58e712625d604be9ae1f9469721550d1a4a2a88bb28047"
+}

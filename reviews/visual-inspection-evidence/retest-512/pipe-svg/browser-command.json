@@ -1,0 +1,10 @@
+{
+  "browser": "/opt/brave.com/brave/brave",
+  "args": [
+    "--headless",
+    "--remote-debugging-pipe",
+    "--user-data-dir=/tmp/coherent-inspection-retest/pipe-svg/profile",
+    "--window-size=1400,600",
+    "about:blank"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "command": "/opt/brave.com/brave/brave --headless --user-data-dir=/tmp/coherent-inspection-diagnosis/permitted-brave/profile --window-size=1000,700 --screenshot=/tmp/coherent-inspection-diagnosis/permitted-brave/image.png file:///tmp/coherent-inspection-diagnosis/minimal.html",
+  "status": -5,
+  "timeout": false,
+  "seconds": 0.216,
+  "image_exists": false
+}

@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.219,
+  "source": "/tmp/coherent-inspection-retest/pipe-smoke/smoke.html",
+  "source_sha256": "74c488fbec3b7d97bf4208b005291ab0e79894d487442aab540c335ad99117ac",
+  "backend": "pipe",
+  "viewport": [
+    1000,
+    700
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    1000,
+    700
+  ],
+  "image_sha256": "4e4fb4fc4385715de711069ad1aa7c05e39dc67103e089dc8af258721277966d"
+}

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 410" role="img" aria-labelledby="title desc"><title id="title">Trace physical planes before referring a phase measurement</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Trace physical planes before referring a phase measurement</text>
+<text x="30" y="125" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">P1: RF</text>
+<rect x="190" y="100" width="145" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="262.5" y="125" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">RF path</text>
+<text x="262.5" y="150" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">reference path</text>
+<rect x="400" y="100" width="125" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="462.5" y="125" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Mixer</text>
+<text x="462.5" y="150" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">L1: LO</text>
+<rect x="655" y="100" width="180" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="745.0" y="125" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Extraction</text>
+<text x="745.0" y="150" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">common IF / epoch</text>
+<path d="M110.000,132.000 L190.000,132.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M335.000,132.000 L400.000,132.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M525.000,132.000 L655.000,132.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="560" y="115" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Q1: IF</text>
+<path d="M835.000,132.000 L920.000,132.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="855" y="115" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">O1: z1</text>
+<path d="M460.000,195.000 L460.000,167.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="490" y="190" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">LO endpoint</text>
+<text x="30" y="255" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">P2: RF</text>
+<rect x="190" y="230" width="145" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="262.5" y="255" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">RF path</text>
+<text x="262.5" y="280" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">+25 ps only in 2</text>
+<rect x="400" y="230" width="125" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="462.5" y="255" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Mixer</text>
+<text x="462.5" y="280" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">L2: LO</text>
+<rect x="655" y="230" width="180" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="745.0" y="255" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Extraction</text>
+<text x="745.0" y="280" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">common IF / epoch</text>
+<path d="M110.000,262.000 L190.000,262.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M335.000,262.000 L400.000,262.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M525.000,262.000 L655.000,262.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="560" y="245" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Q2: IF</text>
+<path d="M835.000,262.000 L920.000,262.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="855" y="245" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">O2: z2</text>
+<path d="M460.000,325.000 L460.000,297.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="490" y="320" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">LO endpoint</text>
+<text x="32" y="365" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Added RF delay: −9° at 1 GHz before conversion; upper-side extraction reverses it.</text>
+<text x="32" y="396" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

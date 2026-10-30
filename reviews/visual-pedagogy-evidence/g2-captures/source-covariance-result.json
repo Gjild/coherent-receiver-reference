@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.319,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/source-covariance.svg",
+  "source_sha256": "1b295c2c3cddf9ad161be9de28683585476dc98de748900a4c1ad802b36c1670",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    580
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    580
+  ],
+  "image_sha256": "7eefa7e736fd129b4016797a757f37c5e834dc2382618158b9aa46db76707d39"
+}

@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.168,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/phase-validity.svg",
+  "source_sha256": "6d3ee0d394745f1357baa4ffd52704c6252f6c39e528d34dbac9950e965feb0f",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    900
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    900
+  ],
+  "image_sha256": "611e9146fa040126bc8d853247affa0e14875b1404f544ac6ff92d67786a9af1"
+}

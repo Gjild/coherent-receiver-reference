@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 5.485,
+  "source": "/home/anon/coherent-receiver-reference/book/_book/model-adequacy-uncertainty.html",
+  "source_sha256": "54e0f859c4c43413e0cb4d17b375970762493ab91e83b40f08f2d9e07db73c85",
+  "backend": "pipe",
+  "viewport": [
+    1440,
+    2200
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    1425,
+    7529
+  ],
+  "image_sha256": "ba835da5d67ddd57089cbe1d52fdeea0082aa7ab5df29f0121c3dc0854c123e8"
+}

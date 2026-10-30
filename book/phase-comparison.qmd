@@ -49,6 +49,10 @@ The product $f_R\tau$ is dimensionless. At 1 GHz, 25 ps corresponds to
 $360(10^9)(25\times10^{-12})=9$ degrees. The sign comes from the delayed
 waveform, rather than from a remembered phase-delay rule.
 
+The physical chain in @fig-comparison-planes keeps the RF, LO, IF and extracted-output planes distinct. An extra delay belongs to a path, even when the instrument later reports an input-referred number.
+
+![Physical planes for the ideal simultaneous comparison; the extra 25 ps is an illustrative channel-2 RF perturbation.](figures/comparison-planes.svg){#fig-comparison-planes fig-alt="Two RF paths feed mixers with separate LO endpoints, then real IF outputs Q and common-reference complex extraction O."}
+
 ## Give the voltage a complex representation {#sec-comparison-representation}
 
 Euler's identity writes a cosine as the sum of two counter-rotating terms:
@@ -93,6 +97,10 @@ $A/\sqrt{2}$ and power $|z_{\rm RMS}|^2/R$.
 
 These normalization and orientation choices apply locally throughout this
 unit. They do not settle every possible complex-envelope convention.
+
+In @fig-relative-phasors the reference rotation moves both vectors together. The product removes that common rotation; conjugation instead reverses the orientation of the comparison.
+
+![Peak-scaled phasors in the worked 10 MHz IF example, at a common epoch. The arc is channel 2 relative to channel 1.](figures/relative-phasors.svg){#fig-relative-phasors fig-alt="Two equal-magnitude phasor pairs before and after common reference rotation retain a positive 40 degree separation."}
 
 ## Derive the conversion sign {#sec-comparison-conversion}
 
@@ -148,6 +156,10 @@ It does not reverse an IF path phase subsequently added at positive frequency.
 The real waveform shows why. Complex mixing can retain a signed negative IF,
 but that is a different representation; it must be translated before comparing
 its reported phase with this positive-IF instrument.
+
+Read @fig-conversion-orientation from signed difference frequency to positive-IF extraction. The upper-side case reverses input and LO contributions; the subsequently added IF path phase still has the same sign.
+
+![Ideal conversion orientations using the worked-example phase differences. No retuning repeatability is implied.](figures/conversion-orientation.svg){#fig-conversion-orientation fig-alt="Lower and upper LO paths give signed plus and minus 10 MHz difference tones and reports of 40 and minus 26 degrees."}
 
 ## Follow one complete measurement {#sec-comparison-worked}
 
@@ -289,3 +301,9 @@ LO and IF phase, the upper-side report is −45 degrees. Identical restart repor
 can conceal compensating changes in input and receiver/reference phase. Each
 answer follows from tracing the physical contribution, which is the reasoning
 needed before stochastic stability and calibration can be developed.
+
+The alternative continuations in @fig-phase-wrapping have identical wrapped endpoint observations. The waveform panel independently checks the delay sign. @fig-phase-validity shows why an invalid interval cannot be bridged merely by choosing the smoothest continuation.
+
+![Synthetic wrapped-endpoint ambiguity and a delayed sinusoid. A unique continuation requires a justified intersample-motion bound.](figures/phase-wrapping.svg){#fig-phase-wrapping fig-alt="Phase can advance two degrees or retreat 358 degrees between the same observations; positive waveform delay moves a sinusoid right."}
+
+![Schematic validity gap. Separate valid segments have no implied shared cycle count.](figures/phase-validity.svg){#fig-phase-validity fig-alt="Phase traces stop on either side of an amplitude-invalid interval, with no interpolating connection."}

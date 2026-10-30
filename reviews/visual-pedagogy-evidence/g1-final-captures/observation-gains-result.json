@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.37,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/observation-gains.svg",
+  "source_sha256": "5b30142bd19989ccd3a7839462c0372d8717cd2db218b4426a15399f22a2dd92",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    510
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    510
+  ],
+  "image_sha256": "3baba4d75725e155ccfec48df5bd446fd1ea00edcbff9e0833bd945afd7bddf2"
+}

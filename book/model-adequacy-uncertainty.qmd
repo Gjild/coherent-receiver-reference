@@ -134,6 +134,10 @@ Difference variance becomes 0.25(0.00036)+0.00008=0.00017 rad², giving about
 digits in the solver nor a positive covariance matrix can rescue the original
 conclusion after this physical assumption changes.
 
+The two panels in @fig-uncertainty-sensitivity change different assumptions. The upper panel varies correlation between shared-source observations at fixed equal coupling; the lower keeps the same draw but changes its endpoint sensitivity. Either change can reverse the precision decision. These curves show the phase-derived uncertainty only; the separately declared bounded frequency-gap uncertainty contributes about 0.0005 ns at the nominal point.
+
+![Phase-derived delay uncertainty for the supplied 10 MHz gap and source variances. The horizontal line is a standard-deviation criterion, not an accuracy or coverage bound.](figures/uncertainty-sensitivity.svg){#fig-uncertainty-sensitivity fig-alt="Delay uncertainty increases when shared-source draws decorrelate or their path sensitivities differ; common cancellation meets the target only under closely matched observation conditions."}
+
 ## A zero derivative does not mean zero uncertainty
 
 Consider a normalized quadrature observation y=sin(phi) near phi=pi/2. Write
@@ -159,6 +163,10 @@ limit of 0.01 fails despite the first-order zero. Moreover y cannot distinguish
 large sensitivity; a small output change cannot be interpreted as a unique phase
 change. Nonlinear propagation, a distribution or interval calculation, and the
 actual identifiable observable must replace an invalid first-order result.
+
+The tangent in @fig-nonlinear-uncertainty is flat, but the actual response changes on both sides of its maximum. The lower panel shows why propagating only that tangent misses both the uncertainty and the two-branch interpretation of the inverse.
+
+![Exact and local cosine models, followed by output standard deviation under the declared Gaussian phase model. The output and its uncertainty are dimensionless.](figures/nonlinear-uncertainty.svg){#fig-nonlinear-uncertainty fig-alt="A flat first-order tangent predicts zero uncertainty while the exact and second-order calculations give nonzero output scatter and preserve the symmetry between positive and negative phase deviations."}
 
 ## Numerical agreement must be about distinct formulations
 
@@ -188,6 +196,10 @@ a shared formula in two programs can preserve the same sign error. Compare a
 different formulation, asymmetry, units and limits before interpreting agreement.
 For the inference and tracking examples, use source sums versus covariance, time
 integration versus transfer response, and known ambiguity cases as separate checks.
+
+The error curves in @fig-numerical-cancellation compare binary64 evaluations with a 65-digit reference at the same input values. The series preserves the short-observation limit; direct subtraction can fail badly even though the physical model is unchanged. Values outside the plotted relative-error range, including errors below its lower limit, are omitted rather than assigned a fabricated floor.
+
+![Illustrative floating-point evaluation errors on the tested Python environment. Independent time-domain integration is the separate consistency check; neither calculation validates receiver physics.](figures/numerical-cancellation.svg){#fig-numerical-cancellation fig-alt="Direct subtraction loses accuracy at short observation ratios, while the local series remains close to a high-precision reference."}
 
 ## Choose the smallest model that preserves the decision
 

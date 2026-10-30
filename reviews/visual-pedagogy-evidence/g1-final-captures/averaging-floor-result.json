@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.519,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/averaging-floor.svg",
+  "source_sha256": "110b4bb744c63a7790b33e2209e89565852c8ab9d5ed0a1b15ac6f3633800642",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    510
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    510
+  ],
+  "image_sha256": "c8d69938126b7c62a4e1ab7a1344cf1f356474ff306ed0bb9b2522bd8d795c26"
+}

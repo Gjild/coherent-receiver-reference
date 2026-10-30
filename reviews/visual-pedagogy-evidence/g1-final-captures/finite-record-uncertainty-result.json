@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.319,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/finite-record-uncertainty.svg",
+  "source_sha256": "8076548212bf20bc598ff8015063c7756a31d2955c3ee99dfd6322d415faeb9f",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    830
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    830
+  ],
+  "image_sha256": "b710b2de96e47a91edd594a0e3341470fb8ce1df343888b7c0a6668273c01444"
+}

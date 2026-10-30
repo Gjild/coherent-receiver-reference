@@ -1,0 +1,1 @@
+/opt/brave.com/brave/brave --headless --user-data-dir=/tmp/coherent-inspection-retest/host-software/profile --window-size=1000,700 --screenshot=/tmp/coherent-inspection-retest/host-software/image.png --disable-gpu file:///tmp/coherent-inspection-diagnosis/minimal.html

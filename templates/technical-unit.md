@@ -24,3 +24,7 @@ Adapt the structure to the subject; do not use this as a rigid chapter template.
 - Engineering interfaces, supplied inputs and affected dependent results:
 - Integration: canonical home, local bridge and surrounding reading continuity:
 - Correction propagation and checks repeated:
+
+- Visual needs and justified omissions; teaching purpose and error prevented:
+- Figure model/parameters, units/planes, assumptions, independent numerical checks:
+- Standalone and complete-page pixel inspection, alt text, caption and interpretation:

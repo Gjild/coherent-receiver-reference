@@ -1,0 +1,1 @@
+/home/anon/.nvm/versions/node/v24.14.0/bin/node /home/anon/coherent-receiver-reference/scripts/visual_capture.mjs /opt/brave.com/brave/brave file:///home/anon/coherent-receiver-reference/book/figures/relative-phase-reference-planes.svg /tmp/coherent-inspection-retest/pipe-svg 1400 600 3000

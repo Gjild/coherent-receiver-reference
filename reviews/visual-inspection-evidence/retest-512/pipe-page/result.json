@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 2.975,
+  "source": "/tmp/coherent-html-retest.TFrOHy/repo/book/_book/publishing-pilot.html",
+  "source_sha256": "3e9ffb269a4a11d6232b0a7f50fd39405b648490f3e42b4fb6c829721a86a623",
+  "backend": "pipe",
+  "viewport": [
+    1440,
+    2200
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    1440,
+    2200
+  ],
+  "image_sha256": "ac4858237750f693130e7d22bc3eff3dd377d0a4be49de7972580bddefc8020f"
+}

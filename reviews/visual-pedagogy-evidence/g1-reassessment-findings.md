@@ -1,0 +1,13 @@
+Two issues remain:
+
+- **High-gain applicability limit:** [§3.1](/tmp/coherent-visual-g1-corrected-review/book/observation-weighted-coherence.qmd:71) gives the correct local linearization, with dimensionless fractional AM \(\alpha=\delta A/A\). Output smallness controls angle expansion about \(AH_0\), but finite accuracy also requires checking the filtered remainder of \((1+\alpha)e^{j\phi}\approx1+\alpha+j\phi\). Independently, take normalized taps \(g=(1+100j,-200j,100j)\), \(H_0=1\), and aligned PM-only samples \(\phi=(0,0.01,0.02)\). The displayed first-order response is zero; the exact normalized output perturbation has magnitude \(0.0099999\), yet produces **−0.0099981 rad**. High normalized gains therefore require a remainder bound against the intended accuracy. This limits finite use of the approximation; the stated first-order equation is correct.
+
+- **Panel spacing remains cramped:** Figure 3.4’s first two x-axis labels nearly touch the following panel headings, clearly visible in [the readable crop](/tmp/coherent-visual-g1-corrected-review/pages/observation-weighted-coherence/crops/main-03.png). Their SVG baselines are only 18 units apart with 18/20-unit fonts. Figure 2.1 uses the same spacing. Increase the inter-panel separation; I found crowding rather than obscured curves or legends.
+
+Independent checks confirmed the conversion signs (+40°, −26°), delay perturbations, peak-voltage power normalization, all-three-distribution \(C=1,\ P=0\), and the noise geometry: blue \(A\), orange rotated noise \(n'\), green resultant \(A+n'\). The circular-noise phase variance factor \(v/(2A^2)\) is consistent.
+
+Spot values agree: filter example **0.0906599 rad**; exponential-covariance average variance **0.00007200036 rad²** at 10 s; coherent power **0.45641013**, versus **0.83526945** for the rejected substitution; delay squared gain **0.381966** at normalized offset 0.1. Observation gains and Gaussian finite-record mean/variance-estimator equations also check.
+
+All **134 manifest entries matched**. Coverage comprised **17 standalone figures, three complete-page images and all 18 readable crops**, including captions and surrounding equations. Models and independent calculations preceded author-code inspection; author code was not executed.
+
+Limits: supplied files and captured layouts only; external references and other viewport sizes were not examined. Incidental exposure occurred in `sources/*.md` to prior-check/review-status assertions; these were excluded as evidence. No image-access failures, edits, delegation or connectors. No human acceptance is implied.

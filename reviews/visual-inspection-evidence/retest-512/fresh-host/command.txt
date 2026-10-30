@@ -1,0 +1,1 @@
+/home/anon/.nvm/versions/node/v24.14.0/bin/node /home/anon/coherent-receiver-reference/scripts/visual_capture.mjs /opt/brave.com/brave/brave file:///tmp/coherent-visual-cghfjhci/smoke.html /tmp/coherent-visual-cghfjhci 1000 700 3000

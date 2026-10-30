@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 6.435,
+  "source": "/home/anon/coherent-receiver-reference/book/_book/covariance-quadratic-forms.html",
+  "source_sha256": "18cafaeb2c3d1b3deab0cc1312b39c8ec6282975a013cfc2b1d8ff0c03278652",
+  "backend": "pipe",
+  "viewport": [
+    1440,
+    2200
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    1425,
+    6603
+  ],
+  "image_sha256": "19f24328ed40b8c0464408b672f7c37d45bcc12ad585d2e471e2f90145585be5"
+}

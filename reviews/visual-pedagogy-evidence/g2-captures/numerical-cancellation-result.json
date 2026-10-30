@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.319,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/numerical-cancellation.svg",
+  "source_sha256": "78db8da11f82c1766314843dc8e450a5af8a415aa744000bd8265c0d347ff936",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    510
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    510
+  ],
+  "image_sha256": "a8e5804044164470fa9f75eef2b142d6464b075d0159ffeb3201ff0d7cbda5d7"
+}

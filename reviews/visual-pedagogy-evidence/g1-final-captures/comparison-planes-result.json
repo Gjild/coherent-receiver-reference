@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.218,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/comparison-planes.svg",
+  "source_sha256": "f409d0a4368ea08e7be0e367e0db870ee5e44adf2fbfd9f678fe6422480e4675",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    900
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    900
+  ],
+  "image_sha256": "867ba7254987db4e7e24ce8b31f0e64009c1464a51a5c50ad4d94e92df241f2b"
+}

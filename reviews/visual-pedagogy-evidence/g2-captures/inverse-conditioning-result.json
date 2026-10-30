@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.32,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/inverse-conditioning.svg",
+  "source_sha256": "e3ecd3cd9721d65f28def0e63c656775dbfea591f6d0e37f9aef2a03ae00c375",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    860
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    860
+  ],
+  "image_sha256": "3f34f8c08124f7f666a36e9ba1e740bf177f80a4cea14ca3199b8ac2c7b1168c"
+}

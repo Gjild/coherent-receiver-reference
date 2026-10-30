@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 4.128,
+  "source": "/home/anon/coherent-receiver-reference/book/_book/phase-delay-inference.html",
+  "source_sha256": "9e605bcb496a63724c5b66bbd430730e2e9a5413dda53b0a615e254949d90c2e",
+  "backend": "pipe",
+  "viewport": [
+    1440,
+    2200
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    1425,
+    5920
+  ],
+  "image_sha256": "7371a7e50905cb31519d2ab7ed8996e4e6e026d3c55f106786f39005aa4ed309"
+}

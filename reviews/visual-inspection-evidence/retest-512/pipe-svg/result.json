@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.27,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/relative-phase-reference-planes.svg",
+  "source_sha256": "cb78b44d7b15669d739e944faa711f29a5dcc2371f377adffaf297e7852178a8",
+  "backend": "pipe",
+  "viewport": [
+    1400,
+    600
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    1400,
+    600
+  ],
+  "image_sha256": "f3707014d9b0bb41ccb6f6c60713526c56ae736f7d3164bd0d959f0eec416a64"
+}

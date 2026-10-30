@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.119,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/uncertainty-sensitivity.svg",
+  "source_sha256": "e89c8f257c8782ceb26522a0bd79edbe10eeebeec5bfcf683f9de611916ca270",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    890
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    890
+  ],
+  "image_sha256": "55e082defffb4e059eeaf5a17f7c2dddc142b421a7f328be9ca602600ae6597a"
+}

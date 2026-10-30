@@ -47,3 +47,14 @@ and review the surrounding chapter progression when integrating a unit. Transfer
 pilot results only in a bounded migration that updates references and assesses
 the affected acceptance scope. Until then, introductory restatements identify
 their scope and do not supersede the pilot's general derivations.
+
+## Visual reasoning alongside the derivation
+
+For each consequential explanation, assess whether a graphic improves physical
+interpretation, transfer or error prevention. Specify its teaching purpose, source
+model and assumptions before drawing; justify no-figure decisions where needed.
+Use shared canonical figures and local interpretation instead of redundant copies.
+Introduce and interpret each figure in the argument. Declare synthetic inputs,
+axes/units, normalizations, reference planes and failure regions; provide meaningful
+alt text and a caption that explains what the reader should learn. Preserve
+reproducible generating equations, parameters and editable assets. No figure quota.

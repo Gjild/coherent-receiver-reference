@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.32,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/ensemble-records.svg",
+  "source_sha256": "9999304fe6f5d3259172773199a09777d0dbf816a113c952910140530137c110",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    1270
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    1270
+  ],
+  "image_sha256": "2401943ec74571d1e5512e25e789fcae99dfb2530070e5edd478a286a1d77499"
+}

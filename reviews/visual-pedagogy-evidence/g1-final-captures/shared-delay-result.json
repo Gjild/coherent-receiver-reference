@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.42,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/shared-delay.svg",
+  "source_sha256": "193ba19879350c2ba3f106d85c68bc9f3fd5dce63036d3a479424ea1fc3ece31",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    650
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    650
+  ],
+  "image_sha256": "ac847f6d4e0c5ea0b8d159cac440b1627359b49b6cfa5eaffa7289d4e782165f"
+}

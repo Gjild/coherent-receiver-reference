@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.319,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/covariance-projections.svg",
+  "source_sha256": "d8e89177937a0d04356a4dd115221d9c5c929b1d483af9ad414ed57436a2f98d",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    1010
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    1010
+  ],
+  "image_sha256": "ec83e3b876544dc1952e330061c87580ad3a06edef251c74a90a6ccf3b8c5b8b"
+}

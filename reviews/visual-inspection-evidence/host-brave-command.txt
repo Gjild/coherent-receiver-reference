@@ -1,0 +1,1 @@
+/opt/brave.com/brave/brave --headless --user-data-dir=/tmp/coherent-inspection-diagnosis/host-brave/profile --window-size=1000,700 --screenshot=/tmp/coherent-inspection-diagnosis/host-brave/image.png file:///tmp/coherent-inspection-diagnosis/minimal.html

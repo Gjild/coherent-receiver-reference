@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.369,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/noise-phase.svg",
+  "source_sha256": "dea8bab6724c2ce2591499b8794209de9b10f7beaba2b5f7491a39d2d362d214",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    830
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    830
+  ],
+  "image_sha256": "445e56ffe800dbeb94c61ee26dbe1a958df374266042bd8c295244f8d208e08f"
+}

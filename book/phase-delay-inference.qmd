@@ -141,6 +141,10 @@ slope lever arm when the symmetric existing grid is retained. The receiver needs
 band coverage, stability during the sweep and independent knowledge of nuisance
 paths—not just a larger number of samples.
 
+In @fig-delay-fit-precision the slope is negative for positive physical delay, and the frequency reference lies at the grid center. The hypothetical error bars describe individual phase errors, not total delay accuracy. Shrinking the frequency span leaves the five-sample count unchanged while degrading local precision.
+
+![The declared five-frequency Gaussian phase model: noiseless central values, assumed individual one-standard-deviation bars, and local delay precision.](figures/delay-fit-precision.svg){#fig-delay-fit-precision fig-alt="A negative phase-frequency slope gives 5 ns total delay; halving the observation span doubles delay standard deviation and crosses the illustrative 2 ns target."}
+
 ## A precise local fit can be globally wrong
 
 The actual complex observations are unchanged when each unwrapped phase changes
@@ -178,3 +182,7 @@ provide that counterexample. For a nonzero-bias example, center frequencies
 before claiming a delay bias. A residual check can reveal some curvature, but cannot detect a
 perfectly linear unmodeled path. Distinguish precision, uniqueness and model truth
 before using an inferred parameter to make a receiver decision.
+
+The two slopes in @fig-delay-ambiguity coincide as wrapped phasors at every sampled frequency. Their off-grid predictions differ, but those predictions are not additional observations. Even a unique total slope would leave the DUT/receiver-delay split unresolved without independent path information.
+
+![Delays 5 ns and 1005 ns on the centered 1 MHz grid. Gaps at principal-angle jumps avoid drawing them as continuous unwrapped transitions.](figures/delay-ambiguity.svg){#fig-delay-ambiguity fig-alt="Two different unwrapped slopes have identical wrapped samples at integer MHz offsets, while conditional off-grid predictions distinguish the branches."}

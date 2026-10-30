@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.219,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/conversion-orientation.svg",
+  "source_sha256": "ca7cebc35ef0738fca9998535a4298fbab3984525308be5a40d12f7a3f074845",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    900
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    900
+  ],
+  "image_sha256": "118f5a08b7a31773aa209a0d0254c031a7440676151e2b14097c1c800d341294"
+}

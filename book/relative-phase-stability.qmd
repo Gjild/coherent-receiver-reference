@@ -78,7 +78,8 @@ create $\psi_2-\psi_1$. Receiver delay and fixture delay are confounded unless
 another observation or characterization separates them.
 
 For a signal phasor $Ae^{j\alpha}$, rotate the additive noise by $e^{-j\alpha}$:
-$\arg(A+n')=\arctan[\operatorname{Im}n'/(A+\operatorname{Re}n')]$.
+$\arg(A+n')=\operatorname{atan2}(\operatorname{Im}n',A+\operatorname{Re}n')$
+for $A+n'\ne0$; phase is undefined at zero amplitude.
 Expanding at $n'=0$ gives phase error $\eta\simeq\operatorname{Im}n'/A$.
 Thus differential phase noise includes $\eta_2-\eta_1$, with covariance retained.
 This approximation fails for fades, low SNR, appreciable AM/PM conversion and slips;

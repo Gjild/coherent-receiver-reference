@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.169,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/complex-filter-order.svg",
+  "source_sha256": "710d59391b20dd12c649038f264926a2a7ad2e307645658b176249724e67e7fa",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    640
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    640
+  ],
+  "image_sha256": "8e242b73a2893890c65f48d4797cdf9ff5d96204e1a8262e87ccbe5af08d29fc"
+}

@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 1.169,
+  "source": "/home/anon/coherent-receiver-reference/book/figures/circular-mean.svg",
+  "source_sha256": "40cb3103dfec04b8c6008ebd57cfd8aacf5a1d3deb255b455675ace23f908c47",
+  "backend": "pipe",
+  "viewport": [
+    960,
+    900
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    960,
+    900
+  ],
+  "image_sha256": "f5008ad2c19b116aed308d6a96d3b34a9a7194dad83882122a68d003d4311cf6"
+}

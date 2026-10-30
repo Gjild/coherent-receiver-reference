@@ -22,3 +22,11 @@
 - Reassessment and remaining disagreements:
 - Unperformed checks and missing evidence:
 - Completion classification: checked provisional draft / incomplete; human review pending.
+
+## Visual review, where applicable
+
+- Scientific correctness and pedagogical contribution assessed separately:
+- Frozen figure/model, actual raster attachments and page/crop hashes:
+- Images actually inspected, viewport/dimensions, coverage and readability limits:
+- Independent curve/geometry checks, consequential findings and reassessment:
+- Remaining indispensable gaps versus optional improvements; human decision pending:

@@ -55,6 +55,10 @@ $$
 A stable record within one restart state cannot establish repeatability between
 restarts. Log reset and calibration history before interpreting its scatter.
 
+The state-conditioned densities in @fig-ensemble-records separate within-state scatter from restart offsets. Its lower panels connect the ensemble to finite records: the constant-error model has the same marginal variance as independent errors, but each record retains its own offset. The three traces are illustrative realizations, not tests of stationarity.
+
+![Synthetic restart mixture and repeated-record examples. The independent and random-constant models both have ensemble mean zero and marginal SD 0.02 rad.](figures/ensemble-records.svg){#fig-ensemble-records fig-alt="Conditional Gaussian phase densities form a wider mixture; independent record means fluctuate while each random-constant record keeps its offset."}
+
 ## Processes, records and a decision about averaging
 
 A process X_k supplies a random variable for each sample time k times the sample
@@ -92,6 +96,10 @@ persistent component or change the reference procedure, rather than promise the
 independent-sample improvement. This calculation says nothing about actual hardware
 until those dependence and state assumptions are supported.
 
+The curves in @fig-averaging-floor are ensemble predictions for the declared arithmetic average. The mixed model approaches a nonzero floor, so increasing sample count cannot meet the target without changing that persistent contribution.
+
+![Exact finite-average RMS under the three declared dependence models, with an illustrative target.](figures/averaging-floor.svg){#fig-averaging-floor fig-alt="Independent noise decreases as one over square root N, record-constant noise stays fixed and mixed noise approaches 0.016 rad."}
+
 ## Complex and angle-valued observations
 
 For a complex fluctuation z=x+jy after subtracting its mean, define covariance
@@ -126,6 +134,12 @@ An unwrapped phase requires a continuity and acquisition model that can fail at
 fades, gaps and slips. Increments phi(t+tau)-phi(t) require a stated unwrapping
 rule; their complex exponential does not. Neither circular concentration nor
 within-record variance measures unknown deterministic phase bias.
+
+The supports in @fig-complex-distributions show what pseudo-covariance alone leaves unspecified. The circular construction in @fig-circular-mean then shows why ordinary angle averaging gives the wrong direction near the branch cut.
+
+![Three zero-mean proper laws with different rotational properties. Density contours apply only to the jointly Gaussian panel.](figures/complex-distributions.svg){#fig-complex-distributions fig-alt="Four discrete points, circular Gaussian contours and two diagonal supports all have zero pseudo-covariance but different distributions."}
+
+![Equal observations at plus and minus 179 degrees have a mean direction of 180 degrees.](figures/circular-mean.svg){#fig-circular-mean fig-alt="Two nearly overlapping left-pointing unit vectors have a left-pointing vector mean although the arithmetic angle mean is zero."}
 
 ## When additive voltage noise becomes phase noise
 
@@ -171,3 +185,7 @@ quadrature noises of variances 0.0001 and 0.0004 V². Rotating signal phase by
 90° interchanges the parallel and perpendicular variances; the phase observable
 is unchanged, while its local predicted variance changes by a factor four. The next unit supplies observation weighting and spectra;
 physical noise-network construction and general matrix inference remain later work.
+
+The signal-frame construction in @fig-noise-phase identifies the perpendicular voltage that changes phase to first order. The exact curve bends away from that approximation as the noise becomes comparable to the signal; other parallel-noise slices can cross into a different quadrant.
+
+![Exact phase-error geometry and a fixed parallel-noise slice. The linear curve is a local approximation, not a fade model.](figures/noise-phase.svg){#fig-noise-phase fig-alt="Signal plus additive noise gives an atan2 phase; for zero parallel noise, arctangent approaches a finite angle while the linear prediction grows."}

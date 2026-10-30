@@ -20,6 +20,31 @@ PNGs. Author pixel inspection, fresh read-only reviewer raster inspection and
 fresh repository-only capture/inspection succeeded; results are recorded in the [retest record](../reviews/visual-inspection-retest.md).
 These capability tests do not accept existing illustrations or authorize remediation.
 
+## Batch-start obligation
+
+At the start of **every future authoring batch**, execute a new smoke capture and
+inspect its actual PNG before manuscript/figure development, even on a previously
+qualified computer. Record paths/versions, command, exit, image dimensions/hash
+and concrete visible content in the batch review record. Supply this batch's smoke
+PNG to its first fresh read-only technical/visual reviewer alongside actual figure
+and full-page/crop images. Prior successes remain historical evidence.
+
+Use the existing pipe backend and a fresh short output path. Where the ordinary
+sandbox denial is already established, use the documented scoped host invocation;
+do not repeat the original host investigation or weaken browser sandboxing.
+Diagnose changed dependencies/permissions precisely if capture fails and preserve
+the blocked visual gate. Do not infer success from metadata or source parsing.
+
+Develop, mathematically/graphically check, render, inspect and separately review
+indispensable figures alongside each bounded unit's physical argument. Freeze
+manuscript/model/code, requirements/source passages and PNGs; correct consequential
+findings in dependent material and obtain fresh targeted reassessment. Retain
+durable hashes and supplied images when temporary directories may disappear.
+[ADR-0007](../project/decisions/ADR-0007-provisional-html-visual-pedagogy-acceptance.md)
+records the completed HTML milestone's scoped owner acceptance and outstanding
+format/accessibility/reader-evidence limits. This adds a routine workflow obligation;
+it does not change the capture helper or require repeating its original qualification.
+
 ## Environment and smoke test
 
 Required: Linux, Python 3 with its standard library, installed Node.js (24.14.0
@@ -208,8 +233,9 @@ math/figure/caption; a fresh reviewer examining attached pixels; correction and
 reassessment where needed. AI findings never grant human Reviewed/Accepted status.
 Record failures and unverified aspects explicitly.
 
-After modifying this route, start a new Codex session at repository root, without
-this conversation, and ask only: “Use repository instructions to execute the
+After modifying the capture implementation or execution route (not merely updating
+acceptance records or batch guidance), start a new Codex session at repository root,
+without this conversation, and ask only: “Use repository instructions to execute the
 visual-inspection smoke test and inspect its actual image; report evidence and
 blockers. Do not author manuscript or figures.” Record whether it discovers this
 file through root AGENTS.md, executes the procedure, obtains and opens the image,

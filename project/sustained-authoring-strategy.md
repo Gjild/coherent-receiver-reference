@@ -1,4 +1,13 @@
-**Current authorization:** owner approved the next sequential bounded K05–K07
+**Current authorization (2026-10-30):** the owner provisionally accepted the
+Chapters 1–7/pilot HTML visual milestone under
+[ADR-0007](decisions/ADR-0007-provisional-html-visual-pedagogy-acceptance.md).
+K08–K10 are the next authorized autonomous development batch, sequentially bounded
+under the accepted architecture and full technical-and-visual procedure. This task
+ends with administrative closeout; their manuscript development has not started.
+[current-work.md](current-work.md) supplies the active boundary. Earlier task and
+permission statements below retain their historical scope.
+
+**Historical K05–K07 authorization:** owner approved the next sequential bounded K05–K07
 batch and its connected integration review, including safe reconciliation and local
 Git checkpoints. This supersedes earlier next-unit stopping instructions only for
 this batch. Chapter 6 owns K07; Chapter 7 owns K06. Stop after batch integration.
@@ -48,16 +57,20 @@ Installed and tested 2026-10-29: codex-cli 0.165.0; user model configuration is
 permissions. Prefer a fresh CLI context for enforced read-only shell review:
 
 ```sh
-codex -a never exec -C /home/anon/coherent-receiver-reference \
-  -m gpt-6.1-sol -c model_reasoning_effort='"high"' \
+codex exec --ephemeral --skip-git-repo-check -C "$REVIEW_PACKET" \
+  -m gpt-6.1-sol -c 'model_reasoning_effort="high"' \
   --sandbox read-only --json -
 ```
 
-Pass neutral review instructions through stdin and capture JSONL events outside
-tracked state. Do not fork the author history. Capture the returned thread ID;
-use `codex exec resume <ID>` for focused correction reassessment, explicitly
-retaining read-only/model/effort settings. Avoid `--last` with multiple sessions.
-No custom runner, agent platform or global config changes are required.
+Pass neutral review instructions through stdin; keep reviewer output outside the
+frozen inputs and retain relevant provenance in the unit review record. Do not
+fork or resume author history. Capture the returned thread ID. For correction
+reassessment use a fresh read-only context with newly frozen affected inputs,
+requirements and actual PNGs, retaining the requested model/effort. Keep prior
+findings and author dispositions separate from reviewer inputs. The current
+[inspection procedure](../docs/VISUAL-INSPECTION.md) supplies the packet-only
+invocation, including actual PNG attachments; set REVIEW_PACKET to the isolated
+frozen input directory, not the author repository. No custom runner, agent platform or global config change is required.
 
 This installation's runtime initialization failed inside the parent filesystem
 sandbox; approved execution outside that parent sandbox worked while the nested
@@ -69,6 +82,14 @@ expose runtime identifiers. Same-model review retains correlated failure risks.
 
 ## Repeatable process
 
+At the start of **every authoring batch**, execute a fresh environment smoke test
+using [the existing private-pipe route](../docs/VISUAL-INSPECTION.md), inspect its
+actual PNG and record paths/versions, command/exit, hashes and concrete observations.
+Do this before manuscript/figure development; include the current smoke image in
+the first separate-context technical/visual packet. A failed route preserves the
+visual gate and exact continuation boundary. Diagnose specific host differences;
+do not redesign the helper or repeat known failed invocations without new evidence.
+
 1. Select by prerequisite value, coherence-specific consequence, practical use,
    reusable results and review difficulty; record K/A home and reader outcome.
 2. Bound the engineering question, prerequisites, exclusions, supplied inputs,
@@ -76,16 +97,28 @@ expose runtime identifiers. Same-model review retains correlated failure risks.
 3. Examine consequential source passages and translate conventions; distinguish
    imported results, original derivations, assumptions and missing evidence.
 4. Develop observable, physical model, essential mathematics, interpretation and
-   decision; check signs, units, limits and implementation/procedure interfaces.
+   decision together with indispensable scientific diagrams and quantitative plots.
+   Specify purpose, assumptions, planes, normalization and error prevented; reuse
+   canonical figures where appropriate. Check signs, units, limits and interfaces.
 5. Compute only where a distinct formulation, convergence or stochastic/numerical
    result materially improves confidence. Reuse existing mechanisms.
 6. Write a continuous textbook argument with a worked decision, counterexample
    and changed-assumption assessment; essential explanation stays readable offline.
-7. Apply risk-proportionate critique. Human review is recorded only when provided;
-   repeated AI reasoning never becomes independent physical evidence.
-8. Correct findings, trace affected conclusions and repeat affected checks.
+7. Independently verify consequential calculations and graphical mappings through
+   distinct formulations, limits, asymmetric cases and coordinate/connectivity checks.
+   Render affected HTML; inspect actual assets and complete pages with readable crops,
+   equations, captions and alt text. Obtain fresh read-only separate-context AI technical
+   and visual review on frozen requirements, source passages, manuscript/model/code and
+   actual PNG attachments. Record image access and evidence limits; repeated AI reasoning
+   never becomes independent physical evidence. Human review is recorded only when provided.
+8. Correct consequential findings in dependent prose, calculations and figures;
+   repeat affected checks and pixel inspection, freeze corrected inputs and obtain
+   fresh targeted reassessment before advancing.
 9. Integrate canonical placement, local bridges, notation and surrounding prose;
-   render/check affected content and close with explicit unresolved claims.
+   create safe authorized local checkpoints and report the bounded outcome, actual
+   evidence, optional polish and unresolved claims. Close the batch with connected
+   technical/visual assessment. Checked provisional drafts remain distinct from
+   independently specialist-validated engineering knowledge.
 
 General results have one home. Do not migrate pilot derivations without updating
 its references and assessing changed acceptance scope. Local introductory

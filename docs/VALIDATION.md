@@ -1,3 +1,35 @@
+# HTML visual acceptance — administrative closeout, 2026-10-30
+
+The owner provisionally accepts the completed Chapters 1–7/pilot visual milestone
+for HTML-based analytical teaching and continued textbook development under
+[ADR-0007](../project/decisions/ADR-0007-provisional-html-visual-pedagogy-acceptance.md),
+identifying artifact/evidence revision `b6d7fe68c60edf35baf7c54518e2c07c7821df1f`.
+This records owner acceptance; it adds no human specialist approval or empirical
+validation. The [appended closeout](../reviews/visual-pedagogy-review.md#owner-acceptance-and-administrative-closeout-2026-10-30)
+keeps the decision distinct from earlier AI findings and author dispositions.
+
+Administrative repository, local-link/fragment, whitespace and SHA-256 preservation
+checks are recorded in [the closeout evidence](../reviews/visual-pedagogy-evidence/visual-acceptance-closeout-checks.json).
+All book manuscripts and 37 SVGs, generating/mathematical code and tests, accepted
+architecture/conventions, frozen evidence and prior decision bytes are preserved.
+This documentation-only closeout does not rerun the 57 selected tests, SVG
+regeneration, Quarto rendering, smoke capture or independent image/technical reviews;
+the successful earlier checks below retain their original execution provenance.
+The capture implementation/route is unchanged. Every future authoring batch must
+execute and inspect a fresh smoke PNG before manuscript/figure development.
+
+Nonblocking obligations remain: presentation/secondary-label/description polish,
+broader responsive and assistive-technology checks, PDF/offline math, actual reader
+evaluation, qualified specialist review, empirical hardware evidence and the full
+pytest suite when dependencies are available. Acceptance establishes none of those
+outcomes or final publication readiness. Existing scientific and local-convention
+boundaries remain in force. K08–K10 are the next authorized autonomous batch;
+no manuscript work on them begins in this closeout. Stop after its local checkpoint.
+
+Earlier records below retain their historical dates, pending decisions and checks.
+
+---
+
 # Visual-pedagogy milestone checks — 2026-10-30
 
 The [execution/final assessment](../reviews/visual-pedagogy-review.md) records

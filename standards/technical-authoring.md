@@ -58,3 +58,24 @@ Introduce and interpret each figure in the argument. Declare synthetic inputs,
 axes/units, normalizations, reference planes and failure regions; provide meaningful
 alt text and a caption that explains what the reader should learn. Preserve
 reproducible generating equations, parameters and editable assets. No figure quota.
+
+
+The owner requires this integrated workflow for continued authoring under
+[ADR-0007](../project/decisions/ADR-0007-provisional-html-visual-pedagogy-acceptance.md);
+this does not accept unrelated provisional standards or conventions. At every
+batch start, run the [environment smoke test](../docs/VISUAL-INSPECTION.md), view
+its actual PNG and record the result before manuscript/figure development.
+
+Develop indispensable scientific diagrams and quantitative plots in the same
+bounded unit as the engineering motivation, prerequisite bridge, rigorous
+physical/mathematical argument and consequential worked calculation. Check source
+models, signs, scaling, units, normalization, limits and physical applicability
+through distinct mathematical/numerical formulations; verify plotted coordinates
+and schematic connectivity against that model. Re-render only affected material
+after consequential changes, inspect actual asset and complete-page pixels at
+declared widths, and obtain fresh read-only technical/visual review on frozen
+inputs with PNG attachments. Correct dependent prose, calculations and figures;
+target reassessment to the affected conclusions and images before advancing.
+Preserve safe authorized local checkpoints and report evidence limits. These steps
+produce checked provisional drafts; specialist-validated engineering knowledge
+requires the separately recorded specialist evidence.

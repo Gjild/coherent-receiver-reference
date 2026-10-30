@@ -1,10 +1,13 @@
 # Visual-needs audit — existing manuscript, 2026-10-30
 
-**Current status (2026-10-30):** approved visual remediation is complete as checked
-provisional drafts. All V01–V28 and mandatory state amendments are delivered and
-separately reviewed. See [final dispositions](#final-execution-dispositions) and
-[execution/acceptance assessment](visual-pedagogy-review.md). Human acceptance
-remains pending; stop before K08–K10.
+**Current status (2026-10-30):** the owner provisionally accepts the completed
+Chapters 1–7/pilot remediation for HTML-based analytical teaching and continued
+textbook development under [ADR-0007](../project/decisions/ADR-0007-provisional-html-visual-pedagogy-acceptance.md).
+All V01–V28 and mandatory state amendments are delivered and separately AI reviewed.
+See [final dispositions](#final-execution-dispositions) and
+[execution/acceptance assessment](visual-pedagogy-review.md). Specialist approval
+and broader evidence remain pending. K08–K10 are the next authorized batch;
+this administrative closeout does not begin their manuscript development.
 
 The specifications and “missing/specified/pending” statements below preserve the
 original audit boundary, not current production status. Original baseline HEAD
@@ -446,5 +449,6 @@ finding remains. Optional log/tick/notation polish, narrow-view label enlargemen
 richer standalone descriptions and publishing reference-word cleanup are recorded
 in the execution record. PDF, offline math, full responsive/assistive-technology
 behavior, specialist/reader evidence and hardware validation remain separate
-limitations. The author recommends bounded HTML visual acceptance; the owner
-retains the decision. K08–K10 remain outside the completed milestone.
+limitations. The owner has granted provisional HTML visual acceptance under
+ADR-0007, without extending scientific acceptance or evidence claims. K08–K10
+remain outside this completed milestone and administrative closeout.

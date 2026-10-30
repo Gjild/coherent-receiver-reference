@@ -1,3 +1,60 @@
+# Current boundary — HTML visual milestone accepted; K08–K10 next (2026-10-30)
+
+The project owner provisionally accepts the completed Chapters 1–7 and
+relative-phase-stability pilot visual remediation for **HTML-based analytical
+teaching and continued textbook development** under
+[ADR-0007](decisions/ADR-0007-provisional-html-visual-pedagogy-acceptance.md).
+Accepted artifact/evidence revision: `b6d7fe68c60edf35baf7c54518e2c07c7821df1f`.
+All 37 SVGs, manuscripts and checked mathematical content are preserved. This
+records the owner's scoped decision; it is not independent human specialist review.
+[Audit dispositions](../reviews/visual-pedagogy-audit.md#final-execution-dispositions)
+and [review/evidence](../reviews/visual-pedagogy-review.md) retain their provenance.
+
+**This task stops after administrative closeout and its safe local checkpoint.**
+K08–K10 are the next authorized autonomous development batch; their manuscript
+work has not begun in this closeout. Develop one bounded unit at a time in the
+accepted canonical order, then assess the batch connections:
+
+| Unit / planned canonical home | Authorized subject and boundary |
+|---|---|
+| K08 / Chapter 8 | Propagation, geometry and physical transduction: minimum field-to-port/sensor bridges and conditions for scalar models. |
+| K09 / Chapter 9 | Physical disturbance generation and paths: delivered spectra/covariance, loaded/coupled networks, reciprocal mixing and waveform/clock timing errors. |
+| K10 / Chapter 10 | Detection, integration and signal-preserving rejection: bounded extraction/rejection, retained information and contaminated-reference/training limits. |
+
+Exact scope, dependencies and specialist boundaries remain in
+[technical coverage](technical-coverage.md), [architecture](architecture.md) and
+[book coverage](book-coverage.md); this table neither expands nor completes them.
+Preserve canonical homes, unresolved conventions and prior acceptance boundaries.
+Do not start other canonical units or a hardware/publication campaign automatically.
+
+Each future batch starts with a newly executed and actually inspected environment
+smoke test. Follow the [authoring method](sustained-authoring-strategy.md),
+[technical authoring](../standards/technical-authoring.md),
+[verification/review gate](../standards/verification-and-acceptance.md) and
+[private-pipe image procedure](../docs/VISUAL-INSPECTION.md): engineering motivation
+and foundational bridges; rigorous physical/mathematical derivations; consequential
+worked calculations; indispensable diagrams/plots; independent numerical/graphical
+checks; actual asset and complete rendered-page pixels; frozen fresh read-only
+separate-context AI technical/visual review; consequential corrections and targeted
+reassessment; safe local checkpoints and bounded evidence reporting. A failed
+review/capture remains incomplete and blocks dependent progression.
+
+Nonblocking obligations: narrow-layout/label/tick/reference-word polish, richer
+standalone descriptions, broader responsive and assistive-technology assessment,
+PDF/offline math, actual RF-engineer reader evaluation, qualified specialist review
+and empirical evidence for hardware claims. Full pytest remains unperformed in the
+recorded environment. No publication readiness, specialist approval, physical
+validation, educational effectiveness, PDF/offline compatibility or accessibility
+compliance follows from this acceptance. Checked provisional drafts remain distinct
+from specialist-validated engineering knowledge. Existing local conventions remain local.
+
+Administrative checks and preservation evidence are recorded in
+[validation](../docs/VALIDATION.md) and the appended visual review closeout.
+Safe isolated local Git checkpoints are authorized; preserve unrelated changes.
+No push/rebase/reset/amend. Earlier entries below preserve historical boundaries.
+
+---
+
 # Current boundary — visual-pedagogy milestone complete (2026-10-30)
 
 The approved existing-manuscript remediation is complete as checked provisional

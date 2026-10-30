@@ -23,10 +23,19 @@
 - Unperformed checks and missing evidence:
 - Completion classification: checked provisional draft / incomplete; human review pending.
 
-## Visual review, where applicable
+## Integrated visual review
 
+- Batch-start smoke executed and actual PNG inspected: paths/versions, command/exit,
+  hash, visible content, reviewer access and any blocking continuation boundary:
 - Scientific correctness and pedagogical contribution assessed separately:
 - Frozen figure/model, actual raster attachments and page/crop hashes:
 - Images actually inspected, viewport/dimensions, coverage and readability limits:
-- Independent curve/geometry checks, consequential findings and reassessment:
+- Independent model/curve/geometry/connectivity checks: signs, scaling, units,
+  normalization, limits, physical interpretation and applicability:
+- Labels, captions, alt text/accessibility, readable page widths and integration
+  with surrounding derivations and learning progression:
+- Consequential findings, dependent corrections, newly frozen inputs/PNGs and
+  fresh read-only targeted reassessment; failed invocations kept incomplete:
 - Remaining indispensable gaps versus optional improvements; human decision pending:
+- Durable supplied-image/input evidence, safe authorized checkpoint and bounded
+  completion report; owner acceptance distinguished from specialist validation:

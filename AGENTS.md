@@ -34,7 +34,16 @@ Read the files relevant to the task; do not assume that draft specifications are
 - Report files changed, checks actually run, limitations, unresolved issues and review decisions still needed.
 
 ## Mandatory visual inspection
-For all manuscript and figure work, follow [docs/VISUAL-INSPECTION.md](docs/VISUAL-INSPECTION.md). Run its environment smoke test and inspect actual figure and complete rendered-page pixels, including separate-context image review. Capture/source parsing alone never clears the visual gate; preserve blocking status when this route fails.
+At the start of every authoring batch, run a fresh environment smoke test from
+[docs/VISUAL-INSPECTION.md](docs/VISUAL-INSPECTION.md) and inspect its actual PNG
+before manuscript/figure development. Prior batch success does not waive this test.
+Develop indispensable visual explanations alongside the physical/mathematical
+argument; independently check quantitative curves and schematic signs/paths.
+Inspect actual asset and complete rendered-page pixels, including separate-context
+technical and visual image review. Correct consequential findings and reassess
+affected conclusions/images. Capture/source parsing alone never clears the visual
+gate; preserve blocking status when this route fails. Use the existing private-pipe
+route; diagnose concrete host differences without speculative redesign.
 
 ## Quick commands
 - `python3 -m pytest`

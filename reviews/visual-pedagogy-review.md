@@ -1,9 +1,12 @@
 # Visual-pedagogy execution record — 2026-10-30
 
-**Current outcome:** all four approved visual groups are checked provisional
-drafts. Final assessment and acceptance limits are at the end of this record.
-Earlier boundary statements below describe their dated execution stages.
-Human visual-quality acceptance remains pending; stop before K08–K10.
+**Current outcome:** the owner provisionally accepts all four completed visual
+groups for HTML-based analytical teaching and continued textbook development under
+[ADR-0007](../project/decisions/ADR-0007-provisional-html-visual-pedagogy-acceptance.md).
+Final assessment and administrative closeout are at the end of this record.
+Earlier pending-acceptance/stopping statements describe their execution stages.
+K08–K10 are the next authorized batch; this administrative task does not start them.
+No independent human specialist approval is asserted.
 
 ## Boundary and baseline
 
@@ -607,3 +610,44 @@ recommendation only. Human specialist acceptance, reader trials, physical/system
 validation, PDF/offline MathJax and publication readiness remain unestablished.
 Optional improvements and the unavailable full pytest run remain disclosed.
 Stop at this visual-pedagogy milestone; K08–K10 do not begin automatically.
+
+
+## Owner acceptance and administrative closeout (2026-10-30)
+
+The owner's explicit instruction provisionally accepts the completed Chapters 1–7
+and relative-phase-stability pilot HTML visual milestone at revision
+`b6d7fe68c60edf35baf7c54518e2c07c7821df1f` for HTML-based analytical teaching and
+continued textbook development. [ADR-0007](../project/decisions/ADR-0007-provisional-html-visual-pedagogy-acceptance.md)
+records the exact scope and nonblocking obligations. This owner decision is separate
+from the AI findings and author recommendations above. Earlier pending-acceptance
+statements are historical; prior scientific acceptance and convention limits remain.
+
+Preserve all 37 completed SVGs, manuscripts, generator/models, tests, frozen packets
+and earlier findings/correction evidence. No visual audit, figure generation,
+mathematical derivation, new manuscript, source examination, technical AI review or
+actual-image review is repeated in this administrative closeout. The earlier 57
+selected tests, successful HTML rendering and pixel evidence retain their original
+execution provenance. New administrative checks address repository consistency
+and preservation; they do not extend scientific evidence.
+
+Existing AGENTS, authoring/verification standards, sustained strategy, image guide
+and unit/review templates now require a fresh executed and actually inspected smoke
+PNG at every future batch start, integrated visual reasoning, independent numerical
+and graphical checks, actual asset/complete-page pixels, frozen fresh read-only AI
+technical/visual review and consequential correction/targeted reassessment. The
+capture helper and execution route are unchanged; no speculative redesign or new
+host investigation is performed. Reviewer input excludes author conclusions/status;
+findings and author dispositions stay separate. Safe authorized checkpoints and
+bounded evidence reports remain part of closeout.
+
+K08–K10 are named as the next authorized autonomous batch in current-work, with
+accepted canonical scopes retained. No manuscript development for them begins here.
+Minor presentation/accessibility polish, broader responsive and assistive-technology
+checks, PDF/offline compatibility, actual reader trials, specialist review and
+hardware applicability evidence remain outstanding. No publication readiness or
+specialist-validated engineering knowledge is inferred from owner visual acceptance.
+
+Administrative check results are recorded in
+[the closeout evidence](visual-pedagogy-evidence/visual-acceptance-closeout-checks.json)
+and [validation status](../docs/VALIDATION.md). This closeout ends with an isolated
+local checkpoint; no push, publication, history rewrite or next-unit work.

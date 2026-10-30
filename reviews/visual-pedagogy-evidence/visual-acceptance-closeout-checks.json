@@ -1,0 +1,49 @@
+{
+  "scope": "Administrative acceptance/guidance closeout only; no manuscript development or new scientific review.",
+  "accepted_artifact_revision": "b6d7fe68c60edf35baf7c54518e2c07c7821df1f",
+  "initial_git_status": "clean",
+  "checks": {
+    "repository_scaffold": {
+      "command": "python3 scripts/check_repo.py",
+      "exit_code": 0,
+      "required_paths_present": 13
+    },
+    "whitespace": {
+      "command": "git diff --check",
+      "exit_code": 0
+    },
+    "local_markdown_paths_and_fragments_checked": 57,
+    "markdown_table_rows_checked": 44,
+    "link_table_errors": [],
+    "baseline_tracked_files_hashed": 410,
+    "unchanged_baseline_files": 398,
+    "unchanged_book_files": 49,
+    "unchanged_svg_files": 37,
+    "unchanged_prior_decisions": 6,
+    "changed_existing_files": [
+      "AGENTS.md",
+      "README.md",
+      "docs/VALIDATION.md",
+      "docs/VISUAL-INSPECTION.md",
+      "project/current-work.md",
+      "project/sustained-authoring-strategy.md",
+      "reviews/visual-pedagogy-audit.md",
+      "reviews/visual-pedagogy-review.md",
+      "standards/technical-authoring.md",
+      "standards/verification-and-acceptance.md",
+      "templates/technical-review.md",
+      "templates/technical-unit.md"
+    ],
+    "unexpected_changed_files": []
+  },
+  "preservation": "All book/ manuscripts and 37 SVGs, engineering code, tests, capture helpers, accepted architecture, conventions, prior decisions, source records and frozen review/image evidence retain baseline SHA-256 values.",
+  "not_reexecuted": [
+    "mathematical/software regression suites",
+    "SVG regeneration",
+    "Quarto rendering",
+    "environment smoke capture",
+    "actual-image/AI technical or visual review"
+  ],
+  "reason_not_reexecuted": "Only administrative Markdown/guidance and this check record changed; prior technical executions retain their original provenance. Each future authoring batch must execute and inspect a fresh smoke test.",
+  "boundary": "K08\u2013K10 are the next authorized autonomous batch; no manuscript development during this closeout. Stop after local checkpoint."
+}

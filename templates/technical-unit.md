@@ -25,6 +25,16 @@ Adapt the structure to the subject; do not use this as a rigid chapter template.
 - Integration: canonical home, local bridge and surrounding reading continuity:
 - Correction propagation and checks repeated:
 
-- Visual needs and justified omissions; teaching purpose and error prevented:
-- Figure model/parameters, units/planes, assumptions, independent numerical checks:
+- Batch-start environment smoke: current executable paths/versions, command/exit,
+  PNG/hash, actual visible content and blocker/continuation boundary if unavailable:
+- Visual needs developed alongside motivation, foundational bridge, derivation and
+  consequential worked calculation; justified omissions and error prevented:
+- Figure model/parameters, units/planes, normalization, assumptions/failure regions;
+  independent numerical/mathematical alternatives and curve/connectivity checks:
 - Standalone and complete-page pixel inspection, alt text, caption and interpretation:
+- Fresh read-only technical/visual review: frozen requirements/sources/model/code,
+  actual smoke/figure/page PNGs, hashes and image coverage:
+- Consequential corrections to dependent prose/calculations/figures; targeted
+  independent reassessment and safe authorized Git checkpoint:
+- Bounded outcome: checked provisional draft versus actual specialist validation;
+  remaining presentation/accessibility, offline/PDF and reader-evaluation obligations:

@@ -88,3 +88,28 @@ figure, failed image inspection or unresolved consequential review finding block
 a positive visual-adequacy recommendation. Optional polish can remain documented.
 AI visual review does not grant human acceptance, reader-trial evidence or physical
 validation, and does not authorize subsequent canonical authoring.
+
+
+At the start of **every authoring batch**, a newly executed environment smoke
+test and actual author inspection of its PNG are required before manuscript/figure
+development. Record executable versions, command/exit, hashes and visible content;
+include the current smoke PNG in the first separate-context technical/visual
+review packet. A prior successful batch is not a smoke-test waiver. If the route
+is unavailable, preserve the visual gate and exact continuation boundary; diagnose
+the missing dependency/permission specifically. Do not repeatedly invoke a reviewer
+against a known usage limit or count failed invocations as completed review.
+
+Review physical interpretation and model applicability as well as signs, scaling,
+units, normalization, limiting cases, plotted geometry and schematic paths.
+Review figure readability, captions, alt text and contribution to the surrounding
+derivation/learning progression. Independent graphical verification must test the
+model-to-figure mapping, not just rerun the same generator. Freeze corrected input
+bytes and actual PNGs for fresh read-only targeted reassessment of consequential
+changes. Retain original findings and author dispositions separately and archive
+enough supplied inputs/images to reproduce the review after temporary files expire.
+
+[ADR-0007](../project/decisions/ADR-0007-provisional-html-visual-pedagogy-acceptance.md)
+is the owner's scoped visual acceptance for HTML analytical teaching/development.
+It does not confer the human specialist **Reviewed** state, empirical validation,
+educational effectiveness, PDF/offline compatibility, assistive-technology compliance
+or publication readiness. Later owner decisions must state their own use and evidence.

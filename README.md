@@ -1,11 +1,11 @@
 # Coherent Receiver Theory and Design
 
-**Status: the corrected first technical pilot is provisionally accepted by the
-project owner for analytical teaching and technical-authoring workflow development
-under [ADR-0005](project/decisions/ADR-0005-provisional-relative-phase-pilot-acceptance.md).
-The pilot development stage is closed. Physical/hardware validation, experimental
-confirmation, educational effectiveness, general design applicability and product
-compliance are not established.**
+**Status: the owner provisionally accepts the Chapters 1–7 and relative-phase
+pilot visual-pedagogy milestone for HTML-based analytical teaching and continued
+textbook development under [ADR-0007](project/decisions/ADR-0007-provisional-html-visual-pedagogy-acceptance.md).
+This does not establish publication readiness, human specialist approval, hardware
+validation, educational effectiveness, PDF/offline compatibility or
+assistive-technology compliance.**
 
 This repository develops a mathematically rigorous, physically defensible and practically useful advanced textbook/reference for experienced RF engineers learning coherent receiver engineering. The book, not an autonomous design agent, is the primary deliverable.
 
@@ -24,7 +24,8 @@ This repository develops a mathematically rigorous, physically defensible and pr
    validation, reader effectiveness, physical performance and publication readiness
    remain unestablished. K02–K04 are checked provisional teaching drafts; the
    K05–K07 batch and completed visual-pedagogy milestone are tracked in
-   current-work.md. Visual acceptance remains an owner decision; K08–K10 are suspended.
+   current-work.md. The owner has provisionally accepted the HTML visual milestone;
+   K08–K10 are the next authorized autonomous batch, not started in this closeout.
 4. Read [`docs/SETUP.md`](docs/SETUP.md) for installation and local checks.
 5. Read [`docs/REPOSITORY-MAP.md`](docs/REPOSITORY-MAP.md) before adding files.
 
@@ -50,7 +51,9 @@ passes under the recorded environment. The approved visual-pedagogy milestone
 has completed actual browser math/layout inspection and separate-context review
 for Chapters 1–7 and the pilot, within the declared models and inspected widths.
 See the [visual review and acceptance limits](reviews/visual-pedagogy-review.md);
-human visual acceptance remains pending.
+the owner has provisionally accepted this HTML milestone under ADR-0007's limits.
+Every future authoring batch starts with a fresh executed and actually inspected
+[visual environment smoke test](docs/VISUAL-INSPECTION.md).
 With Quarto available, render from the repository root:
 
 ```bash

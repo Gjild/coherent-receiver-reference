@@ -16,7 +16,10 @@ unit/explicitcubic expansion/observable/caption pixels inspected. Sources and
 limits are in reviews/k14-k16-development.md; no consequential open K14finding.
 K15a/b closes after fresh technical/visual review and targeted reassessment;
 4figures,84stdlib+19pilot checks and66reproducedSVGs are recorded.
-Next active unit is K16, canonical Chapter16. Stop after K16/integration.
+K16 closes after fresh read-only scientific/visual scrutiny:4figures,
+90stdlib+19previouspilot checks and70reproducedSVGs. No consequential open finding.
+Active work is connected K14–K16 integration assessment and closeout only.
+Stop before K17.
 
 ---
 

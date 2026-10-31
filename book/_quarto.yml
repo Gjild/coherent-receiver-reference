@@ -22,6 +22,7 @@ book:
     - calibration-observability-metrology.qmd
     - analog-information-preservation.qmd
     - synthesis-endpoint-references.qmd
+    - distributed-reference-inference.qmd
     - part: "Development supplements"
       chapters:
         - publishing-pilot.qmd

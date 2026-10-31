@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1030" role="img" aria-labelledby="title desc"><title id="title">Timestamp events, delivery age and carrier state are separate</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Timestamp events, delivery age and carrier state are separate</text>
+<text x="235" y="90" font-family="sans-serif" font-size="21" fill="#182f3e" text-anchor="middle">Station A: C_A(t) = t</text>
+<text x="720" y="90" font-family="sans-serif" font-size="21" fill="#182f3e" text-anchor="middle">Station B: C_B(t) = αt + β</text>
+<path d="M235.000,120.000 L235.000,590.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M720.000,120.000 L720.000,590.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<circle cx="235" cy="170" r="5" fill="#125b86"/>
+<text x="215" y="158" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="end">T₁: A transmit</text>
+<circle cx="720" cy="270" r="5" fill="#125b86"/>
+<text x="740" y="258" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">T₂: B receive</text>
+<circle cx="720" cy="410" r="5" fill="#125b86"/>
+<text x="740" y="398" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">T₃: B transmit</text>
+<circle cx="235" cy="510" r="5" fill="#125b86"/>
+<text x="215" y="498" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="end">T₄: A receive</text>
+<path d="M235.000,170.000 L720.000,270.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="405" y="192" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">d_f = propagation + equipment</text>
+<path d="M720.000,410.000 L235.000,510.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="355" y="445" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">d_r: reverse path</text>
+<text x="420" y="330" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">B residence: (T₃ − T₂) / α</text>
+<text x="420" y="365" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">actual transmit event is timestamped</text>
+<path d="M235.000,510.000 L375.000,610.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="7 4" marker-end="url(#arrow)"/>
+<rect x="380" y="585" width="410" height="70" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="585.0" y="610" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Later processor delivery / actuation</text>
+<text x="585.0" y="635" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">age is not an extra sample-epoch shift</text>
+<text x="45" y="695" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Schematic event order only; distances do not represent delay magnitudes.</text>
+<rect x="40" y="750" width="260" height="80" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="170.0" y="775" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Wrapped carrier ψ_f</text>
+<text x="170.0" y="800" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">−2πfc(x + p) + state</text>
+<rect x="355" y="750" width="245" height="80" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="477.5" y="775" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">External information</text>
+<text x="477.5" y="800" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">path / state / coarse epoch</text>
+<rect x="655" y="750" width="260" height="80" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="785.0" y="775" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Integer branch + residual</text>
+<text x="785.0" y="800" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">each needs its own bound</text>
+<path d="M300.000,790.000 L355.000,790.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M600.000,790.000 L655.000,790.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="45" y="885" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Physical RF delay p need not equal the timestamp path d_f.</text>
+<text x="45" y="940" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">A frequency word or an arriving packet does not identify a new LO phase state.</text>
+<text x="45" y="990" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Clock origin/rate are relative to A; no absolute UTC accuracy is established.</text>
+<text x="32" y="1016" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

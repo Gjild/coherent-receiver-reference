@@ -1,0 +1,22 @@
+test_49db_curve_geometry_by_power_ratios (test_subsystem_models_stdlib.AnalogModels.test_49db_curve_geometry_by_power_ratios) ... ok
+test_complete_real_waveform_peak_and_thresholds (test_subsystem_models_stdlib.AnalogModels.test_complete_real_waveform_peak_and_thresholds) ... ok
+test_noise_by_output_referred_source_sum (test_subsystem_models_stdlib.AnalogModels.test_noise_by_output_referred_source_sum) ... ok
+test_policy_visibility_history_and_fault_gates (test_subsystem_models_stdlib.AnalogModels.test_policy_visibility_history_and_fault_gates) ... ok
+test_real_cubic_and_complex_cascade (test_subsystem_models_stdlib.AnalogModels.test_real_cubic_and_complex_cascade) ... ok
+test_recovery_from_time_integration (test_subsystem_models_stdlib.AnalogModels.test_recovery_from_time_integration) ... ok
+test_clock_event_readings_alignment_and_unidentifiability (test_subsystem_models_stdlib.DistributedModels.test_clock_event_readings_alignment_and_unidentifiability) ... ok
+test_current_rate_from_two_physical_clock_readings (test_subsystem_models_stdlib.DistributedModels.test_current_rate_from_two_physical_clock_readings) ... ok
+test_delayed_feedback_characteristic_crossing (test_subsystem_models_stdlib.DistributedModels.test_delayed_feedback_characteristic_crossing) ... ok
+test_holdover_by_integrating_frequency_and_evidence_gate (test_subsystem_models_stdlib.DistributedModels.test_holdover_by_integrating_frequency_and_evidence_gate) ... ok
+test_real_carrier_comparison_sign_cycle_and_path_limit (test_subsystem_models_stdlib.DistributedModels.test_real_carrier_comparison_sign_cycle_and_path_limit) ... ok
+test_timestamp_precision_and_worst_quantization_combination (test_subsystem_models_stdlib.DistributedModels.test_timestamp_precision_and_worst_quantization_combination) ... ok
+test_loading_thermal_and_power_interfaces (test_subsystem_models_stdlib.SynthesisModels.test_loading_thermal_and_power_interfaces) ... ok
+test_noise_integral_by_rational_spectrum (test_subsystem_models_stdlib.SynthesisModels.test_noise_integral_by_rational_spectrum) ... ok
+test_pi_loop_by_differential_equation (test_subsystem_models_stdlib.SynthesisModels.test_pi_loop_by_differential_equation) ... ok
+test_real_mixer_spur_and_witness_blindness (test_subsystem_models_stdlib.SynthesisModels.test_real_mixer_spur_and_witness_blindness) ... ok
+test_window_difference_source_energy (test_subsystem_models_stdlib.SynthesisModels.test_window_difference_source_energy) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.228s
+
+OK

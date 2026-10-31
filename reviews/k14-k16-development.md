@@ -199,3 +199,73 @@ by reviewer. Raw findings/command/exit/events and corrected frozen inputs archiv
 K15 closes as checked provisional bounded Chapter15 with4figures. Hardware,
 independent specialist, actual reader and publication evidence remain absent.
 Target reviewer thread: 01a19215-2349-7ab0-bce9-e273a85c7d87.
+
+
+## K16 scope and development — canonical Chapter16
+
+K15 checkpointadfe742 precedes K16 authoring. Exact K16 specification,
+prerequisites/CAP045 and Chapter16card reread; bounded purpose is to establish
+which remote epoch/rate/carrier relationship has evidence, its unresolved path/
+state freedoms and valid outage. Outcomes include affine/two-way reconstruction,
+asymmetry/cycle ambiguity, current-rate baseline decision, executed alignment/
+validity gate, separate outage and delayed-control constraints. P-INT/bistatic
+D-RAD contrast; no protocol, timestamp hardware, oscillator or digital resampler
+selected. Chapters1/3/5/7 supply definitions, inference and tracking; K17/19/23 and
+complete Chapter13metrology remain explicit external realization/procedure inputs.
+
+Original RFC5905 §6/8, NIST one-way opening/error discussion and TWSTFT equipment/
+propagation equations were examined through original HTML. Notes record exact
+passages/conventions and exclusions. No external performance values imported.
+All parameter/qualification bounds are synthetic, especially separate0.01degree
+path/state phase anchor; 100ps path uncertainty does not supply it.
+
+Exact affine equations retain B-rate during2ms residence. Symmetry estimate
+90.0000002ns vsorigin80ns; raw unity-rate90.0201002ns. Two indistinguishable
+80ns/asymmetric and90ns/symmetric cases expose structural freedom.0.36ns
+asymmetry uncertainty plus20ps complete observation bound gives200psmappedepoch.
+Current-rate bound0.0408/B+0.0005BHz includes endpoint-vs-mean drift:8s gives
+0.0091Hz,2s and20s fail0.01Hz. Finecyclebound300.081699ps<490.196078ps; replacing
+fineobservation with32fractionalbits gives512.912343ps and cannotguaranteecycle.
+0.05degreeabsolutephase needs0.136166ps,not100ps. Binary64 absolute-time spacing
+238ns shows interfaceprecision loss. Real carrier projection verifies negative
+path/clockadvance and opposite localLO versusreceived-data correction signs.
+
+Supplied shared-rate relationship F0.01Hz,D0.001Hz/s yields phaseoutage11.104945ms
+and epochoutage31.617304s with distinct qualified intercepts. At20ms phasebound
+0.082072degreewhileepoch200.196275ps. Gate rejects unqualifiedpacket, restoresonly
+suppliedcompletequalification24ms, invalidatesonreset27ms; doesnotclaim4msrate
+reacquisition. Initialrateceilinghasno positiveoutage atsameceiling; publishF+Da.
+Remote10msdelaylimits45degreemarginbandwidth12.5Hz;10Hz54degree,20Hz18degree,
+50Hzunstableinideal scalarDDE. Directcomplexroots verifycrossing.
+
+Seventeen subsystem tests pass including6new physicalevent/invariance/affine
+residual, worstsecantdrift, realcarrier/projection/correction, exactrational
+quantization, directfrequencyintegration/gate and complexDDEroot checks.
+90stdlibregressions pass;19unchangedpilot tests previouslypassed,109selectedtotal.
+Firstfiguregeneration stoppedonlocal logspaceimport; fixedthatimport,regenerated.
+Independent mapping verifies2908vertices≤0.000501px; all70SVGs regenerateexactly
+and91protected baselineentries match, including58oldfigures and2untrackedfiles.
+Author opens4actual1200px assets, complete1425×11358HTML andall9overlappingcrops:
+no clippedmath/paths/captions/ending; sourceplanes/arrowscorrectandreadable.
+20pages/733local links/71imageuses pass. Before freezing, clarified physical
+clock-carrierratelinkage, exactaffinemappingresidual, LOsubtract/dataadd sign and
+unqualified20mspacket. Fresh199file/15PNGread-only technical/visual review pending.
+K15's prior optionaluncorrelatedsourceandSDupper-bound labels clarified and its
+actual Chapter16link integrated; these are reservedfor finalconnection review.
+
+
+K16 fresh read-only Sol/high review exits0 with no demonstrated consequential
+bounded-model, engineering or visual defect. All15actualPNGs inspected;9crops
+match everyfullpagerow. Sixdistributedtests and additional invariance/varyingdrift/
+asynchronousanchor/rootchecks pass. Independent engineeringnumbers agree.
+Reviewer verified197of199manifestentries, deliberately leavingtwoindexfiles
+unopened/unhashed; hashverification is partial, not claimedcomplete. Final
+integration packet will include/hash/read the relevant actualpreface. Original
+RFC/NISTpagesnotreexamined, sourceaccessnotes/anchorsonly. Broadfilename/standards/
+bibliographyreads exposedprovisionalworkflow/dates; excludedfromscientificjudgment.
+Noindexcontents, authorconversation/priorreview/dispositions/currentwork/external
+source/edit/delegation/connectors. Optionallogticks/0–1ticks/annotations deferred;
+actualfigureslegibleatdeclaredinspectionwidths. Rawoutputs remain distinct.
+K16 closesascheckedprovisionalboundedChapter16,4figures; no physical/human/reader
+validation. Connectedbatchassessment/review andcloseoutremain; stopbeforeK17.
+K16 reviewer thread: 01a19222-60ec-7df1-8bd2-f4a75e68928d.

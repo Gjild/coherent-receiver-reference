@@ -262,5 +262,142 @@ def unit15():
     s.text(45,1055,'All excursions / source spectra / coupling coefficients here are synthetic.',18);s.save()
 
 
+def remote_exchange(t1=0.,alpha=1+2e-8,beta=80e-9,forward=5.01e-6,
+                    reverse=4.99e-6,reply=.002):
+    """Generate actual event coordinates, then read each station's clock."""
+    t2=t1+forward;t3=t2+reply/alpha;t4=t3+reverse
+    return (t1,alpha*t2+beta,alpha*t3+beta,t4)
+
+
+def remote_alignment(stamps,alpha,asymmetry=0.):
+    t1,t2,t3,t4=stamps
+    rf=t2-alpha*t1;rr=t3-alpha*t4
+    return dict(beta=(rf+rr-alpha*asymmetry)/2,mean_delay=(rf-rr)/(2*alpha))
+
+
+def remote_bounds(age,epoch0=200e-12,phase0=.01,frequency=.01,drift=.001,carrier=1.02e9):
+    if age<0:raise ValueError('age must be nonnegative')
+    cycles=frequency*age+drift*age*age/2
+    return dict(epoch=epoch0+cycles/carrier,phase=phase0+360*cycles,
+                frequency=frequency+drift*age)
+
+
+def remote_case():
+    # Stable quadratic root avoids cancellation at small outage phase.
+    root=lambda a,b,c:2*c/(b+sqrt(b*b+4*a*c))
+    return dict(phase_outage=root(.18,3.6,.04),
+                epoch_outage=root(.001/(2*1.02e9),.01/1.02e9,.8e-9),
+                period=1/1.02e9,coarse_cycle_bound=300e-12+.03/(360*1.02e9),
+                quant_cycle_bound=180e-12+2**-32+100e-12+.03/(360*1.02e9),
+                best_baseline=sqrt(.0408/.0005))
+
+
+@dataclass
+class RemoteValidity:
+    """Evidence-age gate only. Qualified updates supply fresh complete envelopes.
+
+    This does not synthesize qualification from packet arrival or promise fast
+    reacquisition. The frequency bound must be supplied for every fresh anchor.
+    """
+    epoch_anchor: float=0.
+    phase_anchor: float=0.
+    state_known: bool=True
+    previous_t: float=float('-inf')
+
+    def step(self,t,qualified_clock=False,qualified_phase=False,reset=False):
+        if not isfinite(t) or t<self.previous_t:raise ValueError('finite ordered time required')
+        if reset:self.state_known=False
+        if qualified_clock:self.epoch_anchor=t
+        if qualified_phase and not reset:
+            self.phase_anchor=t;self.state_known=True
+        epoch=remote_bounds(t-self.epoch_anchor)['epoch']
+        phase=remote_bounds(t-self.phase_anchor)['phase']
+        self.previous_t=t
+        return dict(epoch=epoch,phase=phase,epoch_valid=epoch<=1e-9,
+                    carrier_valid=self.state_known and phase<=.05,state_known=self.state_known)
+
+
+def remote_trace():
+    gate=RemoteValidity()
+    # Unqualified packet at 20 ms deliberately changes no evidence anchor.
+    return [(i,gate.step(i/1000,qualified_clock=i==24,
+                         qualified_phase=i==24,reset=i==27)) for i in range(41)]
+
+
+def unit16():
+    from visual_foundations import log as logspace
+    s=SVG('remote-event-planes','Timestamp events, delivery age and carrier state are separate',1030)
+    s.text(235,90,'Station A: C_A(t) = t',21,anchor='middle')
+    s.text(720,90,'Station B: C_B(t) = αt + β',21,anchor='middle')
+    s.path([(235,120),(235,590)],arrow=True);s.path([(720,120),(720,590)],arrow=True)
+    for x,y,label,dx in [(235,170,'T₁: A transmit',-20),(720,270,'T₂: B receive',20),
+                          (720,410,'T₃: B transmit',20),(235,510,'T₄: A receive',-20)]:
+        s.dot(x,y,5);s.text(x+dx,y-12,label,18,anchor='end' if dx<0 else 'start')
+    s.path([(235,170),(720,270)],arrow=True);s.text(405,192,'d_f = propagation + equipment',18)
+    s.path([(720,410),(235,510)],arrow=True);s.text(355,445,'d_r: reverse path',18)
+    s.text(420,330,'B residence: (T₃ − T₂) / α',19)
+    s.text(420,365,'actual transmit event is timestamped',17)
+    s.path([(235,510),(375,610)],COLORS[1],dash='7 4',arrow=True)
+    s.box(380,585,410,70,['Later processor delivery / actuation','age is not an extra sample-epoch shift'])
+    s.text(45,695,'Schematic event order only; distances do not represent delay magnitudes.',18)
+    s.box(40,750,260,80,['Wrapped carrier ψ_f','−2πfc(x + p) + state'])
+    s.box(355,750,245,80,['External information','path / state / coarse epoch'])
+    s.box(655,750,260,80,['Integer branch + residual','each needs its own bound'])
+    s.path([(300,790),(355,790)],arrow=True);s.path([(600,790),(655,790)],arrow=True)
+    s.text(45,885,'Physical RF delay p need not equal the timestamp path d_f.',19)
+    s.text(45,940,'A frequency word or an arriving packet does not identify a new LO phase state.',18)
+    s.text(45,990,'Clock origin/rate are relative to A; no absolute UTC accuracy is established.',18);s.save()
+    s=SVG('remote-asymmetry-rate','Two different link limitations survive precise timestamps',1120)
+    aa=lin(-40,40)
+    s.plot(70,'Unity-rate offset estimate: unknown forward-minus-reverse delay',(-40,40),(-20,20),
+           'Directional delay asymmetry a_d (ns)','Epoch estimate bias (ns)',
+           [('bias = a_d / 2',aa,[a/2 for a in aa])])
+    bb=lin(1,24)
+    s.plot(510,'Current frequency bound from two corrected observations: stable path required',
+           (1,24),(0,.045),'Observation baseline B (s)','RF-equivalent frequency bound (Hz)',
+           [('total reading + rate aging',bb,[.0408/b+.0005*b for b in bb]),
+            ('0.01 Hz initial contract',bb,[.01]*len(bb)),
+            ('reading error only',bb,[.0408/b for b in bb]),
+            ('mean-to-current rate aging',bb,[.0005*b for b in bb])])
+    s.text(45,930,'At 8 s: 0.0051 Hz reading + 0.0040 Hz aging = 0.0091 Hz; use 0.01 Hz envelope.',18)
+    s.text(45,985,'20 ns asymmetry creates 10 ns bias; more packets cannot identify that bias.',18)
+    s.text(45,1040,'At 1.020 GHz: half cycle = 490.196 ps; fine / coarse-format bounds = 300.082 / 512.912 ps.',17)
+    s.text(45,1080,'Resolving a cycle is not proof of accurate absolute carrier phase.',18);s.save()
+    s=SVG('remote-holdover-bounds','Epoch and carrier phase have different evidence intercepts and outages',1100)
+    tt=logspace(.0001,100)
+    s.plot(70,'Unwrapped phase: separately qualified initial 0.01° state/path residual',
+           (.0001,100),(.005,10000),'Age since carrier qualification (s)',
+           'Conservative phase bound (degrees)',
+           [('0.01° + 3.6 a + 0.18 a²',tt,[remote_bounds(a)['phase'] for a in tt]),
+            ('0.05° criterion',tt,[.05]*len(tt))],True,True)
+    s.plot(520,'Epoch: initial 200 ps from calibrated asymmetry and timestamp bound',
+           (.0001,100),(.1,10),'Age since epoch/rate qualification (s)',
+           'Conservative epoch bound (ns)',
+           [('200 ps + integrated rate / fc',tt,[1e9*remote_bounds(a)['epoch'] for a in tt]),
+            ('1 ns criterion',tt,[1]*len(tt))],True,True)
+    c=remote_case()
+    s.text(45,945,f"Phase outage ≤ {1000*c['phase_outage']:.6f} ms; epoch outage ≤ {c['epoch_outage']:.6f} s.",20)
+    s.text(45,1000,'Initial |δf| ≤ 0.01 Hz; |dδf/dt| ≤ 0.001 Hz/s; fc = 1.020 GHz.',18)
+    s.text(45,1050,'Neither a 100 ps path bound nor returned packets supplies the 0.01° phase intercept.',18);s.save()
+    s=SVG('remote-recovery-control','Renew evidence explicitly and respect delayed-feedback margin',1140)
+    # Step geometry uses just-before/at events, not sloping binary interpolation.
+    xs=[0,11.104945,11.104945,24,24,27,27,40]
+    s.plot(70,'Executed gate: unqualified packet at 20 ms changes no evidence',
+           (0,40),(-.1,1.3),'Time since initial qualification (ms)','Validity flag (0 / 1)',
+           [('epoch within 1 ns',xs,[1]*len(xs)),('carrier within 0.05°, known state',
+             xs,[1,1,0,0,1,1,0,0])])
+    s.text(100,435,'24 ms: supplied complete qualification; 27 ms: carrier reset.',18)
+    ff=lin(0,60)
+    s.plot(510,'Scalar remote integrator: control latency τ = 10 ms',
+           (0,60),(-130,90),'Unity-loop-gain frequency fu (Hz)','Phase margin (degrees)',
+           [('90° − 360° fu τ',ff,[90-3.6*f for f in ff]),
+            ('45° margin requirement',ff,[45]*len(ff)),
+            ('0° first stability boundary',ff,[0]*len(ff))])
+    s.text(45,940,'10 Hz → 54°; 20 Hz → 18°; 50 Hz exceeds the 25 Hz first stability limit.',18)
+    s.text(45,995,'Remote control age includes delivery, processing and actuation; not just RF propagation.',18)
+    s.text(45,1050,'The 24 ms qualification is an external evidence input, not a demonstrated reacquisition time.',17)
+    s.text(45,1100,'Actual sampled / variable-delay / bounded-actuator stability requires further analysis.',18);s.save()
+
+
 if __name__=='__main__':
-    {14:unit14,15:unit15}[int(sys.argv[1])]()
+    {14:unit14,15:unit15,16:unit16}[int(sys.argv[1])]()

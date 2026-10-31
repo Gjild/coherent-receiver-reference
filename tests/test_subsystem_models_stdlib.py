@@ -5,6 +5,107 @@ sys.path.insert(0,str(Path(__file__).parents[1]/'engineering/examples'))
 import subsystem_models as m
 
 
+class DistributedModels(unittest.TestCase):
+    def test_clock_event_readings_alignment_and_unidentifiability(self):
+        a=1+2e-8;b=80e-9
+        # Integrate a physical event sequence, not the estimator's residuals.
+        for t in [0.,.25,8.]:
+            stamps=m.remote_exchange(t1=t)
+            fit=m.remote_alignment(stamps,a,20e-9)
+            self.assertLess(abs(fit['beta']-b)*1e12,.002)
+            self.assertLess(abs(fit['mean_delay']-5e-6)*1e12,.002)
+            event=t+5.01e-6
+            mapped=(stamps[1]-fit['beta'])/a
+            self.assertLess(abs(mapped-event)*1e12,.002)
+        stamps=m.remote_exchange(alpha=1.)
+        indistinguishable=m.remote_exchange(alpha=1.,beta=90e-9,forward=5e-6,reverse=5e-6)
+        self.assertTrue(all(abs(u-v)<1e-15 for u,v in zip(stamps,indistinguishable)))
+        self.assertLess(abs(m.remote_alignment(stamps,1.)['beta']-90e-9)*1e12,.001)
+        # Deliberately imperfect estimates: evaluate the event residual in ps.
+        t=.2;ahat=a+1e-11;bhat=b-50e-12;noise=-10e-12
+        mapped=(a*t+b+noise-bhat)/ahat
+        expected=((a-ahat)*t+b-bhat+noise)/ahat
+        self.assertLess(abs((mapped-t)-expected)*1e12,.001)
+
+    def test_current_rate_from_two_physical_clock_readings(self):
+        fc=1.02e9;drift=.001
+        for baseline in [2.,8.,20.]:
+            # Clock advance is quadratic; reading errors oppose true endpoint rate.
+            reading0=20e-12
+            reading1=(.01*baseline+.5*drift*baseline**2)/fc-20e-12
+            estimate=fc*(reading1-reading0)/baseline
+            true_rate=.01+drift*baseline
+            difference=true_rate-estimate
+            bound=.0408/baseline+.0005*baseline
+            self.assertAlmostEqual(difference,bound,places=14)
+        # Unobserved path motion alone spoofs a far larger frequency.
+        self.assertAlmostEqual(fc*1e-9,1.02,places=14)
+
+    def test_real_carrier_comparison_sign_cycle_and_path_limit(self):
+        f=1.02e9;x=200e-12;p=100e-12;chi=.3;n=8192
+        # Project the received real waveform against the advancing local LO.
+        t=[i/(n*f) for i in range(n)]
+        a=sum(math.cos(2*math.pi*f*(v-p))*math.cos(2*math.pi*f*(v+x)+chi) for v in t)*2/n
+        b=-sum(math.cos(2*math.pi*f*(v-p))*math.sin(2*math.pi*f*(v+x)+chi) for v in t)*2/n
+        expected=cmath.exp(-1j*(2*math.pi*f*(x+p)+chi))
+        self.assertLess(abs(complex(a,b)-expected),1e-14)
+        corrected=complex(a,b)*cmath.exp(1j*(2*math.pi*f*x+chi))
+        self.assertLess(abs(corrected-cmath.exp(-2j*math.pi*f*p)),1e-14)
+        self.assertLess(abs(cmath.exp(-2j*math.pi*f*(x+1/f))-cmath.exp(-2j*math.pi*f*x)),1e-14)
+        c=m.remote_case()
+        self.assertLess(c['coarse_cycle_bound'],c['period']/2)
+        self.assertGreater(c['quant_cycle_bound'],c['period']/2)
+        self.assertAlmostEqual(360*f*p,36.72,places=12)
+        self.assertAlmostEqual(.05/(360*f)*1e12,.136165577342,places=11)
+
+    def test_timestamp_precision_and_worst_quantization_combination(self):
+        from fractions import Fraction
+        q=Fraction(1,2**32)
+        # Four half-step errors chosen to attain the offset bound (ties as limits).
+        errors=[-q/2,q/2,q/2,-q/2]
+        offset=(errors[1]-errors[0]+errors[2]-errors[3])/2
+        self.assertEqual(offset,q)
+        self.assertEqual(math.ulp(1.7e9),2**-22)
+        self.assertEqual(1.7e9+20e-12,1.7e9)
+
+    def test_holdover_by_integrating_frequency_and_evidence_gate(self):
+        for age in [.001,.02,1.,31.]:
+            # Trapezoidal integration is exact for this linearly drifting rate.
+            cycles=age*(.01+(.01+.001*age))/2
+            b=m.remote_bounds(age)
+            self.assertLess(abs((b['epoch']-200e-12)*1.02e9-cycles),1e-15)
+            self.assertAlmostEqual(b['phase'],.01+360*cycles,places=11)
+        c=m.remote_case()
+        self.assertAlmostEqual(m.remote_bounds(c['phase_outage'])['phase'],.05,places=14)
+        self.assertLess(abs(m.remote_bounds(c['epoch_outage'])['epoch']-1e-9)*1e12,1e-10)
+        trace=dict(m.remote_trace())
+        self.assertTrue(all(v['epoch_valid'] for v in trace.values()))
+        self.assertTrue(trace[11]['carrier_valid'])
+        self.assertFalse(trace[12]['carrier_valid'])
+        self.assertFalse(trace[20]['carrier_valid'])
+        self.assertTrue(trace[24]['carrier_valid'])
+        self.assertFalse(trace[27]['carrier_valid'])
+        gate=m.RemoteValidity()
+        gate.step(.02)
+        self.assertFalse(gate.step(.021,qualified_clock=True)['carrier_valid'])
+        self.assertFalse(gate.step(.022,qualified_phase=True,reset=True)['carrier_valid'])
+        with self.assertRaises(ValueError):gate.step(.01)
+
+    def test_delayed_feedback_characteristic_crossing(self):
+        # Direct complex root solution, independent of the margin formula.
+        for fu,positive in [(10.,False),(20.,False),(50.,True)]:
+            gain=2*math.pi*fu*.01
+            z=.05+1.5j
+            for _ in range(60):
+                ex=cmath.exp(-z);step=(z+gain*ex)/(1-gain*ex)
+                z-=step
+                if abs(step)<1e-14:break
+            self.assertLess(abs(z+gain*cmath.exp(-z)),1e-13)
+            self.assertEqual(z.real>0,positive)
+        z=1j*math.pi/2
+        self.assertLess(abs(z+(math.pi/2)*cmath.exp(-z)),1e-14)
+
+
 class AnalogModels(unittest.TestCase):
     def test_complete_real_waveform_peak_and_thresholds(self):
         for rejection in [43,46,49,52]:

@@ -17,6 +17,8 @@ book:
     - fields-geometry-transduction.qmd
     - physical-disturbance-paths.qmd
     - extraction-integration-rejection.qmd
+    - frequency-phase-delay-transfer.qmd
+    - feasibility-architecture-allocations.qmd
     - publishing-pilot.qmd
     - relative-phase-stability.qmd
     - references.qmd

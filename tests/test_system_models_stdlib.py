@@ -85,4 +85,52 @@ class RequirementModels(unittest.TestCase):
         self.assertLess(abs(variance/n*rho-1),.025)
 
 
+class TransferModels(unittest.TestCase):
+    def test_real_mixer_band_selection_and_sampled_waveform(self):
+        # Independent real RF/LO multiplication at 5 GS/s, ideal analog IF mask,
+        # then decimation, periodic steady FIR history and real-record extraction.
+        import numpy as np
+        fs=5e9;n=100000;t=np.arange(n)/fs
+        for nu in [0,50000,-50000]:
+            rf=np.cos(2*np.pi*(1e9+nu)*(t-25e-12)+math.radians(25))
+            lo=2*np.cos(2*np.pi*1.02e9*t+math.radians(17))
+            ff=np.fft.fftfreq(n,1/fs);spectrum=np.fft.fft(rf*lo)
+            spectrum[np.abs(np.abs(ff)-20e6)>100001]=0
+            x=np.fft.ifft(spectrum).real[::50]
+            h=x-1.618033988749895*np.roll(x,1)+np.roll(x,2)
+            # Extract the offset tone, using its actual digital frequency.
+            ref=np.exp(-1j*(2*np.pi*(20e6-nu)*np.arange(len(x))/100e6+math.radians(11)))
+            result=(2*np.mean(h*ref)).conjugate()
+            self.assertAlmostEqual(abs(result),abs(model.notch_response(20e6-nu)),places=10)
+            self.assertAlmostEqual(cmath.phase(result),model.transfer_phase(nu),places=10)
+
+    def test_exact_real_record_and_offset_rejection(self):
+        n=100000;f=10e6-100;fs=100e6;b=cmath.exp(.7j)
+        # Direct samples with valid prehistory, versus geometric-path law.
+        coef=-2*math.cos(.2*math.pi)
+        x=lambda k:(b*cmath.exp(2j*math.pi*f*k/fs)).real
+        actual=2*sum((x(k)+coef*x(k-1)+x(k-2))*cmath.exp(-2j*math.pi*.2*k) for k in range(n))/n
+        paths=model.observation_paths(f)
+        expected=b*paths[0]+b.conjugate()*paths[1]
+        self.assertLess(abs(actual-expected),2e-13)
+        for dw in [-100,-57,0,38,100]:
+            for db in [-100,-71,0,42,100]:
+                for error in [-1e-6,0,1e-6]:
+                    self.assertLess(model.composite_notch_rejection(dw,db,coef+error),1.3e-10)
+
+    def test_phase_slope_allpass_and_state_changes(self):
+        eps=100
+        delay=-(model.transfer_phase(eps)-model.transfer_phase(-eps))/(4*math.pi*eps)
+        self.assertAlmostEqual(delay,10.025e-9,places=16)
+        q=lambda v:(1-1j*v/1e5)/(1+1j*v/1e5)
+        self.assertAlmostEqual(abs(q(50000)),1.,places=14)
+        self.assertGreater(abs(math.degrees(cmath.phase(q(50000)))+360*50000/(math.pi*1e5)),4)
+        self.assertAlmostEqual(math.degrees(cmath.phase(cmath.exp(-2j*math.pi*.2))),-72.)
+        self.assertAlmostEqual(model.transfer_phase(nco_phase=math.radians(101))-model.transfer_phase(),math.pi/2)
+
+    def test_real_alias_identity_and_lost_discrimination(self):
+        for n in range(37):
+            self.assertAlmostEqual(math.cos(2*math.pi*80.05e6*n/100e6+.3),math.cos(2*math.pi*19.95e6*n/100e6-.3),places=12)
+
+
 if __name__=='__main__':unittest.main()

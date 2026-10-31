@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1010" role="img" aria-labelledby="title desc"><title id="title">Track the envelope and the references through each operation</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Track the envelope and the references through each operation</text>
+<text x="50" y="85" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Synthetic plan: real 1 GHz input; high-side LO 1.020 GHz; real IF 20 MHz.</text>
+<rect x="40" y="155" width="220" height="100" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="150.0" y="180" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">RF plane R</text>
+<text x="150.0" y="205" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">a(t) exp(j2πfᵣt)</text>
+<text x="150.0" y="230" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">peak-voltage envelope</text>
+<rect x="360" y="155" width="220" height="100" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="470.0" y="180" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Real product + IF selection</text>
+<text x="470.0" y="205" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">positive IF envelope</text>
+<text x="470.0" y="230" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">a*(t) exp(jλ)</text>
+<rect x="680" y="155" width="220" height="100" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="790.0" y="180" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Real sampling</text>
+<text x="790.0" y="205" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Fₛ = 100 MS/s</text>
+<text x="790.0" y="230" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">both ±IF images remain</text>
+<path d="M260.000,205.000 L360.000,205.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M580.000,205.000 L680.000,205.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M470.000,340.000 L470.000,255.000" fill="none" stroke="#237550" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="470" y="373" font-family="sans-serif" font-size="18" fill="#237550" text-anchor="middle">LO plane L: λ; physical distribution delay changes λ</text>
+<rect x="70" y="450" width="230" height="110" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="185.0" y="475" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Real FIR h[n]</text>
+<text x="185.0" y="500" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">H(fIF), known state</text>
+<text x="185.0" y="525" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">steady prehistory needed</text>
+<rect x="370" y="450" width="230" height="110" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="485.0" y="475" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Digital mixing + selection</text>
+<text x="485.0" y="500" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">exp(−j(ω₀n + χ))</text>
+<text x="485.0" y="525" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">a* × H × exp(jλ − jχ)</text>
+<rect x="680" y="450" width="230" height="110" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="795.0" y="475" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Conjugate once</text>
+<text x="795.0" y="500" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">orientation restored</text>
+<text x="795.0" y="525" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">a × H* × exp(−jλ + jχ)</text>
+<path d="M790.000,255.000 L940.000,255.000 L940.000,405.000 L185.000,405.000 L185.000,450.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M300.000,505.000 L370.000,505.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M600.000,505.000 L680.000,505.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="55" y="650" font-family="sans-serif" font-size="20" fill="#182f3e" text-anchor="start">RF offset +ν → IF offset −ν → selected offset −ν → output offset +ν.</text>
+<text x="55" y="700" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">After restoration: RF delay phase stays negative; LO phase is subtracted.</text>
+<text x="55" y="750" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">NCO phase is added. IF response is conjugated and evaluated at 20 MHz − ν.</text>
+<text x="55" y="820" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Arrows show envelope operations; scalar gain and real mirror terms are omitted here.</text>
+<text x="55" y="865" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">The finite-record equation in the text retains both real images exactly.</text>
+<text x="55" y="930" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Declared identity: RF plane R → LO plane L → sample epoch → NCO state.</text>
+<text x="32" y="996" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

@@ -147,6 +147,111 @@ def blocker_observation():
     s.save()
 
 
+
+def notch_response(f,fs=100e6,coefficient=None):
+    from cmath import exp
+    c=-2*cos(2*pi*.1) if coefficient is None else coefficient
+    z=exp(-2j*pi*f/fs)
+    return 1+c*z+z*z
+
+
+def record_response(f,n=100000,fs=100e6):
+    """Normalized finite geometric sum for samples n=0..N-1."""
+    from cmath import exp
+    q=f/fs
+    if abs(q-round(q))<1e-14:return 1+0j
+    return exp(1j*pi*(n-1)*q)*sin(pi*n*q)/(n*sin(pi*q))
+
+
+def observation_paths(f,n=100000,fs=100e6,center=20e6,coefficient=None):
+    h=notch_response(f,fs,coefficient)
+    return h*record_response(f-center,n,fs),h.conjugate()*record_response(-f-center,n,fs)
+
+
+def composite_notch_rejection(wanted_offset=100,blocker_offset=100,coefficient=None):
+    wanted=observation_paths(20e6-wanted_offset,coefficient=coefficient)
+    blocker=observation_paths(10e6-blocker_offset,coefficient=coefficient)
+    return sum(abs(x) for x in blocker)/abs(wanted[0])
+
+
+def transfer_phase(nu=0,tau_rf=25e-12,lo_phase=radians(17),nco_phase=radians(11)):
+    from cmath import phase
+    return radians(25)-2*pi*(1e9+nu)*tau_rf-lo_phase-phase(notch_response(20e6-nu))+nco_phase
+
+
+def unit12():
+    s=SVG('frequency-transfer-orientation','Track the envelope and the references through each operation',1010)
+    s.text(50,85,'Synthetic plan: real 1 GHz input; high-side LO 1.020 GHz; real IF 20 MHz.',19)
+    s.box(40,155,220,100,['RF plane R','a(t) exp(j2πfᵣt)','peak-voltage envelope'])
+    s.box(360,155,220,100,['Real product + IF selection','positive IF envelope','a*(t) exp(jλ)'])
+    s.box(680,155,220,100,['Real sampling','Fₛ = 100 MS/s','both ±IF images remain'])
+    s.path([(260,205),(360,205)],arrow=True);s.path([(580,205),(680,205)],arrow=True)
+    s.path([(470,340),(470,255)],COLORS[2],arrow=True)
+    s.text(470,373,'LO plane L: λ; physical distribution delay changes λ',18,COLORS[2],anchor='middle')
+    s.box(70,450,230,110,['Real FIR h[n]','H(fIF), known state','steady prehistory needed'])
+    s.box(370,450,230,110,['Digital mixing + selection','exp(−j(ω₀n + χ))','a* × H × exp(jλ − jχ)'])
+    s.box(680,450,230,110,['Conjugate once','orientation restored','a × H* × exp(−jλ + jχ)'])
+    s.path([(790,255),(940,255),(940,405),(185,405),(185,450)],arrow=True)
+    s.path([(300,505),(370,505)],arrow=True);s.path([(600,505),(680,505)],arrow=True)
+    s.text(55,650,'RF offset +ν → IF offset −ν → selected offset −ν → output offset +ν.',20)
+    s.text(55,700,'After restoration: RF delay phase stays negative; LO phase is subtracted.',19)
+    s.text(55,750,'NCO phase is added. IF response is conjugated and evaluated at 20 MHz − ν.',19)
+    s.text(55,820,'Arrows show envelope operations; scalar gain and real mirror terms are omitted here.',18)
+    s.text(55,865,'The finite-record equation in the text retains both real images exactly.',18)
+    s.text(55,930,'Declared identity: RF plane R → LO plane L → sample epoch → NCO state.',19)
+    s.save()
+    s=SVG('frequency-exclusions','Different analog paths can become the same sampled band',1040)
+    s.text(50,85,'First three rows: +50 kHz; blocker: +100 Hz. Frequency values in MHz.',19)
+    rows=[('wanted',1000.05,19.95,19.95,.05),('RF image',1040.05,20.05,20.05,-.05),
+          ('sample alias',1100.05,80.05,19.95,.05),('blocker',1010.0001,9.9999,9.9999,10.0001)]
+    for x,t in [(60,'RF'),(300,'positive real IF'),(560,'positive sampled image'),(800,'restored output')]:s.text(x,155,t,18)
+    for i,(label,rf,iff,sampled,out) in enumerate(rows):
+        y=230+i*140
+        s.text(50,y-30,label,19,COLORS[i]);
+        for x,value in [(60,rf),(330,iff),(590,sampled),(820,out)]:s.text(x,y,f'{value:.4f}'.rstrip('0').rstrip('.'),19,COLORS[i])
+        for a,b in [(170,300),(430,560),(690,790)]:s.path([(a,y-7),(b,y-7)],COLORS[i],arrow=True)
+    s.text(50,800,'Desired/image passbands both land at 20 ± 0.1 MHz: analog exclusion required.',18)
+    s.text(50,845,'80 ± 0.1 MHz folds onto the same real band: digital processing cannot separate it.',18)
+    s.text(50,890,'Blocker stays out of band, but its finite-record leakage must still be bounded.',18)
+    s.text(50,952,'A band map specifies where attenuation is needed; it does not supply attenuation.',19)
+    s.save()
+    s=SVG('transfer-response','A phase intercept is not group delay or waveform fidelity',1530)
+    vv=lin(-100,100)
+    s.plot(95,'Orientation-restored phase relative to the center tone',(-100,100),(-100,100),
+           'RF offset ν (kHz)','Phase relative to ν = 0 (degrees)',
+           [('25 ps RF + 10 ns FIR',vv,[-360*v*1e3*10.025e-9 for v in vv]),
+            ('same path plus all-pass',vv,[-360*v*1e3*10.025e-9-degrees(2*__import__('math').atan(v/100)) for v in vv])])
+    s.plot(570,'Unity magnitude can conceal dispersive delay',(-100,100),(0,3.4),
+           'RF offset ν (kHz)','Group delay (µs)',
+           [('base path',vv,[.010025]*len(vv)),
+            ('base path plus all-pass',vv,[.010025+1e6/(pi*1e5*(1+(v/100)**2)) for v in vv])])
+    s.text(55,1010,'All-pass Q(ν) = (1 − jν/fₚ)/(1 + jν/fₚ), fₚ = 100 kHz; |Q| = 1.',19)
+    s.text(55,1060,'At 50 kHz: Q phase −53.130° versus −57.296° from its center delay.',18)
+    s.text(55,1120,'Example center phase: 25° − 9° − 17° − 108° + 11° = −98°.',19)
+    s.text(55,1170,'At +50 kHz the base path gives −98.18045° and output offset +50 kHz.',19)
+    s.text(55,1235,'A center-tone correction removes an intercept; a frequency sweep identifies slope.',19)
+    s.text(55,1285,'Two-tone or modulation tests expose phase curvature that a level sweep misses.',19)
+    s.text(55,1360,'All curves are exact responses of the stated ideal operators, not measured filters.',18)
+    s.text(55,1420,'The realizable implementation, noise transfer and resource fit remain separate work.',18)
+    s.save()
+    s=SVG('notch-observation','A nominal null needs an offset and implementation error budget',1090)
+    dd=lin(-100,100);h=[max(abs(notch_response(10e6-d)),1e-12) for d in dd]
+    s.plot(105,'Three-tap notch around the converted blocker',(-100,100),(-130,-90),
+           'Blocker RF offset from 1.010 GHz (Hz)','IF notch magnitude (dB)',
+           [('exact coefficient',dd,[max(-130,20*log10(x)) for x in h]),
+            ('coefficient-error envelope ≤ 10⁻⁶',dd,[20*log10(x+1e-6) for x in h])])
+    s.text(55,535,'h = [1, −1.61803398875, 1]; Fₛ = 100 MHz; notch at 10 MHz.',19)
+    s.text(55,580,'At |offset| = 100 Hz: |H| ≈ 7.39 × 10⁻⁶ before finite observation.',19)
+    s.text(55,635,'Both real images then enter the exact 100000-sample geometric sum.',19)
+    s.text(55,680,'Composite blocker paths / wanted main path ≤ 1.3 × 10⁻¹⁰',20,COLORS[2])
+    s.text(55,720,'for both offsets ±100 Hz, coefficient error ≤ 10⁻⁶, steady exact arithmetic.',18)
+    s.text(55,785,'This model clears the 10⁻⁵ interface; it does not certify deployed rejection.',19)
+    s.text(55,840,'Omitted: arithmetic noise/overflow, analog aliases/spurs, transients and clocks.',18)
+    s.text(55,900,'A reset that fills missing FIR history with zeros invalidates the steady-tone result.',18)
+    s.text(55,990,'Noise and resource budgets must be reconciled with this changed observation.',19)
+    s.save()
+
+
 if __name__=='__main__':
     choice=int(sys.argv[1]) if len(sys.argv)>1 else 11
-    {11:unit11}[choice]()
+    {11:unit11,12:unit12}[choice]()

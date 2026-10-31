@@ -20,7 +20,17 @@ succeeded. Evidence: reviews/k11-k13-evidence/. No installation or route redesig
 K11 closes as a checked provisional bounded draft after fresh review and targeted
 reassessment. Its source/figures/evidence are checkpointed before K12. See
 `reviews/k11-k13-development.md` for findings, calculations and limitations.
-Active next: K12, canonical Chapter11 transfer; stop remains after K13/integration.
+K11 checkpoint: `cd2b802`. K12 canonical Chapter11 manuscript and four figures
+are developed and author-checked, but **separate-context review is incomplete**.
+Fresh Sol/high read-only session (full ID/provenance in the development record) exited1 on a usage limit, reporting retry at10:52AM without timezone.
+Do not repeat against the known limit or count partial tool checks as review.
+Corrected candidate inputs/images are frozen in
+`reviews/k11-k13-evidence/k12-candidate-inputs.tar.gz`; an existing-figure filename
+collision was corrected and all prior figures restored byte-for-byte.
+
+Resume at fresh K12 review when capacity is available; then correct/reassess, close
+K12 and proceed to K13 in Chapter12. K13 and final batch integration have not begun.
+Stop remains after K13/integration. No K14 or human acceptance.
 
 ---
 

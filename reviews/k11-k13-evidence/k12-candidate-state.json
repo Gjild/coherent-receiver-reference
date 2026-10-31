@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-10-31T06:03:16Z",
+  "review_state": "INCOMPLETE: reviewer usage limit, no final findings or visual verdict",
+  "retry_time_as_reported": "10:52 AM; timezone not supplied in error",
+  "candidate_manifest_entries": 1010,
+  "images": 13,
+  "full_page_dimensions": [
+    1425,
+    11071
+  ],
+  "corrected_page_pixels_identical_to_all_eight_inspected_prior_crops": true,
+  "baseline_count": 79,
+  "baseline_changes": [
+    "book/phase-comparison.qmd",
+    "book/_quarto.yml",
+    "project/current-work.md"
+  ],
+  "all_47_prior_SVGs_preserved": true,
+  "prior_chapter1_prefix_preserved": true
+}

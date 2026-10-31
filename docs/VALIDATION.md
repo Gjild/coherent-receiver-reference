@@ -1,3 +1,40 @@
+# K11–K13 batch in progress — 2026-10-31
+
+K11 closes as a checked provisional teaching draft at local checkpoint `cd2b802`
+after fresh read-only AI review, substantive corrections and fresh targeted
+reassessment. K12 manuscript and four figures are author-checked, with **AI
+review incomplete due to reviewer usage limit**. K13 and final connected batch
+assessment have not begun. This is not batch completion or human acceptance.
+[Development and continuation record](../reviews/k11-k13-development.md) preserves
+findings, corrections, frozen packets and failed-review provenance separately.
+
+- Fresh batch smoke and actual PNG inspection succeeded before development, using
+  the unchanged private-pipe browser route with its sandbox retained.
+- K12 stage: 68 selected unittest-discovery regressions plus19 pilot tests pass
+  (87 total); NumPy supports the real-waveform comparison. Pytest and SciPy remain
+  unavailable; no installation. Mathematical/software checks are not hardware
+  evidence.
+- All55 SVGs reproduce byte-identically; all47 prior figure bytes are preserved.
+  Independent new quantitative curve checks cover1928 K11 and1446 K12 vertices,
+  rounding error at most0.000501px. K12 carrier/sideband real-waveform transfer,
+  finite real-record rejection, alias identity, delay/dispersion and state signs
+  are checked under explicit ideal/synthetic assumptions.
+- Final K12 scratch HTML:16 pages,516 local links,56 image uses, no missing targets,
+  duplicate IDs, unresolved markers or absent image alternatives. Author opened
+  all4 K12 asset PNGs, complete1425×11071 page and8 overlapping readable crops.
+  This author inspection does not replace the incomplete AI visual review.
+- Repository integrity passes13 required paths; whitespace passes. Protected
+  architecture/standards/earlier derivations remain unchanged; Chapter1's prior
+  bytes are preserved before its authorized requirements-framing addition.
+- No device selection/measurements, reader testing, specialist review, PDF/offline
+  publishing acceptance or external publication. K12's physical/rejection/noise/
+  power/latency interfaces remain conditional.
+
+The older stop-before-K11 record below is historical; current owner authorization
+is K11–K13, bounded by the incomplete K12 review gate.
+
+---
+
 # K08–K10 bounded authoring checks — 2026-10-31
 
 Three provisional units and ten reproducible figures are developed in canonical

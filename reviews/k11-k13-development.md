@@ -87,3 +87,77 @@ five million trials. Source and prior-foundation byte checks preserve earlier
 derivations/figures. Remaining missing device, thermal, reference, stage-survival,
 calibration and rejection evidence is explicit. K11 closes as a checked provisional
 bounded teaching draft; K12 now owns reconciliation of the supplied transfer.
+
+## K12 — frequency, phase and delay transfer
+
+Canonical Chapter11, accepted sections11.1–11.4. Develops RF/LO/IF/sample/NCO
+planes and signs from a real product, preserves arbitrary complex modulation,
+traces desired/image/alias/spur bands, derives group delay after orientation
+restoration, and exercises divider/NCO/sample/reset-sensitive states. Three-tap
+steady digital operator plus exact finite real record gives a concrete candidate
+for K11's rejection contract; it does not certify hardware/latency/power/noise.
+Changed low-side injection and unity-magnitude dispersion expose wrong alternatives.
+K11 canonical Chapter12 is now inserted after Chapter11 in root Quarto configuration;
+no title-only reservation remains. Actual architecture/coverage files unchanged.
+
+Author examined MT080 Rev0 pp1–3, MT002 RevA pp9–11 and AD9208 Rev0 p49/pp78–81
+original PDF passages through web retrieval. Device uses are narrow/conditional;
+apparently conflicting p80 timestamp reset wording is excluded from guarantees.
+No chosen part/measurement. Source notes retain examined passages and scope.
+Independent real RF/LO product at5GS/s, ideal analog IF selection, 100MS/s samples,
+real FIR and complex extraction recover −98° and −98.18045° for carrier/+50kHz.
+Direct100000-sample real observation agrees with the geometric-path law; coefficient
+error/offset tests, alias identity, phase derivative, all-pass and state-sign tests
+pass. Eleven system tests, 68 total standard-library-discovery tests pass. NumPy
+is used by the real-waveform test; pytest/SciPy remain absent.
+Four SVGs reproduce exactly; independently formulated response/phase/delay
+coordinates check1446 vertices within0.000501px. An initial scratch checker had a
+parenthesis syntax error; corrected rerun passes. Author inspected standalone
+asset pixels: arrows/planes/signs legible; corrected the band-map row annotation
+and preserved100Hz blocker digits. HTML check initially caught missing alt text,
+then duplicate figure IDs with the attempted attribute/caption form; existing
+repository caption-plus-explicit-alt form resolves both. Final sixteen-page
+render integrity passes516 local links and56 image uses. Full page and overlapping
+crops show typeset math, readable plots/captions and Chapter10→11→12 navigation.
+
+K11 local checkpoint: `cd2b802`. Targeted reassessment session identifier:
+`01a1907c-27c5-7bd2-8ae4-13dac7aea449`. No push.
+
+### K12 incomplete review gate and continuation boundary
+
+Fresh Sol/high read-only attempt `01a1908b-a01f-7be1-ad16-2910297174a8`
+exits1 after reporting a usage limit and “try again at10:52AM” (error does not
+state timezone). At check time06:03:16UTC /07:03:16CET on2026-10-31 the limit
+has not cleared. [Raw failed events](k11-k13-evidence/k12-failed-events.jsonl),
+command, prompt, stderr, exit and exact frozen inputs are preserved. No final
+findings or completed actual-image review verdict were returned; this is **not
+completed separate-context review**. Partial tool outputs do reproduce the
+phase/offset/rejection numbers, four transfer tests and asymmetric high/low-side
+waveform transfer; they do not clear the review gate. No repeated invocation
+against the known usage limit is attempted, as required by the verification
+standard. K13 and the final connected batch assessment remain unstarted.
+
+A full-figure preservation check caught the new diagram's filename collision
+with the existing `conversion-orientation.svg`. Author restored the original
+exact bytes from the local checkpoint and renamed the new diagram to
+`frequency-transfer-orientation.svg`, including its cross-reference ID. Corrected
+source, graphical checks and HTML are frozen separately as
+[k12-candidate-inputs.tar.gz](k11-k13-evidence/k12-candidate-inputs.tar.gz) with
+archive hash and internal manifest. That corrected candidate has no review yet.
+The complete corrected page is1425×11071; its actual pixels are byte-identical
+to the prior final page, whose eight overlapping readable crops were all opened.
+The renamed asset's actual capture is also byte-identical and reopened. Full
+page pixels were reopened; math, spur table, captions and bottom navigation remain
+visible. This does not infer an AI visual verdict. All55 SVGs now regenerate
+exactly, including all47 prior figures. All76 protected baseline entries match;
+only appended Chapter1 framing, Quarto authoring configuration and current-work
+are authorized baseline changes. Earlier Chapter1 bytes remain an exact prefix.
+
+Continuation: when reviewer capacity is available, extract the corrected candidate
+into a new packet directory, launch a fresh Sol/high explicit read-only review
+with all13 PNG attachments and the supplied accepted requirements. Do not resume
+the failed reviewer or supply this author record/earlier dispositions. Correct
+and reassess consequential findings, close K12, then develop K13 at Chapter12
+sections12.3–12.4. Do not put K13 in canonical Chapter13. Complete final connected
+integration/checks after K13, and stop before K14. No architecture/permission
+decision or human acceptance is inferred from the interruption.

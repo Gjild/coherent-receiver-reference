@@ -1,0 +1,40 @@
+{
+  "reproduced": {
+    "notch-observation.svg": true,
+    "transfer-response.svg": true,
+    "frequency-exclusions.svg": true,
+    "frequency-transfer-orientation.svg": true
+  },
+  "independent_curve_coordinates": [
+    {
+      "asset": "transfer-response",
+      "vertices": 241,
+      "error_px": 0.0004979999999932261
+    },
+    {
+      "asset": "transfer-response",
+      "vertices": 241,
+      "error_px": 0.0004994983860626689
+    },
+    {
+      "asset": "transfer-response",
+      "vertices": 241,
+      "error_px": 3.676470589653036e-05
+    },
+    {
+      "asset": "transfer-response",
+      "vertices": 241,
+      "error_px": 0.0004969257904576807
+    },
+    {
+      "asset": "notch-observation",
+      "vertices": 241,
+      "error_px": 0.0004974683638465649
+    },
+    {
+      "asset": "notch-observation",
+      "vertices": 241,
+      "error_px": 0.0004976675409693598
+    }
+  ]
+}

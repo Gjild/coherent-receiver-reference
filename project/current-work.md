@@ -1,4 +1,4 @@
-# Active batch — K08–K10 autonomous development (2026-10-30)
+# Completed batch — K08–K10 bounded development (2026-10-31)
 
 The owner explicitly authorized sequential bounded K08 (Chapter 8), K09
 (Chapter 9), K10 (Chapter 10), their connected integration assessment and safe
@@ -16,9 +16,27 @@ K08 closes as a checked provisional bounded Chapter 8 treatment after fresh
 read-only technical/visual review, consequential corrections and final targeted
 reassessment. Evidence/dispositions: `reviews/k08-k10-development.md`.
 K09 and K10 also close after physical/source-path and extraction derivations,
-separate read-only reviews, corrections and fresh targeted reassessments. Next:
-connected batch assessment only, then stop before K11. No complete-chapter or
+separate read-only reviews, corrections and fresh targeted reassessments.
+Connected batch assessment is complete; stop before K11. No complete-chapter or
 human technical acceptance claimed.
+
+Batch closeout (2026-10-31): K08–K10 and connected assessment are complete as
+checked provisional bounded treatments, with 3+3+4 reproducible figures. Fresh
+read-only AI reviews, consequential corrections and targeted reassessments are
+recorded in [the development record](../reviews/k08-k10-development.md). The
+final complex-observation bridge, unequal-window example and rendered page were
+reassessed; no consequential open target defect remains.
+
+Executed checks: 57 standard-library tests plus 19 pilot tests pass; all 47 SVGs
+regenerate exactly; 14 HTML pages/421 local links/48 image uses pass structural
+checks. Actual assets/pages and readable crops were inspected. Full pytest and
+SciPy are absent; no installation or physical/reader/human acceptance is claimed.
+Protected prior technical/visual, accepted architecture and standard bytes remain.
+
+Unit checkpoints: K08 `a29d739`, K09 `3fb6ef5`, K10 `54a7f21`; connected closeout
+is checkpointed separately. No push or external publication. No new owner decision
+blocks bounded draft closure. **Stop here. Do not begin K11 automatically.** Human
+specialist review and later authoring require their own evidence/authorization.
 
 ---
 

@@ -1,0 +1,52 @@
+{
+  "spectral_positive_row_sign": [
+    -113.06021830016489,
+    -84.88852356829278
+  ],
+  "time_kernel": [
+    {
+      "panels_each": 200,
+      "cross_covariance": [
+        -113.06110929725429,
+        -84.88863931023961
+      ],
+      "absolute_spectral_discrepancy": 0.0008984831726716526
+    },
+    {
+      "panels_each": 400,
+      "cross_covariance": [
+        -113.06044097747265,
+        -84.8885524884337
+      ],
+      "absolute_spectral_discrepancy": 0.00022454745142732048
+    }
+  ],
+  "source_band_Hz": [
+    100.0,
+    400.0
+  ],
+  "same_operator_wanted_template": [
+    {
+      "quadrature": [
+        0.5498668047790598,
+        0.75682672876515
+      ],
+      "closed_form": [
+        0.5498668046886102,
+        0.756826728640657
+      ],
+      "absolute_error": 1.538818986486731e-10
+    },
+    {
+      "quadrature": [
+        -0.6089681262266741,
+        -0.28714151145008593
+      ],
+      "closed_form": [
+        -0.6089681259621595,
+        -0.2871415113253616
+      ],
+      "absolute_error": 2.9244502647318037e-10
+    }
+  ]
+}

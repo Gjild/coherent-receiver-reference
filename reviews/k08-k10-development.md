@@ -261,3 +261,125 @@ receiver compliance or educational effectiveness was demonstrated. Independent
 human specialist review, broader layouts/accessibility, PDF/offline mathematics
 and hardware/reader evidence remain open. Next: connected K08–K10 integration
 assessment only, then stop.
+
+## Connected progression assessment — 2026-10-31
+
+Managing-author assessment, distinct from the separate reviewer output below.
+Chapters 1–7 supply representations, stochastic/finite observations, covariance,
+inference, model adequacy and wanted-signal retention. K08 uses the representation
+and matrix bridges to map incident fields through loaded physical ports. K09 uses
+that interface to construct delivered disturbances before propagating them.
+K10 then defines an observation and hypotheses before computing extraction or
+rejection. The preface now describes this continuous path, and temporary future
+references in K08/K09 link directly to the new canonical destinations.
+
+The integration pass made two otherwise implicit handoffs explicit in K10:
+normalizing the field responsivity in metres to voltage amplitude A and a
+dimensionless relative template; and integrating peak-envelope voltage spectra
+through finite linear-observation rows to obtain record covariance in V².
+The latter retains window/sample-time dependence, signed-frequency ordering and
+cross terms. Stationary spectra supply second moments, not a Gaussian law or
+independent records. The nonstationary covariance-kernel form stays in Chapter 3.
+An independent finite-band quadrature agrees with its time-kernel sinc result
+within 1.42e−8 absolute error for the stated synthetic check; direct voltage
+normalization agrees within 1.36e−20 V. These are mathematical checks only.
+
+Canonical ownership remains clear: Chapter 4 owns covariance propagation and
+conditioned matrix reasoning; Chapter 3 owns observation-weighted coherence;
+Chapter 5 owns precision/ambiguity; Chapter 7 owns tracking. The new treatments
+use those results with physical sources and task hypotheses, rather than
+republishing separate general theories. K08's receiving manifold and external
+sensor law are distinct from electronic G; K09's power-normalized mixer subsection
+is explicitly translated from voltage envelopes; K10's template-space angle is
+explicitly distinct from bearing. No new book-wide convention or accepted
+architecture change is introduced. Existing publishing demonstration and pilot
+remain after Chapter 10; their rendered numbers are not canonical K11/K12 work.
+
+Engineering transfer progresses from altered polarization/path law, through
+changed source temperature/blocker or timing spectrum, to altered separation,
+record dependence and uncertain complex reference leakage. Each change requires
+re-evaluating a receiver decision. Noise-floor reduction, phase precision and
+detection probability remain different outcomes. Ten figures provide necessary
+geometry, paths and quantitative comparisons; a separate generic covariance
+figure would duplicate the foundations. The unchanged SVG helper supplies the
+existing palette, line styles, arrow and panel language. A fresh actual capture
+of Chapter 7's transfer-budget figure provides the visual comparison.
+
+First integration HTML captures: preface 1440×2200; Chapter 8 1425×8049;
+Chapter 9 1425×10420; Chapter 10 1425×13355, all at viewport1440×2200.
+Author inspected all complete pages and twenty overlapping readable body crops,
+including the new integral, tables, exercises and bottom navigation. Tested
+desktop reading column is readable; secondary ticks/labels remain relatively
+small and broader layout/accessibility assessment is open. Fourteen HTML pages
+render without reported warnings; all 421 local links/fragments resolve and
+48 image uses have alt text, with no duplicate IDs or unresolved markers.
+The final text-only handoff adds no changed curve or detector code; prior
+57 standard-library/19 pilot passes and 47 byte-identical regenerated SVGs
+remain applicable. All 62 protected baseline files match, including 47 prior
+book manuscript/SVG artifacts; only the preface and authorized configuration/
+current-work baseline entries are excluded. Accepted standards/architecture,
+Chapters 1–7, pilot and prior figures remain unchanged.
+
+Fresh separate-context GPT-6.1 Sol/high integration session
+`01a19058-de35-71d1-b0ce-4832b7cee06d`, exit 0:
+[findings](k08-k10-evidence/integration-findings.md). All ten technical
+manuscripts, accepted requirement extracts, four standards, three source notes,
+permitted rendered pages and all 25 actual PNGs were examined. All 163 manifest
+entries matched; no unlisted files or prohibited exposure reported. No author
+code/tests were run. Independent asymmetric time-kernel/spectral integration,
+responsivity-rescaling, real/envelope power, active-source cancellation and
+connected detection checks agreed. Source notes remain author passage summaries;
+no fresh reviewer PDF verification, human or empirical evidence was supplied.
+
+Required pedagogical correction: define the complex observation row's Fourier
+sign, derive covariance from the time-domain functional, and apply the same
+operator to the wanted waveform. Chapter 3's real scalar weighting alone hides
+that sign distinction. Author added the row-kernel definition with positive
+Fourier-synthesis sign, a sample-time example, the covariance derivation and
+the wanted-template integral. An unequal-window, delayed-channel worked bridge
+uses a proper source on asymmetric offsets 100–400 Hz: C12 is approximately
+(−113.0602−j84.8885) nV²; observing the wanted 250 Hz tone gives template
+(0.54987+j0.75683,−0.60897−j0.28714), not its unobserved channel response.
+An independent author time-domain integral converges toward spectral integration
+with error falling by four on doubling both time grids. Direct wanted-tone
+averages agree with the closed forms within 2.93e−10. The example is synthetic;
+it demonstrates an observation construction, not a measured correlation.
+
+Corrected complete Chapter 10 page: 1425×14184, actual PNG and all nine readable
+overlapping crops inspected by author. Combined final unit-page coverage is
+21 readable crops; the preface, Chapter 8 and Chapter 9 rendered HTML bytes are
+unchanged from the integration review. All 421 links/48 image uses still pass.
+Fresh targeted reassessment of this correction is recorded below.
+
+Final fresh read-only targeted integration session `01a1905e-0c63-7b23-9a3d-73149ed29d8f`, exit 0:
+[reassessment](k08-k10-evidence/integration-final-findings.md). All 64 manifest
+entries verified; complete actual page and all nine crops examined. Independent
+frequency Simpson and double time-domain quadrature reproduce C12 and both
+wanted-template coordinates, preserving displayed digits on refinement. The
+constructed covariance has positive eigenvalues approximately 41.64075 and
+351.09508 nV² despite its shared source. The observation-row sign, covariance
+ordering, units, same-operator wanted response and prerequisite handoff have no
+remaining consequential defect in target scope. No consequential page layout
+defect or prohibited exposure reported. No human, physical or reader validation
+is conferred.
+
+The K08–K10 bounded batch and connected assessment are complete as checked
+provisional drafts. Sources, actual image/page inspection, independent numerical
+and graphical checks, raw AI findings, author corrections and targeted review
+provenance are preserved in the adjacent evidence directory and frozen archives.
+The final render retains 14 pages/421 local links/48 image uses; all 47 SVGs were
+regenerated again from the final code and match exactly. No new infrastructure,
+installation, book-wide convention, accepted architecture change or later
+canonical treatment was introduced. The reviewed/inspected manuscript inputs
+match the delivered final bytes; publication output remains scratch/local.
+
+Unit checkpoints: K08 `a29d739`, K09 `3fb6ef5`, K10 `54a7f21`. This connected
+closeout receives its own safe local checkpoint; no push or external publication.
+No unresolved consequential scientific disagreement or new owner decision blocks
+this bounded closeout. Existing specialist/reader/hardware, device-parameter,
+PDF/offline, accessibility/responsive and full-suite evidence limitations remain.
+AI review cannot grant human Reviewed/Accepted status. Stop before K11; a further
+authoring batch needs the owner's new bounded instruction.
+
+Final archive audit: ten frozen packets, 613 manifest input hashes verified.
+Final rendered/targeted-review manuscript inputs match delivered technical bytes.

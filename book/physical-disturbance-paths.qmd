@@ -372,5 +372,6 @@ Alternatively replace the 90 MHz clock component by a 1 MHz component of the sam
 RMS: blocker-error sidebands move to 99 and 101 MHz and this ideal 10 MHz
 observation rejects them. The same integrated jitter then has a very different
 effect. A clock requirement needs waveform, source correlations, spectral support,
-filtering, state and sampling plane together. The planned extraction treatment will later use
-these constructed disturbances to ask what information can actually be retained.
+filtering, state and sampling plane together. The
+[extraction treatment](extraction-integration-rejection.qmd) uses these constructed
+disturbances to ask what information can actually be retained.

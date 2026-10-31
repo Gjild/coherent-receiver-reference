@@ -38,6 +38,70 @@ can construct $\mathbf C$, but neither a covariance nor a noise figure establish
 the Gaussian distribution. Impulsive interference, clipping, uncertain covariance
 or signal-dependent noise requires another likelihood or a qualified detector.
 
+The interfaces need an explicit normalization. Chapter 8's field-to-voltage map
+has units metres when driven in V/m. Choose a specified nonzero reference
+responsivity in metres: its magnitude converts incident field amplitude to the
+voltage $A$, while the normalized dimensionless $\mathbf a$ retains relative
+channel, phase and waveform response. That reference is a model input or an
+external calibration result, not something electronic injection alone establishes.
+For stationary peak-envelope output noise with voltage spectral matrix
+$\mathbf S_z(\nu)$ from Chapter 9, define a row observation kernel
+$\mathbf b_i(t)$ in s⁻¹ acting on the centered output noise $\mathbf z_n(t)$:
+
+$$
+ n_i=\int \mathbf b_i(t)\mathbf z_n(t)\,dt,\qquad
+ \mathbf B_i(\nu)=\int \mathbf b_i(t)e^{+j2\pi\nu t}\,dt.
+$$
+
+The dimensionless $\mathbf B_i$ is the spectral row of this observation
+functional. Its plus sign follows by inserting inverse Fourier synthesis
+$e^{+j2\pi\nu t}$ for $\mathbf z_n(t)$; it is not the forward transform of
+$\mathbf b_i$. For example, sampling channel $k$ at $t_i$ gives
+$\mathbf B_i(\nu)=e^{+j2\pi\nu t_i}\mathbf e_k^T$, where $\mathbf e_k$ is
+the corresponding unit coordinate vector. Insert the spectral representation
+of $E[\mathbf z_n(t)\mathbf z_n(u)^H]$, with phase
+$e^{j2\pi\nu(t-u)}$, into $E[n_i n_j^*]$. Interchanging the convergent
+integrals gives one factor $\mathbf B_i$ and one $\mathbf B_j^H$:
+
+$$
+ C_{ij}=\int_{-\infty}^{\infty}
+ \mathbf B_i(\nu)\mathbf S_z(\nu)\mathbf B_j(\nu)^H\,d\nu.
+$$
+
+The rows include finite windows, filtering and sample-time phases; the integral
+must converge. Its units are V². A white density is not a per-record variance,
+and shared paths or overlapping observations need not give independent records.
+Nonstationary disturbances require the covariance-kernel form of Chapter 3.
+These operations construct second moments, not the Gaussian law assumed above.
+
+Apply the **same observation** to the wanted voltage waveform. If before
+observation it is $\mathbf z_s(t)=A\mathbf p(t)$ with dimensionless
+$\mathbf p(t)$, then $a_i=\int\mathbf b_i(t)\mathbf p(t)\,dt$.
+Filtering only the noise model while keeping the original wanted template
+generally describes a different detector.
+
+For a concrete asymmetric example, let a proper stationary scalar voltage source
+$u(t)$ have density $S_0=1$ nV²/Hz on offsets $100\leq\nu\leq400$ Hz and zero
+elsewhere. Let $z_1(t)=u(t)$ and $z_2(t)=g u(t-d)$, where
+$g=0.7+j0.4$ and $d=0.7$ ms. Average channel 1 from 0.2 to 1.0 ms and channel 2
+from 2.0 to 3.3 ms. Write their starts $t_i$ and durations $T_i$; with
+$\operatorname{sinc}x=\sin(\pi x)/(\pi x)$, the combined source-to-observation
+factors are
+
+$$
+ D_1(\nu)=e^{j2\pi\nu(t_1+T_1/2)}\operatorname{sinc}(\nu T_1),\qquad
+ D_2(\nu)=g e^{j2\pi\nu(t_2+T_2/2-d)}\operatorname{sinc}(\nu T_2).
+$$
+
+Thus $C_{12}=S_0\int_{100}^{400}D_1(\nu)D_2(\nu)^*d\nu$
+is approximately $(-113.0602-j84.8885)$ nV². The positive-offset spectrum and
+unequal windows expose its complex phase; changing the sample-time sign changes
+the answer. For a wanted $u_s(t)=A e^{j2\pi(250\,\mathrm{Hz})t}$ traversing these same paths,
+$\mathbf a=(D_1(250),D_2(250))^T$, approximately
+$(0.54987+j0.75683,-0.60897-j0.28714)^T$, rather than $(1,g)^T$.
+Changing a window changes both covariance and wanted response. Recompute both
+before interpreting a lower output variance as a better detection result.
+
 The Gaussian density is proportional to
 $\exp[-(\mathbf x-A\mathbf a)^H\mathbf C^{-1}(\mathbf x-A\mathbf a)]$.
 The normalizing determinant is the same under the two hypotheses. Subtracting

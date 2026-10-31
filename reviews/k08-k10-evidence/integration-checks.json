@@ -1,0 +1,180 @@
+{
+  "authorized_mutable_baseline": [
+    "book/_quarto.yml",
+    "book/index.qmd",
+    "project/current-work.md"
+  ],
+  "protected": {
+    "book/references.qmd": true,
+    "book/covariance-quadratic-forms.qmd": true,
+    "book/model-adequacy-uncertainty.qmd": true,
+    "book/observation-weighted-coherence.qmd": true,
+    "book/phase-comparison.qmd": true,
+    "book/phase-delay-inference.qmd": true,
+    "book/publishing-pilot.qmd": true,
+    "book/relative-phase-stability.qmd": true,
+    "book/scalar-stochastic-phase.qmd": true,
+    "book/tracking-signal-retention.qmd": true,
+    "book/figures/averaging-floor.svg": true,
+    "book/figures/circular-mean.svg": true,
+    "book/figures/coherence-observables.svg": true,
+    "book/figures/comparison-planes.svg": true,
+    "book/figures/complex-distributions.svg": true,
+    "book/figures/complex-filter-order.svg": true,
+    "book/figures/conversion-orientation.svg": true,
+    "book/figures/covariance-increments.svg": true,
+    "book/figures/covariance-projections.svg": true,
+    "book/figures/delay-ambiguity.svg": true,
+    "book/figures/delay-fit-precision.svg": true,
+    "book/figures/ensemble-records.svg": true,
+    "book/figures/finite-record-uncertainty.svg": true,
+    "book/figures/inverse-conditioning.svg": true,
+    "book/figures/noise-phase.svg": true,
+    "book/figures/nonlinear-uncertainty.svg": true,
+    "book/figures/numerical-cancellation.svg": true,
+    "book/figures/observation-gains.svg": true,
+    "book/figures/observation-weights.svg": true,
+    "book/figures/phase-validity.svg": true,
+    "book/figures/phase-wrapping.svg": true,
+    "book/figures/relative-phase-reference-planes.svg": true,
+    "book/figures/relative-phase-state-sequence.svg": true,
+    "book/figures/relative-phasors.svg": true,
+    "book/figures/shared-delay.svg": true,
+    "book/figures/source-covariance.svg": true,
+    "book/figures/uncertainty-sensitivity.svg": true,
+    "book/figures/tracking-loop.svg": true,
+    "book/figures/tracking-transfer-budget.svg": true,
+    "book/figures/tracking-nonlinear-holdover.svg": true,
+    "book/figures/endpoint-architecture-budget.svg": true,
+    "book/figures/calibration-fixed-lo.svg": true,
+    "book/figures/calibration-delay-fit.svg": true,
+    "book/figures/calibration-maintenance.svg": true,
+    "book/figures/correction-updates.svg": true,
+    "book/figures/measurement-swaps.svg": true,
+    "book/figures/guarded-decisions.svg": true,
+    "engineering/examples/visual_foundations.py": true,
+    "project/charter.md": true,
+    "project/competence-inventory.md": true,
+    "project/scope.md": true,
+    "project/annotated-toc.md": true,
+    "project/architecture.md": true,
+    "project/book-architecture.md": true,
+    "project/book-coverage.md": true,
+    "project/reference-design-plan.md": true,
+    "project/sustained-authoring-strategy.md": true,
+    "project/technical-coverage.md": true,
+    "standards/notation-and-conventions.md": true,
+    "standards/sources-and-evidence.md": true,
+    "standards/technical-authoring.md": true,
+    "standards/verification-and-acceptance.md": true
+  },
+  "changed": [],
+  "prior_book_manuscript_and_svg_count": 47,
+  "protected_file_count": 62,
+  "HTML": {
+    "pages": 14,
+    "local_links": 421,
+    "images": 48,
+    "errors": []
+  },
+  "captures": {
+    "0": {
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 0.615,
+      "source": "/tmp/k0810/integration-render/book/_book/index.html",
+      "source_sha256": "2c5e4ff6e368ebf5309810e5c0d0fe4f7b6adc5b68a0c56e940f963eacb71d8d",
+      "backend": "pipe",
+      "viewport": [
+        1440,
+        2200
+      ],
+      "image_exists": true,
+      "image_dimensions": [
+        1440,
+        2200
+      ],
+      "image_sha256": "62a7c5666819c1b4764e17c809b624474465803bb9eca4e97d67bbf15957e9f2"
+    },
+    "1": {
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 2.92,
+      "source": "/tmp/k0810/integration-render/book/_book/fields-geometry-transduction.html",
+      "source_sha256": "9b27b39f167a6ab6c79152e10d7b37b8ea557a4369b98f7af9aec3e6b421760d",
+      "backend": "pipe",
+      "viewport": [
+        1440,
+        2200
+      ],
+      "image_exists": true,
+      "image_dimensions": [
+        1425,
+        8049
+      ],
+      "image_sha256": "a9d6bf02e049201d61fbeb60a4432ad2e7178976e6b6d10fc768f9231ddcde0f"
+    },
+    "2": {
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 3.521,
+      "source": "/tmp/k0810/integration-render/book/_book/physical-disturbance-paths.html",
+      "source_sha256": "9f68e9038349452532367edd3a47819e0712ea11d8127f2730f2cc1772e14735",
+      "backend": "pipe",
+      "viewport": [
+        1440,
+        2200
+      ],
+      "image_exists": true,
+      "image_dimensions": [
+        1425,
+        10420
+      ],
+      "image_sha256": "53ace4ed2fa695434008815c4c07ab07868eb270cbd21bcb07a416160c9d9afa"
+    },
+    "3": {
+      "exit_status": 0,
+      "timed_out": false,
+      "seconds": 4.221,
+      "source": "/tmp/k0810/integration-final-render/book/_book/extraction-integration-rejection.html",
+      "source_sha256": "af4516704df13381f024083e0274487b5e14512726bfe674539357936abeb991",
+      "backend": "pipe",
+      "viewport": [
+        1440,
+        2200
+      ],
+      "image_exists": true,
+      "image_dimensions": [
+        1425,
+        14184
+      ],
+      "image_sha256": "a81cbf1bf930f6a5ff4c6d1ed4ba11239e123d2d2f36fd9b9ef09c7711f77bcf"
+    }
+  },
+  "comparison_capture": {
+    "exit_status": 0,
+    "timed_out": false,
+    "seconds": 0.414,
+    "source": "/home/miba/Projects/coherent-receiver-reference/book/figures/tracking-transfer-budget.svg",
+    "source_sha256": "6ed28fe794e5dd7f79f60d33cd3b1ee3d3e16813dfd36353302f1a04f8aa92e2",
+    "backend": "pipe",
+    "viewport": [
+      1200,
+      1800
+    ],
+    "image_exists": true,
+    "image_dimensions": [
+      1200,
+      1800
+    ],
+    "image_sha256": "5ccf79295972100b3b2b81f3b413b6de551c8b5c74e2fb51a58023223a5b5487"
+  },
+  "author_actual_pixel_inspection": "Preface, three complete unit pages, all20 overlapping readable crops, unchanged Chapter7 comparison figure; unit assets previously inspected in frozen reviews. New normalization/C integral, all table rows, captions, exercises and bottom navigation readable; no consequential clipping observed at1440px viewport.",
+  "checked_provisional_status": "No human acceptance, hardware/learner evidence, PDF/offline or exhaustive accessibility/responsive validation.",
+  "final_corrected_page": "14184px high, complete actual PNG and nine readable crops inspected by author; all21 final unit-page crops across Chapters8-10 reviewed by author.",
+  "unchanged_rendered_pages": {
+    "index.html": true,
+    "fields-geometry-transduction.html": true,
+    "physical-disturbance-paths.html": true
+  }
+}

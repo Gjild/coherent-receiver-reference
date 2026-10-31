@@ -16,4 +16,15 @@ adequacy tests sensitivity and numerical reasoning before acquisition/tracking
 examines wanted-signal retention. These developing foundations retain provisional
 status and do not complete their planned chapters.
 
+[Fields, geometry and physical transduction](fields-geometry-transduction.qmd)
+then connects incident fields to loaded receiver voltages and shows what electronic
+injection cannot establish. [Physical disturbances](physical-disturbance-paths.qmd)
+constructs noise and interference from sources and their actual transfer paths.
+[Extraction, integration and rejection](extraction-integration-rejection.qmd)
+uses those responses and disturbances to calculate detection outcomes and retained
+wanted information. Each bounded unit includes a worked receiver decision, a
+misleading alternative and a changed-assumption exercise. Their diagrams and
+calculations describe supplied models; they do not establish hardware behavior
+or complete the planned chapters.
+
 The publishing demonstration tests mathematics, references, SVG figures and bibliography wiring. The following dual-channel relative-phase pilot develops a bounded illustrative engineering argument and supporting calculations. It has no hardware measurements, specialist acceptance or actual reader-trial evidence.

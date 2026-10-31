@@ -1,0 +1,13 @@
+{
+  "files": [
+    "book/index.qmd",
+    "book/fields-geometry-transduction.qmd",
+    "book/physical-disturbance-paths.qmd",
+    "book/extraction-integration-rejection.qmd",
+    "reviews/k08-k10-development.md",
+    "docs/VALIDATION.md",
+    "project/current-work.md"
+  ],
+  "local_paths": 111,
+  "errors": []
+}

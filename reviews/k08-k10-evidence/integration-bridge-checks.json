@@ -1,0 +1,15 @@
+{
+  "flat_band_kernel_cross_covariance": {
+    "quadrature": [
+      -2.2206719460091646,
+      0.9893040896912901
+    ],
+    "sinc": [
+      -2.2206719330771465,
+      0.989304083930103
+    ],
+    "absolute_error": 1.4157272665983804e-08,
+    "midpoint_panels": 20000
+  },
+  "field_to_voltage_normalization_error": 1.3552527156068805e-20
+}

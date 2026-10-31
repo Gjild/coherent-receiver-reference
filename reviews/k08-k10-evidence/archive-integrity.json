@@ -1,0 +1,92 @@
+{
+  "integration-final-inputs.tar.gz": {
+    "sha256": "4baeb16467f65806b81b5f6fc6f28309c4c342a1ec7374ef187c30584e86de86",
+    "manifests": [
+      {
+        "entries": 64,
+        "errors": []
+      }
+    ]
+  },
+  "integration-inputs.tar.gz": {
+    "sha256": "f4094ae9ce9edd1371cbf631698f7e525bae789ebdc4b108fc49980c7e3db1ff",
+    "manifests": [
+      {
+        "entries": 163,
+        "errors": []
+      }
+    ]
+  },
+  "k10-inputs.tar.gz": {
+    "sha256": "7d1a4e1b6b5cd4be6bdcb48dca7c3ebfdea6360d0d415e58bec77db816933209",
+    "manifests": [
+      {
+        "entries": 50,
+        "errors": []
+      }
+    ]
+  },
+  "k10c-inputs.tar.gz": {
+    "sha256": "4ae98fd2bc26e073f00b249a730d6036d4434478313e8f04d6738accdaa491d6",
+    "manifests": [
+      {
+        "entries": 51,
+        "errors": []
+      }
+    ]
+  },
+  "k10d-inputs.tar.gz": {
+    "sha256": "feb092bd05f27327bdff368df26fbc34fa2c9d3d6f8451dfbc891e849a0dfe10",
+    "manifests": [
+      {
+        "entries": 6,
+        "errors": []
+      }
+    ]
+  },
+  "k8-packet.tar.gz": {
+    "sha256": "640a5e4f0598f262f13ed487537cfd8b3e258bdf4d108dd217b531a44463c107",
+    "manifests": [
+      {
+        "entries": 99,
+        "errors": []
+      }
+    ]
+  },
+  "k8b-packet.tar.gz": {
+    "sha256": "2cb942bdae71fd80b59fd6881bd09ee649a9472a314dd6eb485237f73f510975",
+    "manifests": [
+      {
+        "entries": 91,
+        "errors": []
+      }
+    ]
+  },
+  "k8c-packet.tar.gz": {
+    "sha256": "dfa7f035622648bdc284cc317d037584b31d823a58c4afd77e8dbedec15dd7c8",
+    "manifests": [
+      {
+        "entries": 19,
+        "errors": []
+      }
+    ]
+  },
+  "k9-packet.tar.gz": {
+    "sha256": "944d0772afeba5922232314dda8f3e3ad70d7f41462c07d1574f52fab40a1765",
+    "manifests": [
+      {
+        "entries": 49,
+        "errors": []
+      }
+    ]
+  },
+  "k9e-packet.tar.gz": {
+    "sha256": "93518b80efea60404a7874aefc831c80a1e32d88d9fbb5f6c59d5e5ba7393967",
+    "manifests": [
+      {
+        "entries": 21,
+        "errors": []
+      }
+    ]
+  }
+}

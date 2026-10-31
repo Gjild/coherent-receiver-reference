@@ -1,3 +1,48 @@
+# K08–K10 bounded authoring checks — 2026-10-31
+
+Three provisional units and ten reproducible figures are developed in canonical
+Chapters 8–10. [Development, findings and integration assessment](../reviews/k08-k10-development.md)
+separates author dispositions from frozen read-only AI reviewer outputs. No
+human technical acceptance, hardware confirmation or reader-trial evidence is
+claimed. ADR-0007's earlier scoped acceptance is preserved without extension.
+
+- Fresh batch-start private-pipe smoke succeeded after the recorded sandbox and
+  socket-length diagnostics; its actual PNG was inspected before authoring.
+  The capture helper/route and browser sandbox are unchanged.
+- `python3 -m unittest discover -s tests -p '*_stdlib.py' -v`: 57 pass.
+  `PYTHONPATH=engineering/src python3 -m unittest discover -s tests -p 'test_relative_phase.py' -v`:
+  19 pass. Total available selected regressions: 76.
+- `python3 -m pytest --version`: fails because pytest is absent. SciPy comparison
+  also cannot run; SciPy is absent. No installation. Independent analytical,
+  source-draw, quadrature, covariance-inverse and stored-curve checks are recorded;
+  these establish mathematical/software consistency, not hardware validity.
+- All 47 SVGs regenerate byte-identically, including the ten new batch figures.
+  Actual standalone assets, complete unit HTML pages and readable crops were
+  inspected by the author and separately contextualized read-only AI reviewers.
+- Scratch `quarto render …/book --to html` with XDG cache under /tmp: 14 pages,
+  no reported warnings. All 421 local links/fragments resolve; no duplicate IDs
+  or unresolved markers; 48 image uses have alt text. Final actual captures and
+  21 readable final unit-page crops include the new interface derivation,
+  probability table, exercises and Chapter 7→8→9→10 navigation.
+- `python3 scripts/check_repo.py`: all 13 required paths present. Whitespace
+  passes. All 62 protected baseline files match: prior technical manuscripts,
+  37 figures, graphical helper, accepted standards, architecture and plans.
+  The preface, authoring configuration and current-work are authorized exclusions.
+- Review packets preserve SHA-256 manifests, actual PNGs and supplied inputs;
+  raw findings/events remain separate from author records. Earlier metadata
+  exposure and targeted replacement contexts are disclosed. Same-model contexts
+  retain correlated failure risks; requested model/effort is not backend identity
+  attestation. AI review confers no human Reviewed/Accepted state.
+
+Desktop HTML analytical use is the tested format. Full pytest, PDF/offline math,
+exhaustive responsive/assistive-technology assessment, qualified specialist review,
+reader effectiveness and empirical receiver/source-path evidence remain open.
+The K08–K10 stopping boundary applies; K11 is not authorized by these checks.
+
+Earlier records below retain their historical dates and limitations.
+
+---
+
 # HTML visual acceptance — administrative closeout, 2026-10-30
 
 The owner provisionally accepts the completed Chapters 1–7/pilot visual milestone

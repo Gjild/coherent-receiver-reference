@@ -61,7 +61,7 @@ does not remove geometric Doppler.
 
 The geometry in @fig-field-port-paths fixes these signs and separates the field,
 antenna and electronic planes. The lower chain will also be the noise-path
-interface for the later physical-noise treatment.
+interface for the [physical-noise treatment](physical-disturbance-paths.qmd).
 
 ![A sourceward vector gives positive spatial phase toward the source. The field-to-open-circuit response, loaded antenna network and orientation-normalized electronics are distinct operations; injection at Q bypasses the first two.](figures/field-port-paths.svg){#fig-field-port-paths fig-alt="Two positions separated by baseline b see a wave travelling opposite the sourceward vector ell. The earlier arrival at position 2 has positive relative phase. Below, transverse field passes through H to open-circuit voltages, then L to loaded ports Q, and orientation-normalized G to receiver outputs; an injection arrow enters at Q."}
 
@@ -156,8 +156,8 @@ $\mathbf G$ alone. In general the matrix
 order matters. Mutual impedances make $\mathbf L$ nondiagonal; changing one load
 can change several port voltages. The network reasoning follows the impedance
 definitions in Hum §1, but this loaded receiving equation is derived here.
-The physical-noise treatment planned for Chapter 9 adds noise sources and
-active-device reverse noise.
+The [physical-noise treatment](physical-disturbance-paths.qmd) adds noise sources
+and active-device reverse-noise paths.
 
 For an uncoupled antenna with real resistance $R_A$ and real load $R_L$,
 $v_L=R_Lv_{\rm oc}/(R_A+R_L)$. Delivered average power is
@@ -287,6 +287,7 @@ independent transmitter phase. The path sensitivity halves, the vacuum wrap
 distance doubles to 30 mm at 10 GHz, and transmitter phase becomes another
 unknown. A valid distance inference now needs that reference phase as well as
 the propagation law. Before improving the receiver's phase precision, establish
-which physical variables the comparison can actually separate. The later physical-noise treatment
-will use the same field and loaded-port interfaces to construct disturbances rather
-than attributing every measured fluctuation to independent receiver noise.
+which physical variables the comparison can actually separate. The
+[physical-noise treatment](physical-disturbance-paths.qmd) uses the same field
+and loaded-port interfaces to construct disturbances and examine whether receiver
+noise contributions are independent.

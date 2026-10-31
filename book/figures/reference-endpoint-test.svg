@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1140" role="img" aria-labelledby="title desc"><title id="title">Measure the reference delivered at each receiver endpoint</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Measure the reference delivered at each receiver endpoint</text>
+<rect x="40" y="115" width="185" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="132.5" y="140" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Shared source φs</text>
+<text x="132.5" y="165" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">post-common-buffer</text>
+<rect x="360" y="100" width="220" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="470.0" y="125" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Branch 1: A1, η1</text>
+<text x="470.0" y="150" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">load / delay / temperature</text>
+<rect x="700" y="100" width="210" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="805.0" y="125" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">LO endpoint L1</text>
+<text x="805.0" y="150" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">actual mixer load</text>
+<path d="M225.000,155.000 L275.000,155.000 L275.000,145.000 L360.000,145.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M580.000,145.000 L700.000,145.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="360" y="330" width="220" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="470.0" y="355" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Branch 2: A2, η2</text>
+<text x="470.0" y="380" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">load / delay / temperature</text>
+<rect x="700" y="330" width="210" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="805.0" y="355" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">LO endpoint L2</text>
+<text x="805.0" y="380" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">actual mixer load</text>
+<path d="M225.000,155.000 L275.000,155.000 L275.000,375.000 L360.000,375.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M580.000,375.000 L700.000,375.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="40" y="510" width="205" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="142.5" y="535" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Witness w</text>
+<text x="142.5" y="560" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">independent or shared?</text>
+<rect x="405" y="510" width="290" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="550.0" y="535" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Observed phase yi = φi − w</text>
+<text x="550.0" y="560" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Sy = Si + Sw − 2 Re Siw</text>
+<path d="M245.000,552.000 L405.000,552.000" fill="none" stroke="#237550" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M805.000,190.000 L805.000,235.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="820" y="230" font-family="sans-serif" font-size="20" fill="#182f3e" text-anchor="start">φ₁</text>
+<path d="M805.000,420.000 L805.000,465.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="820" y="460" font-family="sans-serif" font-size="20" fill="#182f3e" text-anchor="start">φ₂</text>
+<path d="M550.000,470.000 L550.000,510.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="505" y="485" font-family="sans-serif" font-size="20" fill="#182f3e" text-anchor="start">φᵢ</text>
+<path d="M700.000,375.000 L635.000,375.000 L635.000,215.000 L470.000,215.000 L470.000,190.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="7 4" marker-end="url(#arrow)"/>
+<text x="655" y="255" font-family="sans-serif" font-size="18" fill="#b34719" text-anchor="start">controlled load change</text>
+<text x="655" y="285" font-family="sans-serif" font-size="18" fill="#b34719" text-anchor="start">can perturb branch 1</text>
+<text x="45" y="680" font-family="sans-serif" font-size="20" fill="#182f3e" text-anchor="start">A perfectly shared witness can hide source phase modulation entirely.</text>
+<text x="45" y="740" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Inject β = 0.0002 rad at 10 MHz in the model: shared reading = 0; blocker bias ≈ 0.721°.</text>
+<text x="45" y="800" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Thermal example: differential 0.08 ps/K × 2 K → 0.058752° at 1.020 GHz.</text>
+<text x="45" y="860" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">A 0.05° excursion contract requires ≤ 0.06808 ps/K, or another justified correction.</text>
+<text x="45" y="920" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Load example: |α| = 0.01, |ΔΓ| = 0.1 → phase bound 0.05730°.</text>
+<text x="45" y="980" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Source sharing, common power and equal cable lengths do not establish endpoint validity.</text>
+<text x="45" y="1055" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">All excursions / source spectra / coupling coefficients here are synthetic.</text>
+<text x="32" y="1126" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

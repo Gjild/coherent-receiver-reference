@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1100" role="img" aria-labelledby="title desc"><title id="title">Trace each synthesizer disturbance to its injection plane</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Trace each synthesizer disturbance to its injection plane</text>
+<rect x="35" y="100" width="150" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="110.0" y="125" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Reference phase</text>
+<text x="110.0" y="150" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">10 MHz</text>
+<rect x="245" y="100" width="135" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="312.5" y="125" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Detector</text>
+<text x="312.5" y="150" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">error e</text>
+<rect x="435" y="100" width="170" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="520.0" y="125" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">PI controller</text>
+<text x="520.0" y="150" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Kp + Ki/s</text>
+<rect x="660" y="100" width="140" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="730.0" y="125" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">VCO</text>
+<text x="730.0" y="150" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Kv/s</text>
+<path d="M185.000,145.000 L245.000,145.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M380.000,145.000 L435.000,145.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M605.000,145.000 L660.000,145.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M800.000,145.000 L860.000,145.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<circle cx="860" cy="145" r="6" fill="#125b86"/>
+<path d="M866.000,145.000 L925.000,145.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="870" y="110" font-family="sans-serif" font-size="22" fill="#182f3e" text-anchor="start">θ</text>
+<rect x="470" y="300" width="170" height="75" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="555.0" y="325" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Feedback ÷ N</text>
+<text x="555.0" y="350" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">N = 102</text>
+<path d="M860.000,151.000 L860.000,337.000 L640.000,337.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M470.000,337.000 L310.000,337.000 L310.000,190.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="325" y="225" font-family="sans-serif" font-size="24" fill="#182f3e" text-anchor="start">−</text>
+<rect x="40" y="300" width="205" height="80" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="142.5" y="325" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Detector noise n_d</text>
+<text x="142.5" y="350" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">input phase (+)</text>
+<path d="M245.000,335.000 L265.000,335.000 L265.000,190.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="435" y="220" width="210" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="540.0" y="245" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Tuning noise nᵤ (V)</text>
+<text x="540.0" y="270" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">after controller</text>
+<path d="M630.000,220.000 L630.000,145.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<circle cx="630" cy="145" r="4" fill="#125b86"/>
+<rect x="305" y="405" width="300" height="75" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="455.0" y="430" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Divider output error ndiv</text>
+<text x="455.0" y="455" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">reference-frequency phase</text>
+<path d="M400.000,405.000 L400.000,337.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<circle cx="400" cy="337" r="4" fill="#125b86"/>
+<rect x="665" y="405" width="230" height="75" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="780.0" y="430" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Intrinsic VCO phase φv</text>
+<text x="780.0" y="455" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">added before feedback tap</text>
+<path d="M840.000,405.000 L840.000,145.000 L854.000,145.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="45" y="535" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">θ = N H (φr + nd − ndiv) + E φv + E (Kv/s) nu; E = 1 − H.</text>
+<text x="45" y="585" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Filter/tuning voltage noise nu and feedback-divider noise need their own planes.</text>
+<rect x="45" y="665" width="200" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="145.0" y="690" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Loop output θ</text>
+<text x="145.0" y="715" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">pre-buffer plane</text>
+<rect x="345" y="665" width="230" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="460.0" y="690" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Common buffer</text>
+<text x="460.0" y="715" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">add φb outside loop</text>
+<rect x="685" y="665" width="230" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="800.0" y="690" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Distribution branches</text>
+<text x="800.0" y="715" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">A₁φs + η₁; A₂φs + η₂</text>
+<path d="M245.000,708.000 L345.000,708.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M575.000,708.000 L685.000,708.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="45" y="825" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Low-pass reference/PFD noise and high-pass VCO noise trade against settling.</text>
+<text x="45" y="885" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">A wider loop cannot suppress noise or feedthrough added after the feedback tap.</text>
+<text x="45" y="945" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Divider / fractional / output states and coarse tuning are absent from this locked model.</text>
+<text x="45" y="1025" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Physical loop-filter values, VCO tuning slope, delays and source spectra need evidence.</text>
+<text x="32" y="1086" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

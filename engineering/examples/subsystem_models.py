@@ -140,5 +140,127 @@ def unit14():
     s.text(45,1130,'State coefficient, pulse history and exposure qualification accompany every valid record.',18);s.save()
 
 
+def pll_transfer(f,fn=20000.,zeta=2**-.5):
+    w=2*pi*fn;s=2j*pi*f;d=s*s+2*zeta*w*s+w*w
+    return (2*zeta*w*s+w*w)/d,s*s/d
+
+
+def pll_density(f,fn=20000.):
+    if abs(f)>20e6:return 0.
+    h,e=pll_transfer(f,fn)
+    return 102**2*1e-16*abs(h)**2+1e-3/(f*f+1)*abs(e)**2
+
+
+def pll_case(fn=20000.,n=4096):
+    from visual_foundations import quad
+    variance=2*quad(lambda u:pll_density(exp(u),fn)*exp(u),log(10),log(1e6),n)
+    wait=log(2**.5/.01)/((2**-.5)*2*pi*fn)
+    return dict(variance=variance,sigma_degrees=degrees(sqrt(variance)),wait_us=1e6*wait)
+
+
+def lo_contract(branch_density=3e-11,beta=2e-4):
+    from math import sin,radians
+    pb=1e-9;ps=10**(-13.2);allowed=10**(-19.2)
+    endpoint=pll_density(10e6)+2e-12+branch_density
+    radius=sqrt(pb/ps)*beta/2
+    return dict(mask=allowed/pb,endpoint=endpoint,rm_dbm_hz=10*log10(pb*endpoint/.001),
+                beta_limit=2*sin(radians(.02))*sqrt(ps/pb),
+                phase_spur_degrees=degrees(asin(radius)) if radius<1 else None,
+                average_sigma_degrees=degrees(sqrt(2*branch_density/.002+2*5e-12*5e-9/.002**2)))
+
+
+def unit15():
+    from math import sin,cos,radians
+    from visual_foundations import log as logspace
+    s=SVG('pll-source-paths','Trace each synthesizer disturbance to its injection plane',1100)
+    for x,w,lines in [(35,150,['Reference phase','10 MHz']), (245,135,['Detector','error e']),
+                      (435,170,['PI controller','Kp + Ki/s']), (660,140,['VCO','Kv/s'])]:
+        s.box(x,100,w,90,lines)
+    for a,b in [(185,245),(380,435),(605,660),(800,860)]:s.path([(a,145),(b,145)],arrow=True)
+    s.dot(860,145,6);s.path([(866,145),(925,145)],arrow=True);s.text(870,110,'θ',22)
+    s.box(470,300,170,75,['Feedback ÷ N','N = 102'])
+    s.path([(860,151),(860,337),(640,337)],arrow=True)
+    s.path([(470,337),(310,337),(310,190)],arrow=True);s.text(325,225,'−',24)
+    s.box(40,300,205,80,['Detector noise n_d','input phase (+)'])
+    s.path([(245,335),(265,335),(265,190)],COLORS[1],arrow=True)
+    s.box(435,220,210,65,['Tuning noise nᵤ (V)','after controller'])
+    s.path([(630,220),(630,145)],COLORS[1],arrow=True);s.dot(630,145)
+    s.box(305,405,300,75,['Divider output error ndiv','reference-frequency phase'])
+    s.path([(400,405),(400,337)],COLORS[1],arrow=True);s.dot(400,337)
+    s.box(665,405,230,75,['Intrinsic VCO phase φv','added before feedback tap'])
+    s.path([(840,405),(840,145),(854,145)],COLORS[1],arrow=True)
+    s.text(45,535,'θ = N H (φr + nd − ndiv) + E φv + E (Kv/s) nu; E = 1 − H.',19)
+    s.text(45,585,'Filter/tuning voltage noise nu and feedback-divider noise need their own planes.',18)
+    s.box(45,665,200,85,['Loop output θ','pre-buffer plane'])
+    s.box(345,665,230,85,['Common buffer','add φb outside loop'])
+    s.box(685,665,230,85,['Distribution branches','A₁φs + η₁; A₂φs + η₂'])
+    s.path([(245,708),(345,708)],arrow=True);s.path([(575,708),(685,708)],arrow=True)
+    s.text(45,825,'Low-pass reference/PFD noise and high-pass VCO noise trade against settling.',19)
+    s.text(45,885,'A wider loop cannot suppress noise or feedthrough added after the feedback tap.',18)
+    s.text(45,945,'Divider / fractional / output states and coarse tuning are absent from this locked model.',18)
+    s.text(45,1025,'Physical loop-filter values, VCO tuning slope, delays and source spectra need evidence.',18);s.save()
+    s=SVG('pll-loop-tradeoff','Choose a loop from noise and settling together',1500)
+    ff=logspace(10,1e6)
+    s.plot(70,'Pre-buffer phase spectra: same sources, different natural frequency',(10,1e6),(1e-16,1e-9),
+           'Offset frequency |f| (Hz)','Two-sided phase PSD (rad²/Hz)',
+           [(f'fn = {fn/1000:g} kHz',ff,[pll_density(f,fn) for f in ff]) for fn in [2000,10000,20000,40000]],True,True)
+    nn=lin(1000,50000);vals=[pll_case(fn,n=512) for fn in nn]
+    s.plot(525,'Band-limited phase RMS: 10 Hz ≤ |f| ≤ 1 MHz',(1,50),(0,.09),
+           'Natural frequency fn (kHz)','Pre-buffer phase RMS (degrees)',
+           [('integrated synthetic sources',[n/1000 for n in nn],[r['sigma_degrees'] for r in vals]),
+            ('0.03° interface',[n/1000 for n in nn],[.03]*len(nn))])
+    s.plot(980,'Envelope for a locked-state 1° phase command to reach 0.01°',(1,50),(0,1200),
+           'Natural frequency fn (kHz)','Sufficient settling time (μs)',
+           [('damped linear envelope',[n/1000 for n in nn],[r['wait_us'] for r in vals]),
+            ('100 μs interface',[n/1000 for n in nn],[100]*len(nn))])
+    s.text(45,1400,'20 kHz: 0.028421° and 55.727 μs; 40 kHz is faster but violates the noise ceiling.',18)
+    s.text(45,1450,'This is not a large-hop lock-time or physical-loop stability guarantee.',18);s.save()
+    s=SVG('lo-blocker-contract','Noise and coherent spurs need different LO contracts',1450)
+    ss=logspace(1e-12,2e-10)
+    s.plot(70,'One −60 dBm blocker at the mixer input; noise allocation −162 dBm/Hz',
+           (1e-12,2e-10),(-176,-156),'Additive branch phase PSD Sη (rad²/Hz)',
+           'Input-referred reciprocal noise (dBm/Hz)',
+           [('source + common buffer + branch',ss,[lo_contract(v)['rm_dbm_hz'] for v in ss]),
+            ('allocation',ss,[-162]*len(ss))],True)
+    bb=logspace(1e-7,1e-3)
+    s.plot(520,'A coherent LO sideband translates the blocker onto the wanted signal',
+           (1e-7,1e-3),(.0001,10),'Sinusoidal PM peak β (rad)','Bound on retained phase bias (degrees)',
+           [('small-PM conversion',bb,[lo_contract(beta=b)['phase_spur_degrees'] for b in bb]),
+            ('0.02° allocation',bb,[.02]*len(bb))],True,True)
+    s.box(40,995,245,85,['LO carrier 1.020 GHz','PM sideband 1.030 GHz'])
+    s.box(365,995,230,85,['RF blocker 1.010 GHz','−60 dBm after selection'])
+    s.box(685,995,230,85,['Difference = 20 MHz','same IF as wanted'])
+    s.path([(285,1035),(315,1035),(315,970),(800,970),(800,995)],arrow=True)
+    s.path([(595,1035),(685,1035)],arrow=True)
+    c=lo_contract()
+    s.text(45,1150,f"Sη = 3e−11: reciprocal noise {c['rm_dbm_hz']:.4f} dBm/Hz; mask 6.3096e−11 rad²/Hz.",18)
+    s.text(45,1210,'β = 0.0002 rad gives −80 dBc per sideband, yet about 0.721° retained bias.',18)
+    s.text(45,1270,'The bias allocation instead requires β ≤ 5.5455e−6 rad (about −111.14 dBc).',18)
+    s.text(45,1330,'The 10 MHz IF notch removes the original blocker, not this new 20 MHz component.',18)
+    s.text(45,1395,'No universal L(f) conversion or measured synthesizer performance is assumed.',18);s.save()
+    s=SVG('reference-endpoint-test','Measure the reference delivered at each receiver endpoint',1140)
+    s.box(40,115,185,85,['Shared source φs','post-common-buffer'])
+    for y,i in [(100,1),(330,2)]:
+        s.box(360,y,220,90,[f'Branch {i}: A{i}, η{i}','load / delay / temperature'])
+        s.box(700,y,210,90,[f'LO endpoint L{i}','actual mixer load'])
+        s.path([(225,155),(275,155),(275,y+45),(360,y+45)],arrow=True)
+        s.path([(580,y+45),(700,y+45)],arrow=True)
+    s.box(40,510,205,85,['Witness w','independent or shared?'])
+    s.box(405,510,290,85,['Observed phase yi = φi − w','Sy = Si + Sw − 2 Re Siw'])
+    s.path([(245,552),(405,552)],COLORS[2],arrow=True)
+    s.path([(805,190),(805,235)],arrow=True);s.text(820,230,'φ₁',20)
+    s.path([(805,420),(805,465)],arrow=True);s.text(820,460,'φ₂',20)
+    s.path([(550,470),(550,510)],arrow=True);s.text(505,485,'φᵢ',20)
+    s.path([(700,375),(635,375),(635,215),(470,215),(470,190)],COLORS[1],dash='7 4',arrow=True)
+    s.text(655,255,'controlled load change',18,COLORS[1]);s.text(655,285,'can perturb branch 1',18,COLORS[1])
+    s.text(45,680,'A perfectly shared witness can hide source phase modulation entirely.',20)
+    s.text(45,740,'Inject β = 0.0002 rad at 10 MHz in the model: shared reading = 0; blocker bias ≈ 0.721°.',18)
+    s.text(45,800,'Thermal example: differential 0.08 ps/K × 2 K → 0.058752° at 1.020 GHz.',18)
+    s.text(45,860,'A 0.05° excursion contract requires ≤ 0.06808 ps/K, or another justified correction.',18)
+    s.text(45,920,'Load example: |α| = 0.01, |ΔΓ| = 0.1 → phase bound 0.05730°.',18)
+    s.text(45,980,'Source sharing, common power and equal cable lengths do not establish endpoint validity.',18)
+    s.text(45,1055,'All excursions / source spectra / coupling coefficients here are synthetic.',18);s.save()
+
+
 if __name__=='__main__':
-    {14:unit14}[int(sys.argv[1])]()
+    {14:unit14,15:unit15}[int(sys.argv[1])]()

@@ -14,7 +14,9 @@ K14 closes after fresh read-only technical/visual review and targeted reassessme
 4figures,79stdlib+19pilot tests and62reproducedSVGs are checked. Final equation
 unit/explicitcubic expansion/observable/caption pixels inspected. Sources and
 limits are in reviews/k14-k16-development.md; no consequential open K14finding.
-Next active unit is K15a/b, canonical Chapter15; K16 follows only after its review.
+K15a/b closes after fresh technical/visual review and targeted reassessment;
+4figures,84stdlib+19pilot checks and66reproducedSVGs are recorded.
+Next active unit is K16, canonical Chapter16. Stop after K16/integration.
 
 ---
 

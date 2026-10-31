@@ -103,3 +103,99 @@ K14 closes as a checked provisional bounded treatment, with4reproduciblefigures,
 98available selected regressions, actualasset/page inspection and separate AI
 review/reassessment. No hardware/reader/specialist/human acceptance. Safe local
 checkpoint precedes K15a/b; no K17 or architecture change.
+
+
+## K15a/b scope — canonical Chapter15
+
+K14 checkpoint0ef1e90. Exact K15a/b specification, prerequisites/CAP015/016 and
+Chapter15card read again before outcome selection. Engineering question: which
+loop/source/distribution/verification contracts deliver a usable1.020GHz LO at
+receiver endpoints? Outcomes: derive synthesis noise/settling transfers, convert
+blocker/desired requirements to effective phase-noise/spur masks, compare loop
+and loading/topology alternatives, evaluate correlated witness evidence and
+identify reset/endpoint/calibration/implementation conditions. Continue Chapter11
+single-blocker planes and Chapter12budget methods, keeping K14multitone contrast
+separate and all new technology spectra/thermal/load envelopes illustrative.
+
+
+K15 author development/checks: PI source-plane equations retain detector/divider,
+intrinsicVCO/tuning voltage and post-loop buffer/branch paths. Derived controller
+and delay interface: Kp0.144250V/rad,Ki12817.698V/(rad·s), crossover31.07548kHz,
+ideal margin65.5302°, delay<1.83516μs for45° in the ideal model. No physical loop
+stability/capture/large-hop guarantee. Synthetic 2/10/20/40kHz candidates give
+0.060705/0.030804/0.028421/0.032623° RMS over10Hz–1MHz and sufficient1percent
+small-command waits557.267/111.453/55.727/27.863μs:20kHz alone passes the two
+specified interfaces among these candidates.
+
+Effective LO mask6.30957e-11rad²/Hz at10MHz follows from−60dBm blocker and−162dBmHz
+noise allowance. Good/bad branch examples yield−164.94850/−159.91400dBmHz. Good
+marginal RM fraction5.072percent splits0.317shared/4.755independent; cannotreplace
+Chapter12commonq. PMβ0.0002rad gives−80dBc sideband and0.72133°retainedbias;
+0.02° insteadneedsβ≤5.54546e-6rad,−111.14185dBc. Actual real-mixer projection
+checks that1.030GHzLOsideband/1.010GHzRFblocker reaches20MHz IF.
+
+Independent RK4 physical control equations, rational-spectrum linear-band
+quadrature, phase-step/open-loop delay, white-window source energy, global PSD
+bound, real RF/LO waveform, witness-blind injection, loading phase optimization,
+thermal sign and RFpower calculations agree.84stdlib tests pass;19unchangedpilot
+tests previously pass,103selected total. Eleven subsystem tests include5new
+consequential synthesis/endpoint checks. All66SVGs reproduce;91protected baseline
+entries including58prebatchSVGs and2preexisting untracked files match. Independent
+curve formulations check2890vertices within0.000501px. Initial curve checker
+omitted x-domain clipping at floating log endpoint; corrected checker to validate
+actual in-domain plotted points, no model/figure correction required.
+
+Author inspects4final assets (1200×1375/1875/1813/1425), full1425×11872HTML and9
+readable crops. Corrected schematic path collisions before review: two mixer
+operands converge, endpoint readings use distinct labeledphase outputs, explicit
+controller/divider injections and legible labels. No unexpected manuscript control
+bytes; a units escape was repaired before first review. Clarified parenthesized
+noise partition and both-noisy-branch comparison.19HTMLpages/678local links/
+67image uses pass structural scan. Primary MT086/Collins/ADF4351 passages examined;
+notes preserve ambiguity/excluded scope and no actual part guarantees.
+
+Fresh read-only192file/15PNG K15review is running. During author notation audit,
+renamed difference PSD S21 (conflicting with established cross-spectrum notation)
+to S_DeltaPhi and clarified the all-frequency constant integration envelope as a
+windowed upper bound, not a finite-variance white instantaneous phase process.
+These prose/notation changes need corrected-page inspection and fresh targeted
+reassessment after the pending initial review; numerical/model/figure values
+unchanged. No K16 development before K15closeout.
+
+
+K15 initial fresh read-only Sol/high review thread
+01a19208-91c5-7313-962b-d5b945d43196 exits0:192hashes/15actualPNGs checked;
+independent loop/noise/mask/spur/covariance/thermal/loading/power calculations
+agree and5synthesis tests pass. No consequential bounded-model defect found.
+Demonstrated navigation mismatch: promised remote inference next while next-page
+control opened the supplement. Corrected wording explicitly identifies reserved
+Chapter16 and current supplement navigation; K16 integration will replace that
+interim sentence with the actual chapter link. Optional plot tick/subscript polish
+deferred. Reviewer inadvertently exposed TOC status/history and coverage6.4 via
+initial broad search; excluded these from reasoning. Not a fully blind review.
+Original sources were not independently authenticated by reviewer, only supplied
+notes/anchors examined. No edits/delegation/connectors or human validation.
+
+Author independently found and corrected difference-PSD S21 notation collision
+and clarified the all-frequency constant density as a windowed upper envelope,
+not a finite-variance instantaneous white process. Numerical/model/asset bytes
+unchanged. Corrected complete1425×12042HTML and all9overlapping crops opened:
+S_DeltaPhi, Parseval argument, figures/equations/captions and final navigation
+legible, full ending present.19pages/678local links/67image uses pass. First render
+without private XDG cache failed to open database; rerun with /tmp cache succeeds,
+no host/cache permission changes. Fresh192file/15PNG targeted read-only review
+is pending; archived first raw findings/events are separate from this disposition.
+
+
+K15 targeted fresh read-only Sol/high reassessment exits0;192hashes/15actualPNGs
+verified, all9crops exactly cover full-page rows0–12041. Independent difference
+PSD/Parseval/noise partition and wider engineering numbers agree;5tests pass.
+No consequential target defect; interim supplement warning matches actual link.
+Optional explicit source/branch uncorrelatedness and upper-bound labels remain
+editorial polish for integration. Incidental status/review boilerplate in earlier
+covariance/notation/next-page metadata was excluded; no author history/prior
+review files/current-work/edit/delegation/connectors. Originals not reexamined
+by reviewer. Raw findings/command/exit/events and corrected frozen inputs archived.
+K15 closes as checked provisional bounded Chapter15 with4figures. Hardware,
+independent specialist, actual reader and publication evidence remain absent.
+Target reviewer thread: 01a19215-2349-7ab0-bce9-e273a85c7d87.

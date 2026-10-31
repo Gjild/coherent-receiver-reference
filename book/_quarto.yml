@@ -21,6 +21,7 @@ book:
     - feasibility-architecture-allocations.qmd
     - calibration-observability-metrology.qmd
     - analog-information-preservation.qmd
+    - synthesis-endpoint-references.qmd
     - part: "Development supplements"
       chapters:
         - publishing-pilot.qmd

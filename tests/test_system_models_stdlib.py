@@ -137,4 +137,73 @@ class TransferModels(unittest.TestCase):
             self.assertAlmostEqual(math.cos(2*math.pi*80.05e6*n/100e6+.3),math.cos(2*math.pi*19.95e6*n/100e6-.3),places=12)
 
 
+class AllocationModels(unittest.TestCase):
+    def test_nonzero_offset_phase_weight_and_persistent_departure(self):
+        T=.002;df=100;n=20000;step=T/n;eps=1e-5
+        times=[-T/2+(i+.5)*step for i in range(n)]
+        psi=[math.cos(2*math.pi*250*t) for t in times]
+        baseline=sum(cmath.exp(2j*math.pi*df*t) for t in times)/n
+        actual=cmath.phase(sum(cmath.exp(2j*math.pi*df*t+1j*eps*p) for t,p in zip(times,psi))/n/baseline)/eps
+        weight=[math.cos(2*math.pi*df*t)/(T*model.sinc(df*T)) for t in times]
+        predicted=sum(g*p for g,p in zip(weight,psi))*step
+        self.assertAlmostEqual(actual,predicted,places=8)
+        self.assertAlmostEqual(sum(weight)*step,1.,places=9)
+        # A constant departure passes with unit sensitivity, not 1/sqrt(N).
+        constant=cmath.phase(baseline*cmath.exp(.01j)/baseline)
+        self.assertAlmostEqual(constant,.01,places=14)
+
+    def test_thermal_signs_by_physical_complex_paths(self):
+        hu,hv=model.thermal_paths();step=.001
+        for i,(rf,lo) in enumerate([(1.5e-12,.5e-12),(3e-12,4e-12)]):
+            transfer=lambda u,v:cmath.exp(-2j*math.pi*1e9*rf*(u+v))*cmath.exp(2j*math.pi*1.02e9*lo*u)
+            self.assertAlmostEqual(cmath.phase(transfer(step,0))/step,hu[i],places=13)
+            self.assertAlmostEqual(cmath.phase(transfer(0,step))/step,hv[i],places=13)
+        # Independent temperatures would delete a consequential cross term.
+        wrong=4*((2*math.pi*1.02e9*4e-12)**2+(2*math.pi*1e9*3e-12)**2)
+        self.assertGreater(wrong/(4*hu[1]**2),21)
+
+    def test_covariance_from_common_complex_voltage_and_slow_sources(self):
+        import numpy as np
+        rng=np.random.default_rng(130013);n=240000;q=.02;rho=100*model.sinc(.1)**2
+        cn=lambda shape:(rng.normal(size=shape)+1j*rng.normal(size=shape))/math.sqrt(2)
+        data=model.nominal_allocation();v=np.array(data['v']);hu,hv=map(np.array,model.thermal_paths())
+        u=rng.normal(0,2,n);grad=rng.normal(0,1.8,n);cal=rng.normal(0,.01,(n,3))
+        phases=((math.sqrt(1-q)*cn((n,3))+math.sqrt(q)*cn((n,1))*v)/math.sqrt(rho)).imag+cal
+        dif=phases[:,1:]-phases[:,:1]+u[:,None]*hu+grad[:,None]*hv
+        measured=np.cov(dif,rowvar=False,bias=True);expected=np.array(data['covariance'])
+        self.assertLess(np.max(np.abs(measured-expected)),9e-5)
+        ub=(math.sin(math.pi/3)-.125)/1.01
+        self.assertAlmostEqual(cmath.phase(v[1]),-math.pi/8,places=12)
+        self.assertAlmostEqual(abs(cmath.phase(v[2])),math.pi,places=12)
+        self.assertAlmostEqual(math.sin(math.radians(47.19651350605626)),ub,places=13)
+        self.assertGreater(data['sigma_degrees'],.5)
+        self.assertLess(model.nominal_allocation(q=0)['sigma_degrees'],.5)
+
+    def test_source_row_envelope_with_bounded_mean_changes(self):
+        rng=random.Random(13013);q=.02;rho=100*model.sinc(.1)**2;case=model.allocation_case();r=case['r']
+        for _ in range(400):
+            w=[rng.uniform(-1,1) for i in range(3)]
+            v=[cmath.exp(1j*rng.uniform(-math.pi,math.pi)) for i in range(3)]
+            means=[1+r*cmath.exp(1j*rng.uniform(-math.pi,math.pi)) for i in range(3)]
+            # Phase derivative divides the proper complex source by its mean.
+            actual=((1-q)*sum((a/abs(z))**2 for a,z in zip(w,means))+q*abs(sum(a*b/z for a,b,z in zip(w,v,means)))**2)/(2*rho)
+            upper=((1-q)*sum(a*a for a in w)+q*sum(abs(a) for a in w)**2)/(2*case['rho_min'])
+            self.assertLessEqual(actual,upper*(1+1e-13))
+
+    def test_restoration_and_changed_record_observation(self):
+        one=model.allocation_case();two=model.allocation_case(T=.002)
+        self.assertGreater(one['sigma_degrees'],.5);self.assertLess(two['sigma_degrees'],.4)
+        self.assertLess(two['approx_branch_envelope'],1e-3)
+        self.assertAlmostEqual(one['gradient_variance'],two['gradient_variance'],places=15)
+        self.assertAlmostEqual(one['calibration_variance'],two['calibration_variance'],places=15)
+        self.assertLess(model.allocation_case(T=.002,q=.2)['sigma_degrees'],.5)
+        for dw in [-100,0,100]:
+            for db in [-100,-37,0,59,100]:
+                for err in [-1e-6,1e-6]:
+                    self.assertLess(model.composite_notch_rejection(dw,db,-2*math.cos(.2*math.pi)+err,samples=200000),1.3e-10)
+        # Finite-SNR sensitivity is separate from an assumed new source.
+        inflated=one['total_phase_variance']+.01*one['noise_phase_variance']
+        self.assertGreater(inflated,one['allowed_variance'])
+
+
 if __name__=='__main__':unittest.main()

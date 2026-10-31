@@ -27,9 +27,14 @@ usage-limit attempt remains recorded as incomplete, not review evidence.
 Four K12 figures, complete pages/crops, 87 selected regressions and55 reproduced
 SVGs are checked. See `reviews/k11-k13-development.md` for exact provenance.
 
-Active next: K13, correlated budget construction and closure/restoration in
-Chapter12 sections12.3–12.4. Final connected assessment follows K13. Stop there;
-no K14, architecture change, external publication or human technical acceptance.
+K12 completed local checkpoint: `74400a1`. K13 now closes after fresh read-only
+scientific/engineering/educational/actual-pixel review with no consequential
+open finding. Its conditional physical-source allocations and three figures are
+checked; raw findings and limited evidence are in the managing record.
+
+Active: final connected K11–K13 integration assessment and routine publishing
+clarifications. Stop after that assessment; do not begin K14 or grant human
+technical acceptance. Earlier usage-limit failure remains historical evidence.
 
 ---
 

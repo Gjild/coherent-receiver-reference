@@ -200,3 +200,78 @@ corrected distinction, counterexample, figure/caption and navigation. 68 selecte
 regressions plus19 pilot tests pass; all55 SVGs reproduce; HTML integrity passes.
 K12 closes as a checked provisional bounded treatment, with device/clock/noise/
 arithmetic/resource and human/reader evidence still limited. Proceed to K13.
+
+## K13 — physical correlated allocations and conditional closure
+
+Canonical Chapter12 sections12.3–12.4. Accepted K13/CAP013 scope and prerequisites
+read before development. K11 sections12.1–12.2 mathematical content preserved
+exactly; introduction/closure connect its first-pass independent-noise screen to
+the refined common-source allocation. No accepted architecture/conventions changed.
+The observable is local direction uncertainty given calibration and unobserved
+environmental inputs on a correct branch; repeated-record variation at a fixed
+unknown error is distinguished.
+
+Original NIST TN1297 AppendixA.1–A.3 and section5.2/note1 passages re-examined via
+web; ADI2003 Mixer Noise Model/Effective Noise Floor of LO Driver passages examined.
+Uses are narrow interpretation/mechanism support; no source/device measurements
+are imported as receiver evidence. Existing canonical references reused with a
+claim-specific note. Thermal coefficients/distributions, calibration knowledge,
+noise partition and common equal transfer are explicitly synthetic.
+
+A complete floor is partitioned once into thermal/active/converter and a shared
+reciprocal-mixing source. Its cross-channel phase is constructed from wanted and
+blocker plane-wave geometry; a47.1965° blocker yields0°,−22.5°,−180° relative
+sensitivities, not an arbitrary correlation. RF/LO thermal signs sum before
+squaring: common ambient long-phase variance0.000184191rad² versus0.00404992
+if erroneously made independent; RF-only departure breaks that cancellation.
+Calibration intercept knowledge, temporal variability, parameter/model uncertainty,
+measurement uncertainty, margin, deterministic residuals and reset states remain
+distinct. The source-row triangle envelope covers unknown bounded mean amplitudes/
+phase projections without assuming favorable correlations remain unchanged.
+
+Linear1ms envelope0.507194° does not close; explicit clean-mean physical geometry
+also gives0.506648°, so an upper-bound exceedance alone is not used as proof of
+failure.2ms envelope0.398732° closes the illustrative precision inequality;
+approximate Gaussian-phase branch envelopes1.81308e-4/5.47621e-7, combined
+blocker/mirror angular displacement≈0.011514°. Sufficient RF-only temperature
+SD limits1.73752/4.04003K.2ms needs2.6ms reporting,0.04° excursion; traffic remains
+4.62Gbit/s, with tighter independent offset/rate allowances and unproved resources.
+No state/hardware recommendation follows from this conditional arithmetic.
+
+Checks:16system tests and73selected regressions plus19pilot tests pass. Distinct
+physical complex-path derivatives, proper-voltage/common-source draws, full
+covariance, nonzero-offset phase-observation weight, persistent-departure behavior,
+contamination/noise row bounds and200000-sample rejection checks executed. Direct
+complex-voltage/inverse-manifold simulation (seed131313,1.2million trials perT)
+gives0.508654°/0.399469° SD, with small finite-SNR shifts; it is neither a physical
+validation nor a rare-tail guarantee. Three new SVGs and all58 repository SVGs
+reproduce exactly. Independent scalar source-to-plot formulations check1837
+curve vertices within0.000501px, including the exact empty-envelope endpoint
+q=0.1235215. All76 protected baseline entries match; earlier Chapter1 prefix
+and all47 prior figures preserved. HTML integrity:16pages,527local links,59image
+uses; no duplicate IDs, unresolved targets/markers or absent alt text.
+
+Author opened all3 final asset rasters, full1425×24891page and all17 readable
+overlapping regions (first8 unchanged regions byte-match their previously opened
+PNGs). Signs/physical arrows/table/math/captions/axes and bottom navigation visible.
+During development clarified assumption replacement, sufficient envelope versus
+failing example, full electronic calibration access and diagram connectivity;
+split a long thermal equation to fit the prose width. Fresh read-only technical/
+visual review on218frozen files and21PNGs is pending; no review conclusion is
+asserted in this entry.
+
+Fresh read-only Sol/high K13 session `01a190aa-1f37-7473-b5da-61654af64c7a`, exit0:
+[raw findings](k11-k13-evidence/k13-findings.md). All218 hashes verified; all21
+PNGs actually inspected; independent phase/source, spectral/observation, covariance,
+contamination-envelope, budget/branch, two-record rejection and1837-vertex checks
+agree. Independent600000-trial nonlinear surrogate gives0.5088°/0.3999°, consistent
+with sampling variation and explicit model limits. Sixteen supplied tests pass.
+No demonstrated consequential mathematical/graphical error. No prohibited exposure,
+external sources/connectors/delegation/edits; source notes/anchors only, not original
+PDF examination. AI scrutiny adds no specialist/reader/physical acceptance.
+
+K13 closes as a checked provisional bounded treatment. Optional integration
+follow-ups: call4.62Gbit/s framed traffic (raw4.2), label the nonlinear check as
+a reduced-SNR surrogate, show1percent noise sensitivity numerically, and distinguish
+scaffold publishing supplements from canonical Chapter13. These change no derived
+allocation. Final connected assessment and its fresh review follow; no K14.

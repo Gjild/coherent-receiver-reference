@@ -11,12 +11,15 @@ This bounded development asks whether a small direction-comparison receiver can
 meet a supplied angular, blocker and response-time brief. The reader should be
 able to turn a need into a conditioned observable, calculate incompatible gain
 and information constraints, compare interface/resource alternatives, and state
-which missing evidence prevents a hardware recommendation. Requirement framing
+which missing evidence prevents a hardware recommendation. We then refine the
+initial interfaces into physical correlated allocations and test budget closure. Requirement framing
 begins in [Chapter 1](phase-comparison.qmd#sec-requirement-framing). We use
 [Chapter 5](phase-delay-inference.qmd) to separate precision from ambiguity,
 [Chapter 6](model-adequacy-uncertainty.qmd) to qualify approximations, and
 [Chapters 8–10](fields-geometry-transduction.qmd) for field, disturbance and
-extraction interfaces. Numerical envelopes below are **synthetic design inputs**,
+extraction interfaces. [Chapter 11](frequency-phase-delay-transfer.qmd) fixes
+conversion orientation, reference signs and sample-state prerequisites before
+those interfaces are allocated. Numerical envelopes below are **synthetic design inputs**,
 not selected products or measured receiver performance.
 
 ## Joint feasible regions {#sec-joint-feasibility}
@@ -359,17 +362,320 @@ must satisfy; they do not establish that either reference implementation does so
 
 ![The candidate architecture preserves three simultaneous field observations and puts RF rejection before gain and sampling. Distinct input, post-selector and digitizer planes carry different constraints; internal injection bypasses field and selector response.](figures/architecture-interfaces.svg){#fig-architecture-interfaces fig-alt="Three physical input ports feed RF selectors, then gain/conversion, real IF digitizers and retained complex observations. Input P0 has weak and blocker powers, P1 carries selected powers and supplied effective noise, and P2 has a composite peak voltage constraint. Reference state and sample identity feed conversion/sampling. Injection after selection reaches only the internal response."}
 
-## Closure and a restoring change {#sec-closure-restoration}
+## Correlated budget construction {#sec-correlated-budget}
 
-The selected candidate is conditionally feasible under the supplied observation
-and reference interfaces, not a finished
-receiver. Its 46 dB gain point lies inside the peak/weak-tone interval; 1 ms
-observation plus 0.6 ms processing meets 5 ms; short/long simultaneous comparisons
-satisfy the stated **idealized** precision and branch checks, with the bounded
-blocker residual separately charged; power and traffic
-fit their supplied envelopes. These are necessary interfaces, not evidence of
-intermediate linearity, real source covariance, filter phase, sample-state
-repeatability, interference rejection or actual bearing performance.
+The 1 ms candidate has survived an initial feasibility screen. Can it still meet
+0.5° once physical shared sources, calibration and environmental departures are
+charged? We now refine its supplied interfaces. The reader should be able to
+construct a source-to-observable budget, calculate a correlated allocation,
+identify an unknown input that prevents closure, and choose a restoring change.
+This is a local comparison in a known steady state, not a complete direction
+finder or a production distribution. The initial table's independent channel-noise
+assumption is now replaced by a common-source model at the same marginal density.
+Earlier independent-noise precision/branch numbers remain first-pass calculations,
+not results for this revised model.
+
+[Chapter 11](frequency-phase-delay-transfer.qmd) supplies the conversion signs;
+[Chapter 9](physical-disturbance-paths.qmd) supplies source/network and reciprocal
+mixing models. We reuse [Chapter 4](covariance-quadratic-forms.qmd)'s source-root
+covariance and [Chapter 6](model-adequacy-uncertainty.qmd)'s local uncertainty
+propagation rather than introduce another uncertainty convention. For this
+calculation, interpret the 0.5° criterion as **predictive local standard
+uncertainty given the calibration information and declared unobserved environment**,
+on a correct spatial branch. Holding an actual temperature and calibration error
+fixed gives a different repeated-record variance. Neither interpretation is an
+all-error or coverage guarantee.
+
+Let $\boldsymbol\varphi=[\phi_s-\phi_0,\phi_l-\phi_0]^T$ be restored relative
+phases at the record midpoint. If $\mathbf e=[e_0,e_s,e_l]^T$ is a vector of small
+channel phase errors, define
+
+$$
+\mathbf D=\begin{bmatrix}-1&1&0\\-1&0&1\end{bmatrix},\qquad
+\delta\boldsymbol\varphi=\mathbf D\mathbf e.
+$$
+
+A physical source reaching several ports contributes one column, or one filtered
+source process, before the covariance is formed. For centered stationary phase
+sources with two-sided matrix $\mathbf S_q(f)$, ordered as $Q_iQ_j^*$ in
+rad²/Hz, let $\mathbf L(f)$ map those sources into channel phase and let
+$\mathbf G(f)$ represent the declared normalized phase observation. The finite
+output covariance is the corresponding quadratic spectral integral over all
+real $f$, where it converges. For a task row $\mathbf w$ acting on the channel
+phases, its variance contribution is
+
+$$
+ V_{\mathbf w}=\int_{-\infty}^{\infty}
+ [\mathbf w\mathbf G(f)\mathbf L(f)]\mathbf S_q(f)
+ [\mathbf w\mathbf G(f)\mathbf L(f)]^H\,df.
+$$ {#eq-budget-spectral}
+
+This is a use of the existing observation/covariance results. It is not generally
+an unweighted integral of a connector phase-noise plot. For example, for a
+centered rectangular complex-tone record with common residual offset $\delta$,
+linearizing the phase of its complex average gives the real even time weight
+$g_\delta(t)=\cos(2\pi\delta t)/[T\operatorname{sinc}(\delta T)]$ inside
+$[-T/2,T/2]$, provided the denominator is nonzero. Its integral is one: writing $Z_0=A\operatorname{sinc}(\delta T)$ and
+$\delta Z=jA T^{-1}\int e^{j2\pi\delta t}\psi(t)dt$ for a small real phase
+perturbation gives $\delta\arg Z=\operatorname{Im}(\delta Z/Z_0)=\int g_\delta(t)\psi(t)dt$.
+Use its
+Fourier transform for the phase observation, together with the actual path
+response; the weight becomes uniform only at zero offset. Additive voltage and
+clock/blocker products require their own linearized transfers. A scalar phase
+weight cannot replace Chapter 9's complete-waveform timing model.
+
+### Allocate the complete noise floor once
+
+The supplied $N_0=-152$ dBm/Hz at P1 equals
+$6.30957\times10^{-19}$ W/Hz in the power-normalized positive-carrier envelope.
+It already represents the complete selected observer's effective input-referred
+noise. A possible **synthetic partition** is matched thermal input $k_B(290\text{ K})$,
+converter-referred contribution $0.4N_0$, common reciprocal-mixing contribution
+$qN_0$, and remaining independent active-path contribution
+$(0.6-q)N_0-k_B(290\text{ K})$. At $q=0.02$, these are all nonnegative and sum
+to $N_0$. The thermal term is $4.00388\times10^{-21}$ W/Hz. It could describe
+independent matched source terminations and isothermal passive selectors; an
+actual antenna environment/coupled network needs the field/noise model of
+Chapter 9 instead. Active-device voltage/current noise and converter noise must
+be transferred to P1 through their actual noise gains before using these entries.
+This partition demonstrates an admissible source model, not measured noise,
+actual component feasibility or an inference from nominal resolution.
+
+For the selected blocker power $P_B=10^{-9}$ W at P1, Chapter 9's narrow-blocker,
+flat-effective-spectrum limit gives $N_{\rm rm}=P_B S_{\phi,\rm eff}(-\Delta)$,
+$\Delta=10$ MHz in the restored orientation. Allocating $q=0.02$ requires an
+effective **two-sided phase density** about $1.26191\times10^{-11}$ rad²/Hz there,
+with the appropriate finite-observation weighting. No universal conversion to
+one-sided $L(f)$ is being adopted. Spectral shape, internal LO branches and
+band limits must be known to replace that flat-spectrum interface by an integral.
+A notch rejecting the blocker tone does not remove reciprocal noise that has
+already landed in the wanted band.
+
+The [examined mixer-noise article](https://www.analog.com/en/resources/technical-articles/specifications-and-measurement-of-local-oscillator-noise-in-integrated-circuit-base-station-mixers.html),
+“Mixer Noise Model” and “Effective Noise Floor of LO Driver,” distinguishes
+blocked from ordinary noise-figure conditions and includes internal driver noise.
+Its device measurements do not establish our numerical partition or correlations.
+Adding $qN_0$ to the already complete $N_0$ would double count it. If an earlier
+floor was actually measured **without** the blocker, it was a different interface:
+recompute the total, SNR and covariance rather than relabel the same number.
+
+Equal marginal channel SNRs still do not supply their covariance. In a simplified
+common-LO model after the complete observation, write normalized voltage noise
+
+$$
+ n_i=\rho^{-1/2}\{\sqrt{1-q}\,\eta_i+\sqrt q\,v_i\eta_B\},
+ \qquad E|\eta_i|^2=E|\eta_B|^2=1.
+$$ {#eq-blocker-noise-root}
+
+The $\eta_i$ and $\eta_B$ are mutually independent proper complex Gaussian
+variables; $\eta_B$ is one selected LO-noise band translated by the blocker, not
+three new independent noise generators. Here $|v_i|=1$ and $\rho$ is the complete
+clean-mean record SNR. This supplied equal-transfer approximation requires
+identical relative electronic responses at wanted and blocker frequencies and
+matched LO-noise transfer. Proper selected-band noise is itself an approximation
+requiring suitable sideband selection; significant improper or finite-image noise
+requires the fuller complex covariance. More general responses replace the $v_i$ and spectral
+integral, not merely the diagonal SNR. Linearizing phase at a unit mean gives
+$\epsilon_i=\operatorname{Im}n_i$. Proper centered noise satisfies
+$E[\operatorname{Im}n_i\operatorname{Im}n_j]=\tfrac12\operatorname{Re}E[n_i n_j^*]$, giving
+
+$$
+\mathbf C_{\varphi,n}=\frac1{2\rho}\mathbf D
+ \{(1-q)\mathbf I+q\operatorname{Re}(\mathbf v\mathbf v^H)\}\mathbf D^T.
+$$ {#eq-blocker-phase-covariance}
+
+The off-diagonal entries are derived from the single physical source. In
+particular the long comparison's variance is
+$(1-q\cos\psi_l)/\rho$, where $\psi_l=\arg(v_l v_0^*)$.
+A common source cancels only with the relevant equal complex sensitivities.
+
+Use the supplied plane-wave geometry to construct the phases rather than choose
+a convenient correlation. With wanted direction cosine $u=\sin60^\circ$, blocker
+direction cosine $u_B$, and positions $x_i\in\{0,0.15,1.2\}$ m,
+
+$$
+ v_i=\exp\left\{j\frac{2\pi x_i}{c}(f_Bu_B-f_Ru)\right\}.
+$$
+
+Choosing $u_B=(u-0.125)/1.01$ gives $\theta_B=47.1965^\circ$, within the same
+front sector. The three relative phases are $0,-\pi/8,-\pi$. At clean means the
+long noise variance is $(1+q)/\rho$, despite unchanged individual channel powers.
+Assuming independent channels would understate it. @fig-correlated-blocker-allocation varies the actual blocker direction; it does
+not vary an arbitrary correlation coefficient.
+
+### Slow physical paths and calibration knowledge
+
+Let $U$ be a common temperature departure from calibration and let $V$ be a
+further RF-path-only departure, each constant during a record. Use independent
+centered Gaussian ensemble models with $\sigma_U=2$ K and variable $\sigma_V$;
+these are illustrative prediction inputs, not a claim about thermal statistics
+or validity of linear coefficients in extreme tails. For short/long paths
+relative to reference 0, supply LO delay sensitivities
+$\boldsymbol\alpha_L=[0.5,4.0]^T$ ps/K and RF sensitivities
+$\boldsymbol\alpha_R=[1.5,3.0]^T$ ps/K. The RF temperature is $U+V$, while the LO
+path sees $U$. Applying the signed transfer from Chapter 11 gives
+
+$$
+\begin{aligned}
+\delta\boldsymbol\varphi_T&=\mathbf h_U U+\mathbf h_V V,\\
+\mathbf h_U&=2\pi(f_L\boldsymbol\alpha_L-f_R\boldsymbol\alpha_R),\\
+\mathbf h_V&=-2\pi f_R\boldsymbol\alpha_R.
+\end{aligned}
+$$ {#eq-thermal-allocation}
+
+Numerically $\mathbf h_U=[-0.00622035,+0.00678584]^T$ rad/K and
+$\mathbf h_V=[-0.00942478,-0.01884956]^T$ rad/K. Thus
+$\mathbf C_T=4\mathbf h_U\mathbf h_U^T+\sigma_V^2\mathbf h_V\mathbf h_V^T$.
+Ambient departure causes a **negative** cross term between the two comparisons;
+the additional RF departure causes a positive one. The same $U$ traverses RF
+and LO paths: combine its signed phase contributions before squaring. Replacing
+it by independent RF/LO temperatures changes long-path ambient variance from
+$0.000184191$ to $0.00404992$ rad², a false rejection mechanism. Conversely,
+deleting $V$ because “temperature is common” can give a false pass.
+
+For calibration, suppose residual uncertainty in each applied electronic phase
+correction at the calibration state is represented by an independent centered Gaussian
+$e_{c,i}$ with SD 0.01 rad. The relative covariance is
+$\mathbf C_c=10^{-4}\mathbf D\mathbf D^T$; it includes the shared reference error.
+These uncertain intercepts stay fixed between calibrations. They do not become
+new independent draws in each sample. Their independence from $U,V$ and voltage
+noise is an explicit input; calibration using the same noisy reference can
+invalidate it. The temperature terms are departures **after** that calibration,
+not another entry for an error already corrected at the current temperature.
+The 0.01 rad input must cover the full electronic R-to-output response at that
+state; post-selector injection alone cannot establish it. Selector response needs
+separate access or a justified bound, and the field manifold remains separate.
+
+![A common temperature source follows signed RF and LO delay paths before reaching short and long relative phases. An RF-only departure breaks their cancellation. Independent local and shared blocker-noise sources then feed the comparison and task map.](figures/allocation-source-paths.svg){#fig-allocation-source-paths fig-alt="One ambient source U reaches both LO and RF delay differences with opposite restored signs. Another source V reaches RF only. Their short and long phase coefficients determine signed covariance. Local noise and calibration include reference channel zero; one common LO-noise band reaches three ports through their blocker sensitivities."}
+
+The local covariance is $\mathbf C_\varphi=\mathbf C_{\varphi,n}+\mathbf C_T+\mathbf C_c$.
+The angle row on a correct long-baseline branch is
+$\mathbf g_\theta=[0,1/(kd_l\cos\theta)]$ radians of angle per radian of phase;
+its predicted variance is $\mathbf g_\theta\mathbf C_\varphi\mathbf g_\theta^T$.
+The branch-comparison row is $[a,-b]$, where $a=1/(kd_s)$ and $b=1/(kd_l)$.
+Use the full two-by-two matrix for that decision; retaining only the long phase
+variance cannot establish a branch-error limit.
+
+![At fixed channel noise powers, changing physical blocker direction changes the local direction uncertainty. An independent-channel simplification misses crossings of the 0.5 degree criterion.](figures/correlated-blocker-allocation.svg){#fig-correlated-blocker-allocation fig-alt="Local angular standard uncertainty oscillates with blocker direction between30and60degrees because geometrical blocker-to-wanted phase changes the common-noise covariance. A constant independent-channel approximation stays below0.5degree while parts of the physical common-source curve exceed it. This diagnostic uses1ms, RF temperature SD1.8K and clean unit means."}
+
+### A calculation that can close or fail
+
+Charge deterministic contamination separately. Retain the conservative $10^{-5}$
+blocker contract even though the exercised FIR's ideal path bound is much smaller.
+Add Chapter 11's wanted real-image/main bound $3.4\times10^{-6}$, giving a total
+per-channel phasor-disk radius $r_t=0.0012623254$. Then the phase bias magnitude
+is at most $\beta_t=\arcsin r_t$, and the mean amplitude is at least $1-r_t$.
+At 1 ms and 100 Hz offset, $\rho_{\min}=96.50901$; the exact inverse manifold
+bounds combined blocker/mirror angle displacement near the outward sector edge
+by about 0.011514°. The blocker-only part remains below its 0.02° allocation.
+This combined bias is not a random variance contribution.
+
+For a conservative **linear-phase noise envelope** that also covers changed mean
+amplitudes and phase projections, let $\mathbf w$ be any real channel-phase row.
+The independent source part is bounded by
+$(1-q)\sum_iw_i^2/(2\rho_{\min})$ and the common part by
+$q(\sum_i|w_i|)^2/(2\rho_{\min})$. The latter is the triangle bound on the one
+common source's complex coefficient, including arbitrary port phases. It can be
+looser than @eq-blocker-phase-covariance, but does not assume that bounded
+contamination leaves a favorable correlation unchanged. Add the exact affine
+thermal/calibration contributions for the same row.
+
+For the long comparison $\mathbf w=[-1,0,1]$, the noise envelope is
+$(1+q)/\rho_{\min}$. With $q=0.02$ and $\sigma_V=2$ K, the phase-variance budget is
+
+| Contribution, referred to long relative phase | 1 ms, rad² | How it enters |
+|---|---:|---|
+| Complete-observation voltage noise, common-source envelope | 0.010568962 | Total floor allocated once; common part retained |
+| Calibration-correction uncertainty | 0.000200000 | Two channel intercept uncertainties; held over record |
+| Common ambient departure $U$ | 0.000184191 | Signed RF/LO paths combined first |
+| Additional RF departure $V$ | 0.001421223 | RF path alone; not canceled by the LO path |
+| Sum | **0.012374375** | Predictive local linear-model variance |
+| Phase variance allowed by 0.5° near 60° | **0.012025814** | $(kd_l\cos60^\circ\,0.5\pi/180)^2$ |
+
+The linear-model upper envelope is **0.50719°**, so this allocation does not
+close. An upper envelope exceeding a limit alone does not prove that every
+instance fails. Here the explicit $47.1965^\circ$ blocker geometry at clean means
+also gives **0.50665°**, a concrete failing case in the model even before bounded
+contamination. If $V$ were incorrectly omitted, the envelope would appear to
+close at 0.47718°. For $q=0.02$, solving the same envelope inequality gives the
+sufficient condition $\sigma_V\le1.73752$ K in this approximation. Close to that boundary, finite-SNR
+phase nonlinearity and parameter/model uncertainty matter; digits do not establish
+a sharp hardware acceptance boundary. A one-percent increase in the noise-phase
+variance is a useful sensitivity check, not an invented physical noise source.
+
+The branch calculation must also be updated. The channel row for the difference
+of the coarse and fine direction cosines is $\mathbf w_e=[b-a,a,-b]$.
+Its noise envelope is
+$[(1-q)(a^2+b^2-ab)+2qa^2]/\rho_{\min}$.
+Its calibration variance is $10^{-4}\|\mathbf w_e\|^2$, and its thermal variance
+is $4(a h_{U,s}-b h_{U,l})^2+\sigma_V^2(a h_{V,s}-b h_{V,l})^2$.
+The coarse-phase row has noise envelope $(1+q)/\rho_{\min}$ plus its own
+thermal/calibration terms. Subtract $2\beta_t(a+b)$ from the branch decision
+margin $0.125$, and $2\beta_t$ from the coarse wrap margin
+$m=\pi-kd_s\sin60^\circ$. Applying the earlier Gaussian tail/union reasoning
+gives an approximate branch envelope $1.8131\times10^{-4}$ at 1 ms.
+The branch criterion passes this model while precision fails; the two decisions
+are not interchangeable. Gaussian phase tails, the local inverse and rare-event
+adequacy remain approximations, not experimentally established probabilities.
+
+[NIST TN 1297 Appendix A.1–A.3](https://www.nist.gov/pml/nist-technical-note-1297/nist-tn-1297-appendix-law-propagation-uncertainty)
+requires significant measurement-process inputs and covariance-aware propagation;
+[§5.2](https://www.nist.gov/pml/nist-technical-note-1297/nist-tn-1297-5-combined-standard-uncertainty)
+distinguishes uncertainty of an applied correction from the unknown error itself.
+Those principles do not supply our thermal coefficients or certify a receiver.
+Here unused variance allowance is **margin**; changing actual temperatures across
+operations is **variability**; incomplete knowledge of coefficients or of
+$\sigma_V$ is **parameter uncertainty**; neglected multipath, nonlinearity or
+unmodeled transfer is **model discrepancy**; remaining error after correction is
+a **calibration residual**; and an instrument's uncertainty belongs to the
+measurement process used to estimate or verify these quantities. A defensible
+joint model can propagate several kinds of knowledge, but an unexplained RSS of
+all six labels has no defined ensemble or reference plane.
+
+## Closure and restoring changes {#sec-closure-restoration}
+
+The initial gain, resource and information screen identified a candidate, but
+its refined 1 ms error allocation fails the declared predictive local criterion.
+A longer record is one restoring alternative, not permission to integrate without
+limit. At **2 ms**, 100 Hz offset gives clean SNR
+$200\operatorname{sinc}^2(0.2)=175.02804$ and contamination-reduced SNR 174.58643.
+The same noise envelope falls to 0.005842378 rad²; the slow thermal/calibration
+terms stay unchanged. Total phase variance is 0.007647792 rad², giving
+**0.39873°** and an approximate branch envelope **$5.48\times 10^{-7}$**.
+The sufficient thermal limit for this envelope becomes $\sigma_V\le 4.04003$ K. The separate
+bounded blocker/mirror bias is retained. These are conditional model results,
+not a demonstrated bearing-error distribution. As a separate numerical check,
+drawing the declared proper complex voltage noises and Gaussian calibration/thermal
+inputs, then applying the exact phase and inverse-sine operations, gives angular
+SDs about 0.50865° and 0.39947° for 1 ms and 2 ms in 1200000 seeded trials each.
+The small shifts from the linear values do not reverse this example's decision;
+they neither certify a rare tail nor establish the physical input assumptions.
+
+![Local uncertainty versus RF-only temperature departure for 1 ms and 2 ms records, followed by the maximum allowable departure versus common reciprocal-noise fraction. A gap marks the empty 1 ms precision region.](figures/allocation-closure.svg){#fig-allocation-closure fig-alt="At common reciprocal-noise fraction 0.02 and temperature departure SD 2 K, the 1 ms precision envelope is 0.5072degree while 2 ms gives 0.3987degree. Thermal limits rise from 1.738to 4.040 K. A second plot shows allowable RF-only departure decreasing as common reciprocal-noise allocation grows; the 1 ms curve ends when no nonnegative departure variance can meet precision."}
+
+The larger record still satisfies necessary time/dynamics conditions:
+$2+0.6=2.6$ ms is below 5 ms, and 20°/s gives 0.04° excursion, below 0.05°.
+The FIR/real-image rejection must be checked for 200000 samples, rather than copied
+from the 1 ms proof; the same offset/coefficient envelope meets $1.3\times 10^{-10}$
+for the modeled blocker paths and preserves the wanted mirror bound. The
+qualified effective noise floor must also be reconciled with that observation.
+Raw traffic remains 4.62 Gbit/s with 10 percent overhead: doubling integration does
+not halve the streaming input traffic. The assumed 2.4 W and 0.6 ms processing
+remain unverified implementation envelopes. If the hypothetical 0.05° within-record
+reference allowances from the architecture comparison are retained, the longer
+record tightens independent LO offset to 0.06944 Hz and relative sampling-rate
+error to $3.4722\times 10^{-9}$; constant delay-excursion bounds stay the same.
+Those extra reference errors have not been silently granted another task margin.
+
+Alternatively, keep 1 ms and reduce the RF-only departure below its sufficient envelope
+1.738 K threshold, reduce the relevant delay sensitivity, or improve genuine
+observation SNR. Better thermal coupling can reduce $V$ but need not reduce $U$;
+path matching can change the signed coefficients and noise/calibration access.
+Changing RF blocker attenuation changes reciprocal mixing before the mixer,
+whereas tightening the downstream digital notch addresses retained tone leakage.
+Reallocate the source powers and gains after such a change. Lowering one diagonal
+noise number is not a substitute for preserving desired information and checking
+common-source transfer.
 
 NASA's [system-design guidance](https://www.nasa.gov/reference/4-0-system-design-processes/),
 §§4.3–4.4, connects allocation and interface definition to comparison of
@@ -397,7 +703,31 @@ a known coarse direction. Then the long baseline can be unambiguous in that
 restricted interval, potentially removing the third channel. That restoring
 change consumes prior information; it is not an equivalent guarantee over ±60°.
 
-A later correlated allocation must charge calibration, common and local noise,
-state and environmental paths to these same task observables. It can shrink or
-empty this initial region. A source or interface that remains unknown keeps its
-dependent architecture decision conditional.
+For another transfer exercise, retain 2 ms but suppose the unknown reciprocal
+fraction is only bounded by $0\le q\le 0.2$. Evaluate the worst-case precision
+inequality rather than choose 0.02: at $\sigma_V=2$ K it still passes this envelope,
+but the thermal allowance shrinks. If $\sigma_V$ is unbounded, no such closure
+follows. Replace the shared-LO model by independent LO bands while keeping
+marginal powers fixed and derive the changed covariance; identical spectra alone
+no longer give the same cancellation. Finally, a reset mixture containing an
+unidentified half-cycle state is not Gaussian phase noise. Its occurrence and
+invalid-data policy require separate evidence; the steady-state branch bound
+does not bound reset-related failures.
+
+For implementation verification, retain complex records while changing blocker
+level and relative port phase, with gain/observation fixed; compare full cross
+spectra, not only noise diagonals. Use separate ambient and RF-path heating to
+identify the two signed thermal columns, and account for the test reference's
+correlation. Known electronic injection can test internal transfer but cannot
+establish the array manifold or actual blocker direction. Actual source-path,
+noise-gain, temperature-coefficient, clock/state and measurement-uncertainty
+evidence is needed before a hardware recommendation. None was measured here.
+
+The conditional 2 ms result still assumes a fixed manifold within a record. With
+only the 20°/s rate bound, the difference between the midpoint direction and its
+uniform time average can be as large as $\Omega T/4=0.01^\circ$ at 2 ms; the
+phase-weighted comparison needs its actual operator. This potential dynamic bias
+is distinct from the blocker allocation and needs an accuracy requirement if
+consequential. Multipath, polarization, installation and state changes remain
+outside this bounded supplied manifold. The refined region is mathematically
+conditional; missing physical or application evidence keeps it so.

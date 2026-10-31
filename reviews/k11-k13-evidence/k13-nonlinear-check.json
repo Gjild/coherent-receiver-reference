@@ -1,0 +1,22 @@
+[
+  {
+    "T": 0.001,
+    "trials": 1200000,
+    "nonlinear_phase_variance": 0.012434765739640493,
+    "linear_envelope_variance": 0.012374375224728578,
+    "ratio": 1.0048802879996102,
+    "angular_sd_degrees": 0.5086536717645284,
+    "angular_mean_shift_degrees": 0.0038229117727651527,
+    "linear_sd_degrees": 0.5071943521486462
+  },
+  {
+    "T": 0.002,
+    "trials": 1200000,
+    "nonlinear_phase_variance": 0.007671556397913805,
+    "linear_envelope_variance": 0.007647791868522083,
+    "ratio": 1.0031073713563696,
+    "angular_sd_degrees": 0.3994693954096278,
+    "angular_mean_shift_degrees": 0.0025784836160644017,
+    "linear_sd_degrees": 0.3987317313806088
+  }
+]

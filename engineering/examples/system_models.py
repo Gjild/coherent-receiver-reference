@@ -168,9 +168,9 @@ def observation_paths(f,n=100000,fs=100e6,center=20e6,coefficient=None):
     return h*record_response(f-center,n,fs),h.conjugate()*record_response(-f-center,n,fs)
 
 
-def composite_notch_rejection(wanted_offset=100,blocker_offset=100,coefficient=None):
-    wanted=observation_paths(20e6-wanted_offset,coefficient=coefficient)
-    blocker=observation_paths(10e6-blocker_offset,coefficient=coefficient)
+def composite_notch_rejection(wanted_offset=100,blocker_offset=100,coefficient=None,samples=100000):
+    wanted=observation_paths(20e6-wanted_offset,n=samples,coefficient=coefficient)
+    blocker=observation_paths(10e6-blocker_offset,n=samples,coefficient=coefficient)
     return sum(abs(x) for x in blocker)/abs(wanted[0])
 
 
@@ -252,6 +252,121 @@ def unit12():
     s.save()
 
 
+
+def thermal_paths():
+    """Relative RF/LO delay sensitivities, synthetic ps/K translated to rad/K."""
+    lo=[.5e-12,4e-12];rf=[1.5e-12,3e-12]
+    return ([2*pi*(1.02e9*l-1e9*r) for l,r in zip(lo,rf)],[-2*pi*1e9*r for r in rf])
+
+
+def allocation_case(T=.001,sigma_gradient=2,q=.02):
+    """Linear Gaussian phase envelope; no physical validation or tail guarantee."""
+    from math import asin
+    k=2*pi/.3;a,b=1/(k*.15),1/(k*1.2)
+    r=10**(42/20)*1e-5+3.4e-6;beta=asin(r)
+    rho=1e5*T*sinc(100*T)**2*(1-r)**2
+    hu,hv=thermal_paths();noise=(1+q)/rho;cal=.0002;ambient=4*hu[1]**2
+    gradient=sigma_gradient**2*hv[1]**2
+    total=noise+cal+ambient+gradient
+    allowed=(k*1.2*.5*radians(.5))**2
+    remaining=allowed-noise-cal-ambient
+    gradient_limit=sqrt(remaining)/abs(hv[1]) if remaining>=0 else float('nan')
+    evar=((1-q)*(a*a+b*b-a*b)+2*q*a*a)/rho
+    evar+=1e-4*((b-a)**2+a*a+b*b)+4*(a*hu[0]-b*hu[1])**2+sigma_gradient**2*(a*hv[0]-b*hv[1])**2
+    svar=noise+cal+4*hu[0]**2+sigma_gradient**2*hv[0]**2
+    m=pi-k*.15*sin(pi/3);bias=2*beta*(a+b);nd=NormalDist()
+    branch=2*nd.cdf(-(.125-bias)/sqrt(evar))+2*nd.cdf(-(m-2*beta)/sqrt(svar))
+    return {'T':T,'sigma_gradient':sigma_gradient,'q':q,'r':r,'rho_min':rho,
+            'noise_phase_variance':noise,'calibration_variance':cal,'ambient_variance':ambient,
+            'gradient_variance':gradient,'total_phase_variance':total,'allowed_variance':allowed,
+            'sigma_degrees':degrees(sqrt(total)/(k*1.2*.5)),
+            'gradient_limit':gradient_limit,'approx_branch_envelope':branch,
+            'bias_degrees':degrees(asin(sin(pi/3)+2*beta/(k*1.2))-pi/3)}
+
+
+def nominal_allocation(theta_blocker=47.19651350605626,sigma_gradient=1.8,q=.02,T=.001):
+    """Actual source-root covariance at clean unit means; fixed total density."""
+    from cmath import exp
+    x=[0,.15,1.2];u=sin(pi/3);ub=sin(radians(theta_blocker))
+    v=[exp(2j*pi*xx*(1.01e9*ub-1e9*u)/3e8) for xx in x]
+    rho=1e5*T*sinc(100*T)**2
+    root=[[((1-q) if i==j else 0)+q*(v[i]*v[j].conjugate()).real for j in range(3)] for i in range(3)]
+    c=[[ (root[i+1][j+1]-root[i+1][0]-root[0][j+1]+root[0][0])/(2*rho) for j in range(2)] for i in range(2)]
+    hu,hv=thermal_paths()
+    for i in range(2):
+        for j in range(2):c[i][j]+=1e-4*(2 if i==j else 1)+4*hu[i]*hu[j]+sigma_gradient**2*hv[i]*hv[j]
+    return {'v':v,'covariance':c,'sigma_degrees':degrees(sqrt(c[1][1])/(8*pi*.5))}
+
+
+def unit13():
+    s=SVG('allocation-source-paths','Allocate signed physical paths before forming an error budget',1100)
+    s.box(40,110,220,100,['Ambient departure U','SD = 2 K in example','constant within a record'])
+    s.box(355,100,250,85,['LO delay differences','0.5 / 4.0 ps/K','positive restored phase'])
+    s.box(355,245,250,85,['RF delay differences','1.5 / 3.0 ps/K','negative restored phase'])
+    s.path([(260,150),(355,140)],COLORS[2],arrow=True)
+    s.path([(260,180),(300,180),(300,285),(355,285)],COLORS[2],arrow=True)
+    s.box(690,170,230,100,['Relative phase [short,long]','hᵤ = [−0.006220,','+0.006786] rad/K'])
+    s.path([(605,140),(650,140),(650,200),(690,200)],arrow=True)
+    s.path([(605,285),(650,285),(650,240),(690,240)],arrow=True)
+    s.box(40,405,220,100,['RF-only departure V','independent of U','SD is a sensitivity input'])
+    s.path([(260,450),(385,450),(385,330)],COLORS[1],arrow=True)
+    s.text(345,525,'hᵥ = [−0.009425, −0.018850] rad/K',19,COLORS[1])
+    s.path([(920,220),(940,220),(940,685),(805,685),(805,715)],arrow=True)
+    s.text(55,610,'U follows two paths: sum its signed amplitudes before squaring.',20)
+    s.text(55,655,'V changes the RF path alone and can destroy the cancellation.',20)
+    s.box(50,715,235,105,['Independent channel noise','and calibration errors','include reference channel 0'])
+    s.box(355,715,250,105,['One common LO-noise source','blocker phase differs by port','two quadratures → three ports'])
+    s.box(685,715,235,105,['Comparison and task map','D: channels → differences','θ from long-baseline phase'])
+    s.path([(285,765),(325,765),(325,850),(790,850),(790,820)],arrow=True)
+    s.path([(605,765),(685,765)],arrow=True)
+    s.text(55,930,'C = Cnoise + Ccal + 4 hᵤ hᵤᵀ + σᵥ² hᵥ hᵥᵀ; source independence is declared.',18)
+    s.text(55,990,'Slow departures are not independent new samples during a longer record.',19)
+    s.text(55,1040,'All coefficients and distributions are illustrative, not measured thermal behavior.',18)
+    s.save()
+    s=SVG('correlated-blocker-allocation','A common LO disturbance need not cancel between receiver ports',1080)
+    s.text(50,85,'Same per-channel SNR and total density; change the blocker direction.',20)
+    xx=lin(30,60)
+    s.plot(130,'Physical blocker phase changes the differential noise',(30,60),(.488,.506),
+           'Blocker direction θᵦ (degrees); wanted direction +60°','Local angular standard uncertainty (degrees)',
+           [('common LO fraction q = 0.02',xx,[nominal_allocation(x)['sigma_degrees'] for x in xx]),
+            ('incorrect independent-channel simplification',xx,[nominal_allocation(q=0)['sigma_degrees']]*len(xx)),
+            ('0.5° criterion',xx,[.5]*len(xx))])
+    s.text(55,565,'cᵢ ∝ exp{j2πxᵢ(fᵦ sin θᵦ − fᵣ sin 60°)/c}; one physical source.',18)
+    s.text(55,615,'At θᵦ = 47.1965°: relative blocker phases are 0°, −22.5°, −180°.',18)
+    s.text(55,665,'Long-baseline noise variance = (1 − q cos ψₗ) / ρ at clean unit means.',19)
+    s.text(55,715,'Equal channel noise powers do not determine the comparison uncertainty.',19)
+    s.text(55,780,'Diagnostic only: T = 1 ms; RF-only departure SD = 1.8 K; ρ = 96.7531.',18)
+    s.text(55,825,'Calibration and ambient terms included; bounded mean contamination omitted here.',18)
+    s.text(55,875,'The closure figure instead uses a row-wise noise envelope covering that contamination.',18)
+    s.text(55,950,'q is allocated inside N₀, not added a second time to the complete noise floor.',19)
+    s.text(55,1010,'A single blocked-channel noise test cannot establish this cross-channel transfer.',18)
+    s.save()
+    s=SVG('allocation-closure','Budget closure is an intersection, not the sum of optimistic allowances',1480)
+    vv=lin(0,5)
+    s.plot(95,'Longer integration reduces noise but retains slow path errors',(0,5),(.3,.7),
+           'RF-only temperature departure SD σᵥ (K)','Local uncertainty upper envelope (degrees; linear model)',
+           [('1 ms',vv,[allocation_case(sigma_gradient=z)['sigma_degrees'] for z in vv]),
+            ('2 ms',vv,[allocation_case(T=.002,sigma_gradient=z)['sigma_degrees'] for z in vv]),
+            ('0.5° criterion',vv,[.5]*len(vv))])
+    qq=lin(0,.2)
+    base=allocation_case();critical=base['rho_min']*(base['allowed_variance']-base['calibration_variance']-base['ambient_variance'])-1
+    q1=[q for q in qq if q<critical]+[critical]
+    lim1=[allocation_case(q=q)['gradient_limit'] for q in q1[:-1]]+[0.]
+    s.plot(565,'Unknown reciprocal-noise allocation shrinks the thermal region',(0,.2),(0,4.5),
+           'Common reciprocal-noise fraction q of fixed total N₀','Largest σᵥ closing this envelope (K)',
+           [('1 ms',q1,lim1),
+            ('2 ms',qq,[allocation_case(T=.002,q=q)['gradient_limit'] for q in qq])])
+    s.text(55,1010,'At q = 0.02, σᵥ = 2 K: 1 ms → 0.5072°; 2 ms → 0.3987°.',19)
+    s.text(55,1060,'Closing the envelope: 1 ms σᵥ ≤ 1.738 K; 2 ms σᵥ ≤ 4.040 K.',18)
+    s.text(55,1120,'Missing 1 ms curve beyond q ≈ 0.124: even σᵥ = 0 cannot close the envelope.',18)
+    s.text(55,1180,'2 ms still needs the blocker/noise interface and 0.6 ms processing envelope.',18)
+    s.text(55,1230,'2.6 ms report time < 5 ms; 0.04° excursion < 0.05°; hardware resources unproved.',18)
+    s.text(55,1295,'Do not average away a calibration error or a temperature departure held over the record.',18)
+    s.text(55,1350,'Curves use linear phase/Gaussian assumptions; tail and parameter evidence remains limited.',18)
+    s.text(55,1410,'The separate deterministic blocker bias and discrete reset states are not RSS terms.',18)
+    s.save()
+
+
 if __name__=='__main__':
     choice=int(sys.argv[1]) if len(sys.argv)>1 else 11
-    {11:unit11,12:unit12}[choice]()
+    {11:unit11,12:unit12,13:unit13}[choice]()

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1100" role="img" aria-labelledby="title desc"><title id="title">Allocate signed physical paths before forming an error budget</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Allocate signed physical paths before forming an error budget</text>
+<rect x="40" y="110" width="220" height="100" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="150.0" y="135" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Ambient departure U</text>
+<text x="150.0" y="160" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">SD = 2 K in example</text>
+<text x="150.0" y="185" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">constant within a record</text>
+<rect x="355" y="100" width="250" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="480.0" y="125" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">LO delay differences</text>
+<text x="480.0" y="150" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">0.5 / 4.0 ps/K</text>
+<text x="480.0" y="175" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">positive restored phase</text>
+<rect x="355" y="245" width="250" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="480.0" y="270" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">RF delay differences</text>
+<text x="480.0" y="295" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">1.5 / 3.0 ps/K</text>
+<text x="480.0" y="320" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">negative restored phase</text>
+<path d="M260.000,150.000 L355.000,140.000" fill="none" stroke="#237550" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M260.000,180.000 L300.000,180.000 L300.000,285.000 L355.000,285.000" fill="none" stroke="#237550" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="690" y="170" width="230" height="100" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="805.0" y="195" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Relative phase [short,long]</text>
+<text x="805.0" y="220" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">hᵤ = [−0.006220,</text>
+<text x="805.0" y="245" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">+0.006786] rad/K</text>
+<path d="M605.000,140.000 L650.000,140.000 L650.000,200.000 L690.000,200.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M605.000,285.000 L650.000,285.000 L650.000,240.000 L690.000,240.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="40" y="405" width="220" height="100" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="150.0" y="430" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">RF-only departure V</text>
+<text x="150.0" y="455" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">independent of U</text>
+<text x="150.0" y="480" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">SD is a sensitivity input</text>
+<path d="M260.000,450.000 L385.000,450.000 L385.000,330.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="345" y="525" font-family="sans-serif" font-size="19" fill="#b34719" text-anchor="start">hᵥ = [−0.009425, −0.018850] rad/K</text>
+<path d="M920.000,220.000 L940.000,220.000 L940.000,685.000 L805.000,685.000 L805.000,715.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="55" y="610" font-family="sans-serif" font-size="20" fill="#182f3e" text-anchor="start">U follows two paths: sum its signed amplitudes before squaring.</text>
+<text x="55" y="655" font-family="sans-serif" font-size="20" fill="#182f3e" text-anchor="start">V changes the RF path alone and can destroy the cancellation.</text>
+<rect x="50" y="715" width="235" height="105" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="167.5" y="740" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Independent channel noise</text>
+<text x="167.5" y="765" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">and calibration errors</text>
+<text x="167.5" y="790" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">include reference channel 0</text>
+<rect x="355" y="715" width="250" height="105" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="480.0" y="740" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">One common LO-noise source</text>
+<text x="480.0" y="765" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">blocker phase differs by port</text>
+<text x="480.0" y="790" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">two quadratures → three ports</text>
+<rect x="685" y="715" width="235" height="105" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="802.5" y="740" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Comparison and task map</text>
+<text x="802.5" y="765" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">D: channels → differences</text>
+<text x="802.5" y="790" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">θ from long-baseline phase</text>
+<path d="M285.000,765.000 L325.000,765.000 L325.000,850.000 L790.000,850.000 L790.000,820.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M605.000,765.000 L685.000,765.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="55" y="930" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">C = Cnoise + Ccal + 4 hᵤ hᵤᵀ + σᵥ² hᵥ hᵥᵀ; source independence is declared.</text>
+<text x="55" y="990" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Slow departures are not independent new samples during a longer record.</text>
+<text x="55" y="1040" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">All coefficients and distributions are illustrative, not measured thermal behavior.</text>
+<text x="32" y="1086" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

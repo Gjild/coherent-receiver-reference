@@ -1,0 +1,85 @@
+{
+  "reproduction": {
+    "allocation-closure.svg": true,
+    "correlated-blocker-allocation.svg": true,
+    "allocation-source-paths.svg": true
+  },
+  "independent_curves": [
+    {
+      "figure": "correlated-blocker-allocation",
+      "vertices": 241,
+      "error_px": 0.0004962510295740685
+    },
+    {
+      "figure": "correlated-blocker-allocation",
+      "vertices": 241,
+      "error_px": 0.00044810492840952065
+    },
+    {
+      "figure": "correlated-blocker-allocation",
+      "vertices": 241,
+      "error_px": 0.0
+    },
+    {
+      "figure": "allocation-closure",
+      "vertices": 241,
+      "error_px": 0.0004986982845025523
+    },
+    {
+      "figure": "allocation-closure",
+      "vertices": 241,
+      "error_px": 0.0004983444309800689
+    },
+    {
+      "figure": "allocation-closure",
+      "vertices": 241,
+      "error_px": 1.1368683772161603e-13
+    },
+    {
+      "figure": "allocation-closure",
+      "vertices": 150,
+      "error_px": 0.0004981933791441406
+    },
+    {
+      "figure": "allocation-closure",
+      "vertices": 241,
+      "error_px": 0.0004997653184091178
+    }
+  ],
+  "critical_q_1ms": 0.12352149811828372,
+  "total_vertices": 1837,
+  "case_1ms": {
+    "T": 0.001,
+    "sigma_gradient": 2,
+    "q": 0.02,
+    "r": 0.0012623254117941677,
+    "rho_min": 96.50900725382844,
+    "noise_phase_variance": 0.010568961685796819,
+    "calibration_variance": 0.0002,
+    "ambient_variance": 0.0001841905051748901,
+    "gradient_variance": 0.0014212230337568676,
+    "total_phase_variance": 0.012374375224728578,
+    "allowed_variance": 0.012025813707901536,
+    "sigma_degrees": 0.5071943521486462,
+    "gradient_limit": 1.737521658881117,
+    "approx_branch_envelope": 0.00018130829326333758,
+    "bias_degrees": 0.011513034064213702
+  },
+  "case_2ms": {
+    "T": 0.002,
+    "sigma_gradient": 2,
+    "q": 0.02,
+    "r": 0.0012623254117941677,
+    "rho_min": 174.58643423243075,
+    "noise_phase_variance": 0.005842378329590326,
+    "calibration_variance": 0.0002,
+    "ambient_variance": 0.0001841905051748901,
+    "gradient_variance": 0.0014212230337568676,
+    "total_phase_variance": 0.007647791868522083,
+    "allowed_variance": 0.012025813707901536,
+    "sigma_degrees": 0.3987317313806088,
+    "gradient_limit": 4.040030097446783,
+    "approx_branch_envelope": 5.476212924860624e-07,
+    "bias_degrees": 0.011513034064213702
+  }
+}

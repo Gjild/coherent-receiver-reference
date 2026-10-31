@@ -134,7 +134,7 @@ separate arbitrary independent waveforms with identical sampled support.
 
 A first spur inventory should likewise propagate candidate products
 $|m f_R\pm n f_L|$ through the sampler and digital selection. For example,
-$2f_L-2f_R=40$ MHz lies outside a 20 MHz IF passband, but other residual products overlap after sampling: 
+$2f_L-2f_R=40$ MHz lies outside a 20 MHz IF passband, but other residual products overlap after sampling:
 
 | Residual analog product at the sampler | Frequency | Principal sampled alias | Consequence |
 |---|---:|---:|---|

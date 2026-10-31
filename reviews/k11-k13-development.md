@@ -161,3 +161,9 @@ and reassess consequential findings, close K12, then develop K13 at Chapter12
 sections12.3–12.4. Do not put K13 in canonical Chapter13. Complete final connected
 integration/checks after K13, and stop before K14. No architecture/permission
 decision or human acceptance is inferred from the interruption.
+
+K12 incomplete checkpoint: `6d97a31`. Its staged whitespace check exposed one
+trailing space in the new manuscript (earlier unstaged checks excluded untracked
+files). Removed in the follow-up checkpoint; corrected candidate archive and
+manifest updated. This whitespace-only correction changes no equations, model,
+figures, rendered content or review boundary. No failed check is counted as pass.

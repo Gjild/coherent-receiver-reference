@@ -19,6 +19,8 @@ book:
     - extraction-integration-rejection.qmd
     - frequency-phase-delay-transfer.qmd
     - feasibility-architecture-allocations.qmd
+    - calibration-observability-metrology.qmd
+    - analog-information-preservation.qmd
     - part: "Development supplements"
       chapters:
         - publishing-pilot.qmd

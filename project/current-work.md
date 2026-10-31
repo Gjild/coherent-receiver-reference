@@ -1,3 +1,23 @@
+# Active batch — K14–K16 bounded development (2026-10-31)
+
+Owner authorizes sequential bounded K14 (canonical Chapter14), K15a/b (Chapter15)
+and K16 (Chapter16), their connected integration assessment and safe local Git
+checkpoints. This supersedes older stopping entries below for this batch only.
+Stop after K16; no K17, architecture change, push, external publication or human
+technical acceptance. Prior checked drafts retain their evidence limitations.
+
+Fresh documented private-pipe smoke succeeds; author opens actual1000×700 PNG
+before development: heading/text/blue circle/Radius60px are visible. Browser
+sandbox retained. Source/capture/version/hash evidence: reviews/k14-k16-evidence/.
+Existing untracked book/.gitignore and book/index.toc are preserved outside commits.
+K14 closes after fresh read-only technical/visual review and targeted reassessment;
+4figures,79stdlib+19pilot tests and62reproducedSVGs are checked. Final equation
+unit/explicitcubic expansion/observable/caption pixels inspected. Sources and
+limits are in reviews/k14-k16-development.md; no consequential open K14finding.
+Next active unit is K15a/b, canonical Chapter15; K16 follows only after its review.
+
+---
+
 # Completed batch — K11–K13 bounded development (2026-10-31)
 
 The owner authorized sequential K11, K12, K13, their connected assessment and safe

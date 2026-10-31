@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1050" role="img" aria-labelledby="title desc"><title id="title">Filter placement trades noise against survival and generated products</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Filter placement trades noise against survival and generated products</text>
+<text x="40" y="90" font-family="sans-serif" font-size="21" fill="#182f3e" text-anchor="start">Early selection</text>
+<rect x="40" y="115" width="190" height="110" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="135.0" y="140" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Selector</text>
+<text x="135.0" y="165" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">wanted −2 dB</text>
+<text x="135.0" y="190" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">blockers −49 dB</text>
+<path d="M230.000,170.000 L270.000,170.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="270" y="115" width="190" height="110" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="365.0" y="140" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">LNA</text>
+<text x="365.0" y="165" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">G = 20 dB</text>
+<text x="365.0" y="190" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">IIP3 = 0 dBm</text>
+<path d="M460.000,170.000 L500.000,170.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="500" y="115" width="190" height="110" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="595.0" y="140" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Mixer / IF</text>
+<text x="595.0" y="165" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">G = 6 dB</text>
+<text x="595.0" y="190" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">IIP3 = +20 dBm</text>
+<path d="M690.000,170.000 L730.000,170.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="730" y="115" width="190" height="110" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="825.0" y="140" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Backend H</text>
+<text x="825.0" y="165" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">G = 20 dB</text>
+<text x="825.0" y="190" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">IIP3 = +25 dBm</text>
+<text x="45" y="270" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">P0: wanted 1.000 GHz; blockers 1.010 / 1.020 GHz, each −20 dBm.</text>
+<text x="45" y="305" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Early: LNA input −69 dBm/tone; late: −20 dBm/tone before any rejection.</text>
+<text x="40" y="355" font-family="sans-serif" font-size="21" fill="#182f3e" text-anchor="start">Late selection</text>
+<rect x="40" y="380" width="190" height="110" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="135.0" y="405" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">LNA</text>
+<text x="135.0" y="430" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">G = 20 dB</text>
+<text x="135.0" y="455" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">IIP3 = 0 dBm</text>
+<path d="M230.000,435.000 L270.000,435.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="270" y="380" width="190" height="110" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="365.0" y="405" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Selector</text>
+<text x="365.0" y="430" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">wanted −2 dB</text>
+<text x="365.0" y="455" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">blockers −49 dB</text>
+<path d="M460.000,435.000 L500.000,435.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="500" y="380" width="190" height="110" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="595.0" y="405" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Mixer / IF</text>
+<text x="595.0" y="430" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">G = 6 dB</text>
+<text x="595.0" y="455" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">IIP3 = +20 dBm</text>
+<path d="M690.000,435.000 L730.000,435.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="730" y="380" width="190" height="110" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="825.0" y="405" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Backend H</text>
+<text x="825.0" y="430" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">G = 20 dB</text>
+<text x="825.0" y="455" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">IIP3 = +25 dBm</text>
+<text x="45" y="535" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">P0: wanted 1.000 GHz; blockers 1.010 / 1.020 GHz, each −20 dBm.</text>
+<text x="45" y="570" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">2f₁ − f₂ = 1.000 GHz: an upstream product follows the wanted passband.</text>
+<text x="45" y="680" font-family="sans-serif" font-size="20" fill="#182f3e" text-anchor="start">Synthetic thermal NF: early 4.163 dB; late 2.271 dB.</text>
+<text x="45" y="735" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Late selection has a quieter linear model but violates the LNA peak envelope.</text>
+<text x="45" y="790" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Post-conversion gain reduction cannot undo earlier compression or in-band IM3.</text>
+<text x="45" y="845" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">LO drive / impedance, matching, reverse coupling, bias and dissipation need evidence.</text>
+<text x="45" y="905" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">A pulse in the wanted band needs isolation / protection; this selector cannot remove it.</text>
+<text x="45" y="975" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">All gains/intercepts/qualification limits are supplied envelopes, not device data.</text>
+<text x="32" y="1036" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

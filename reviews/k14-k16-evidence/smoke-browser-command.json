@@ -1,0 +1,10 @@
+{
+  "browser": "/usr/bin/brave",
+  "args": [
+    "--headless",
+    "--remote-debugging-pipe",
+    "--user-data-dir=/tmp/k1416-smoke/profile",
+    "--window-size=1000,700",
+    "about:blank"
+  ]
+}

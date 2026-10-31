@@ -1,0 +1,7 @@
+# Calibration observability and operational metrology {#sec-metrology-reserved}
+
+This canonical location is reserved for the accepted calibration-observability
+and operational-metrology treatments. Its manuscript is not yet developed.
+The surrounding bounded drafts state their calibration-access and uncertainty
+assumptions locally; those assumptions do not supply this missing treatment.
+The earlier relative-phase pilot remains a development supplement.

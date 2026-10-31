@@ -167,3 +167,97 @@ converter realization and application budgets remain outside this bounded unit.
 AI contexts retain correlated failure risks and confer no human Reviewed/Accepted
 state. Next is K10; final integration must replace the temporary supplement
 navigation with the connected Chapter 8→9→10 progression.
+
+## K10 / Chapter 10 — detection, integration and retained information
+
+Engineering question: does a quieter output improve detection, or remove the
+wanted signal? Outcomes: derive a normalized likelihood/correlation statistic,
+separate detection from estimation, calculate conditional detection probabilities,
+compare coherent/energy accumulation, and evaluate exact rejection and reference
+leakage. Four reproducible figures explain the decision distribution, phasor
+accumulation, projection loss and frozen-weight leakage path. The statistical
+foundations stay in Chapters 2–5; physical source construction stays in Chapter 9.
+[Source examination](../references/source-notes/extraction-integration-rejection.md)
+records the actual MIT matched-filter and whitened-pulse passages examined.
+Complex-vector normalization and all numerical examples are local derivations.
+
+At 30-degree template separation, independent background variance sigma² and a
+100 sigma² Gaussian interferer give sigma²q=26/101. Unit desired response needs
+weights (1,−25 sqrt(3)/26), output variance (101/26)sigma². A/sigma=4 gives
+single-test P_FA=0.001 and known-phase P_D=0.412894, versus 0.007316 using only
+the first mode. P_D≥0.9 requires A≥6.09281 mV when sigma=1 mV. Four correctly
+phased independent records give 0.995976, while four energy records give
+0.899473 under their different gamma-law threshold. A Poisson/gamma-mixture
+derivation makes the latter calculation reproducible without a special-function
+library. A template-only 90-degree phase mismatch leaves complex SNR unchanged
+but reduces the declared real detector to P_D=P_FA.
+
+A 30-degree hard null retains one-quarter of desired template energy; its unit
+response variance is 4 sigma², slightly worse than finite-covariance weighting.
+At zero separation a hard null erases the desired observation, while the finite
+random-interference model still has nonzero q. Frozen cancellation trained with
+the wanted source off can reduce operational noise by 17.05 dB while desired
+power falls 40.09 dB: wanted-to-noise ratio worsens 23.03 dB. A complex leakage
+disk yields a conditional retained-amplitude bound; its uncertainty set requires
+external evidence. Shared interference across four records requires stacked
+covariance, yielding sigma²q=404/401 rather than four independent-record q values.
+
+Initial fresh read-only GPT-6.1 Sol/high session
+`01a18e3c-2a47-7083-9ac4-13317339c8c0`, exit 0:
+[findings](k08-k10-evidence/k10-findings.md). Independent likelihood, weights,
+threshold, integration, fourth-moment and leakage calculations agreed; all 12
+supplied PNGs were examined. Required corrections: validate exact finite frame
+length rather than silently truncating zip inputs; distinguish invalid records
+from nondetections; correct source-draw code attribution; replace a q-specific
+ordinate on nonoptimal curves by general normalized output SNR; make the leakage
+figure's source-off training/frozen operational mechanism explicit; condition
+phase-error claims and average conditional detection probabilities for random
+errors. Author corrected each. Added useful quantitative noncoherent detection,
+whitening/mismatch bridges and transfer-answer checks. No excluded author-state
+exposure was reported. Source summaries were reviewed, not freshly accessed PDFs.
+
+Fresh targeted technical/visual session
+`01a19050-7893-76e2-8743-8b92e0da7bfb`, exit 0:
+[reassessment](k08-k10-evidence/k10c-findings.md). All thirteen actual PNGs
+examined, 51 manifest entries verified twice, and 2,047 stored curve points
+checked independently to coordinate-rounding accuracy. A separate normal-plus-
+gamma quadrature reproduced the Poisson-mixture probabilities. All ten then-current
+extraction tests passed. No consequential mathematical or visual defect remained
+in the reviewed targets. Source notes still cannot substitute for fresh reviewer
+access to original PDFs; no such access is claimed. No prohibited exposure reported.
+
+The targeted reviewer found a further implementation defect: tuple conversion
+consumed an entire iterable before checking its two-coordinate support. A
+10,000-value example was fully read, and an acquisition RuntimeError escaped the
+documented invalid-record contract. Author replaced eager conversion by at most
+three iterator advances, normalized reader/conversion failures to ValueError,
+and tested an endless reader, a failed acquisition and a valid iterator. This
+bounds the algorithm's consumption, not the latency of an externally blocking
+reader. A fresh implementation-only reassessment is recorded below; mathematical
+and image bytes were unchanged by this correction.
+
+Final fresh implementation-only session `01a19054-62f5-7ee2-918c-b958c551999c`, exit 0:
+[reassessment](k08-k10-evidence/k10d-findings.md). Eleven extraction tests,
+65 additional adversarial/domain assertions and 700 independent covariance-inverse
+comparisons passed. Six manifest entries verified before/after; no consequential
+remaining implementation defect or prohibited exposure reported. Reader blocking
+latency remains an acquisition responsibility. No new visual assessment was
+needed for the code-only change; prior frozen manuscript/figure bytes remain.
+
+Final author pixel/check record is
+[here](k08-k10-evidence/k10-author-observations.json). Actual final unit page
+1425×12884 plus eight readable overlapping crops and all four standalone figures
+were inspected. All 47 book SVGs regenerate byte-identically; 57 standard-library
+tests plus 19 pilot tests pass. HTML render: 14 pages, 414 resolving local links,
+48 image uses with alt text, no duplicate IDs/unresolved markers. Integrity and
+whitespace pass. pytest and SciPy are absent; no installation or claim of those
+checks succeeding. Frozen initial, mathematical/visual and implementation packets,
+raw events and hashes preserve the review provenance. Requested model/effort is
+GPT-6.1 Sol/high; backend identity is not independently attested.
+
+K10 closes as a checked provisional bounded Chapter 10 treatment. No measured
+sensitivity, valid hardware covariance/Gaussian law, real adaptive training,
+receiver compliance or educational effectiveness was demonstrated. Independent
+human specialist review, broader layouts/accessibility, PDF/offline mathematics
+and hardware/reader evidence remain open. Next: connected K08–K10 integration
+assessment only, then stop.

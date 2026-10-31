@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1030" role="img" aria-labelledby="title desc"><title id="title">Frozen cancellation weights also subtract wanted leakage</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Frozen cancellation weights also subtract wanted leakage</text>
+<rect x="30" y="75" width="180" height="70" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="120.0" y="100" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Wanted s</text>
+<rect x="30" y="295" width="180" height="70" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="120.0" y="320" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Interferer j</text>
+<rect x="350" y="80" width="200" height="100" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="450.0" y="105" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Primary x</text>
+<text x="450.0" y="130" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">s + j + n</text>
+<rect x="350" y="280" width="200" height="100" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="450.0" y="305" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Reference r</text>
+<text x="450.0" y="330" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">j + ℓs + v</text>
+<path d="M210.000,110.000 L270.000,110.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray=""/>
+<circle cx="270" cy="110" r="4" fill="#125b86"/>
+<path d="M270.000,110.000 L350.000,110.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M270.000,110.000 L270.000,305.000 L350.000,305.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="285" y="260" font-family="sans-serif" font-size="18" fill="#b34719" text-anchor="start">leakage ℓ</text>
+<path d="M210.000,330.000 L240.000,330.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray=""/>
+<circle cx="240" cy="330" r="4" fill="#125b86"/>
+<path d="M240.000,330.000 L240.000,160.000 L350.000,160.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M240.000,330.000 L350.000,330.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="585" y="295" width="90" height="70" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="630.0" y="320" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">h</text>
+<rect x="720" y="170" width="210" height="100" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="825.0" y="195" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">y = x − hr</text>
+<text x="825.0" y="220" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">(1−hℓ)s wanted</text>
+<path d="M550.000,130.000 L690.000,130.000 L690.000,200.000 L720.000,200.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="695" y="187" font-family="sans-serif" font-size="22" fill="#182f3e" text-anchor="start">+</text>
+<path d="M550.000,330.000 L585.000,330.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M675.000,330.000 L690.000,330.000 L690.000,245.000 L720.000,245.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="695" y="268" font-family="sans-serif" font-size="22" fill="#182f3e" text-anchor="start">−</text>
+<text x="100" y="445" font-family="sans-serif" font-size="20" fill="#182f3e" text-anchor="start">Weight trained with s = 0, then frozen: h = 100/101</text>
+<path d="M100.000,537.000 L100.000,732.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,732.000 L880.000,732.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="100.0" y="757" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">0</text>
+<text x="88" y="738.0" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">-48</text>
+<path d="M295.000,537.000 L295.000,732.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,683.250 L880.000,683.250" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="295.0" y="757" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">0.25</text>
+<text x="88" y="689.25" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">-36</text>
+<path d="M490.000,537.000 L490.000,732.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,634.500 L880.000,634.500" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="490.0" y="757" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">0.5</text>
+<text x="88" y="640.5" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">-24</text>
+<path d="M685.000,537.000 L685.000,732.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,585.750 L880.000,585.750" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="685.0" y="757" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">0.75</text>
+<text x="88" y="591.75" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">-12</text>
+<path d="M880.000,537.000 L880.000,732.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,537.000 L880.000,537.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="880.0" y="757" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">1</text>
+<text x="88" y="543.0" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">0</text>
+<path d="M100.000,537.000 L100.000,732.000 L880.000,732.000" fill="none" stroke="#263c49" stroke-width="1.5" stroke-dasharray=""/>
+<text x="100" y="525" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Desired power transfer (dB)</text>
+<text x="490.0" y="787" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Operational real leakage ℓ (dimensionless)</text>
+<path d="M100.000,465.000 L125.000,465.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray=""/>
+<text x="133" y="470" font-family="sans-serif" font-size="16" fill="#125b86" text-anchor="start">20 log₁₀ |1 − hℓ|</text>
+<path d="M100.000,537.000 L103.250,537.146 L106.500,537.292 L109.750,537.439 L113.000,537.587 L116.250,537.735 L119.500,537.884 L122.750,538.034 L126.000,538.184 L129.250,538.335 L132.500,538.487 L135.750,538.639 L139.000,538.792 L142.250,538.945 L145.500,539.099 L148.750,539.254 L152.000,539.410 L155.250,539.566 L158.500,539.723 L161.750,539.880 L165.000,540.039 L168.250,540.198 L171.500,540.357 L174.750,540.518 L178.000,540.679 L181.250,540.841 L184.500,541.004 L187.750,541.167 L191.000,541.331 L194.250,541.496 L197.500,541.662 L200.750,541.828 L204.000,541.996 L207.250,542.164 L210.500,542.333 L213.750,542.503 L217.000,542.673 L220.250,542.844 L223.500,543.017 L226.750,543.190 L230.000,543.364 L233.250,543.538 L236.500,543.714 L239.750,543.891 L243.000,544.068 L246.250,544.246 L249.500,544.426 L252.750,544.606 L256.000,544.787 L259.250,544.969 L262.500,545.152 L265.750,545.335 L269.000,545.520 L272.250,545.706 L275.500,545.893 L278.750,546.081 L282.000,546.270 L285.250,546.459 L288.500,546.650 L291.750,546.842 L295.000,547.035 L298.250,547.229 L301.500,547.424 L304.750,547.620 L308.000,547.817 L311.250,548.016 L314.500,548.215 L317.750,548.416 L321.000,548.618 L324.250,548.821 L327.500,549.025 L330.750,549.230 L334.000,549.436 L337.250,549.644 L340.500,549.853 L343.750,550.063 L347.000,550.275 L350.250,550.487 L353.500,550.701 L356.750,550.917 L360.000,551.133 L363.250,551.351 L366.500,551.570 L369.750,551.791 L373.000,552.013 L376.250,552.237 L379.500,552.462 L382.750,552.688 L386.000,552.916 L389.250,553.145 L392.500,553.376 L395.750,553.608 L399.000,553.842 L402.250,554.077 L405.500,554.314 L408.750,554.553 L412.000,554.793 L415.250,555.035 L418.500,555.278 L421.750,555.524 L425.000,555.771 L428.250,556.019 L431.500,556.270 L434.750,556.522 L438.000,556.776 L441.250,557.032 L444.500,557.290 L447.750,557.549 L451.000,557.811 L454.250,558.074 L457.500,558.340 L460.750,558.607 L464.000,558.877 L467.250,559.149 L470.500,559.422 L473.750,559.698 L477.000,559.976 L480.250,560.257 L483.500,560.539 L486.750,560.824 L490.000,561.111 L493.250,561.401 L496.500,561.692 L499.750,561.987 L503.000,562.283 L506.250,562.583 L509.500,562.885 L512.750,563.189 L516.000,563.496 L519.250,563.806 L522.500,564.119 L525.750,564.434 L529.000,564.752 L532.250,565.073 L535.500,565.397 L538.750,565.724 L542.000,566.054 L545.250,566.387 L548.500,566.724 L551.750,567.063 L555.000,567.406 L558.250,567.753 L561.500,568.102 L564.750,568.456 L568.000,568.812 L571.250,569.173 L574.500,569.537 L577.750,569.905 L581.000,570.277 L584.250,570.653 L587.500,571.032 L590.750,571.416 L594.000,571.805 L597.250,572.197 L600.500,572.594 L603.750,572.995 L607.000,573.402 L610.250,573.812 L613.500,574.228 L616.750,574.649 L620.000,575.074 L623.250,575.505 L626.500,575.941 L629.750,576.383 L633.000,576.830 L636.250,577.283 L639.500,577.742 L642.750,578.207 L646.000,578.678 L649.250,579.155 L652.500,579.640 L655.750,580.130 L659.000,580.628 L662.250,581.133 L665.500,581.645 L668.750,582.165 L672.000,582.692 L675.250,583.228 L678.500,583.771 L681.750,584.324 L685.000,584.885 L688.250,585.455 L691.500,586.034 L694.750,586.623 L698.000,587.222 L701.250,587.832 L704.500,588.452 L707.750,589.083 L711.000,589.726 L714.250,590.381 L717.500,591.048 L720.750,591.728 L724.000,592.421 L727.250,593.128 L730.500,593.850 L733.750,594.586 L737.000,595.339 L740.250,596.107 L743.500,596.893 L746.750,597.697 L750.000,598.520 L753.250,599.362 L756.500,600.225 L759.750,601.109 L763.000,602.016 L766.250,602.947 L769.500,603.904 L772.750,604.887 L776.000,605.898 L779.250,606.939 L782.500,608.011 L785.750,609.118 L789.000,610.260 L792.250,611.440 L795.500,612.661 L798.750,613.926 L802.000,615.238 L805.250,616.601 L808.500,618.018 L811.750,619.494 L815.000,621.036 L818.250,622.647 L821.500,624.336 L824.750,626.109 L828.000,627.977 L831.250,629.949 L834.500,632.037 L837.750,634.257 L841.000,636.626 L844.250,639.166 L847.500,641.903 L850.750,644.870 L854.000,648.109 L857.250,651.677 L860.500,655.646 L863.750,660.118 L867.000,665.241 L870.250,671.236 L873.500,678.463 L876.750,687.561 L880.000,699.851" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray=""/>
+<text x="80" y="875" font-family="sans-serif" font-size="20" fill="#182f3e" text-anchor="start">At ℓ = 1: noise falls 17.05 dB, wanted power falls 40.09 dB.</text>
+<text x="80" y="930" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Wanted-to-noise ratio worsens by 23.03 dB despite the quieter output.</text>
+<text x="80" y="985" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Complex leakage is dangerous when hℓ ≈ 1, including its phase.</text>
+<text x="32" y="1016" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

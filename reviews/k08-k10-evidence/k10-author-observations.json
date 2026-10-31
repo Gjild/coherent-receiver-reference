@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-31",
+  "page": {
+    "exit_status": 0,
+    "timed_out": false,
+    "seconds": 3.52,
+    "source": "/tmp/k0810/render10c/book/_book/extraction-integration-rejection.html",
+    "source_sha256": "00705d2c6643b25eb54b432c979047f00299c67f9e827fa3e931957cb56faa3e",
+    "backend": "pipe",
+    "viewport": [
+      1440,
+      2200
+    ],
+    "image_exists": true,
+    "image_dimensions": [
+      1425,
+      12884
+    ],
+    "image_sha256": "087c35b9e815e0419dc91fa55af49eb02c80a99376c30b95002d70f82f4adaa6"
+  },
+  "author_pixels": [
+    "All four standalone captures examined; corrected integration ordinate, general normalized SNR ordinate and operational leakage title.",
+    "Complete1425x12884 page plus eight overlapping readable crops opened; Gaussian density and threshold, phasor arrow signs, projection and cancellation paths, table, Laplace-transform derivation, transfer answer and bottom navigation readable. No clipped main-body equation/figure observed at tested width."
+  ],
+  "checks": {
+    "stdlib": 57,
+    "pilot": 19,
+    "SVGs_byte_identical": 47,
+    "html_pages": 14,
+    "local_links": 414,
+    "image_uses_with_alt": 48
+  },
+  "independent_numerics": [
+    "Whitened Cauchy-Schwarz weights and real/complex variance normalization checked analytically and with source-generated Gaussian draws.",
+    "Poisson/gamma mixture gives PD=.2445601423 (one unknown phase),.8994733482 (four energies); 200-term bound under7.05e-137 for declared rho<=17.",
+    "Shared-record rank-one covariance: sigma^2 q=404/401; PD=.995169646. Complex leakage disk bound checked against boundary samples."
+  ],
+  "limitations": [
+    "Full pytest cannot start: pytest absent; no install.",
+    "SciPy comparison attempted but SciPy absent; finite-series derivation, direct Gaussian trials and fresh reviewer alternatives used.",
+    "Synthetic statistics are not established hardware laws; no physical measurement or reader trial.",
+    "Tested desktop HTML; PDF/offline math and exhaustive responsive/assistive-technology checks unperformed."
+  ],
+  "figure_sha256": {
+    "detection-statistic.svg": "86fb0421ee9e1ec91b99b2b0989b7c182b279b9515a3ce31f07977fc95b88e4a",
+    "integration-retention.svg": "535218e5f586158c1527c6fad0cece81852acadc70bf4de1108089f68070adfe",
+    "rejection-information.svg": "6b77c730a5a496a65b60f09cf8552897b139ad13581f9cb8b5d2e845586e59a5",
+    "reference-leakage.svg": "de177dc4b0521d1eee5590926a17e183c6735f219f93cbb5afcfe324297bf0aa"
+  },
+  "limits_of_implementation": "At most three iterator advances; a blocking acquisition reader still requires external acquisition timeout."
+}

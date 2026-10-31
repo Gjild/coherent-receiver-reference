@@ -1,0 +1,30 @@
+{
+  "integration_lag_sum": {
+    "vertices": 361,
+    "max_x_rounding_px": 0.00033333333340124227,
+    "max_y_rounding_px": 0.0004991465241346305
+  },
+  "rejection_direct_matrix": [
+    {
+      "vertices": 241,
+      "max_x_rounding_px": 0.0,
+      "max_y_rounding_px": 0.0004970296454303025
+    },
+    {
+      "vertices": 241,
+      "max_x_rounding_px": 0.0,
+      "max_y_rounding_px": 0.0004982200163112793
+    },
+    {
+      "vertices": 241,
+      "max_x_rounding_px": 0.0,
+      "max_y_rounding_px": 0.0004974995068778298
+    }
+  ],
+  "leakage_on_off": {
+    "vertices": 241,
+    "max_x_rounding_px": 0.0,
+    "max_y_rounding_px": 0.0004951424808723459
+  },
+  "diagnostic": "Initial inverse-coordinate comparison used an over-tight tolerance for x and y rounding combined; direct forward-coordinate checks bound each stored coordinate by its declared0.0005px rounding."
+}

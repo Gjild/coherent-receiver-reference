@@ -16,6 +16,7 @@ book:
     - tracking-signal-retention.qmd
     - fields-geometry-transduction.qmd
     - physical-disturbance-paths.qmd
+    - extraction-integration-rejection.qmd
     - publishing-pilot.qmd
     - relative-phase-stability.qmd
     - references.qmd

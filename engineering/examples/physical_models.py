@@ -5,7 +5,9 @@ Uses the established SVG language; no measurements or device specifications.
 """
 from pathlib import Path
 import sys
-from math import pi, sin, cos, tan, atan, radians, degrees, log10, sqrt
+from math import pi, sin, cos, tan, atan, radians, degrees, log10, sqrt, exp, isfinite
+import cmath
+from statistics import NormalDist
 from visual_foundations import SVG, lin, COLORS
 
 
@@ -131,5 +133,175 @@ def chapter9():
     s.save()
 
 
+def extraction_weights(theta=pi/6, jammer_variance=100):
+    """Unit desired response for a=(1,0), background I, jammer path (c,s).
+
+    Observations are x/sigma. This realizes the bounded illustrative receiver;
+    it does not estimate a physical covariance or supply a hardware guarantee.
+    """
+    try:
+        theta=float(theta);jammer_variance=float(jammer_variance)
+    except (TypeError,ValueError,OverflowError) as exc:
+        raise ValueError('Finite real model parameters required') from exc
+    if not isfinite(theta) or not isfinite(jammer_variance) or jammer_variance<0:
+        raise ValueError('Finite angle and nonnegative finite jammer variance required')
+    c,s=cos(theta),sin(theta)
+    beta=jammer_variance/(1+jammer_variance)
+    q0=s*s+c*c/(1+jammer_variance)
+    try:
+        w=(1.,-beta*c*s/q0)
+        variance=w[0]**2+w[1]**2+jammer_variance*(w[0]*c+w[1]*s)**2
+    except (OverflowError,ZeroDivisionError) as exc:
+        raise ValueError('Numerically unusable covariance') from exc
+    if not isfinite(variance) or variance<=0:
+        raise ValueError('Numerically unusable covariance')
+    return w,q0,variance
+
+
+def bounded_extract(x,theta=pi/6,jammer_variance=100,p_fa=.001):
+    """Known-phase Gaussian decision; ValueError means invalid, not H0.
+
+    Requires exactly two finite complex observations in normalized voltage units.
+    Reads at most three iterator elements to reject extra coordinates promptly.
+    Source-draw evaluation lives in tests/test_physical_models_stdlib.py.
+    """
+    values=[]
+    try:
+        observations=iter(x)
+        for _ in range(3):
+            try:
+                value=next(observations)
+            except StopIteration:
+                break
+            values.append(complex(value))
+        p_fa=float(p_fa)
+    except Exception as exc:
+        raise ValueError('Two finite complex observations and a valid probability required') from exc
+    x=tuple(values)
+    if len(x)!=2 or any(not isfinite(v.real) or not isfinite(v.imag) for v in x):
+        raise ValueError('Exactly two finite complex observations required')
+    if not isfinite(p_fa) or not 0<p_fa<1:
+        raise ValueError('False-alarm probability must lie strictly between zero and one')
+    w,q0,variance=extraction_weights(theta,jammer_variance)
+    amplitude=sum(wi*xi for wi,xi in zip(w,x))
+    if not isfinite(amplitude.real) or not isfinite(amplitude.imag):
+        raise ValueError('Nonfinite extraction result')
+    z=amplitude.real/(sqrt(variance)/sqrt(2))
+    if not isfinite(z):
+        raise ValueError('Nonfinite extraction result')
+    # Tail form avoids cancellation in 1-p_fa for a small probability.
+    threshold=-NormalDist().inv_cdf(p_fa)
+    return {'amplitude':amplitude,'z':z,'decision':z>threshold,
+            'threshold':threshold,'q0':q0,'variance':variance}
+
+
+def gamma_tail_integer(shape,threshold):
+    """Finite gamma survival sum for the small integer-shape examples."""
+    term=total=1.
+    for k in range(1,shape):
+        term*=threshold/k;total+=term
+    return exp(-threshold)*total
+
+
+def energy_detection_probability(records,total_rho,threshold):
+    """Poisson/gamma mixture, truncated at 200 terms for this unit's cases.
+
+    Intended for N=1 or4 and total_rho<=17; not a general numerical CDF library.
+    """
+    weight=exp(-total_rho);probability=0.
+    for k in range(200):
+        probability+=weight*gamma_tail_integer(records+k,threshold)
+        weight*=total_rho/(k+1)
+    return probability
+
+
+def chapter10():
+    s=SVG('detection-statistic','A detection claim needs hypotheses, a statistic and a threshold',930)
+    s.box(30,100,200,85,['Finite record x','known C and a'])
+    s.box(295,100,250,85,['Whiten x AND a','t = aᴴ C⁻¹ x'])
+    s.box(620,100,300,85,['r = t / √q','Z = √2 Re r > γ'])
+    s.path([(230,142),(295,142)],arrow=True);s.path([(545,142),(620,142)],arrow=True)
+    s.text(50,255,'Proper complex Gaussian noise; q = aᴴC⁻¹a, ρ = A²q.',20)
+    s.text(50,305,'Known phase; one specified test, α = 0.001. Geometry and state fixed.',18)
+    xx=lin(-4,8,361);q0=26/101;mu=sqrt(32*q0);g=NormalDist().inv_cdf(.999)
+    px,py=s.plot(365,'Worked detector: A/σ = 4, template separation 30°',(-4,8),(0,.44),
+       'Normalized real statistic Z (dimensionless)','Probability density per unit Z',
+       [('H₀: mean 0, variance 1',xx,[exp(-v*v/2)/sqrt(2*pi) for v in xx]),
+        (f'H₁: mean {mu:.4f}, variance 1',xx,[exp(-(v-mu)**2/2)/sqrt(2*pi) for v in xx])])
+    s.path([(px(g),py(0)),(px(g),py(.44))],COLORS[2],'5 4')
+    s.text(px(g)+10,py(.44)-13,'γ = 3.0902',17,COLORS[2])
+    s.text(100,795,'PFA = 0.001; PD = 0.4129. Improving a detector does not ensure adequacy.',19)
+    s.text(100,850,'Unknown phase uses |r|² and a different null law/threshold.',19)
+    s.save()
+    s=SVG('integration-retention','A coherent sum can lose a wanted signal that still has energy',980)
+    s.text(55,90,'Four aligned desired terms',20)
+    for i in range(4):s.path([(60+85*i,180),(145+85*i,180)],COLORS[0],arrow=True)
+    s.text(50,250,'Complex sum = 4u; energy sum = 4|u|²',18)
+    s.text(505,90,'Quarter-turn progression',20)
+    pts=[(610,245),(750,245),(750,105),(610,105),(610,245)]
+    for i in range(4):s.path(pts[i:i+2],COLORS[i],arrow=True)
+    s.text(505,300,'Complex sum = 0; energy sum = 4|u|²',18)
+    s.text(60,340,'u = A√q: wanted scalar term in each normalized record',18)
+    xx=lin(0,180,361)
+    loss=lambda d:abs(sum(cmath.exp(1j*m*radians(d)) for m in range(4))/4)**2
+    s.plot(380,'Equal independent noise per record; residual phase advance δ',
+      (0,180),(0,1.05),'Phase advance δ per record (degrees)','Coherent signal-to-noise ratio / (4ρ)',
+      [('L₄ = |Σ exp(jmδ) / 4|²',xx,[loss(d) for d in xx])])
+    s.text(80,815,'At δ = 90° the desired complex sum cancels; correct relative phasing restores it.',18)
+    s.text(80,865,'Noncoherent Q₄ retains energy but has a gamma null, not the coherent null.',18)
+    s.text(80,915,'A nonzero mean/energy is not by itself a detection probability.',18)
+    s.save()
+    s=SVG('rejection-information','Exact rejection spends desired information when templates align',1000)
+    cx,cy=210,245;scale=190
+    s.path([(70,cy),(460,cy)],'#9aaab3');s.path([(cx,355),(cx,90)],'#9aaab3')
+    s.path([(cx,cy),(cx+scale,cy)],COLORS[0],arrow=True);s.text(410,240,'a',22)
+    s.path([(cx,cy),(cx+scale*cos(pi/6),cy-scale*sin(pi/6))],COLORS[1],arrow=True)
+    s.text(390,140,'b',22,COLORS[1])
+    s.path([(cx,cy),(cx+scale*.25,cy+scale*sqrt(3)/4)],COLORS[2],arrow=True)
+    s.text(270,350,'P⊥a',20,COLORS[2])
+    s.text(500,115,'θ = 30°; dimensionless template vectors',18)
+    s.text(500,170,'Projection keeps ||P⊥a||² = 1/4.',20)
+    s.text(500,225,'Unit response needs 4σ² output noise.',20)
+    s.text(500,280,'At 30°: optimum 0.25743; null 0.25000.',18)
+    s.text(500,335,'The template-space angle is not bearing.',18)
+    xx=lin(0,90,241)
+    s.plot(405,'Independent background σ²I; finite jammer variance 100σ²',
+      (0,90),(0,1.05),'Template separation θ (degrees; vector space)','Output SNR / (A²/σ²), dimensionless',
+      [('colored optimum',xx,[sin(radians(t))**2+cos(radians(t))**2/101 for t in xx]),
+       ('exact nuisance null',xx,[sin(radians(t))**2 for t in xx]),
+       ('first mode only',xx,[1/(1+100*cos(radians(t))**2) for t in xx])])
+    s.text(80,840,'At θ = 0: hard null erases a; finite random noise still leaves q > 0.',19)
+    s.text(80,895,'At θ = 90°: nuisance and wanted templates are orthogonal.',19)
+    s.text(80,950,'Normalization restores amplitude, not the discarded information.',18)
+    s.save()
+    s=SVG('reference-leakage','Frozen cancellation weights also subtract wanted leakage',1030)
+    s.box(30,75,180,70,['Wanted s'])
+    s.box(30,295,180,70,['Interferer j'])
+    s.box(350,80,200,100,['Primary x','s + j + n'])
+    s.box(350,280,200,100,['Reference r','j + ℓs + v'])
+    s.path([(210,110),(270,110)]);s.dot(270,110)
+    s.path([(270,110),(350,110)],arrow=True)
+    s.path([(270,110),(270,305),(350,305)],COLORS[1],arrow=True)
+    s.text(285,260,'leakage ℓ',18,COLORS[1])
+    s.path([(210,330),(240,330)]);s.dot(240,330)
+    s.path([(240,330),(240,160),(350,160)],arrow=True)
+    s.path([(240,330),(350,330)],arrow=True)
+    s.box(585,295,90,70,['h'])
+    s.box(720,170,210,100,['y = x − hr','(1−hℓ)s wanted'])
+    s.path([(550,130),(690,130),(690,200),(720,200)],arrow=True)
+    s.text(695,187,'+',22)
+    s.path([(550,330),(585,330)],arrow=True)
+    s.path([(675,330),(690,330),(690,245),(720,245)],arrow=True)
+    s.text(695,268,'−',22)
+    h=100/101;xx=lin(0,1)
+    s.plot(445,'Weight trained with s = 0, then frozen: h = 100/101',
+      (0,1),(-48,0),'Operational real leakage ℓ (dimensionless)','Desired power transfer (dB)',
+      [('20 log₁₀ |1 − hℓ|',xx,[20*log10(abs(1-h*v)) for v in xx])])
+    s.text(80,875,'At ℓ = 1: noise falls 17.05 dB, wanted power falls 40.09 dB.',20)
+    s.text(80,930,'Wanted-to-noise ratio worsens by 23.03 dB despite the quieter output.',19)
+    s.text(80,985,'Complex leakage is dangerous when hℓ ≈ 1, including its phase.',18)
+    s.save()
+
+
 if __name__ == '__main__':
-    {'8': chapter8, '9': chapter9}[sys.argv[1]]()
+    {'8': chapter8, '9': chapter9, '10': chapter10}[sys.argv[1]]()

@@ -131,5 +131,171 @@ class NoiseModels(unittest.TestCase):
 
 
 
+class ExtractionModels(unittest.TestCase):
+    def test_invalid_frames_and_parameters_are_not_nondetections(self):
+        import sys
+        sys.path.insert(0,str(Path(__file__).parents[1]/'engineering/examples'))
+        import physical_models as p
+        for x in [[],[0],[0,0,0],[float('nan'),0],[0,complex(0,float('inf'))],None]:
+            with self.assertRaises(ValueError):p.bounded_extract(x)
+        for params in [{'theta':float('nan')},{'theta':float('inf')},
+                       {'jammer_variance':-1},{'jammer_variance':float('inf')},
+                       {'p_fa':0},{'p_fa':1},{'p_fa':float('nan')}]:
+            with self.assertRaises(ValueError):p.bounded_extract([0,0],**params)
+        self.assertFalse(p.bounded_extract([0,0])['decision'])
+        self.assertTrue(math.isfinite(p.bounded_extract([0,0],p_fa=1e-100)['threshold']))
+
+    def test_record_reader_is_bounded_and_failures_are_invalid(self):
+        import sys
+        sys.path.insert(0,str(Path(__file__).parents[1]/'engineering/examples'))
+        import physical_models as p
+        consumed=[]
+        def unlimited():
+            while True:
+                consumed.append(0)
+                yield 0
+        with self.assertRaises(ValueError):p.bounded_extract(unlimited())
+        self.assertEqual(len(consumed),3)
+        def failed_reader():
+            yield 0
+            raise RuntimeError('Acquisition failed')
+        with self.assertRaises(ValueError) as caught:p.bounded_extract(failed_reader())
+        self.assertIsInstance(caught.exception.__cause__,RuntimeError)
+        self.assertFalse(p.bounded_extract(iter([0,0]))['decision'])
+
+    def test_energy_detector_probability_by_independent_gaussian_draws(self):
+        import sys,random
+        sys.path.insert(0,str(Path(__file__).parents[1]/'engineering/examples'))
+        import physical_models as p
+        eta=13.06224077918807;rho=16*26/101
+        self.assertAlmostEqual(p.gamma_tail_integer(4,eta),.001,places=13)
+        predicted=p.energy_detection_probability(4,4*rho,eta)
+        self.assertAlmostEqual(predicted,.8994733481863,places=12)
+        rng=random.Random(101031);trials=50000;detected=0
+        for _ in range(trials):
+            q=sum(abs(math.sqrt(rho)+complex(rng.gauss(0,1),rng.gauss(0,1))/math.sqrt(2))**2 for _ in range(4))
+            detected+=q>eta
+        self.assertLess(abs(detected/trials-predicted),.006)
+
+    def test_mismatched_reference_energy_and_real_decision(self):
+        inv=[[26/101,-25*math.sqrt(3)/101],[-25*math.sqrt(3)/101,76/101]]
+        inner=lambda x,y:sum(x[i].conjugate()*inv[i][j]*y[j] for i in range(2) for j in range(2))
+        a=[1+0j,0j];q=inner(a,a).real
+        for psi in (0,math.pi/3,math.pi/2,math.pi):
+            ar=[cmath.exp(1j*psi),0j];qr=inner(ar,ar).real
+            self.assertAlmostEqual(abs(inner(ar,a))**2/(qr*q),1)
+            mean=math.sqrt(2)*4*inner(ar,a).real/math.sqrt(qr)
+            self.assertAlmostEqual(mean,math.sqrt(32*q)*math.cos(psi))
+        for ar in [[1+1j,2-.1j],[.3-.7j,-1j]]:
+            self.assertLessEqual(abs(inner(ar,a))**2/(inner(ar,ar).real*q),1+1e-14)
+
+    def test_weight_from_direct_covariance_inverse_and_likelihood(self):
+        import sys
+        sys.path.insert(0,str(Path(__file__).parents[1]/'engineering/examples'))
+        import physical_models as p
+        C=[[76,25*math.sqrt(3)],[25*math.sqrt(3),26]]
+        det=C[0][0]*C[1][1]-C[0][1]*C[1][0]
+        inv=[[C[1][1]/det,-C[0][1]/det],[-C[1][0]/det,C[0][0]/det]]
+        w,q,v=p.extraction_weights()
+        self.assertAlmostEqual(q,inv[0][0])
+        for i in range(2):self.assertAlmostEqual(w[i],inv[i][0]/q)
+        self.assertAlmostEqual(v,sum(w[i]*C[i][j]*w[j] for i in range(2) for j in range(2)))
+        x=[2.1+.7j,-.2+1.3j];A=1.7
+        cost=lambda mu:sum((x[i]-mu[i]).conjugate()*inv[i][j]*(x[j]-mu[j]) for i in range(2) for j in range(2)).real
+        t=sum(inv[0][j]*x[j] for j in range(2))
+        self.assertAlmostEqual(cost([0,0])-cost([A,0]),2*A*t.real-A*A*q)
+        result=p.bounded_extract(x)
+        self.assertAlmostEqual(result['amplitude'],t/q)
+
+    def test_source_draw_detector_false_alarm_and_detection(self):
+        import sys,random
+        from statistics import NormalDist
+        sys.path.insert(0,str(Path(__file__).parents[1]/'engineering/examples'))
+        import physical_models as p
+        rng=random.Random(101030);N=100000;fa=det=0
+        # Source-level draws, rather than drawing the asserted output Gaussian.
+        w,q,v=p.extraction_weights();gamma=NormalDist().inv_cdf(.999)
+        for _ in range(N):
+            u=complex(rng.gauss(0,1),rng.gauss(0,1))/math.sqrt(2)
+            n=[complex(rng.gauss(0,1),rng.gauss(0,1))/math.sqrt(2) for _ in range(2)]
+            x=[10*math.sqrt(3)/2*u+n[0],5*u+n[1]]
+            z=math.sqrt(2)*(w[0]*x[0]+w[1]*x[1]).real/math.sqrt(v)
+            fa+=z>gamma;det+=z+math.sqrt(2)*4/math.sqrt(v)>gamma
+        expected=NormalDist().cdf(math.sqrt(2*16*q)-gamma)
+        self.assertLess(abs(fa/N-.001),.0005)
+        self.assertLess(abs(det/N-expected),.006)
+        self.assertAlmostEqual(expected,.41289421617,places=10)
+        # The executable rule is checked on asymmetric complex source samples.
+        self.assertAlmostEqual(p.bounded_extract(x)['z'],z)
+
+    def test_coherent_and_noncoherent_phase_counterexample(self):
+        terms=[cmath.exp(1j*m*math.pi/2) for m in range(4)]
+        self.assertAlmostEqual(abs(sum(terms)),0,places=13)
+        self.assertAlmostEqual(sum(abs(t)**2 for t in terms),4)
+        fixed=[t*cmath.exp(-1j*m*math.pi/2) for m,t in enumerate(terms)]
+        self.assertAlmostEqual(abs(sum(fixed)),4)
+        # Direct convolution of four unit exponential densities produces q^3e^-q/6.
+        # Independently integrate its tail and compare with the finite series.
+        h=.001;a=6.;b=50.;n=int((b-a)/h)
+        area=sum(((a+(i+.5)*h)**3)*math.exp(-(a+(i+.5)*h))/6*h for i in range(n))
+        tail=math.exp(-a)*sum(a**k/math.factorial(k) for k in range(4))
+        self.assertAlmostEqual(area,tail,delta=2e-9)
+
+    def test_stochastic_correlation_by_gaussian_quadrature(self):
+        import itertools
+        # Product three-point Gaussian quadrature integrates the fourth-order
+        # moments exactly. No correlation-variance identity is used to generate them.
+        nodes=[(-math.sqrt(1.5),1/6),(0,2/3),(math.sqrt(1.5),1/6)]
+        mean=complex(0);mse=pseudo=0j
+        for choices in itertools.product(nodes,repeat=6):
+            z=[a for a,w in choices];weight=math.prod(w for a,w in choices)
+            source=.1*complex(z[0],z[1]);n1=complex(z[2],z[3]);n2=complex(z[4],z[5])
+            product=(source+n1)*(source+n2).conjugate()
+            mean+=weight*product
+            mse+=weight*abs(product-.01)**2
+            pseudo+=weight*(product-.01)**2
+        self.assertAlmostEqual(mean,.01)
+        self.assertAlmostEqual(mse.real,1.0201)
+        self.assertAlmostEqual(pseudo,.0001)
+
+    def test_projection_preserves_constraint_but_amplifies_noise(self):
+        for angle in [0,math.pi/6,math.pi/2]:
+            b=[math.cos(angle),math.sin(angle)];dot=b[0]
+            a_perp=[1-dot*b[0],-dot*b[1]]
+            self.assertAlmostEqual(sum(x*x for x in a_perp),math.sin(angle)**2)
+            self.assertAlmostEqual(sum(x*y for x,y in zip(a_perp,b)),0)
+        w=[1,-math.sqrt(3)]
+        self.assertAlmostEqual(w[0],1)
+        self.assertAlmostEqual(sum(x*x for x in w),4)
+        self.assertAlmostEqual(w[0]*math.sqrt(3)/2+w[1]/2,0)
+        self.assertGreater(1/(1+100),0)  # original finite covariance is not a null.
+
+    def test_shared_record_covariance_and_leakage_bound(self):
+        a=[1,0]*4;b=[math.sqrt(3)/2,.5]*4
+        C=[[(1 if i==j else 0)+100*b[i]*b[j] for j in range(8)] for i in range(8)]
+        dot=sum(x*y for x,y in zip(a,b))
+        v=[a[i]-100*b[i]*dot/401 for i in range(8)]
+        for i in range(8):self.assertAlmostEqual(sum(C[i][j]*v[j] for j in range(8)),a[i],places=11)
+        self.assertAlmostEqual(sum(x*y for x,y in zip(a,v)),404/401)
+        h=.7+.2j;ell0=.2-.1j;eps=.15
+        bound=max(0,abs(1-h*ell0)-abs(h)*eps)
+        for k in range(100):
+            ell=ell0+eps*cmath.exp(2j*math.pi*k/100)
+            self.assertGreaterEqual(abs(1-h*ell)+1e-14,bound)
+
+    def test_reference_cancellation_signal_and_noise_by_source_ensemble(self):
+        import itertools
+        h=100/101;outputs=[]
+        for j,n,v in itertools.product([1,-1,1j,-1j],repeat=3):
+            x=10*j+n;r=10*j+v
+            outputs.append(x-h*r)
+            signal_on=(1+10*j+n)-h*(1+10*j+v)
+            self.assertAlmostEqual(signal_on-(x-h*r),1-h)
+        variance=sum(abs(z)**2 for z in outputs)/len(outputs)
+        self.assertAlmostEqual(variance,201/101)
+        self.assertAlmostEqual(20*math.log10(1-h),-40.08642747565,places=10)
+        self.assertAlmostEqual((1-h)**2*101/variance,1/201)
+
+
 if __name__=='__main__':
     unittest.main()

@@ -67,7 +67,7 @@
 <text x="55" y="1120" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Example center phase: 25° − 9° − 17° − 108° + 11° = −98°.</text>
 <text x="55" y="1170" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">At +50 kHz the base path gives −98.18045° and output offset +50 kHz.</text>
 <text x="55" y="1235" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">A center-tone correction removes an intercept; a frequency sweep identifies slope.</text>
-<text x="55" y="1285" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Two-tone or modulation tests expose phase curvature that a level sweep misses.</text>
+<text x="55" y="1285" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Frequency sweeps or suitably varied modulation test phase curvature.</text>
 <text x="55" y="1360" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">All curves are exact responses of the stated ideal operators, not measured filters.</text>
 <text x="55" y="1420" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">The realizable implementation, noise transfer and resource fit remain separate work.</text>
 <text x="32" y="1516" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>

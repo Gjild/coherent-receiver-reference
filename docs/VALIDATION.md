@@ -2,9 +2,9 @@
 
 K11 closes as a checked provisional teaching draft at local checkpoint `cd2b802`
 after fresh read-only AI review, substantive corrections and fresh targeted
-reassessment. K12 manuscript and four figures are author-checked, with **AI
-review incomplete due to reviewer usage limit**. K13 and final connected batch
-assessment have not begun. This is not batch completion or human acceptance.
+reassessment. K12 manuscript and four figures now close after fresh AI review, a consequential
+educational correction and fresh targeted reassessment. K13 and final connected
+batch assessment are next. This is not batch completion or human acceptance.
 [Development and continuation record](../reviews/k11-k13-development.md) preserves
 findings, corrections, frozen packets and failed-review provenance separately.
 
@@ -22,7 +22,8 @@ findings, corrections, frozen packets and failed-review provenance separately.
 - Final K12 scratch HTML:16 pages,516 local links,56 image uses, no missing targets,
   duplicate IDs, unresolved markers or absent image alternatives. Author opened
   all4 K12 asset PNGs, complete1425×11071 page and8 overlapping readable crops.
-  This author inspection does not replace the incomplete AI visual review.
+  Fresh read-only AI review and targeted reassessment also inspect the actual
+  pixels; the final corrected page height is11286px.
 - Repository integrity passes13 required paths; whitespace passes. Protected
   architecture/standards/earlier derivations remain unchanged; Chapter1's prior
   bytes are preserved before its authorized requirements-framing addition.
@@ -31,7 +32,7 @@ findings, corrections, frozen packets and failed-review provenance separately.
   power/latency interfaces remain conditional.
 
 The older stop-before-K11 record below is historical; current owner authorization
-is K11–K13, bounded by the incomplete K12 review gate.
+is K11–K13, with K12 now closed and K13 next.
 
 ---
 

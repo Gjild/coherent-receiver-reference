@@ -78,14 +78,14 @@ silently included in a scalar $H$.
 The reference sensitivity follows directly. A positive LO phase perturbation
 appears as a **negative** restored output phase perturbation. If the LO source
 phase is $\lambda_s$ and its distribution delay is $\tau_L$, then
-$\lambda=\lambda_s-2\pi f_L\tau_L$. With NCO state held fixed,
+$\lambda=\lambda_s-2\pi f_L\tau_L$. Allowing an NCO phase perturbation,
 
 $$
 \delta\phi_i=-2\pi f_R\delta\tau_{R,i}
  +2\pi f_L\delta\tau_{L,i}-\delta\lambda_s+\delta\chi_i
 $$ {#eq-transfer-path-sensitivity}
 
-at the center RF tone. Common $\lambda_s$ cancels in an ideal simultaneous
+at the center RF tone; set $\delta\chi_i=0$ when the NCO state is held fixed. Common $\lambda_s$ cancels in an ideal simultaneous
 relative comparison; unequal endpoint delays and their changes do not. Frequency
 conversion does not convert every physical delay into an IF-frequency phase
 error. The RF path is weighted by RF frequency and the LO path by LO frequency.
@@ -242,7 +242,10 @@ $$
 For an RF sideband at $\nu=+50$ kHz, the IF is 19.95 MHz. Its FIR phase is
 $108.18^\circ$, while the RF delay contributes $-9.00045^\circ$.
 The restored tone therefore has offset **+50 kHz** and phase
-$-98.18045^\circ$ at the declared origin. An independent real-waveform
+$-98.18045^\circ$ at the declared origin. This is the sideband's waveform
+phasor, not the output of a center-frequency 1 ms accumulation: that record has
+a null at 50 kHz. Extracting this tone requires following its frequency, as in
+the waveform check, or inspecting the complex waveform before accumulation. An independent real-waveform
 mix/filter/sample calculation tests this result; an amplitude-only test cannot
 show its orientation.
 
@@ -272,6 +275,12 @@ The $4.166^\circ$ discrepancy affects relative sideband timing and waveform shap
 This is a stable causal first-order all-pass in the equivalent complex path,
 not a specified RF component. A sweep or known asymmetric modulation is needed
 to assess dispersion; a flat level response and a center phase correction miss it.
+Even two chosen tones can conceal curvature. For this $Q$, the values at
+$\nu=\pm50$ kHz exactly match a pure delay of 2.951672353 microseconds; both
+responses also equal one at the center. Their phases differ by 16.260205° at
++100 kHz. Sweep the tone locations, use additional suitably placed frequencies,
+or compare against an independently established delay. A fixed tone pair alone
+identifies a secant slope and phase intercept, not general phase curvature.
 
 ![Phase intercept, phase slope and curvature answer different engineering questions. Synthetic exact transfer curves illustrate why equal carrier phase and equal magnitude do not ensure equal modulation transfer.](figures/transfer-response.svg){#fig-transfer-response fig-alt="Two plots compare orientation-restored phase and group delay of the basic RF/FIR path with the same path plus a unity-magnitude all-pass. The all-pass curves expose dispersion hidden by a center-tone calibration."}
 

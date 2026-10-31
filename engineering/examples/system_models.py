@@ -230,7 +230,7 @@ def unit12():
     s.text(55,1120,'Example center phase: 25° − 9° − 17° − 108° + 11° = −98°.',19)
     s.text(55,1170,'At +50 kHz the base path gives −98.18045° and output offset +50 kHz.',19)
     s.text(55,1235,'A center-tone correction removes an intercept; a frequency sweep identifies slope.',19)
-    s.text(55,1285,'Two-tone or modulation tests expose phase curvature that a level sweep misses.',19)
+    s.text(55,1285,'Frequency sweeps or suitably varied modulation test phase curvature.',19)
     s.text(55,1360,'All curves are exact responses of the stated ideal operators, not measured filters.',18)
     s.text(55,1420,'The realizable implementation, noise transfer and resource fit remain separate work.',18)
     s.save()

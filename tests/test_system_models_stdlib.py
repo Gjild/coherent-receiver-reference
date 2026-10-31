@@ -124,6 +124,10 @@ class TransferModels(unittest.TestCase):
         self.assertAlmostEqual(delay,10.025e-9,places=16)
         q=lambda v:(1-1j*v/1e5)/(1+1j*v/1e5)
         self.assertAlmostEqual(abs(q(50000)),1.,places=14)
+        fitted_delay=-cmath.phase(q(50000))/(2*math.pi*50000)
+        for f in [-50000,0,50000]:
+            self.assertAlmostEqual(q(f),cmath.exp(-2j*math.pi*f*fitted_delay),places=13)
+        self.assertGreater(abs(math.degrees(cmath.phase(q(100000)*cmath.exp(2j*math.pi*100000*fitted_delay)))),16.)
         self.assertGreater(abs(math.degrees(cmath.phase(q(50000)))+360*50000/(math.pi*1e5)),4)
         self.assertAlmostEqual(math.degrees(cmath.phase(cmath.exp(-2j*math.pi*.2))),-72.)
         self.assertAlmostEqual(model.transfer_phase(nco_phase=math.radians(101))-model.transfer_phase(),math.pi/2)

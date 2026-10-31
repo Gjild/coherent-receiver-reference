@@ -167,3 +167,36 @@ trailing space in the new manuscript (earlier unstaged checks excluded untracked
 files). Removed in the follow-up checkpoint; corrected candidate archive and
 manifest updated. This whitespace-only correction changes no equations, model,
 figures, rendered content or review boundary. No failed check is counted as pass.
+
+### K12 resumed review and correction
+
+Owner reports reviewer capacity reset; fresh read-only Sol/high session
+`01a19092-b77a-7600-bca2-3be6eae92bea`, exit0, reviews the byte-verified corrected
+candidate. [Raw findings](k11-k13-evidence/k12r-findings.md); all1010 manifest
+entries match and13 actual PNGs inspected. Independent asymmetric modulation,
+real-waveform, finite-record, bound, reset and1446-vertex checks agree; all11
+system tests pass. No prohibited exposure reported; source notes/anchors were
+examined, not original PDFs. Conditional implementation/evidence limits preserved.
+
+Required educational finding: a fixed two-tone measurement can fit a pure delay
+and conceal dispersion. Author replaces the figure's overclaim with frequency
+sweeps/suitably varied modulation, derives the ±50kHz all-pass/pure-delay
+counterexample and16.260205° discrepancy at100kHz, and adds a distinct mathematical
+check. Also explicitly distinguishes the sideband waveform phasor from a
+center-frequency1ms accumulated record (which nulls50kHz), and clarifies when
+NCO perturbation is zero. Corrected SVG and complete HTML are rendered/inspected
+before a fresh targeted reassessment; its outcome remains pending here.
+
+Fresh targeted read-only Sol/high session `01a19097-8555-7621-a844-90f589a9ca6d`, exit0:
+[raw reassessment](k11-k13-evidence/k12s-findings.md). All1018 hashes match;
+all13 actual PNGs opened; independently recomputed conversion, phase/delay,
+fixed-pair counterexample and finite-record bounds agree. No required consequential
+correction remains. Four targeted transfer tests pass after independent checks;
+no excluded author/prior-review exposure, edits/delegation/connectors. Supplied
+notes/anchors remain the review's source access boundary. Optional magnification
+of the near-flat base-delay curve is deferred: values and scope are legible.
+Author's final full-page11286px height and eight readable crops include the
+corrected distinction, counterexample, figure/caption and navigation. 68 selected
+regressions plus19 pilot tests pass; all55 SVGs reproduce; HTML integrity passes.
+K12 closes as a checked provisional bounded treatment, with device/clock/noise/
+arithmetic/resource and human/reader evidence still limited. Proceed to K13.

@@ -1,3 +1,61 @@
+# K14–K16 bounded authoring and integration checks — 2026-10-31
+
+Three bounded treatments and 12 new figures occupy canonical Chapters 14–16.
+[Development, findings and connected assessment](../reviews/k14-k16-development.md)
+separates author corrections from fresh read-only AI findings and records source,
+mathematical, graphical and publishing evidence. Unit checkpoints are `0ef1e90`,
+`adfe742` and `c46c2cd`. These are checked provisional teaching drafts; complete
+chapters, selected hardware and human specialist acceptance are not claimed.
+A fresh connected AI reassessment completes after the recorded usage-limit
+interruption. The bounded batch is complete; human acceptance remains pending.
+
+- Fresh batch-start private-pipe smoke and actual PNG inspection preceded
+  development. Brave 156.1.98.62 / Node 26.12.1; browser sandbox and capture/SVG
+  helpers retained. No installation or global security/resource changes.
+- Final selected regression runs: 90 stdlib-discovery tests and 19 relative-phase
+  pilot tests pass (109 total). Seventeen subsystem tests include distinct real
+  waveform, source sum, cubic cascade, history/gate, PI integration, rational PSD,
+  clock event/invariance, precision and delayed-characteristic checks.
+  Full pytest fails because the module is absent; SciPy is unavailable.
+- All 70 SVGs regenerate byte-identically, including all 58 pre-batch figures.
+  Independent formulations check 8,931 new plotted vertices within 0.000501 SVG
+  coordinate unit. Author check sources and baseline hashes are archived with
+  the batch evidence. These checks establish encoded mathematical consistency.
+- Quarto 1.10.19 local HTML render succeeds: 20 pages, 736 checked local links,
+  71 image uses; no missing local targets/fragments, duplicate IDs, unresolved
+  reference markers or absent image alternatives. Actual assets, complete pages
+  and readable overlapping crops were opened. Final preface and Chapters 14–16
+  captures are 1440×2200, 1425×11006, 1425×12067 and 1425×11358 respectively.
+  The final Chapter 16 HTML matches its inspected unit bytes exactly.
+- Fresh enforced-read-only Sol/high unit reviews and targeted K14/K15
+  reassessments inspect frozen manuscript/model/source/PNG inputs. Findings,
+  commands, exits, raw events, hashes and author dispositions remain distinct.
+  K16's reviewer hashes 197/199 inputs, leaving two index files unopened/unhashed;
+  it inspects all 15 supplied actual PNGs. The final connected review verifies
+  all 209 inputs including both index files, runs 33 relevant tests and inspects
+  all 15 supplied PNGs. It finds no consequential contradiction under the
+  supplied assumptions, with no excluded-material exposure reported. The earlier
+  connected usage-limit exit is incomplete evidence, never a pass.
+- Reviewers disclose incidental status/workflow metadata embedded in accepted
+  requirements, notation and bibliography. They exclude it from scientific
+  judgment; complete blindness is not claimed. Managing author examines original
+  primary passages; reviewer source access is supplied notes/anchors, without
+  independent authentication of the originals. Same-model AI scrutiny retains
+  correlated error risks; requested model/effort is not backend attestation.
+- Integrity check: 13 required paths. Ninety protected baseline entries match,
+  including both pre-existing untracked files. Earlier technical derivations,
+  standards, accepted architecture, supplements and figures are preserved.
+  Chapter 13 is explicitly reserved and undeveloped; temporary supplement
+  numbering does not supply canonical Chapters 17–18.
+
+Actual component guarantees, nonlinear/recovery/loop corners, timestamp/path
+calibration, clock/carrier state and drift envelopes, representative hardware
+measurements, human specialist review and actual reader trials remain required
+for dependent conclusions. No PDF/offline, exhaustive responsive or assistive
+acceptance is claimed. No push or external publication. Stop before K17.
+
+---
+
 # K11–K13 bounded authoring and integration checks — 2026-10-31
 
 Three bounded treatments and11new figures are integrated in canonical Chapters1,

@@ -1,25 +1,40 @@
-# Active batch — K14–K16 bounded development (2026-10-31)
+# Completed batch — K14–K16 bounded development (2026-10-31)
 
-Owner authorizes sequential bounded K14 (canonical Chapter14), K15a/b (Chapter15)
-and K16 (Chapter16), their connected integration assessment and safe local Git
-checkpoints. This supersedes older stopping entries below for this batch only.
-Stop after K16; no K17, architecture change, push, external publication or human
-technical acceptance. Prior checked drafts retain their evidence limitations.
+The owner-authorized sequential K14, K15a/b and K16 treatments and connected
+integration assessment are complete as checked provisional teaching drafts.
+Stop here, before K17. No human specialist validation, demonstrated hardware,
+actual reader testing, publication acceptance, architecture change, push or
+external publication is claimed. Later authoring requires a new authorization.
 
-Fresh documented private-pipe smoke succeeds; author opens actual1000×700 PNG
-before development: heading/text/blue circle/Radius60px are visible. Browser
-sandbox retained. Source/capture/version/hash evidence: reviews/k14-k16-evidence/.
-Existing untracked book/.gitignore and book/index.toc are preserved outside commits.
-K14 closes after fresh read-only technical/visual review and targeted reassessment;
-4figures,79stdlib+19pilot tests and62reproducedSVGs are checked. Final equation
-unit/explicitcubic expansion/observable/caption pixels inspected. Sources and
-limits are in reviews/k14-k16-development.md; no consequential open K14finding.
-K15a/b closes after fresh technical/visual review and targeted reassessment;
-4figures,84stdlib+19pilot checks and66reproducedSVGs are recorded.
-K16 closes after fresh read-only scientific/visual scrutiny:4figures,
-90stdlib+19previouspilot checks and70reproducedSVGs. No consequential open finding.
-Active work is connected K14–K16 integration assessment and closeout only.
-Stop before K17.
+Canonical Chapters14–16 contain the three bounded treatments and12newfigures.
+Chapter13 remains an explicitly reserved, undeveloped metrology destination;
+temporary development-supplement numbers do not supply canonical17–18.
+The accepted intellectual architecture and prior derivations remain unchanged.
+
+Fresh documented private-pipe smoke and actual PNG inspection preceded authoring;
+browser sandbox and established helpers retained. Managing author examines
+primary passages and actual figure/full-HTML/crop pixels. Fresh enforced-read-only
+Sol/high unit reviews, K14/K15 targeted reassessments and connected review are
+archived separately from author dispositions. Corrected substantive findings are
+reassessed. The first connected usage-limit exit remains incomplete evidence;
+a fresh invocation after its stated reset completes with209/209hashes and15PNGs.
+No consequential open bounded-draft finding or owner decision remains.
+
+Final checks:90stdlib-discovery+19pilot tests pass; all70SVGs regenerate exactly;
+8931newcurvevertices independently checked. Quarto1.10.19 HTML:20pages,736local
+links,71imageuses; structural checks pass. Integrity13requiredpaths;90protected
+baselineentries match, including58pre-batchfigures and2pre-existinguntrackedfiles.
+Fullpytest fails because its module is absent; SciPy/unexamined formats remain
+unavailable. These checks do not establish physical/educational effectiveness.
+
+Sources, numerical/graphical checks, review exposure/provenance, corrections,
+limitations and connected assessment are recorded in
+[the managing-author record](../reviews/k14-k16-development.md) and
+[validation record](../docs/VALIDATION.md). Unit checkpoints:K14 `0ef1e90`,
+K15 `adfe742`, K16 `c46c2cd`; integration is checkpointed separately.
+book/.gitignore and book/index.toc are preserved as pre-existing untracked files.
+Component/path/state/calibration guarantees, complete reconciled hardware closure,
+human specialist/reader evidence and publication-format acceptance remain pending.
 
 ---
 

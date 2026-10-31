@@ -213,8 +213,9 @@ spur bound or a mask at a particular blocker offset.
 
 Let branch $i$ deliver small phase
 $\phi_i(f)=A_i(f)\phi_s(f)+\eta_i(f)$. This is **phase-modulation transfer** around
-the LO carrier, distinct from RF carrier insertion loss. With independent additive
-branches, the endpoint difference $\Delta\phi=\phi_2-\phi_1$ has density
+the LO carrier, distinct from RF carrier insertion loss. With mutually independent
+additive branches, also uncorrelated with the source, the endpoint difference
+$\Delta\phi=\phi_2-\phi_1$ has density
 
 $$
 S_{\Delta\phi}=|A_2-A_1|^2S_s+S_{\eta2}+S_{\eta1}.
@@ -247,8 +248,9 @@ $$
 $$ {#eq-endpoint-average-bound}
 
 The first term also upper-bounds the finite 20 MHz white support. It gives
-**0.009924°** SD for the good branch example. Using $10^{-10}$ for both independent branch floors
-still gives only **0.018119°**, passing a hypothetical 0.02° averaged-difference
+an SD upper bound of **0.009924°** for the good branch example. Using $10^{-10}$
+for both independent branch floors still gives an upper bound of **0.018119°**,
+passing a hypothetical 0.02° averaged-difference
 criterion while failing reciprocal mixing. Common noise can cancel in a comparison
 and remain harmful in each receiver. Reset mixtures and carrier-delay drift are
 not averaged away by this centered-phase calculation.
@@ -323,9 +325,8 @@ and witness cross-correlation/floor uncertainty. Preserve calibration state,
 frequency plan, divider placement, reference planes and invalid intervals with
 results. A lock-detect bit, fixed register word or repeatable digital framing
 cannot replace an end-to-end phase test. Actual sequencing is developed in the
-state/integration treatment. The reserved Chapter 16 treatment addresses remote
-offset and path inference; until it is developed, the following navigation opens
-the development supplements.
+state/integration treatment. [Chapter 16](distributed-reference-inference.qmd)
+addresses remote offset and path inference.
 
 For transfer, replace the common source with independent local PLLs having the
 same individual PSDs. Rebuild $S_{\Delta\phi}$ rather than retaining $|A_2-A_1|^2S_s$.

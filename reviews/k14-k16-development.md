@@ -269,3 +269,131 @@ actualfigureslegibleatdeclaredinspectionwidths. Rawoutputs remain distinct.
 K16 closesascheckedprovisionalboundedChapter16,4figures; no physical/human/reader
 validation. Connectedbatchassessment/review andcloseoutremain; stopbeforeK17.
 K16 reviewer thread: 01a19222-60ec-7df1-8bd2-f4a75e68928d.
+
+
+## Connected progression assessment
+
+K16 checkpoint c46c2cd precedes this assessment; K14 is 0ef1e90 and K15 is
+adfe742. The accepted intellectual architecture and prerequisite derivations
+remain unchanged. Chapters 1–10 establish observables, physical paths, covariance,
+identifiability, approximation and signal retention. Chapters 11–12 supply
+conversion orientation, feasibility and correlated allocations. The three new
+bounded treatments now turn supplied system interfaces into stage policies,
+source/endpoint contracts and remote inference/validity decisions. They do not
+complete a selected receiver design.
+
+The physical examples have explicit boundaries. Chapter 14's multitone/pulse
+case is a contrast to the Chapter 11/12/15 single blocker. Its thermal cascade
+is not the complete observation floor, and its readout flag does not protect an
+upstream stage. Chapter 15 requires common-source and independent-branch columns
+to be rebuilt before replacing any Chapter 12 allocation; neither its local
+thermal example nor its marginal reciprocal-noise fraction silently closes that
+budget. Chapter 16 adds path/asymmetry and state unknowns rather than treating
+packet arrival as RF coherence. Its phase anchor and characterized clock/carrier
+ratio remain supplied evidence interfaces. These are conditional methods, not
+unsupported claims that suitable hardware has been found.
+
+Prerequisites remain visible. Local physical and mathematical bridges develop
+matched-stage noise, cubic AM/PM, memory, PI synthesis, four-event timing and
+bounded drift without assuming a digital resampler or specialist circuit course.
+Generic observation, covariance, ambiguity, transfer and loop derivations retain
+their established homes. The local refinements do not supersede the pilot's
+general results. Complete calibration/metrology, converter/DSP realization,
+sequencing and board/environment engineering are still undeveloped or later
+obligations. Reserved Chapter 13 and the preface explicitly expose that gap;
+there is no claim of an uninterrupted complete textbook or hidden completed
+calibration procedure.
+
+Engineering transfer is tested through changed exposure history/modulation,
+independent PLLs/reference ratios, moving/asymmetric links, timestamp format,
+reset and delayed correction. Source and witness correlation, physical protection,
+complex calibration, total power and desired Doppler retention connect the
+methods to actual engineering decisions. Specialist device design, source/path
+characterization, uncertainty qualification and representative physical trials
+remain necessary before selecting or guaranteeing an implementation.
+
+The graphical language uses the unchanged Chapter 1–7 SVG helper, fonts, colors,
+line styles and caption/alt-text pattern. Twelve new figures depict prevention
+paths and nonlinear/recovery constraints, synthesis/source/LO/endpoint paths,
+and remote events/asymmetry/rate/holdover/recovery. Independent formulations
+check 3,133 + 2,890 + 2,908 = 8,931 new curve vertices within 0.000501 SVG
+coordinate unit. All 70 SVGs regenerate exactly; all 58 pre-batch figures remain
+unchanged. Actual assets and complete pages/readable crops were inspected.
+Final preface is 1440×2200; Chapters 14/15 are 1425×11006/12067 with all 8/9
+readable crops opened. Final Chapter 16 HTML is byte-identical to its inspected
+1425×11358 unit capture, including all 9 crops. Final K15 pixels show the explicit
+source-uncorrelated assumption, SD upper bounds and correct Chapter 16 link.
+
+Final selected regressions: 90 stdlib-discovery tests and 19 pilot tests pass.
+Full pytest remains unavailable (module absent); no dependency installation or
+SciPy check occurred. Quarto 1.10.19 HTML renders locally: 20 pages, 736 local
+links and 71 image uses pass target/fragment/duplicate-ID/unresolved-marker/alt
+checks. Integrity checks 13 required paths. Ninety protected baseline entries
+match, including both pre-existing untracked files. Only the config, preface and
+current-work record differ among the 93 baseline entries; technical architecture,
+prior chapters/figures and supplements are preserved. Independent author check
+sources and baseline hashes are archived in author-checks.tar.gz for reproducibility.
+
+A fresh 209-file/15-PNG read-only connected review is pending. It receives actual
+manuscripts, accepted requirements, sources/notes, code/tests and pixels without
+this author assessment or prior dispositions. Its findings will be recorded
+separately. No new owner decision has yet arisen; physical/specialist/reader,
+PDF/offline, exhaustive responsive and assistive-technology evidence remains
+absent. This batch stops after the connected closeout, before K17.
+
+
+The first connected invocation exited1 without findings after a usage-limit
+error; it is incomplete review, not a pass. Its output/command/exit is archived
+under connected-incomplete. Failure timestamp 2026-10-31 14:33:30 CET; error named
+18:06 reset. On the owner's later continuation the host clock reads21:20CET,
+after that stated reset. A fresh context retries the unchanged 209-file packet;
+no resume/fork and no prior findings or this disposition supplied.
+
+
+## Connected review and bounded closeout
+
+The fresh post-reset read-only Sol/high integration review exits 0. It verifies
+209/209 manifest entries, including both index files, and rechecks them after
+review. It reads the complete preface/reserved13/Chapters14–16 and relevant
+foundations1–12, accepted scope/prerequisites/CAP/TOC and source notes before code.
+Seventeen subsystem and sixteen system/allocation tests pass. All 15 actual PNGs
+are inspected: preface, three whole pages, seven readable detail crops, three
+representative assets and smoke. Detail readability is restricted to the supplied
+crops; whole-page thumbnails alone do not establish readable text. Same-page
+anchors and actual K15→16 inline/sidebar/next-page targets agree. No excluded
+material exposure, edits, delegation, connectors or external access is reported.
+Original sources are not authenticated by the reviewer. Raw findings remain
+separate in connected2-findings.md; the same frozen connected-inputs archive is
+used by both invocations, and the failed predecessor remains incomplete evidence.
+Successful connected reviewer thread: 01a1939f-805f-7d00-9ea3-5ac2a29f7114.
+
+
+No consequential mathematical contradiction or demonstrated integration defect
+is found under the supplied assumptions. Independent checks reproduce stage
+peak/distortion/recovery, source/common/branch floor partition, endpoint upper
+bounds, rate-baseline/cycle/holdover and remote margin. Review additionally
+shows that anticorrelated 1e-10 branch floors would give about0.025623degree
+averaged SD and fail0.02degree: the now-explicit independence condition matters.
+That is an applicability countercase, not evidence the supplied independent
+model is wrong or actual branches are anticorrelated.
+
+Author dispositions: retain the short delayed-loop crossing restatement in16
+as a local bridge to the new remote margin/latency decision; Chapter7 retains
+general loop ownership, explicitly identified in16's introduction. Optional
+shortening, simpler plot ticks and destination-level supplement labels remain
+editorial polish. No new convention or architecture change is introduced.
+Hardware compatibility, complete reallocated receiver closure, calibration,
+physical/state/latency characterization, specialist/reader validation and
+unexamined publication formats remain open evidence obligations, not quietly
+promoted to accepted results. No unresolved consequential scientific disagreement
+or owner decision blocks this bounded draft closeout.
+
+K14–K16 and their connected assessment are complete as checked provisional
+teaching drafts, with twelve reproducible figures. Final selected109tests,
+70reproducedSVGs,8931independentlycheckedvertices,20HTMLpages/736local links/
+71imageuses and90protectedbaselineentries are recorded above. Both pre-existing
+untracked book/.gitignore and book/index.toc remain outside commits, with hashes
+a2c42d7579873fcc1885712af8e33d47a2d84452ca1214383e92b03ed98321c4 and
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 respectively.
+A final selective local checkpoint closes integration; no push, external
+publication, human Reviewed/Accepted status or automatic K17 development.

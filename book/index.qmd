@@ -36,10 +36,23 @@ them through physically constructed correlations and environmental paths.
 A model can reject a proposed operating point or expose a missing interface;
 passing its equations does not demonstrate a realizable receiver.
 
-The developed canonical reading path currently ends at Chapter 12. The publishing
-demonstration and relative-phase pilot are grouped as **development supplements**;
-their temporary rendered chapter numbers are outside the accepted canonical
-sequence. Canonical Chapter 13, on calibration observability and operational
-metrology, is not supplied by those supplements.
+[Analog information preservation](analog-information-preservation.qmd) then
+turns the selected signal/blocker envelope into filtering, gain, nonlinear
+response and history-dependent validity decisions.
+[Synthesis and endpoint distribution](synthesis-endpoint-references.qmd) derives
+loop choices and reference noise, spur, loading and environmental obligations.
+[Distributed timing and carrier inference](distributed-reference-inference.qmd)
+separates remote epoch, rate, phase, path ambiguity and evidence age. Their
+worked calculations compare conditional alternatives and identify the component,
+calibration and operating-state evidence needed before hardware decisions.
+
+Bounded canonical treatments now extend through Chapter 16, with Chapter 13
+explicitly reserved and undeveloped. Its calibration observability and operational
+metrology procedures remain necessary external inputs to these supplied-envelope
+examples. The publishing demonstration and relative-phase pilot are grouped as
+**development supplements**; their temporary rendered chapter numbers are outside
+the accepted canonical sequence and do not supply Chapters 17–18. The reserved
+slot preserves chapter destinations without claiming a complete reading path or
+complete planned chapters.
 
 The publishing demonstration tests mathematics, references, SVG figures and bibliography wiring. The following dual-channel relative-phase pilot develops a bounded illustrative engineering argument and supporting calculations. It has no hardware measurements, specialist acceptance or actual reader-trial evidence.

@@ -1,0 +1,18 @@
+[
+  "codex",
+  "exec",
+  "--ephemeral",
+  "--skip-git-repo-check",
+  "-C",
+  "/tmp/k1113/kfinalu-input",
+  "-m",
+  "gpt-6.1-sol",
+  "-c",
+  "model_reasoning_effort=\"high\"",
+  "-s",
+  "read-only",
+  "--json",
+  "-o",
+  "/tmp/k1113/kfinalu-review/findings.md",
+  "-"
+]

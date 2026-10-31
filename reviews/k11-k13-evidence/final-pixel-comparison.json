@@ -1,0 +1,35 @@
+{
+  "1": {
+    "size": [
+      1425,
+      11164
+    ],
+    "previous_size": [
+      1425,
+      11164
+    ],
+    "central_equal": true
+  },
+  "2": {
+    "size": [
+      1425,
+      11286
+    ],
+    "previous_size": [
+      1425,
+      11286
+    ],
+    "central_equal": true
+  },
+  "3": {
+    "size": [
+      1425,
+      24953
+    ],
+    "previous_size": [
+      1425,
+      24891
+    ],
+    "central_equal": false
+  }
+}

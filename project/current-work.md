@@ -1,40 +1,41 @@
-# Active batch — K11–K13 bounded development (2026-10-31)
+# Completed batch — K11–K13 bounded development (2026-10-31)
 
-The owner authorizes sequential K11, K12, K13 and their connected integration
-assessment, with safe local Git checkpoints. The reported K08–K10 batch is
-accepted for continued development within its documented limitations, without
-human specialist validation, empirical/reader evidence or publication acceptance.
-This authorization supersedes the historical stop-before-K11 statements below.
-Stop after K13/integration; no K14, architecture change, push or external publication.
+The owner authorized sequential K11, K12, K13, their connected assessment and safe
+local checkpoints. This batch is complete as checked provisional teaching drafts;
+no human specialist validation, experimental verification, actual reader testing
+or publication acceptance is claimed. This authorization superseded the older
+stop-before-K11 entries retained below. **Stop here; do not begin K14.**
 
-Canonical mapping: K11 first framing is in Chapter 1; its quantitative refinement
-and K13 share Chapter 12. K12 owns Chapter 11. Identifiers are not chapter numbers.
-Develop K11 first with supplied transfer/interface envelopes; K12 then reconciles
-frequency/reference transfer; K13 closes conditional correlated allocations.
+Canonical ownership: K11 framing in Chapter1 and quantitative feasibility in
+Chapter12; K12 transfer in Chapter11; K13 physical correlated allocations in
+Chapter12. Identifiers are not chapter numbers. Eleven new figures (4+4+3) follow
+the established graphical language. The preface/sidebar distinguish development
+supplements from future canonical Chapter13; accepted architecture and earlier
+supplement manuscript bytes are preserved.
 
-Fresh smoke executed and actual1000×700 pixels opened before authoring: heading,
-text, blue circle and Radius60px label visible. Existing private-pipe route,
-/usr/bin/brave156.1.98.62 and browser sandbox retained; scoped host execution
-succeeded. Evidence: reviews/k11-k13-evidence/. No installation or route redesign.
+Fresh batch-start smoke and actual PNG inspection preceded development through
+the unchanged private-pipe route, /usr/bin/brave156.1.98.62 and retained browser
+sandbox. Actual standalone assets, complete HTML pages and readable detail crops
+were inspected by author and fresh enforced-read-only Sol/high AI reviewers.
+Substantive findings were corrected and reassessed. The earlier usage-limit
+invocation remains incomplete evidence, not review. Final integration/source-test
+packet omissions and a demonstrated tolerance weakness were corrected with fresh
+numerical reassessments; no consequential bounded-draft finding remains open.
 
-K11 closes as a checked provisional bounded draft after fresh review and targeted
-reassessment. Its source/figures/evidence are checkpointed before K12. See
-`reviews/k11-k13-development.md` for findings, calculations and limitations.
-K11 checkpoint: `cd2b802`. K12 canonical Chapter11 closes as a checked provisional
-bounded treatment after a fresh read-only Sol/high review, correction of the
-fixed-two-tone dispersion overclaim and fresh targeted reassessment. The earlier
-usage-limit attempt remains recorded as incomplete, not review evidence.
-Four K12 figures, complete pages/crops, 87 selected regressions and55 reproduced
-SVGs are checked. See `reviews/k11-k13-development.md` for exact provenance.
+Executed:73selected stdlib-discovery tests plus19pilot tests pass; all58SVGs
+reproduce exactly, all47prior figure bytes preserved,5211new curve vertices
+independently checked. Final local Quarto1.10.19 HTML render:16pages,535local links,
+59image uses, no structural errors.75protected baseline files match, Chapter1's
+prior prefix and K11's initial feasibility sections preserved. Integrity checks
+13required paths; staged whitespace checked before final checkpoint. Full pytest
+fails because the module is absent; SciPy/untested formats remain limited.
 
-K12 completed local checkpoint: `74400a1`. K13 now closes after fresh read-only
-scientific/engineering/educational/actual-pixel review with no consequential
-open finding. Its conditional physical-source allocations and three figures are
-checked; raw findings and limited evidence are in the managing record.
-
-Active: final connected K11–K13 integration assessment and routine publishing
-clarifications. Stop after that assessment; do not begin K14 or grant human
-technical acceptance. Earlier usage-limit failure remains historical evidence.
+[Development, findings and provenance](../reviews/k11-k13-development.md) separates
+AI scrutiny from author dispositions and records conditional hardware/tail/model/
+calibration/reader limitations. Unit checkpoints: K11 `cd2b802`, completed K12
+`74400a1`, K13 `c2bd3cb`; connected closeout is checkpointed separately. No new
+owner decision blocks this bounded closeout. No push, architecture change, external
+publication or human technical acceptance. Later authoring requires authorization.
 
 ---
 

@@ -27,4 +27,19 @@ misleading alternative and a changed-assumption exercise. Their diagrams and
 calculations describe supplied models; they do not establish hardware behavior
 or complete the planned chapters.
 
+The opening requirement framing now leads to an exercised
+[frequency, phase and delay plan](frequency-phase-delay-transfer.qmd), with
+conversion orientation, unwanted bands and state-sensitive references. The
+[architecture and allocation treatment](feasibility-architecture-allocations.qmd)
+then intersects headroom, information, time and resource limits before refining
+them through physically constructed correlations and environmental paths.
+A model can reject a proposed operating point or expose a missing interface;
+passing its equations does not demonstrate a realizable receiver.
+
+The developed canonical reading path currently ends at Chapter 12. The publishing
+demonstration and relative-phase pilot are grouped as **development supplements**;
+their temporary rendered chapter numbers are outside the accepted canonical
+sequence. Canonical Chapter 13, on calibration observability and operational
+metrology, is not supplied by those supplements.
+
 The publishing demonstration tests mathematics, references, SVG figures and bibliography wiring. The following dual-channel relative-phase pilot develops a bounded illustrative engineering argument and supporting calculations. It has no hardware measurements, specialist acceptance or actual reader-trial evidence.

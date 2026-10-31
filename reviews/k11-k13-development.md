@@ -275,3 +275,180 @@ follow-ups: call4.62Gbit/s framed traffic (raw4.2), label the nonlinear check as
 a reduced-SNR surrogate, show1percent noise sensitivity numerically, and distinguish
 scaffold publishing supplements from canonical Chapter13. These change no derived
 allocation. Final connected assessment and its fresh review follow; no K14.
+
+
+## Connected K11–K13 integration assessment — managing author
+
+The bounded progression now runs from Chapter1's distinction between energy
+outcomes and complex ratios through scalar/circular observation (Chapters2–3),
+covariance/source projection (4), ambiguity/conditioning (5), model adequacy (6),
+tracking and retained information (7), field/loaded-port distinctions (8), physical
+disturbance paths (9) and extraction/rejection (10). Chapter11 applies those
+foundations to an explicit real conversion/sampling/FIR/NCO/restoration chain;
+Chapter12 intersects requirements before refining the candidate through physical
+source correlations and slow path departures. Prerequisites are recalled at their
+use, with local derivations and links; the chapter numbers follow canonical homes,
+not K identifiers. K11's early framing in1 and feasibility in12, K12 in11 and K13
+in12 respect accepted ownership. The earlier pilot remains contextual development
+material rather than another canonical derivation.
+
+The engineering chain connects observables/planes to budgets and evidence:
+upstream blocker headroom and visibility; aperture ambiguity versus precision;
+loaded reference interfaces and state-sensitive transfer; complete-observation
+noise; source phases before covariance; signed RF/LO paths before RSS; conditional
+local precision versus branch choice and deterministic bias. K13 explicitly
+replaces the first-pass channel independence without silently reusing its result.
+A longer record restores the illustrative precision allocation only while latency,
+dynamics, frequency tolerance, processing and streaming interfaces are rechecked.
+Unknown power/loading/clock/noise/thermal/manifold evidence remains an unresolved
+implementation condition, not a successful hardware feasibility claim. Worked
+calculations, misleading alternatives and changed-assumption exercises exercise
+these decisions; no RF-engineer reader trial has established their effectiveness.
+
+All11 new assets use the unchanged established SVG helper; all47 earlier SVGs and
+canonical prerequisite manuscripts/standards/accepted architecture remain byte
+preserved. Final supplement grouping and preface distinguish temporary publishing
+numbers13/14 from the future canonical calibration/metrology Chapter13. Existing
+supplement manuscript bytes and planned appendix ownership remain untouched; this
+is a rendering clarification, not a revised accepted architecture. No K14 authored.
+
+K13 review's optional clarifications are applied:4.62Gbit/s framed versus4.2raw;
+explicit reduced-SNR surrogate;1percent noise-variance sensitivity gives1.64970K
+sufficient thermal allowance; clearer allocation-envelope caption. No equation,
+curve or derived allocation is changed. Author opened all4 final complete page
+PNGs, preface and readable changed/transition crops. Chapters1/11 central reading
+pixels match their fully inspected prior captures exactly; Chapter12's first12
+1700px overlapping reading regions also match prior inspected pixels. Its final
+five crops were opened anew, including sensitivity/budget, surrogate, figure,
+traffic, exercises, limitations and next-page navigation. Final page sizes:
+1440×2200 preface;1425×11164 Chapter1;1425×11286 Chapter11;1425×24953 Chapter12.
+The Development supplements sidebar group and preface are visible; temporary
+numbered next-page labels persist, explicitly identified as outside canonical order.
+
+Final local Quarto1.10.19 HTML render succeeds. Structural scan:16pages,535local
+links,59image uses; no absent targets/fragments, duplicate IDs, unresolved markers
+or absent image alternatives.73stdlib-discovery regressions and19pilot tests pass
+(92total). All58SVGs regenerate identically;75protected baseline files match,
+with only authorized preface/configuration/Chapter1/current-work exclusions.
+Earlier Chapter1 bytes remain an exact prefix. Independent curve checks across
+K11/K12/K13 cover1928+1446+1837=5211vertices within0.000501px. Repository integrity
+checks13required paths; whitespace checked before selective checkpoint. Full
+pytest invocation fails: /usr/bin/python3 has no pytest module. No installation;
+SciPy comparison, PDF/offline mathematics, exhaustive responsive/assistive checks,
+empirical implementation and reader/specialist acceptance remain unavailable.
+
+Fresh connected read-only technical/visual review of146frozen files and14actual
+PNGs is running; its result is not asserted by this author assessment. Unit review
+findings, dispositions and reassessments above remain separate from raw outputs.
+
+
+Fresh connected read-only Sol/high session `01a190b6-1e9a-71c1-b8be-a3a2496900fe`,
+exit0: [raw integration findings](k11-k13-evidence/kfinal-findings.md). All146
+hashes match; all14 supplied actual PNGs inspected. Independent real-waveform
+transfer, gain/aperture conflicts, allocations/sensitivity, branch/record rejection
+and1.2million-trial surrogate checks agree;16system tests pass. Reviewer checks
+519HTML-to-HTML destinations/fragments (the author's535 count additionally includes
+other local targets). No demonstrated consequential scientific error in sampled
+K11–K13 results; progression, canonical ownership and exercise coverage coherent.
+Complete page overviews do not establish detailed readability outside supplied
+crops; prior unit reviews and the author's full readable-region inspection remain
+separate evidence. No mobile/accessibility/PDF or human/reader/physical acceptance.
+
+Reviewer reports incidental status/acceptance preambles and carry-forward
+disposition text embedded in the required accepted planning files, plus permitted
+source-note provenance. These were not used as correctness evidence; no separate
+current-work, history, author conversation or prior-review records were consulted.
+Original source PDFs were not supplied. Optional base-delay magnification and
+explicit supplement wording in the next-page label are deferred: numerical values
+and current scope are readable, and the preface/sidebar distinguish supplements.
+
+A real packet reproducibility omission remains: Chapter10's named
+`tests/test_physical_models_stdlib.py` was absent from the connected packet.
+The repository file exists and passed the73-test author regression; this does not
+substitute for reviewer access. A fresh narrowly numerical read-only packet supplies
+that file, physical generator/helper, relevant unchanged manuscripts and accepted
+requirements for targeted reassessment of `ExtractionModels`/`bounded_extract`.
+It proposes no image/manuscript change and claims no new visual inspection.
+
+
+Fresh targeted numerical Sol/high session `01a190bb-850f-7572-b6b6-ca3113fa3812`,
+exit0: [raw source-draw reassessment](k11-k13-evidence/kfinals-findings.md).
+All17hashes match before/after. Independent source inversion gives variance101/26,
+threshold3.0902323 and detection probability0.4128942;25angle/power cases agree
+within3.8e-13. Eleven `ExtractionModels` tests pass, including two additional
+repeats. Reviewer calls `bounded_extract` throughout independent trials under both
+hypotheses: three100000-trial seeds give false alarms91/86/93 and detections
+41085/41577/41277, with stated theory in marginal95percent Wilson intervals;
+seed replay matches aggregates exactly. No demonstrated consequential detector
+error. The named source-draw test's single final callable check is weaker than
+persisted full-trial callable coverage; additional reviewer trials supply bounded
+scrutiny, not a new committed regression or hardware/tail validation. Optional
+future persistence remains documented. Analytic noncoherent0.899473 narrowly
+misses0.9;50000trials cannot statistically resolve that small difference reliably.
+
+The full19-test file has18passes and one error because this narrowly assembled
+packet omitted unchanged `book/figures/polarization-error.svg`, an ancillary
+coordinate fixture. This is an author packet-assembly error, not a failed detector
+assertion; no full19-test packet pass is claimed here. A fresh18-file packet adds
+that exact preserved SVG for mechanical/numerical read-only reassessment. No
+manuscript/figure change or new actual-pixel conclusion is proposed. Source review
+exposure is limited to packet requirements/accepted scope/standards/manuscripts/
+notes/code/tests; no external cited texts, history/prior reviews/connectors/edits
+or image inspection. Prior unit visual reviews remain separate evidence.
+
+
+Fresh mechanical/numerical Sol/high session `01a190be-edcf-7780-8d9d-bcf491907700`,
+exit0: [fixture-complete reassessment](k11-k13-evidence/kfinalt-findings.md).
+All18hashes match before/after;19physical-model tests pass,0failures/errors/skips;
+no missing dependency. This closes the packet availability omission, without new
+pixel/physical/manuscript acceptance. Incidental excluded assessment/status text
+was exposed through broad searches/standard reading and not used as evidence;
+no separate author conversation/history/prior-review/current-work records supplied.
+
+Reviewer demonstrates a consequential regression-coverage weakness: default
+seven-decimal absolute comparisons accept zero, and large multiplicative errors,
+for12.625e-12W loaded power and3.16227766017e-13 LO-density limit. Existing model
+outputs were not shown incorrect. Author normalizes both comparisons to unit
+ratio (12/10decimal places respectively), and normalizes the complex loaded-basis
+comparison too (12places). This strengthens existing distinct physical checks,
+changes no manuscript/model/figure and avoids claiming pass-count evidence alone
+establishes scaling. A fresh narrow read-only reassessment checks the constants,
+negative probes and complete19-test execution;73selected regressions rerun after
+the changed assertions. The unchanged19pilot-test result remains applicable.
+
+
+Fresh tolerance reassessment Sol/high session
+`01a190c0-b6d2-7033-a022-27b98cdfac70`, exit0:
+[raw final numerical findings](k11-k13-evidence/kfinalu-findings.md).
+All18hashes match before/after, manifest unchanged;19physical-model tests pass.
+Independently recovered loaded35.355339+j3.535534µV, power1.2625e-11W,
+matched thermal4.0038821e-16W and LO-density limit3.162277660168379e-13rad²/Hz.
+All three normalized comparisons reject factors0,.01,.1,.5,2,10,100; rounding
+thresholds approximately5e-13,5e-13,5e-11. No consequential defect within this
+numerical scope. Accepted-scope metadata incidentally visible; no actual-pixel,
+physical or human acceptance claimed. The changed73-test regression passes;
+unchanged19pilot tests pass as recorded, total92selected. No new scientific,
+architectural, graphical or book-wide convention is introduced by test hardening.
+
+## Bounded batch closeout
+
+K11–K13 and the connected assessment close as completed, checked provisional
+teaching treatments, not complete chapters or human Reviewed/Accepted material.
+Eleven new reproducible figures are integrated (4K11,4K12,3K13), with all58SVGs
+reproduced and earlier47preserved. Numerical and actual-pixel evidence, original
+findings, corrections and fresh reassessments remain distinct above and in frozen
+packets/raw outputs. Requested GPT-6.1Sol/high and enforced read-only execution are
+recorded; model/effort settings do not attest backend identity, and same-model
+contexts retain correlated failure risks. The usage-limit attempt was incomplete,
+and packet-omission/ancillary-test failures are retained rather than presented
+as successful executions. No unresolved consequential review finding remains for
+this bounded draft claim. Optional scale magnification, next-label wording and
+persistent full-trial callable regression coverage remain limited improvements.
+
+K11 checkpoint `cd2b802`, completed K12 `74400a1`, K13 `c2bd3cb`; final integration
+checkpoint follows this record. No owner intervention is required to close the
+bounded manuscript batch. Actual physical/noise/thermal/device/reference-state
+parameters and application accuracy requirements remain conditional engineering
+inputs; specialist/reader/empirical acceptance, unavailable full pytest/SciPy and
+untested formats remain limitations, not granted acceptance. No architecture
+change, K14 authoring, push or external publication. Stop here.

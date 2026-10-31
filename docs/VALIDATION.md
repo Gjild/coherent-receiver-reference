@@ -1,38 +1,52 @@
-# K11–K13 batch in progress — 2026-10-31
+# K11–K13 bounded authoring and integration checks — 2026-10-31
 
-K11 closes as a checked provisional teaching draft at local checkpoint `cd2b802`
-after fresh read-only AI review, substantive corrections and fresh targeted
-reassessment. K12 manuscript and four figures now close after fresh AI review, a consequential
-educational correction and fresh targeted reassessment. K13 and final connected
-batch assessment are next. This is not batch completion or human acceptance.
-[Development and continuation record](../reviews/k11-k13-development.md) preserves
-findings, corrections, frozen packets and failed-review provenance separately.
+Three bounded treatments and11new figures are integrated in canonical Chapters1,
+11 and12. [Development, findings and connected assessment](../reviews/k11-k13-development.md)
+records sources, calculations, frozen inputs, separate read-only AI scrutiny,
+author corrections and reassessments. These are checked provisional teaching
+drafts, not complete chapters, human acceptance or demonstrated hardware.
 
-- Fresh batch smoke and actual PNG inspection succeeded before development, using
-  the unchanged private-pipe browser route with its sandbox retained.
-- K12 stage: 68 selected unittest-discovery regressions plus19 pilot tests pass
-  (87 total); NumPy supports the real-waveform comparison. Pytest and SciPy remain
-  unavailable; no installation. Mathematical/software checks are not hardware
-  evidence.
-- All55 SVGs reproduce byte-identically; all47 prior figure bytes are preserved.
-  Independent new quantitative curve checks cover1928 K11 and1446 K12 vertices,
-  rounding error at most0.000501px. K12 carrier/sideband real-waveform transfer,
-  finite real-record rejection, alias identity, delay/dispersion and state signs
-  are checked under explicit ideal/synthetic assumptions.
-- Final K12 scratch HTML:16 pages,516 local links,56 image uses, no missing targets,
-  duplicate IDs, unresolved markers or absent image alternatives. Author opened
-  all4 K12 asset PNGs, complete1425×11071 page and8 overlapping readable crops.
-  Fresh read-only AI review and targeted reassessment also inspect the actual
-  pixels; the final corrected page height is11286px.
-- Repository integrity passes13 required paths; whitespace passes. Protected
-  architecture/standards/earlier derivations remain unchanged; Chapter1's prior
-  bytes are preserved before its authorized requirements-framing addition.
-- No device selection/measurements, reader testing, specialist review, PDF/offline
-  publishing acceptance or external publication. K12's physical/rejection/noise/
-  power/latency interfaces remain conditional.
+- Fresh private-pipe batch smoke succeeded before authoring; actual PNG opened.
+  Browser sandbox and established SVG/capture helpers remain unchanged.
+- `python3 -m unittest discover -s tests -p '*stdlib.py'`:73pass, including rerun
+  after relative-tolerance corrections. `PYTHONPATH=engineering/src python3 -m
+  unittest discover -s tests -p 'test_relative_phase.py'`:19pass.92selected total.
+  `python3 -m pytest` fails: no pytest module. No installation; SciPy unavailable.
+- All58SVGs regenerate byte-identically; all47prior figures preserved. Independent
+  K11/K12/K13 curve checks:1928+1446+1837=5211vertices, rounding≤0.000501px.
+  Distinct real-waveform/source/covariance/observation/budget/state calculations
+  and seeded nonlinear surrogates support mathematical consistency only.
+- Final Quarto1.10.19 local HTML render succeeds:16pages,535local links,59image
+  uses; no missing targets/fragments, duplicate IDs, unresolved markers or absent
+  image alternatives. Actual assets/full pages and overlapping readable crops
+  were inspected. Final preface/Chapter1/11/12 captures are1440×2200,
+  1425×11164,1425×11286,1425×24953. Prior unit reviewers inspected all new assets;
+  final reviewer inspected14representative/complete/transition PNGs, with detailed
+  readability conclusions restricted to supplied crops.
+- Fresh read-only Sol/high unit reviews and consequential targeted reassessments
+  are archived separately from author dispositions. Connected review verifies146
+  frozen hashes and independently reproduces gain/aperture conflicts, transfer
+  orientation, correlated allocations, sensitivity and restoring decisions.
+  Missing prerequisite test/fixture packet evidence was supplied in fresh targeted
+  contexts. Final18-file numerical review passes all19physical-model tests;
+  zero/large-scale-error probes reject after normalized-comparison corrections.
+  Earlier omitted-fixture failure and usage-limit failure remain recorded.
+- Repository integrity:13required paths;75protected baseline files match. Prior
+  Chapter1 prefix, K11 feasibility body, standards, accepted architecture and
+  canonical prerequisite derivations remain preserved. Development supplements
+  are grouped/explained without changing accepted chapter/appendix ownership.
+- Reviewers disclose incidental metadata/status text embedded in accepted planning
+  requirements or standards; no separate author conversation/current-work/prior
+  review records were supplied. Source access boundaries and exposure are recorded
+  per invocation. Same-model scrutiny retains correlated failure risks; requested
+  model/effort is not backend attestation. No human Reviewed/Accepted state granted.
 
-The older stop-before-K11 record below is historical; current owner authorization
-is K11–K13, with K12 now closed and K13 next.
+Unit checkpoints: `cd2b802` (K11), `74400a1` (completed K12), `c2bd3cb` (K13), with
+final connected closeout checkpointed separately. Hardware feasibility, source/
+thermal/state parameters, Gaussian-tail adequacy, reader effectiveness, specialist
+review, PDF/offline mathematics and exhaustive responsive/assistive inspection
+remain conditional or unperformed. No owner decision blocks bounded draft closure.
+**Stop after K13/integration; no K14, push or external publication.**
 
 ---
 

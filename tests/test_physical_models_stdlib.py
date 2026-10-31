@@ -28,13 +28,13 @@ class FieldModels(unittest.TestCase):
         E=[1e-3/math.sqrt(2)]*2; h=[.1,.01j]
         v=sum(a*b for a,b in zip(h,E))*.5
         v1=.1*E[0]*.5
-        self.assertAlmostEqual(abs(v)**2/(2*50),12.625e-12)
+        self.assertAlmostEqual((abs(v)**2/(2*50))/12.625e-12,1,places=12)
         self.assertAlmostEqual(math.degrees(cmath.phase(v/v1)),5.7105931375,places=9)
         self.assertAlmostEqual(20*math.log10(abs(v/v1)),.0432137378,places=9)
         a=.73; U=[[math.cos(a),-math.sin(a)],[math.sin(a),math.cos(a)]]
         hp=[sum(h[i]*U[i][j] for i in range(2)) for j in range(2)]
         Ep=[sum(U[i][j]*E[i] for i in range(2)) for j in range(2)]
-        self.assertAlmostEqual(sum(hp[i]*Ep[i] for i in range(2)),2*v)
+        self.assertAlmostEqual(sum(hp[i]*Ep[i] for i in range(2))/(2*v),1,places=12)
 
     def test_curve_coordinates_against_complex_voltage(self):
         # Read blue phase curve and invert the SVG axis transform. Reference
@@ -109,7 +109,7 @@ class NoiseModels(unittest.TestCase):
         pb=1e-7;s0=1e-12;B=1e5
         self.assertAlmostEqual(10*math.log10(pb*s0*B/.001),-110)
         self.assertAlmostEqual(10*math.log10(2.5),3.97940008672)
-        self.assertAlmostEqual(10**((-115-30)/10)/(pb*B),3.16227766017e-13)
+        self.assertAlmostEqual((10**((-115-30)/10)/(pb*B))/3.16227766017e-13,1,places=10)
 
     def test_timing_error_from_direct_sampled_waveform(self):
         # Exact perturbed samples, not the generator's slope-RMS formula.

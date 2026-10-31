@@ -1,0 +1,403 @@
+# Feasibility, architecture and correlated allocations {#sec-feasibility-allocations}
+
+A receiver can have enough gain, a precise phase estimate and a fast data link,
+yet still fail its task. The gain may clip the blocker, the phase may select the
+wrong spatial branch, or the estimate may arrive after the scene has changed.
+Architecture selection starts by intersecting these conditions at the same
+operating point. A favorable calculation in each of several incompatible states
+is not a feasible receiver.
+
+This bounded development asks whether a small direction-comparison receiver can
+meet a supplied angular, blocker and response-time brief. The reader should be
+able to turn a need into a conditioned observable, calculate incompatible gain
+and information constraints, compare interface/resource alternatives, and state
+which missing evidence prevents a hardware recommendation. Requirement framing
+begins in [Chapter 1](phase-comparison.qmd#sec-requirement-framing). We use
+[Chapter 5](phase-delay-inference.qmd) to separate precision from ambiguity,
+[Chapter 6](model-adequacy-uncertainty.qmd) to qualify approximations, and
+[Chapters 8–10](fields-geometry-transduction.qmd) for field, disturbance and
+extraction interfaces. Numerical envelopes below are **synthetic design inputs**,
+not selected products or measured receiver performance.
+
+## Joint feasible regions {#sec-joint-feasibility}
+
+### A brief that can fail
+
+Suppose one far-field, linearly polarized narrowband source near 1 GHz is to be
+located within a known front sector $|\theta|\leq60^\circ$. The observable is
+source direction relative to the array normal at the record midpoint, inferred
+from simultaneous, orientation-normalized channel voltages. A single plane-wave
+manifold is supplied; multipath, unknown polarization and installation errors
+must eventually be tested rather than included by assertion. Use rounded
+propagation speed $3.00\times10^8$ m/s, hence wavelength $\lambda=0.300$ m.
+The following is an illustrative operational brief, not a project requirement.
+
+| Condition or limit | Supplied value and meaning |
+|---|---|
+| Wanted input and blocker at RF ports P0 | Wanted tone near 1.000 GHz, −100 dBm/channel; one CW blocker near 1.010 GHz, −20 dBm/channel; each tuning-offset uncertainty at most 100 Hz |
+| Angular task | Local standard uncertainty at most 0.5° near the sector edge, conditional on the correct branch; branch-error probability at most $10^{-3}$; blocker-induced angular bias at most 0.02° |
+| Time and dynamics | Report within 5 ms of record start; post-record processing/transfer 0.6 ms; angular excursion during a constant-manifold record at most 0.05°, with supplied rate bound 20°/s |
+| Residual carrier offset | At most 100 Hz after supplied coarse tuning; no claim that a shared clock removes it |
+| Noise/energy interface | Per-channel coherent tone SNR $\rho=100$ in 1 ms at zero offset after the selected front end; independent proper Gaussian channel noise, fixed phase and no fades |
+| Digitizer interface P2 | Weak-tone floor −60 dBm; maximum composite peak voltage 0.100 V into an effective 50 Ω, equivalent to −10 dBm CW power; both are supplied qualified-interface limits |
+| Complete observation interface | Desired positive-frequency component retained and orientation normalized; sum of magnitudes of all blocker-to-record image/alias paths, including conversion/filtering and the finite record, at most $10^{-5}$ of the wanted response |
+| Resources | Total receiver 2.5 W; sustained link 5 Gbit/s including framing; three simultaneous channels allowed |
+
+The specified noise SNR is after the complete observation in the selected 46 dB
+gain state; another gain/filter state needs its own input-referred noise and
+observation-noise gain. The noise interface can equivalently specify a wanted power −102 dBm at the
+preselector output P1 and an effective power density −152 dBm/Hz there. Their
+ratio is $C/N_0=10^5$ Hz and the ideal coherent tone observation gives
+$\rho=(C/N_0)T$. That density must include the actual filter, amplifier and
+converter-referred contributions; a passive insertion loss is not noiseless.
+The stated density is an input requiring evidence, not a derivation from the
+blocker level or a nominal noise figure. Chapter 9 constructs such contributions.
+
+The weak-tone floor at P2 is likewise a supplied interface contract. Fourteen
+stored bits below will set link traffic, **not** establish this floor or effective
+resolution. Kester's [MT-001](https://www.analog.com/media/en/training-seminars/tutorials/MT-001.pdf),
+Rev. A, p. 1, identifies the ideal converter and decorrelation assumptions behind
+its quantization-noise model. It supplies no guarantee for the proposed blocker
+and weak-tone combination. Driver loading, overload recovery, actual noise and
+spurs remain implementation evidence needs.
+
+For architecture variables $\mathbf x$ and environmental/state inputs
+$\boldsymbol\eta$, write the conditional feasible set as
+
+$$
+ \mathcal F(\boldsymbol\eta)=
+ \{\mathbf x:g_r(\mathbf x,\boldsymbol\eta)\leq0\ \text{for every required }r\}.
+$$
+
+An empty set rejects that combination of requirements, assumptions and available
+alternatives. A nonempty model set is **conditional** until its technology,
+physical inputs and task mapping are supported. If $\boldsymbol\eta$ lies in a
+justified bounded set $\mathcal E$, robustness means satisfying the constraints
+for every $\boldsymbol\eta\in\mathcal E$; choosing the most favorable unknown
+value proves only existence of an optimistic case. An unspecified nuisance
+cannot be silently assigned zero.
+
+For a fixed architecture this distinction is $\exists\mathbf x\,
+\forall\boldsymbol\eta\in\mathcal E$, not
+$\forall\boldsymbol\eta\,\exists\mathbf x$. An adaptive architecture must
+include its allowed sensing, state changes, latency and policies among the design
+variables before claiming that it handles different conditions.
+
+### Gain does not create headroom
+
+First intersect weak-tone visibility and composite-input survival. Let $G$ be
+the conversion/voltage-chain **power gain in dB** between equal 50 Ω reference
+planes, $L_s$ the wanted insertion loss, and $A_B$ the blocker's total RF
+attenuation in dB. At the gain input, powers in milliwatts are
+
+$$
+ p_s=10^{(-100-L_s)/10},\qquad p_b=10^{(-20-A_B)/10}.
+$$
+
+With worst relative tone phase, the peak voltage is proportional to
+$\sqrt{p_s}+\sqrt{p_b}$. Thus the equivalent composite peak power before gain is
+$p_{\rm pk}=(\sqrt{p_s}+\sqrt{p_b})^2$, and the two bounds are
+
+$$
+ G_{\min}=-60-(-100-L_s)=40+L_s,\qquad
+ G_{\max}=-10-10\log_{10}p_{\rm pk}.
+$$
+
+This is a peak constraint, not an incoherent addition of average powers. For
+more carriers replace the two amplitudes by a justified envelope or crest-factor
+bound. Gain must exist in $[G_{\min},G_{\max}]$ and every intermediate stage must
+also survive the waveform. Final-output headroom alone cannot establish that.
+
+With no preselection, $L_s=A_B=0$: the bounds are 40 and 9.99913 dB. Their
+intersection is empty by approximately 30 dB. A digital blocker notch after
+sampling cannot restore clipped information. Now supply a selector family with
+$L_s=2$ dB, and choose $A_B=40$ dB. The bounds become 42 and 49.93128 dB.
+At $G=46$ dB, wanted and blocker powers at P2 are −56 and −14 dBm; the
+worst composite is −13.93128 dBm, within the supplied −10 dBm limit.
+The gain interval is now nonempty, conditional on linearity and noise evidence.
+
+@fig-gain-feasibility shows how attenuation creates an interval rather than
+merely changing a nominal operating point. Reducing $A_B$ to 30 dB while retaining
+2 dB wanted loss leaves $G_{\max}\simeq39.98$ dB, still below 42 dB.
+The architecture needs attenuation at the correct plane, not a larger gain
+number or a cleaner output after clipping. The simplified first-stage input
+survival envelope is −15 dBm; the selected branch sees a −60 dBm blocker, but
+an actual stage-by-stage gain/drive allocation is still required.
+
+![RF blocker attenuation opens a gain interval between weak-tone visibility and composite-peak survival. The selected 40 dB blocker attenuation and 2 dB wanted loss admit about 42–49.93 dB gain.](figures/gain-feasibility.svg){#fig-gain-feasibility fig-alt="Gain bounds versus total RF blocker attenuation. The weak-tone lower bound stays at42dB for a selector with2dB wanted loss. The composite-peak upper bound rises with attenuation and crosses the lower bound near32dB. At40dB attenuation a vertical bracket shows the feasible interval; a no-selector counterexample has no intersection."}
+
+### Information, ambiguity and available time
+
+A baseline $d$ along the array axis has relative field phase
+$\phi=kd\sin\theta$, where $k=2\pi/\lambda$, using Chapter 8's sourceward
+geometry and Chapter 1's normalized orientation. A phase report is modulo $2\pi$.
+To avoid two noiseless directions in the closed sector sharing the same phase,
+require
+
+$$
+ 2kd\sin60^\circ<2\pi,\qquad
+ d<d_{\rm amb}={\lambda\over2\sin60^\circ}=0.173205\ \mathrm m.
+$$
+
+The inequality is strict: equality aliases the two sector endpoints. This is a
+single-baseline, single-frequency result under the supplied manifold, not a
+universal aperture limit.
+
+For a sufficiently strong tone with proper Gaussian complex noise, Chapter 2's
+small-noise phase approximation gives per-channel phase variance $1/(2\rho)$.
+Independent equal-noise channels therefore have relative-phase variance
+$1/\rho$. Linearizing the phase-angle relation gives
+
+$$
+ \sigma_\theta\simeq{1\over kd|\cos\theta|\sqrt\rho},\qquad
+ d\geq d_{\rm prec}={1\over k|\cos\theta|\sigma_{\theta,\max}\sqrt\rho}.
+$$
+
+Use radians in this calculation. At the edge approached from inside the sector,
+$|\cos\theta|=1/2$, $\sigma_{\theta,\max}=0.00872665$ rad and $\rho=100$:
+$d_{\rm prec}=1.094269$ m. There is no baseline satisfying both 1.094269 m
+minimum precision aperture and 0.173205 m maximum unambiguous baseline. A local
+precision calculation alone would have selected a globally ambiguous design.
+The linearized uncertainty is conditional on the correct branch; it is not a
+Gaussian model for arbitrarily large angle errors or an edge-clipped estimator.
+
+Increasing gain does not improve this input-referred SNR when signal and dominant
+analog noise are amplified together. Increasing observation time can improve
+energy, but the time must exist. For a normalized rectangular tone observation
+with residual frequency $\delta f$, direct integration of
+$T^{-1}\int_0^T e^{j2\pi\delta f t}dt$ gives amplitude
+$e^{j\pi\delta fT}\operatorname{sinc}(\delta fT)$, with
+$\operatorname{sinc}x=\sin(\pi x)/(\pi x)$. Consequently
+
+$$
+ \rho(T,\delta f)=(10^5\,\mathrm{Hz})T\operatorname{sinc}^2(\delta fT).
+$$
+
+This is an explicit observation model, not a universal integration-loss rule.
+The constant-manifold excursion requirement gives $T\leq0.05/20=2.5$ ms;
+latency alone gives $T\leq4.4$ ms. Thus 2.5 ms is the tighter supplied limit.
+A short baseline $d_s=0.150$ m would need $\rho=5321.885$ even before other
+errors: 53.21885 ms at zero offset. It cannot obtain that energy within the
+brief. At 100 Hz residual offset and 1 ms, $\rho=96.75312$ rather than 100.
+Both the wanted response and noise normalization must follow the observation.
+
+@fig-aperture-feasibility makes the precision/ambiguity conflict visible.
+A 1.2 m baseline meets the local 0.5° target at 1 ms, but its wrapped phase
+cannot select the correct direction. A 0.15 m baseline resolves the sector but
+cannot meet that precision with the available energy. More information, a
+restricted sector, a changed deadline/energy envelope or another measured
+observable is needed.
+
+![The minimum precision aperture decreases with coherent SNR, while the single-baseline ambiguity ceiling stays fixed. At the supplied energy they do not overlap. Short and long baselines provide different information rather than interchangeable gain.](figures/aperture-feasibility.svg){#fig-aperture-feasibility fig-alt="Minimum aperture for0.5degree local uncertainty near60degrees versus coherent SNR, with a horizontal0.1732m ambiguity ceiling and candidate0.15m and1.2m baselines. A lower scaled geometry places three channels at0,0.15and1.2m. Long-baseline direction-cosine aliases differ by0.25; the short baseline supplies branch information."}
+
+## Architecture and quantitative interfaces {#sec-architecture-interfaces}
+
+Consider three simultaneous ports at positions 0, 0.15 and 1.20 m. The long
+baseline supplies local precision, while the short baseline supplies a coarse
+sector estimate. This is a bounded ambiguity-restoration example, not a complete
+bearing estimator or a claim that three elements solve multipath/polarization.
+The source amplitude/common phase is a nuisance removed by relative comparisons.
+A single analog-combined complex output cannot generally recover direction from
+one unknown complex source amplitude: for any nonzero combined response $b(u)$,
+its change can be absorbed into that amplitude. Multiple independent beam outputs
+or scans can restore information, but their timing and manifold must be budgeted.
+Analog reception is a valid alternative when those interfaces are supplied.
+
+For the selected simultaneous case let $u=\sin\theta$ and
+$\Delta u=\lambda/d_l=0.25$ be long-baseline branch spacing. Fine candidates
+come from adding integer cycles to its phase; select the one nearest the short
+baseline's direction cosine. Ignoring channel-noise correlation would misstate
+that decision's uncertainty: both differences contain the reference channel.
+If individual small phase errors $\epsilon_0,\epsilon_s,\epsilon_l$ are
+independent with variance $1/(2\rho)$, the branch-comparison error is
+
+$$
+ e_u={\epsilon_s-\epsilon_0\over kd_s}
+       -{\epsilon_l-\epsilon_0\over kd_l},\qquad
+ \sigma_{e_u}^2={1\over\rho}
+ \left[{1\over(kd_s)^2}+{1\over(kd_l)^2}-{1\over(kd_s)(kd_l)}\right].
+$$
+
+The cross term follows from the shared $\epsilon_0$ source; it is not an arbitrary
+correlation coefficient. In the high-SNR Gaussian phase approximation,
+$2\Phi[-\Delta u/(2\sigma_{e_u})]$ bounds a nearest-branch error when the coarse
+phase has not wrapped, where $\Phi$ is the standard normal CDF. To avoid treating
+that qualification as automatic, add a coarse-wrap bound. The minimum distance
+to its principal-phase boundary over the sector is
+$m=\pi-kd_s\sin60^\circ$. A conservative union bound is
+
+$$
+ P_{\rm branch}\ \lesssim\
+ 2\Phi\!\left(-{\Delta u\over2\sigma_{e_u}}\right)
+ +2\Phi(-m\sqrt\rho).
+$$
+
+The approximate sign recalls the linear Gaussian phase model, not a measured
+error rate. At 1 ms and worst 100 Hz residual offset, the two terms are
+$4.258\times10^{-5}$ and $3.472\times10^{-5}$, totaling less than
+$7.74\times10^{-5}$, below the supplied $10^{-3}$ limit. The long-baseline
+local uncertainty is approximately 0.46353°. No calibration, multipath or state
+error has yet been charged; the apparent margin is not available twice.
+A branch failure is a large error event, not another small term to RSS into 0.46353°.
+
+### The blocker must also pass through the observation
+
+The preceding numbers omit retained blocker contamination. Headroom alone does
+not justify that omission. After the RF selector the blocker is 42 dB above the
+wanted tone, an amplitude ratio $R_B=10^{42/20}=125.8925$. For example, if a
+changed operating condition placed it 100.5 kHz from the wanted tone and no
+additional rejection were supplied, a 1 ms rectangular observation would retain
+$R_B|\operatorname{sinc}(100.5)|=0.39873$ times the wanted amplitude. That can
+change the phase and even the selected spatial branch without clipping.
+Receiver passband width is not a statement of stopband rejection.
+
+The brief therefore specifies the **composite** observation amplitude ratio
+$\eta_B\leq10^{-5}$ at the allowed 1.010 GHz blocker frequencies, relative to
+the wanted response. This −100 dB amplitude-transfer specification bounds the sum of path magnitudes for both
+real-signal images and any aliased route into the reported record; it is not
+merely a digital-filter attenuation at one nominal frequency. The 200 kHz IF
+width below is a receiver passband, not an assumed arbitrary modulated waveform.
+The calculation here remains a tone comparison. A real implementation must
+demonstrate this rejection across frequency/state while preserving the assumed
+wanted gain and the full observation noise SNR. Its filtering/digital extraction
+is included in the supplied 0.6 ms processing and power envelopes; whether a
+specific implementation meets all of them remains unknown.
+
+With that contract, normalize each wanted record mean to a unit phasor. The
+retained blocker phasor has magnitude at most
+$r=R_B\eta_B=0.00125893$. A circle of radius $r<1$ about the wanted phasor has
+maximum phase departure $\beta=\sin^{-1}r$ (the ray tangent to that circle).
+Its minimum amplitude is $1-r$. Thus the long-baseline phase bias is bounded
+by $2\beta$, corresponding to approximately 0.01149° angle bias near 60°,
+below the separate 0.02° blocker allocation. Use the actual inverse sine of
+the perturbed direction cosine if a local angle approximation is inadequate.
+
+For a conservative high-SNR noise calculation use
+$\rho_{\min}=\rho(1-r)^2=96.50966$, giving local uncertainty about 0.46412°.
+Let $\sigma_{e_u,{\rm wc}}$ denote the earlier error SD calculated using this
+reduced SNR, and bound the branch-comparison mean displacement by
+$b_u=2\beta[1/(kd_s)+1/(kd_l)]$. Subtract these bias allowances from the
+decision margins before computing tails:
+
+$$
+ P_{\rm branch}\ \lesssim\
+ 2\Phi\!\left(-{\Delta u/2-b_u\over\sigma_{e_u,{\rm wc}}}\right)
+ +2\Phi[-(m-2\beta)\sqrt{\rho_{\min}}]
+ <8.90\times10^{-5}.
+$$
+
+This requires positive margins and retains the Gaussian phase approximation;
+it is a conditional model bound, not an empirical error rate. The conservative
+baseline bias bounds do not assume independent blocker phases. @fig-blocker-observation shows why RF survival and retained interference are
+separate constraints. Other reference, calibration, environmental and manifold
+errors remain to be allocated. If the
+composite rejection is unavailable, the candidate's information closure remains
+open even though its headroom interval is nonempty.
+
+![The surviving blocker must be bounded after the complete observation as well as before sampling. A phasor disk gives the worst phase bias and the minimum retained mean amplitude.](figures/blocker-observation.svg){#fig-blocker-observation fig-alt="Retained blocker-to-wanted amplitude falls with composite observation rejection. The100dB contract leaves amplitude0.001259 below the0.02degree bias allocation. A magnified phasor disk about a unit wanted phasor has a tangent ray at beta equals arcsine r; the disk's nearest point has amplitude1minus r."}
+
+The chosen analog-converted interface supplies a real 20 MHz IF with 200 kHz
+receiver passband, sampled ideally at 100 MS/s, with 14 stored bits/sample.
+Correct conversion orientation and reset phase are required interface conditions;
+the end-to-end transfer treatment constructs them before allocations close.
+Every channel includes the selector before gain/conversion. Equal nominal
+frequencies are insufficient without the same spectral orientation, phase epoch
+and known sample identity. The following resource values are supplied envelopes.
+
+| Alternative | Calculated interfaces and consequence |
+|---|---|
+| Two unfiltered direct RF sample channels, 2.5 GS/s, 14 bits, 1.2 W/channel +0.4 W common | 70 Gbit/s raw and 2.8 W; fails link/power, no-selector gain interval and single-baseline ambiguity |
+| Two analog-converted long-baseline channels, 100 MS/s, 0.6 W/channel +0.2 W selectors +0.4 W common | 1.8 W; at 10% transport overhead, 3.08 Gbit/s; gain passes but direction remains ambiguous |
+| Three simultaneous short/long analog-converted channels, same per-channel envelope | 2.4 W; 4.2 Gbit/s raw and 4.62 Gbit/s at 10% overhead; passes supplied resource, gain and idealized information constraints |
+| One analog beam output without another observable | Potential resource saving remains unspecified; one unknown complex source amplitude makes a single combined response insufficient for direction |
+
+The 0.2 W selector allowance is total for the selected branch, not per channel.
+The 0.4 W common allowance includes reference/control within this envelope.
+For three channels, allowable framing overhead is at most
+$5/4.2-1=19.0476$ percent; 25 percent would exceed the link even though the
+analog and information calculations still pass. A driver that does not see
+50 Ω invalidates the power-to-voltage conversion; the prescribed 0.100 V peak
+limit must be translated to its actual differential/common-mode/load interface.
+No part has been selected on these numbers.
+
+Direct sampling can also use RF preselection. The rejected row is the specified
+unfiltered implementation, not a limitation inherent in direct sampling. Adding
+selection would address its headroom conflict, but would not by itself reduce
+70 Gbit/s raw traffic, its supplied power or a single long baseline's ambiguity.
+
+@fig-architecture-interfaces places the constraints at their physical interfaces.
+Calibration injection after a selector does not measure its response or the
+field manifold. Retaining all three complex channels allows relative-response
+checks and later reprocessing; combining before observing them trades that access
+for reduced traffic. Shared versus independent references must be compared at
+these endpoints: independent sources add relative offset/drift unless estimated,
+whereas a shared source still has distribution delay and reset-sensitive branch
+phase. The present 0.4 W reference allowance establishes neither alternative's
+physical performance.
+
+An endpoint comparison makes the remaining reference conditions calculable.
+For this comparison only, suppose each reference mechanism is assigned at most
+0.05° of additional output phase excursion over a 1 ms record. These are
+illustrative subsystem allowances, not independent grants of total task margin;
+the later correlated allocation must reconcile them with calibration and the
+other terms. Assume a nominal 1.020 GHz LO and 100 MHz sample clock at each
+channel, with the 20 MHz IF already specified.
+
+| Interface | Shared-reference candidate | Independent-reference candidate |
+|---|---|---|
+| LO endpoint phase | Common source phase cancels only for equal endpoint transfer. Differential path-delay change $\delta\tau_L$ contributes $2\pi f_L\delta\tau_L$; 0.05° permits at most 0.1362 ps at 1.020 GHz. Static intercept still needs calibration. | An unestimated relative LO frequency offset gives $2\pi\Delta f_L T$ phase excursion; the same 0.05° allowance requires $|\Delta f_L|\leq0.1389$ Hz over 1 ms, plus an independently known phase intercept. |
+| Sample identity/epoch | Shared rate does not identify which sample is simultaneous. One unknown 10 ns sample step gives 72° at 20 MHz; it must be identified or the record invalidated. Residual differential aperture-epoch change for 0.05° is at most 6.944 ps. | Relative rate error $\epsilon$ accumulates epoch error $\epsilon T$. The same allowance requires $|\epsilon|\leq6.944\times10^{-9}$, or 0.6944 Hz at a 100 MHz clock, unless a measured timing correction is supplied. Initial epoch also remains necessary. |
+| Loading and drive | Illustrative LO interface: 0 dBm delivered at each 50 Ω endpoint, 0.3162 V peak. A matched 6 dB branch loss requires +6 dBm before that branch. Three branches require about 11.94 mW RF total at those source-side planes; splitter and driver losses add. | Each endpoint still needs the same delivered level/load. Local sources remove this splitter load but introduce their own consumption, frequency/phase and synchronization obligations; their power is not supplied. |
+| Calibration access and latency | Post-selector injection observes internal relative response in the identified state; field/selector response needs another configuration. The complete observer, including rejection, must fit the supplied 0.6 ms. Endpoint drift/noise and actual distribution power inside the 0.4 W allowance are unverified. | Relative phase/time estimation needs accessible references or a suitable signal and a stated estimator; its acquisition latency, residuals and power are unknown. No claim that it fits 0.6 ms or 0.4 W follows. |
+
+The LO drive example uses $V_{\rm pk}=\sqrt{2RP}$ and matched insertion loss;
+it does not specify an actual mixer's required LO waveform or impedance. For a
+real part, driver voltage/current, compression, return loss and bias conditions
+must replace that envelope. The selected model uses identified, calibrated,
+fixed endpoint phases. The derived allowances expose requirements that hardware
+must satisfy; they do not establish that either reference implementation does so.
+
+![The candidate architecture preserves three simultaneous field observations and puts RF rejection before gain and sampling. Distinct input, post-selector and digitizer planes carry different constraints; internal injection bypasses field and selector response.](figures/architecture-interfaces.svg){#fig-architecture-interfaces fig-alt="Three physical input ports feed RF selectors, then gain/conversion, real IF digitizers and retained complex observations. Input P0 has weak and blocker powers, P1 carries selected powers and supplied effective noise, and P2 has a composite peak voltage constraint. Reference state and sample identity feed conversion/sampling. Injection after selection reaches only the internal response."}
+
+## Closure and a restoring change {#sec-closure-restoration}
+
+The selected candidate is conditionally feasible under the supplied observation
+and reference interfaces, not a finished
+receiver. Its 46 dB gain point lies inside the peak/weak-tone interval; 1 ms
+observation plus 0.6 ms processing meets 5 ms; short/long simultaneous comparisons
+satisfy the stated **idealized** precision and branch checks, with the bounded
+blocker residual separately charged; power and traffic
+fit their supplied envelopes. These are necessary interfaces, not evidence of
+intermediate linearity, real source covariance, filter phase, sample-state
+repeatability, interference rejection or actual bearing performance.
+
+NASA's [system-design guidance](https://www.nasa.gov/reference/4-0-system-design-processes/),
+§§4.3–4.4, connects allocation and interface definition to comparison of
+alternatives. Its [verification-matrix guidance](https://www.nasa.gov/reference/system-engineering-handbook-appendix/),
+Appendix D, links requirements to evidence routes. The local calculations here
+are original conditional RF models, not NASA qualification criteria.
+
+A practical evidence plan follows the same planes: sweep wanted/blocker levels
+and inspect analog survival/noise before trusting the digital output; establish
+load/drive and power/traffic over the intended mode; measure complex responses
+across frequency, direction and polarization; exercise restart/retune sample and
+phase identity; and evaluate held-out directions against known geometry. Internal
+injection addresses electronic transfer only under its actual topology. Actual
+component documents must identify revision, mode, temperature, load and guarantee
+scope. None of those measurements was performed for this example.
+
+For transfer, change the brief in three different ways. First, keep the wide
+sector but remove the third observation: show that more electronic gain cannot
+restore missing branch information. Second, allow only 2 W total with the same
+technology envelopes: the three-channel candidate fails by 0.4 W. Derive a
+per-channel allowance of at most $(2-0.2-0.4)/3=0.4667$ W; whether another
+technology meets it remains unknown. Third, retain hardware but narrow the
+allowed direction-cosine interval to width less than $\lambda/d_l=0.25$ around
+a known coarse direction. Then the long baseline can be unambiguous in that
+restricted interval, potentially removing the third channel. That restoring
+change consumes prior information; it is not an equivalent guarantee over ±60°.
+
+A later correlated allocation must charge calibration, common and local noise,
+state and environmental paths to these same task observables. It can shrink or
+empty this initial region. A source or interface that remains unknown keeps its
+dependent architecture decision conditional.

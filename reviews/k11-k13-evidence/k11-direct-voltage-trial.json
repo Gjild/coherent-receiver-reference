@@ -1,0 +1,10 @@
+{
+  "model": "Direct complex Gaussian source voltages; sector edge; no calibration/state/path error",
+  "trials": 200000,
+  "seed": 111301,
+  "branch_failures": 7,
+  "frequency": 3.5e-05,
+  "one_sided95_percent_upper": 6.573955856338244e-05,
+  "fine_local_RMS_degrees": 0.46673246903277554,
+  "not_physical_evidence": true
+}

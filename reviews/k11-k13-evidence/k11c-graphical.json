@@ -1,0 +1,24 @@
+{
+  "reproduced": {
+    "blocker-observation.svg": true,
+    "architecture-interfaces.svg": true,
+    "aperture-feasibility.svg": true,
+    "gain-feasibility.svg": true
+  },
+  "contract": {
+    "r": 0.0012589254117941677,
+    "beta": 0.001258925744338124,
+    "minimum_rho": 96.50966434565854,
+    "local_sigma_degrees": 0.4641168818570481,
+    "local_bias_degrees": 0.011480026188073486,
+    "branch_bound": 8.896155272015012e-05
+  },
+  "blocker_curves": {
+    "vertices_each": 241,
+    "coordinate_errors_px": [
+      0.00050000000004502,
+      0.00041606995068832475
+    ]
+  },
+  "disk_tangent_dot": -9.094947017729282e-13
+}

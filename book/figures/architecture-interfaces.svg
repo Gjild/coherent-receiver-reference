@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1010" role="img" aria-labelledby="title desc"><title id="title">Keep physical, analog-survival and data interfaces visible</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Keep physical, analog-survival and data interfaces visible</text>
+<text x="50" y="88" font-family="sans-serif" font-size="21" fill="#182f3e" text-anchor="start">Three simultaneous channels at positions 0, 0.15 and 1.20 m</text>
+<rect x="25" y="160" width="140" height="110" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="95.0" y="185" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">RF ports P0</text>
+<text x="95.0" y="210" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">3 field inputs</text>
+<text x="95.0" y="235" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">−100 / −20 dBm</text>
+<rect x="215" y="160" width="155" height="110" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="292.5" y="185" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">RF selectors</text>
+<text x="292.5" y="210" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">2 dB wanted loss</text>
+<text x="292.5" y="235" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">40 dB blocker loss</text>
+<rect x="425" y="160" width="165" height="110" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="507.5" y="185" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Gain/conversion</text>
+<text x="507.5" y="210" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">G = 46 dB</text>
+<text x="507.5" y="235" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">20 MHz real IF</text>
+<rect x="650" y="160" width="245" height="110" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="772.5" y="185" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Digitizers at P2</text>
+<text x="772.5" y="210" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">100 MS/s, 14 stored bits</text>
+<text x="772.5" y="235" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">composite peak ≤ 0.100 V</text>
+<path d="M165.000,215.000 L215.000,215.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M370.000,215.000 L425.000,215.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M590.000,215.000 L650.000,215.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="396" y="142" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="middle">P1</text>
+<path d="M395.000,410.000 L395.000,215.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="395" y="445" font-family="sans-serif" font-size="18" fill="#b34719" text-anchor="middle">Injection after selectors</text>
+<text x="395" y="477" font-family="sans-serif" font-size="17" fill="#b34719" text-anchor="middle">misses field + selector response</text>
+<rect x="665" y="355" width="225" height="95" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="777.5" y="380" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Reference / state / epoch</text>
+<text x="777.5" y="405" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">conversion orientation</text>
+<text x="777.5" y="430" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">sample identity</text>
+<path d="M700.000,355.000 L700.000,300.000 L515.000,300.000 L515.000,270.000" fill="none" stroke="#237550" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M790.000,355.000 L790.000,270.000" fill="none" stroke="#237550" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="50" y="555" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">P1: wanted −102 dBm; blocker −60 dBm; effective N₀ = −152 dBm/Hz.</text>
+<text x="50" y="595" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">P2: wanted −56 dBm; blocker −14 dBm; all gains at equal 50 Ω.</text>
+<text x="50" y="635" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Supplied: noise and final P2 limit. Composite observation rejection ≤ 10⁻⁵ required.</text>
+<text x="50" y="672" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Drive, phase response and intermediate-stage allocations still need evidence.</text>
+<rect x="80" y="715" width="355" height="100" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="257.5" y="740" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Three channels preserve comparisons</text>
+<text x="257.5" y="765" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">4.2 Gbit/s raw → 4.62 with 10% framing</text>
+<text x="257.5" y="790" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">2.4 W total ≤ 2.5 W</text>
+<rect x="515" y="715" width="355" height="100" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="692.5" y="740" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Observation and processing</text>
+<text x="692.5" y="765" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">1.0 ms record + 0.6 ms processing</text>
+<text x="692.5" y="790" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">retains wanted response + branch identity</text>
+<path d="M433.000,765.000 L515.000,765.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="65" y="888" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Combining before observation trades calibration and ambiguity information for traffic.</text>
+<text x="65" y="934" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">A common reference is not evidence of deterministic phase after reset.</text>
+<text x="32" y="996" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

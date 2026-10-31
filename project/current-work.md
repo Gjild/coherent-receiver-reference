@@ -1,3 +1,29 @@
+# Active batch — K11–K13 bounded development (2026-10-31)
+
+The owner authorizes sequential K11, K12, K13 and their connected integration
+assessment, with safe local Git checkpoints. The reported K08–K10 batch is
+accepted for continued development within its documented limitations, without
+human specialist validation, empirical/reader evidence or publication acceptance.
+This authorization supersedes the historical stop-before-K11 statements below.
+Stop after K13/integration; no K14, architecture change, push or external publication.
+
+Canonical mapping: K11 first framing is in Chapter 1; its quantitative refinement
+and K13 share Chapter 12. K12 owns Chapter 11. Identifiers are not chapter numbers.
+Develop K11 first with supplied transfer/interface envelopes; K12 then reconciles
+frequency/reference transfer; K13 closes conditional correlated allocations.
+
+Fresh smoke executed and actual1000×700 pixels opened before authoring: heading,
+text, blue circle and Radius60px label visible. Existing private-pipe route,
+/usr/bin/brave156.1.98.62 and browser sandbox retained; scoped host execution
+succeeded. Evidence: reviews/k11-k13-evidence/. No installation or route redesign.
+
+K11 closes as a checked provisional bounded draft after fresh review and targeted
+reassessment. Its source/figures/evidence are checkpointed before K12. See
+`reviews/k11-k13-development.md` for findings, calculations and limitations.
+Active next: K12, canonical Chapter11 transfer; stop remains after K13/integration.
+
+---
+
 # Completed batch — K08–K10 bounded development (2026-10-31)
 
 The owner explicitly authorized sequential bounded K08 (Chapter 8), K09

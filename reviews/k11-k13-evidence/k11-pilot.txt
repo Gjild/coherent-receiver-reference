@@ -1,0 +1,24 @@
+test_allocation_closed_integral_and_precision (test_relative_phase.RelativePhaseTests.test_allocation_closed_integral_and_precision) ... ok
+test_architecture_preference_reversal (test_relative_phase.RelativePhaseTests.test_architecture_preference_reversal) ... ok
+test_asymmetric_fit_reference_and_holdout (test_relative_phase.RelativePhaseTests.test_asymmetric_fit_reference_and_holdout) ... ok
+test_complex_filter_phase_bridge (test_relative_phase.RelativePhaseTests.test_complex_filter_phase_bridge) ... ok
+test_covariance_sum_condition_for_mean (test_relative_phase.RelativePhaseTests.test_covariance_sum_condition_for_mean) ... ok
+test_cross_spectral_order_against_constructed_sources (test_relative_phase.RelativePhaseTests.test_cross_spectral_order_against_constructed_sources) ... ok
+test_delay_and_lowpass_limits (test_relative_phase.RelativePhaseTests.test_delay_and_lowpass_limits) ... ok
+test_fixed_lo_vs_fixed_if_phase_slope (test_relative_phase.RelativePhaseTests.test_fixed_lo_vs_fixed_if_phase_slope) ... ok
+test_gaussian_simulation_and_distinct_statistics (test_relative_phase.RelativePhaseTests.test_gaussian_simulation_and_distinct_statistics) ... ok
+test_malformed_and_nonfinite_inputs (test_relative_phase.RelativePhaseTests.test_malformed_and_nonfinite_inputs) ... ok
+test_observation_covariance_spectrum (test_relative_phase.RelativePhaseTests.test_observation_covariance_spectrum) ... ok
+test_rectangular_snapshot_spectrum_against_time_covariance (test_relative_phase.RelativePhaseTests.test_rectangular_snapshot_spectrum_against_time_covariance) ... ok
+test_residual_covariance_and_fixed_correction_identity (test_relative_phase.RelativePhaseTests.test_residual_covariance_and_fixed_correction_identity) ... ok
+test_snapshot_precision_and_timing (test_relative_phase.RelativePhaseTests.test_snapshot_precision_and_timing) ... ok
+test_static_calibration_dc_rejection_and_absolute_covariance (test_relative_phase.RelativePhaseTests.test_static_calibration_dc_rejection_and_absolute_covariance) ... ok
+test_symmetric_fit_holdout (test_relative_phase.RelativePhaseTests.test_symmetric_fit_holdout) ... ok
+test_unequal_endpoints_and_reference_branch_correlation (test_relative_phase.RelativePhaseTests.test_unequal_endpoints_and_reference_branch_correlation) ... ok
+test_update_error_hold_spectrum_and_dc_rejection (test_relative_phase.RelativePhaseTests.test_update_error_hold_spectrum_and_dc_rejection) ... ok
+test_wrapped_delay_ambiguity_and_unknown_state (test_relative_phase.RelativePhaseTests.test_wrapped_delay_ambiguity_and_unknown_state) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 1.386s
+
+OK

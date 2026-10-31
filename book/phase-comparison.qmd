@@ -307,3 +307,43 @@ The alternative continuations in @fig-phase-wrapping have identical wrapped endp
 ![Synthetic wrapped-endpoint ambiguity and a delayed sinusoid. A unique continuation requires a justified intersample-motion bound.](figures/phase-wrapping.svg){#fig-phase-wrapping fig-alt="Phase can advance two degrees or retreat 358 degrees between the same observations; positive waveform delay moves a sinusoid right."}
 
 ![Schematic validity gap. Separate valid segments have no implied shared cycle count.](figures/phase-validity.svg){#fig-phase-validity fig-alt="Phase traces stop on either side of an amplitude-invalid interval, with no interpolating connection."}
+
+## From a comparison to a receiver requirement {#sec-requirement-framing}
+
+Before specifying “coherent channels,” state the operation the comparison must
+support. A burst receiver may need a usable payload decision before its deadline;
+a phase instrument may need a corrected port ratio over a stated record. Those
+are different outcomes even when both contain an internal phase comparison.
+A requirement should identify the observable and its units, physical/reference
+planes, filtering and interval, signal/blocker envelope, operating state and
+calibration history, a limit, and the evidence that could test it. An unspecified
+limit remains a question, not permission to choose a convenient value.
+
+For example, “relative phase within 2°” is incomplete. Is it an instantaneous
+error, a centered RMS fluctuation over a band, an uncertainty in an averaged
+ratio, or a restart-to-restart intercept? Are invalid-amplitude intervals excluded,
+and must the signal remain usable after a retune? A common clock addresses none
+of these distinctions by itself. A coherent solution should be compared with a
+noncoherent one using the actual task outcome, not coherence as a preference.
+
+For a concrete choice, suppose a burst only needs an on/off energy decision and
+its carrier phase is unknown. An energy observation such as an integrated
+squared voltage can support that task while discarding phase; its noise law,
+threshold, timing and false-alarm performance still need specification. A
+phase-sensitive port instrument instead needs the complex channel ratio:
+separate channel energies do not retain its relative phase, even if their energy
+decisions are excellent. A known phase change at one input can distinguish these
+claims experimentally: the ratio should follow it while the ideal energy remains
+unchanged. Conversely vary level/noise and test the burst decision probabilities.
+These are proposed evidence routes, not performed experiments; later detection
+theory supplies the conditional calculations.
+
+Consider a phase-sensitive port measurement after a restart. Connector injection
+can test part of the electronic transfer under that state; it cannot establish
+an external propagation path. Record what is held fixed and what changed before
+claiming repeatability. For an array, a highly precise wrapped phase can still
+identify several directions. The [feasibility treatment](feasibility-architecture-allocations.qmd)
+turns these distinctions into intersecting quantitative constraints once the
+necessary physical and statistical models are available. At this first framing,
+missing waveform, ambiguity, dynamic, headroom and evidence conditions should
+be exposed rather than silently filled in.

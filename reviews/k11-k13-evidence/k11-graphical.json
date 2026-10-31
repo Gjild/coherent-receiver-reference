@@ -1,0 +1,25 @@
+{
+  "gain-feasibility": {
+    "curves": 2,
+    "vertices_each": 241,
+    "max_coordinate_errors_px": [
+      0.0,
+      0.000492517965199113
+    ]
+  },
+  "aperture-feasibility": {
+    "curves": 4,
+    "vertices_each": 241,
+    "max_coordinate_errors_px": [
+      0.0004968345178326672,
+      0.00023788646683442494,
+      1.1368683772161603e-13,
+      1.1368683772161603e-13
+    ]
+  },
+  "reproduced": {
+    "architecture-interfaces.svg": true,
+    "aperture-feasibility.svg": true,
+    "gain-feasibility.svg": true
+  }
+}

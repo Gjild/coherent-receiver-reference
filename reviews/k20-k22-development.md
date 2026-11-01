@@ -115,3 +115,168 @@ remain separate. Author final regression110stdlib+13NumPychecks passes;93SVGs
 reproduce,175protectedentriesmatch,3856verticescheck;27HTMLpages/1138links/94images
 have no structural errors. K21 provisional closeout does not complete whole chapters,
 hardware feasibility, human specialist/reader evidence or capability compliance.
+
+## K22 bounded purpose and author checks
+
+K21 checkpoint17142f3. Exact K22/CAP030/Chapter13.2–4 specifications and D-MET/
+P-MET brief read. Develop a matched-load port-phase observable, loading/reference/
+fixture measurement equation, supplied correlated phase records, uncertainty/variance
+information, coherent floor and changed topology/level decision. Does not select
+an actual instrument family, implement a named standardized method, claim complete
+reference-design closure or develop formal compliance rules.
+
+Fresh original NISTTN1297 online5/A/B/D4, JCGMVIM3 online2.41 and AnritsuRevAE
+receiver-uncertainty subsection examined; claim boundaries in operational-metrology
+source note. Loading correction0.0580742rad, sensitivity uncertainty0.00232166rad;
+100samples meanNeff5.81394 versus variance momentDOF11.4011. Supplied corrected
+phase0.10416996rad with conditionaluc0.00477223rad; reversal0.10123981rad and
+uc0.00385125rad; independent referencesuc0.0126639rad. Coherent0.2mVfloor gives
+0.0100002rad bound at20mV, requiring changed access/level/evidence;0.12Vwould
+reduce that particular term to0.00166667rad within hypothetical0.15Vrange.
+
+Six new checks pass;113stdlib+16NumPyselectedchecks pass.96SVGs reproduce,
+175protectedbaselineentriesmatch;1695newcurvevertices check via independent
+innovation weights/closed row sums/tangent geometry. CSV reproduces; independent
+matrix/eigenvalue checks verify mean and variance information. Author opens3actual
+assets, complete13HTML and all9readablecrops. An overwide13.5equation is broken into
+aligned lines, recaptured and inspected in actualpixels before review.27pages/
+1145locallinks/97imageuses have no structural errors. K20/Chapter23 and model
+bytes match their unit checkpoints; K21a manuscript prefix remains byte-identical.
+Fresh342file/14PNG read-only review pending. No physical measurement or traceability
+certificate supplied; material parameters and operating-state contracts remain inputs.
+
+K22 initial review verifies342hashes,14actualPNGs, stated-case calculations and
+supplied-data/covariance/variance/changed-topology/floor results. It finds medium
+source-impedance extension missing the matched-load target term, plus low disk
+boundary wording. Author independently confirms by finite differences: source
+reactance sensitivity−0.000497238rad/Ω, not−0.010497238. General correction now
+explicitly compares test and50Ωtarget loading, adds both source terms, and has
+new asymmetric complex-source/load derivative tests. Known-real50Ωnumbers unchanged.
+Zero strictly inside versus merely touching disk distinguished, with a boundary
+check. Clarified phase-reporting interval versus carrier sampling and reversal-
+repeatability contribution. Eight targeted metrology checks pass. Final full13
+page11866px and affected readable regions inspected; fresh reassessment pending.
+No prohibited substantive exposure reported by initial K22 reviewer.
+
+Fresh K22 targeted reassessment verifies342hashes/14PNGs and independently checks
+asymmetric complex-source/load derivatives, matrix/eigenvalue information and
+all stated budgets. It finds a remaining medium overstatement: tangency alone
+does not prohibit scalar nonlinear phase uncertainty. Author replaces that rule
+with explicit probability-law, branch and zero-atom conditions. For uniform area
+on |z−1|≤1, polar integration gives p(phi)=2cos²(phi)/pi and variance
+pi²/12−1/2, RMS0.56786181rad; first-order0.5rad understates it. Independent8192-panel
+Simpson integration checks normalization and variance. New equal-scale disk/ray
+geometry and density visual distinguishes support from probability; circle/ray
+and241curvevertices independently checked. Actual1200×1500asset, complete
+1425×13227Chapter13 and all10overlapping readablecrops opened. Equations, branch
+discussion, figure caption, traceability and bottom navigation are visible without
+clipping. This is an illustrative nonlinear distribution, not a measured fade.
+
+## Final manuscript and visual inventory
+
+| Treatment | Canonical manuscript | New reproducible SVGs |
+|---|---|---|
+| K20 | Chapter20, complex-response-alignment.qmd | alignment-access; alignment-phase-access; alignment-latency-residual; alignment-null-noise |
+| K21a/b/c | Chapter13.1 and Chapter23, calibration-procedures-coherence.qmd | calibration-access; calibration-heldout; calibration-cadence; calibration-wanted |
+| K22 | Chapter13.2–4, calibration-observability-metrology.qmd | metrology-planes; metrology-records; metrology-level-floor; metrology-phase-disk |
+
+Twelve figures use the existing native SVG graphical language. The published
+book/data/metrology-phase.csv contains200synthetic supplied readings, not instrument
+data. Executable examples remain supporting material; the book derives and explains
+its engineering decisions without requiring code execution.
+
+Fresh398file/31PNG connected-review packet freezes the corrected K22 argument,
+all current manuscript/models, selected claim-level source notes, verbatim accepted
+architecture excerpts and applicable standards. Preface is an explicit review
+target, not evidence of adequacy. No current-work, author dispositions or prior
+findings supplied. Fresh read-only Sol/high invocation first reassesses K22's
+nonlinear correction, then assesses connected prerequisites, physical interfaces,
+engineering decisions and changed narrative. Await its findings before closeout.
+
+Fresh connected review exits0, verifies398hashes and independently reproduces the
+corrected nonlinear density/variance, source/loading derivatives, uncertainty and
+reversal/reference budgets, inverse residual/noise/delay/rounding relationships,
+changed-correlation and cadence infeasibility results. Its21affectedtests pass.
+All31actualPNGs inspected; all13crops cover the page exactly. Selected20/23crops
+leave explicitly reported readable-text gaps; earlier unit reviews cover those
+unchanged regions completely. Final K20 RMS/magnitude clarifications are confirmed.
+No additional essential bridge is identified within the bounded examples; supplied
+state/physical/measurement contracts remain explicit, not implemented methods.
+No prohibited substantive exposure reported; capture-origin paths are not followed.
+Original sources, hardware, reader trials and new browser capture are not reviewer
+checks. Exact findings remain separate from these author dispositions.
+
+One low navigational finding remains in that review: plain “Chapter24” can be
+mistaken for the development supplement's temporary number. Author independently
+checks accepted Chapter24 card: “Verification coverage and bounded conclusions”.
+Both13/23passages now name that planned canonical treatment explicitly. No equation,
+number, model or engineering conclusion changes; Chapter23's checkpoint differs
+only by this declared wording delta. A fresh targeted rendered-pixel reassessment
+will check the final names and layout before checkpointing.
+
+Fresh targeted navigation review exits0, verifies29hashes and all6actualPNGs,
+source/HTML/crop consistency and both full-page bottoms. It confirms planned
+canonical24 title/ownership, correct punctuation and future-method wording, with
+no discrepancy or prohibited exposure. It does not claim broader scientific or
+historical verification; the earlier connected review supplies that limited scope.
+Final13is1425×13227; final23is1425×9517. Author also opens both complete captures,
+the affected13bottom and23reference/maintenance regions. Frozen connected plus
+navigation packets account for all125finalHTML/SVG/CSVfiles. No substantive
+correction remains unassessed within the bounded units.
+
+## Managing-author connected assessment and closeout
+
+Reading order now supplies13's rank/reference/measurement/uncertainty reasoning
+before23's executable calibration. Authoring order21then22 does not create an
+unwritten reader prerequisite. Chapters17–19 supply signed conversion, sample
+support, finite words and transport contracts;20 chooses a realizable delayed
+response before23 estimates/applies it and tests retained information. Chapter6
+keeps the canonical uncertainty law,4the covariance/quadratic foundations,8the
+field/sensor model,20inverse feasibility and23procedure/maintenance. Local
+measurement equations specialize those results rather than duplicate alternatives.
+
+Reference availability, loaded fixture knowledge, independent known-zero access,
+coefficient application epochs, reset/state constancy and drift/evidence-age limits
+remain explicit inputs. A quiet common-reference test does not qualify independent
+references or reveal common DUT phase. A valid inverse cannot restore lost SNR,
+true steady-state null information or irreversibly combined channels. More averaging
+cannot remove shared calibration knowledge or a coherent leakage phasor. The
+science-derived tracker explicitly demonstrates loss of desired slow phase.
+
+Engineering alternatives have quantitative screens: inverse length/delay/noise/
+range, fixture identification versus ambiguous products, independent raw-offset
+access versus wanted-DC subtraction, calibration cadence versus downtime/age,
+reversal versus state/loading disturbance, and higher test level versus leakage
+mechanism/range. Mathematical admissibility is never a selected device guarantee.
+No essential bridge or architecture conflict remains for these supplied bounded
+examples. Complete state sequencing and physical/environmental implementation
+remain future21/22contracts, not silently completed work. Four prior chapter paths
+receive only declared canonical-reference/reading-bridge edits; final23adds only
+the named future-treatment clarification. No accepted architecture, general
+convention or earlier mathematical derivation changes.
+
+Final executed checks:116stdlib+16NumPyrecord+19pilot=151selectedtests pass;
+97SVGs reproduce, including85baselinefigures;7990newcurvevertices check within
+0.000501SVGunits. Independent loading/source finite differences, polar quadrature,
+innovation/covariance/eigenvalue methods, rational/integer inverse/record checks
+and separate noise integration support the stated models. Published200rowCSV
+reproduces exactly. FullQuarto27page render plus affected13rerender passes;
+1148locallinks/98imageuses have no detected structural or missing-local-asset
+errors.171protectedbaselineentries match, four prior reference-edit paths match
+their declared replacements, K20/models match checkpoints and K21a prefix remains
+unchanged. A temporary indentation error in the adapted preservation checker is
+corrected before its successful rerun. Scaffold13paths, source control bytes and
+Git whitespace checks pass. Fullpytest/SciPy remain unavailable; selected checks
+are not a substitute for their unexecuted suites.
+
+Limits: source examinations are claim-specific, not exhaustive literature or
+manufacturer qualification. AI reviewers use supplied notes rather than authenticate
+original sources. No device measurements, timing closure, fixture/load/reference/
+state/level characterization, traceability certificates, physical compliance,
+actual RF-engineer reader trial or human specialist acceptance occurs. HTML pixel
+checks do not qualify PDF, offline MathJax, mobile layout or full accessibility.
+The initial K21 ancillary prior-status exposure is disclosed and followed by clean
+fresh reassessment/connected packets. Requested Sol/high routing is not independently
+authenticated. No owner decision blocks bounded provisional closeout; later
+physical/human acceptance remains separate. No external publication or push.
+Stop before K23; no later treatment is begun.

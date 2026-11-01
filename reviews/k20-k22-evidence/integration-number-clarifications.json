@@ -1,0 +1,14 @@
+{
+  "book/calibration-observability-metrology.qmd": [
+    [
+      "accuracy;\nChapter 24 owns formal requirement-evidence decision rules.",
+      "accuracy.\nThe planned canonical Chapter 24, *Verification coverage and bounded conclusions*,\nowns formal requirement-evidence decision rules."
+    ]
+  ],
+  "book/calibration-procedures-coherence.qmd": [
+    [
+      "hardware acceptance rule; Chapter 24 owns that later decision.",
+      "hardware acceptance rule; that decision belongs to the planned canonical\nChapter 24, *Verification coverage and bounded conclusions*."
+    ]
+  ]
+}

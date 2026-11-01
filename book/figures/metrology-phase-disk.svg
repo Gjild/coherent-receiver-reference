@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1120" role="img" aria-labelledby="title desc"><title id="title">Geometry alone does not determine phase uncertainty</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Geometry alone does not determine phase uncertainty</text>
+<path d="M100.000,290.000 L600.000,290.000" fill="none" stroke="#9aaab3" stroke-width="1.5" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M160.000,515.000 L160.000,75.000" fill="none" stroke="#9aaab3" stroke-width="1.5" stroke-dasharray="" marker-end="url(#arrow)"/>
+<circle cx="350" cy="290" r="209" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="8 4"/>
+<circle cx="350" cy="290" r="190" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray=""/>
+<circle cx="160" cy="290" r="5" fill="#263c49"/>
+<circle cx="350" cy="290" r="4" fill="#125b86"/>
+<path d="M160.000,290.000 L418.848,112.913" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="130" y="322" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">0</text>
+<text x="345" y="322" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">1</text>
+<text x="535" y="322" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">2</text>
+<text x="545" y="350" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Re z</text>
+<text x="180" y="90" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Im z</text>
+<text x="245" y="155" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">r = 2 cos φ</text>
+<text x="610" y="130" font-family="sans-serif" font-size="21" fill="#182f3e" text-anchor="start">Blue: |z − 1| ≤ 1</text>
+<text x="610" y="180" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Zero touches the boundary.</text>
+<text x="610" y="235" font-family="sans-serif" font-size="21" fill="#b34719" text-anchor="start">Orange: radius 1.1</text>
+<text x="610" y="285" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Zero is strictly inside.</text>
+<text x="610" y="365" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Both axes: normalized</text>
+<text x="610" y="395" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">complex coordinates.</text>
+<text x="100" y="620" font-family="sans-serif" font-size="20" fill="#182f3e" text-anchor="start">Blue disk only: uniform area, no probability mass at zero</text>
+<path d="M100.000,712.000 L100.000,907.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,907.000 L880.000,907.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="100.0" y="932" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">-1.57</text>
+<text x="88" y="913.0" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">0</text>
+<path d="M295.000,712.000 L295.000,907.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,858.250 L880.000,858.250" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="295.0" y="932" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">-0.785</text>
+<text x="88" y="864.25" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">0.175</text>
+<path d="M490.000,712.000 L490.000,907.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,809.500 L880.000,809.500" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="490.0" y="932" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">0</text>
+<text x="88" y="815.5" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">0.35</text>
+<path d="M685.000,712.000 L685.000,907.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,760.750 L880.000,760.750" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="685.0" y="932" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">0.785</text>
+<text x="88" y="766.75" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">0.525</text>
+<path d="M880.000,712.000 L880.000,907.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,712.000 L880.000,712.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="880.0" y="932" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">1.57</text>
+<text x="88" y="718.0" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">0.7</text>
+<path d="M100.000,712.000 L100.000,907.000 L880.000,907.000" fill="none" stroke="#263c49" stroke-width="1.5" stroke-dasharray=""/>
+<text x="100" y="700" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Phase probability density (rad^-1)</text>
+<text x="490.0" y="962" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Principal phase φ (rad)</text>
+<path d="M100.000,640.000 L125.000,640.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray=""/>
+<text x="133" y="645" font-family="sans-serif" font-size="16" fill="#125b86" text-anchor="start">p(φ) = 2 cos²φ / π</text>
+<path d="M100.000,907.000 L103.250,906.970 L106.500,906.878 L109.750,906.727 L113.000,906.514 L116.250,906.241 L119.500,905.908 L122.750,905.515 L126.000,905.062 L129.250,904.550 L132.500,903.979 L135.750,903.348 L139.000,902.660 L142.250,901.914 L145.500,901.110 L148.750,900.250 L152.000,899.334 L155.250,898.362 L158.500,897.335 L161.750,896.254 L165.000,895.120 L168.250,893.933 L171.500,892.695 L174.750,891.405 L178.000,890.065 L181.250,888.676 L184.500,887.239 L187.750,885.755 L191.000,884.224 L194.250,882.648 L197.500,881.029 L200.750,879.366 L204.000,877.661 L207.250,875.916 L210.500,874.131 L213.750,872.308 L217.000,870.448 L220.250,868.552 L223.500,866.622 L226.750,864.659 L230.000,862.664 L233.250,860.639 L236.500,858.584 L239.750,856.502 L243.000,854.394 L246.250,852.261 L249.500,850.105 L252.750,847.927 L256.000,845.729 L259.250,843.512 L262.500,841.278 L265.750,839.028 L269.000,836.764 L272.250,834.487 L275.500,832.199 L278.750,829.902 L282.000,827.597 L285.250,825.285 L288.500,822.969 L291.750,820.649 L295.000,818.328 L298.250,816.007 L301.500,813.687 L304.750,811.371 L308.000,809.059 L311.250,806.754 L314.500,804.457 L317.750,802.169 L321.000,799.892 L324.250,797.628 L327.500,795.378 L330.750,793.144 L334.000,790.927 L337.250,788.729 L340.500,786.551 L343.750,784.395 L347.000,782.262 L350.250,780.154 L353.500,778.072 L356.750,776.017 L360.000,773.992 L363.250,771.997 L366.500,770.034 L369.750,768.104 L373.000,766.208 L376.250,764.348 L379.500,762.525 L382.750,760.740 L386.000,758.995 L389.250,757.290 L392.500,755.627 L395.750,754.008 L399.000,752.432 L402.250,750.901 L405.500,749.417 L408.750,747.980 L412.000,746.591 L415.250,745.251 L418.500,743.961 L421.750,742.723 L425.000,741.536 L428.250,740.401 L431.500,739.321 L434.750,738.294 L438.000,737.322 L441.250,736.406 L444.500,735.545 L447.750,734.742 L451.000,733.996 L454.250,733.307 L457.500,732.677 L460.750,732.106 L464.000,731.594 L467.250,731.141 L470.500,730.748 L473.750,730.415 L477.000,730.142 L480.250,729.929 L483.500,729.777 L486.750,729.686 L490.000,729.656 L493.250,729.686 L496.500,729.777 L499.750,729.929 L503.000,730.142 L506.250,730.415 L509.500,730.748 L512.750,731.141 L516.000,731.594 L519.250,732.106 L522.500,732.677 L525.750,733.307 L529.000,733.996 L532.250,734.742 L535.500,735.545 L538.750,736.406 L542.000,737.322 L545.250,738.294 L548.500,739.321 L551.750,740.401 L555.000,741.536 L558.250,742.723 L561.500,743.961 L564.750,745.251 L568.000,746.591 L571.250,747.980 L574.500,749.417 L577.750,750.901 L581.000,752.432 L584.250,754.008 L587.500,755.627 L590.750,757.290 L594.000,758.995 L597.250,760.740 L600.500,762.525 L603.750,764.348 L607.000,766.208 L610.250,768.104 L613.500,770.034 L616.750,771.997 L620.000,773.992 L623.250,776.017 L626.500,778.072 L629.750,780.154 L633.000,782.262 L636.250,784.395 L639.500,786.551 L642.750,788.729 L646.000,790.927 L649.250,793.144 L652.500,795.378 L655.750,797.628 L659.000,799.892 L662.250,802.169 L665.500,804.457 L668.750,806.754 L672.000,809.059 L675.250,811.371 L678.500,813.687 L681.750,816.007 L685.000,818.328 L688.250,820.649 L691.500,822.969 L694.750,825.285 L698.000,827.597 L701.250,829.902 L704.500,832.199 L707.750,834.487 L711.000,836.764 L714.250,839.028 L717.500,841.278 L720.750,843.512 L724.000,845.729 L727.250,847.927 L730.500,850.105 L733.750,852.261 L737.000,854.394 L740.250,856.502 L743.500,858.584 L746.750,860.639 L750.000,862.664 L753.250,864.659 L756.500,866.622 L759.750,868.552 L763.000,870.448 L766.250,872.308 L769.500,874.131 L772.750,875.916 L776.000,877.661 L779.250,879.366 L782.500,881.029 L785.750,882.648 L789.000,884.224 L792.250,885.755 L795.500,887.239 L798.750,888.676 L802.000,890.065 L805.250,891.405 L808.500,892.695 L811.750,893.933 L815.000,895.120 L818.250,896.254 L821.500,897.335 L824.750,898.362 L828.000,899.334 L831.250,900.250 L834.500,901.110 L837.750,901.914 L841.000,902.660 L844.250,903.348 L847.500,903.979 L850.750,904.550 L854.000,905.062 L857.250,905.515 L860.500,905.908 L863.750,906.241 L867.000,906.514 L870.250,906.727 L873.500,906.878 L876.750,906.970 L880.000,907.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray=""/>
+<text x="40" y="1000" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Uniform touching disk: phase RMS = sqrt(π²/12 − 1/2) = 0.56786181 rad.</text>
+<text x="40" y="1060" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">The orange outline specifies admissible geometry, not a probability distribution.</text>
+<text x="32" y="1106" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

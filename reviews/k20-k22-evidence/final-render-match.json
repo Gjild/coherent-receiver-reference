@@ -1,0 +1,502 @@
+{
+  "index.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "phase-comparison.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "scalar-stochastic-phase.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "observation-weighted-coherence.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "covariance-quadratic-forms.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "phase-delay-inference.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "model-adequacy-uncertainty.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "tracking-signal-retention.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "fields-geometry-transduction.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "physical-disturbance-paths.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "extraction-integration-rejection.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "frequency-phase-delay-transfer.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "feasibility-architecture-allocations.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "analog-information-preservation.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "synthesis-endpoint-references.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "distributed-reference-inference.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "sampling-converter-feasibility.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "quadrature-conjugate-fidelity.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "multirate-finite-resources.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "complex-response-alignment.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "state-causality-integration.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "physical-environmental-engineering.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "calibration-procedures-coherence.html": {
+    "packet": "names",
+    "matches": true
+  },
+  "publishing-pilot.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "relative-phase-stability.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "references.html": {
+    "packet": "connected",
+    "matches": true
+  },
+  "calibration-observability-metrology.html": {
+    "packet": "names",
+    "matches": true
+  },
+  "figures/comparison-planes.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/relative-phasors.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/conversion-orientation.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/phase-wrapping.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/phase-validity.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/ensemble-records.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/averaging-floor.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/complex-distributions.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/circular-mean.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/noise-phase.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/complex-filter-order.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/observation-weights.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/observation-gains.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/coherence-observables.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/covariance-increments.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/shared-delay.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/finite-record-uncertainty.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/source-covariance.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/covariance-projections.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/inverse-conditioning.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/delay-fit-precision.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/delay-ambiguity.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/uncertainty-sensitivity.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/nonlinear-uncertainty.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/numerical-cancellation.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/tracking-loop.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/tracking-transfer-budget.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/tracking-nonlinear-holdover.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/field-port-paths.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/polarization-error.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/transduction-blind-path.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/loaded-noise-paths.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/reciprocal-noise-paths.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/waveform-timing.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/detection-statistic.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/integration-retention.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/rejection-information.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/reference-leakage.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/frequency-transfer-orientation.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/frequency-exclusions.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/notch-observation.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/transfer-response.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/gain-feasibility.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/aperture-feasibility.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/blocker-observation.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/architecture-interfaces.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/allocation-source-paths.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/correlated-blocker-allocation.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/allocation-closure.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/calibration-access.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/metrology-planes.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/metrology-records.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/metrology-level-floor.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/analog-prevention-paths.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/analog-blocker-region.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/analog-memory-recovery.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/analog-validity-policy.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/pll-source-paths.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/pll-loop-tradeoff.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/lo-blocker-contract.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/reference-endpoint-test.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/remote-event-planes.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/remote-asymmetry-rate.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/remote-holdover-bounds.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/remote-recovery-control.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/converter-alias-interfaces.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/converter-timing-observable.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/converter-quantization.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/converter-interleaving.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/converter-driver-range.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/quadrature-path-pair.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/quadrature-band-correction.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/quadrature-training-validity.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/quadrature-near-dc.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/processing-sample-paths.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/processing-filter-precision.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/processing-fractional-delay.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/processing-word-residuals.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/processing-state-faults.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/processing-queues-resources.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/alignment-access.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/alignment-phase-access.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/alignment-latency-residual.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/alignment-null-noise.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/calibration-heldout.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/calibration-cadence.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/calibration-wanted.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/relative-phase-reference-planes.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/endpoint-architecture-budget.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/calibration-fixed-lo.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/calibration-delay-fit.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/calibration-maintenance.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/correction-updates.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/relative-phase-state-sequence.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/measurement-swaps.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/guarded-decisions.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "figures/metrology-phase-disk.svg": {
+    "packet": "connected",
+    "matches": true
+  },
+  "data/metrology-phase.csv": {
+    "packet": "connected",
+    "matches": true
+  }
+}

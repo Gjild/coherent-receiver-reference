@@ -1,0 +1,29 @@
+{
+  "loading_gain": [
+    0.4751381215469614,
+    0.027624309392265196
+  ],
+  "loading_phase_rad": 0.05807415956295393,
+  "loading_standard_uncertainty_rad": 0.0023216608601839936,
+  "raw_difference_means_rad": [
+    0.17324411569281792,
+    0.1373838247427057
+  ],
+  "corrected_phase_rad": 0.10416995612986402,
+  "mean_factor": 0.17200047810518002,
+  "effective_mean_samples": 5.813937327479346,
+  "variance_dof": 11.401075464156184,
+  "supplied_variance_estimates": [
+    4.156417559164614e-05,
+    8.503611021541673e-05
+  ],
+  "repeat_standard_uncertainty_rad": 0.0035190956826396417,
+  "combined_standard_uncertainty_rad": 0.004772226270126265,
+  "independent_refs_standard_uncertainty_rad": 0.012663906429590645,
+  "swap_phase_rad": 0.10123981065480789,
+  "swap_fixture_phase_rad": 0.017930145475056114,
+  "swap_standard_uncertainty_rad": 0.0038512499739041563,
+  "floor_bound_20mV_rad": 0.010000166674167114,
+  "floor_bound_120mV_rad": 0.0016666674382725696,
+  "minimum_amplitude_for_2mrad_V": 0.10000006666669779
+}

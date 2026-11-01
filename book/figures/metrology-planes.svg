@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 850" role="img" aria-labelledby="title desc"><title id="title">Trace loading, fixtures and reference paths into the reported phase</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Trace loading, fixtures and reference paths into the reported phase</text>
+<rect x="35" y="140" width="220" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="145.0" y="165" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">DUT A: source plane</text>
+<text x="145.0" y="190" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">source impedance Zs</text>
+<rect x="350" y="140" width="235" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="467.5" y="165" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Fixture + loaded port</text>
+<text x="467.5" y="190" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">ZL; phase correction</text>
+<rect x="700" y="140" width="210" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="805.0" y="165" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Phase reading pA</text>
+<text x="805.0" y="190" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">subtract reference r</text>
+<path d="M255.000,185.000 L350.000,185.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M585.000,185.000 L700.000,185.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="35" y="340" width="220" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="145.0" y="365" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">DUT B: source plane</text>
+<text x="145.0" y="390" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">source impedance Zs</text>
+<rect x="350" y="340" width="235" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="467.5" y="365" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Fixture + loaded port</text>
+<text x="467.5" y="390" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">ZL; phase correction</text>
+<rect x="700" y="340" width="210" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="805.0" y="365" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Phase reading pB</text>
+<text x="805.0" y="390" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">subtract reference r</text>
+<path d="M255.000,385.000 L350.000,385.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M585.000,385.000 L700.000,385.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="375" y="550" width="280" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="515.0" y="575" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Common reference r(t)</text>
+<text x="515.0" y="600" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">same phase sensitivity</text>
+<path d="M655.000,595.000 L940.000,595.000 L940.000,455.000 L805.000,455.000 L805.000,430.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M940.000,455.000 L940.000,255.000 L805.000,255.000 L805.000,230.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="40" y="700" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Difference pB − pA cancels r only with matched timing, signs and transfer.</text>
+<text x="40" y="755" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Changing the reference topology changes test sensitivity and its uncertainty.</text>
+<text x="32" y="836" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

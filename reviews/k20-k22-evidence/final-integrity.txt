@@ -1,0 +1,2 @@
+Scaffold integrity OK: 13 required files present.
+This check does not assess scientific correctness, sources, or render quality.

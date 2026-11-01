@@ -1,24 +1,46 @@
-# Active batch — K20–K22 bounded development (2026-11-01)
+# Completed batch — K20–K22 bounded development (2026-11-01)
 
-The owner authorizes sequential K20, K21a/b/c and K22, their connected assessment
-and safe local Git checkpoints. This supersedes the older stopping entry below
-for this batch only. Stop before K23; no architecture changes, external publishing,
-push or human acceptance. Treatment identifiers are not chapter numbers.
+The owner-authorized sequential K20, K21a/b/c and K22 treatments and connected
+assessment are complete as checked provisional teaching drafts. Stop before K23.
+No human specialist validation, actual hardware confirmation, reader trials,
+publication acceptance, architecture change, push or external publication is claimed.
+Further development requires new authorization.
 
-Exact canonical destinations: K20 in Chapter20; K21a in Chapter13.1 and K21b/c
-in Chapter23; K22 in Chapter13.2–13.4. Authoring K21 before K22 does not reorder
-reading prerequisites: metrology in13 precedes procedure in23. Supplied uncertainty,
-state and environmental interfaces remain conditional until their canonical work.
-Do not develop K23 state causality or K24 physical realization; their canonical
-Chapters21/22 may need reserved slots to preserve Chapter23 numbering.
+Canonical destinations: K20 in Chapter20; K21a in Chapter13.1 and K21b/c in
+Chapter23; K22 in Chapter13.2–13.4. Reading prerequisites keep metrology before
+procedure despite authoring order. Chapters21/22 remain reserved for future state
+integration and physical/environmental engineering; their supplied contracts are
+conditional. These bounded units do not complete entire chapters or capabilities.
 
-Fresh documented private-pipe smoke succeeds and its actual PNG is inspected
-before manuscript development. Pre-existing untracked book/.gitignore and
-book/index.toc remain untouched, unstaged/uncommitted; original hashes preserved.
-K20 is complete as a checked provisional bounded alignment/inverse-feasibility draft.
-K21a/b/c is complete as a checked provisional bounded draft in13.1 and23.
-Current unit: K22, operational measurement equations, uncertainty and independent configurations in13.2–4. Exact accepted
-specifications, prerequisites, capabilities and chapter cards govern scope.
+Twelve new native SVGs, three supporting models and a published synthetic CSV
+support the continuous manuscript. Fresh batch smoke, actual asset/full-page/crop
+inspection, fresh enforced-read-only AI reviews, consequential corrections and
+reassessments are recorded separately from author dispositions. Initial K21
+ancillary source-note status exposure is recorded; fresh reassessment and connected
+packets exclude unrelated notes and prior findings. AI scrutiny confers no human
+Reviewed/Accepted state.
+
+Executed:116stdlib+16NumPyrecord+19pilot tests pass (151selectedchecks);97SVGs
+reproduce byte-identically;7990newcurvevertices independently checked. Final full
+Quarto HTML render passes:27pages,1148locallinks,98imageuses, no detected structural
+or missing-local-image errors. Frozen main/targeted visual-review inputs account for the final
+render.171protectedbaselineentries match; four earlier chapter paths contain only
+recorded ownership/reading-reference edits. K20/model checkpoint bytes
+and K21a prefix are preserved; Chapter23 has only the recorded future-treatment
+name clarification. Scaffold, control-byte and Git whitespace checks pass.
+Fullpytest and SciPy are unavailable; no dependency installation occurred.
+
+Unit checkpoints:K20 `a534013`, K21 `17142f3`; K22 and connected closeout are
+checkpointed separately. Pre-existing untracked book/.gitignore and book/index.toc
+retain their original bytes, unstaged/uncommitted. Apparent artifact purpose and OS
+ownership do not establish creator or intended disposition. No owner decision
+blocks bounded provisional closeout.
+
+[Development, inventory, source limits, review provenance and connected assessment](../reviews/k20-k22-development.md)
+and [executed validation](../docs/VALIDATION.md) retain limited evidence. Actual
+fixture/blank/reference/state/impedance/level characteristics, hardware timing and
+range, traceability certificates, whole-receiver closure, human specialist and
+reader evidence remain pending. Do not begin K23 automatically.
 
 ---
 

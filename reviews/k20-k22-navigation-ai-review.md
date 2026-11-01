@@ -1,0 +1,17 @@
+No discrepancy found in the two scoped references. Both identify **planned canonical Chapter 24, *Verification coverage and bounded conclusions*** consistently with the accepted TOC.
+
+- **Integrity:** All 29 entries in `SHA256SUMS` verified. Both rendered HTML hashes and full-page PNG hashes match their capture records. All three detail PNGs are exact pixel crops of their corresponding full pages.
+- **Numbering, title and ownership:** The accepted TOC assigns Chapter 24 requirement-evidence arguments and decision rules near limits, with canonical ownership **K25**. The [Chapter 13 decision paragraph](/tmp/k2022/names-input/book/calibration-observability-metrology.qmd:402) assigns formal requirement-evidence decision rules there. The [Chapter 23 reference](/tmp/k2022/names-input/book/calibration-procedures-coherence.qmd:162) assigns the uncertainty-qualified acceptance decision there. Both agree with that planned scope.
+- **Temporary supplement:** Both rendered sidebars show **24 Mathematical Publishing Proof of Concept** under **Development supplements**; Chapter 23’s bottom next-page navigation also points there. The supplied supplement-context excerpt explicitly distinguishes these temporary numbers from later canonical treatments. Neither manuscript reference links to that supplement.
+- **Source, HTML and punctuation:** The two references agree across source, rendered HTML and readable pixels. Title capitalization and italics are correct. Chapter 13 correctly closes the title’s apposition with a comma; Chapter 23 ends the sentence after the title. Neither wording says the future formal methods already exist.
+- **Scientific wording:** Chapter 13 retains its conditional conclusion and explicit limits on instrument qualification, compliance and actual accuracy. Chapter 23 retains the distinction between the nominal 0.5% modeled-error screen and an uncertainty-qualified hardware acceptance rule. No source-to-render claim alteration was observed in these passages.
+
+I inspected all six actual PNGs: both full-page images, `13-detail-0`, `23-detail-0`, `23-detail-1`, and `smoke-full`. The affected paragraphs are legible, with no missing glyphs, overlap or clipping. Crop boundaries truncate surrounding continuation text, without cutting either target paragraph. The neighboring figures, captions and §23.3 transition are readable. The smoke image shows clear text and a complete blue circle.
+
+Both full-page bottoms are present: Chapter 13 includes its transfer paragraph and 12/14 navigation; Chapter 23 includes its final transfer paragraph and 22/temporary-24 navigation. Native-size pixel regions were inspected for the supplement sidebars and Chapter 23 bottom.
+
+Inspection covered the requirements, accepted TOC excerpt, supplement-context excerpt, Chapter 13 source lines 375–418, Chapter 23 source lines 118–185, corresponding HTML paragraphs/navigation, and supplied capture result/page metadata. Reduced full-page body text was assessed for layout, **not claimed proofread**.
+
+Limits: the complete accepted TOC source was absent, so its stated full-source digest could not be independently verified. No earlier manuscript baseline was supplied, so historical scientific changes cannot be established. No broader mathematics, physical validity, compliance or human acceptance conclusion is made.
+
+Prohibited exposure: none. Capture metadata contained outside-packet paths, which were not followed. No edits, delegation, connectors, outside-packet access, status/history or prior-review material were used.

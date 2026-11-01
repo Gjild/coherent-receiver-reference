@@ -1,0 +1,30 @@
+{
+  "book/sampling-converter-feasibility.qmd": [
+    [
+      "Chapter 23 owns complete state integration.",
+      "Chapter 21 owns complete state integration."
+    ]
+  ],
+  "book/quadrature-conjugate-fidelity.qmd": [
+    [
+      "Chapter 21 owns their complete",
+      "Chapter 23 owns their complete"
+    ]
+  ],
+  "book/distributed-reference-inference.qmd": [
+    [
+      "Chapter 23's sequencing",
+      "Chapter 21's sequencing"
+    ]
+  ],
+  "book/multirate-finite-resources.qmd": [
+    [
+      "Chapter 23 integrates complete startup, retune and recovery validity.",
+      "Chapter 21 integrates complete startup, retune and recovery validity."
+    ],
+    [
+      "The following navigation leads to the **development supplements**, whose\ntemporary rendered numbers are 20 and 21. They do not supply the still-undeveloped\ncanonical Chapter 20 on correction feasibility or Chapter 21 on calibration\nprocedure. Those canonical references above identify later technical ownership.",
+      "The next chapter develops general correction feasibility before channels are\ncombined. Chapter 13 supplies measurement freedoms and uncertainty; Chapter 23\nuses them in calibration procedures and maintenance. The development supplements\nremain outside the accepted canonical chapter sequence; their temporary rendered\nnumbers do not change these technical destinations."
+    ]
+  ]
+}

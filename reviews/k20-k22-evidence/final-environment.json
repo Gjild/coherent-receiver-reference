@@ -1,0 +1,11 @@
+{
+  "modules": {
+    "numpy": true,
+    "scipy": false,
+    "pytest": false
+  },
+  "preserved_untracked": {
+    "book/.gitignore": "a2c42d7579873fcc1885712af8e33d47a2d84452ca1214383e92b03ed98321c4",
+    "book/index.toc": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

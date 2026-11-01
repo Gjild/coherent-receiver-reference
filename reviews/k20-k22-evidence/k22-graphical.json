@@ -1,0 +1,61 @@
+{
+  "figures": 4,
+  "vertices": 1936,
+  "checks": [
+    {
+      "figure": "metrology-records",
+      "vertices": 163,
+      "error_px": 0.0004976499008080282
+    },
+    {
+      "figure": "metrology-records",
+      "vertices": 163,
+      "error_px": 0.0004976502044087283
+    },
+    {
+      "figure": "metrology-records",
+      "vertices": 163,
+      "error_px": 0.0004990807389049223
+    },
+    {
+      "figure": "metrology-records",
+      "vertices": 163,
+      "error_px": 0.0004997906683001929
+    },
+    {
+      "figure": "metrology-records",
+      "vertices": 163,
+      "error_px": 0.0004981265320793682
+    },
+    {
+      "figure": "metrology-records",
+      "vertices": 163,
+      "error_px": 0.0004976499008080282
+    },
+    {
+      "figure": "metrology-level-floor",
+      "vertices": 239,
+      "error_px": 0.0004974208273438308
+    },
+    {
+      "figure": "metrology-level-floor",
+      "vertices": 239,
+      "error_px": 0.00013033164941589348
+    },
+    {
+      "figure": "metrology-level-floor",
+      "vertices": 239,
+      "error_px": 0.00015084552364896808
+    },
+    {
+      "figure": "metrology-phase-disk",
+      "vertices": 241,
+      "error_px": 0.0004796147453589583
+    }
+  ],
+  "u_loading_rad": 0.0023216608601839936,
+  "mean_factor_innovation_100": 0.17200047810518,
+  "dof_closed_rows_100": 11.401075464156182,
+  "ray_circle_residual": 2.0405422481717395e-06,
+  "ray_phase_residual_rad": 1.1699103695805846e-06
+}

@@ -13,8 +13,10 @@ reviews/k17-k19-development.md and reviews/k17-k19-evidence/.
 
 K17 completes as a checked provisional teaching draft: five figures, six meaningful
 new tests, fresh technical/pixel review and targeted reassessment. No material
-open finding. Current unit: K18 quadrature/conjugate fidelity, canonical Chapter18
-and CAP019; exact specification/prerequisites read. Follow the same full gate.
+open finding. K18 also completes with four figures, four stdlib and three periodic-record
+checks, fresh technical/pixel review and successful targeted reassessment.
+Current unit: K19a/b multirate processing and finite resources, canonical
+Chapter19/CAP020–021; read exact requirements before developing its bounded chain.
 
 ---
 

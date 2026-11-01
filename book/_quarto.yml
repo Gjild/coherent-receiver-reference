@@ -24,6 +24,7 @@ book:
     - synthesis-endpoint-references.qmd
     - distributed-reference-inference.qmd
     - sampling-converter-feasibility.qmd
+    - quadrature-conjugate-fidelity.qmd
     - part: "Development supplements"
       chapters:
         - publishing-pilot.qmd

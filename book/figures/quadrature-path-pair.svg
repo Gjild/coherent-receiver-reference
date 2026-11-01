@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1120" role="img" aria-labelledby="title desc"><title id="title">An I/Q label does not determine desired and conjugate response</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">An I/Q label does not determine desired and conjugate response</text>
+<rect x="40" y="100" width="240" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="160.0" y="125" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">RF: x cos(LO) − y sin(LO)</text>
+<text x="160.0" y="150" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">s = x + jy (peak V)</text>
+<rect x="380" y="95" width="235" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="497.5" y="120" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">2 cos(LO) → LP</text>
+<text x="497.5" y="145" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">I = x</text>
+<rect x="380" y="295" width="235" height="105" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="497.5" y="320" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">−2 sin(LO+ε) → LP</text>
+<text x="497.5" y="345" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Q = g (y cos ε − x sin ε)</text>
+<text x="497.5" y="370" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">then Q-path delay τ</text>
+<path d="M280.000,140.000 L330.000,140.000 L380.000,138.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M330.000,140.000 L330.000,345.000 L380.000,345.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="720" y="185" width="200" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="820.0" y="210" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Form z = I + jQ</text>
+<text x="820.0" y="235" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">add offset d</text>
+<path d="M615.000,138.000 L670.000,138.000 L670.000,225.000 L720.000,225.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M615.000,345.000 L670.000,345.000 L670.000,245.000 L720.000,245.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="40" y="535" width="240" height="95" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="160.0" y="560" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">S(f)</text>
+<text x="160.0" y="585" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">desired complex input</text>
+<rect x="390" y="535" width="220" height="95" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="500.0" y="560" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">a(f) S(f)</text>
+<text x="500.0" y="585" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">desired response</text>
+<rect x="40" y="750" width="240" height="95" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="160.0" y="775" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">S*(−f)</text>
+<text x="160.0" y="800" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">conjugated mirror input</text>
+<rect x="390" y="750" width="220" height="95" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="500.0" y="775" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">b(f) S*(−f)</text>
+<text x="500.0" y="800" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">conjugate response</text>
+<rect x="730" y="635" width="185" height="95" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="822.5" y="660" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Z(f)</text>
+<text x="822.5" y="685" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">both terms overlap</text>
+<path d="M280.000,580.000 L390.000,580.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M280.000,795.000 L390.000,795.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M610.000,580.000 L675.000,580.000 L675.000,665.000 L730.000,665.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M610.000,795.000 L675.000,795.000 L675.000,700.000 L730.000,700.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="45" y="940" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Both sides of the LO can carry desired information. An image response is not an unwanted input.</text>
+<text x="45" y="1000" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Fit at defined RF/baseband planes and identified level, LO and gain state.</text>
+<text x="45" y="1060" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">The diagram is an idealized mixer/path model; actual source/load and noise paths need evidence.</text>
+<text x="32" y="1106" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

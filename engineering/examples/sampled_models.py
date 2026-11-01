@@ -1,5 +1,5 @@
 """Synthetic converter/quadrature/multirate teaching models; no hardware data."""
-from math import pi, sqrt, sin, cos, exp, log, log10, floor, asin, degrees
+from math import pi, sqrt, sin, cos, exp, log, log10, floor, asin, degrees, tan, atan2
 import cmath
 import sys
 from visual_foundations import SVG, COLORS, lin, log as logspace
@@ -149,5 +149,160 @@ def unit17():
     s.text(45,1055,'Common mode, pin limits, loading and reference isolation remain separate interfaces.',18);s.save()
 
 
+
+
+# K18: real quadrature paths, periodic synthetic records; no device measurements.
+def iq_pair(f,g=1.05,epsilon=pi/60,delay=20e-9,amplitude=0.,gamma=.5):
+    """Nonzero-tone fundamental; f=0 is its limit, not a constant stimulus."""
+    cy=g*cos(epsilon)+.75*gamma*amplitude**2;cx=g*sin(epsilon)
+    h=cmath.exp(-2j*pi*f*delay)
+    return ((1+(cy-1j*cx)*h)/2,(1-(cy+1j*cx)*h)/2,
+            (1-(cy-1j*cx)*h)/2,(1+(cy+1j*cx)*h)/2)
+
+
+def iq_wave(times,tones,dc=0j,g=1.05,epsilon=pi/60,delay=20e-9,
+            offset=.003-.002j,gamma=.5):
+    """Actual real I and delayed Q mixers, with a weak cubic Q path."""
+    out=[]
+    for t in times:
+        a=dc+sum(v*cmath.exp(2j*pi*f*t) for f,v in tones)
+        b=dc+sum(v*cmath.exp(2j*pi*f*(t-delay)) for f,v in tones)
+        q=g*(b.imag*cos(epsilon)-b.real*sin(epsilon))+gamma*b.imag**3
+        out.append(a.real+1j*q+offset)
+    return out
+
+
+def iq_fit():
+    """Fit four rotating 20 mV training tones via actual real-path records."""
+    fs=16e6;n=4096;times=[k/fs for k in range(n)];xx=[];ph=[];gg=[]
+    for f in [.25e6,.75e6,1.25e6,1.75e6]:
+        vv=iq_wave(times,[(f,.02)])
+        pos=sum(z*cmath.exp(-2j*pi*f*t) for t,z in zip(times,vv))/n/.02
+        neg=sum(z*cmath.exp(2j*pi*f*t) for t,z in zip(times,vv))/n/.02
+        c=pos-neg.conjugate();xx.append(f);ph.append(cmath.phase(c));gg.append(abs(c))
+    xm=sum(xx)/4;pm=sum(ph)/4
+    slope=sum((x-xm)*(y-pm) for x,y in zip(xx,ph))/sum((x-xm)**2 for x in xx)
+    return sum(gg)/4,-(pm-slope*xm),-slope/(2*pi)
+
+
+def iq_correct_pair(f,flat=False):
+    g,e,t=iq_fit_cached();h=1 if flat else cmath.exp(-2j*pi*f*t)
+    q=1/(g*cos(e));v=h*(1+1j*tan(e))/2
+    return v+q/2,v-q/2
+
+
+_IQ_FIT=None
+def iq_fit_cached():
+    global _IQ_FIT
+    if _IQ_FIT is None:_IQ_FIT=iq_fit()
+    return _IQ_FIT
+
+
+def iq_response(f,mode='matched',amplitude=.01,g=1.05,epsilon=pi/60,delay=20e-9):
+    a,b,c,d=iq_pair(f,g,epsilon,delay,amplitude)
+    u,v=(1,0) if mode=='raw' else iq_correct_pair(f,mode=='flat')
+    return u*a+v*c,u*b+v*d
+
+
+def iq_noise_gain(g):
+    return (1+1/(g*g))/(2*cos(pi/60)**2)
+
+
+def iq_apply_periodic(samples,fs,offset=.003-.002j,flat=False):
+    """NumPy reference: periodic-record ideal I delay; no causal finite-filter claim."""
+    import numpy as np
+    g,e,t=iq_fit_cached();v=np.asarray(samples)-offset
+    ff=np.fft.fftfreq(len(v),1/fs)
+    ii=np.fft.ifft(np.fft.fft(v.real)*np.exp(-2j*pi*ff*(0 if flat else t))).real
+    qq=v.imag/(g*cos(e))+tan(e)*ii
+    return ii+1j*qq
+
+
+def iq_record_results():
+    """Execute the frozen-fit held-out examples used in Chapter18 / Figure18.3."""
+    import numpy as np
+    fs=16e6;times=np.arange(4096)/fs;dc=.005+.003j
+    tones=[(.375e6,.009*cmath.exp(.1j)),(-.625e6,.007*cmath.exp(-.4j)),(1.375e6,.004*cmath.exp(.8j))]
+    want=dc+sum(a*np.exp(2j*pi*f*(times-20e-9)) for f,a in tones)
+    vv=iq_wave(times,tones,dc);r={}
+    for flat in [False,True]:
+        y=iq_apply_periodic(vv,fs,flat=flat)
+        r['flat_pct' if flat else 'mod_pct']=float(np.linalg.norm(y-want)/np.linalg.norm(want-dc)*100)
+    for amp,state,g,e,t,d in [(.2,'high',1.05,pi/60,20e-9,.003-.002j),(.02,'state',1.07,pi/45,24e-9,.004-.001j)]:
+        f=.375e6;vv=iq_wave(times,[(f,amp)],g=g,epsilon=e,delay=t,offset=d)
+        y=iq_apply_periodic(vv,fs);want=amp*np.exp(2j*pi*f*(times-20e-9))
+        z=np.mean(y*np.exp(-2j*pi*f*times))/amp
+        r[state+'_pct']=float(np.linalg.norm(y-want)/np.linalg.norm(want)*100)
+        r[state+'_phase']=degrees(cmath.phase(z*cmath.exp(2j*pi*f*20e-9)))
+    times=np.arange(1000)/1000;want=dc+.01*np.exp(2j*pi*10*(times-20e-9))
+    y=iq_apply_periodic(iq_wave(times,[(10,.01)],dc),1000)
+    r['near_pct']=float(np.linalg.norm(y-want)/np.linalg.norm(want-dc)*100)
+    return r
+
+
+def unit18():
+    s=SVG('quadrature-path-pair','An I/Q label does not determine desired and conjugate response',1120)
+    s.box(40,100,240,85,['RF: x cos(LO) − y sin(LO)','s = x + jy (peak V)'])
+    s.box(380,95,235,85,['2 cos(LO) → LP','I = x'])
+    s.box(380,295,235,105,['−2 sin(LO+ε) → LP','Q = g (y cos ε − x sin ε)','then Q-path delay τ'])
+    s.path([(280,140),(330,140),(380,138)],arrow=True)
+    s.path([(330,140),(330,345),(380,345)],arrow=True)
+    s.box(720,185,200,85,['Form z = I + jQ','add offset d'])
+    s.path([(615,138),(670,138),(670,225),(720,225)],arrow=True)
+    s.path([(615,345),(670,345),(670,245),(720,245)],arrow=True)
+    s.box(40,535,240,95,['S(f)','desired complex input'])
+    s.box(390,535,220,95,['a(f) S(f)','desired response'])
+    s.box(40,750,240,95,['S*(−f)','conjugated mirror input'])
+    s.box(390,750,220,95,['b(f) S*(−f)','conjugate response'])
+    s.box(730,635,185,95,['Z(f)','both terms overlap'])
+    s.path([(280,580),(390,580)],arrow=True);s.path([(280,795),(390,795)],arrow=True)
+    s.path([(610,580),(675,580),(675,665),(730,665)],arrow=True)
+    s.path([(610,795),(675,795),(675,700),(730,700)],arrow=True)
+    s.text(45,940,'Both sides of the LO can carry desired information. An image response is not an unwanted input.',19)
+    s.text(45,1000,'Fit at defined RF/baseband planes and identified level, LO and gain state.',19)
+    s.text(45,1060,'The diagram is an idealized mixer/path model; actual source/load and noise paths need evidence.',17);s.save()
+    ff=lin(-2,2)
+    leak=lambda z:20*log10(max(abs(z[1]/z[0]),1e-7))
+    s=SVG('quadrature-band-correction','A constant quadrature trim cannot remove a differential path delay',1130)
+    curves=[]
+    for mode,label in [('raw','uncorrected'),('flat','constant trim only'),('matched','delay match + trim')]:
+        curves.append((label,ff,[leak(iq_response(f*1e6,mode)) for f in ff]))
+    s.plot(70,'Independent 10 mV single-tone fundamentals; 20 mV training at other frequencies',(-2,2),(-100,0),
+           'Observed baseband frequency f (MHz)','Conjugate / desired response (dB)',curves)
+    s.plot(520,'Desired phase relative to target plane delayed by 20 ns',(-2,2),(-9,9),
+           'Baseband frequency f (MHz)','Desired phase error (degrees)',
+           [(label,ff,[degrees(cmath.phase(iq_response(f*1e6,mode)[0]*cmath.exp(2j*pi*f*1e6*20e-9))) for f in ff])
+            for mode,label in [('raw','uncorrected'),('flat','constant trim only'),('matched','delay match + trim')]])
+    s.text(45,940,'Curves are single-tone fundamentals of the supplied cubic-path model, not full distortion tests.',17)
+    s.text(45,995,'f = 0 is the rotating-tone limit: coincident DC lines do not define a separate image ratio.',17)
+    s.text(45,1050,'An overall timestamp shift cannot eliminate conjugate leakage from unequal I/Q delays.',19);s.save()
+    s=SVG('quadrature-training-validity','Known rotation supplies information that a real-only stimulus cannot',1060)
+    for x,lines in [(40,['Four known phases','+A, +jA, −A, −jA']),(360,['Fit [s, s*, 1]','three independent columns']),(680,['Separate blank + tones','offset and path response'])]:
+        s.box(x,110,245,90,lines)
+        if x<680:s.path([(x+245,155),(x+320,155)],arrow=True)
+    s.box(40,300,415,100,['Real-only stimulus: s = s*','μ and ν cannot be separated','Subtracting mean also removes desired DC'])
+    s.box(505,300,415,100,['Independent checks after fitting','new frequencies, both signs, modulation','changed level and reset state'])
+    s.text(45,490,'Same physical synthetic model; fit on four 20 mV rotating tones, then freeze coefficients.',18)
+    r=iq_record_results()
+    rows=[('Held-out low-level modulation',f"{r['mod_pct']:.6f}% waveform error: passes 0.1%"),
+          ('200 mV tone, same state',f"{r['high_pct']:.5f}% error: cubic path fails"),
+          ('20 mV tone, changed state',f"{r['state_phase']:.5f}° and DC residue: fails")]
+    for i,(a,b) in enumerate(rows):
+        b=b.replace('-', '−')
+        s.box(40,540+120*i,875,85,[a,b])
+    s.text(45,965,'These are executed illustrative records. No measured component or reader effectiveness is claimed.',17);s.save()
+    s=SVG('quadrature-near-dc','Offset removal must preserve the desired near-DC observable',1110)
+    ff=logspace(1,10000)
+    s.plot(70,'Supplied first-order AC coupling: corner 100 Hz',(1,10000),(-45,1),
+           'Desired baseband frequency (Hz)','Desired amplitude transfer (dB)',
+           [('high-pass |H|',ff,[20*log10(f/sqrt(f*f+10000)) for f in ff]),('retain desired signal',ff,[0]*len(ff))],True)
+    s.plot(520,'Same filter: phase is part of coherent fidelity',(1,10000),(0,90),
+           'Desired baseband frequency (Hz)','Desired phase advance (degrees)',
+           [('arg H',ff,[degrees(atan2(100,f)) for f in ff])],True)
+    s.text(45,940,'A true 10 Hz component loses 20.0432 dB and advances 84.2894°; DC is erased.',20)
+    s.text(45,995,'A separate valid blank can estimate d; an operational mean cannot distinguish d from desired DC.',17)
+    s.text(45,1050,'Changing impedance / LO leakage between blank and operation invalidates that estimate.',18);s.save()
+
+
 if __name__=='__main__':
-    {17:unit17}[int(sys.argv[1])]()
+    {'17':unit17,'18':unit18}[sys.argv[1] if len(sys.argv)>1 else '17']()

@@ -1,0 +1,51 @@
+{
+  "reproduced": 4,
+  "checks": [
+    {
+      "figure": "quadrature-band-correction",
+      "vertices": 241,
+      "error_px": 0.0004999375760803559
+    },
+    {
+      "figure": "quadrature-band-correction",
+      "vertices": 241,
+      "error_px": 0.0004993566926145832
+    },
+    {
+      "figure": "quadrature-band-correction",
+      "vertices": 241,
+      "error_px": 0.00010975235863952548
+    },
+    {
+      "figure": "quadrature-band-correction",
+      "vertices": 241,
+      "error_px": 0.0004993532369326203
+    },
+    {
+      "figure": "quadrature-band-correction",
+      "vertices": 241,
+      "error_px": 0.0004967221834704105
+    },
+    {
+      "figure": "quadrature-band-correction",
+      "vertices": 241,
+      "error_px": 5.684341886080802e-14
+    },
+    {
+      "figure": "quadrature-near-dc",
+      "vertices": 241,
+      "error_px": 0.000499252077474921
+    },
+    {
+      "figure": "quadrature-near-dc",
+      "vertices": 241,
+      "error_px": 0.00013043478259078256
+    },
+    {
+      "figure": "quadrature-near-dc",
+      "vertices": 241,
+      "error_px": 0.0004984912728787094
+    }
+  ],
+  "vertices": 2169
+}

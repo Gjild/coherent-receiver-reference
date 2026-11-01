@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1060" role="img" aria-labelledby="title desc"><title id="title">Known rotation supplies information that a real-only stimulus cannot</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Known rotation supplies information that a real-only stimulus cannot</text>
+<rect x="40" y="110" width="245" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="162.5" y="135" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Four known phases</text>
+<text x="162.5" y="160" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">+A, +jA, −A, −jA</text>
+<path d="M285.000,155.000 L360.000,155.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="360" y="110" width="245" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="482.5" y="135" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Fit [s, s*, 1]</text>
+<text x="482.5" y="160" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">three independent columns</text>
+<path d="M605.000,155.000 L680.000,155.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="680" y="110" width="245" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="802.5" y="135" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Separate blank + tones</text>
+<text x="802.5" y="160" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">offset and path response</text>
+<rect x="40" y="300" width="415" height="100" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="247.5" y="325" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Real-only stimulus: s = s*</text>
+<text x="247.5" y="350" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">μ and ν cannot be separated</text>
+<text x="247.5" y="375" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Subtracting mean also removes desired DC</text>
+<rect x="505" y="300" width="415" height="100" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="712.5" y="325" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Independent checks after fitting</text>
+<text x="712.5" y="350" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">new frequencies, both signs, modulation</text>
+<text x="712.5" y="375" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">changed level and reset state</text>
+<text x="45" y="490" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Same physical synthetic model; fit on four 20 mV rotating tones, then freeze coefficients.</text>
+<rect x="40" y="540" width="875" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="477.5" y="565" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Held-out low-level modulation</text>
+<text x="477.5" y="590" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">0.005626% waveform error: passes 0.1%</text>
+<rect x="40" y="660" width="875" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="477.5" y="685" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">200 mV tone, same state</text>
+<text x="477.5" y="710" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">1.05651% error: cubic path fails</text>
+<rect x="40" y="780" width="875" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="477.5" y="805" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">20 mV tone, changed state</text>
+<text x="477.5" y="830" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">−0.80554° and DC residue: fails</text>
+<text x="45" y="965" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">These are executed illustrative records. No measured component or reader effectiveness is claimed.</text>
+<text x="32" y="1046" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

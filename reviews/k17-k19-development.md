@@ -98,3 +98,70 @@ and19pilot tests pass; targeted6rerun after test changes passes. K18 can proceed
 Raw K17 findings contain intentional Markdown hard-break trailing spaces. Exact
 bytes are retained as k17-review-findings.md.gz and raw events; the readable .md
 copy removes trailing blanks solely for repository whitespace integrity.
+
+## K18 bounded development and pre-review evidence
+
+After K17 checkpoint fdbe152, exact K18 specification/prerequisite/CAP019 and
+Chapter18 card reread. Bounded question: which quadrature correction preserves
+both desired/conjugate responses and actual near-DC information across frequency,
+level and state? Analog mixer foundations precede ideal sampled reference;
+K20 general inverses/K21b full validity/K23 state integration remain external.
+Primary source examination: ADL5380RevB pp3,22,25–27; Nash AN1039 imperfection,
+frequency/temperature sections (transmit evidence only); AMD PG269v2.6QMC
+correction-versus-detection section. Exact limitations in source notes.
+
+Real-path/cubic synthetic training and frozen correction are executed. New
+signed-frequency/phase inputs, modulation+desiredDC, 10Hz+DC, high level and
+changed state test the conditional envelope. Corrected modulation error0.005626%
+versusconstanttrim5.7370%; highlevel1.05651% and changedstate−0.80554°fail declared
+criteria. Four new meaningful stdlib tests pass; discovery100tests passes.
+Independent NumPy real2×2path formulation checks2169vertices within0.000501SVGunit.
+All79figures reproduce byte-identically;156protectedbaselineentries match.
+22HTMLpages/844locallinks/80imageuses pass integrity. Scaffold/whitespace pass.
+
+Author pixel review:4assets at1200wide; first complete1425×10270page and all8crops.
+Found two overlong display equations extending beyond the text column and a
+crowded firstbox label. Broke18.4/18.7 into aligned steps and shortened that label.
+Final firstasset recaptured; final complete1425×10380page and all8newcrops opened.
+Equations now fit, arrows/paired signs/captions/nearDCcurves/endnavigation visible.
+Other3assetbytes unchanged. Fresh packet312hashedfiles/14PNGs; read-only Sol/high
+technical/visual review pending. No physical or reader evidence implied.
+
+### K18 separate review and author dispositions
+
+Fresh read-only Sol/high review exits0;312/312manifestentries verified (prohibited
+index/standards only opaque bytes). Reviewer independently derives equations and
+recomputes all16signedsweeps, actual modulation/nearDC/highlevel/state results;
+10sampledstdlibtests pass; all14actualPNGs visible with continuous8cropcoverage.
+Source access limited to supplied notes, not original authentication. Incidental
+exposure: initial global filename listing before requirements, and required
+sidebar/navigation titles; no prohibited content/author verdicts. Raw findings
+and events retained exactly as gzip; readable copy strips trailing Markdown blanks.
+
+Medium finding corrected: Figure18.2 explicitly identifies f=0 as the limit of
+nonzero rotating-tone fundamentals; caption distinguishes coincident DC lines
+and phase-dependent constant-input cubic response. Actual DC is not claimed to
+have a separately measured image ratio. Low regression gap corrected:3NumPy
+record tests exercise the executed periodic correction on modulation/nearDC,
+constant DC phases, high-level harmonic residual and changed-state blank, using
+independent physical cubic-error expressions. Figure18.3labels now come from
+executed iq_record_results rather than literal result strings. All3tests pass;
+previously quoted numbers reproduce. Graphical curve check still2169vertices.
+Revised Figure18.2 actualPNG and complete1425×10426HTMLpage plus all8newcrops
+inspected; qualification/caption/equations/endnavigation readable. Other3assets
+retain prior inspected bytes, including generated Figure18.3. Fresh targeted
+read-only reassessment on313hashedfiles/14PNGs pending.
+
+K18 targeted read-only Sol/high reassessment exits0;313/313hashes verified before
+and after tests;10sampledstdlib+3NumPyrecordtests pass. Independent physical
+residual and exactDCexamples confirm the corrected distinction. All14PNGs
+explicitly visible; no consequential remaining scoped defect. Nonblocking limit:
+figure-value test checks engineering bounds rather than exact formattedlabels;
+labels independently recomputed and actualpixels checked. Reviewer reports an
+extraneous supplied '-' image reference failed to load; all14intended PNGs are
+explicitly accounted for and inspected. No prohibited-content exposure; no edits,
+connectors or delegation. The raw report retains this invocation limitation.
+One trailingblank in Python source is removed after freeze, with no executable
+text/figure change. Author and AI checks do not confer human acceptance.
+K18 closes as a checked provisional bounded teaching draft; no owner decision
+required for its stated conditional conclusions. Proceed sequentially to K19.

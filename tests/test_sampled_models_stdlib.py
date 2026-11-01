@@ -108,3 +108,56 @@ class ConverterModels(unittest.TestCase):
         c=m.converter_case()
         self.assertLess(.9+c['peak']/2,1.45)
         self.assertGreater(.9-c['peak']/2,.35)
+
+
+class QuadratureModels(unittest.TestCase):
+    def test_real_mixer_products_fix_quadrature_signs(self):
+        x=.2;y=-.1;g=1.05;e=math.pi/60;n=1024
+        rr=[x*math.cos(2*math.pi*k/n)-y*math.sin(2*math.pi*k/n) for k in range(n)]
+        ii=sum(2*v*math.cos(2*math.pi*k/n) for k,v in enumerate(rr))/n
+        qq=sum(-2*g*v*math.sin(2*math.pi*k/n+e) for k,v in enumerate(rr))/n
+        self.assertAlmostEqual(ii,x,places=14)
+        self.assertAlmostEqual(qq,g*(y*math.cos(e)-x*math.sin(e)),places=14)
+        a,b,_,_=m.iq_pair(0,g,e,gamma=0)
+        self.assertLess(abs(ii+1j*qq-a*(x+1j*y)-b*(x-1j*y)),1e-14)
+
+    def test_training_rank_and_fitted_effective_parameters(self):
+        ss=[.02,.02j,-.02,-.02j]
+        col=[ss,[s.conjugate() for s in ss],[1]*4]
+        for i in range(3):
+            for j in range(3):
+                gram=sum(a.conjugate()*b for a,b in zip(col[i],col[j]))
+                self.assertLess(abs(gram-(sum(abs(x)**2 for x in col[i]) if i==j else 0)),1e-15)
+        real=[.02,-.02,.01,-.01]
+        self.assertEqual(real,[complex(x).conjugate().real for x in real])
+        g,e,t=m.iq_fit()
+        cy=1.05*math.cos(math.pi/60)+.75*.5*.02**2;cx=1.05*math.sin(math.pi/60)
+        self.assertLess(abs(g-math.hypot(cy,cx)),1e-13)
+        self.assertLess(abs(e-math.atan2(cx,cy)),1e-13)
+        self.assertLess(abs(t-20e-9),1e-19)
+
+    def test_held_out_real_path_spectra_and_correction(self):
+        fs=16e6;n=512;times=[k/fs for k in range(n)];amp=.01
+        for f in [-1.875e6,-.375e6,.375e6,1.875e6]:
+            vv=m.iq_wave(times,[(f,amp*cmath.exp(.31j))])
+            pos=sum(z*cmath.exp(-2j*math.pi*f*t) for t,z in zip(times,vv))/n/(amp*cmath.exp(.31j))
+            neg=sum(z*cmath.exp(2j*math.pi*f*t) for t,z in zip(times,vv))/n/(amp*cmath.exp(-.31j))
+            a,b,c,d=m.iq_pair(f,amplitude=amp)
+            self.assertLess(abs(pos-a),1e-13);self.assertLess(abs(neg-c.conjugate()),1e-13)
+            u,v=m.iq_correct_pair(f);z=u*pos+v*neg.conjugate()
+            target=cmath.exp(-2j*math.pi*f*20e-9)
+            self.assertLess(abs(z/target-1),.00006)
+        good=m.iq_response(1.875e6,'matched');bad=m.iq_response(1.875e6,'flat')
+        self.assertLess(abs(good[1]/good[0]),.001)
+        self.assertGreater(abs(bad[1]/bad[0]),.1)
+
+    def test_dc_nonidentifiability_and_highpass_actual_step(self):
+        a,b,_,_=m.iq_pair(0,gamma=0);s=.005+.003j;d=.003-.002j;c=.001+.002j
+        self.assertLess(abs(a*s+b*s.conjugate()+d-(a*(s-c)+b*(s-c).conjugate()+d+a*c+b*c.conjugate())),1e-17)
+        # Independent time-domain lowpass state; highpass is input minus that state.
+        fs=200000.;f=10.;state=0.;acc=0j;count=0;pole=math.exp(-2*math.pi*100/fs)
+        for k in range(40000):
+            x=math.cos(2*math.pi*f*k/fs);state=pole*state+(1-pole)*x
+            if k>=20000:acc+=(x-state)*cmath.exp(-2j*math.pi*f*k/fs);count+=1
+        h=2*acc/count;continuous=1j*f/(100+1j*f)
+        self.assertLess(abs(h-continuous)/abs(continuous),.002)

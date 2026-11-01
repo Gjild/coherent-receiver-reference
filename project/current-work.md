@@ -1,22 +1,42 @@
-# Active batch — K17–K19 bounded development (2026-11-01)
+# Completed batch — K17–K19 bounded development (2026-11-01)
 
-The owner authorizes sequential K17, K18 and K19a/b in canonical Chapters17–19,
-their connected assessment and safe local Git checkpoints. This supersedes the
-older stopping entries below for this bounded batch only. Stop before K20;
-no accepted architecture change, push, external publication or human acceptance.
+The owner-authorized sequential K17, K18 and K19a/b treatments and connected
+assessment are complete as checked provisional teaching drafts. Stop here,
+before K20. No independent human specialist review, physical receiver validation,
+actual reader testing, publication acceptance, architecture change, push or
+external publication is claimed. Later development requires new authorization.
 
-Fresh documented smoke succeeds and actual PNG is inspected before authoring.
-Both pre-existing untracked book/.gitignore and book/index.toc remain untouched,
-unstaged and outside commits; their exact creator/intended disposition is not
-established. Their known status/purpose and baseline hashes are recorded in
-reviews/k17-k19-development.md and reviews/k17-k19-evidence/.
+Canonical Chapters17–19 contain the bounded manuscripts and15newfigures;
+Chapter13 remains reserved/undeveloped. Temporary development-supplement numbers
+20/21do not supply those canonical chapters. Accepted coverage, prerequisites,
+notation boundaries and earlier checked manuscripts remain unchanged.
 
-K17 completes as a checked provisional teaching draft: five figures, six meaningful
-new tests, fresh technical/pixel review and targeted reassessment. No material
-open finding. K18 also completes with four figures, four stdlib and three periodic-record
-checks, fresh technical/pixel review and successful targeted reassessment.
-Current unit: K19a/b multirate processing and finite resources, canonical
-Chapter19/CAP020–021; read exact requirements before developing its bounded chain.
+Fresh documented private-pipe smoke and actualPNG inspection preceded authoring.
+Author inspected actual assets, completeHTML and readable overlappingcrops;
+fresh enforced-read-only Sol/high unit reviews and targeted reassessments are
+archived separately from author dispositions. One usage-limit attempt remains
+incomplete. A targeted reviewer reports incidental prior-status exposure; fresh
+connected review uses only verbatim accepted excerpts and also reassesses final
+K19corrections. Fresh targeted flow and queue-geometry reassessments complete;
+no consequential bounded-draft finding remains. AI scrutiny does not confer the human Reviewed/Accepted state.
+
+Executed:103stdlib+8NumPyrecord+19pilot tests pass (130selectedchecks);85SVGs
+reproduce byte-identically;12548newcurvevertices independently checked. Final
+Quarto1.10.19 HTML:23pages,906locallinks,86imageuses, no structural errors.
+155protectedbaselineentries match, including70priorfigures and both pre-existing
+untrackedfiles;17/18manuscripts also match their unit checkpoints. Scaffold,
+control-byte and Git whitespace checks pass. Fullpytest/SciPy remain unavailable.
+
+Unit checkpoints:K17 `fdbe152`, K18 `ae285c1`, K19 `14ebf75`; connected closeout
+is checkpointed separately. book/.gitignore and book/index.toc remain untouched,
+unstaged and untracked; their apparent purpose/OS ownership does not establish
+creator or intended disposition. No new owner decision blocks bounded closeout.
+
+[Development, sources, findings, limitations and connected review](../reviews/k17-k19-development.md)
+and [validation](../docs/VALIDATION.md) retain limited evidence. Actual component,
+clock/reference/blank/state and calibration characterization, positive hardware
+scheduling/routed timing/CDC/interfaces, whole-receiver closure, specialist and
+reader evidence remain pending. Do not begin K20 automatically.
 
 ---
 

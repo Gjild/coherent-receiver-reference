@@ -464,7 +464,10 @@ def packet_queue(duration_ns=6000000,unpacked=False):
     events=sorted(set(range(0,duration_ns+1,64000))|{500000,duration_ns})
     q=131072.;lost=0.;previous=0;history=[(0,q,lost)]
     for now in events:
-        q=max(0.,q-.24*max(0,now-max(previous,500000)))
+        start=max(previous,500000)
+        if q>0 and now>start and q<.24*(now-start):
+            history.append((start+q/.24,0.,lost))
+        q=max(0.,q-.24*max(0,now-start))
         history.append((now,q,lost))
         if now%64000==0:
             q+=packet;lost+=max(0.,q-capacity);q=min(q,capacity)
@@ -564,6 +567,8 @@ def unit19():
            [('packed 12-byte pair frames',[a/1e6 for a,b,c in hp],[b/1024 for a,b,c in hp]),
             ('32-bit padded components: rejected load',[a/1e6 for a,b,c in hu],[b/1024 for a,b,c in hu]),
             ('capacity',[0,6],[256,256])])
+    # Local rounded joins avoid nonphysical miter spikes at empty-queue corners.
+    s.s=[line.replace('stroke-width="2.8"','stroke-width="2.8" stroke-linejoin="round"') for line in s.s]
     s.text(45,765,'Packed arrival incl. header: 192.75 MB/s; packet-event peak 239216 B; no modeled loss.',17)
     s.text(45,825,'Padded components require 256.75 MB/s: the 240 MB/s link eventually loses data.',18)
     s.text(45,885,'Symmetry + 8-point resampling: 9.28 G equivalent real operations/s for two receivers.',18)

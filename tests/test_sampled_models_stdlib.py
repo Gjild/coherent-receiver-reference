@@ -203,3 +203,8 @@ class MultirateBasics(unittest.TestCase):
             self.assertAlmostEqual(lost,history[-1][2],places=8)
             if unpacked:self.assertGreater(lost,0)
             else:self.assertEqual(lost,0);self.assertEqual(peak,239216)
+        packed=m.packet_queue()
+        # First drain-to-empty event lies strictly between packet arrivals.
+        empty=next((t,q) for t,q,_ in packed if q==0)
+        self.assertAlmostEqual(empty[0],5363733.333333333,places=6)
+        self.assertIn((5376000,0.,0.),packed)

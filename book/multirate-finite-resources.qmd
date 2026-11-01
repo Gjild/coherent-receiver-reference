@@ -491,9 +491,16 @@ format already loses data in this event case. Additional DMA bunching or service
 jitter would need a new arrival/service envelope. The fluid recovery time is an
 engineering estimate, not an exact packet completion time.
 
-Likewise a 20 ppm input/output rate mismatch consumes the initial half-queue
-headroom in about **34.00 s** in this billing model. A clock estimate and
-appropriate rate conversion, or a changed service contract, is required.
+A different failure occurs between two stages that consume and produce at
+fixed, nearly equal sample rates. Suppose the consumer removes exactly
+16 million pair frames/s, equivalent to 192.75 MB/s under the same billing,
+while the producer is 20 ppm faster. The excess is 3855 bytes/s, consuming
+the initial half-queue headroom in about **34.00 s** in a fluid approximation.
+This is a separate clocked-consumer case: the earlier 240 MB/s link would still
+have **47.246145 MB/s** spare service at that faster arrival rate and would not
+accumulate a sustained backlog from this mismatch alone. A clock estimate and
+appropriate rate conversion, or a changed consumption contract, is needed for
+the fixed-rate stage; a finite FIFO alone cannot reconcile its clocks.
 
 ![A finite queue can absorb a specified outage while an overloaded packing choice inevitably loses data. Arithmetic capacity, coefficient storage and CDC remain additional obligations.](figures/processing-queues-resources.svg){#fig-processing-queues-resources fig-alt="Continuous converter input crosses a processing FIFO into a packet link. A finite-capacity queue plot compares packed and padded component formats during a half-millisecond outage. Text records arithmetic demand, coefficient-table memory and the need for qualified clock-domain crossing."}
 

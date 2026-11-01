@@ -46,12 +46,34 @@ separates remote epoch, rate, phase, path ambiguity and evidence age. Their
 worked calculations compare conditional alternatives and identify the component,
 calibration and operating-state evidence needed before hardware decisions.
 
-Bounded canonical treatments now extend through Chapter 16, with Chapter 13
+[Sampling and converter feasibility](sampling-converter-feasibility.qmd) then
+reconciles the admitted analog waveform with rate, driver, clock, quantization
+and recovery limits. Its declared alternate lower-side frequency plan preserves
+the earlier conversion signs without replacing the original high-side design.
+[Quadrature and conjugate-response fidelity](quadrature-conjugate-fidelity.qmd)
+uses identified training to preserve both frequency signs and genuine near-DC
+information, then challenges the correction with changed level and state.
+[Multirate processing and finite resources](multirate-finite-resources.qmd)
+realizes a bounded NCO, filter, decimator and fractional resampler with explicit
+sample epochs, words, state and transport obligations. Its numerical comparisons
+start from the same converter words; they cannot repair previously lost analog
+information. A remote resampler uses a separately established clock relation;
+aligned baseband samples do not by themselves establish RF phase coherence.
+
+The progression is from a defined observable through conditional source/path
+budgets to subsystem interfaces and an executed processing reference. It supports
+rejection of infeasible alternatives and states what an engineer must measure or
+obtain from qualified component and platform evidence. The examples do not supply
+a reconciled, validated complete receiver. Actual real-time hardware scheduling,
+calibration procedures and full startup/retune/recovery integration remain outside
+these bounded demonstrations.
+
+Bounded canonical treatments now extend through Chapter 19, with Chapter 13
 explicitly reserved and undeveloped. Its calibration observability and operational
 metrology procedures remain necessary external inputs to these supplied-envelope
 examples. The publishing demonstration and relative-phase pilot are grouped as
 **development supplements**; their temporary rendered chapter numbers are outside
-the accepted canonical sequence and do not supply Chapters 17–18. The reserved
+the accepted canonical sequence and do not supply canonical Chapters 20–21. The reserved
 slot preserves chapter destinations without claiming a complete reading path or
 complete planned chapters.
 

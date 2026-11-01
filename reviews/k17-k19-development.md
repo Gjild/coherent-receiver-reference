@@ -338,3 +338,91 @@ Connected fresh read-only Sol/high packet367hashes/20actualPNGs contains only
 verbatim bounded accepted requirement excerpts with original full-file hashes,
 not planning status/assessment sections. It separately challenges the connected
 progression and final K19 corrections. Findings/dispositions remain pending below.
+
+### Connected AI findings and author dispositions
+
+Fresh connected Sol/high read-only review exits0,367/367hashes before/after,
+20actualPNGs and21sampledtests. Only filename-level standards exposure; no status,
+history, prior assessment, original tree or connectors consulted. Verbatim full
+source hashes in excerpts were not independently authenticated against originals
+by the reviewer; managing-author baseline verification preserves accepted bytes.
+Fresh review confirms K19 supplement/phase/logscale corrections without prior
+findings supplied, closing the earlier targeted exposure limitation for those
+conclusions. Tall chapter overviews do not imply unreadable small text was cleared;
+only the declared10readablecrops/3pathdiagrams/2correctedassets support detail claims.
+
+Connected assessment finds no consequential prerequisite, competing derivation or
+scope/physical-reference conflict across1–19. Independently checked asymmetric
+complete-wave timing and b(f)vsb(-f), trueDCorientation, finite18delay contribution,
+affineclockmapping and packetpeak. A100fsRMS10MHzperiodic timing component gives
+0.0341121degree retainedphase, exposing failure of independent-sample reasoning.
+All component/hardware/calibration/reader limits remain conditional as recorded.
+
+One medium finding:34second FIFO-fill statement omitted its nominal-rate consumer,
+while adjacent transport case supplies240MB/s service. Corrected19.4 explicitly
+introduces a distinct consumer fixed at16million pairframes/s (192.75MB/sbilling),
+with20ppmfasterproducer192.753855MB/s. Excess3855B/s fills131072Bheadroom in
+34.0005188sfluidtime. The240MB/s link instead retains47.246145MB/s spare and cannot
+accumulate sustained mismatch backlog alone. ExactFractionbalance plus independent
+one-second flow recurrence checks both cases (fixedq262142Bafter34s; linkq0).
+No earlier outage/packet/precision/figure calculation changes. All85figurebytes
+remain checked; fresh localHTML and actual1425x18642completepage plus4affected
+readablecrops opened. This supersedes the earlier19HTML-byte-equivalence statement:
+only the explicit flow paragraph changes; final fresh-page evidence is archived.
+Fresh connectedr read-only packet359hashes/7PNGs targets this correction and its
+engineering/visual context. Targeted findings/disposition remain pending below.
+
+Targeted connectedr Sol/high review exits0. Explicit fixed-consumer34.00s and
+surplus47.246145MB/s conditions independently confirmed; no high/medium target
+error. All7PNGs opened and4crops match fullpage.355permittedhashes match; reviewer
+leaves4standards entries unverified/unopened (359entrymanifest). Provenance read
+also encounters2nonfinalcapture metadata entries, excluded from conclusions;
+no author verdict/status/history or original tree exposure. A payload-onlyFIFO
+would give34.1333s, and a different packetized fasterproducer can overflow earlier;
+our text explicitly claims a header-billed fluid estimate, not such a deadline.
+
+Low graphical finding is corrected rather than left as approximate drawing:
+queue graph omitted the exact instant of emptying between packet arrivals,
+drawing across a short zero plateau; sharp joins extended misleadingly below0.
+packet_queue now inserts every intermediate drain-to-empty event. Only the local
+queue curves use rounded joins; shared plotting infrastructure/earlierfigures
+unchanged. First empty event5.363733333ms and zero through5.376ms are protected
+in the existing independently stepped packet-service test. ExactFractionevent
+checker updated by a separate route;6018K19vertices now verified (10additional
+points,12548newbatchvertices overall). Peak239216B and padded105056Bloss unchanged.
+103stdlib and21sampledchecks (13overlappingstdlib+8NumPy) pass. All85SVGs reproduce;
+155protectedbaselineentries match. Corrected actualqueuePNG and complete final
+1425x18642page/affectedcrop opened; zero plateaus and clean joins visible.
+Fresh focused queuefinal packet126hashes/5PNGs contains only currentmatching
+capture metadata, accepted verbatim excerpts and relevant model/test/pageassets.
+Final focused review pending; no new hardware/reader/source acceptance claim.
+
+Final queuefinal read-only Sol/high review exits0,126/126hashes verified. All5PNG
+rasters opened;3detailcrops match completepage and current capture hashes agree.
+Independent exact rational events reproduce all201packed/191paddedvertices within
+0.0005SVGunit, including10zero plateaus. Local round joins show no misleading
+negative/miter excursion. Equality/interior/no-service/alreadyempty challenges
+and existing packet-service test pass. All peak/loss/flow/resource numbers remain
+correct; no substantive numerical, geometry or visible-layout defect remains.
+Shortest plateaus are about2pixelsstandalone/1.3pagepixels, so their individual
+geometry is supported by exactvertexchecks as well as actualpixelinspection.
+Capture timestamps alone are not independent chronological authentication.
+Incidental exposure: original path strings in current metadata (not accessed),
+unrelated scientific diagram definitions in supplied helper (not run/assessed);
+no prior review/status/author conversation or external connector exposure.
+No human, physical, hardware, reader or original-source authentication claimed.
+
+## Bounded closeout
+
+K17–K19 and connected assessment complete as checked provisional teaching drafts.
+Final FIFO assumption and zero-event/round-join corrections follow K19 checkpoint
+14ebf75 and are included in the separate integration checkpoint. K17fdbe152 and
+K18ae285c1 manuscript bytes preserved. Final103stdlib+8NumPyrecord+19pilot tests
+pass (130selected, not wholepytest);85SVGs reproduce;12548newvertices checked;
+23HTMLpages/906locallinks/86imageuses pass. Fresh smoke, primary source notes,
+actualpixels, all completed/incomplete review provenance and limitations retained.
+No consequential disagreement, architecture conflict or owner decision blocks
+this bounded closeout. Conventional tick/narrow-layout/assistive/print polish,
+qualified hardware/source/calibration evidence and human specialist/reader review
+remain outside the achieved evidence. Both original untracked files retain exact
+hashes and remain unstaged/uncommitted. No push or publication; stop beforeK20.

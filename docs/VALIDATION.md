@@ -1,3 +1,67 @@
+# K17–K19 bounded authoring and integration checks — 2026-11-01
+
+Three bounded teaching units and 15 new reproducible figures occupy canonical
+Chapters 17–19. They remain checked provisional drafts, not complete chapters,
+validated hardware or human specialist/reader acceptance. Stop before K20.
+[Development, reviews and connected assessment](../reviews/k17-k19-development.md)
+records author dispositions separately from raw AI findings and frozen inputs.
+Unit checkpoints: K17 `fdbe152`, K18 `ae285c1`, K19 `14ebf75`.
+
+- Fresh documented private-pipe smoke and actual PNG inspection preceded
+  development. Browser sandbox and existing SVG/capture helpers retained;
+  Brave156.1.98.62, Node26.12.1, Quarto1.10.19. No installation or global changes.
+- 103 stdlib-discovery, eight NumPy record and 19 pilot unittest checks pass
+  (130 selected checks). Pilot invocation without engineering/src first fails
+  import; the explicit-path rerun passes. Fresh full pytest cannot start because
+  its module is absent; SciPy is also unavailable. This is not a complete pytest run.
+- All 85 SVGs regenerate byte-identically, including 70 pre-batch figures.
+  Independent formulations check 12,548 new plotted vertices within 0.000501 SVG
+  units. Bessel series/centered sums, exact integer/rational arithmetic, physical
+  quadrature/cubic residuals, interpolation moments and exact queue events supply
+  distinct checks. Model consistency does not establish component behavior.
+- Final local Quarto HTML render passes: 23 pages, 906 local links and 86 image
+  uses, with no structural errors. Actual standalone assets, complete unit pages
+  and overlapping readable crops were inspected by author and separate AI.
+  Final preface is1440×2200; Chapters17/18 are1425×12508/1425×10426. Their main
+  HTML bytes match checked unit inputs. Final Chapter19 was rendered and pixel-inspected again after the explicit
+  clocked-consumer clarification (page1425×18642); the final queue figure also has explicit drain-to-empty events and rounded
+  joins, independently checked and freshly pixel-inspected.
+- 155 protected baseline entries match, including accepted architecture/standards,
+  earlier manuscripts,70priorfigures and the two pre-existing untracked files.
+  K17/18 manuscript bytes also match their own unit checkpoints. Scaffold integrity
+  (13requiredpaths), source control-byte checks and Git whitespace checks pass.
+- Primary examination is claim-specific in converter-feasibility,
+  quadrature-fidelity and multirate-realization source notes. Hypothetical driver,
+  converter, clock and processor envelopes are not manufacturer guarantees.
+  Historical FIR-core documentation and transmitter-only evidence retain their
+  explicit limits. AI reviewers access supplied notes, not authenticated originals.
+- Fresh enforced-read-only Sol/high technical/pixel reviews and targeted
+  reassessments are archived. One usage-limit invocation is incomplete. Corrected
+  findings concern dither covariance/overload wording and signed skew checking;
+  rotating-tone f=0 versus actual DC plus record regression; supplement numbering,
+  sampled phase annotation and logarithmic scale. One targeted invocation reports
+  incidental prior-status exposure; fresh connected review receives only verbatim
+  accepted excerpts and also reassesses final K19 corrections. It identifies
+  one additional missing operating condition: the34second FIFO drift example
+  needs a fixed nominal-rate consumer. The revised text separates that case
+  from the surplus240MB/s service, with fresh numerical/pixel reassessment.
+  That reassessment identifies a low-severity queue-path omission; explicit
+  empty events and local rounded joins correct it without changing peak/loss
+  decisions. The focused final packet contains only current capture metadata.
+
+Remaining evidence: actual device loading/nonlinearity/noise/jitter/state and
+calibration/blank transfer; qualified clock estimates and RF phase anchors;
+positive hardware schedules, routed timing, CDC and sustained interfaces;
+streaming retune/rate/coefficient/loss validity; whole-receiver budget closure;
+independent specialist/reader evidence and untested formats/accessibility.
+The measured host timing is software execution only and rejects this unoptimized
+reference for128MS/s; hypothetical MAC capacity does not establish FPGA feasibility.
+No physical receiver measurements, push, external publication or human acceptance.
+The preserved book/.gitignore and empty book/index.toc remain unstaged/untracked;
+OS ownership and apparent purpose do not establish their creator/intended disposition.
+
+---
+
 # K14–K16 bounded authoring and integration checks — 2026-10-31
 
 Three bounded treatments and 12 new figures occupy canonical Chapters 14–16.

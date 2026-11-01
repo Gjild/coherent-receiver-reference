@@ -1,0 +1,1 @@
+/usr/bin/node /home/miba/Projects/coherent-receiver-reference/scripts/visual_capture.mjs /usr/bin/brave file:///tmp/k1719-smoke/smoke.html /tmp/k1719-smoke 1000 700 3000

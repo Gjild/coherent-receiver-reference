@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1350" role="img" aria-labelledby="title desc"><title id="title">Preserve analog information before the sample identity enters a pipeline</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Preserve analog information before the sample identity enters a pipeline</text>
+<rect x="35" y="105" width="185" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="127.5" y="130" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Analog mask</text>
+<text x="127.5" y="155" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">all admitted bands</text>
+<path d="M220.000,150.000 L270.000,150.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="270" y="105" width="185" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="362.5" y="130" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Driver / load</text>
+<text x="362.5" y="155" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">differential pins</text>
+<path d="M455.000,150.000 L505.000,150.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="505" y="105" width="185" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="597.5" y="130" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Aperture n</text>
+<text x="597.5" y="155" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">epoch + state</text>
+<path d="M690.000,150.000 L740.000,150.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="740" y="105" width="185" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="832.5" y="130" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Pipeline / link</text>
+<text x="832.5" y="155" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">word identity n</text>
+<text x="45" y="245" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Alternate lower-side plan: RF 1000 / 1010 / 1020 MHz − LO 980 MHz → IF 20 / 30 / 40 MHz.</text>
+<text x="45" y="290" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Wanted band 18–22 MHz; 108 MHz disturbance is specified at the analog mask input.</text>
+<rect x="40" y="355" width="245" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="162.5" y="380" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Fs = 128 MS/s</text>
+<text x="162.5" y="405" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">real sample spectrum</text>
+<rect x="370" y="355" width="225" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="482.5" y="380" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Analog 108 MHz</text>
+<text x="482.5" y="405" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">108 − 128 MHz</text>
+<rect x="670" y="355" width="245" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="792.5" y="380" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">−20 MHz</text>
+<text x="792.5" y="405" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">overlaps wanted mirror</text>
+<path d="M285.000,397.000 L370.000,397.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M595.000,397.000 L670.000,397.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="45" y="485" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Positive analog image bands mapping onto wanted: 106–110 and 146–150 MHz.</text>
+<rect x="40" y="570" width="245" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="162.5" y="595" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Fs = 160 MS/s</text>
+<text x="162.5" y="620" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">real sample spectrum</text>
+<rect x="370" y="570" width="225" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="482.5" y="595" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Analog 108 MHz</text>
+<text x="482.5" y="620" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">108 − 160 MHz</text>
+<rect x="670" y="570" width="245" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="792.5" y="595" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">−52 MHz</text>
+<text x="792.5" y="620" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">outside wanted</text>
+<path d="M285.000,612.000 L370.000,612.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M595.000,612.000 L670.000,612.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="45" y="700" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Positive analog image bands mapping onto wanted: 138–142 and 178–182 MHz.</text>
+<rect x="40" y="790" width="420" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="250.0" y="815" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">32 MS/s: 18–22 → −14 to −10 MHz</text>
+<text x="250.0" y="840" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Band and conjugate mirror stay separate</text>
+<rect x="505" y="790" width="420" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="715.0" y="815" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">40 MS/s: 18 and 22 MHz collide</text>
+<text x="715.0" y="840" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">20 MHz at Nyquist loses quadrature</text>
+<text x="45" y="950" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">At 128 MS/s a B-sized coherent alias needs ≥102.142 dB complete analog rejection.</text>
+<text x="45" y="1010" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">A different rate moves this blocker, while changing every image/noise/clock/data interface.</text>
+<text x="45" y="1070" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">The 30/40 MHz blockers can be filtered later, but already create slope and nonlinear errors.</text>
+<text x="45" y="1130" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">An ADC input is not the old 50 Ω power plane: matching, gain and loading must be reconciled.</text>
+<text x="45" y="1195" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Pipeline latency and packet delivery describe data age, not a new aperture event.</text>
+<text x="45" y="1260" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">All rejection / driver / converter envelopes here are supplied assumptions.</text>
+<text x="32" y="1336" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

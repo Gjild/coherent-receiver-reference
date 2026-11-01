@@ -1,3 +1,23 @@
+# Active batch — K17–K19 bounded development (2026-11-01)
+
+The owner authorizes sequential K17, K18 and K19a/b in canonical Chapters17–19,
+their connected assessment and safe local Git checkpoints. This supersedes the
+older stopping entries below for this bounded batch only. Stop before K20;
+no accepted architecture change, push, external publication or human acceptance.
+
+Fresh documented smoke succeeds and actual PNG is inspected before authoring.
+Both pre-existing untracked book/.gitignore and book/index.toc remain untouched,
+unstaged and outside commits; their exact creator/intended disposition is not
+established. Their known status/purpose and baseline hashes are recorded in
+reviews/k17-k19-development.md and reviews/k17-k19-evidence/.
+
+K17 completes as a checked provisional teaching draft: five figures, six meaningful
+new tests, fresh technical/pixel review and targeted reassessment. No material
+open finding. Current unit: K18 quadrature/conjugate fidelity, canonical Chapter18
+and CAP019; exact specification/prerequisites read. Follow the same full gate.
+
+---
+
 # Completed batch — K14–K16 bounded development (2026-10-31)
 
 The owner-authorized sequential K14, K15a/b and K16 treatments and connected

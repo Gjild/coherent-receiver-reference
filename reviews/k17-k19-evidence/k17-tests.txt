@@ -1,0 +1,11 @@
+test_dither_by_explicit_threshold_interval_integration (test_sampled_models_stdlib.ConverterModels.test_dither_by_explicit_threshold_interval_integration) ... ok
+test_driver_by_numerical_rc_step_and_power_noise_bound (test_sampled_models_stdlib.ConverterModels.test_driver_by_numerical_rc_step_and_power_noise_bound) ... ok
+test_quantized_period_repetition_and_subcode_erasure (test_sampled_models_stdlib.ConverterModels.test_quantized_period_repetition_and_subcode_erasure) ... ok
+test_range_and_real_alias_orientation (test_sampled_models_stdlib.ConverterModels.test_range_and_real_alias_orientation) ... ok
+test_real_alternating_aperture_image_and_skew_sign (test_sampled_models_stdlib.ConverterModels.test_real_alternating_aperture_image_and_skew_sign) ... ok
+test_timing_from_physical_weights_and_exact_time_shift (test_sampled_models_stdlib.ConverterModels.test_timing_from_physical_weights_and_exact_time_shift) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.022s
+
+OK

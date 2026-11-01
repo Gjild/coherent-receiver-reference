@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 0.414,
+  "source": "/tmp/k1719-smoke/smoke.html",
+  "source_sha256": "74c488fbec3b7d97bf4208b005291ab0e79894d487442aab540c335ad99117ac",
+  "backend": "pipe",
+  "viewport": [
+    1000,
+    700
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    1000,
+    700
+  ],
+  "image_sha256": "f28084e8baa85aa543e7179f6009083610ffed7a4c8e2a722769dbb96e9ac565"
+}

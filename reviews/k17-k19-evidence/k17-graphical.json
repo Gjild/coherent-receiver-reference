@@ -1,0 +1,106 @@
+{
+  "reproduced": 5,
+  "checks": [
+    {
+      "figure": "converter-timing-observable",
+      "vertices": 241,
+      "error_px": 0.0004973050816658997
+    },
+    {
+      "figure": "converter-timing-observable",
+      "vertices": 241,
+      "error_px": 0.0003518709280569965
+    },
+    {
+      "figure": "converter-timing-observable",
+      "vertices": 241,
+      "error_px": 0.000498317291658168
+    },
+    {
+      "figure": "converter-timing-observable",
+      "vertices": 241,
+      "error_px": 0.0004982626487617381
+    },
+    {
+      "figure": "converter-timing-observable",
+      "vertices": 241,
+      "error_px": 5.684341886080802e-14
+    },
+    {
+      "figure": "converter-quantization",
+      "vertices": 6,
+      "error_px": 0.000285714285666927
+    },
+    {
+      "figure": "converter-quantization",
+      "vertices": 241,
+      "error_px": 0.00033333333337282056
+    },
+    {
+      "figure": "converter-quantization",
+      "vertices": 185,
+      "error_px": 0.0004994282691086482
+    },
+    {
+      "figure": "converter-quantization",
+      "vertices": 185,
+      "error_px": 0.0004994282691086482
+    },
+    {
+      "figure": "converter-quantization",
+      "vertices": 185,
+      "error_px": 0.0004996625410740307
+    },
+    {
+      "figure": "converter-quantization",
+      "vertices": 185,
+      "error_px": 0.0004998723758262713
+    },
+    {
+      "figure": "converter-interleaving",
+      "vertices": 241,
+      "error_px": 0.0004968229451378647
+    },
+    {
+      "figure": "converter-interleaving",
+      "vertices": 241,
+      "error_px": 5.684341886080802e-14
+    },
+    {
+      "figure": "converter-driver-range",
+      "vertices": 241,
+      "error_px": 0.0004970836508846332
+    },
+    {
+      "figure": "converter-driver-range",
+      "vertices": 241,
+      "error_px": 0.0004933475602229009
+    },
+    {
+      "figure": "converter-driver-range",
+      "vertices": 241,
+      "error_px": 2.2737367544323206e-13
+    },
+    {
+      "figure": "converter-driver-range",
+      "vertices": 241,
+      "error_px": 2.2737367544323206e-13
+    },
+    {
+      "figure": "converter-driver-range",
+      "vertices": 241,
+      "error_px": 0.0004959905447776691
+    },
+    {
+      "figure": "converter-driver-range",
+      "vertices": 241,
+      "error_px": 0.0004320180743206947
+    },
+    {
+      "figure": "converter-driver-range",
+      "vertices": 241,
+      "error_px": 6.516351345453586e-05
+    }
+  ],
+  "vertices": 4361
+}

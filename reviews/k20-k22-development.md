@@ -59,3 +59,59 @@ minor clarifications will also be supplied to the connected review. AI scrutiny
 is separately contextualized, not independent human specialist validation. Requested
 Sol/high identity is CLI configuration, not independently authenticated backend.
 K20 is a checked provisional bounded draft, not full chapter/capability completion.
+
+## K21 bounded purpose and author checks
+
+K20 checkpoint a534013. K21a develops observable receiver/fixture/source factors,
+constant-offset projection versus synchronous leakage and omitted field/sensor
+paths in13.1. K21b/c in23 execute finite causal correction, independently evaluate
+band/modulated/DC/gain/echo conditions and reading/reference uncertainty, then
+intersect cadence/age/downtime and wanted/nuisance transfer.21/22are reserved
+canonical slots only, not K23/K24 development.23uses supplied metrology/state/
+environment contracts pending K22's earlier reading prerequisite in13.2–4.
+
+Primary Kast2025 original NIST manuscript and ILAC/OIMLD10:2022 passages examined;
+exact scope and non-imported hardware claims in calibration-procedure source note.
+Numerical fixture: nominal heldout integer record0.0367520%, grid0.0381377%;
+changedgain3.61951%, changedecho7.52319%. Constraint on real echo increases training
+residual0.0036276%→0.0072475%; discarded imaginary parameter explicitly recorded.
+First-order reading contribution0.0095094% versus common fixture0.22361%; no
+independent frequency averaging of that shared knowledge error. Independent
+phase-difference fit and finite-difference sensitivity tests pass. Three foundation
+and three record tests added,110stdlib+13NumPyselectedchecks pass. Earlier19pilot
+checks remain passed.93SVGs reproduce,175protectedbaselineentriesmatch;
+3856newcurvevertices independently checked.27HTMLpages/1138locallinks/94imageuses,
+no structural errors. Author independently checks connectivity and opens all four
+actual assets, complete13.1/23pages and all ten overlapping readable crops through
+bottom navigation. Downtime log scale improves feasibility-readability before review.
+Fresh17PNG frozen read-only review is pending; no K22 manuscript development yet.
+
+K21 initial review verifies365hashes,17actualPNGs and3856vertices, but identifies a
+medium gap: operational records omit nonzero raw offset handling. Author adds a
+separate1024-sample known-zero acquisition with unchanged loading/state as explicit
+contract, subtracts its independently estimated offset and propagates0.625μVRMS
+through the DC coefficient sum (about1.736μV). Retained DC is tested without
+science-mean subtraction. Revised heldout error0.0367707%; unremoved offset gives
+129.464%. Calibration phasor-readout bias is distinguished from raw sample offset.
+
+Also corrected: fixture-omitted unconstrained6.5886% versus selected46.1345%,
+a=1.64858 outside selected inverse domain; exact |QH/T| scaling of two common
+fixture latent errors gives0.223878%; explicit swap sign/phase-branch ambiguity;
+actual typeset subscripts/superscripts in measurement diagram. Underlying continuous
+filter sensitivity is distinguished from finite coefficient rounding. Fresh final
+full pages/asset/crops inspected and frozen343files,17PNGs for reassessment.
+
+Exposure: initial K21 reviewer reports ancillary earlier source notes containing
+prior examination/review-status metadata. No excluded separate review/history/status
+or preface document opened; reviewer says it excluded metadata from evidence.
+Fresh reassessment packet excludes unrelated source notes and supplies no author
+verdict or initial findings. Await its result before K22 development.
+
+Fresh K21 reassessment:343/343hashes,17actualPNGs, no prohibited exposure and no
+remaining material bounded-scope defect. Independent4096sample integer reference,
+ratio/fit nonlinear simulations, fixture latent perturbations and cadence/transfer
+checks confirm corrected results. Exact raw findings and managing-author dispositions
+remain separate. Author final regression110stdlib+13NumPychecks passes;93SVGs
+reproduce,175protectedentriesmatch,3856verticescheck;27HTMLpages/1138links/94images
+have no structural errors. K21 provisional closeout does not complete whole chapters,
+hardware feasibility, human specialist/reader evidence or capability compliance.

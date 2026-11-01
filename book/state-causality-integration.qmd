@@ -1,0 +1,5 @@
+# State causality, integration and diagnosis
+
+This canonical destination is reserved for later authorized development. It does
+not yet supply a transition, integration or diagnostic method. Earlier bounded
+examples use explicitly supplied state contracts.

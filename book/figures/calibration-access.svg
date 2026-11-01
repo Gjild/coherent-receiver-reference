@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 850" role="img" aria-labelledby="title desc"><title id="title">The injection plane determines which response is observable</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">The injection plane determines which response is observable</text>
+<rect x="40" y="110" width="200" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="140.0" y="135" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Incident field</text>
+<text x="140.0" y="160" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">external path Aᵢ</text>
+<rect x="380" y="110" width="200" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="480.0" y="135" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Loaded input Pᵢ</text>
+<text x="480.0" y="160" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">receiver Hᵢ</text>
+<rect x="710" y="110" width="200" height="85" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="810.0" y="135" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Complex output</text>
+<text x="810.0" y="160" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Yᵢ</text>
+<path d="M240.000,152.000 L380.000,152.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M580.000,152.000 L710.000,152.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="240" y="350" width="290" height="90" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="385.0" y="375" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Probe source S cₖ</text>
+<text x="385.0" y="400" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">fixture Pᵢᶜᵃˡ</text>
+<path d="M385.000,350.000 L385.000,275.000 L350.000,275.000 L350.000,152.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="40" y="510" font-family="sans-serif" font-size="24" fill="#182f3e" text-anchor="start">Yᵢₖ = Hᵢ Pᵢᶜᵃˡ S cₖ + bᵢ + nᵢₖ</text>
+<text x="40" y="575" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Phase cycling separates a constant offset bᵢ, not synchronous leakage.</text>
+<text x="40" y="630" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Ratios remove common S; differential fixture response remains.</text>
+<text x="40" y="685" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">External field/sensor path Aᵢ is bypassed by this electronic injection.</text>
+<text x="40" y="740" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Known output products do not uniquely identify their unknown factors.</text>
+<text x="32" y="836" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

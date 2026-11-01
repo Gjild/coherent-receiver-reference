@@ -1,0 +1,34 @@
+{
+  "offset_est": [
+    0.0029999209367530285,
+    -0.0010000765808466732
+  ],
+  "offset_error": [
+    -7.906324697151343e-08,
+    -7.658084667317225e-08
+  ],
+  "unremoved_record_error": 1.29463949820969,
+  "g": [
+    0.8971074156450413,
+    0.07184002059514494
+  ],
+  "a": 0.6000034163087472,
+  "training_relative_fit": 3.6275946873628354e-05,
+  "discarded_echo_imag": -3.307588855946531e-05,
+  "constrained_training_relative_fit": 7.2474716155198e-05,
+  "heldout_integer_relative_error": 0.00036770734377569383,
+  "swept_error": {
+    "nominal": 0.00038137678351918617,
+    "gain changed": 0.03619510342538388,
+    "echo changed": 0.07523187355238867
+  },
+  "noise_energy": 1.9291133741962183,
+  "maxpartial": 21882340682,
+  "dc_gain": [
+    0.9997844696044922,
+    4.768371582031249e-05
+  ],
+  "fixture_omitted_fit": 0.06588556055874353,
+  "fixture_omitted_selected_fit": 0.4613445564116051,
+  "fixture_omitted_a": 1.6485788057915551
+}

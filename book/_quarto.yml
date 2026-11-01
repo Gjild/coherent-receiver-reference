@@ -27,6 +27,9 @@ book:
     - quadrature-conjugate-fidelity.qmd
     - multirate-finite-resources.qmd
     - complex-response-alignment.qmd
+    - state-causality-integration.qmd
+    - physical-environmental-engineering.qmd
+    - calibration-procedures-coherence.qmd
     - part: "Development supplements"
       chapters:
         - publishing-pilot.qmd

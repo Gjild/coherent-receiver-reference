@@ -1,0 +1,86 @@
+{
+  "figures": 4,
+  "vertices": 3856,
+  "checks": [
+    {
+      "figure": "calibration-heldout",
+      "vertices": 241,
+      "error_px": 0.0004980049576488454
+    },
+    {
+      "figure": "calibration-heldout",
+      "vertices": 241,
+      "error_px": 0.0004983750503697593
+    },
+    {
+      "figure": "calibration-heldout",
+      "vertices": 241,
+      "error_px": 0.0004973038929279028
+    },
+    {
+      "figure": "calibration-heldout",
+      "vertices": 241,
+      "error_px": 5.684341886080802e-14
+    },
+    {
+      "figure": "calibration-heldout",
+      "vertices": 241,
+      "error_px": 0.0004994815398049468
+    },
+    {
+      "figure": "calibration-heldout",
+      "vertices": 241,
+      "error_px": 7.199231993126887e-05
+    },
+    {
+      "figure": "calibration-cadence",
+      "vertices": 241,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "calibration-cadence",
+      "vertices": 241,
+      "error_px": 0.00048061791625286787
+    },
+    {
+      "figure": "calibration-cadence",
+      "vertices": 241,
+      "error_px": 0.00033333333334439885
+    },
+    {
+      "figure": "calibration-cadence",
+      "vertices": 241,
+      "error_px": 0.0004994652933874022
+    },
+    {
+      "figure": "calibration-cadence",
+      "vertices": 241,
+      "error_px": 0.0004973135829686726
+    },
+    {
+      "figure": "calibration-cadence",
+      "vertices": 241,
+      "error_px": 0.00036805264699069085
+    },
+    {
+      "figure": "calibration-wanted",
+      "vertices": 241,
+      "error_px": 0.0004983625832153393
+    },
+    {
+      "figure": "calibration-wanted",
+      "vertices": 241,
+      "error_px": 0.00028571428569534874
+    },
+    {
+      "figure": "calibration-wanted",
+      "vertices": 241,
+      "error_px": 0.0004982735656824389
+    },
+    {
+      "figure": "calibration-wanted",
+      "vertices": 241,
+      "error_px": 0.0004983625831300742
+    }
+  ]
+}

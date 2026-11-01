@@ -1,0 +1,5 @@
+# Physical and environmental engineering
+
+This canonical destination is reserved for later authorized development. It does
+not yet supply physical layout or environmental realization methods. Supplied
+sensitivities in earlier examples require actual supporting device/path evidence.

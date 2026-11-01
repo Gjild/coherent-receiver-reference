@@ -16,7 +16,8 @@ Fresh documented private-pipe smoke succeeds and its actual PNG is inspected
 before manuscript development. Pre-existing untracked book/.gitignore and
 book/index.toc remain untouched, unstaged/uncommitted; original hashes preserved.
 K20 is complete as a checked provisional bounded alignment/inverse-feasibility draft.
-Current unit: K21a/b/c, calibration freedoms, executable procedure and maintenance. Exact accepted
+K21a/b/c is complete as a checked provisional bounded draft in13.1 and23.
+Current unit: K22, operational measurement equations, uncertainty and independent configurations in13.2–4. Exact accepted
 specifications, prerequisites, capabilities and chapter cards govern scope.
 
 ---

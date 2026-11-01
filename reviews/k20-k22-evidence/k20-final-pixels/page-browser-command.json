@@ -1,0 +1,10 @@
+{
+  "browser": "/usr/bin/brave",
+  "args": [
+    "--headless",
+    "--remote-debugging-pipe",
+    "--user-data-dir=/tmp/k20dp/profile",
+    "--window-size=1425,2200",
+    "about:blank"
+  ]
+}

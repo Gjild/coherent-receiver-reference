@@ -1,0 +1,76 @@
+{
+  "figures": 4,
+  "vertices": 2198,
+  "checks": [
+    {
+      "figure": "alignment-phase-access",
+      "vertices": 241,
+      "error_px": 0.0004996544341793197
+    },
+    {
+      "figure": "alignment-phase-access",
+      "vertices": 241,
+      "error_px": 0.0004996544341793197
+    },
+    {
+      "figure": "alignment-phase-access",
+      "vertices": 241,
+      "error_px": 0.0004978081146873592
+    },
+    {
+      "figure": "alignment-phase-access",
+      "vertices": 241,
+      "error_px": 0.0004831695997609131
+    },
+    {
+      "figure": "alignment-latency-residual",
+      "vertices": 45,
+      "error_px": 0.0004938248104906506
+    },
+    {
+      "figure": "alignment-latency-residual",
+      "vertices": 45,
+      "error_px": 0.0004976940263645702
+    },
+    {
+      "figure": "alignment-latency-residual",
+      "vertices": 45,
+      "error_px": 0.00045454545457346285
+    },
+    {
+      "figure": "alignment-latency-residual",
+      "vertices": 45,
+      "error_px": 0.00045454545457346285
+    },
+    {
+      "figure": "alignment-latency-residual",
+      "vertices": 45,
+      "error_px": 0.00045454545457346285
+    },
+    {
+      "figure": "alignment-latency-residual",
+      "vertices": 45,
+      "error_px": 0.00045454545457346285
+    },
+    {
+      "figure": "alignment-null-noise",
+      "vertices": 241,
+      "error_px": 0.000498851386566912
+    },
+    {
+      "figure": "alignment-null-noise",
+      "vertices": 241,
+      "error_px": 2.2737367544323206e-13
+    },
+    {
+      "figure": "alignment-null-noise",
+      "vertices": 241,
+      "error_px": 0.0004977345668066846
+    },
+    {
+      "figure": "alignment-null-noise",
+      "vertices": 241,
+      "error_px": 0.0004995551449837876
+    }
+  ]
+}

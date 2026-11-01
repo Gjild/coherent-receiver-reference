@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1090" role="img" aria-labelledby="title desc"><title id="title">Finite inverse length trades residual against permissible delay</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Finite inverse length trades residual against permissible delay</text>
+<text x="100" y="70" font-family="sans-serif" font-size="20" fill="#182f3e" text-anchor="start">Exact residual magnitude: a^L inside; a^(−P) outside</text>
+<path d="M100.000,162.000 L100.000,357.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,357.000 L880.000,357.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="100.0" y="382" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">4</text>
+<text x="88" y="363.0" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">1e-11</text>
+<path d="M295.000,162.000 L295.000,357.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,308.250 L880.000,308.250" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="295.0" y="382" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">15</text>
+<text x="88" y="314.25" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">5.62e-09</text>
+<path d="M490.000,162.000 L490.000,357.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,259.500 L880.000,259.500" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="490.0" y="382" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">26</text>
+<text x="88" y="265.5" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">3.16e-06</text>
+<path d="M685.000,162.000 L685.000,357.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,210.750 L880.000,210.750" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="685.0" y="382" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">37</text>
+<text x="88" y="216.75" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">0.00178</text>
+<path d="M880.000,162.000 L880.000,357.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,162.000 L880.000,162.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="880.0" y="382" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">48</text>
+<text x="88" y="168.0" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">1</text>
+<path d="M100.000,162.000 L100.000,357.000 L880.000,357.000" fill="none" stroke="#263c49" stroke-width="1.5" stroke-dasharray=""/>
+<text x="100" y="150" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Complex response error magnitude (log scale)</text>
+<text x="490.0" y="412" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Number of inverse taps</text>
+<path d="M100.000,90.000 L125.000,90.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray=""/>
+<text x="133" y="95" font-family="sans-serif" font-size="16" fill="#125b86" text-anchor="start">a=0.6, causal truncated inverse</text>
+<path d="M100.000,177.731 L117.727,181.664 L135.455,185.597 L153.182,189.529 L170.909,193.462 L188.636,197.395 L206.364,201.328 L224.091,205.261 L241.818,209.193 L259.545,213.126 L277.273,217.059 L295.000,220.992 L312.727,224.924 L330.455,228.857 L348.182,232.790 L365.909,236.723 L383.636,240.655 L401.364,244.588 L419.091,248.521 L436.818,252.454 L454.545,256.387 L472.273,260.319 L490.000,264.252 L507.727,268.185 L525.455,272.118 L543.182,276.050 L560.909,279.983 L578.636,283.916 L596.364,287.849 L614.091,291.782 L631.818,295.714 L649.545,299.647 L667.273,303.580 L685.000,307.513 L702.727,311.445 L720.455,315.378 L738.182,319.311 L755.909,323.244 L773.636,327.176 L791.364,331.109 L809.091,335.042 L826.818,338.975 L844.545,342.908 L862.273,346.840 L880.000,350.773" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray=""/>
+<path d="M500.000,90.000 L525.000,90.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="8 4"/>
+<text x="533" y="95" font-family="sans-serif" font-size="16" fill="#b34719" text-anchor="start">a=1.25, delayed future-data approximation</text>
+<path d="M100.000,168.872 L117.727,170.590 L135.455,172.308 L153.182,174.026 L170.909,175.744 L188.636,177.462 L206.364,179.180 L224.091,180.897 L241.818,182.615 L259.545,184.333 L277.273,186.051 L295.000,187.769 L312.727,189.487 L330.455,191.205 L348.182,192.923 L365.909,194.641 L383.636,196.359 L401.364,198.077 L419.091,199.795 L436.818,201.513 L454.545,203.231 L472.273,204.949 L490.000,206.667 L507.727,208.385 L525.455,210.103 L543.182,211.821 L560.909,213.539 L578.636,215.256 L596.364,216.974 L614.091,218.692 L631.818,220.410 L649.545,222.128 L667.273,223.846 L685.000,225.564 L702.727,227.282 L720.455,229.000 L738.182,230.718 L755.909,232.436 L773.636,234.154 L791.364,235.872 L809.091,237.590 L826.818,239.308 L844.545,241.026 L862.273,242.744 L880.000,244.462" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="8 4"/>
+<path d="M100.000,112.000 L125.000,112.000" fill="none" stroke="#237550" stroke-width="2.8" stroke-dasharray="3 4"/>
+<text x="133" y="117" font-family="sans-serif" font-size="16" fill="#237550" text-anchor="start">illustrative 0.1% response limit</text>
+<path d="M100.000,215.182 L117.727,215.182 L135.455,215.182 L153.182,215.182 L170.909,215.182 L188.636,215.182 L206.364,215.182 L224.091,215.182 L241.818,215.182 L259.545,215.182 L277.273,215.182 L295.000,215.182 L312.727,215.182 L330.455,215.182 L348.182,215.182 L365.909,215.182 L383.636,215.182 L401.364,215.182 L419.091,215.182 L436.818,215.182 L454.545,215.182 L472.273,215.182 L490.000,215.182 L507.727,215.182 L525.455,215.182 L543.182,215.182 L560.909,215.182 L578.636,215.182 L596.364,215.182 L614.091,215.182 L631.818,215.182 L649.545,215.182 L667.273,215.182 L685.000,215.182 L702.727,215.182 L720.455,215.182 L738.182,215.182 L755.909,215.182 L773.636,215.182 L791.364,215.182 L809.091,215.182 L826.818,215.182 L844.545,215.182 L862.273,215.182 L880.000,215.182" fill="none" stroke="#237550" stroke-width="2.8" stroke-dasharray="3 4"/>
+<text x="100" y="520" font-family="sans-serif" font-size="20" fill="#182f3e" text-anchor="start">Target epoch delay includes the five-sample channel delay</text>
+<path d="M100.000,612.000 L100.000,807.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,807.000 L880.000,807.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="100.0" y="832" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">4</text>
+<text x="88" y="813.0" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">0</text>
+<path d="M295.000,612.000 L295.000,807.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,758.250 L880.000,758.250" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="295.0" y="832" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">15</text>
+<text x="88" y="764.25" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">0.875</text>
+<path d="M490.000,612.000 L490.000,807.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,709.500 L880.000,709.500" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="490.0" y="832" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">26</text>
+<text x="88" y="715.5" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">1.75</text>
+<path d="M685.000,612.000 L685.000,807.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,660.750 L880.000,660.750" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="685.0" y="832" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">37</text>
+<text x="88" y="666.75" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">2.62</text>
+<path d="M880.000,612.000 L880.000,807.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,612.000 L880.000,612.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="880.0" y="832" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">48</text>
+<text x="88" y="618.0" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">3.5</text>
+<path d="M100.000,612.000 L100.000,807.000 L880.000,807.000" fill="none" stroke="#263c49" stroke-width="1.5" stroke-dasharray=""/>
+<text x="100" y="600" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Common target delay (μs)</text>
+<text x="490.0" y="862" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Number of inverse taps</text>
+<path d="M100.000,540.000 L125.000,540.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray=""/>
+<text x="133" y="545" font-family="sans-serif" font-size="16" fill="#125b86" text-anchor="start">a=0.6: no extra preview</text>
+<path d="M100.000,789.589 L117.727,789.589 L135.455,789.589 L153.182,789.589 L170.909,789.589 L188.636,789.589 L206.364,789.589 L224.091,789.589 L241.818,789.589 L259.545,789.589 L277.273,789.589 L295.000,789.589 L312.727,789.589 L330.455,789.589 L348.182,789.589 L365.909,789.589 L383.636,789.589 L401.364,789.589 L419.091,789.589 L436.818,789.589 L454.545,789.589 L472.273,789.589 L490.000,789.589 L507.727,789.589 L525.455,789.589 L543.182,789.589 L560.909,789.589 L578.636,789.589 L596.364,789.589 L614.091,789.589 L631.818,789.589 L649.545,789.589 L667.273,789.589 L685.000,789.589 L702.727,789.589 L720.455,789.589 L738.182,789.589 L755.909,789.589 L773.636,789.589 L791.364,789.589 L809.091,789.589 L826.818,789.589 L844.545,789.589 L862.273,789.589 L880.000,789.589" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray=""/>
+<path d="M500.000,540.000 L525.000,540.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="8 4"/>
+<text x="533" y="545" font-family="sans-serif" font-size="16" fill="#b34719" text-anchor="start">a=1.25: P sample preview</text>
+<path d="M100.000,775.661 L117.727,772.179 L135.455,768.696 L153.182,765.214 L170.909,761.732 L188.636,758.250 L206.364,754.768 L224.091,751.286 L241.818,747.804 L259.545,744.321 L277.273,740.839 L295.000,737.357 L312.727,733.875 L330.455,730.393 L348.182,726.911 L365.909,723.429 L383.636,719.946 L401.364,716.464 L419.091,712.982 L436.818,709.500 L454.545,706.018 L472.273,702.536 L490.000,699.054 L507.727,695.571 L525.455,692.089 L543.182,688.607 L560.909,685.125 L578.636,681.643 L596.364,678.161 L614.091,674.679 L631.818,671.196 L649.545,667.714 L667.273,664.232 L685.000,660.750 L702.727,657.268 L720.455,653.786 L738.182,650.304 L755.909,646.821 L773.636,643.339 L791.364,639.857 L809.091,636.375 L826.818,632.893 L844.545,629.411 L862.273,625.929 L880.000,622.446" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="8 4"/>
+<path d="M100.000,562.000 L125.000,562.000" fill="none" stroke="#237550" stroke-width="2.8" stroke-dasharray="3 4"/>
+<text x="133" y="567" font-family="sans-serif" font-size="16" fill="#237550" text-anchor="start">illustrative 3 μs delay limit</text>
+<path d="M100.000,639.857 L117.727,639.857 L135.455,639.857 L153.182,639.857 L170.909,639.857 L188.636,639.857 L206.364,639.857 L224.091,639.857 L241.818,639.857 L259.545,639.857 L277.273,639.857 L295.000,639.857 L312.727,639.857 L330.455,639.857 L348.182,639.857 L365.909,639.857 L383.636,639.857 L401.364,639.857 L419.091,639.857 L436.818,639.857 L454.545,639.857 L472.273,639.857 L490.000,639.857 L507.727,639.857 L525.455,639.857 L543.182,639.857 L560.909,639.857 L578.636,639.857 L596.364,639.857 L614.091,639.857 L631.818,639.857 L649.545,639.857 L667.273,639.857 L685.000,639.857 L702.727,639.857 L720.455,639.857 L738.182,639.857 L755.909,639.857 L773.636,639.857 L791.364,639.857 L809.091,639.857 L826.818,639.857 L844.545,639.857 L862.273,639.857 L880.000,639.857" fill="none" stroke="#237550" stroke-width="2.8" stroke-dasharray="3 4"/>
+<text x="45" y="940" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Selected: L=16 inside (0.0282%); P=32 outside (0.0792%, 2.3125 μs).</text>
+<text x="45" y="995" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Finite-support and word checks still apply; these are not hardware latency measurements.</text>
+<text x="32" y="1076" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

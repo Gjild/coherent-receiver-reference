@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 0.414,
+  "source": "/home/miba/Projects/coherent-receiver-reference/book/figures/alignment-null-noise.svg",
+  "source_sha256": "2daeacabc2d445e8f1942f1964cb57f0c4603227875ce89d536107f10f298c5b",
+  "backend": "pipe",
+  "viewport": [
+    1200,
+    1500
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    1200,
+    1500
+  ],
+  "image_sha256": "502d21c10053241ede1dd210a67a5ffe6417ed58943cf4e5c217e377b2ab6986"
+}

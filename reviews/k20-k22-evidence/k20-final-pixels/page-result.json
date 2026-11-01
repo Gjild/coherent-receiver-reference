@@ -1,0 +1,18 @@
+{
+  "exit_status": 0,
+  "timed_out": false,
+  "seconds": 2.518,
+  "source": "/tmp/k2022/render20/book/_book/complex-response-alignment.html",
+  "source_sha256": "bd084161e45078573b46ba2add1b36a335287ea276f074a39f546e31256bef0a",
+  "backend": "pipe",
+  "viewport": [
+    1425,
+    2200
+  ],
+  "image_exists": true,
+  "image_dimensions": [
+    1410,
+    10435
+  ],
+  "image_sha256": "f7ffd6eeffbeb238818a1fbba7651ead827c91c9065bcc0c8d0c42632ab8527a"
+}

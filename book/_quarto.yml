@@ -26,6 +26,7 @@ book:
     - sampling-converter-feasibility.qmd
     - quadrature-conjugate-fidelity.qmd
     - multirate-finite-resources.qmd
+    - complex-response-alignment.qmd
     - part: "Development supplements"
       chapters:
         - publishing-pilot.qmd

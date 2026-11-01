@@ -1,3 +1,26 @@
+# Active batch — K20–K22 bounded development (2026-11-01)
+
+The owner authorizes sequential K20, K21a/b/c and K22, their connected assessment
+and safe local Git checkpoints. This supersedes the older stopping entry below
+for this batch only. Stop before K23; no architecture changes, external publishing,
+push or human acceptance. Treatment identifiers are not chapter numbers.
+
+Exact canonical destinations: K20 in Chapter20; K21a in Chapter13.1 and K21b/c
+in Chapter23; K22 in Chapter13.2–13.4. Authoring K21 before K22 does not reorder
+reading prerequisites: metrology in13 precedes procedure in23. Supplied uncertainty,
+state and environmental interfaces remain conditional until their canonical work.
+Do not develop K23 state causality or K24 physical realization; their canonical
+Chapters21/22 may need reserved slots to preserve Chapter23 numbering.
+
+Fresh documented private-pipe smoke succeeds and its actual PNG is inspected
+before manuscript development. Pre-existing untracked book/.gitignore and
+book/index.toc remain untouched, unstaged/uncommitted; original hashes preserved.
+K20 is complete as a checked provisional bounded alignment/inverse-feasibility draft.
+Current unit: K21a/b/c, calibration freedoms, executable procedure and maintenance. Exact accepted
+specifications, prerequisites, capabilities and chapter cards govern scope.
+
+---
+
 # Completed batch — K17–K19 bounded development (2026-11-01)
 
 The owner-authorized sequential K17, K18 and K19a/b treatments and connected

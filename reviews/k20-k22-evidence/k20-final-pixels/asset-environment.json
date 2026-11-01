@@ -1,0 +1,13 @@
+{
+  "DISPLAY": ":0",
+  "WAYLAND_DISPLAY": "wayland-1",
+  "XDG_RUNTIME_DIR": "/run/user/1000",
+  "XDG_CACHE_HOME": null,
+  "TMPDIR": null,
+  "inotify_instance_limit": "1024",
+  "inotify_watch_limit": "524288",
+  "unix_passcred": "OK",
+  "inotify_init": "OK",
+  "browser": "/usr/bin/brave",
+  "output": "/tmp/k20d3"
+}

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 950" role="img" aria-labelledby="title desc"><title id="title">Preserve channel access and distinguish noise injection planes</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Preserve channel access and distinguish noise injection planes</text>
+<rect x="40" y="120" width="120" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="100.0" y="145" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">s[n] + u[n]</text>
+<rect x="230" y="120" width="275" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="367.5" y="145" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">H_A = z^-2</text>
+<rect x="585" y="120" width="100" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="635.0" y="145" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">+ v_A</text>
+<rect x="755" y="120" width="170" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="840.0" y="145" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Q_A; target z^-D</text>
+<path d="M160.000,152.000 L230.000,152.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M505.000,152.000 L585.000,152.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M685.000,152.000 L755.000,152.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="40" y="320" width="120" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="100.0" y="345" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">s[n] + u[n]</text>
+<rect x="230" y="320" width="275" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="367.5" y="345" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">H_B = g z^-5 (1 − a z^-1)</text>
+<rect x="585" y="320" width="100" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="635.0" y="345" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">+ v_B</text>
+<rect x="755" y="320" width="170" height="65" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="840.0" y="345" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Q_B; target z^-D</text>
+<path d="M160.000,352.000 L230.000,352.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M505.000,352.000 L585.000,352.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M685.000,352.000 L755.000,352.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="245" y="530" width="590" height="95" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="540.0" y="555" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Retain separate complex data until alignment is justified</text>
+<text x="540.0" y="580" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Before-path noise u passes through H and Q</text>
+<text x="540.0" y="605" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">After-path noise v is multiplied by the inverse</text>
+<text x="45" y="720" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Same input is a supplied calibration/illumination model, not a universal array manifold.</text>
+<text x="45" y="775" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">An analog sum can erase a mode before digital correction has access to it.</text>
+<text x="45" y="830" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Reference planes, loading, state and admissible input range are part of H.</text>
+<text x="32" y="936" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

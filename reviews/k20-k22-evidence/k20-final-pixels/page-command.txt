@@ -1,0 +1,1 @@
+/usr/bin/node /home/miba/Projects/coherent-receiver-reference/scripts/visual_capture.mjs /usr/bin/brave file:///tmp/k2022/render20/book/_book/complex-response-alignment.html /tmp/k20dp 1425 2200 10000

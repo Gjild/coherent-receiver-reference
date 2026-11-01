@@ -1,0 +1,274 @@
+{
+  "reproduced": 6,
+  "vertices": 6008,
+  "checks": [
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 1037,
+      "error_px": 0.0005000000000023874
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 50,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 82,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 97,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 104,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 108,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 41,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 776,
+      "error_px": 0.0005000000000023874
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 25,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 37,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 46,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 51,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 54,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 55,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 56,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 56,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 56,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 55,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 55,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 54,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 54,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 51,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 703,
+      "error_px": 0.0005000000000023874
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 8,
+      "error_px": 0.0004912888658168413
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 14,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 15,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 19,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 23,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 25,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 26,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 25,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 23,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 21,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 18,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 14,
+      "error_px": 0.0004999999999881766
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 7,
+      "error_px": 0.00043749999997544364
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 2,
+      "error_px": 0.00012328767121516648
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 13,
+      "error_px": 0.0004948921090317526
+    },
+    {
+      "figure": "processing-filter-precision",
+      "vertices": 13,
+      "error_px": 9.090909088627086e-05
+    },
+    {
+      "figure": "processing-fractional-delay",
+      "vertices": 241,
+      "error_px": 0.0004987835992551481
+    },
+    {
+      "figure": "processing-fractional-delay",
+      "vertices": 241,
+      "error_px": 0.0004977663368492813
+    },
+    {
+      "figure": "processing-fractional-delay",
+      "vertices": 241,
+      "error_px": 0.0004938884183900427
+    },
+    {
+      "figure": "processing-fractional-delay",
+      "vertices": 241,
+      "error_px": 0.0004979404405958121
+    },
+    {
+      "figure": "processing-fractional-delay",
+      "vertices": 241,
+      "error_px": 0.0004933561382358675
+    },
+    {
+      "figure": "processing-fractional-delay",
+      "vertices": 241,
+      "error_px": 0.0004997348362394405
+    },
+    {
+      "figure": "processing-state-faults",
+      "vertices": 101,
+      "error_px": 0.00048039258837206944
+    },
+    {
+      "figure": "processing-state-faults",
+      "vertices": 101,
+      "error_px": 0.0004988591960284339
+    },
+    {
+      "figure": "processing-word-residuals",
+      "vertices": 7,
+      "error_px": 0.0004912650822745945
+    },
+    {
+      "figure": "processing-queues-resources",
+      "vertices": 191,
+      "error_px": 0.0004977678571549404
+    },
+    {
+      "figure": "processing-queues-resources",
+      "vertices": 191,
+      "error_px": 0.0003727678571294746
+    },
+    {
+      "figure": "processing-queues-resources",
+      "vertices": 2,
+      "error_px": 0.00028571428572377044
+    }
+  ],
+  "exact_lagrange_l1_polynomial": [
+    "1",
+    "11/6",
+    "-49/36",
+    "-11/12",
+    "7/18",
+    "1/12",
+    "-1/36",
+    "0"
+  ],
+  "l1_max": 1.48828125,
+  "packet_peak": 239216.0,
+  "padded_loss_bytes": 105056.0
+}

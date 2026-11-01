@@ -161,3 +161,45 @@ class QuadratureModels(unittest.TestCase):
             if k>=20000:acc+=(x-state)*cmath.exp(-2j*math.pi*f*k/fs);count+=1
         h=2*acc/count;continuous=1j*f/(100+1j*f)
         self.assertLess(abs(h-continuous)/abs(continuous),.002)
+
+
+class MultirateBasics(unittest.TestCase):
+    def test_fractional_polynomial_reproduction_and_rounding(self):
+        from fractions import Fraction
+        for mu in [.0,.13,.5,.68,1.]:
+            js,w=m.lagrange_weights(mu)
+            for power in range(8):
+                self.assertAlmostEqual(sum(a*j**power for j,a in zip(js,w)),mu**power,places=10)
+        for shift in [1,3,9]:
+            for v in range(-200,201):
+                self.assertEqual(m.round_shift(v,shift),round(Fraction(v,2**shift)))
+                self.assertEqual(m.round_shift(v,shift,True),math.floor(Fraction(v,2**shift)))
+
+    def test_integer_nco_retune_and_initial_phase(self):
+        from fractions import Fraction
+        fs=128000000;f=Fraction(2000012345,100);t=Fraction(1,100)
+        for b in [32,36,40]:
+            step=round(f*2**b/fs);exact=Fraction(step*fs,2**b)-f
+            self.assertLessEqual(abs(exact),Fraction(fs,2**(b+1)))
+            total=step*1280000
+            # End-state modulo accumulator vs desired phase; DDC has the opposite sign.
+            phase=-(Fraction(total,2**b)-f*t)*360
+            self.assertAlmostEqual(float(phase),-float(exact*t*360),places=14)
+            self.assertEqual(round(Fraction(20000000*2**b,fs))*fs,20000000*2**b)
+        self.assertGreater(abs(float((Fraction(round(f*2**32/fs)*fs,2**32)-f)*t*360)),.005)
+        self.assertLess(abs(float((Fraction(round(f*2**40/fs)*fs,2**40)-f)*t*360)),.005)
+
+    def test_packet_service_by_independent_one_microsecond_steps(self):
+        # A separate event discretization: release packets exactly on 64 us grid.
+        for unpacked in [False,True]:
+            q=131072.;lost=0.;peak=q;packet=16432 if unpacked else 12336
+            for us in range(6001):
+                if us>500:q=max(0,q-240.)
+                if us%64==0:
+                    q+=packet
+                    lost+=max(0,q-262144);q=min(q,262144);peak=max(peak,q)
+            history=m.packet_queue(unpacked=unpacked)
+            self.assertAlmostEqual(peak,max(v for _,v,_ in history),places=8)
+            self.assertAlmostEqual(lost,history[-1][2],places=8)
+            if unpacked:self.assertGreater(lost,0)
+            else:self.assertEqual(lost,0);self.assertEqual(peak,239216)

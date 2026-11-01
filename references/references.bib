@@ -324,3 +324,41 @@
   url = {https://docs.amd.com/r/en-US/pg269-rf-data-converter/Quadrature-Modulator-Correction},
   note = {Release 2025-05-29; examined 2026-11-01 section separating QMC correction from application-specific error detection. Not an estimator or qualification of the illustrative chain.}
 }
+
+@manual{adiMT085,
+  author = {{Analog Devices}},
+  title = {{MT-085: Fundamentals of Direct Digital Synthesis (DDS)}},
+  year = {2008},
+  edition = {Rev. 0, October},
+  url = {https://www.analog.com/media/en/training-seminars/tutorials/MT-085.pdf},
+  note = {Examined 2026-11-01 pp. 2--4: accumulator/tuning equation, phase/amplitude truncation and synchronized update. DDS/DAC spectra are not digital-mixer guarantees.}
+}
+
+@techreport{tiSLAA193,
+  author = {Kamath, Sunil and Siravara, Bharath and Gelabert, Pedro and Magotra, Neeraj},
+  title = {{Efficient Resampling Filters for the AIC111}},
+  institution = {Texas Instruments},
+  number = {SLAA193},
+  year = {2004},
+  month = {February},
+  url = {https://www.ti.com/lit/an/slaa193/slaa193.pdf},
+  note = {Examined 2026-11-01 pp. 3--4 and 8: integer-rate audio example and retained-output computation while storing all inputs. Not asynchronous-clock inference or RF platform evidence.}
+}
+
+@manual{xilinxPG149,
+  author = {{Xilinx}},
+  title = {{LogiCORE IP FIR Compiler v7.0 Product Guide}},
+  number = {PG149},
+  year = {2013},
+  month = {March},
+  url = {https://docs.amd.com/api/khub/documents/kEmF~wSgDRbjAEDvn55_BQ/content},
+  note = {Historical March 20 edition. Examined 2026-11-01 pp. 8--9, 16--19, 24--25, 61--68: configuration/resource limits, reset/history, handshake/metadata and finite-word choices. Does not qualify current cores.}
+}
+
+@online{amdFIRResources2026,
+  author = {{Advanced Micro Devices}},
+  title = {{Performance and Resource Utilization for FIR Compiler v7.2}},
+  year = {2026},
+  url = {https://download.amd.com/docnav/documents/ip_attachments/fir-compiler.html},
+  note = {Examined 2026-11-01, Vivado 2026.1 interpretation notes: isolated implementation conditions and limits on repeatability in a larger design. No listed test case imported as the receiver platform.}
+}

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1120" role="img" aria-labelledby="title desc"><title id="title">A plausible stream can carry the wrong coherent state</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">A plausible stream can carry the wrong coherent state</text>
+<text x="100" y="70" font-family="sans-serif" font-size="20" fill="#182f3e" text-anchor="start">No recovery correction applied: raw input gap is deliberately renumbered</text>
+<path d="M100.000,162.000 L100.000,357.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,357.000 L880.000,357.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="100.0" y="382" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">14</text>
+<text x="88" y="363.0" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">-180</text>
+<path d="M295.000,162.000 L295.000,357.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,308.250 L880.000,308.250" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="295.0" y="382" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">15.8</text>
+<text x="88" y="314.25" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">-90</text>
+<path d="M490.000,162.000 L490.000,357.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,259.500 L880.000,259.500" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="490.0" y="382" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">17.5</text>
+<text x="88" y="265.5" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">0</text>
+<path d="M685.000,162.000 L685.000,357.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,210.750 L880.000,210.750" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="685.0" y="382" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">19.2</text>
+<text x="88" y="216.75" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">90</text>
+<path d="M880.000,162.000 L880.000,357.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,162.000 L880.000,162.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="880.0" y="382" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">21</text>
+<text x="88" y="168.0" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">180</text>
+<path d="M100.000,162.000 L100.000,357.000 L880.000,357.000" fill="none" stroke="#263c49" stroke-width="1.5" stroke-dasharray=""/>
+<text x="100" y="150" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Principal phase relative to unaffected reference (degrees)</text>
+<text x="490.0" y="412" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Claimed input epoch n / Fs (μs)</text>
+<path d="M100.000,90.000 L125.000,90.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray=""/>
+<text x="133" y="95" font-family="sans-serif" font-size="16" fill="#125b86" text-anchor="start">NCO phase stepped +90°</text>
+<path d="M106.964,259.500 L113.929,259.500 L120.893,259.500 L127.857,259.500 L134.821,259.500 L141.786,259.500 L148.750,259.500 L155.714,259.500 L162.679,259.500 L169.643,259.500 L176.607,259.500 L183.571,259.500 L190.536,259.500 L197.500,259.500 L204.464,259.500 L211.429,259.500 L218.393,259.500 L225.357,259.500 L232.321,259.500 L239.286,259.500 L246.250,259.500 L253.214,259.500 L260.179,259.500 L267.143,259.500 L274.107,259.500 L281.071,259.500 L288.036,259.500 L295.000,259.500 L301.964,259.500 L308.929,259.500 L315.893,259.500 L322.857,259.500 L329.821,259.491 L336.786,259.509 L343.750,259.614 L350.714,259.406 L357.679,258.883 L364.643,259.986 L371.607,261.616 L378.571,257.891 L385.536,252.723 L392.500,264.421 L399.464,270.664 L406.429,250.569 L413.393,219.794 L420.357,293.316 L427.321,293.179 L434.286,289.175 L441.250,284.780 L448.214,333.763 L455.179,343.715 L462.143,307.870 L469.107,300.244 L476.071,308.623 L483.036,312.849 L490.000,308.053 L496.964,306.881 L503.929,308.355 L510.893,308.615 L517.857,308.215 L524.821,308.192 L531.786,308.257 L538.750,308.252 L545.714,308.250 L552.679,308.250 L559.643,308.250 L566.607,308.250 L573.571,308.250 L580.536,308.250 L587.500,308.250 L594.464,308.250 L601.429,308.250 L608.393,308.250 L615.357,308.250 L622.321,308.250 L629.286,308.250 L636.250,308.250 L643.214,308.250 L650.179,308.250 L657.143,308.250 L664.107,308.250 L671.071,308.250 L678.036,308.250 L685.000,308.250 L691.964,308.250 L698.929,308.250 L705.893,308.250 L712.857,308.250 L719.821,308.250 L726.786,308.250 L733.750,308.250 L740.714,308.250 L747.679,308.250 L754.643,308.250 L761.607,308.250 L768.571,308.250 L775.536,308.250 L782.500,308.250 L789.464,308.250 L796.429,308.250 L803.393,308.250" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray=""/>
+<path d="M500.000,90.000 L525.000,90.000" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="8 4"/>
+<text x="533" y="95" font-family="sans-serif" font-size="16" fill="#b34719" text-anchor="start">one raw sample lost + renumbered</text>
+<path d="M106.964,259.500 L113.929,259.500 L120.893,259.500 L127.857,259.500 L134.821,259.500 L141.786,259.500 L148.750,259.500 L155.714,259.500 L162.679,259.500 L169.643,259.500 L176.607,259.500 L183.571,259.500 L190.536,259.500 L197.500,259.500 L204.464,259.500 L211.429,259.500 L218.393,259.500 L225.357,259.500 L232.321,259.500 L239.286,259.500 L246.250,259.500 L253.214,259.500 L260.179,259.500 L267.143,259.500 L274.107,259.500 L281.071,259.500 L288.036,259.500 L295.000,259.500 L301.964,259.500 L308.929,259.500 L315.893,259.500 L322.857,259.500 L329.821,259.498 L336.786,259.486 L343.750,259.564 L350.714,259.591 L357.679,259.084 L364.643,259.133 L371.607,261.462 L378.571,260.499 L385.536,255.491 L392.500,256.423 L399.464,293.655 L406.429,263.784 L413.393,248.882 L420.357,213.539 L427.321,343.702 L434.286,339.675 L441.250,335.083 L448.214,243.746 L455.179,234.351 L462.143,215.793 L469.107,209.780 L476.071,233.031 L483.036,230.808 L490.000,227.373 L496.964,228.268 L503.929,229.474 L510.893,229.176 L517.857,228.947 L524.821,229.013 L531.786,229.038 L538.750,229.031 L545.714,229.032 L552.679,229.032 L559.643,229.031 L566.607,229.032 L573.571,229.032 L580.536,229.031 L587.500,229.031 L594.464,229.031 L601.429,229.032 L608.393,229.032 L615.357,229.031 L622.321,229.032 L629.286,229.032 L636.250,229.031 L643.214,229.031 L650.179,229.031 L657.143,229.032 L664.107,229.032 L671.071,229.031 L678.036,229.032 L685.000,229.032 L691.964,229.031 L698.929,229.031 L705.893,229.031 L712.857,229.032 L719.821,229.032 L726.786,229.031 L733.750,229.032 L740.714,229.032 L747.679,229.031 L754.643,229.031 L761.607,229.031 L768.571,229.032 L775.536,229.032 L782.500,229.031 L789.464,229.032 L796.429,229.032 L803.393,229.031" fill="none" stroke="#b34719" stroke-width="2.8" stroke-dasharray="8 4"/>
+<rect x="40" y="540" width="420" height="115" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="250.0" y="565" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Known raw missing index 2048</text>
+<text x="250.0" y="590" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">FIR support contaminated through 2304</text>
+<text x="250.0" y="615" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">33 invalid outputs; next grid index 2312</text>
+<rect x="505" y="540" width="420" height="115" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="715.0" y="565" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Known identity retained after a gap</text>
+<text x="715.0" y="590" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">do not renumber the NCO or timestamps</text>
+<text x="715.0" y="615" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">unknown identity needs a new reference event</text>
+<rect x="40" y="750" width="885" height="100" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="482.5" y="775" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">A decimator-origin shift with absolute NCO phase changes only the baseband epoch.</text>
+<text x="482.5" y="800" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">A retune/reset must identify NCO phase, filter history, coefficient set and rate state.</text>
+<text x="482.5" y="825" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">A lost output packet does not have the same support contamination as a lost raw sample.</text>
+<text x="45" y="940" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Settled errors here: −90° from NCO state, +56.25° from raw loss plus renumbering.</text>
+<text x="45" y="1000" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Principal phase can jump during the invalid transition; these are diagnostic, not valid data.</text>
+<text x="45" y="1060" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Control/data-valid flags and elapsed time alone cannot establish coherent recovery.</text>
+<text x="32" y="1106" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

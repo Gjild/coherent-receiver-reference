@@ -165,3 +165,176 @@ One trailingblank in Python source is removed after freeze, with no executable
 text/figure change. Author and AI checks do not confer human acceptance.
 K18 closes as a checked provisional bounded teaching draft; no owner decision
 required for its stated conditional conclusions. Proceed sequentially to K19.
+
+## K19 bounded purpose and author development
+
+Exact K19a/b scope, prerequisites, CAP020/021 and Chapter19 card read after K18.
+Engineering question: can an admitted converter stream become a defined complex
+observation whose identity, phase and epochs survive finite processing and
+transport? Scope covers an actual numerical NCO/FIR/decimator/resampler chain,
+finite words, channelizer identity, resource alternatives, queues and CDC evidence.
+K16 supplies clock estimates; K20 general inverses/K23 full state integration
+remain external. No positive FPGA or link qualification is implied.
+
+Examined primary evidence: ADI MT085Rev0 pp2–4; TI SLAA193 pp3–4/8; historical
+Xilinx PG149v7.0 pp8–9/16–19/24–25/61–68; AMD2026.1 isolated-core performance
+interpretation notes. Historical/core/audio applicability limits and attempted
+current-document retrieval are explicit in multirate-realization source notes.
+Manufacturer tables do not supply our hypothetical platform guarantees.
+
+Derived and independently checked: real mirror/alias masks, exact channelizer
+origin factor, group-delay epoch vs delivery, FFT-grid curvature remainder,
+eight-point interpolation complex bound and exact L1 polynomial, signed binary
+points, exact convolution/rounding, NCO drift/state, affine-clock orientation,
+packet events and arithmetic/payload capacities. New six native SVGs reproduce;
+6008 plotted vertices independently checked through Bessel series/centered cosine,
+Vandermonde interpolation, object convolution/Fraction rounding and exact packet
+recurrence. Check scripts/results are retained separately from reviewer findings.
+
+Key results: F29 coefficients give118.0927dB complete modeled stop rejection;
+F23 gives114.5455dB and fails116dB despite favorable record fidelity. A72bitF67
+FIR accumulator avoids recorded overflow;56bitF67 wraps208040times. Eight-point
+resampling at16MS/s bounds isolated2MHz-tone complex error0.000154646 before word
+effects; unchanged8MS/s realization can err0.31512degrees. Exact supplied affine
+clock plus finite integer interpolation gives0.0104159% two-tone record error.
+The composed modulated integer NCO/FIR/decimator/resampler gives0.00617915% error
+against the same-input floating digital reference,984outputs with independently
+checked raw-input response and epochs1.230..62.6675microseconds. None establishes
+RF phase, converter fidelity or true clock estimates. Reference software actually
+benchmarked: median0.113212s/8192inputs, versus64microsecondsarrival; this host
+implementation fails the real-time stream. Hypothetical symmetry engine needs
+9.28G equivalent realops/s,1MiB coefficient table, schedule/memory/timing evidence.
+Packed payload192.75MB/s fits supplied240MB/s average service; padded256.75fails.
+
+Author corrections before review: packet peak is239216B at the first arrival
+12microseconds after service resumes, above fluid227447B/outage-only229760B.
+The exact event model and plot now capture it. Fault phase display widened to
+principal[-180,180] to retain invalid transients; captions distinguish diagnostic
+jumps from valid data. HTML pixels caught a malformed unit macro; corrected to
+mathrm{MS/s}. Composed modulated-chain check added to close an isolated-stage
+coverage gap. Input encoding and whole-run overflow vs valid-history norm counts
+made explicit. Six asset PNGs, final complete1425x18370HTML and all14overlapping
+readable crops opened; equations/units/captions/endnavigation visible.
+Fresh K19 frozen packet346hashedfiles/22actualPNGs; separate read-only Sol/high
+review invoked with stdin prompt and no extraneous '-' image argument (CLI -i
+is greedy). Previous intended image inspections remain recorded with their
+invocation limits. Technical/pixel findings and dispositions follow separately.
+
+K19 first invocation exits1 at a usage limit (stated10:36reset), before complete
+review; retained as incomplete, no findings or visual clearance inferred. On
+owner continuation clock reads12:49CET, after reset. Fresh k19b invocation uses
+the identical346-file packet via an explicit alias, same read-only Sol/high route.
+103stdlib regressions and8NumPyrecord tests pass;85SVGs reproduce,156protected
+baselineentries match. HTML23pages/903locallinks/86images pass. Fresh fullpytest
+probe fails (module absent). Pilot invocation without package path fails import;
+rerun with the documented engineering/src path is recorded separately.
+
+### K19 separate review and author dispositions
+
+Fresh k19b read-only Sol/high review exits0. All346hashes verified, all22PNGs
+actually inspected;14crops match complete-page pixels and cover18370rows.
+Independent Bessel-series/complex-response/rational-arithmetic calculations
+reproduce coefficient masks, interpolation bound/L1, all arithmetic cases,
+joined984output chain/epochs, asynchronous cases, channelizer with nonzeroorigin,
+state faults and packet/resource results. Eight scoped multirate tests pass.
+Fresh reviewer host timings vary (median0.0990711s), independently rejecting
+128MS/s without authenticating the author's earlier timing runs or hardware.
+Source access is notes only; original external PDFs were not authenticated by AI.
+Alias/path discovery listed only packet names; no prohibited interpreted content.
+
+Moderate finding: canonical20 reference conflicts with temporarily numbered next
+publishing supplement. Corrected with explicit end-of-chapter explanation that
+navigation20/21are development supplements, not canonical correction/calibration.
+Minor findings: eight-point16MS/s phase curve nearly invisible at comparison
+scale; added generated sampled-peak annotation0.000965degrees. RMS ordinate now
+explicitly says logarithmic scale; equal-log tick spacing retained without changing
+shared helpers or earlier figures. Curves and calculations unchanged;6008vertices
+rechecked. Both corrected assets, complete1425x18489HTML and affected detailcrops
+opened; annotations/units/endnavigation readable. Fresh targeted packet338files,
+9PNGs, precise accepted prerequisites and read-only Sol/high invocation.
+
+Author catches overbroad prerequisite paraphrase in first review requirements:
+Chapters15–18were overlisted. Original reviewer read exact accepted coverage/TOC;
+these remain authoritative and unchanged. Corrected reassessment packet explicitly
+separates K17/K12/K03/K07 and internal-resource foundations, optionalK16clock/K18
+delay examples, and external K04/K20/platform additions. No accepted architecture
+change. Remaining evidence limits: no streaming retune/rate/coef application or
+end-to-end packet-loss validity implementation; no positive hardware schedule,
+routed timing, CDC/thermal/interface qualification or physical receiver experiment.
+The actual author timing values are preserved as executed summary, not a raw
+per-operation trace. Such evidence remains necessary for selecting hardware.
+
+K19 targeted read-only Sol/high reassessment exits0. All338hashes match before
+and after tests;9actualPNGs opened, corrected assets/detail/endnavigation readable.
+Independent barycentric/binomial interpolation gives sampled peak0.000965363deg
+(10001pointcheck0.000965395deg); annotation rounds correctly. All7RMSvertices
+match logarithmic coordinates within0.000492SVGunit and actualbluepixels.
+Eight focused tests and additional coefficient/noise/async/composed/queue checks
+pass. No consequential remaining bounded defect was reported. Incidental exposure:
+a broad accepted-document search returned prohibited prior-status/assessment
+wording outside the allowed passages; raw report records this. Index/standards
+contents were opaque hashes only. This reassessment is not wholly unexposed.
+A fresh connected review will also reassess these corrections using only verbatim
+accepted requirement excerpts, preventing the same planning-file exposure. Conventional decade ticks remain optional
+polish; no shared visual infrastructure changed. K19 closes as a checked
+provisional bounded teaching draft, with hardware/state/reader limits above.
+All AI invocations request GPT-6.1Sol/high, ephemeral/read-only; routing is not
+independently backend-authenticated. Raw events/findings archived separately
+from these author dispositions. No human Reviewed/Accepted status is granted.
+
+## Connected managing-author assessment
+
+Final preface links the new sequence to Chapters1–12and14–16, preserves reserved
+Chapter13 and explains temporary supplement20/21numbers. Accepted coverage,
+annotated chapter destinations and general derivations remain unchanged.
+No canonical K20 manuscript is developed.
+
+Mathematical/physical progression: Chapter11's signs and Chapter12's feasible
+regions/physical covariance allocations enter17through a declared alternate
+lower-side LO/driver envelope, rather than an unacknowledged change of design.
+Chapter9 complete-wave timing reappears as phase-observation weights, then17
+quantization shows errors that longer coherent records cannot average away.
+Chapter18 starts from analog products and complex/improper foundations, identifies
+paired response/offset under a known stimulus, and tests held-out level/state/DC.
+Chapter19 internally introduces FIR/polyphase/DFT interpolation and word/resource
+reasoning; it uses, rather than estimates, Chapter16clock relations. Its optional
+20ns match demonstrates finite support/delivery needs after18's ideal periodic
+reference, without claiming a complete finite I/Q implementation or general inverse.
+The same-input numerical comparison cannot recover earlier clipping/aliasing,
+converter bias, unknown RF/LO phase or lost sample identity.
+
+Engineering transfer:17compares rate/headroom/jitter/dither/driver choices;18
+compares valid blank/matched path against constant trim and high-pass erasure;
+19compares mask/precision/rate/platform/packing alternatives with explicit failures.
+Changed-assumption exercises force new noise spectra/correlation/state, paired
+notch/echo/blank inference, and rate/clock/lost-input decisions respectively.
+Canonical noise/filtering/estimation/rejection/transfer derivations are reused;
+local construction rather than duplicate universal formulas carries the examples.
+
+Limits remain connected and visible: supplied analog/reference/clock/blank
+contracts require characterization,13metrology remains undeveloped,20general
+inverse feasibility and21calibration procedure/23state integration remain external.
+There is no reconciled whole-receiver implementation, streaming retune/coefficient
+switch procedure, positive routed/CDC/interface qualification, actual reader trial
+or independent human specialist review. Necessary source/interface evidence is
+named; a device's typical curve is never adopted as our envelope guarantee.
+
+Final scratch Quarto render succeeds:23HTMLpages/906locallinks/86imageuses,
+no missing targets/fragments, duplicateIDs, unresolvedmarkers or missingalts.
+Final preface1440x2200 actualPNG and2readablecrops inspected. Final17/18 complete
+PNGs1425x12508/1425x10426 and readable first/lastnavigationcrops inspected; their
+mainHTML bytes exactly match inspected unit packets. Final19HTML plus all85
+referencedSVGbytes match its final inspected/reassessed unit inputs exactly.
+Earlier complete-unit readable coverage remains in frozen unit archives; final
+connected review receives declared bridge crops, not an invented full new detail
+inspection. All85SVGs reproduce exactly,12538newcurvevertices independently
+checked across the batch.155protectedbaselineentries including70priorfigures,
+accepted architecture/standards/earliermanuscripts and2preserveduntrackedfiles
+match;17/18manuscriptbytes also match their unit checkpoints.103stdlib+8NumPy
+record+19pilot checks pass (130selectedchecks), freshpytest/SciPy unavailable.
+No installation, external publication or physical/reader acceptance claimed.
+
+Connected fresh read-only Sol/high packet367hashes/20actualPNGs contains only
+verbatim bounded accepted requirement excerpts with original full-file hashes,
+not planning status/assessment sections. It separately challenges the connected
+progression and final K19 corrections. Findings/dispositions remain pending below.

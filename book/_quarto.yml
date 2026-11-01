@@ -25,6 +25,7 @@ book:
     - distributed-reference-inference.qmd
     - sampling-converter-feasibility.qmd
     - quadrature-conjugate-fidelity.qmd
+    - multirate-finite-resources.qmd
     - part: "Development supplements"
       chapters:
         - publishing-pilot.qmd

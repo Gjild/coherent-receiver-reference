@@ -1,0 +1,168 @@
+{
+  "filter": {
+    "17": {
+      "stop_db": 81.70474821449857,
+      "pass_min_db": -0.0008411332597248407,
+      "pass_max_db": 0.0006627380927166919,
+      "gap": 9.508290302891194e-09,
+      "l1": 1.5325469970703125,
+      "noise": 0.05771864915732294
+    },
+    "23": {
+      "stop_db": 114.54549341447836,
+      "pass_min_db": -3.0418384212194618e-05,
+      "pass_max_db": 4.006856504159887e-06,
+      "gap": 9.514724404759732e-09,
+      "l1": 1.532575249671936,
+      "noise": 0.057718985651021626
+    },
+    "29": {
+      "stop_db": 118.09273460962714,
+      "pass_min_db": -2.345111938542331e-05,
+      "pass_max_db": 4.644129305234838e-07,
+      "gap": 9.514688657243616e-09,
+      "l1": 1.5325747448951006,
+      "noise": 0.05771900377318355
+    }
+  },
+  "processing": {
+    "F17-W72": {
+      "overflows": 0,
+      "clips": 0,
+      "coefficient_fraction": 17,
+      "accumulator": 72,
+      "rms_uv": 21.871555474609067,
+      "max_uv": 26.039394022834763,
+      "phase_deg": -0.00014092111851180875
+    },
+    "F23-W72": {
+      "overflows": 0,
+      "clips": 0,
+      "coefficient_fraction": 23,
+      "accumulator": 72,
+      "rms_uv": 0.37653843720474234,
+      "max_uv": 0.5623830038909636,
+      "phase_deg": -0.0002308198579464066
+    },
+    "F29-W56": {
+      "overflows": 208040,
+      "clips": 0,
+      "coefficient_fraction": 29,
+      "accumulator": 56,
+      "rms_uv": 8185.090131567817,
+      "max_uv": 8185.334320973386,
+      "phase_deg": -173.8742607201697
+    },
+    "F29-W72": {
+      "overflows": 0,
+      "clips": 0,
+      "coefficient_fraction": 29,
+      "accumulator": 72,
+      "rms_uv": 0.19013417305690106,
+      "max_uv": 0.2956984839829573,
+      "phase_deg": -0.0002308198579464066
+    },
+    "truncate_mean_error_uv": "(-0.29313049836302074-0.15118820230634153j)"
+  },
+  "faults": {
+    "nco_phase_deg": -90.00000000000948,
+    "drop_phase_deg": 56.250000001274856,
+    "known_missing_output_indices": [
+      2048,
+      2056,
+      2064,
+      2072,
+      2080,
+      2088,
+      2096,
+      2104,
+      2112,
+      2120,
+      2128,
+      2136,
+      2144,
+      2152,
+      2160,
+      2168,
+      2176,
+      2184,
+      2192,
+      2200,
+      2208,
+      2216,
+      2224,
+      2232,
+      2240,
+      2248,
+      2256,
+      2264,
+      2272,
+      2280,
+      2288,
+      2296,
+      2304
+    ]
+  },
+  "rate": [
+    {
+      "M": 8,
+      "analog_MHz": 20.5,
+      "wanted_transfer": 0.999997437512995,
+      "error": 5.596950080446124e-13,
+      "effective_epoch_first": 1e-06
+    },
+    {
+      "M": 16,
+      "analog_MHz": 20.5,
+      "wanted_transfer": 0.999997437512995,
+      "error": 5.596950080446124e-13,
+      "effective_epoch_first": 1e-06
+    },
+    {
+      "M": 32,
+      "analog_MHz": 24.0,
+      "wanted_transfer": 0.49999930310537044,
+      "error": 5.170009694792727e-13,
+      "effective_epoch_first": 1e-06
+    }
+  ],
+  "resampling": {
+    "floating_error_pct": 0.009108466358227029,
+    "coefficient_phase_error_pct": 0.009126570013818317,
+    "integer_error_pct": 0.01041592705745838,
+    "max_integer_vs_float_uv": 0.6351186284769731
+  },
+  "interpolation_bound": {
+    "complex": 0.00015464545486609915,
+    "phase_deg": 0.008860531920025266,
+    "gain_loss_db": 0.0013433372271709528,
+    "l1_center": 1.48828125,
+    "white_noise_center": 0.7453327178955078
+  },
+  "resources": {
+    "unsymmetric_ops": 17472000000.0,
+    "symmetric_ops": 9280000000.0,
+    "arrival_Bps": 192750000.0,
+    "outage_bytes": 96375.0,
+    "after_outage_bytes": 227447.0,
+    "recovery_s": 0.0020396825396825397,
+    "clock_mismatch_fill_s": 34.00051880674448
+  },
+  "software_execution": {
+    "platform": "Linux-7.3.0-4-cachyos-x86_64-with-glibc2.44",
+    "cpu": "AMD Ryzen 5 5600X 6-Core Processor",
+    "python": "3.14.8",
+    "numpy": "2.5.4",
+    "input_samples": 8192,
+    "runs_s": [
+      0.11157994798850268,
+      0.11321523800143041,
+      0.11193650998757221,
+      0.11321205800049938,
+      0.11467943599564023
+    ],
+    "median_s": 0.11321205800049938,
+    "required_input_interval_s": 6.4e-05,
+    "median_input_samples_per_s": 72359.78344253635
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "error_pct": 0.006179149091589417,
+  "phase_deg": -6.252888659846875e-06,
+  "first_epoch_s": 1.23e-06,
+  "last_epoch_s": 6.26675e-05,
+  "samples": 984,
+  "overflows": 0,
+  "clips": 0,
+  "coefficient_fraction": 29,
+  "accumulator": 72
+}

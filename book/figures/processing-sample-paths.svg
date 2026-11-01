@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1170" role="img" aria-labelledby="title desc"><title id="title">Keep the sample event distinct from filter time and word delivery</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">Keep the sample event distinct from filter time and word delivery</text>
+<rect x="35" y="110" width="185" height="95" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="127.5" y="135" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">ADC word x[n]</text>
+<text x="127.5" y="160" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">aperture identity n</text>
+<path d="M220.000,155.000 L270.000,155.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="270" y="110" width="185" height="95" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="362.5" y="135" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">2 exp(−jφ[n])</text>
+<text x="362.5" y="160" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">absolute NCO phase</text>
+<path d="M455.000,155.000 L505.000,155.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="505" y="110" width="185" height="95" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="597.5" y="135" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Finite FIR h[k]</text>
+<text x="597.5" y="160" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">all inputs retained</text>
+<path d="M690.000,155.000 L740.000,155.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="740" y="110" width="185" height="95" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="832.5" y="135" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Keep n = 8m + r</text>
+<text x="832.5" y="160" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">16 MS/s output</text>
+<rect x="65" y="355" width="390" height="100" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="260.0" y="380" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">257 taps: D = 128 input samples</text>
+<text x="260.0" y="405" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">effective epoch: (8m + r − 128) / Fs</text>
+<text x="260.0" y="430" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">1 μs group delay ≠ delivery latency</text>
+<rect x="510" y="355" width="400" height="100" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="710.0" y="380" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Eight-point fractional resampling</text>
+<text x="710.0" y="405" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">target epoch from affine clock estimate</text>
+<text x="710.0" y="430" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">finite support and additional lookahead</text>
+<path d="M830.000,205.000 L830.000,280.000 L260.000,280.000 L260.000,355.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<path d="M455.000,405.000 L510.000,405.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<rect x="510" y="565" width="400" height="95" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="710.0" y="590" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Finite words → queue → transport</text>
+<text x="710.0" y="615" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">origin / rate / state / sequence / validity</text>
+<text x="710.0" y="640" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">delivery time does not replace epoch</text>
+<path d="M710.000,455.000 L710.000,565.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray="" marker-end="url(#arrow)"/>
+<text x="45" y="750" font-family="sans-serif" font-size="19" fill="#182f3e" text-anchor="start">Alternate lower-side analog plan: IF 20 / 30 / 40 MHz at 128 MS/s.</text>
+<text x="45" y="810" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">After −20 MHz translation: +20 → 0; +30 → +10; +40 → +20 MHz.</text>
+<text x="45" y="865" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Real negative partners: −20 → −40; −30 → −50; −40 → −60 MHz.</text>
+<text x="45" y="925" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Decimation folds every retained band: reject aliases before keeping every eighth word.</text>
+<text x="45" y="985" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">r changes the output time grid; an NCO seed change rotates the carrier reference.</text>
+<text x="45" y="1045" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">The two receiver channels share this chosen frequency channel; more channels add work.</text>
+<text x="45" y="1105" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">All device/platform parameters remain supplied or externally required evidence.</text>
+<text x="32" y="1156" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

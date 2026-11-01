@@ -304,5 +304,274 @@ def unit18():
     s.text(45,1050,'Changing impedance / LO leakage between blank and operation invalidates that estimate.',18);s.save()
 
 
+
+# K19: one selected frequency channel, two receiver channels in resource examples.
+def fir_coeff(length=257,beta=12.,fraction=None):
+    import numpy as np
+    k=np.arange(length)-(length-1)/2
+    h=.0625*np.sinc(.0625*k)*np.kaiser(length,beta);h/=sum(h)
+    return h if fraction is None else np.rint(h*2**fraction)/2**fraction
+
+
+def fir_metrics(length=257,beta=12.,fraction=None):
+    import numpy as np
+    h=fir_coeff(length,beta,fraction);nfft=524288;fs=128e6
+    v=np.abs(np.fft.rfft(h,nfft));ff=np.fft.rfftfreq(nfft,1/fs)
+    k=np.arange(length)-(length-1)/2
+    curvature=(2*pi/fs)**2*sum(k*k*abs(h));gap=curvature*(fs/nfft)**2/8
+    stop=max(v[ff>=6e6])+gap
+    return dict(stop_db=-20*log10(stop),pass_min_db=20*log10(min(v[ff<=2e6])-gap),
+                pass_max_db=20*log10(max(v[ff<=2e6])+gap),gap=gap,
+                l1=float(sum(abs(h))),noise=float(sum(h*h)))
+
+
+def ddc_reference(samples,decimation=8,origin=0,seed=0.,fault_index=None):
+    import numpy as np
+    x=np.asarray(samples);n=np.arange(len(x));phi=2*pi*20/128*n+seed
+    if fault_index is not None:phi[n>=fault_index]+=pi/2
+    mixed=2*x*np.exp(-1j*phi);h=fir_coeff()
+    indices=np.arange(origin,len(x),decimation)
+    return indices,np.convolve(mixed,h)[:len(x)][indices]
+
+
+def digital_input(count=8192,second_blocker=40e6):
+    import numpy as np
+    c=converter_case();n=np.arange(count);t=n/128e6
+    u=c['wanted']*np.cos(2*pi*20e6*t+.3)+c['blocker']*(np.cos(2*pi*30e6*t+1.1)+np.cos(2*pi*second_blocker*t-.7))
+    return np.clip(np.rint(u*2**15),-32768,32767).astype(np.int64)
+
+
+def round_shift(value,shift,truncate=False):
+    if truncate:return value>>shift
+    q,r=divmod(value,1<<shift);half=1<<(shift-1)
+    return q+(r>half or (r==half and q%2!=0))
+
+
+def ddc_integer(words,coefficient_fraction=29,accumulator=72,truncate=False,frequency=20e6):
+    """Exact specified integer arithmetic; not RTL, a ROM or a measured platform."""
+    import numpy as np
+    words=np.asarray(words,dtype=np.int64);n=np.arange(len(words),dtype=np.int64)
+    phase_word=(n*round(frequency/128e6*2**40))%(2**40)
+    phase_grid=((phase_word+2**15)//2**16)%(2**24)
+    angle=2*pi*phase_grid/2**24
+    cc=np.rint(np.cos(angle)*2**23).astype(np.int64)
+    ss=np.rint(-np.sin(angle)*2**23).astype(np.int64)
+    real=[int(v) for v in 2*words*cc];imag=[int(v) for v in 2*words*ss]
+    coefs=[int(round(v*2**coefficient_fraction)) for v in fir_coeff()]
+    out=[];indices=list(range(0,len(words),8));overflows=0;clips=0
+    mask=(1<<accumulator)-1;half=1<<(accumulator-1)
+    for n in indices:
+        values=[]
+        for data in [real,imag]:
+            acc=0
+            for k in range(min(n+1,len(coefs))):
+                acc+=data[n-k]*coefs[k]
+                if not -half<=acc<half:overflows+=1
+                acc=((acc+half)&mask)-half
+            q=round_shift(acc,38+coefficient_fraction-21,truncate)
+            if not -2**23<=q<2**23:clips+=1
+            values.append(max(-2**23,min(2**23-1,q))/2**21)
+        out.append(complex(*values))
+    return np.asarray(indices),np.asarray(out),dict(overflows=overflows,clips=clips,
+        coefficient_fraction=coefficient_fraction,accumulator=accumulator)
+
+
+def lagrange_weights(mu,points=8):
+    nodes=range(-(points//2-1),points//2+1);weights=[]
+    for j in nodes:
+        v=1.
+        for k in nodes:
+            if k!=j:v*=(mu-k)/(j-k)
+        weights.append(v)
+    return list(nodes),weights
+
+
+def interpolation_response(f,mu,points=8):
+    nodes,ww=lagrange_weights(mu,points)
+    return sum(w*cmath.exp(2j*pi*f/16e6*(k-mu)) for k,w in zip(nodes,ww))
+
+
+def resample_finite(samples,positions,phase_bits=None,coefficient_fraction=None,integer=False):
+    """Eight support samples; raises on missing support, never extrapolates."""
+    import numpy as np
+    samples=np.asarray(samples);out=[]
+    for pos in positions:
+        p=floor(pos);mu=pos-p
+        if phase_bits is not None:
+            mu=round(mu*2**phase_bits)/2**phase_bits
+            if mu==1.:p+=1;mu=0.
+        nodes,w=lagrange_weights(mu)
+        if p+nodes[0]<0 or p+nodes[-1]>=len(samples):raise ValueError('incomplete interpolation support')
+        if coefficient_fraction is not None:w=[round(a*2**coefficient_fraction)/2**coefficient_fraction for a in w]
+        if integer:
+            if coefficient_fraction!=29:raise ValueError('specified integer case uses F29 coefficients')
+            coeffs=[int(round(a*2**29)) for a in w];v=[]
+            for part in [samples.real,samples.imag]:
+                acc=sum(int(round(part[p+j]*2**21))*c for j,c in zip(nodes,coeffs))
+                if not -2**55<=acc<2**55:raise OverflowError('56-bit F50 interpolation accumulator')
+                q=round_shift(acc,29)
+                if not -2**23<=q<2**23:raise OverflowError('24-bit F21 interpolation output')
+                v.append(q/2**21)
+            out.append(complex(*v))
+        else:out.append(sum(a*samples[p+j] for j,a in zip(nodes,w)))
+    return np.asarray(out)
+
+
+def joined_processing_case():
+    """Actual integer NCO/FIR/decimation then finite fractional interpolation."""
+    import numpy as np
+    count=8192;t=np.arange(count)/128e6;c=converter_case();a=c['wanted'];b=c['blocker']
+    env=a*(.4*np.exp(.3j)+.3*np.exp(2j*pi*.5e6*t+.1j)+.2*np.exp(-2j*pi*1e6*t-.4j)+.1*np.exp(2j*pi*1.5e6*t+.8j))
+    raw=np.real(env*np.exp(2j*pi*20e6*t))+b*(np.cos(2*pi*30e6*t+1.1)+np.cos(2*pi*40e6*t-.7))
+    words=np.clip(np.rint(raw*2**15),-32768,32767).astype(np.int64)
+    ix,ref=ddc_reference(words/2**15);_,fixed,flags=ddc_integer(words)
+    first=next(i for i,n in enumerate(ix) if n>=256)
+    rf=ref[first:];fx=fixed[first:];positions=np.arange(4,len(rf)-4)-.32
+    ideal=resample_finite(rf,positions)
+    actual=resample_finite(fx,positions,phase_bits=15,coefficient_fraction=29,integer=True)
+    origin=(ix[first]-128)/128e6;epochs=origin+positions/16e6
+    gain=np.vdot(ideal,actual)/np.vdot(ideal,ideal)
+    result=dict(error_pct=float(np.linalg.norm(actual-ideal)/np.linalg.norm(ideal)*100),
+                phase_deg=degrees(cmath.phase(gain)),first_epoch_s=float(epochs[0]),
+                last_epoch_s=float(epochs[-1]),samples=len(actual),**flags)
+    return result,words,positions,ideal,actual,epochs
+
+
+def processing_case(count=8192):
+    import numpy as np
+    words=digital_input(count);ix,ref=ddc_reference(words/2**15);valid=ix>=256
+    r={}
+    for bits in [17,23,29]:
+        for acc in ([56,72] if bits==29 else [72]):
+            _,fixed,flags=ddc_integer(words,bits,acc);err=fixed[valid]-ref[valid]
+            r[f'F{bits}-W{acc}']=dict(flags,rms_uv=float(np.sqrt(np.mean(abs(err)**2))*1e6),
+                max_uv=float(max(abs(err))*1e6),phase_deg=degrees(cmath.phase(np.mean(fixed[valid])/np.mean(ref[valid]))))
+    _,fl,flags=ddc_integer(words,truncate=True);r['truncate_mean_error_uv']=str(np.mean(fl[valid]-ref[valid])*1e6)
+    return r
+
+
+
+def queue_case(t,unpacked=False):
+    arrival=(256.75 if unpacked else 192.75)*1e6;capacity=262144.
+    offered=131072+arrival*min(t,.0005)+(arrival-240e6)*max(0,t-.0005)
+    if unpacked:return min(capacity,offered),max(0,offered-capacity)
+    return max(0,offered),0.
+
+
+def packet_queue(duration_ns=6000000,unpacked=False):
+    """Deterministic packet-event model; ideal supplied service, not link measurements."""
+    capacity=262144.;packet=16432 if unpacked else 12336
+    events=sorted(set(range(0,duration_ns+1,64000))|{500000,duration_ns})
+    q=131072.;lost=0.;previous=0;history=[(0,q,lost)]
+    for now in events:
+        q=max(0.,q-.24*max(0,now-max(previous,500000)))
+        history.append((now,q,lost))
+        if now%64000==0:
+            q+=packet;lost+=max(0.,q-capacity);q=min(q,capacity)
+            history.append((now,q,lost))
+        previous=now
+    return history
+
+
+def unit19():
+    import numpy as np
+    s=SVG('processing-sample-paths','Keep the sample event distinct from filter time and word delivery',1170)
+    boxes=[(35,['ADC word x[n]','aperture identity n']),(270,['2 exp(−jφ[n])','absolute NCO phase']),(505,['Finite FIR h[k]','all inputs retained']),(740,['Keep n = 8m + r','16 MS/s output'])]
+    for x,ls in boxes:
+        s.box(x,110,185,95,ls)
+        if x<740:s.path([(x+185,155),(x+235,155)],arrow=True)
+    s.box(65,355,390,100,['257 taps: D = 128 input samples','effective epoch: (8m + r − 128) / Fs','1 μs group delay ≠ delivery latency'])
+    s.box(510,355,400,100,['Eight-point fractional resampling','target epoch from affine clock estimate','finite support and additional lookahead'])
+    s.path([(830,205),(830,280),(260,280),(260,355)],arrow=True)
+    s.path([(455,405),(510,405)],arrow=True)
+    s.box(510,565,400,95,['Finite words → queue → transport','origin / rate / state / sequence / validity','delivery time does not replace epoch'])
+    s.path([(710,455),(710,565)],arrow=True)
+    s.text(45,750,'Alternate lower-side analog plan: IF 20 / 30 / 40 MHz at 128 MS/s.',19)
+    s.text(45,810,'After −20 MHz translation: +20 → 0; +30 → +10; +40 → +20 MHz.',18)
+    s.text(45,865,'Real negative partners: −20 → −40; −30 → −50; −40 → −60 MHz.',18)
+    s.text(45,925,'Decimation folds every retained band: reject aliases before keeping every eighth word.',18)
+    s.text(45,985,'r changes the output time grid; an NCO seed change rotates the carrier reference.',18)
+    s.text(45,1045,'The two receiver channels share this chosen frequency channel; more channels add work.',17)
+    s.text(45,1105,'All device/platform parameters remain supplied or externally required evidence.',18);s.save()
+    s=SVG('processing-filter-precision','Finite filter length and coefficient precision constrain the same alias mask',1140)
+    ff=np.linspace(0,12e6,1537);curves=[]
+    for length,beta,label in [(129,12,'129 taps; β=12'),(257,12,'257 taps; β=12'),(385,14,'385 taps; β=14')]:
+        h=fir_coeff(length,beta);k=np.arange(length)
+        vv=[20*log10(max(abs(np.sum(h*np.exp(-2j*pi*f/128e6*k))),1e-8)) for f in ff]
+        curves.append((label,list(ff/1e6),vv))
+    curves.append(('116 dB stop mask begins at 6 MHz',[6,12],[-116,-116]))
+    s.plot(70,'Normalized sinc × Kaiser window; passband |f| ≤ 2 MHz',(0,12),(-145,1),
+           'Frequency after digital mixing (MHz)','Finite FIR amplitude response (dB)',curves)
+    bits=list(range(17,30));bb=[fir_metrics(fraction=b)['stop_db'] for b in bits]
+    s.plot(520,'257 taps; coefficient rounding plus continuous-frequency remainder bound',(17,29),(70,125),
+           'Coefficient fractional bits','Complete stopband rejection bound (dB)',
+           [('rounded coefficient response',bits,bb),('required mask',bits,[116]*len(bits))])
+    s.text(45,940,'F17: 81.7047 dB; F23: 114.5455 dB fails; F29: 118.0927 dB passes this model.',18)
+    s.text(45,995,'257-tap delay = 1 μs; full fresh history = 2 μs; neither is measured end-to-end latency.',17)
+    s.text(45,1050,'Finite-coefficient calculations and interpolation bounds do not establish hardware behavior.',18);s.save()
+    s=SVG('processing-fractional-delay','A lower rate reduces resources while making fractional timing harder',1150)
+    mu=lin(0,1)
+    s.plot(70,'Worst-band tone at 2 MHz; error referred to the requested fractional epoch',(0,1),(-.75,.01),
+           'Fractional input index μ','Desired amplitude error (dB)',
+           [('2 taps at 16 MS/s',mu,[20*log10(abs(interpolation_response(2e6,x,2))) for x in mu]),
+            ('8 taps at 16 MS/s',mu,[20*log10(abs(interpolation_response(2e6,x,8))) for x in mu]),
+            ('8 taps at 8 MS/s',mu,[20*log10(abs(interpolation_response(4e6,x,8))) for x in mu])])
+    s.plot(520,'Same finite interpolators; changing the sample rate changes normalized bandwidth',(0,1),(-.5,.5),
+           'Fractional input index μ','Desired phase error (degrees)',
+           [('2 taps at 16 MS/s',mu,[degrees(cmath.phase(interpolation_response(2e6,x,2))) for x in mu]),
+            ('8 taps at 16 MS/s',mu,[degrees(cmath.phase(interpolation_response(2e6,x,8))) for x in mu]),
+            ('8 taps at 8 MS/s',mu,[degrees(cmath.phase(interpolation_response(4e6,x,8))) for x in mu])])
+    s.text(45,940,'8 taps / 16 MS/s: |complex error| ≤0.000154646 for an isolated tone across |f|≤2 MHz.',17)
+    peak=max(abs(degrees(cmath.phase(interpolation_response(2e6,x,8)))) for x in mu)
+    s.text(45,970,f'Sampled 2 MHz peak |phase error| at 16 MS/s: {peak:.6f}° (8 taps).',17)
+    s.text(45,995,'A 20 ns I-path delay at 16 MS/s uses μ=0.68 and needs three future words.',18)
+    s.text(45,1050,'Interpolation cannot establish an unknown clock offset or an unobserved LO phase.',18);s.save()
+    s=SVG('processing-state-faults','A plausible stream can carry the wrong coherent state',1120)
+    words=digital_input();idx,clean=ddc_reference(words/2**15);_,nco=ddc_reference(words/2**15,fault_index=2048)
+    di,drop=ddc_reference(np.delete(words,2048)/2**15);sel=(idx>=1800)&(idx<=2600);ds=(di>=1800)&(di<=2600)
+    s.plot(70,'No recovery correction applied: raw input gap is deliberately renumbered',(14,21),(-180,180),
+           'Claimed input epoch n / Fs (μs)','Principal phase relative to unaffected reference (degrees)',
+           [('NCO phase stepped +90°',list(idx[sel]/128),[degrees(cmath.phase(a/b)) for a,b in zip(nco[sel],clean[sel])]),
+            ('one raw sample lost + renumbered',list(di[ds]/128),[degrees(cmath.phase(a/b)) for a,b in zip(drop[ds],clean[:len(drop)][ds])])])
+    s.box(40,540,420,115,['Known raw missing index 2048','FIR support contaminated through 2304','33 invalid outputs; next grid index 2312'])
+    s.box(505,540,420,115,['Known identity retained after a gap','do not renumber the NCO or timestamps','unknown identity needs a new reference event'])
+    s.box(40,750,885,100,['A decimator-origin shift with absolute NCO phase changes only the baseband epoch.','A retune/reset must identify NCO phase, filter history, coefficient set and rate state.','A lost output packet does not have the same support contamination as a lost raw sample.'])
+    s.text(45,940,'Settled errors here: −90° from NCO state, +56.25° from raw loss plus renumbering.',18)
+    s.text(45,1000,'Principal phase can jump during the invalid transition; these are diagnostic, not valid data.',17)
+    s.text(45,1060,'Control/data-valid flags and elapsed time alone cannot establish coherent recovery.',18);s.save()
+    s=SVG('processing-word-residuals','A favorable tone phase can hide a failed precision or bandwidth decision',1100)
+    words=digital_input();ii,ref=ddc_reference(words/2**15);valid=ii>=256;bits=list(range(17,30,2));rms=[]
+    for b in bits:
+        _,fixed,_=ddc_integer(words,b);rms.append(float(np.sqrt(np.mean(abs(fixed[valid]-ref[valid])**2))*1e6))
+    s.plot(70,'8192 identical 16-bit input words; discard incomplete FIR history',(17,29),(.1,40),
+           'FIR coefficient fractional bits','Processing error (μV RMS; logarithmic scale)',
+           [('exact integer chain; rounded 24-bit output',bits,rms)],False,True)
+    rr=processing_case();good=rr['F29-W72'];bad=rr['F29-W56']
+    s.box(40,550,885,100,[f"F29 / 72-bit accumulator: {good['rms_uv']:.6f} μV RMS, no arithmetic overflow.",
+                           f"F29 / 56-bit accumulator: {bad['overflows']} wrap events; about {bad['rms_uv']/1000:.3f} mV RMS error.",
+                           'Input codes may already contain converter bias: this comparison cannot remove it.'])
+    s.box(40,750,885,100,['Mixed products: F38; FIR coefficients: F29; accumulator: F67.','A 72-bit accumulator and a 56-bit resampler accumulator have different binary points.','Truncation is a deterministic operation, not a grant of independent white noise.'])
+    s.text(45,950,'A full-band mask rejects F23 even when this one record has small coherent phase error.',18)
+    s.text(45,1010,'Complete payload, coefficient/memory paths and timing evidence still constrain implementation.',17);s.save()
+    s=SVG('processing-queues-resources','Data packing and sustained service determine whether timing survives transport',1220)
+    s.box(35,110,250,100,['Continuous converter input','continuous input: no stalls','retain aperture identity'])
+    s.box(355,110,255,100,['CDC / processing / FIFO','256 KiB; initially half full','state + sequence + validity'])
+    s.box(680,110,250,100,['Packet and payload link','240 MB/s supplied service','delivery is not sample time'])
+    s.path([(285,160),(355,160)],arrow=True);s.path([(610,160),(680,160)],arrow=True)
+    hp=packet_queue();hu=packet_queue(unpacked=True)
+    s.plot(330,'Executed packet-event queue; a 0.5 ms service outage begins at t=0',(0,6),(0,280),
+           'Time since outage begins (ms)','FIFO occupancy (KiB)',
+           [('packed 12-byte pair frames',[a/1e6 for a,b,c in hp],[b/1024 for a,b,c in hp]),
+            ('32-bit padded components: rejected load',[a/1e6 for a,b,c in hu],[b/1024 for a,b,c in hu]),
+            ('capacity',[0,6],[256,256])])
+    s.text(45,765,'Packed arrival incl. header: 192.75 MB/s; packet-event peak 239216 B; no modeled loss.',17)
+    s.text(45,825,'Padded components require 256.75 MB/s: the 240 MB/s link eventually loses data.',18)
+    s.text(45,885,'Symmetry + 8-point resampling: 9.28 G equivalent real operations/s for two receivers.',18)
+    s.text(45,945,'48 supplied wide-MAC lanes ×250 MHz: arithmetic capacity only; memory/schedule/timing unproved.',17)
+    s.text(45,1005,'Phase-index table: 32768 ×8 ×32 bits = 1 MiB; coefficient generation is not free.',18)
+    s.text(45,1065,'An async FIFO needs a qualified CDC implementation and device-specific metastability evidence.',17)
+    s.text(45,1125,'Plots are deterministic queue calculations, not measured link or FPGA performance.',18);s.save()
+
+
 if __name__=='__main__':
-    {'17':unit17,'18':unit18}[sys.argv[1] if len(sys.argv)>1 else '17']()
+    {'17':unit17,'18':unit18,'19':unit19}[sys.argv[1] if len(sys.argv)>1 else '17']()

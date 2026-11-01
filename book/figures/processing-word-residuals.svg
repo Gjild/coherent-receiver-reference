@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1100" role="img" aria-labelledby="title desc"><title id="title">A favorable tone phase can hide a failed precision or bandwidth decision</title><desc id="desc">Synthetic mathematical illustration. See the caption and adjoining model for assumptions and interpretation.</desc>
+<rect width="960" height="100%" fill="white"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#263c49"/></marker></defs>
+<text x="32" y="32" font-family="sans-serif" font-size="23" fill="#182f3e" text-anchor="start">A favorable tone phase can hide a failed precision or bandwidth decision</text>
+<text x="100" y="70" font-family="sans-serif" font-size="20" fill="#182f3e" text-anchor="start">8192 identical 16-bit input words; discard incomplete FIR history</text>
+<path d="M100.000,162.000 L100.000,357.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,357.000 L880.000,357.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="100.0" y="382" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">17</text>
+<text x="88" y="363.0" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">0.1</text>
+<path d="M295.000,162.000 L295.000,357.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,308.250 L880.000,308.250" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="295.0" y="382" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">20</text>
+<text x="88" y="314.25" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">0.447</text>
+<path d="M490.000,162.000 L490.000,357.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,259.500 L880.000,259.500" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="490.0" y="382" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">23</text>
+<text x="88" y="265.5" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">2</text>
+<path d="M685.000,162.000 L685.000,357.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,210.750 L880.000,210.750" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="685.0" y="382" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">26</text>
+<text x="88" y="216.75" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">8.94</text>
+<path d="M880.000,162.000 L880.000,357.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<path d="M100.000,162.000 L880.000,162.000" fill="none" stroke="#dae2e7" stroke-width="1" stroke-dasharray=""/>
+<text x="880.0" y="382" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="middle">29</text>
+<text x="88" y="168.0" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="end">40</text>
+<path d="M100.000,162.000 L100.000,357.000 L880.000,357.000" fill="none" stroke="#263c49" stroke-width="1.5" stroke-dasharray=""/>
+<text x="100" y="150" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">Processing error (μV RMS; logarithmic scale)</text>
+<text x="490.0" y="412" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">FIR coefficient fractional bits</text>
+<path d="M100.000,90.000 L125.000,90.000" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray=""/>
+<text x="133" y="95" font-family="sans-serif" font-size="16" fill="#125b86" text-anchor="start">exact integer chain; rounded 24-bit output</text>
+<path d="M100.000,181.648 L230.000,248.083 L360.000,253.948 L490.000,313.848 L620.000,332.662 L750.000,336.338 L880.000,336.087" fill="none" stroke="#125b86" stroke-width="2.8" stroke-dasharray=""/>
+<rect x="40" y="550" width="885" height="100" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="482.5" y="575" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">F29 / 72-bit accumulator: 0.190134 μV RMS, no arithmetic overflow.</text>
+<text x="482.5" y="600" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">F29 / 56-bit accumulator: 208040 wrap events; about 8.185 mV RMS error.</text>
+<text x="482.5" y="625" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Input codes may already contain converter bias: this comparison cannot remove it.</text>
+<rect x="40" y="750" width="885" height="100" rx="5" fill="#edf4f8" stroke="#263c49"/>
+<text x="482.5" y="775" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Mixed products: F38; FIR coefficients: F29; accumulator: F67.</text>
+<text x="482.5" y="800" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">A 72-bit accumulator and a 56-bit resampler accumulator have different binary points.</text>
+<text x="482.5" y="825" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="middle">Truncation is a deterministic operation, not a grant of independent white noise.</text>
+<text x="45" y="950" font-family="sans-serif" font-size="18" fill="#182f3e" text-anchor="start">A full-band mask rejects F23 even when this one record has small coherent phase error.</text>
+<text x="45" y="1010" font-family="sans-serif" font-size="17" fill="#182f3e" text-anchor="start">Complete payload, coefficient/memory paths and timing evidence still constrain implementation.</text>
+<text x="32" y="1086" font-family="sans-serif" font-size="16" fill="#182f3e" text-anchor="start">Illustrative model • no measured receiver data</text>
+</svg>

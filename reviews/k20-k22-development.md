@@ -280,3 +280,9 @@ fresh reassessment/connected packets. Requested Sol/high routing is not independ
 authenticated. No owner decision blocks bounded provisional closeout; later
 physical/human acceptance remains separate. No external publication or push.
 Stop before K23; no later treatment is begun.
+
+Local unit checkpoints:K20 `a534013`, K21 `17142f3`, K22 `6ad5168`. Connected
+reading/canonical-reference integration is checkpointed separately. Exact raw
+Quarto logs containing trailing whitespace are preserved byte-for-byte in gzip
+archives; the final staged whitespace gate passes before each checkpoint. Both
+original untrackedfiles remain outside these commits with their baseline hashes.

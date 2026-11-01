@@ -1,3 +1,60 @@
+# K20–K22 bounded authoring and integration checks — 2026-11-01
+
+Three bounded canonical treatments and12newreproduciblefigures occupy Chapter20,
+Chapter13.1–4 and Chapter23. Chapters21/22 remain reserved. These are checked
+provisional teaching drafts, not completed chapters, qualified hardware or human
+specialist/reader acceptance. Stop before K23.
+[Development, inventory, findings and evidence limits](../reviews/k20-k22-development.md)
+keeps author dispositions separate from exact raw AI findings/frozen packets.
+Unit checkpoints:K20 `a534013`, K21 `17142f3`, K22 `6ad5168`; integration is checkpointed separately.
+
+- Fresh documented private-pipe smoke and actualPNG inspection preceded authoring;
+  browser sandbox retained, Brave156.1.98.62/Node26.12.1/Quarto1.10.19. No installs,
+  security-control changes or global configuration changes.
+- 116stdlib-discovery,16NumPyrecord and19pilot unittest checks pass:151selected
+  checks. Fresh fullpytest cannot start because its module is absent; SciPy also
+  absent. The separate pytest-dependent phase-transfer module cannot import.
+  An initial pilot import fails without engineering/src; explicit PYTHONPATH passes.
+- All97SVGs reproduce byte-identically, including85pre-batch figures. Independent
+  formulations verify7990newplottedvertices (2198alignment,3856calibration,
+  1936metrology), with serialization errors below0.000501SVGunits. Exact rational/
+  integer convolution, separate noise quadrature, finite-difference/latent-error
+  propagation, innovation weights/closed covariance sums, matrix/eigenvalues,
+  tangent geometry and nonlinear polar integration provide distinct checks.
+- Final full local Quarto HTML render passes:27pages,1148locallinks,98imageuses,
+  no duplicate IDs, unresolved markers, missing fragments, absent alt text or
+  missing local images. The frozen main/targeted review candidates account for all125HTML/SVG/CSV
+  rendered files; two final pages differ only by the future-treatment name correction.127manuscript/figure/data/bibliography/configuration source files
+  match the scratch render inputs. This checks local HTML, not PDF/offline math,
+  responsive/accessibility conformance or every earlier page's visual quality.
+- Actual standalone assets, complete developed pages and overlapping readable crops
+  were inspected by author and fresh AI. Final Chapter13 is1425×13227; Chapter20
+  is1410×10435; final Chapter23 is1425×9517. Final preface and affected Chapter19 ending
+  pixels are also inspected. Final review receives31PNGs, including all10Chapter13
+  crops, new nonlinear disk/density asset and changed20/19/preface regions.
+- 171protectedbaselineentries match, including accepted architecture/standards,
+  earlier technical content,85priorfigures and both preserved untrackedfiles.
+  Four earlier chapter paths have only declared ownership/reading-reference edits;
+  K20/model checkpoint bytes and K21a prefix remain unchanged; Chapter23 has only
+  the recorded future-treatment name clarification.
+  Scaffold integrity (13requiredpaths), control-byte and Git whitespace checks pass.
+- Claim-level primary-source examination is recorded in response-alignment,
+  calibration-procedure and operational-metrology source notes. Published source
+  experiments, manufacturer typical amplitude examples and interval guidance
+  retain their actual boundaries; hypothetical parameters are not device guarantees.
+- Fresh read-only Sol/high AI reviews and targeted reassessments address scientific,
+  mathematical, engineering, pixel and teaching adequacy. Initial K21 ancillary
+  prior-status exposure is recorded; fresh reassessment/connected packets exclude
+  unrelated notes. CLI requested identity is not independently authenticated routing.
+  AI review does not establish human Reviewed/Accepted status or reader effectiveness.
+- Supplied CSV/records, noise, fixture, source impedance, coherent leakage, drift,
+  known-zero access, state/age and input-range envelopes remain illustrative.
+  No hardware measurements, traceability certificates, device suitability,
+  real-time FPGA closure, full transition/environment method or compliance claim.
+  No consequential owner decision is required for bounded provisional closeout.
+
+---
+
 # K17–K19 bounded authoring and integration checks — 2026-11-01
 
 Three bounded teaching units and 15 new reproducible figures occupy canonical

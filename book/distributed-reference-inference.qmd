@@ -336,7 +336,7 @@ state/cycle evidence and actual latency distributions. A verification should
 alter a directional delay, restart a reference, age a record through outage,
 and compare an independent reference or changed path. Separate the witness's
 uncertainty/correlation from the delivered residual. Chapter 13's complete
-metrology treatment and Chapter 23's sequencing remain outside this bounded
+metrology treatment and Chapter 21's sequencing remain outside this bounded
 method. The executed synthetic alignment/gate is evidence about the calculation,
 not a completed calibration or demonstrated receiver.
 

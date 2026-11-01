@@ -162,7 +162,8 @@ Near a weak reference, a changed noise spectrum, correlated readings or an
 incorrect echo model, this linearization and budget must be replaced or expanded. Chapter 13 develops
 finite-record and correction uncertainty, including reference correlations.
 The nominal 0.5% modeled-error screen therefore is not an uncertainty-qualified
-hardware acceptance rule; Chapter 24 owns that later decision.
+hardware acceptance rule; that decision belongs to the planned canonical
+Chapter 24, *Verification coverage and bounded conclusions*.
 
 Choose an operational policy from the results. Fixed coefficients avoid adaptive
 wanted-signal suppression when state and drift remain within bounds. Separate

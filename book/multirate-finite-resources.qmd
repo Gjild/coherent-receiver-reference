@@ -521,7 +521,7 @@ alongside the recorded host timing and deterministic queue calculations. These
 establish bounded model behavior and reject several alternatives. They do not
 establish causal hardware timing closure, link guarantees, measured converter
 fidelity or full receiver compliance. Chapter 20 owns general correction
-feasibility; Chapter 23 integrates complete startup, retune and recovery validity.
+feasibility; Chapter 21 integrates complete startup, retune and recovery validity.
 
 For transfer, halve the output rate while retaining the 2 MHz band and the old
 interpolator: rebuild the alias mask, delay/epoch labels, word and memory costs,
@@ -532,7 +532,8 @@ a filter calculation, which require new observations/state evidence, and which
 prevent any coherent output from being declared valid. A fast, correctly framed
 stream is only one part of that decision.
 
-The following navigation leads to the **development supplements**, whose
-temporary rendered numbers are 20 and 21. They do not supply the still-undeveloped
-canonical Chapter 20 on correction feasibility or Chapter 21 on calibration
-procedure. Those canonical references above identify later technical ownership.
+The next chapter develops general correction feasibility before channels are
+combined. Chapter 13 supplies measurement freedoms and uncertainty; Chapter 23
+uses them in calibration procedures and maintenance. The development supplements
+remain outside the accepted canonical chapter sequence; their temporary rendered
+numbers do not change these technical destinations.

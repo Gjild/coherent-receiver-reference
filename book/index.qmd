@@ -60,21 +60,32 @@ start from the same converter words; they cannot repair previously lost analog
 information. A remote resampler uses a separately established clock relation;
 aligned baseband samples do not by themselves establish RF phase coherence.
 
-The progression is from a defined observable through conditional source/path
-budgets to subsystem interfaces and an executed processing reference. It supports
-rejection of infeasible alternatives and states what an engineer must measure or
-obtain from qualified component and platform evidence. The examples do not supply
-a reconciled, validated complete receiver. Actual real-time hardware scheduling,
-calibration procedures and full startup/retune/recovery integration remain outside
-these bounded demonstrations.
+[Complex-response alignment](complex-response-alignment.qmd) then chooses a
+common delayed response subject to causality, finite support, word range and
+noise gain before combination. Its deep-attenuation and true-null cases show
+when a different observation or architecture is required.
+[Calibration observability and operational metrology](calibration-observability-metrology.qmd),
+placed earlier in Chapter 13, establishes what a test can distinguish and how
+loading, reference correlation, finite records and coherent floors affect its
+conclusion. [Calibration procedures and continued coherence](calibration-procedures-coherence.qmd)
+uses that access and uncertainty with feasible correction, independent wanted-
+signal checks and a maintenance policy that accounts for evidence age and downtime.
 
-Bounded canonical treatments now extend through Chapter 19, with Chapter 13
-explicitly reserved and undeveloped. Its calibration observability and operational
-metrology procedures remain necessary external inputs to these supplied-envelope
-examples. The publishing demonstration and relative-phase pilot are grouped as
-**development supplements**; their temporary rendered chapter numbers are outside
-the accepted canonical sequence and do not supply canonical Chapters 20–21. The reserved
-slot preserves chapter destinations without claiming a complete reading path or
-complete planned chapters.
+The progression is from a defined observable through conditional source/path
+budgets and subsystem interfaces to executed processing, correction and measurement
+examples. It supports rejection of infeasible alternatives and identifies the
+component, platform and physical evidence needed before hardware decisions.
+These examples do not supply a reconciled, validated complete receiver. Actual
+real-time hardware closure, complete transition and environmental realization,
+whole-system qualification and specialist/reader evidence remain outstanding.
+
+Bounded canonical treatments now occupy Chapters 1–20, including the measurement
+reasoning in Chapter 13, and the calibration treatment in Chapter 23. Chapters
+21 and 22 remain explicitly reserved for state integration and physical/environmental
+engineering. Their slots preserve the accepted chapter destinations; supplied
+contracts in the developed examples do not complete those missing methods or
+any entire planned chapter. The publishing demonstration and relative-phase pilot
+are grouped as **development supplements**. Their temporary rendered numbers after
+Chapter 23 do not supply later canonical treatments.
 
 The publishing demonstration tests mathematics, references, SVG figures and bibliography wiring. The following dual-channel relative-phase pilot develops a bounded illustrative engineering argument and supporting calculations. It has no hardware measurements, specialist acceptance or actual reader-trial evidence.

@@ -30,8 +30,8 @@ and K21a prefix are preserved; Chapter23 has only the recorded future-treatment
 name clarification. Scaffold, control-byte and Git whitespace checks pass.
 Fullpytest and SciPy are unavailable; no dependency installation occurred.
 
-Unit checkpoints:K20 `a534013`, K21 `17142f3`; K22 and connected closeout are
-checkpointed separately. Pre-existing untracked book/.gitignore and book/index.toc
+Unit checkpoints:K20 `a534013`, K21 `17142f3`, K22 `6ad5168`; connected closeout
+is checkpointed separately. Pre-existing untracked book/.gitignore and book/index.toc
 retain their original bytes, unstaged/uncommitted. Apparent artifact purpose and OS
 ownership do not establish creator or intended disposition. No owner decision
 blocks bounded provisional closeout.

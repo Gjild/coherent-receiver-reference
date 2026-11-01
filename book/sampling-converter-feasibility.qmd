@@ -328,7 +328,7 @@ clock-rate change or reset, require the intersection of Chapter 14's analog
 recovery, converter/driver settling, clock state, sample identity and calibration
 validity. None of those unmeasured additional conditions is granted by the earlier
 176 μs analog-policy example. Chapter 19 develops the processing interface;
-Chapter 23 owns complete state integration.
+Chapter 21 owns complete state integration.
 
 Before selecting actual hardware, obtain admitted-band amplitude/phase response,
 input impedance/kickback and common-mode limits, converter/driver noise and

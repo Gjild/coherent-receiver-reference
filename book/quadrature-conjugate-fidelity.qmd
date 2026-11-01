@@ -101,7 +101,7 @@ unchanged. An operational mean cannot distinguish receiver offset from desired
 DC. A separate blank can estimate $d$ only if its termination, LO coupling,
 gain, temperature and settling preserve the relevant offset. Turning off the
 wanted transmitter or substituting a load may change those paths. Phase cycling
-and external witnesses offer other information; Chapter 21 owns their complete
+and external witnesses offer other information; Chapter 23 owns their complete
 calibration-validity treatment.
 
 ## Fit and apply a bounded physical correction
